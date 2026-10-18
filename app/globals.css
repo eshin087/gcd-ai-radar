@@ -5,9 +5,9 @@
  * gcd lineage: near-black ground, one amber accent, mono for data.
  */
 @theme {
-  --color-ground: #04050a;
-  --color-panel: #090c15;
-  --color-panel-2: #0e1220;
+  --color-ground: #05070d;
+  --color-panel: #0a0e19;
+  --color-panel-2: #0e1322;
   --color-line: rgba(140, 160, 210, 0.22);
   --color-line-soft: rgba(140, 160, 210, 0.1);
   --color-ink: #e2e8f5;
@@ -66,6 +66,195 @@ body {
   .wordmark {
     @apply font-display text-[20px] tracking-[0.08em] text-ink;
     text-shadow: 0 0 18px rgba(127, 220, 255, 0.25);
+  }
+}
+
+/* ---------- Dashboard: motion, hero, drawer, ASCII text ---------- */
+.reveal {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.8s ease;
+}
+.reveal[data-armed="1"]:not([data-in]) {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+}
+.grow-in {
+  transform-origin: left;
+  animation: grow-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes grow-in {
+  from {
+    transform: scaleX(0);
+  }
+}
+.glass {
+  background: color-mix(in oklab, var(--color-panel) 72%, transparent);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.bracket::before {
+  content: "[ ";
+  color: var(--color-faint);
+}
+.bracket::after {
+  content: " ]";
+  color: var(--color-faint);
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dim);
+}
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-line-soft);
+}
+.stars {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(226, 232, 245, 0.35), transparent 60%),
+    radial-gradient(1px 1px at 72% 34%, rgba(226, 232, 245, 0.25), transparent 60%),
+    radial-gradient(1px 1px at 38% 76%, rgba(226, 232, 245, 0.2), transparent 60%),
+    radial-gradient(1px 1px at 88% 82%, rgba(226, 232, 245, 0.25), transparent 60%),
+    radial-gradient(1px 1px at 56% 8%, rgba(226, 232, 245, 0.3), transparent 60%);
+}
+
+/* Hero: sticky, fades as the content covers it */
+.hero-fade {
+  --p: 0;
+  opacity: calc(1 - var(--p) * 1.1);
+  transform: translateY(calc(var(--p) * -56px)) scale(calc(1 - var(--p) * 0.045));
+  transform-origin: 50% 0;
+  filter: blur(calc(var(--p) * 6px));
+  will-change: opacity, transform;
+}
+.hero-field {
+  -webkit-mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (max-width: 1023px) {
+  .hero-field {
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    -webkit-mask-composite: source-over;
+    mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    mask-composite: add;
+  }
+}
+.hero-cover::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: -96px;
+  height: 96px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--color-ground));
+}
+
+/* Report drawer */
+.drawer-scrim {
+  background: rgba(2, 4, 9, 0.58);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: fade-in 0.2s ease both;
+}
+.drawer-panel {
+  animation: drawer-in 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drawer-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.6;
+  }
+}
+
+/* ASCII text forming (AsciiForm) */
+.ascii-form [data-c] {
+  position: relative;
+}
+.ascii-form[data-forming] [data-c]:not([data-done]) {
+  color: transparent;
+}
+.ascii-form[data-forming] [data-c][data-g]::after {
+  content: attr(data-g);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.72em;
+  line-height: 1;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px color-mix(in oklab, var(--color-accent) 55%, transparent);
+}
+.ascii-form [data-c][data-done] {
+  animation: ascii-land 0.38s ease-out both;
+}
+@keyframes ascii-land {
+  from {
+    color: var(--color-accent);
+    text-shadow: 0 0 14px color-mix(in oklab, var(--color-accent) 75%, transparent);
+  }
+}
+
+/* Bars that grow when their Reveal arrives */
+.grow-x {
+  transform-origin: left;
+}
+.reveal[data-in] .grow-x {
+  animation: grow-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.reveal[data-armed="1"]:not([data-in]) .grow-x {
+  transform: scaleX(0);
+}
+
+/* Forming headings start hidden from first paint (app/page.tsx shows them without JS). */
+.ascii-form[data-pending] [data-c] {
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-armed="1"]:not([data-in]) {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero-fade {
+    filter: none;
+    transform: none;
+  }
+  .reveal[data-armed="1"]:not([data-in]) .grow-x {
+    transform: none;
+  }
+  .ascii-form[data-pending] [data-c] {
+    color: inherit;
+  }
+  .grow-in,
+  .grow-x,
+  .drawer-scrim,
+  .drawer-panel,
+  .ascii-form [data-c][data-done] {
+    animation: none !important;
   }
 }
 
@@ -134,17 +323,4 @@ body {
 }
 .prose-sources a:hover {
   color: var(--color-accent);
-}
-
-/* Recharts text defaults */
-.recharts-text {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  fill: var(--color-dim);
-}
-.recharts-cartesian-grid line {
-  stroke: var(--color-line-soft);
-}
-.recharts-tooltip-cursor {
-  fill: rgba(140, 160, 210, 0.08);
 }

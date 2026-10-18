@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type Ref } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
 import type { CompactRow } from "@/lib/dashboard";
+import { FAMILY_META, type Family } from "@/lib/families";
 import { approxDateLabel, monthLabel } from "@/lib/format";
 import type { SlimIncident } from "@/lib/slim";
 import type { DateField } from "@/lib/stats";
@@ -14,9 +15,18 @@ export type Selection =
   | { kind: "month"; month: string }
   | { kind: "month-category"; month: string; category: Category }
   | { kind: "month-type"; month: string; type: IncidentType }
+  | { kind: "month-family"; month: string; family: Family }
+  | { kind: "family"; family: Family }
   | { kind: "target"; target: Target }
   | { kind: "severity"; severity: Severity }
-  | { kind: "category"; category: Category };
+  | { kind: "category"; category: Category }
+  | { kind: "type"; type: IncidentType }
+  /** Every incident in the current window and set. */
+  | { kind: "window" }
+  /** Severity 3-4 incidents in the current window. */
+  | { kind: "real" }
+  /** An inclusive month range on the date basis, independent of the window (trailing 12 months, year to date). */
+  | { kind: "range"; from: string; to: string; label: string; toDate?: string; byYear?: boolean };
 
 export function selectionLabel(sel: Selection): string {
   switch (sel.kind) {
@@ -26,12 +36,24 @@ export function selectionLabel(sel: Selection): string {
       return `${CATEGORY_META[sel.category].label} · ${monthLabel(sel.month, true)}`;
     case "month-type":
       return `${TYPE_META[sel.type].label} · ${monthLabel(sel.month, true)}`;
+    case "month-family":
+      return `${FAMILY_META[sel.family].label} · ${monthLabel(sel.month, true)}`;
+    case "family":
+      return FAMILY_META[sel.family].label;
     case "target":
       return `Target: ${TARGET_META[sel.target].label}`;
     case "severity":
       return `Severity ${sel.severity} · ${SEVERITY_META[sel.severity].label}`;
     case "category":
       return CATEGORY_META[sel.category].label;
+    case "type":
+      return TYPE_META[sel.type].label;
+    case "window":
+      return "All incidents in view";
+    case "real":
+      return "Real-world incidents · severity 3–4";
+    case "range":
+      return sel.label;
   }
 }
 
@@ -52,6 +74,13 @@ export function selectionQuery(sel: Selection, basis: "all" | "real", field: Dat
       p.set("month", sel.month);
       p.set("type", sel.type);
       break;
+    case "month-family":
+      p.set("month", sel.month);
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      break;
+    case "family":
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      break;
     case "target":
       p.set("target", sel.target);
       break;
@@ -60,6 +89,18 @@ export function selectionQuery(sel: Selection, basis: "all" | "real", field: Dat
       break;
     case "category":
       p.set("category", sel.category);
+      break;
+    case "type":
+      p.set("type", sel.type);
+      break;
+    case "window":
+      break;
+    case "real":
+      p.set("real", "1");
+      break;
+    case "range":
+      p.set("from", sel.from);
+      p.set("to", sel.to);
       break;
   }
   return p.toString();
@@ -86,7 +127,12 @@ interface Props {
   onClose: () => void;
 }
 
-export function DrillDown({ selection, rows, windowLabel, basis, field, onClose }: Props) {
+/**
+ * The report itself: what was clicked, how many incidents, and each one with
+ * its summary, classification, sources and dates. Shown in the dashboard's
+ * report drawer.
+ */
+export function ReportBody({ selection, rows, windowLabel, basis, field, onClose, titleId, closeRef }: Props & { titleId?: string; closeRef?: Ref<HTMLButtonElement> }) {
   const [details, setDetails] = useState<Map<string, SlimIncident> | null>(null);
   const [shown, setShown] = useState(PAGE);
 
@@ -102,11 +148,6 @@ export function DrillDown({ selection, rows, windowLabel, basis, field, onClose 
     };
   }, []);
 
-  // The parent remounts this panel per selection (key), so `shown` resets by itself.
-  useEffect(() => {
-    document.getElementById("drilldown")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
   const sorted = useMemo(() => [...rows].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id)), [rows]);
   const sev = useMemo(() => {
     const m: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0 };
@@ -115,11 +156,16 @@ export function DrillDown({ selection, rows, windowLabel, basis, field, onClose 
   }, [rows]);
 
   return (
-    <section id="drilldown" className="panel p-5 sm:p-6 scroll-mt-20 space-y-4" aria-live="polite">
+    <>
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <div className="label">incident report · {basis === "real" ? "real-world only" : "all incidents"} · by {field === "incident_date" ? "incident date" : "first report"} · {windowLabel}</div>
-          <h2 className="mt-1 text-xl font-semibold tracking-tight">{selectionLabel(selection)}</h2>
+          <div className="label">
+            incident report · {basis === "real" ? "real-world only" : "all incidents"} · by {field === "incident_date" ? "incident date" : "first report"} ·{" "}
+            {selection.kind === "range" ? (selection.from === selection.to ? monthLabel(selection.from, true) : `${monthLabel(selection.from, true)} to ${monthLabel(selection.to, true)}`) : windowLabel}
+          </div>
+          <h2 id={titleId} className="mt-1 text-xl font-semibold tracking-tight">
+            {selectionLabel(selection)}
+          </h2>
           <p className="mt-1 text-[13px] text-dim num">
             {rows.length} incident{rows.length === 1 ? "" : "s"} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
           </p>
@@ -128,7 +174,7 @@ export function DrillDown({ selection, rows, windowLabel, basis, field, onClose 
           <Link href={`/incidents?${selectionQuery(selection, basis, field)}`} className="label hover:text-ink">
             open in incidents →
           </Link>
-          <button type="button" onClick={onClose} className="label border border-line rounded-[3px] px-2 py-1 hover:text-ink" aria-label="Close report">
+          <button ref={closeRef} type="button" onClick={onClose} className="label border border-line rounded-[3px] px-2 py-1 hover:text-ink" aria-label="Close report">
             close ×
           </button>
         </div>
@@ -183,6 +229,6 @@ export function DrillDown({ selection, rows, windowLabel, basis, field, onClose 
         </div>
       )}
       {rows.length === 0 && <p className="text-[13px] text-dim">No incidents in this selection.</p>}
-    </section>
+    </>
   );
 }

@@ -1,4 +1,5 @@
-import type { Category, IncidentType, Severity } from "./taxonomy";
+import { FAMILY_COLORS, familyOf } from "./families";
+import { CATEGORIES, type Category, type IncidentType, type Severity } from "./taxonomy";
 
 /**
  * The one palette. Every chart, legend and badge imports from here so the
@@ -7,7 +8,7 @@ import type { Category, IncidentType, Severity } from "./taxonomy";
  */
 
 export const UI = {
-  ground: "#04050a",
+  ground: "#05070d",
   panel: "rgba(5,7,14,0.66)",
   line: "rgba(140,160,210,0.22)",
   ink: "#e2e8f5",
@@ -19,36 +20,24 @@ export const UI = {
   grid: "rgba(140,160,210,0.10)",
 } as const;
 
+/** Validated pair on the dark surface (dataviz checks). */
 export const TYPE_COLORS: Record<IncidentType, string> = {
-  attack_on_ai: "#ffb35c",
-  ai_enabled_attack: "#7fdcff",
+  attack_on_ai: "#c48225",
+  ai_enabled_attack: "#32a0c5",
 };
 
+/** One-hue amber ramp, darker to brighter with severity (ordinal checks pass). */
 export const SEVERITY_COLORS: Record<Severity, string> = {
-  1: "#4b556e",
-  2: "#7b9dff",
-  3: "#ff9b6b",
-  4: "#ff6b6b",
+  1: "#5f482e",
+  2: "#a06f30",
+  3: "#e29936",
+  4: "#ffc858",
 };
 
-export const CATEGORY_COLORS: Record<Category, string> = {
-  prompt_injection: "#ffd166",
-  jailbreak: "#ff9b6b",
-  agent_hijack: "#b4e35f",
-  data_leak: "#ff86c8",
-  model_theft_extraction: "#6fc6ff",
-  supply_chain: "#d48cff",
-  data_poisoning: "#a59cff",
-  adversarial_evasion: "#7b9dff",
-  infra_vuln: "#ff6b6b",
-  deepfake_fraud: "#7fe8a8",
-  ai_generated_malware: "#3fd6c6",
-  ai_phishing_social_engineering: "#ffb35c",
-  ai_assisted_intrusion: "#c3cbe0",
-  other: "#4b556e",
-};
+/** Each category wears its family's colour (lib/families.ts): 7 validated hues instead of 14 that failed CVD checks. */
+export const CATEGORY_COLORS = Object.fromEntries(CATEGORIES.map((c) => [c, FAMILY_COLORS[familyOf(c)]])) as Record<Category, string>;
 
-/** Sequential ramp for single-series bars (targets, publishers). */
-export const BAR_COLOR = "#7b9dff";
+/** Single-series bars (targets, publishers). */
+export const BAR_COLOR = "#3a97cf";
 export const TREND_COLOR = UI.accent;
 export const PROVISIONAL_FILL = "rgba(140,160,210,0.07)";
