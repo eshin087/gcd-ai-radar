@@ -1,0 +1,47 @@
+{
+  "_comment": "Every source the collector reads. Verified live on 2026-10-17; see docs/sources.md for licences and caveats. Sources whose adapter is not implemented yet are skipped with a warning. tier: press/vendor require keyword matches; specialist/seed bypass the pre-filter; social is treated like press.",
+  "sources": [
+    { "id": "hn", "name": "Hacker News (Algolia search)", "kind": "hn", "url": "https://hn.algolia.com/api/v1/search_by_date", "tier": "social", "schedule": "every_run", "enabled": true, "notes": "Query-driven. Only stories with an external URL; the article is the source, not the HN thread." },
+    { "id": "gdelt", "name": "GDELT DOC 2.0", "kind": "gdelt", "url": "https://api.gdeltproject.org/api/v2/doc/doc", "tier": "press", "schedule": "every_run", "enabled": true, "notes": "Query-driven, serialized with long gaps; 429s are normal. Attribution: Powered by GDELT." },
+    { "id": "bluesky", "name": "Bluesky search", "kind": "bluesky", "url": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts", "tier": "social", "schedule": "every_run", "enabled": false, "notes": "Optional: external links in posts only. Off until the social adapter is tuned." },
+
+    { "id": "thn", "name": "The Hacker News", "kind": "rss", "url": "https://feeds.feedburner.com/TheHackersNews", "publisher": "The Hacker News", "tier": "press", "schedule": "every_run", "enabled": true },
+    { "id": "securityweek", "name": "SecurityWeek", "kind": "rss", "url": "https://www.securityweek.com/feed/", "publisher": "SecurityWeek", "tier": "press", "schedule": "every_run", "enabled": true },
+    { "id": "krebs", "name": "Krebs on Security", "kind": "rss", "url": "https://krebsonsecurity.com/feed/", "publisher": "Krebs on Security", "tier": "press", "schedule": "every_run", "enabled": true },
+    { "id": "bleepingcomputer", "name": "BleepingComputer", "kind": "rss", "url": "https://www.bleepingcomputer.com/feed/", "publisher": "BleepingComputer", "tier": "press", "schedule": "every_run", "enabled": true, "notes": "Title + link + own summary only (ToS: personal, non-commercial storage)." },
+    { "id": "darkreading", "name": "Dark Reading", "kind": "rss", "url": "https://www.darkreading.com/rss.xml", "publisher": "Dark Reading", "tier": "press", "schedule": "every_run", "enabled": true },
+
+    { "id": "openai", "name": "OpenAI News", "kind": "rss", "url": "https://openai.com/news/rss.xml", "publisher": "OpenAI", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "anthropic", "name": "Anthropic (sitemap)", "kind": "sitemap", "url": "https://www.anthropic.com/sitemap.xml", "publisher": "Anthropic", "tier": "vendor", "schedule": "daily", "enabled": true, "title_filter": "^https://www\\.anthropic\\.com/(news|research|engineering)/", "notes": "No feed exists; new dated URLs are fetched once for title and description." },
+    { "id": "google-security", "name": "Google Security Blog", "kind": "rss", "url": "https://security.googleblog.com/feeds/posts/default?alt=rss&redirect=false", "publisher": "Google Security Blog", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "deepmind", "name": "Google DeepMind", "kind": "rss", "url": "https://deepmind.google/blog/rss.xml", "publisher": "Google DeepMind", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "gtig", "name": "Google Threat Intelligence", "kind": "rss", "url": "https://cloudblog.withgoogle.com/topics/threat-intelligence/rss/", "publisher": "Google Threat Intelligence", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "ms-security", "name": "Microsoft Security Blog", "kind": "rss", "url": "https://www.microsoft.com/en-us/security/blog/feed/", "publisher": "Microsoft Security", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "ms-threat-intel", "name": "Microsoft Threat Intelligence", "kind": "rss", "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/", "publisher": "Microsoft Security", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "ms-ai", "name": "Microsoft Security · AI topic", "kind": "rss", "url": "https://www.microsoft.com/en-us/security/blog/topic/ai-and-machine-learning/feed/", "publisher": "Microsoft Security", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "msrc-sug", "name": "MSRC Security Update Guide", "kind": "msrc", "url": "https://api.msrc.microsoft.com/update-guide/rss", "publisher": "MSRC", "tier": "seed", "schedule": "daily", "enabled": true, "title_filter": "copilot|\\bai\\b|agent|azure openai|foundry|semantic kernel|autogen", "notes": "5,000+ one-line CVE items; only AI-product titles pass." },
+    { "id": "meta-eng", "name": "Meta Engineering · Security", "kind": "rss", "url": "https://engineering.fb.com/category/security/feed/", "publisher": "Meta Engineering", "tier": "vendor", "schedule": "every_run", "enabled": true },
+
+    { "id": "simonw-pi", "name": "Simon Willison · prompt injection", "kind": "rss", "url": "https://simonwillison.net/tags/prompt-injection.atom", "publisher": "Simon Willison", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "simonw-sec", "name": "Simon Willison · security", "kind": "rss", "url": "https://simonwillison.net/tags/security.atom", "publisher": "Simon Willison", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "embracethered", "name": "Embrace The Red", "kind": "rss", "url": "https://embracethered.com/blog/index.xml", "publisher": "Embrace The Red", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "trailofbits", "name": "Trail of Bits", "kind": "rss", "url": "https://blog.trailofbits.com/index.xml", "publisher": "Trail of Bits", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "unit42-ai", "name": "Unit 42 · AI tag", "kind": "rss", "url": "https://unit42.paloaltonetworks.com/tag/ai/feed/", "publisher": "Unit 42", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "unit42", "name": "Unit 42", "kind": "rss", "url": "https://unit42.paloaltonetworks.com/feed/", "publisher": "Unit 42", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "talos", "name": "Cisco Talos", "kind": "rss", "url": "https://blog.talosintelligence.com/rss/", "publisher": "Cisco Talos", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "owasp-genai", "name": "OWASP GenAI Security Project", "kind": "rss", "url": "https://genai.owasp.org/feed/", "publisher": "OWASP GenAI", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "straiker", "name": "Straiker", "kind": "rss", "url": "https://www.straiker.ai/blog/rss.xml", "publisher": "Straiker", "tier": "specialist", "schedule": "every_run", "enabled": true },
+    { "id": "trendmicro", "name": "Trend Micro Research", "kind": "rss", "url": "https://feeds.trendmicro.com/TrendMicroResearch", "publisher": "Trend Micro", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "checkmarx-zero", "name": "Checkmarx Zero", "kind": "rss", "url": "https://checkmarx.com/feed/?post_type=zero-post", "publisher": "Checkmarx", "tier": "vendor", "schedule": "every_run", "enabled": true },
+    { "id": "hiddenlayer", "name": "HiddenLayer (sitemap)", "kind": "sitemap", "url": "https://www.hiddenlayer.com/sitemap.xml", "publisher": "HiddenLayer", "tier": "specialist", "schedule": "daily", "enabled": true, "title_filter": "^https://(www\\.)?hiddenlayer\\.com/(research|sai-security-advisory)/" },
+
+    { "id": "arxiv-cscr", "name": "arXiv cs.CR (RSS)", "kind": "arxiv", "url": "https://rss.arxiv.org/rss/cs.CR", "publisher": "arXiv", "tier": "press", "schedule": "daily", "enabled": true, "notes": "Research, severity 1 by default. One request every 3 seconds at most." },
+
+    { "id": "nvd", "name": "NVD CVE API 2.0", "kind": "nvd", "url": "https://services.nvd.nist.gov/rest/json/cves/2.0", "publisher": "NVD", "tier": "seed", "schedule": "every_run", "enabled": true },
+    { "id": "ghsa", "name": "GitHub Advisory Database", "kind": "ghsa", "url": "https://api.github.com/advisories", "publisher": "GitHub Advisory Database", "tier": "seed", "schedule": "every_run", "enabled": true },
+    { "id": "kev", "name": "CISA Known Exploited Vulnerabilities", "kind": "kev", "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json", "publisher": "CISA", "tier": "seed", "schedule": "daily", "enabled": true },
+    { "id": "aiid", "name": "AI Incident Database (weekly export)", "kind": "aiid", "url": "https://incidentdatabase.ai/research/snapshots/", "publisher": "AI Incident Database", "tier": "seed", "schedule": "weekly", "enabled": true },
+    { "id": "atlas", "name": "MITRE ATLAS case studies", "kind": "atlas", "url": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/manifest.yaml", "publisher": "MITRE ATLAS", "tier": "seed", "schedule": "monthly", "enabled": true },
+    { "id": "avid", "name": "AVID", "kind": "avid", "url": "https://raw.githubusercontent.com/avidml/avid-db/main/", "publisher": "AVID", "tier": "seed", "schedule": "monthly", "enabled": false, "notes": "One-time seed via backfill; dormant upstream." }
+  ]
+}
