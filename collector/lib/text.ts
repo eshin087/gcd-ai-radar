@@ -166,14 +166,42 @@ export function decodeEntities(s: string): string {
     .replace(/&[a-z]+;|&#\d+;/gi, (m) => ENTITIES[m.toLowerCase()] ?? m);
 }
 
+/** Index of `<tag` or `</tag` where the name is complete: followed by whitespace, "/", ">" or the end of input. */
+function findTag(lower: string, needle: string, from: number): number {
+  let i = lower.indexOf(needle, from);
+  while (i >= 0) {
+    const c = lower[i + needle.length];
+    if (c === undefined || c === ">" || c === "/" || /\s/.test(c)) return i;
+    i = lower.indexOf(needle, i + 1);
+  }
+  return -1;
+}
+
+/**
+ * Removes <script> and <style> blocks the way a browser delimits them: a block
+ * ends at "</tag" followed by whitespace, "/" or ">", whatever comes before
+ * the next ">". An unterminated block runs to the end of the text.
+ */
+function stripBlocks(s: string, tag: string): string {
+  const lower = s.toLowerCase();
+  const open = `<${tag}`;
+  const close = `</${tag}`;
+  let out = "";
+  let pos = 0;
+  for (;;) {
+    const start = findTag(lower, open, pos);
+    if (start < 0) return out + s.slice(pos);
+    out += s.slice(pos, start) + " ";
+    const end = findTag(lower, close, start + open.length);
+    if (end < 0) return out;
+    const gt = lower.indexOf(">", end + close.length);
+    pos = gt < 0 ? lower.length : gt + 1;
+  }
+}
+
 export function stripHtml(s: string): string {
-  return decodeEntities(
-    s
-      .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ")
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ")
-      .replace(/<[^>]+>/g, " "),
-  )
+  const withoutBlocks = stripBlocks(stripBlocks(s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1"), "script"), "style");
+  return decodeEntities(withoutBlocks.replace(/<[^>]+>/g, " "))
     .replace(/\s+/g, " ")
     .trim();
 }

@@ -39,6 +39,12 @@ describe("matchers and helpers", () => {
   });
   it("strips html and decodes entities", () => {
     expect(stripHtml("<p>Tom &amp; Jerry&#8217;s <b>bug</b></p>")).toBe("Tom & Jerry’s bug");
+    // script and style blocks go, however the end tag is written
+    expect(stripHtml("Hi <script type=x>evil()</script ><b>there</b>")).toBe("Hi there");
+    expect(stripHtml("Hi <SCRIPT>evil()</script\t\n bar>there")).toBe("Hi there");
+    expect(stripHtml('a <script a=">">evil()</script>b<style>x{}</style\n>c')).toBe("a b c");
+    expect(stripHtml("<scripts>keep</scripts> and <stylesheet>this</stylesheet>")).toBe("keep and this");
+    expect(stripHtml("start <script>never closed")).toBe("start");
   });
   it("truncates on word boundaries", () => {
     expect(truncate("one two three four", 10)).toBe("one two…");
