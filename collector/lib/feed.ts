@@ -66,7 +66,21 @@ function atomLink(links: unknown): string {
  * written. Standard XML and HTML entities are unaffected.
  */
 export function stripDoctype(xml: string): string {
-  return xml.replace(/<!DOCTYPE(?:[^>\[]|\[[\s\S]*?\])*>/gi, "");
+  let out = xml;
+  for (;;) {
+    const start = out.search(/<!DOCTYPE/i);
+    if (start < 0) return out;
+    // the declaration ends at the first ">" outside its [ ... ] internal subset
+    let i = start + 9;
+    let inSubset = false;
+    for (; i < out.length; i++) {
+      const c = out[i];
+      if (c === "[") inSubset = true;
+      else if (c === "]") inSubset = false;
+      else if (c === ">" && !inSubset) break;
+    }
+    out = out.slice(0, start) + out.slice(i + 1);
+  }
 }
 
 export function parseFeed(xml: string): FeedItem[] {

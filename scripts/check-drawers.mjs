@@ -48,12 +48,18 @@ function serve(dir, port) {
     if (rel.includes("..")) return res.writeHead(400).end();
     const candidates = [rel, `${rel}.html`, path.posix.join(rel, "index.html")].map((p) => path.join(dir, p));
     for (const file of candidates) {
+      let handle;
       try {
-        const stat = await fs.stat(file);
-        if (!stat.isFile()) continue;
+        handle = await fs.open(file);
+        const stat = await handle.stat();
+        if (!stat.isFile()) {
+          await handle.close();
+          continue;
+        }
         res.writeHead(200, { "content-type": TYPES[path.extname(file)] ?? "application/octet-stream", "content-length": stat.size, "cache-control": "no-store" });
-        return (await fs.open(file)).createReadStream().pipe(res);
+        return handle.createReadStream().pipe(res);
       } catch {
+        await handle?.close().catch(() => undefined);
         // try the next candidate
       }
     }
@@ -219,9 +225,10 @@ async function probe(client, spec) {
 }
 
 async function toggle(client, group, option) {
+  // values travel URI-encoded: the encoding emits no quote, backslash or newline, so the literal below is always well formed
   const ok = await evaluate(
     client,
-    `(() => { const g = document.querySelector('[role="radiogroup"][aria-label="${group}"]'); const b = g && [...g.querySelectorAll('[role="radio"]')].find((x) => x.textContent.trim() === ${JSON.stringify(option)}); if (!b) return false; b.click(); return true; })()`,
+    `((group, option) => { const g = document.querySelector('[role="radiogroup"][aria-label="' + CSS.escape(group) + '"]'); const b = g && [...g.querySelectorAll('[role="radio"]')].find((x) => x.textContent.trim() === option); if (!b) return false; b.click(); return true; })(decodeURIComponent("${encodeURIComponent(group)}"), decodeURIComponent("${encodeURIComponent(option)}"))`,
   );
   if (!ok) throw new Error(`no toggle ${group} / ${option}`);
   await sleep(250);
