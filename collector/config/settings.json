@@ -20,24 +20,27 @@
     "timespan": "24h",
     "max_records": 75
   },
+  "_providers_comment": "Free-tier limits read from Google AI Studio on 2026-10-18: gemini-3.5-flash-lite 15 RPM / 250K TPM / 500 RPD; gemini-3.8-flash 5 RPM / 250K TPM / 20 RPD. Budgets stay just under those; daily quotas reset at midnight Pacific.",
   "providers": [
-    {
-      "id": "gemini-primary",
-      "kind": "gemini",
-      "model": "gemini-3.8-flash",
-      "env": "GEMINI_API_KEY",
-      "rpm": 10,
-      "daily_calls": 200,
-      "batch_size": 5
-    },
     {
       "id": "gemini-lite",
       "kind": "gemini",
       "model": "gemini-3.5-flash-lite",
       "env": "GEMINI_API_KEY",
-      "rpm": 10,
-      "daily_calls": 400,
-      "batch_size": 5
+      "rpm": 14,
+      "daily_calls": 460,
+      "batch_size": 5,
+      "reset_tz": "America/Los_Angeles"
+    },
+    {
+      "id": "gemini-flash",
+      "kind": "gemini",
+      "model": "gemini-3.8-flash",
+      "env": "GEMINI_API_KEY",
+      "rpm": 4,
+      "daily_calls": 18,
+      "batch_size": 5,
+      "reset_tz": "America/Los_Angeles"
     },
     {
       "id": "groq",
