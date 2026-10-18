@@ -6,7 +6,7 @@ export function monthLabel(key: string, long = false): string {
   const idx = Number(m) - 1;
   const name = MONTHS[idx] ?? m ?? "";
   if (long) return `${new Date(Date.UTC(Number(y), idx, 1)).toLocaleString("en-US", { month: "long", timeZone: "UTC" })} ${y}`;
-  return `${name} ${String(y).slice(2)}`;
+  return `${name} ’${String(y).slice(2)}`;
 }
 
 /** "2024-03-05" -> "5 Mar 2024"; "2024-03" -> "Mar 2024"; "2024" -> "2024". */

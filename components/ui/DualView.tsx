@@ -10,7 +10,7 @@ interface Props {
   defaultView?: "all" | "real";
   labels?: [string, string];
   /** Where the toggle sits relative to the content. */
-  togglePosition?: "top-right" | "top-left" | "inline";
+  togglePosition?: "above-right" | "top-right" | "top-left" | "inline";
   size?: "sm" | "md";
   className?: string;
 }
@@ -25,7 +25,7 @@ export function DualView({
   real,
   defaultView = "all",
   labels = ["All incidents", "Real-world only"],
-  togglePosition = "top-right",
+  togglePosition = "above-right",
   size = "md",
   className = "",
 }: Props) {
@@ -49,11 +49,11 @@ export function DualView({
       ))}
     </div>
   );
-  if (togglePosition === "inline") {
+  if (togglePosition === "inline" || togglePosition === "above-right") {
     return (
       <div className={className}>
-        {toggle}
-        <div className="mt-3">{view === "all" ? all : real}</div>
+        <div className={togglePosition === "above-right" ? "flex justify-end" : ""}>{toggle}</div>
+        <div className="mt-2">{view === "all" ? all : real}</div>
       </div>
     );
   }
