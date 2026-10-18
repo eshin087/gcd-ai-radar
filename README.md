@@ -26,9 +26,11 @@ feeds + APIs ──▶ collector (GitHub Actions, every 6 h) ──▶ /data/*.j
 
 ## Status
 
-Scaffold and design-options phase. The collector and backfill land next; see the
-[plan in the repository history](https://github.com/eshin087/gcd-ai-radar) and the
-Methodology page once deployed.
+Site and collector are built. The collector runs every 6 hours on GitHub Actions and
+needs `GEMINI_API_KEY` (see below) before it can classify; until the first real
+incidents are published, the site renders a clearly labelled synthetic stub dataset.
+Backfill of the historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD,
+GitHub Advisories) follows once classification is live.
 
 ## Development
 

@@ -4,3 +4,5 @@
 *.png binary
 *.jpg binary
 *.woff2 binary
+*.ttf binary
+*.otf binary

@@ -2,20 +2,22 @@
  * Runs before `next build` (npm "prebuild" hook). Produces everything under
  * /public that is derived from /data so the static export can serve it:
  *
- *   public/data/incidents.json      full dataset (published incidents)
- *   public/data/incidents.min.json  slim copy for the client-side incidents list
- *   public/data/incidents.csv       spreadsheet-friendly export
- *   public/data/meta.json           counts, last run, generation time
- *   public/feed.xml                 RSS of the 50 most recently reported incidents
- *
- * OG/PNG chart images are added here in a later step.
+ *   public/data/incidents.json        full dataset (published incidents)
+ *   public/data/incidents.min.json    slim copy for the client-side incidents list
+ *   public/data/incidents.csv         spreadsheet-friendly export
+ *   public/data/incidents/<slug>.json one file per incident
+ *   public/data/meta.json             counts, last run, generation time
+ *   public/feed.xml                   RSS of the 50 most recently reported incidents
+ *   public/og/*.png                   chart images for sharing (satori + sharp)
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { lastUpdated, loadIncidents, siteUrl } from "../lib/data";
 import type { Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
+import { slim } from "../lib/slim";
 import { CATEGORY_META, SEVERITY_META, TYPE_META } from "../lib/taxonomy";
+import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
 
@@ -31,39 +33,19 @@ function csvCell(v: unknown): string {
 function toCsv(incidents: Incident[]): string {
   const cols = [
     "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
-    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "tags", "summary", "first_source_url",
+    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "tags", "summary", "first_source_url", "url",
   ];
   const lines = [cols.join(",")];
+  const base = siteUrl();
   for (const i of incidents) {
-    const row: Record<string, unknown> = { ...i, first_source_url: i.sources[0]?.url ?? "" };
+    const row: Record<string, unknown> = { ...i, first_source_url: i.sources[0]?.url ?? "", url: `${base}/incidents/${i.slug}` };
     lines.push(cols.map((c) => csvCell(row[c])).join(","));
   }
   return lines.join("\n") + "\n";
 }
 
-function slim(i: Incident) {
-  return {
-    id: i.id,
-    slug: i.slug,
-    title: i.title,
-    summary: i.summary,
-    type: i.type,
-    categories: i.categories,
-    severity: i.severity,
-    targets: i.targets,
-    products: i.products,
-    incident_date: i.incident_date,
-    incident_date_precision: i.incident_date_precision,
-    first_reported: i.first_reported,
-    source_count: i.source_count,
-    publishers: [...new Set(i.sources.map((s) => s.publisher))],
-    origin: i.origin,
-  };
-}
-
 function rss(incidents: Incident[], base: string, updated: string | null): string {
-  const items = [...incidents]
-    .sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id))
+  const items = incidents
     .slice(0, 50)
     .map((i) => {
       const url = `${base}/incidents/${i.slug}`;
@@ -101,12 +83,15 @@ async function main() {
   const updated = await lastUpdated();
   const base = siteUrl();
   const dataDir = path.join(PUBLIC, "data");
-  await fs.mkdir(dataDir, { recursive: true });
+  const perIncident = path.join(dataDir, "incidents");
+  await fs.rm(perIncident, { recursive: true, force: true });
+  await fs.mkdir(perIncident, { recursive: true });
 
   const sorted = [...incidents].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id));
   await fs.writeFile(path.join(dataDir, "incidents.json"), JSON.stringify(sorted, null, 1) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map(slim)) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.csv"), toCsv(sorted));
+  await Promise.all(sorted.map((i) => fs.writeFile(path.join(perIncident, `${i.slug}.json`), JSON.stringify(i, null, 1) + "\n")));
   await fs.writeFile(
     path.join(dataDir, "meta.json"),
     JSON.stringify(
@@ -124,7 +109,12 @@ async function main() {
     ) + "\n",
   );
   await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(sorted, base, updated));
-  console.log(`prebuild: ${sorted.length} incidents${isStub ? " (STUB)" : ""} → public/data, public/feed.xml (site ${base})`);
+
+  const t0 = Date.now();
+  const written = await renderOgImages({ incidents: sorted, now: new Date(), siteHost: base.replace(/^https?:\/\//, ""), isStub }, path.join(PUBLIC, "og"));
+  console.log(
+    `prebuild: ${sorted.length} incidents${isStub ? " (STUB)" : ""} → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+  );
 }
 
 main().catch((err) => {
