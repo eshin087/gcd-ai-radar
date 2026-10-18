@@ -22,6 +22,9 @@ interface Filters {
   year: string;
   /** YYYY-MM, set by dashboard drill-downs. */
   month: string;
+  /** Inclusive YYYY-MM range, set by dashboard drill-downs (trailing 12 months, year to date). */
+  from: string;
+  to: string;
   publisher: string;
   origin: string;
   /** "1" = real-world only (severity 3-4), set by dashboard drill-downs. */
@@ -31,7 +34,7 @@ interface Filters {
   sort: "reported" | "incident" | "severity";
 }
 
-const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", publisher: "", origin: "", real: "", by: "", sort: "reported" };
+const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", sort: "reported" };
 const PAGE = 50;
 
 function readFilters(): Filters {
@@ -47,6 +50,8 @@ function readFilters(): Filters {
     target: p.get("target") ?? "",
     year: p.get("year") ?? "",
     month: p.get("month") ?? "",
+    from: p.get("from") ?? "",
+    to: p.get("to") ?? "",
     publisher: p.get("publisher") ?? "",
     origin: p.get("origin") ?? "",
     real: p.get("real") ?? "",
@@ -132,6 +137,8 @@ export function IncidentExplorer() {
       if (filters.real === "1" && i.severity < 3) return false;
       if (filters.target && !i.targets.includes(filters.target as SlimIncident["targets"][number])) return false;
       if (filters.month && !dateOf(i).startsWith(filters.month)) return false;
+      if (filters.from && dateOf(i).slice(0, 7) < filters.from) return false;
+      if (filters.to && dateOf(i).slice(0, 7) > filters.to) return false;
       if (filters.year && !filters.month && !i.first_reported.startsWith(filters.year) && !i.incident_date.startsWith(filters.year)) return false;
       if (filters.publisher && !i.publishers.includes(filters.publisher)) return false;
       if (filters.origin && i.origin !== filters.origin) return false;
@@ -152,6 +159,8 @@ export function IncidentExplorer() {
   const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by").length;
   const chips: { key: keyof Filters; label: string }[] = [
     ...(filters.month ? [{ key: "month" as const, label: `month: ${filters.month}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
+    ...(filters.from ? [{ key: "from" as const, label: `from: ${filters.from}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
+    ...(filters.to ? [{ key: "to" as const, label: `to: ${filters.to}` }] : []),
     ...(filters.real === "1" ? [{ key: "real" as const, label: "real-world only (severity 3–4)" }] : []),
   ];
 

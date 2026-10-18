@@ -57,29 +57,41 @@
   --color-sev-3: #ffb35c;
   --color-type-by: #9a76d4;
   --font-sans: var(--font-plex-mono), ui-monospace, monospace;
-  --sev-1: #295233;
-  --sev-2: #3b834e;
-  --sev-3: #43b966;
-  --sev-4: #56f487;
+  --sev-1: #5f482e;
+  --sev-2: #a06f30;
+  --sev-3: #e29936;
+  --sev-4: #ffc858;
   --type-attack_on_ai: #36a558;
   --type-ai_enabled_attack: #9a76d4;
   font-family: var(--font-plex-mono), ui-monospace, monospace;
 }
+/* family colours (validated on the phosphor surface too) */
 .lab-phosphor {
-  --cat-prompt_injection: #43b966;
-  --cat-jailbreak: #43b966;
-  --cat-infra_vuln: #43b966;
-  --cat-data_leak: #43b966;
-  --cat-model_theft_extraction: #43b966;
-  --cat-agent_hijack: #43b966;
-  --cat-supply_chain: #43b966;
-  --cat-data_poisoning: #43b966;
-  --cat-adversarial_evasion: #43b966;
-  --cat-deepfake_fraud: #43b966;
-  --cat-ai_phishing_social_engineering: #43b966;
-  --cat-ai_generated_malware: #43b966;
-  --cat-ai_assisted_intrusion: #43b966;
-  --cat-other: #2a6640;
+  --cat-prompt_injection: #b48500;
+  --cat-jailbreak: #b48500;
+  --cat-infra_vuln: #3a97cf;
+  --cat-data_leak: #cd639e;
+  --cat-model_theft_extraction: #cd639e;
+  --cat-agent_hijack: #779d24;
+  --cat-supply_chain: #887ede;
+  --cat-data_poisoning: #887ede;
+  --cat-adversarial_evasion: #887ede;
+  --cat-deepfake_fraud: #d86844;
+  --cat-ai_phishing_social_engineering: #d86844;
+  --cat-ai_generated_malware: #00a697;
+  --cat-ai_assisted_intrusion: #00a697;
+  --cat-other: #5b6478;
+}
+
+/* sleek banner: letters draw themselves in once */
+.sleek-draw {
+  stroke-dasharray: 1;
+  animation: sleek-draw 1s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+}
+@keyframes sleek-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
 }
 .lab-phosphor ::selection {
   background: rgba(86, 244, 135, 0.3);
@@ -237,6 +249,103 @@
     radial-gradient(1px 1px at 56% 8%, rgba(226, 232, 245, 0.3), transparent 60%);
 }
 
+/* ---------- Observatory hero: sticky, fades as the content covers it ---------- */
+.obs-hero {
+  --p: 0;
+  opacity: calc(1 - var(--p) * 1.1);
+  transform: translateY(calc(var(--p) * -56px)) scale(calc(1 - var(--p) * 0.045));
+  transform-origin: 50% 0;
+  filter: blur(calc(var(--p) * 6px));
+  will-change: opacity, transform;
+}
+.obs-field {
+  -webkit-mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (max-width: 1023px) {
+  .obs-field {
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    -webkit-mask-composite: source-over;
+    mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    mask-composite: add;
+  }
+}
+.obs-content::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: -96px;
+  height: 96px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--color-ground));
+}
+
+/* ---------- Report drawer ---------- */
+.drawer-scrim {
+  background: rgba(2, 4, 9, 0.58);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: lab-fade 0.2s ease both;
+}
+.drawer-panel {
+  animation: lab-drawer 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes lab-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes lab-drawer {
+  from {
+    transform: translateX(100%);
+    opacity: 0.6;
+  }
+}
+
+/* ---------- ASCII text forming (AsciiForm) ---------- */
+.ascii-form [data-c] {
+  position: relative;
+}
+.ascii-form[data-forming] [data-c]:not([data-done]) {
+  color: transparent;
+}
+.ascii-form[data-forming] [data-c][data-g]::after {
+  content: attr(data-g);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.72em;
+  line-height: 1;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px color-mix(in oklab, var(--color-accent) 55%, transparent);
+}
+.ascii-form [data-c][data-done] {
+  animation: ascii-land 0.38s ease-out both;
+}
+@keyframes ascii-land {
+  from {
+    color: var(--color-accent);
+    text-shadow: 0 0 14px color-mix(in oklab, var(--color-accent) 75%, transparent);
+  }
+}
+
+/* ---------- Bars that grow when their Reveal arrives ---------- */
+.grow-x {
+  transform-origin: left;
+}
+.reveal[data-in] .grow-x {
+  animation: lab-grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.reveal[data-armed="1"]:not([data-in]) .grow-x {
+  transform: scaleX(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal[data-armed="1"]:not([data-in]) {
@@ -245,7 +354,22 @@
     transform: none !important;
     filter: none !important;
   }
+  .obs-hero {
+    filter: none;
+    transform: none;
+  }
+  .sleek-shine {
+    display: none;
+  }
+  .reveal[data-armed="1"]:not([data-in]) .grow-x {
+    transform: none;
+  }
   .lab-grow,
+  .sleek-draw,
+  .grow-x,
+  .drawer-scrim,
+  .drawer-panel,
+  .ascii-form [data-c][data-done],
   .ticker,
   .scroll-cue,
   .live-dot,

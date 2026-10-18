@@ -14,6 +14,7 @@ import {
   inWindow,
   isRealWorld,
   latest,
+  monthKey,
   monthlySeries,
   primaryCategory,
   severityDistribution,
@@ -62,6 +63,19 @@ function matches(r: CompactRow, s: Selection, field: DateField): boolean {
       return r.severity === s.severity;
     case "category":
       return primaryCategory(r) === s.category;
+    case "type":
+      return r.type === s.type;
+    case "window":
+      return true;
+    case "real":
+      return isRealWorld(r);
+    case "range": {
+      // Mirrors headline(): month tiles skip year-only dates, year tiles keep them; toDate caps "same period last year".
+      const d = dateOf(r, field);
+      if (s.byYear) return d.slice(0, 4) >= s.from.slice(0, 4) && d.slice(0, 4) <= s.to.slice(0, 4) && (!s.toDate || d <= s.toDate);
+      const k = monthKey(d);
+      return k !== null && k >= s.from && k <= s.to;
+    }
   }
 }
 
@@ -95,7 +109,26 @@ export function useDashboardModel(data: DashboardData) {
   const latestRows = useMemo(() => latest(basisRows, 12), [basisRows]);
   const realInWindow = useMemo(() => rows.filter(isRealWorld).length, [rows]);
   const allInWindow = useMemo(() => inWindow(data.rows, from, to, field).length, [data.rows, from, to, field]);
-  const selected = useMemo(() => (selection ? rows.filter((r) => matches(r, selection, field)) : []), [selection, rows, field]);
+  // A month range (trailing 12 months, year to date) can reach outside the window, so it reads the whole set.
+  const selected = useMemo(
+    () => (selection ? (selection.kind === "range" ? basisRows : rows).filter((r) => matches(r, selection, field)) : []),
+    [selection, rows, basisRows, field],
+  );
+
+  /** Selections behind every headline number, so each one opens its incidents. */
+  const picks = useMemo(() => {
+    const year = now.getUTCFullYear();
+    const today = now.toISOString().slice(0, 10);
+    const range = (from: string, to: string, label: string, extra: Partial<Extract<Selection, { kind: "range" }>> = {}): Selection => ({ kind: "range", from, to, label, ...extra });
+    return {
+      thisMonth: range(h.thisMonthKey, h.thisMonthKey, `${monthLabel(h.thisMonthKey, true)} so far`),
+      lastMonth: range(h.lastMonthKey, h.lastMonthKey, monthLabel(h.lastMonthKey, true)),
+      trailing12: range(shiftMonth(h.thisMonthKey, -11), h.thisMonthKey, "Trailing 12 months"),
+      prior12: range(shiftMonth(h.thisMonthKey, -23), shiftMonth(h.thisMonthKey, -12), "The 12 months before that"),
+      ytd: range(`${year}-01`, h.thisMonthKey, `${year} to date`, { byYear: true }),
+      lastYtd: range(`${year - 1}-01`, `${year - 1}-12`, `${year - 1}, same period`, { byYear: true, toDate: `${year - 1}${today.slice(4)}` }),
+    } satisfies Record<string, Selection>;
+  }, [now, h.thisMonthKey, h.lastMonthKey]);
 
   /** Previous equal-length window, for "vs prior" deltas on window totals. */
   const priorCount = useMemo(() => {
@@ -134,6 +167,7 @@ export function useDashboardModel(data: DashboardData) {
     allInWindow,
     priorCount,
     selected,
+    picks,
     fieldLabel: field === "incident_date" ? "incident date" : "first report",
   };
 }
