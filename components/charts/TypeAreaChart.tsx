@@ -70,5 +70,3 @@ export function TypeAreaChart({ data, height = 220, compact = false, variant = "
     </div>
   );
 }
-
-export const typeLegend = INCIDENT_TYPES.map((t) => ({ key: t, label: TYPE_META[t].label, color: TYPE_COLORS[t] }));

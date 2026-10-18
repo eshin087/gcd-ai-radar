@@ -60,12 +60,3 @@ export function CategoryStackChart({ data, categories = CATEGORIES, height = 260
     </div>
   );
 }
-
-export function categoryLegend(categories: readonly Category[] = CATEGORIES, counts?: Partial<Record<Category, number>>) {
-  return categories.map((c) => ({
-    key: c,
-    label: CATEGORY_META[c].short,
-    color: CATEGORY_COLORS[c],
-    value: counts?.[c],
-  }));
-}

@@ -1,0 +1,6 @@
+# Normalise line endings to LF in the repository. The collector commits data
+# files from Linux runners; this keeps diffs free of CRLF noise.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary
