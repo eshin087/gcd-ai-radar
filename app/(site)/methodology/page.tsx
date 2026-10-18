@@ -165,6 +165,8 @@ export default function MethodologyPage() {
         system being attacked, and they would swamp the counts (TensorFlow alone had 299). The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
         packages across {Object.keys(packages.ghsa).length} ecosystems plus {packages.nvd_keywords.length} NVD search terms; it lives in the repository at{" "}
         <span className="num text-[12px]">collector/config/packages.json</span>.
+        Pre-LLM ML platforms (MLflow, NVIDIA Triton Inference Server, Ray), classic cloud ML services (Azure AI Search, Face and Language, Vertex AI
+        Workbench) and general apps whose CVE only touches an AI or MCP feature are excluded for the same reason.
       </p>
 
       <H2 id="sources">Sources we read, and sources we deliberately do not</H2>

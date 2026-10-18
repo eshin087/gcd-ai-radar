@@ -206,7 +206,7 @@ export const TARGET_META: Record<Target, { label: string; definition: string }> 
   },
   framework_or_tooling: {
     label: "Framework / tooling",
-    definition: "LangChain, vLLM, Ollama, MCP servers, Open WebUI, PyTorch, Hugging Face libraries and similar.",
+    definition: "LangChain, vLLM, Ollama, MCP servers, Open WebUI, Langflow, Hugging Face libraries and similar.",
   },
   enterprise_deployment: {
     label: "Enterprise deployment",

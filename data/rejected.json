@@ -1,5 +1,2425 @@
 [
   {
+    "key": "57b835d01ecdfd10",
+    "title": "CVE-2026-59970: Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59970",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"tandoor recipes\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "90c471708f980604",
+    "title": "CVE-2026-94486: Next.js is a React framework for building full-stack web applications.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94486",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"next.js\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e1d421c1da45052d",
+    "title": "CVE-2026-94485: Next.js is a React framework for building full-stack web applications.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94485",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"next.js\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "77d1ff01b3708f98",
+    "title": "CVE-2026-96804: MLflow's statsmodel flavor, versions 2.1.0 to 3.14.0, omits the MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False security control…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96804",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6d1f404d6dfe1487",
+    "title": "CVE-2026-96775: MLflow's dspy flavor, versions >= 2.0,  applies the MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False security control only when the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96775",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6f9b3aa0a115742c",
+    "title": "CVE-2026-93982: OpenPanel through 2.3.0 writes Model Context Protocol authentication tokens from URL query parameters to plaintext application…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93982",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"openpanel\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "7cd6e23388adbb9d",
+    "title": "CVE-2026-16497: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause excessive iteration.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16497",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "54aa9f5719e47db1",
+    "title": "CVE-2026-79721: Code execution can occur in versions of the MLflow platform running version 0.0.1 or newer, enabling a maliciously crafted model…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79721",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "74197bc0ba821a71",
+    "title": "CVE-2026-47625: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could abuse missing authorization.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47625",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ca707fb2f09c3285",
+    "title": "CVE-2026-70352: Missing authentication for critical function in Azure AI Language allows an unauthorized attacker to elevate privileges over a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70352",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"azure ai language\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "561ee4122b735282",
+    "title": "GHSA-gqvg-gmmx-x4hm: MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False safety control bypassed by mlflow.statsmodels flavor — RCE via crafted model artifact",
+    "url": "https://github.com/advisories/GHSA-gqvg-gmmx-x4hm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5aa6794760d290fc",
+    "title": "CVE-2026-19485: A Predictable Resource Name vulnerability in BigQuery Import Staging in Google Cloud Vertex AI Search for Commerce versions prior…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19485",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"vertex ai search for commerce\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1a512bc96567f8a5",
+    "title": "CVE-2026-47627: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause path traversal.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47627",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a0e90ee362b8631f",
+    "title": "CVE-2026-47630: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause an absolute path traversal.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47630",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0bd222d6e10c1b21",
+    "title": "CVE-2026-47629: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause improper input validation.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47629",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d5b300e73088ff07",
+    "title": "CVE-2026-47628: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause an allocation of resources…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47628",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b8913d34bf5a8429",
+    "title": "CVE-2026-47606: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker could cause an absolute path traversal.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47606",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3ec713bd4194aa1b",
+    "title": "CVE-2026-69146: MLflow is an open source AI engineering platform for agents, large language models, and machine learning models.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69146",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "46c070bba13b652d",
+    "title": "CVE-2026-69148: MLflow is an open source AI engineering platform for agents, large language models, and machine learning models.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69148",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "aab06037983ad16a",
+    "title": "CVE-2026-64849: MLflow is an open source AI engineering platform for agents, large language models, and machine learning models.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e5088257f8713113",
+    "title": "CVE-2026-64849: MLflow: Unauthenticated full-read SSRF in webhook delivery: _validate_webhook_url bypassed via unvalidated HTTP redirects (and DNS…",
+    "url": "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "57b0a0e62519eb31",
+    "title": "CVE-2026-71211:  MLflow AI Gateway permits SSRF through an unvalidated api_base",
+    "url": "https://github.com/advisories/GHSA-h7x2-h6g9-p789",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "25b3c2a56b43c225",
+    "title": "CVE-2026-71211: MLflow's AI Gateway accepts an auth_config.api_base value when creating a gateway secret (mlflow/server/handlers.py,…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71211",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "23e7713ce9888007",
+    "title": "CVE-2026-47487: NVIDIA Triton Inference Server for Linux contains a vulnerability where a user could cause files outside the model repository to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47487",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "78141190a1d3a044",
+    "title": "CVE-2026-56167: Server-side request forgery (ssrf) in Azure AI Search allows an authorized attacker to elevate privileges over a network.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56167",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"azure ai search\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "2b1cadf3363d6903",
+    "title": "CVE-2026-57516: Ray: Arbitrary code execution via ray.data.read_webdataset default decoder: pickle.loads(value) and torch.load(weights_only=False)",
+    "url": "https://github.com/advisories/GHSA-hhrp-gw25-jr43",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "7cec693ff7f471f0",
+    "title": "CVE-2026-59864: Kiota is an OpenAPI based HTTP Client code generator.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59864",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"kiota\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "95de69715b98eb51",
+    "title": "CVE-2026-47480: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause an uncaught exception.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47480",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "742947080d5199e9",
+    "title": "CVE-2026-47477: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause a stack-based buffer overflow.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47477",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f2c693814a913323",
+    "title": "CVE-2026-47479: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause uncontrolled resource consumption.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47479",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "444ca434f572b1f4",
+    "title": "CVE-2026-47476: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause uncontrolled resource consumption.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47476",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6e8731a7cbfa347d",
+    "title": "CVE-2026-47478: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause the use of an expired file…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47478",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "bc0bed770a02c3ac",
+    "title": "CVE-2026-47482: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause missing release of memory after…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47482",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "544ffeba35980da7",
+    "title": "CVE-2026-47481: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause an authentication bypass through an…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47481",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "04e1b9bea6473fab",
+    "title": "CVE-2026-8147: MLflow: trace API endpoints lack proper authorization validators",
+    "url": "https://github.com/advisories/GHSA-2cm6-r77w-6g96",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "cfbaf2377e09b831",
+    "title": "CVE-2026-8147: In MLflow versions prior to 3.14.0, when running with authentication enabled, the trace API endpoints lack proper authorization…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8147",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f560d0dd13da7cca",
+    "title": "CVE-2026-24266: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause a use-after-free issue.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24266",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "898d59f764c36e7b",
+    "title": "CVE-2026-24264: NVIDIA Triton Inference Server for Linux contains a vulnerability where an attacker can cause improper handling of highly…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24264",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0bc3f4ddf7d715e7",
+    "title": "CVE-2026-13484: A vulnerability has been found in MLflow up to 4666cffc7912ea606d592fc38d6a75e2935f65e7.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13484",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "7d03dcca78aa146b",
+    "title": "CVE-2026-10803: MLflow: Deterministic sampling in dataset digest enables predictable collisions",
+    "url": "https://github.com/advisories/GHSA-5qmp-p3c4-72qj",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a136135d939b82f0",
+    "title": "CVE-2026-10803: A flaw has been found in MLflow up to 3.10.0.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10803",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1285bcf61aeb0733",
+    "title": "CVE-2026-4035: MLflow: Environment variable injection in AI Gateway secrets enables server-side credential exfiltration",
+    "url": "https://github.com/advisories/GHSA-g35p-px32-whv6",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "858a301f53da7e40",
+    "title": "CVE-2026-4035: A vulnerability in mlflow/mlflow versions prior to 3.11.0 allows for the resolution of environment variables in AI Gateway…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4035",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dc1c9bae1afef55a",
+    "title": "CVE-2026-3198: MLflow: Any authenticated user can enumerate all gateway secrets, endpoints, and model definitions",
+    "url": "https://github.com/advisories/GHSA-r5m9-wm49-959f",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "17a8bb5defdd33b9",
+    "title": "CVE-2026-3198: MLflow 3.9.0 with basic-auth (`--app-name basic-auth`) fails to enforce authorization checks for multiple Gateway API 'list'…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3198",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9bdc5a7fe3ac160c",
+    "title": "CVE-2026-2651: A vulnerability in MLflow versions <=3.10.1.dev0 allows unauthorized access to multipart upload (MPU) endpoints when the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2651",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "7d12e67435bd59e2",
+    "title": "CVE-2026-2651: MLflow allows unauthorized access to multipart upload endpoints when the `--serve-artifacts` mode is enabled",
+    "url": "https://github.com/advisories/GHSA-8c7q-86fq-vvmh",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3e9ae3dbed231fb3",
+    "title": "CVE-2026-2734: MLflow authenticated users can enumerate any registered model versions due to lack of per-model permissions checks",
+    "url": "https://github.com/advisories/GHSA-w5xq-c4pf-ghq7",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "cc199821ff308f84",
+    "title": "CVE-2026-2734: In mlflow/mlflow versions up to 3.9.0, the `SearchModelVersions` REST API endpoint and the `mlflowSearchModelVersions` GraphQL…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2734",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "2aa8a9ec5d432563",
+    "title": "CVE-2026-24210: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause an integer overflow.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24210",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "cf87c1498a56b7bc",
+    "title": "CVE-2026-24209: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a path traversal issue.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24209",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "85b6b34575ccd679",
+    "title": "CVE-2026-24208: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a path traversal issue.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24208",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0f430d2563d5d8ae",
+    "title": "CVE-2026-24215: NVIDIA Triton Inference Server contains a vulnerability in the DALI backend, where an attacker could cause uncontrolled resource…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24215",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e2dd4decf82d27e9",
+    "title": "CVE-2026-24214: NVIDIA Triton Inference Server contains a vulnerability in the DALI backend where an attacker could cause an integer overflow.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24214",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f2829273a2e4aaee",
+    "title": "CVE-2026-24206: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause an authentication bypass.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24206",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5e1a8548c94ef988",
+    "title": "CVE-2026-24213: NVIDIA Triton Inference Server contains a vulnerability in the DALI backend where an attacker could cause an out-of-bounds read.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24213",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "73d35a3d6d6e22e7",
+    "title": "CVE-2026-24207: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause an authentication bypass.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24207",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b6a6e8db4f387dcf",
+    "title": "CVE-2026-2611: MLflow: Improper Origin Validation in MLflow Assistant /ajax-api Endpoints Enables Browser-Mediated Local Command Execution",
+    "url": "https://github.com/advisories/GHSA-67c5-x5mf-rppq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5a6dfb967c0ee87c",
+    "title": "CVE-2026-2611: In MLflow version 3.9.0, the MLflow Assistant feature introduced improper origin validation in its /ajax-api endpoints.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2611",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dca2d13d7dd09596",
+    "title": "CVE-2026-4137: MLFlow Creates a Temporary File With Insecure Permissions ",
+    "url": "https://github.com/advisories/GHSA-f2m9-wcf4-cwwx",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ec61935a190e0230",
+    "title": "CVE-2026-4137: In mlflow/mlflow versions prior to 3.11.0, the `get_or_create_nfs_tmp_dir()` function in `mlflow/utils/file_utils.py` creates…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4137",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "977a5747b80f8c5f",
+    "title": "CVE-2026-2652: MLflow: unauthenticated access to certain FastAPI routes",
+    "url": "https://github.com/advisories/GHSA-75cm-x2w3-8mgf",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "39e2f5780360efb1",
+    "title": "CVE-2026-2652: A vulnerability in mlflow/mlflow versions 3.9.0 and earlier allows unauthenticated access to certain FastAPI routes when the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2652",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0819e93cefba37ca",
+    "title": "CVE-2026-2614: MLflow allows an unauthenticated remote attacker to read arbitrary files from the server's filesystem",
+    "url": "https://github.com/advisories/GHSA-42h5-h8qh-vv9v",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d5a56434c7870f37",
+    "title": "CVE-2026-2614: A vulnerability in the `_create_model_version()` handler of `mlflow/server/handlers.py` in mlflow/mlflow versions 3.9.0 and…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2614",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "318ab3e4080d424a",
+    "title": "CVE-2026-2393: MLflow Has a Server-Side Request Forgery (SSRF) Vulnerability",
+    "url": "https://github.com/advisories/GHSA-65h7-c7c4-mghx",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "27299dafd5160203",
+    "title": "CVE-2026-2393: A Server-Side Request Forgery (SSRF) vulnerability exists in MLflow versions prior to 3.9.0.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2393",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5a79e1b774312289",
+    "title": "CVE-2026-41486: Ray: Remote Code Execution via Parquet Arrow Extension Type Deserialization",
+    "url": "https://github.com/advisories/GHSA-mw35-8rx3-xf9r",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "86cbdd2180090709",
+    "title": "CVE-2026-24174: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a server crash by sending a malformed…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24174",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5eaaf31fb4f21b70",
+    "title": "CVE-2026-24173: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a server crash by sending a malformed…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24173",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f343395841eb0de3",
+    "title": "CVE-2026-24146: NVIDIA Triton Inference Server contains a vulnerability where insufficient input validation and a large number of outputs could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24146",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "33396c432a2006dd",
+    "title": "CVE-2026-24175: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a server crash by sending a malformed…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24175",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c3adf7f0e29dd7d7",
+    "title": "CVE-2026-24147: NVIDIA Triton Inference Server contains a vulnerability in triton server where an attacker may cause an information disclosure by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24147",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9d63dc7a3211b47d",
+    "title": "CVE-2026-33866: MLflow is vulnerable to an authorization bypass affecting the AJAX endpoint",
+    "url": "https://github.com/advisories/GHSA-46r5-x6jq-v8g6",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "544ab23d6dc59828",
+    "title": "CVE-2026-33866: MLflow is vulnerable to an authorization bypass affecting the AJAX endpoint used to download saved model artifacts.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33866",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ae1c6c0810118e83",
+    "title": "CVE-2026-33865: MLflow is vulnerable to Stored Cross-Site Scripting (XSS) caused by unsafe parsing of YAML-based MLmodel artifacts in its web interface",
+    "url": "https://github.com/advisories/GHSA-fh64-r2vc-xvhr",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "8024e38c38d2e854",
+    "title": "CVE-2026-33865: MLflow is vulnerable to Stored Cross-Site Scripting (XSS) caused by unsafe parsing of YAML-based MLmodel artifacts in its web…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33865",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1d7d04f3e920d7ef",
+    "title": "CVE-2026-0545: mlflow: FastAPI job endpoints under `/ajax-api/3.0/jobs/*` are not protected by authentication or authorization",
+    "url": "https://github.com/advisories/GHSA-7qhf-v65m-g5f3",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3eb46a95a9993945",
+    "title": "CVE-2026-0545: In mlflow/mlflow, the FastAPI job endpoints under `/ajax-api/3.0/jobs/*` are not protected by authentication or authorization…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0545",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e224e69b023b8b68",
+    "title": "CVE-2026-0596: Mlflow: Command Injection when serving models with enable_mlserver=True",
+    "url": "https://github.com/advisories/GHSA-rvhj-8chj-8v3c",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d0d2d70bc614e516",
+    "title": "CVE-2026-0596: A command injection vulnerability exists in mlflow/mlflow when serving a model with `enable_mlserver=True`.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0596",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ae2fbacd183a2155",
+    "title": "CVE-2025-15036: MLFlow path traversal vulnerability",
+    "url": "https://github.com/advisories/GHSA-vhcx-3pq2-4fvc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dc19a171b9a33065",
+    "title": "CVE-2025-15036: A path traversal vulnerability exists in the `extract_archive_to_dir` function within the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15036",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1ed603029c6f1ce9",
+    "title": "CVE-2025-15379: MLflow Command Injection vulnerability",
+    "url": "https://github.com/advisories/GHSA-r23q-823p-vmf7",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "49b3710e8db271f5",
+    "title": "CVE-2025-15379: A command injection vulnerability exists in MLflow's model serving container initialization code, specifically in the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15379",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "073565f11c8ba8bd",
+    "title": "CVE-2025-15381: In the latest version of mlflow/mlflow, when the `basic-auth` app is enabled, tracing and assessment endpoints are not protected…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15381",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a700f76781a63e0a",
+    "title": "CVE-2025-15381: MLFlow allows Tracing + Assessments Access",
+    "url": "https://github.com/advisories/GHSA-g6pg-52vf-843h",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c80232ac1c52c81b",
+    "title": "CVE-2025-33254: NVIDIA Triton Inference Server contains a vulnerability where an attacker may cause internal state corruption.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33254",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "920d833b8cfda0eb",
+    "title": "CVE-2025-33238: NVIDIA Triton Inference Server Sagemaker HTTP server contains a vulnerability where an attacker may cause an exception.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33238",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d4f601fb98c75c6a",
+    "title": "CVE-2026-24158: NVIDIA Triton Inference Server contains a vulnerability in the HTTP endpoint where an attacker may cause a denial of service by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24158",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0995521a18ed7ce0",
+    "title": "CVE-2026-33401: Wallos is an open-source, self-hostable personal subscription tracker.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33401",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"wallos\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "30576308e4543d27",
+    "title": "CVE-2025-15031: A vulnerability in MLflow's pyfunc extraction process allows for arbitrary file writes due to improper handling of tar archive…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15031",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0e32f51de2415ac0",
+    "title": "CVE-2025-15031: Arbitrary file write via tar traversal in mlflow",
+    "url": "https://github.com/advisories/GHSA-fhff-qmm8-h2fp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9551f3f93d7b47f5",
+    "title": "CVE-2026-32981: A path traversal vulnerability was identified in Ray Dashboard (default port 8265) in Ray versions prior to 2.8.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32981",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e2ae68d3d40d8927",
+    "title": "CVE-2026-32981: Ray Dashboard is vulnerable to path traversal through its static file handling mechanism",
+    "url": "https://github.com/advisories/GHSA-j3mh-qmjj-xp83",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9c358a2b8a2e5ac6",
+    "title": "CVE-2025-14287: MLflow has a command injection in mlflow/sagemaker/__init__.py",
+    "url": "https://github.com/advisories/GHSA-xch3-2f9x-wh9f",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e72be1b7678b6ef8",
+    "title": "CVE-2025-14287: A command injection vulnerability exists in mlflow/mlflow versions before v3.7.0, specifically in the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14287",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "89011276df3f55f8",
+    "title": "CVE-2026-2244: A vulnerability in Google Cloud Vertex AI Workbench from 7/21/2025 to 01/30/2026 allows an attacker to exfiltrate valid Google…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2244",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"vertex ai workbench\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a662a13c36281d43",
+    "title": "CVE-2026-2472: Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2472",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"google-cloud-aiplatform\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "035554fdc8dc1865",
+    "title": "CVE-2026-2473: Predictable bucket naming in Vertex AI Experiments in Google Cloud Vertex AI from version 1.21.0 up to (but not including)…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2473",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"vertex ai experiments\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5c79f70567efb507",
+    "title": "CVE-2026-2635: MLflow Use of Default Password Authentication Bypass Vulnerability.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2635",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "4f6a61778dedcf92",
+    "title": "CVE-2026-2635: MLflow Use of Default Password Authentication Bypass Vulnerability",
+    "url": "https://github.com/advisories/GHSA-gq3w-7jj3-x7gr",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "8a23e6d5dd064c4f",
+    "title": "CVE-2026-2033: MLflow Tracking Server Artifact Handler Directory Traversal Remote Code Execution Vulnerability.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2033",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6ace389bfc130436",
+    "title": "CVE-2026-2033: MLflow Tracking Server Artifact Handler Directory Traversal Remote Code Execution Vulnerability",
+    "url": "https://github.com/advisories/GHSA-q2r8-vmq7-fpx2",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "8689bc5251e52136",
+    "title": "CVE-2026-27482: Ray dashboard DELETE endpoints allow unauthenticated browser-triggered DoS (Serve shutdown / job deletion)",
+    "url": "https://github.com/advisories/GHSA-q5fh-2hc8-f6rq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d45b2b3dad914e7c",
+    "title": "CVE-2025-10279: mlflow Creates of Temporary File in Directory with Insecure Permissions",
+    "url": "https://github.com/advisories/GHSA-4x5p-f36r-mxxr",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f83c0e9995d2904a",
+    "title": "CVE-2025-10279: In mlflow version 2.20.3, the temporary directory used for creating Python virtual environments is assigned insecure…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10279",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "4a62c8f6337b2a3f",
+    "title": "CVE-2025-14279: MLFlow is vulnerable to DNS rebinding attacks due to a lack of Origin header validation",
+    "url": "https://github.com/advisories/GHSA-pgqp-8h46-6x4j",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ba83660df39030f4",
+    "title": "CVE-2025-14279: MLFlow versions up to and including 3.4.0 are vulnerable to DNS rebinding attacks due to a lack of Origin header validation in…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14279",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "09f5a93376ac7527",
+    "title": "CVE-2025-33201: NVIDIA Triton Inference Server contains a vulnerability where an attacker may cause an improper check for unusual or exceptional…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33201",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9ec52683107230b6",
+    "title": "CVE-2025-34351: Ray's New Token Authentication is Disabled By Default",
+    "url": "https://github.com/advisories/GHSA-gx77-xgc2-4888",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ac6570a072b9e657",
+    "title": "CVE-2025-62593: Ray is vulnerable to Critical RCE via Safari & Firefox Browsers through DNS Rebinding Attack",
+    "url": "https://github.com/advisories/GHSA-q279-jhrf-cc6v",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ac090bd96d479577",
+    "title": "CVE-2025-33202: NVIDIA Triton Inference Server for Linux and Windows contains a vulnerability where an attacker could cause a stack overflow by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33202",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "bb2552367214fd4a",
+    "title": "CVE-2025-11200: MLflow Weak Password Requirements Authentication Bypass Vulnerability",
+    "url": "https://github.com/advisories/GHSA-6xj8-rrqx-r4cv",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "66064ad24bc887f0",
+    "title": "CVE-2025-11200: MLflow Weak Password Requirements Authentication Bypass Vulnerability.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11200",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "67b4fa69d5013817",
+    "title": "CVE-2025-11201: MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerability",
+    "url": "https://github.com/advisories/GHSA-5cvj-7rg6-jggj",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a3867280425d3bc4",
+    "title": "CVE-2025-11201: MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerability.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11201",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "beef4479d5a2826e",
+    "title": "CVE-2025-23268: NVIDIA Triton Inference Server contains a vulnerability in the DALI backend where an attacker may cause an improper input…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23268",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9dd1b4a6acfb8bac",
+    "title": "CVE-2025-23336: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause a denial of service…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23336",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5cce0f966f36a16e",
+    "title": "CVE-2025-23328: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause an out-of-bounds…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23328",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f9642a960a7370f4",
+    "title": "CVE-2025-23329: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause memory corruption by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23329",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "2bb0d8b02c6f38f6",
+    "title": "CVE-2025-23316: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23316",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b7350417ffd67b1d",
+    "title": "CVE-2025-23321: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where a user could cause a divide by zero issue by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23321",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3f7c37b148129b97",
+    "title": "CVE-2025-23326: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause an integer overflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23326",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "528cc7c4ba34a9e4",
+    "title": "CVE-2025-23325: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause uncontrolled…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23325",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "07a76eaf997b2099",
+    "title": "CVE-2025-23322: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where multiple requests could cause a double free…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23322",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b15d36f7d0bfd640",
+    "title": "CVE-2025-23327: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause an integer overflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23327",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d2ab1b31b0f36a36",
+    "title": "CVE-2025-23334: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23334",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e73c082f4ec30bef",
+    "title": "CVE-2025-23333: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23333",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "24fc529457740c7d",
+    "title": "CVE-2025-23335: NVIDIA Triton Inference Server for Windows and Linux and the Tensor RT backend contain a vulnerability where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23335",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c8865a61a69cfb53",
+    "title": "CVE-2025-23323: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where a user could cause an integer overflow or…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23323",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "73215b408bd47114",
+    "title": "CVE-2025-23324: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where a user could cause an integer overflow or…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23324",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3682bedb9dd80547",
+    "title": "CVE-2025-23320: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23320",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "47c4130e194b1175",
+    "title": "CVE-2025-23311: NVIDIA Triton Inference Server contains a vulnerability where an attacker could cause a stack overflow through specially crafted…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23311",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6f7e0ded1d31f2fa",
+    "title": "CVE-2025-23318: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23318",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a924159a9ce717de",
+    "title": "CVE-2025-23331: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where a user could cause a memory allocation with…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23331",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "4b3509eec197bd81",
+    "title": "CVE-2025-23310: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability where an attacker could cause stack buffer overflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23310",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "03b85d3683b08f29",
+    "title": "CVE-2025-23317: NVIDIA Triton Inference Server contains a vulnerability in the HTTP server, where an attacker could start a reverse shell by…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23317",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "52e3dcd32b2ff70e",
+    "title": "CVE-2025-23319: NVIDIA Triton Inference Server for Windows and Linux contains a vulnerability in the Python backend, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23319",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9339927b0f1f0d45",
+    "title": "CVE-2025-54424: 1Panel is a web interface and MCP Server that manages websites, files, containers, databases, and LLMs on a Linux server.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54424",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"1panel\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ea2a669ec5ab6361",
+    "title": "CVE-2025-52967: MLFlow SSRF via gateway_proxy_handler",
+    "url": "https://github.com/advisories/GHSA-wxj7-3fx5-pp9m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e9e0a7d342584b14",
+    "title": "CVE-2025-52967: gateway_proxy_handler in MLflow before 3.1.0 lacks gateway_path validation.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-52967",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ed8839df72d4cbce",
+    "title": "CVE-2025-1473: MLflow Cross-Site Request Forgery (CSRF) vulnerability",
+    "url": "https://github.com/advisories/GHSA-969w-gqqr-g6j3",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "398a43c59726ed17",
+    "title": "CVE-2025-1473: A Cross-Site Request Forgery (CSRF) vulnerability exists in the Signup feature of mlflow/mlflow versions 2.17.0 to 2.20.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1473",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d49b05c8b970ca07",
+    "title": "CVE-2025-1474: MLflow has Weak Password Requirements",
+    "url": "https://github.com/advisories/GHSA-4rj2-9gcx-5qhx",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "78d0ea09a59f1f03",
+    "title": "CVE-2025-1474: In mlflow/mlflow version 2.18, an admin is able to create a new user account without setting a password.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1474",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "52a3541b05753ef4",
+    "title": "CVE-2025-0453: MLflow Uncontrolled Resource Consumption vulnerability",
+    "url": "https://github.com/advisories/GHSA-49m6-vrr9-2cqm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "645e918c0c35a37b",
+    "title": "CVE-2025-0453: In mlflow/mlflow version 2.17.2, the `/graphql` endpoint is vulnerable to a denial of service attack.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-0453",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "434aeac6975f7bec",
+    "title": "CVE-2024-6838: MLflow Uncontrolled Resource Consumption vulnerability",
+    "url": "https://github.com/advisories/GHSA-q3gw-8236-5jw4",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9a077351db2a1d9c",
+    "title": "CVE-2024-6838: In mlflow/mlflow version v2.13.2, a vulnerability exists that allows the creation or renaming of an experiment with a large…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6838",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "22d12ad1cb9b335d",
+    "title": "CVE-2024-8859: MLflow has a Local File Read/Path Traversal in dbfs",
+    "url": "https://github.com/advisories/GHSA-4rqf-8pfm-p36r",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0d8a333c111357fa",
+    "title": "CVE-2024-8859: A path traversal vulnerability exists in mlflow/mlflow version 2.15.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8859",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1bd3e5cb9c3cb18e",
+    "title": "CVE-2025-1979: ray vulnerable to Insertion of Sensitive Information into Log File",
+    "url": "https://github.com/advisories/GHSA-w4rh-fgx7-q63m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "aadb7342963e6f78",
+    "title": "CVE-2024-53880: NVIDIA Triton Inference Server contains a vulnerability in the model loading API, where a user could cause an integer overflow or…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53880",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3ee49ff085a7bfae",
+    "title": "CVE-2025-21415: Authentication bypass by spoofing in Azure AI Face Service allows an authorized attacker to elevate privileges over a network.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21415",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"azure ai face service\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "14d1a1dacf98647d",
+    "title": "CVE-2024-27134: MLflow's excessive directory permissions allow local privilege escalation",
+    "url": "https://github.com/advisories/GHSA-qpgc-w4mg-6v92",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "857566f4b74eab37",
+    "title": "CVE-2024-27134: Excessive directory permissions in MLflow leads to local privilege escalation when using spark_udf.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27134",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d1e9489541e0ffb6",
+    "title": "CVE-2024-0116: NVIDIA Triton Inference Server contains a vulnerability where a user may cause an out-of-bounds read issue by releasing a shared…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0116",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1ab23c76ab11cd7e",
+    "title": "CVE-2024-37288: A deserialization issue in Kibana can lead to arbitrary code execution when Kibana attempts to parse a YAML document containing a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37288",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"kibana\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0e1664c451c69402",
+    "title": "CVE-2024-0103: NVIDIA Triton Inference Server for Linux contains a vulnerability where a user may cause an incorrect Initialization of resource…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0103",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "537dca67dd9bd755",
+    "title": "CVE-2024-0095: NVIDIA Triton Inference Server for Linux and Windows contains a vulnerability where a user can inject forged logs and executable…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0095",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "76c273e9ac5a9c6e",
+    "title": "CVE-2024-3099: Undefined Behavior in mlflow",
+    "url": "https://github.com/advisories/GHSA-8f8q-q2j7-7j2m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "4c52b4db26354a53",
+    "title": "CVE-2024-3099: A vulnerability in mlflow/mlflow version 2.11.1 allows attackers to create multiple models with the same name by exploiting URL…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3099",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c75dfe87b4d193e8",
+    "title": "CVE-2024-2928: Local File Inclusion in mlflow",
+    "url": "https://github.com/advisories/GHSA-j46q-5pxx-8vmw",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "cf18d731d06abb35",
+    "title": "CVE-2024-2928: A Local File Inclusion (LFI) vulnerability was identified in mlflow/mlflow, specifically in version 2.9.2, which was fixed in…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-2928",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "43327e5a0468b21c",
+    "title": "CVE-2024-0520: Remote code execution in mlflow",
+    "url": "https://github.com/advisories/GHSA-5q6c-ffvg-xcm9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "954f6d3d620d33de",
+    "title": "CVE-2024-0520: A vulnerability in mlflow/mlflow version 8.2.1 allows for remote code execution due to improper neutralization of special…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0520",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9b3a298adb552dce",
+    "title": "CVE-2024-37054: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-ghv6-9r9j-wh4j",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a8de8c1b2353b1e0",
+    "title": "CVE-2024-37054: Deserialization of untrusted data can occur in versions of the MLflow platform running version 0.9.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37054",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f56bfcacdd5a8a37",
+    "title": "CVE-2024-37059: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-wf7f-8fxf-xfxc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "6077063480550cac",
+    "title": "CVE-2024-37059: Deserialization of untrusted data can occur in versions of the MLflow platform running version 0.5.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37059",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "df597eb6c2a09afc",
+    "title": "CVE-2024-37061: MLFlow improper input validation",
+    "url": "https://github.com/advisories/GHSA-pqcv-qw2r-r859",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "197e0f0df8345c51",
+    "title": "CVE-2024-37061: Remote Code Execution can occur in versions of the MLflow platform running version 1.11.0 or newer, enabling a maliciously…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37061",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1506cfb9a2cbb592",
+    "title": "CVE-2024-37055: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-x38x-g6gr-jqff",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "25fa413a600a4f5c",
+    "title": "CVE-2024-37055: Deserialization of untrusted data can occur in versions of the MLflow platform running version 1.24.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37055",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f4d2859240df9803",
+    "title": "CVE-2024-37052: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-76cg-cfhx-373f",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a72d291ba0148523",
+    "title": "CVE-2024-37052: Deserialization of untrusted data can occur in versions of the MLflow platform running version 1.1.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37052",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "bf33f1c114abb922",
+    "title": "CVE-2024-37053: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-43c4-9qgj-x742",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b901d7326538d73c",
+    "title": "CVE-2024-37053: Deserialization of untrusted data can occur in versions of the MLflow platform running version 1.1.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37053",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f37f60f6942a4c80",
+    "title": "CVE-2024-37057: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-j8mg-pqc5-x9gj",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5c59f60cf517244f",
+    "title": "CVE-2024-37057: Deserialization of untrusted data can occur in versions of the MLflow platform running version 2.0.0rc0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37057",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "03f1c87a0748c4c5",
+    "title": "CVE-2024-37056: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-7p8j-qv6x-f4g4",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c5ad282e00324503",
+    "title": "CVE-2024-37056: Deserialization of untrusted data can occur in versions of the MLflow platform running version 1.23.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37056",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1dbc527188daa42b",
+    "title": "CVE-2024-37058: MLFlow unsafe deserialization",
+    "url": "https://github.com/advisories/GHSA-cwgg-w6mp-w9hg",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9baf6eeb867ed75e",
+    "title": "CVE-2024-37058: Deserialization of untrusted data can occur in versions of the MLflow platform running version 2.5.0 or newer, enabling a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37058",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "17e60c8fe707126a",
+    "title": "CVE-2024-4263: MLflow allows low privilege users to delete any artifact",
+    "url": "https://github.com/advisories/GHSA-p4jx-q62p-x5jr",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "90088eb57ee11e9a",
+    "title": "CVE-2024-4263: A broken access control vulnerability exists in mlflow/mlflow versions before 2.10.1, where low privilege users with only EDIT…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4263",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "b59daaf1489a6d33",
+    "title": "CVE-2024-3848: MLflow has a Local File Read/Path Traversal bypass",
+    "url": "https://github.com/advisories/GHSA-rfqq-wq6w-72jm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dc8a25c37d40e21a",
+    "title": "CVE-2024-3848: A path traversal vulnerability exists in mlflow/mlflow version 2.11.0, identified as a bypass for the previously addressed…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3848",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0272c2c192ecf192",
+    "title": "CVE-2024-0100: NVIDIA Triton Inference Server for Linux contains a vulnerability in the tracing API, where a user can corrupt system files.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0100",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3bfdd35fbc8101a3",
+    "title": "CVE-2024-0088: NVIDIA Triton Inference Server for Linux contains a vulnerability in shared memory APIs, where a user can cause an improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0088",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "341ca443f56881ea",
+    "title": "CVE-2024-0087: NVIDIA Triton Inference Server for Linux contains a vulnerability where a user can set the logging location to an arbitrary file.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0087",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "30ebe9888c44c4a0",
+    "title": "CVE-2024-1483: mlflow Path Traversal vulnerability",
+    "url": "https://github.com/advisories/GHSA-f82r-jj5r-6g97",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "454519b555a50bf8",
+    "title": "CVE-2024-1483: A path traversal vulnerability exists in mlflow/mlflow version 2.9.2, allowing attackers to access arbitrary files on the server.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1483",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d1d17cd818af4549",
+    "title": "CVE-2024-1594: mlflow vulnerable to Path Traversal",
+    "url": "https://github.com/advisories/GHSA-m49c-5c52-6696",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "626cd31cb998423d",
+    "title": "CVE-2024-1594: A path traversal vulnerability exists in the mlflow/mlflow repository, specifically within the handling of the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1594",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e7365714f884677c",
+    "title": "CVE-2024-3573: mlflow vulnerable to Path Traversal",
+    "url": "https://github.com/advisories/GHSA-hq88-wg7q-gp4g",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "007d3f7ee79a9486",
+    "title": "CVE-2024-3573: mlflow/mlflow is vulnerable to Local File Inclusion (LFI) due to improper parsing of URIs, allowing attackers to bypass checks…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3573",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "680385048d1b9f20",
+    "title": "CVE-2024-1593: mlflow vulnerable to Path Traversal",
+    "url": "https://github.com/advisories/GHSA-f42m-mvfv-cgw5",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e181bdeab48c9149",
+    "title": "CVE-2024-1593: A path traversal vulnerability exists in the mlflow/mlflow repository due to improper handling of URL parameters.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1593",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e2aa4d42b03ffc82",
+    "title": "CVE-2024-1558: mlflow vulnerable to Path Traversal",
+    "url": "https://github.com/advisories/GHSA-j62r-wxqq-f3gf",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e9e2132f4eade190",
+    "title": "CVE-2024-1558: A path traversal vulnerability exists in the `_create_model_version()` function within `server/handlers.py` of the mlflow/mlflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1558",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "4d8721977f33ce44",
+    "title": "CVE-2024-1560: mlflow vulnerable to Path Traversal",
+    "url": "https://github.com/advisories/GHSA-5mvj-wmgj-7q8c",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "5f9605665e245d1d",
+    "title": "CVE-2024-1560: A path traversal vulnerability exists in the mlflow/mlflow repository, specifically within the artifact deletion functionality.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1560",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "57ff3c01dba6f99d",
+    "title": "CVE-2024-29063: Azure AI Search Information Disclosure Vulnerability",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-29063",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"azure ai search\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "fb0b2d4113068889",
+    "title": "CVE-2023-31036: NVIDIA Triton Inference Server for Linux and Windows contains a vulnerability where, when it is launched with the non-default…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-31036",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"triton inference server\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "01f4149ba68ac5c4",
+    "title": "CVE-2023-6975: MLFlow Path Traversal Vulnerability",
+    "url": "https://github.com/advisories/GHSA-hh8p-p8mp-gqhm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "97078c797e7ccef0",
+    "title": "CVE-2023-6909: Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.9.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6909",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "bbbd33c30d69a22d",
+    "title": "CVE-2023-6909: MLflow Path Traversal Vulnerability",
+    "url": "https://github.com/advisories/GHSA-5r3q-93q3-f978",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "ac5c50998f722175",
+    "title": "CVE-2023-6831: Path traversal in MLflow",
+    "url": "https://github.com/advisories/GHSA-554w-xh4j-8w64",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "a9c196d78d85b5f4",
+    "title": "CVE-2023-6831: Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.9.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6831",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "1217389046e0368f",
+    "title": "CVE-2023-6753: Path traversal in MLflow",
+    "url": "https://github.com/advisories/GHSA-v945-r3rc-6fjm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c8a32bbd8b3a8b7f",
+    "title": "CVE-2023-6753: Path Traversal in GitHub repository mlflow/mlflow prior to 2.9.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6753",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f11e3f70c846b8d2",
+    "title": "CVE-2023-6709: Jinja2 template injection in mlflow",
+    "url": "https://github.com/advisories/GHSA-cxfr-5q3r-2rc2",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "707c4798dec5ba13",
+    "title": "CVE-2023-6709: Improper Neutralization of Special Elements Used in a Template Engine in GitHub repository mlflow/mlflow prior to 2.9.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6709",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dd0170b87acf1718",
+    "title": "CVE-2023-6568: Cross-site Scripting (XSS) in MLflow",
+    "url": "https://github.com/advisories/GHSA-vwhf-3v6x-wff8",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "cda0b425ca3c39fa",
+    "title": "CVE-2023-6568: A reflected Cross-Site Scripting (XSS) vulnerability exists in the mlflow/mlflow repository, specifically within the handling of…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6568",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0fd0fdc8f656d4de",
+    "title": "CVE-2023-43472: An issue in MLFlow versions 2.8.1 and before allows a remote attacker to obtain sensitive information via a crafted request to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-43472",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "dac1c8759fa9674a",
+    "title": "CVE-2023-6015: MLflow allowed arbitrary files to be PUT onto the server.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6015",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "74fecbe7e164ab36",
+    "title": "CVE-2023-6014: MLflow authentication requirement bypass can allow a user to arbitrarily create an account",
+    "url": "https://github.com/advisories/GHSA-4qq5-mxxx-m6gg",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "78ed79b9a8448e63",
+    "title": "CVE-2023-6014: An attacker is able to arbitrarily create an account in MLflow bypassing any authentication requirment.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6014",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "58ecc711a00b0d80",
+    "title": "CVE-2023-6019: Ray OS Command Injection vulnerability",
+    "url": "https://github.com/advisories/GHSA-h3xg-wv58-5p43",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "3b5f3a093614d683",
+    "title": "CVE-2023-6019: A command injection existed in Ray's cpu_profile URL parameter allowing attackers to execute os commands on the system running…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6019",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f28760ddbb76c7b5",
+    "title": "CVE-2023-6021: Ray Path Traversal vulnerability",
+    "url": "https://github.com/advisories/GHSA-3pww-qvr8-6mhp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "9a551c80f38c09eb",
+    "title": "CVE-2023-6020: Ray Missing Authorization vulnerability",
+    "url": "https://github.com/advisories/GHSA-6cxr-8q3m-jwrr",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"ray\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "598c4de56b9d58d4",
+    "title": "CVE-2023-6018: Remote Code Execution due to Full Controled File Write in mlflow",
+    "url": "https://github.com/advisories/GHSA-5p3h-7fwh-92rc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "f82681b80b7d3fdf",
+    "title": "CVE-2023-6018: An attacker can overwrite any file on the server hosting MLflow without any authentication.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6018",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "81af88039fc75ce7",
+    "title": "CVE-2023-4033: mlflow vulnerable to OS Command Injection",
+    "url": "https://github.com/advisories/GHSA-ffw3-6378-cqgp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "0d5c0c0df7b46dec",
+    "title": "CVE-2023-4033: OS Command Injection in GitHub repository mlflow/mlflow prior to 2.6.0.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4033",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "159f95f3c2f296f0",
+    "title": "CVE-2023-3765: MLflow Path Traversal vulnerability",
+    "url": "https://github.com/advisories/GHSA-fmxj-6h9g-6vw3",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e28c3dafae487027",
+    "title": "CVE-2023-3765: Absolute Path Traversal in GitHub repository mlflow/mlflow prior to 2.5.0.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3765",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "acd0cfdbc0ae0f03",
+    "title": "CVE-2023-2780: mlflow Path Traversal vulnerability",
+    "url": "https://github.com/advisories/GHSA-wjq3-7jxx-whj9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "e895ead833c01236",
+    "title": "CVE-2023-2780: Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.3.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2780",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "fe6259d8225833a8",
+    "title": "CVE-2023-30172: A directory traversal vulnerability in the /get-artifact API method of the mlflow platform up to v2.0.1 allows attackers to read…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30172",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "2729057c767bd52f",
+    "title": "CVE-2023-2356: Relative path traversal in mlflow",
+    "url": "https://github.com/advisories/GHSA-x422-6qhv-p29g",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "2dcaf4031e5bc60a",
+    "title": "CVE-2023-2356: Relative Path Traversal in GitHub repository mlflow/mlflow prior to 2.3.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2356",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "c7617d693cd8edd5",
+    "title": "CVE-2023-1177: mlflow is vulnerable to remote file access in `mlflow server` and `mlflow ui` CLIs",
+    "url": "https://github.com/advisories/GHSA-xg73-94fp-g449",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "d44edbd0c03cc45a",
+    "title": "CVE-2023-1177: Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.2.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1177",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "fb9c54e310262474",
+    "title": "CVE-2023-1176: Remote file existence check vulnerability in `mlflow server` and `mlflow ui` CLIs",
+    "url": "https://github.com/advisories/GHSA-wp72-7hj9-5265",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "156fa207736def89",
+    "title": "CVE-2023-1176: Absolute Path Traversal in GitHub repository mlflow/mlflow prior to 2.2.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1176",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "535374fa636231c6",
+    "title": "CVE-2022-0736: Insecure Temporary File in GitHub repository mlflow/mlflow prior to 1.23.1.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0736",
+    "publisher": "NVD",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
+    "key": "54e933a51389e7f0",
+    "title": "CVE-2022-0736: Insecure Temporary File in mlflow",
+    "url": "https://github.com/advisories/GHSA-vqj2-4v8m-8vrq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "prune",
+    "reason": "package \"mlflow\" removed from the CVE allow-list (classic ML library or generic automation, not an AI system under attack)",
+    "confidence": null,
+    "rejected_at": "2026-10-18T18:20:35.359Z"
+  },
+  {
     "key": "f02525d693e297dd",
     "title": "GHSA-2vx9-7wpg-88jq: n8n: Legacy ExecuteWorkflow Node Bypassed File Path Restrictions",
     "url": "https://github.com/advisories/GHSA-2vx9-7wpg-88jq",
