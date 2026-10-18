@@ -48,7 +48,13 @@ export const gdeltAdapter: SourceAdapter = {
     const out = new Map<string, Candidate>();
     let first = true;
     let failures = 0;
+    let consecutiveFailures = 0;
+    const MAX_CONSECUTIVE = 4;
     for (const q of ctx.config.queries) {
+      if (consecutiveFailures >= MAX_CONSECUTIVE) {
+        log.warn(`gdelt: ${MAX_CONSECUTIVE} consecutive failures, stopping this run's GDELT pass early (the next run retries)`);
+        break;
+      }
       if (!first) await sleep(spacing_ms);
       first = false;
       const params = new URLSearchParams({
@@ -74,9 +80,11 @@ export const gdeltAdapter: SourceAdapter = {
         const body = res.body.trim();
         if (!body.startsWith("{")) {
           failures += 1;
+          consecutiveFailures += 1;
           log.debug(`gdelt: non-JSON reply for "${q}"`, { body: body.slice(0, 100) });
           continue;
         }
+        consecutiveFailures = 0;
         const data = JSON.parse(body) as { articles?: GdeltArticle[] };
         let added = 0;
         for (const a of data.articles ?? []) {
@@ -105,6 +113,7 @@ export const gdeltAdapter: SourceAdapter = {
         log.debug("gdelt query", { q, articles: data.articles?.length ?? 0, added });
       } catch (err) {
         failures += 1;
+        consecutiveFailures += 1;
         log.debug(`gdelt: "${q}" failed`, { error: errorMessage(err).slice(0, 120) });
       }
       if (ctx.limit && out.size >= ctx.limit) break;
