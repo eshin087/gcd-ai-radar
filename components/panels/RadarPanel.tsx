@@ -53,7 +53,7 @@ export function RadarPanel({ radar, sample = false, variant = "panel", className
     <section className={`${variant === "panel" ? "panel p-4" : ""} space-y-4 ${className}`} aria-label="AI traffic signal">
       <header className="flex items-start justify-between gap-3">
         <div>
-          <h2 className="text-[13px] font-medium">AI traffic signal</h2>
+          <h2 className="text-[15px] font-medium">AI traffic signal</h2>
           <p className="label mt-1 normal-case tracking-normal text-[11px]">
             Cloudflare Radar · last {radar.range}
             {sample && <span className="text-accent"> · sample values</span>}

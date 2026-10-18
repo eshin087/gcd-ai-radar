@@ -4,7 +4,7 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Too
 import { monthLabel } from "@/lib/format";
 import { TYPE_COLORS } from "@/lib/palette";
 import type { MonthlyPoint } from "@/lib/stats";
-import { INCIDENT_TYPES, TYPE_META } from "@/lib/taxonomy";
+import { INCIDENT_TYPES, TYPE_META, type IncidentType } from "@/lib/taxonomy";
 import { TooltipBox, type RechartsTooltipProps } from "./ChartTooltip";
 
 interface Props {
@@ -12,6 +12,7 @@ interface Props {
   height?: number;
   compact?: boolean;
   variant?: "area" | "bars";
+  onBarClick?: (month: string, type: IncidentType) => void;
 }
 
 function TypeTooltip({ active, payload, label }: RechartsTooltipProps) {
@@ -28,21 +29,21 @@ function TypeTooltip({ active, payload, label }: RechartsTooltipProps) {
   );
 }
 
-export function TypeAreaChart({ data, height = 220, compact = false, variant = "area" }: Props) {
+export function TypeAreaChart({ data, height = 240, compact = false, variant = "area", onBarClick }: Props) {
   const rows = data.map((p) => ({ month: p.month, ...p.byType }));
   const axes = (
     <>
       {!compact && <CartesianGrid vertical={false} />}
-      <XAxis dataKey="month" tickFormatter={(v: string) => monthLabel(v)} tickLine={false} axisLine={false} minTickGap={28} hide={compact} />
-      <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={40} hide={compact} />
-      <Tooltip content={<TypeTooltip />} cursor={{ stroke: "rgba(140,160,210,0.3)" }} />
+      <XAxis dataKey="month" tickFormatter={(v: string) => monthLabel(v)} tickLine={false} axisLine={false} minTickGap={32} hide={compact} />
+      <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={44} hide={compact} />
+      <Tooltip content={<TypeTooltip />} cursor={{ fill: "rgba(140,160,210,0.08)" }} />
     </>
   );
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
         {variant === "area" ? (
-          <AreaChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -16 }}>
+          <AreaChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -12 }}>
             {axes}
             {INCIDENT_TYPES.map((t) => (
               <Area
@@ -59,10 +60,18 @@ export function TypeAreaChart({ data, height = 220, compact = false, variant = "
             ))}
           </AreaChart>
         ) : (
-          <BarChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -16 }} barCategoryGap="20%">
+          <BarChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -12 }} barCategoryGap="18%">
             {axes}
             {INCIDENT_TYPES.map((t) => (
-              <Bar key={t} dataKey={t} fill={TYPE_COLORS[t]} isAnimationActive={false} radius={[2, 2, 0, 0]} />
+              <Bar
+                key={t}
+                dataKey={t}
+                stackId="type"
+                fill={TYPE_COLORS[t]}
+                isAnimationActive={false}
+                className={onBarClick ? "cursor-pointer" : undefined}
+                onClick={(d: { payload?: { month: string } }) => d?.payload && onBarClick?.(d.payload.month, t)}
+              />
             ))}
           </BarChart>
         )}

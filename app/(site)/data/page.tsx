@@ -34,7 +34,7 @@ export default async function DataPage() {
   const sized = await Promise.all(files.map(async (f) => ({ ...f, size: await sizeOf(f.href) })));
 
   return (
-    <div className="max-w-3xl space-y-8 text-[14px] leading-relaxed text-soft">
+    <div className="max-w-4xl space-y-8 text-[15px] leading-relaxed text-soft">
       <header>
         <h1 className="text-2xl font-semibold tracking-tight text-ink">Data</h1>
         <p className="mt-1 text-[13px] text-dim">
@@ -66,15 +66,15 @@ export default async function DataPage() {
       <section>
         <h2 className="label mb-2">Chart images</h2>
         <p className="text-[12.5px] text-dim mb-3">1200×630 PNGs for posts and slides, regenerated with the data. Link back to the site when you use them.</p>
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="grid gap-6">
           {OG_IMAGES.map((img) => (
             <li key={img.file} className="panel p-2">
               <a href={`/og/${img.file}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/og/${img.file}`} alt={img.title} width={600} height={315} className="w-full rounded-[2px]" />
+                <img src={`/og/${img.file}`} alt={img.title} width={1200} height={630} className="w-full rounded-[2px]" />
               </a>
               <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <span className="text-[12px] text-soft">{img.title}</span>
+                <span className="text-[14px] text-soft">{img.title}</span>
                 <a href={`/og/${img.file}`} className="num text-[11px] text-dim hover:text-ink">
                   {img.file}
                 </a>

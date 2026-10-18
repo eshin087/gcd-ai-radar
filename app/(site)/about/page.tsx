@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-2xl space-y-8 text-[14px] leading-relaxed text-soft">
+    <div className="max-w-2xl space-y-8 text-[15px] leading-relaxed text-soft">
       <header className="space-y-3">
         <div className="flex items-center gap-3">
           <RadarGlyph size={36} className="text-accent" />

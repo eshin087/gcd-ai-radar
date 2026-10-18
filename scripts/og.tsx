@@ -164,7 +164,7 @@ export async function renderOgImages(ctx: Ctx, outDir: string): Promise<string[]
   await fs.mkdir(outDir, { recursive: true });
   const { incidents, now } = ctx;
   const to = toMonthKey(now);
-  const from = shiftMonth(to, -35);
+  const from = shiftMonth(to, -23);
   const series = monthlySeries(incidents, { from, to });
   const recent = series.slice(-24);
   const h = headline(incidents, { now });

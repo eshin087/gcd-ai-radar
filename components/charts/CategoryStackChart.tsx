@@ -15,6 +15,7 @@ interface Props {
   compact?: boolean;
   /** Show shares (0-100%) instead of counts. */
   percent?: boolean;
+  onSegmentClick?: (month: string, category: Category) => void;
 }
 
 function flatten(data: MonthlyPoint[], categories: readonly Category[], percent: boolean) {
@@ -28,7 +29,7 @@ function flatten(data: MonthlyPoint[], categories: readonly Category[], percent:
   });
 }
 
-function StackTooltip({ active, payload, label }: RechartsTooltipProps & { percent?: boolean }) {
+function StackTooltip({ active, payload, label }: RechartsTooltipProps) {
   if (!active || !payload?.length) return null;
   const rows = payload
     .filter((e) => Number(e.value) > 0)
@@ -42,18 +43,26 @@ function StackTooltip({ active, payload, label }: RechartsTooltipProps & { perce
   return <TooltipBox title={`${monthLabel(String(label), true)} · ${total ?? ""}`} rows={rows} />;
 }
 
-export function CategoryStackChart({ data, categories = CATEGORIES, height = 260, compact = false, percent = false }: Props) {
+export function CategoryStackChart({ data, categories = CATEGORIES, height = 260, compact = false, percent = false, onSegmentClick }: Props) {
   const rows = flatten(data, categories, percent);
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -16 }} barCategoryGap="20%" stackOffset={percent ? "none" : "none"}>
+        <BarChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: compact ? 0 : -12 }} barCategoryGap="18%">
           {!compact && <CartesianGrid vertical={false} />}
-          <XAxis dataKey="month" tickFormatter={(v: string) => monthLabel(v)} tickLine={false} axisLine={false} minTickGap={28} hide={compact} />
-          <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={40} hide={compact} domain={percent ? [0, 100] : undefined} tickFormatter={(v: number) => (percent ? `${v}%` : String(v))} />
+          <XAxis dataKey="month" tickFormatter={(v: string) => monthLabel(v)} tickLine={false} axisLine={false} minTickGap={32} hide={compact} />
+          <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={44} hide={compact} domain={percent ? [0, 100] : undefined} tickFormatter={(v: number) => (percent ? `${v}%` : String(v))} />
           <Tooltip content={<StackTooltip />} cursor={{ fill: "rgba(140,160,210,0.08)" }} />
           {categories.map((c) => (
-            <Bar key={c} dataKey={c} stackId="cat" fill={CATEGORY_COLORS[c]} isAnimationActive={false} />
+            <Bar
+              key={c}
+              dataKey={c}
+              stackId="cat"
+              fill={CATEGORY_COLORS[c]}
+              isAnimationActive={false}
+              className={onSegmentClick ? "cursor-pointer" : undefined}
+              onClick={(d: { payload?: { month: string } }) => d?.payload && onSegmentClick?.(d.payload.month, c)}
+            />
           ))}
         </BarChart>
       </ResponsiveContainer>

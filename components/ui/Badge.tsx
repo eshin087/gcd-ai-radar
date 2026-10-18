@@ -5,7 +5,7 @@ function Chip({ color, children, title }: { color: string; children: React.React
   return (
     <span
       title={title}
-      className="inline-flex items-center gap-1.5 rounded-[3px] border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-[0.08em] whitespace-nowrap"
+      className="inline-flex items-center gap-1.5 rounded-[3px] border px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em] whitespace-nowrap"
       style={{ borderColor: `${color}55`, color, background: `${color}14` }}
     >
       {children}

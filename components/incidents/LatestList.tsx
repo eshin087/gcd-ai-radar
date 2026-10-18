@@ -140,9 +140,9 @@ export function LatestList({ incidents, variant = "rows", limit, hrefBase = "/in
     <ul className="divide-y divide-line-soft">
       {items.map((i) => (
         <li key={i.id} className="py-3 flex flex-col gap-1.5 sm:flex-row sm:items-start sm:gap-4">
-          <span className="num text-[11px] text-dim sm:w-24 shrink-0 sm:pt-0.5">{i.first_reported}</span>
+          <span className="num text-[12px] text-dim sm:w-24 shrink-0 sm:pt-0.5">{i.first_reported}</span>
           <div className="min-w-0 flex-1">
-            <Link href={href(hrefBase, i)} className="text-[13.5px] leading-snug text-ink hover:text-accent">
+            <Link href={href(hrefBase, i)} className="text-[14.5px] leading-snug text-ink hover:text-accent">
               {i.title}
             </Link>
             <div className="mt-1.5 flex flex-wrap gap-1.5">

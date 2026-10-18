@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-[9rem_1fr] gap-3 py-2 border-t border-line-soft text-[13px]">
+    <div className="grid grid-cols-[9rem_1fr] gap-3 py-2.5 border-t border-line-soft text-[14px]">
       <dt className="label pt-0.5">{label}</dt>
       <dd className="min-w-0">{children}</dd>
     </div>
@@ -63,7 +63,7 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
             <CategoryBadge key={c} category={c} short={false} />
           ))}
         </div>
-        <p className="text-[15px] text-soft leading-relaxed">{incident.summary}</p>
+        <p className="text-[16px] text-soft leading-relaxed">{incident.summary}</p>
       </header>
 
       <section>
@@ -130,7 +130,7 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
         </h2>
         <ol className="divide-y divide-line-soft border-y border-line-soft">
           {incident.sources.map((s) => (
-            <li key={s.url} className="py-2.5 grid gap-1 sm:grid-cols-[6.5rem_1fr] text-[13px]">
+            <li key={s.url} className="py-2.5 grid gap-1 sm:grid-cols-[6.5rem_1fr] text-[14px]">
               <span className="num text-[11px] text-dim pt-0.5">{s.published_at}</span>
               <div className="min-w-0">
                 <a href={s.url} rel="noopener noreferrer" target="_blank" className="text-ink hover:text-accent break-words">

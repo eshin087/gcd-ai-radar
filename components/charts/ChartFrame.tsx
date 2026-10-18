@@ -22,14 +22,14 @@ export function ChartFrame({ title, subtitle, aside, footer, children, className
       {(title || aside) && (
         <header className="flex items-start justify-between gap-4">
           <div>
-            {title && <h2 className="text-[13px] font-medium text-ink leading-tight">{title}</h2>}
-            {subtitle && <p className="label mt-1 normal-case tracking-normal text-[11px]">{subtitle}</p>}
+            {title && <h2 className="text-[15px] font-medium text-ink leading-tight">{title}</h2>}
+            {subtitle && <p className="label mt-1 normal-case tracking-normal text-[12.5px]">{subtitle}</p>}
           </div>
           {aside && <div className="shrink-0">{aside}</div>}
         </header>
       )}
       <div className="min-w-0">{children}</div>
-      {footer && <footer className="text-[11px] text-dim">{footer}</footer>}
+      {footer && <footer className="text-[12px] text-dim">{footer}</footer>}
     </section>
   );
 }

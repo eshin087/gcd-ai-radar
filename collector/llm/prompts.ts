@@ -35,7 +35,7 @@ TARGETS (1 to 6 from this controlled list; add free-text product names in produc
 ${TARGETS.map((t) => `- ${t}: ${TARGET_META[t].definition}`).join("\n")}
 
 FIELD RULES:
-- title: neutral, specific, at most 110 characters, names the product or actor and what happened; no publisher name, no clickbait, no trailing punctuation.
+- title: neutral, specific, at most 110 characters, names the product or actor and what happened; no publisher name, no clickbait, no trailing punctuation. For vulnerability records start with the CVE id when one exists ("CVE-2026-1234: …"); never start with a GHSA id or the words "Duplicate Advisory".
 - summary: exactly two sentences, at most 60 words, in your own words (never quote the source), stating what happened and the known impact or response. No speculation.
 - incident_date: when it happened or was disclosed, never later than the report date. Use YYYY-MM-DD with precision "day" when known, YYYY-MM with "month", or YYYY with "year".
 - products: specific product, model or library names (e.g. "ChatGPT", "vLLM", "Claude Code").

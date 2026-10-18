@@ -35,7 +35,7 @@ const SECTIONS = [
 export default function MethodologyPage() {
   const threshold = settings.confidence_threshold;
   return (
-    <div className="max-w-3xl text-[14px] leading-relaxed text-soft space-y-5">
+    <div className="max-w-3xl text-[15px] leading-relaxed text-soft space-y-5">
       <header className="space-y-3">
         <h1 className="text-2xl font-semibold tracking-tight text-ink">Methodology</h1>
         <p>
@@ -157,11 +157,14 @@ export default function MethodologyPage() {
 
       <H2 id="cves">Vulnerability records</H2>
       <p>
-        CVEs and advisories for an allow-list of AI frameworks, inference servers, agent tooling and AI products are incidents too. They enter at severity 2
-        (disclosed vulnerability) under <em>infrastructure vulnerability</em>, and move to severity 3 when CISA lists them as exploited or a vendor confirms
-        exploitation. They dominate raw volume, which is why every chart stacks severity and the real-world view exists. The allow-list has{" "}
-        {Object.values(packages.ghsa).flat().length} packages across {Object.keys(packages.ghsa).length} ecosystems plus {packages.nvd_keywords.length} NVD search
-        terms; it lives in the repository at <span className="num text-[12px]">collector/config/packages.json</span>.
+        CVEs and advisories for an allow-list of LLM and agent-era tooling (inference servers such as vLLM and Ollama, app builders such as Open WebUI, Langflow
+        and Flowise, frameworks such as LangChain, MCP SDKs, AI coding tools and AI products) are incidents too. They enter at severity 2 (disclosed
+        vulnerability) under <em>infrastructure vulnerability</em>, and move to severity 3 when CISA lists them as exploited or a vendor confirms exploitation.
+        They dominate raw volume, which is why every chart stacks severity and the real-world view exists. Classic deep-learning libraries (TensorFlow, Keras,
+        PyTorch, ONNX) and generic automation tools (n8n) are deliberately excluded: their memory-safety and web CVEs are about the library, not about an AI
+        system being attacked, and they would swamp the counts (TensorFlow alone had 277). The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
+        packages across {Object.keys(packages.ghsa).length} ecosystems plus {packages.nvd_keywords.length} NVD search terms; it lives in the repository at{" "}
+        <span className="num text-[12px]">collector/config/packages.json</span>.
       </p>
 
       <H2 id="sources">Sources we read, and sources we deliberately do not</H2>

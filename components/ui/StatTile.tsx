@@ -15,8 +15,8 @@ interface StatTileProps {
 }
 
 const SIZES = {
-  sm: "text-2xl",
-  md: "text-3xl",
+  sm: "text-3xl",
+  md: "text-4xl",
   lg: "text-5xl",
   xl: "text-7xl",
 };
@@ -25,7 +25,7 @@ export function Delta({ pct, className = "" }: { pct: number | null | undefined;
   if (pct === undefined) return null;
   const tone = deltaTone(pct);
   const color = tone === "up" ? "text-sev-3" : tone === "down" ? "text-type-by" : "text-dim";
-  return <span className={`num text-[12px] ${color} ${className}`}>{formatPct(pct)}</span>;
+  return <span className={`num text-[13px] ${color} ${className}`}>{formatPct(pct)}</span>;
 }
 
 export function StatTile({ label, value, deltaPct, compare, size = "md", accent = false, children, className = "", bare = false }: StatTileProps) {
@@ -38,7 +38,7 @@ export function StatTile({ label, value, deltaPct, compare, size = "md", accent 
         </span>
         <Delta pct={deltaPct} />
       </div>
-      {compare && <div className="text-[11px] text-dim">{compare}</div>}
+      {compare && <div className="text-[12px] text-dim">{compare}</div>}
       {children}
     </div>
   );

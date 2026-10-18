@@ -26,5 +26,6 @@ export const NAV = [
   { href: "/about", label: "About" },
 ] as const;
 
-/** Year the default dashboard window starts at (full range is available). */
-export const DEFAULT_START_YEAR = 2020;
+/** Default chart window in months; the toggle offers these choices plus the full range. */
+export const DEFAULT_WINDOW_MONTHS = 24;
+export const WINDOW_CHOICES = [12, 24, 36] as const;

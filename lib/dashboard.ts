@@ -1,68 +1,52 @@
 import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import type { Incident, Radar } from "./schema";
-import { DEFAULT_START_YEAR } from "./site";
-import {
-  categoryDistribution,
-  headline,
-  isRealWorld,
-  latest,
-  monthlySeries,
-  severityDistribution,
-  targetDistribution,
-  toMonthKey,
-  typeDistribution,
-  yearRange,
-  type CountRow,
-  type DateField,
-  type Headline,
-  type MonthlyPoint,
-} from "./stats";
-import type { Category, IncidentType, Severity, Target } from "./taxonomy";
+import { toMonthKey, yearRange } from "./stats";
 
 /**
- * Everything the dashboard renders, computed once at build time. Two bases
- * (all incidents / real-world only) × two date fields (when it happened /
- * when it was first reported) are precomputed so the toggles are instant.
+ * Build-time payload for the dashboard. Charts, tiles and drill-downs are
+ * computed in the browser from a compact row per incident, so the window,
+ * basis and date-field toggles never need precomputed variants.
  */
 
 export type Basis = "all" | "real";
-export const BASES: readonly Basis[] = ["all", "real"];
-export const DATE_FIELDS: readonly DateField[] = ["incident_date", "first_reported"];
 
-export interface BasisData {
-  total: number;
-  headline: Record<DateField, Headline>;
-  /** Full-window monthly series per date field (slice client-side for the default window). */
-  series: Record<DateField, MonthlyPoint[]>;
-  categories: CountRow<Category>[];
-  targets: CountRow<Target>[];
-  severities: CountRow<`${Severity}`>[];
-  types: CountRow<IncidentType>[];
-  latest: Incident[];
+export interface CompactRow {
+  id: string;
+  slug: string;
+  title: string;
+  incident_date: string;
+  incident_date_precision: Incident["incident_date_precision"];
+  first_reported: string;
+  type: Incident["type"];
+  categories: Incident["categories"];
+  severity: Incident["severity"];
+  targets: Incident["targets"];
+  source_count: number;
 }
 
 export interface DashboardData {
   isStub: boolean;
   now: string;
   lastUpdated: string | null;
-  windows: { full: { from: string; to: string }; default: { from: string; to: string } };
-  basis: Record<Basis, BasisData>;
+  /** Month keys the data spans (for the "all" window). */
+  span: { from: string; to: string };
+  rows: CompactRow[];
   radar: Radar | null;
 }
 
-function basisData(incidents: Incident[], now: Date, from: string, to: string): BasisData {
-  const per = (field: DateField) => ({ h: headline(incidents, { now, dateField: field }), s: monthlySeries(incidents, { from, to, dateField: field }) });
-  const inc = per("incident_date");
-  const rep = per("first_reported");
+export function compactRow(i: Incident): CompactRow {
   return {
-    total: incidents.length,
-    headline: { incident_date: inc.h, first_reported: rep.h },
-    series: { incident_date: inc.s, first_reported: rep.s },
-    categories: categoryDistribution(incidents),
-    targets: targetDistribution(incidents),
-    severities: severityDistribution(incidents),
-    types: typeDistribution(incidents),
-    latest: latest(incidents, 8),
+    id: i.id,
+    slug: i.slug,
+    title: i.title,
+    incident_date: i.incident_date,
+    incident_date_precision: i.incident_date_precision,
+    first_reported: i.first_reported,
+    type: i.type,
+    categories: i.categories,
+    severity: i.severity,
+    targets: i.targets,
+    source_count: i.source_count,
   };
 }
 
@@ -71,20 +55,12 @@ export async function getDashboardData(): Promise<DashboardData> {
   const now = new Date();
   const range = yearRange(incidents);
   const earliest = Math.max(range?.min ?? now.getUTCFullYear(), 2016);
-  const to = toMonthKey(now);
-  const full = { from: `${earliest}-01`, to };
-  const defaultStart = Math.max(earliest, DEFAULT_START_YEAR);
-  const def = { from: `${defaultStart}-01`, to };
-  const realWorld = incidents.filter(isRealWorld);
   return {
     isStub,
     now: now.toISOString(),
     lastUpdated: updated,
-    windows: { full, default: def },
-    basis: {
-      all: basisData(incidents, now, full.from, full.to),
-      real: basisData(realWorld, now, full.from, full.to),
-    },
+    span: { from: `${earliest}-01`, to: toMonthKey(now) },
+    rows: incidents.map(compactRow),
     radar,
   };
 }

@@ -10,6 +10,7 @@ interface Props {
   data: CountRow<`${Severity}`>[];
   variant?: "bars" | "strip";
   height?: number;
+  onBarClick?: (severity: Severity) => void;
 }
 
 function SevTooltip({ active, payload }: RechartsTooltipProps) {
@@ -21,7 +22,7 @@ function SevTooltip({ active, payload }: RechartsTooltipProps) {
 }
 
 /** Four vertical bars, or a single 100% strip with a legend below. */
-export function SeverityChart({ data, variant = "bars", height }: Props) {
+export function SeverityChart({ data, variant = "bars", height, onBarClick }: Props) {
   const total = data.reduce((s, r) => s + r.count, 0) || 1;
   if (variant === "strip") {
     return (
@@ -42,7 +43,7 @@ export function SeverityChart({ data, variant = "bars", height }: Props) {
               <li key={r.key} className="flex items-start gap-2">
                 <span className="mt-1 inline-block size-2.5 rounded-[2px]" style={{ background: SEVERITY_COLORS[s] }} />
                 <div>
-                  <div className="num text-[15px] leading-none text-ink">{r.count}</div>
+                  <div className="num text-[16px] leading-none text-ink">{r.count}</div>
                   <div className="label mt-1">
                     {s} {SEVERITY_META[s].short}
                   </div>
@@ -56,17 +57,23 @@ export function SeverityChart({ data, variant = "bars", height }: Props) {
   }
   const rows = data.map((r) => ({ ...r, label: `${r.key} ${SEVERITY_META[Number(r.key) as Severity].short}` }));
   return (
-    <div style={{ height: height ?? 180 }} className="w-full">
+    <div style={{ height: height ?? 220 }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={rows} margin={{ top: 16, right: 8, bottom: 0, left: 0 }} barCategoryGap="28%">
+        <BarChart data={rows} margin={{ top: 18, right: 8, bottom: 0, left: 0 }} barCategoryGap="26%">
           <XAxis dataKey="label" tickLine={false} axisLine={false} interval={0} />
           <YAxis hide allowDecimals={false} />
           <Tooltip content={<SevTooltip />} cursor={{ fill: "rgba(140,160,210,0.08)" }} />
-          <Bar dataKey="count" radius={[2, 2, 0, 0]} isAnimationActive={false}>
+          <Bar
+            dataKey="count"
+            radius={[2, 2, 0, 0]}
+            isAnimationActive={false}
+            className={onBarClick ? "cursor-pointer" : undefined}
+            onClick={(d: { payload?: { key: `${Severity}` } }) => d?.payload && onBarClick?.(Number(d.payload.key) as Severity)}
+          >
             {rows.map((r) => (
               <Cell key={r.key} fill={SEVERITY_COLORS[Number(r.key) as Severity]} />
             ))}
-            <LabelList dataKey="count" position="top" style={{ fill: UI.soft, fontSize: 10.5 }} />
+            <LabelList dataKey="count" position="top" style={{ fill: UI.soft, fontSize: 12 }} />
           </Bar>
         </BarChart>
       </ResponsiveContainer>

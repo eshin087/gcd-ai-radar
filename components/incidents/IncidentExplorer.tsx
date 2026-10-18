@@ -20,12 +20,18 @@ interface Filters {
   severity: string;
   target: string;
   year: string;
+  /** YYYY-MM, set by dashboard drill-downs. */
+  month: string;
   publisher: string;
   origin: string;
+  /** "1" = real-world only (severity 3-4), set by dashboard drill-downs. */
+  real: string;
+  /** "reported" dates by first report instead of incident date for month/year filters. */
+  by: string;
   sort: "reported" | "incident" | "severity";
 }
 
-const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", publisher: "", origin: "", sort: "reported" };
+const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", publisher: "", origin: "", real: "", by: "", sort: "reported" };
 const PAGE = 50;
 
 function readFilters(): Filters {
@@ -40,8 +46,11 @@ function readFilters(): Filters {
     severity: p.get("severity") ?? "",
     target: p.get("target") ?? "",
     year: p.get("year") ?? "",
+    month: p.get("month") ?? "",
     publisher: p.get("publisher") ?? "",
     origin: p.get("origin") ?? "",
+    real: p.get("real") ?? "",
+    by: p.get("by") ?? "",
     sort: sort === "incident" || sort === "severity" ? sort : "reported",
   };
 }
@@ -61,7 +70,7 @@ function Select({ label, value, onChange, children }: { label: string; value: st
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-8 rounded-[3px] border border-line bg-panel px-2 font-mono text-[11.5px] text-ink focus:border-accent focus:outline-none"
+        className="h-9 rounded-[3px] border border-line bg-panel px-2 font-mono text-[12.5px] text-ink focus:border-accent focus:outline-none"
       >
         {children}
       </select>
@@ -115,12 +124,15 @@ export function IncidentExplorer() {
   const results = useMemo(() => {
     if (!all) return [];
     const q = filters.q.trim().toLowerCase();
+    const dateOf = (i: SlimIncident) => (filters.by === "reported" ? i.first_reported : i.incident_date.length === 4 ? `${i.incident_date}-07` : i.incident_date);
     const rows = all.filter((i) => {
       if (filters.type && i.type !== filters.type) return false;
       if (filters.category && !i.categories.includes(filters.category as SlimIncident["categories"][number])) return false;
       if (filters.severity && String(i.severity) !== filters.severity) return false;
+      if (filters.real === "1" && i.severity < 3) return false;
       if (filters.target && !i.targets.includes(filters.target as SlimIncident["targets"][number])) return false;
-      if (filters.year && !i.first_reported.startsWith(filters.year) && !i.incident_date.startsWith(filters.year)) return false;
+      if (filters.month && !dateOf(i).startsWith(filters.month)) return false;
+      if (filters.year && !filters.month && !i.first_reported.startsWith(filters.year) && !i.incident_date.startsWith(filters.year)) return false;
       if (filters.publisher && !i.publishers.includes(filters.publisher)) return false;
       if (filters.origin && i.origin !== filters.origin) return false;
       if (q) {
@@ -137,7 +149,11 @@ export function IncidentExplorer() {
     return rows;
   }, [all, filters]);
 
-  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort").length;
+  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by").length;
+  const chips: { key: keyof Filters; label: string }[] = [
+    ...(filters.month ? [{ key: "month" as const, label: `month: ${filters.month}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
+    ...(filters.real === "1" ? [{ key: "real" as const, label: "real-world only (severity 3–4)" }] : []),
+  ];
 
   return (
     <div className="space-y-5">
@@ -149,7 +165,7 @@ export function IncidentExplorer() {
             value={filters.q}
             onChange={(e) => update({ q: e.target.value })}
             placeholder="title, summary, product, id"
-            className="h-8 rounded-[3px] border border-line bg-panel px-2 text-[12.5px] text-ink placeholder:text-faint focus:border-accent focus:outline-none"
+            className="h-9 rounded-[3px] border border-line bg-panel px-2 text-[13.5px] text-ink placeholder:text-faint focus:border-accent focus:outline-none"
           />
         </label>
         <Select label="type" value={filters.type} onChange={(v) => update({ type: v })}>
@@ -210,11 +226,16 @@ export function IncidentExplorer() {
         </Select>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3 text-[12px] text-dim">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-[13px] text-dim">
         <div className="num">
           {all ? (
             <>
               {results.length.toLocaleString("en-US")} of {all.length.toLocaleString("en-US")} incidents
+              {chips.map((c) => (
+                <button key={c.key} type="button" onClick={() => update({ [c.key]: "" } as Partial<Filters>)} className="ml-3 inline-flex items-center gap-1 rounded-[3px] border border-accent/40 bg-accent-tint px-1.5 py-0.5 font-mono text-[11px] text-accent" title="remove this filter">
+                  {c.label} ×
+                </button>
+              ))}
               {active > 0 && (
                 <button type="button" onClick={() => update({ ...EMPTY })} className="ml-3 link">
                   clear filters
@@ -244,15 +265,15 @@ export function IncidentExplorer() {
       <ol className="divide-y divide-line-soft border-y border-line-soft">
         {results.slice(0, shown).map((i) => (
           <li key={i.id} className="py-3 grid gap-2 sm:grid-cols-[6.5rem_1fr_auto] sm:gap-4">
-            <div className="num text-[11px] text-dim sm:pt-0.5">
+            <div className="num text-[12px] text-dim sm:pt-0.5">
               <div>{i.first_reported}</div>
               <div className="text-faint">{i.id}</div>
             </div>
             <div className="min-w-0">
-              <Link href={`/incidents/${i.slug}`} className="text-[14px] leading-snug text-ink hover:text-accent">
+              <Link href={`/incidents/${i.slug}`} className="text-[15px] leading-snug text-ink hover:text-accent">
                 {i.title}
               </Link>
-              <p className="mt-1 text-[12px] text-dim leading-relaxed line-clamp-2">{i.summary}</p>
+              <p className="mt-1 text-[13px] text-dim leading-relaxed line-clamp-2">{i.summary}</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 <SeverityBadge severity={i.severity} />
                 <TypeBadge type={i.type} short />
