@@ -1,4 +1,5 @@
 import { XMLParser } from "fast-xml-parser";
+import { stripDoctype } from "../lib/feed";
 import { canonicalUrl, urlKey } from "../lib/canonical";
 import { toIsoDate } from "../lib/feed";
 import { httpFetch } from "../lib/http";
@@ -25,7 +26,7 @@ const parser = new XMLParser({ ignoreAttributes: true, isArray: (name) => ["url"
 
 async function loadSitemap(url: string, ctx: SourceContext, depth: number): Promise<SitemapEntry[]> {
   const res = await httpFetch(url, { userAgent: ctx.settings.fetch.user_agent, timeoutMs: ctx.settings.fetch.timeout_ms, retries: 1, maxBytes: 6_000_000 });
-  const doc = parser.parse(res.body) as Record<string, unknown>;
+  const doc = parser.parse(stripDoctype(res.body)) as Record<string, unknown>;
   const index = doc["sitemapindex"] as { sitemap?: { loc?: string }[] } | undefined;
   if (index?.sitemap && depth < 1) {
     const children = index.sitemap.map((s) => s.loc).filter((l): l is string => Boolean(l)).slice(0, 6);

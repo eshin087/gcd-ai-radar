@@ -19,11 +19,16 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+    # Major bumps of the toolchain arrive as separate, reviewable PRs only when
+    # a security advisory needs them; routine majors are not proposed.
     ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+      # The two below stay even if the blanket rule above is lifted.
       # Node types follow the runtime (engines: node 22.x); bump by hand with the Node upgrade.
       - dependency-name: "@types/node"
-        update-types: [version-update:semver-major]
+        update-types: ["version-update:semver-major"]
       # `typescript` is the TS 6 API alias that typescript-eslint and Next load; TS 7 itself is
       # `@typescript/native` (the tsc binary). Lift this once typescript-eslint supports TS 7.
       - dependency-name: typescript
-        update-types: [version-update:semver-major]
+        update-types: ["version-update:semver-major"]
