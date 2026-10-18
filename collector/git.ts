@@ -30,11 +30,21 @@ export async function commitAndPush(message: string, opts: { push?: boolean } = 
   } catch {
     // there are staged changes
   }
-  const name = process.env.COLLECTOR_GIT_NAME || "github-actions[bot]";
-  const email = process.env.COLLECTOR_GIT_EMAIL || "41898282+github-actions[bot]@users.noreply.github.com";
-  await git(["-c", `user.name=${name}`, "-c", `user.email=${email}`, "commit", "-q", "-m", message]);
+  // Identity: explicit variables (set on the repo for Actions) win; on a
+  // runner without them fall back to the Actions bot; locally use whatever
+  // git is configured with (the owner's own identity).
+  const name = process.env.COLLECTOR_GIT_NAME;
+  const email = process.env.COLLECTOR_GIT_EMAIL;
+  const identity =
+    name && email
+      ? ["-c", `user.name=${name}`, "-c", `user.email=${email}`]
+      : process.env.GITHUB_ACTIONS
+        ? ["-c", "user.name=github-actions[bot]", "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com"]
+        : [];
+  await git([...identity, "commit", "-q", "-m", message]);
   const sha = await git(["rev-parse", "--short", "HEAD"]);
-  log.info(`git: committed ${sha}`, { author: name });
+  const author = await git(["log", "-1", "--format=%an"]);
+  log.info(`git: committed ${sha}`, { author });
   if (opts.push === false) return { committed: true, pushed: false, sha };
 
   const branch = (await git(["rev-parse", "--abbrev-ref", "HEAD"])) || "main";
@@ -47,7 +57,7 @@ export async function commitAndPush(message: string, opts: { push?: boolean } = 
     } catch (err) {
       log.warn(`git: push failed (attempt ${attempt})`, { error: errorMessage(err).slice(0, 200) });
       try {
-        await git(["-c", `user.name=${name}`, "-c", `user.email=${email}`, "pull", "--rebase", "origin", branch]);
+        await git([...identity, "pull", "--rebase", "origin", branch]);
       } catch (rebaseErr) {
         log.error("git: rebase failed", { error: errorMessage(rebaseErr).slice(0, 200) });
         await git(["rebase", "--abort"]).catch(() => undefined);
