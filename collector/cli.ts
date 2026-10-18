@@ -4,6 +4,7 @@ import { commitAndPush } from "./git";
 import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
 import { loadState } from "./lib/state";
+import { cveClashes } from "./pipeline/dedupe";
 import { runCollector, type RunOptions } from "./pipeline/run";
 import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
@@ -15,7 +16,7 @@ import { runReview, runReviewBatch } from "./review/index";
  *   npm run collect -- --dry-run        everything except writing and committing
  *   npm run collect -- --source=hn      only these sources (comma-separated), ignoring schedules
  *   npm run backfill -- <source> --since=2016-01-01
- *   npm run validate                    Zod-validate every file under /data
+ *   npm run validate                    Zod-validate every file under /data; fail if two records are about one CVE
  *   npm run review                      walk the review queue interactively
  *   npm run review -- --approve=AIR-2026-0001 --reject=AIR-2026-0002 --reason="…"   decide without the walkthrough
  *   npm run radar                       refresh data/radar.json now (--dry-run to only test the token)
@@ -106,6 +107,12 @@ async function main() {
     case "validate": {
       loadConfig();
       const state = await loadState();
+      const clashes = cveClashes([...state.incidents, ...state.review]);
+      if (clashes.length) {
+        log.error(`${clashes.length} CVE id(s) are the subject of more than one record (see docs/cve-dedup.md)`, { clashes: clashes.slice(0, 20) });
+        process.exitCode = 1;
+        return;
+      }
       log.info("config and data files are valid", {
         incidents: state.incidents.length,
         review: state.review.length,

@@ -102,6 +102,20 @@ export function cvesOfIncident(inc: Incident): Set<string> {
   return set;
 }
 
+/** CVE ids that more than one record is about ("CVE-… on A and B"). Dedupe should never leave any. */
+export function cveClashes(incidents: Incident[]): string[] {
+  const owner = new Map<string, string>();
+  const clashes: string[] = [];
+  for (const inc of incidents) {
+    for (const c of cvesOfIncident(inc)) {
+      const prev = owner.get(c);
+      if (prev) clashes.push(`${c} on ${prev} and ${inc.id}`);
+      else owner.set(c, inc.id);
+    }
+  }
+  return clashes;
+}
+
 function cveConflict(a: Iterable<string>, b: Iterable<string>): boolean {
   const sa = new Set(a);
   const sb = new Set(b);
