@@ -1,1 +1,1932 @@
-[]
+[
+  {
+    "key": "1384b1b573254ba3",
+    "title": "Buenos Aires Government Reportedly Used Children's Personal Data in Facial Recognition System for Fugitives",
+    "url": "https://incidentdatabase.ai/cite/76",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Government surveillance deployment and privacy controversy with no cyberattack or security exploit",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9210bc1f9f105ea9",
+    "title": "Facebook translates 'good morning' into 'attack them', leading to arrest",
+    "url": "https://incidentdatabase.ai/cite/72",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic translation failure and erroneous arrest with no cyberattack involved",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "352fc4654ac5c731",
+    "title": "Aledo High School Student Allegedly Generates and Distributes Deepfake Nudes of Seven Female Classmates",
+    "url": "https://incidentdatabase.ai/cite/799",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Peer harassment and non-consensual intimate imagery generation without extortion, fraud, or network intrusion",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8a5c5186d156be1d",
+    "title": "Waymo Robotaxi Reportedly Transported Undetected Person Trapped in Trunk in Los Angeles",
+    "url": "https://incidentdatabase.ai/cite/1337",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Autonomous vehicle safety failure and lack of sensor detection without any cyberattack or intentional exploitation.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8f4d3a0637eac8ed",
+    "title": "AllHere's Chatbot 'Ed' Fails and Costs Los Angeles Unified School District $6 Million",
+    "url": "https://incidentdatabase.ai/cite/793",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Startup business failure, product underperformance, and corporate executive fraud without a cybersecurity incident.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "01e89869034eac06",
+    "title": "Alexa Recommended Dangerous TikTok Challenge to Ten-Year-Old Girl",
+    "url": "https://incidentdatabase.ai/cite/160",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Content safety issue where a virtual assistant echoed dangerous web text, involving no security attack or exploitation.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c66b08fea8014d91",
+    "title": "Facebook's Ad Delivery Reportedly Excluded Audience along Racial and Gender Lines",
+    "url": "https://incidentdatabase.ai/cite/161",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic bias and discriminatory advertising delivery constitute non-security AI harms.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "86051525cd41a4ac",
+    "title": "AI-Powered Transcription Services Allegedly Leak Confidential Workplace Discussions",
+    "url": "https://incidentdatabase.ai/cite/811",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Automated meeting assistant transcript distribution issues and unintended recordings are privacy and feature design issues without cyberattack or security exploitation.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c7ec97715d3cb07b",
+    "title": "Facebook Feed Algorithms Exposed Low Digitally Skilled Users to More Disturbing Content",
+    "url": "https://incidentdatabase.ai/cite/417",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Harmful content recommendation due to low digital literacy is a platform safety issue devoid of cybersecurity threats.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "08572d66d64bd603",
+    "title": "AI Avatar of Murder Victim Created Without Consent on Character.ai Platform",
+    "url": "https://incidentdatabase.ai/cite/814",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Policy violation and non-consensual avatar creation without a cybersecurity exploitation or attack angle",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8415f16b91d09a8a",
+    "title": "Israeli Tax Authority Reportedly Used an Opaque Automated System to Issue a Fine, Declining to Explain or Disclose the Underlying Calculation",
+    "url": "https://incidentdatabase.ai/cite/137",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Legal dispute over algorithmic transparency and automated tax calculations without a cyberattack",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "88931ec9e92e507b",
+    "title": "Finnish Police Were Reportedly Reprimanded After National Bureau of Investigation Unit Allegedly Used Clearview AI to Identify Potential Abuse Victims",
+    "url": "https://incidentdatabase.ai/cite/412",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Privacy and regulatory enforcement action involving unauthorized biometric searches without an attack",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f276c208c92cfb1f",
+    "title": "YouTube's Algorithms Failed to Remove Violating Content Related to Suicide and Self-Harm",
+    "url": "https://incidentdatabase.ai/cite/281",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Content moderation failure and algorithmic recommendation of self-harm material without a cyberattack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "4884dfa6c8a21baf",
+    "title": "Frontline workers protest at Stanford after hospital distributed vaccine to administrators",
+    "url": "https://incidentdatabase.ai/cite/91",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic decision-making failure and unfair distribution of medical supplies without any security attack.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1545781d719d3e25",
+    "title": "Voices Created Using Publicly Available App Stolen and Resold as NFT without Attribution",
+    "url": "https://incidentdatabase.ai/cite/277",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Licensing dispute and unauthorized commercial resale of synthetic voice outputs without a cyberattack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a371d047f3f13463",
+    "title": "Dutch Families Wrongfully Accused of Tax Fraud Due to Discriminatory Algorithm",
+    "url": "https://incidentdatabase.ai/cite/101",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Government welfare fraud detection algorithm failure and discrimination scandal with no security breach.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "42d49dc7a6c042bf",
+    "title": "TikTok’s “For You” Algorithm Exposed Young Users to Pro-Eating Disorder Content",
+    "url": "https://incidentdatabase.ai/cite/279",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Content recommendation harm without a cybersecurity attack, exploit, or malicious cyber intrusion.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2821f3a6063aaa90",
+    "title": "South Korea Reportedly Experienced a Surge of Explicit Deepfake Pornography",
+    "url": "https://incidentdatabase.ai/cite/777",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake pornography is an AI-generated media harassment issue without a cyberattack or security intrusion angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9cfec3b047c6cd8a",
+    "title": "Investigative Journalist Rana Ayyub Targeted by AI-Generated Deepfake Pornography",
+    "url": "https://incidentdatabase.ai/cite/769",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI-generated deepfake harassment campaign against a journalist, falling outside cybersecurity attack scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d7cbc838cf15a14f",
+    "title": "Kristen Bell Deepfaked in Non-Consensual AI-Generated Pornography",
+    "url": "https://incidentdatabase.ai/cite/772",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake pornography is an AI safety and privacy harm without a cybersecurity or cyberattack component.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8a1f0baaf42e5de4",
+    "title": "Microsoft Copilot Falsely Accuses Journalist Martin Bernklau of Crimes",
+    "url": "https://incidentdatabase.ai/cite/770",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Model hallucination and defamation without an adversarial cyberattack or vulnerability are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5e88f1607b0d0207",
+    "title": "Large-Scale Mental Health Crises Allegedly Associated with ChatGPT Interactions",
+    "url": "https://incidentdatabase.ai/cite/1253",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: User psychological distress and mental health crises are social harms without a cybersecurity or malicious attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3829c1ffb0ac7afe",
+    "title": "Unauthorized Use of AI to Replicate Tupac Shakur's and Snoop Dogg's Voices in Drake's 'Taylor Made Freestyle'",
+    "url": "https://incidentdatabase.ai/cite/792",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Unauthorized voice cloning in a commercial song involves intellectual property and publicity rights disputes, not a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d44166e18777d1b6",
+    "title": "Autonomous Kargu-2 Drone Allegedly Remotely Used to Hunt down Libyan Soldiers",
+    "url": "https://incidentdatabase.ai/cite/121",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Kinetic military use of autonomous weapons is a physical combat event rather than a cyberattack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "6688edfd0ca547a6",
+    "title": "Facebook's Algorithm Reportedly Amplifies AI-Generated Content, Fueling Misleading Posts",
+    "url": "https://incidentdatabase.ai/cite/803",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic amplification of AI-generated spam and misinformation lacks a direct cyberattack component.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "273f5af59d0b7ca6",
+    "title": "Jennifer Aniston’s Likeness Allegedly Exploited in Purported Deepfake Collagen Supplement Promotion",
+    "url": "https://incidentdatabase.ai/cite/818",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Deceptive social media advertisements using celebrity deepfakes constitute advertising fraud rather than a cyberattack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7f7367882285b168",
+    "title": "Alleged Harmful Outputs and Data Exposure in Children's AI Products by FoloToy, Miko, and Character.AI",
+    "url": "https://incidentdatabase.ai/cite/1277",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI safety failures, toxic outputs, and general data privacy issues without an external cyberattack or security exploitation.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "53d8416f69bf1ed6",
+    "title": "Matryoshka Campaign Allegedly Uses Deepfakes to Impersonate Academics for Pro-Russian Propaganda",
+    "url": "https://incidentdatabase.ai/cite/909",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Information operation and propaganda campaign without an unauthorized cyber intrusion or fraud incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2a42806d68f9737f",
+    "title": "Purported Deepfake Disinformation Aired on Russian State TV Allegedly Linking Ukraine to Moscow Attack",
+    "url": "https://incidentdatabase.ai/cite/656",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: State media broadcast of a fabricated clip is political propaganda and disinformation rather than a cyberattack or fraud incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "12d3b7a90f5a4236",
+    "title": "Purported Mass Facial Recognition Program in Gaza Reportedly Used by Israeli Forces to Identify Palestinians",
+    "url": "https://incidentdatabase.ai/cite/659",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Military surveillance and facial recognition programs represent ethical and human rights concerns without a cyberattack or AI exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "752fc79254153579",
+    "title": "Attackers Reportedly Deployed Simulated AI Support Chatbot to Trick Instagram Business Users into Adding Malicious 2FA Login",
+    "url": "https://incidentdatabase.ai/cite/999",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: The phishing attack used a simulated chatbot interface without confirmation that AI was actually employed.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d5f8ee029028e8f6",
+    "title": "AI-Enabled Organized Crime Expands Across Europe",
+    "url": "https://incidentdatabase.ai/cite/994",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: This is a strategic threat assessment report from Europol without a specific cyber incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f15e7d6c58153c7e",
+    "title": "The New York Times Reportedly Sues OpenAI and Microsoft Over Alleged Unauthorized AI Training on Its Content",
+    "url": "https://incidentdatabase.ai/cite/995",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Copyright infringement lawsuits regarding AI training data are explicitly out of scope.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "cc84035b08980b4c",
+    "title": "Alleged AI-Generated IRS Scam Websites Used to Defraud U.S. Taxpayers",
+    "url": "https://incidentdatabase.ai/cite/991",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: This is a seasonal tax warning and general advisory by the IRS rather than a specific cybersecurity incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c01d777d772b6710",
+    "title": "Indian Political App Tek Fog Allegedly Hijacked Trends and Manipulated Public Opinion on Other Social Media Platforms",
+    "url": "https://incidentdatabase.ai/cite/210",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Social media manipulation and political astroturfing campaigns without a demonstrated attack on AI systems or an AI-enabled cyberattack are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "87c2ccad8d79e9ed",
+    "title": "Google Reports Alleged Gemini-Generated Terrorism and Child Exploitation to Australian eSafety Commission",
+    "url": "https://incidentdatabase.ai/cite/963",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Regulatory reporting of aggregate complaint statistics regarding illicit AI content generation lacks a specific security incident or cyberattack context.",
+    "confidence": 0.92,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "82f0784c06d6128e",
+    "title": "AI-Driven News Platform Accused of Spreading Unverified Terrorism Allegations Against Yale Scholar",
+    "url": "https://incidentdatabase.ai/cite/977",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harms without a security angle such as misinformation or publication errors are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "348633c671ac52bd",
+    "title": "AI-Generated OB-GYN Health Influencers on TikTok Used Fake Medical Credentials to Promote Dubious Advice",
+    "url": "https://incidentdatabase.ai/cite/976",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Creation of misleading health influencer avatars on social media lacks a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "e870f7bf39a0eaaf",
+    "title": "AI-Generated Songs Allegedly Imitating Céline Dion Circulate Online Without Authorization",
+    "url": "https://incidentdatabase.ai/cite/980",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Unauthorized generation of artist voice-alike songs is a copyright issue rather than a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5ffab068760fcdaa",
+    "title": "Alleged AI-Generated Video by Spain’s People’s Party Results in Diplomatic Fallout with the Dominican Republic",
+    "url": "https://incidentdatabase.ai/cite/989",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political attack video using AI depicting a politician, political controversy and diplomatic fallout with no cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "0d95a149aacdf0ec",
+    "title": "Deepfake Videos of Barbara O’Neill Allegedly Used in Health Scam Targeting Social Media Users",
+    "url": "https://incidentdatabase.ai/cite/953",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Fraudulent ads using deepfake videos for health product scams, constituting general fraud rather than a targeted cybersecurity incident or AI system compromise.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "876e8bb163704868",
+    "title": "BP New Zealand's License Plate Recognition System Reportedly Misidentified Auckland Driver for Fuel Theft in Whanganui",
+    "url": "https://incidentdatabase.ai/cite/932",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: License plate recognition error resulting in mistaken billing, an AI harm/operational error with no security incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "fc2cd03d6cebf16f",
+    "title": "Alleged Instagram Algorithm Malfunction Floods Users' Reels Feeds with Violent and Graphic Content",
+    "url": "https://incidentdatabase.ai/cite/957",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithm malfunction causing exposure of graphic content, no security attack or exploit involved.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "170f30f298ac7bd4",
+    "title": "Apple Intelligence Allegedly Flags Scam Messages as High Priority",
+    "url": "https://incidentdatabase.ai/cite/892",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: This is an AI system failure and product limitation regarding notification prioritization, not an intentional cyberattack or adversarial exploitation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "46eb862b2b5592cb",
+    "title": "Police Use of Facial Recognition Software Causes Wrongful Arrests Without Defendant Knowledge",
+    "url": "https://incidentdatabase.ai/cite/815",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition error leading to wrongful arrest is an AI harm without a cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "34a79b0809de306b",
+    "title": "Shilpa Shetty Alleges AI-Enabled Impersonation and Misuse of Likeness in Mumbai High Court Filing",
+    "url": "https://incidentdatabase.ai/cite/1321",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Unauthorized use of likeness and deepfakes leading to a court injunction is a personality rights and privacy issue rather than a cybersecurity breach.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "daf23f777cd075d2",
+    "title": "Senior Kerala Congress Leader N. Subrahmanian Reportedly Booked for Sharing Purportedly AI-Generated Defamatory Image of Chief Minister Pinarayi Vijayan",
+    "url": "https://incidentdatabase.ai/cite/1322",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Sharing a digitally altered image of a politician is political defamation and misinformation, lacking a cybersecurity incident vector.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7e21838b2f82ecf5",
+    "title": "Meta AI Characters Allegedly Exhibited Racism, Fabricated Identities, and Exploited User Trust",
+    "url": "https://incidentdatabase.ai/cite/885",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harms and toxic content generation without a cybersecurity incident or compromise.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c3548121738196ed",
+    "title": "Facial Recognition System in Buenos Aires Triggers Police Checks Based on False Matches",
+    "url": "https://incidentdatabase.ai/cite/829",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Government surveillance system false matches representing operational error or policy concerns, not a security breach.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "76910936db26d2d9",
+    "title": "Meta's Automated Ad and Targeting Systems Reportedly Enabled Large-Scale Fraud Revenue",
+    "url": "https://incidentdatabase.ai/cite/1268",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Standard ad platform content moderation and revenue guardrail issues rather than a specific targeted AI attack or exploitation.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b00660cf1533b931",
+    "title": "ChatGPT Reportedly Found to Reproduce Protected German Lyrics in Copyright Case",
+    "url": "https://incidentdatabase.ai/cite/1278",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Copyright infringement lawsuit regarding training data, which is an AI harm without a cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7af5078c6fc06a0d",
+    "title": "Users Bypassed ChatGPT's Content Filters with Ease",
+    "url": "https://incidentdatabase.ai/cite/420",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Standard user prompt injection/jailbreak against public safety filters without a downstream cyberattack or security breach.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "dd2ff802b4643d9d",
+    "title": "Video Allegedly Altered by AI Reportedly Spreads Claim of Nigerian Doctor's Hypertension Cure",
+    "url": "https://incidentdatabase.ai/cite/1033",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Misinformation / fraudulent medical scam using deepfake video, without a direct cybersecurity attack angle.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ba7c92093cc65734",
+    "title": "OpenAI's Operator Agent Reportedly Executed Unauthorized $31.43 Transaction Despite Safety Protocol",
+    "url": "https://incidentdatabase.ai/cite/1028",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Software reliability bug / unintended autonomous agent behavior without a security exploit or malicious attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1a3db7c56fd1b15f",
+    "title": "New York Detective Reportedly Misused Woody Harrelson's Face to Perform Face Recognition Search",
+    "url": "https://incidentdatabase.ai/cite/518",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: A law enforcement misuse of facial recognition technology due to low-quality evidence is a procedural and capability limitation issue rather than a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ae23bde1dcf2c703",
+    "title": "ChatGPT Reportedly Banned by Italian Authority Due to OpenAI's Purported Lack of Legal Basis for Data Collection and Age Verification",
+    "url": "https://incidentdatabase.ai/cite/513",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Data privacy compliance issue and regulatory ban without a security breach or cyberattack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "14edc51d121a9a88",
+    "title": "Multiple LLMs Allegedly Endorsed Suicide as a Viable Option During Non-Adversarial Mental Health Venting Session",
+    "url": "https://incidentdatabase.ai/cite/1026",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Model behavior issue involving harmful advice during mental health venting, considered an AI safety and alignment harm rather than a security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b79933bc5cda24c6",
+    "title": "Purported AI‑Edited Police Evidence Image Posted to Facebook by Westbrook Police Department in Maine",
+    "url": "https://incidentdatabase.ai/cite/1155",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Police department unintentionally altered an evidence photo using an AI tool before posting to social media, representing an operational error without a cybersecurity incident angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a6cf686735117899",
+    "title": "Reported Use and Circulation of AI-Generated Misinformation and Fake Victim Visuals After Air India 171 Crash",
+    "url": "https://incidentdatabase.ai/cite/1125",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Generation of misinformation and fake images on social media following a plane crash, constituting general AI-driven misinformation rather than a cyberattack or security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "00651fe863cea7ff",
+    "title": "New Orleans Police Reportedly Used Real-Time Facial Recognition Alerts Supplied by Project NOLA Despite Local Ordinance",
+    "url": "https://incidentdatabase.ai/cite/1075",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Alleged policy and ordinance violation regarding police use of facial recognition technology, representing a regulatory and privacy issue without a cybersecurity attack angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f97a9c77f438df6c",
+    "title": "Reported Student Misuse of ChatGPT, StudyX, and Gemini to Obtain Answers During Vietnam's 2025 National High School Graduation Exam",
+    "url": "https://incidentdatabase.ai/cite/1123",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Student cheating using standard consumer tools does not constitute a cybersecurity incident or AI-enabled attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ef535b3e92df0a21",
+    "title": "Purported AI-Generated Video Depicts Ibrahim Traoré of Burkina Faso Delivering Speech on Western Exploitation",
+    "url": "https://incidentdatabase.ai/cite/1096",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Deepfake video of a political figure distributed on social media with no direct cybersecurity angle, exploit, or intrusion.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1eca0efb171fd772",
+    "title": "Reportedly Hacked AI-Powered Robot Vacuums Allegedly Used for Surveillance and Harassment",
+    "url": "https://incidentdatabase.ai/cite/842",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Robot vacuum compromise involving standard IoT vulnerabilities and insecure remote access without an AI-specific security angle.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ffd8383938845dd7",
+    "title": "Reddit Moderators Report Unauthorized AI Study Involving Fabricated Identities by Purported University of Zurich Researchers",
+    "url": "https://incidentdatabase.ai/cite/1043",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Academic ethics violation and research study involving deployed AI comments, no cyberattack or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ebd6900e08012fcb",
+    "title": "Deepfake Porn Sites Use Breeze Liu's Image Without Consent",
+    "url": "https://incidentdatabase.ai/cite/687",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake pornography is a severe harm and abuse issue, but falls outside traditional cybersecurity incident boundaries.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "37ac9320dba256a9",
+    "title": "Alleged ChatGPT Misuse by Contractor Leads to Reported Data Exposure in New South Wales Resilient Homes Program",
+    "url": "https://incidentdatabase.ai/cite/1228",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Accidental exposure of applicant data by an employee using ChatGPT, representing a data privacy leak via user error rather than an exploit against AI or malicious AI attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "4e5b0f3084033232",
+    "title": "Meta Platforms Users Report Being Wrongfully Locked Out After Purported AI Moderation Flags Accounts for Child Exploitation Content",
+    "url": "https://incidentdatabase.ai/cite/1219",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI moderation failure causing wrongful account suspensions without a cybersecurity incident, attack, or malware angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f49e1f390643c752",
+    "title": "Alleged Marine Park Orca Attack on 'Jessica Radcliffe' Reportedly an AI-Generated Hoax",
+    "url": "https://incidentdatabase.ai/cite/1175",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Viral hoax video created with AI audio and footage, but lacks a specific cybersecurity attack or breach incident.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "54e032b8424f2de0",
+    "title": "Never Back Down Super PAC for Ron DeSantis Uses AI Donald Trump Voice in Attack Ad Against Kim Reynolds",
+    "url": "https://incidentdatabase.ai/cite/681",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political advertising and campaign misinformation without a cybersecurity incident or cyberattack vector.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "83bad5ad55fd9ecd",
+    "title": "Purportedly AI-Generated 'King Trump' Fighter Jet Video Allegedly Posted by President Depicts Defecation Attack on 'No Kings' Protesters",
+    "url": "https://incidentdatabase.ai/cite/1244",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political satire or video generation on social media without a cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b5b91969a850fd72",
+    "title": "Grok AI Reportedly Generated Fabricated Civilian Hero Identity During Bondi Beach Shooting",
+    "url": "https://incidentdatabase.ai/cite/1307",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Grok hallucinated a fake hero identity during a news event, which is an AI hallucination/reliability issue with no security exploit or cyberattack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "47cc639cda7da9a8",
+    "title": "UK Facial Recognition System Reportedly Exhibits Higher False Positive Rates for Black and Asian Subjects",
+    "url": "https://incidentdatabase.ai/cite/1305",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Bias and demographic accuracy issues in police facial recognition testing without a specific security incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2f67a546cd9522a0",
+    "title": "Whirlpool Reportedly Used AI-Altered Footage of North Carolina State Senator DeAndrea Salvador in Brazilian Advertisement",
+    "url": "https://incidentdatabase.ai/cite/1304",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Unauthorized use of likeness and voice in an advertising campaign, constituting a copyright or right-of-publicity dispute rather than a cyber incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "aee95f5998e2055b",
+    "title": "The DAO Hack",
+    "url": "https://incidentdatabase.ai/cite/50",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: The DAO hack is a smart contract vulnerability exploit on the blockchain with no AI involvement.",
+    "confidence": 1,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "19345e77857b537a",
+    "title": "Reported Automated License Plate Reader Alert on Previously Stolen Rental Car Leads to Alleged Wrongful Detainment in California",
+    "url": "https://incidentdatabase.ai/cite/248",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: ALPR database error resulting in wrongful detainment; AI harm with no security incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b028b319842bf619",
+    "title": "Colorado Police’s Automated License Plate Reader (ALPR) Matched a Family’s Minivan’s Plate to That of a Stolen Vehicle Allegedly, Resulting in Detainment at Gunpoint",
+    "url": "https://incidentdatabase.ai/cite/244",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: ALPR misread resulting in wrongful detainment; AI system error with no security angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d428e08e538689d4",
+    "title": "Facebook Recommended Military Gear Ads Despite Pause on Weapons Accessories Ads",
+    "url": "https://incidentdatabase.ai/cite/318",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic recommendation failure showing ads against policy; no cyberattack or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "bfcbc7f6d6edf293",
+    "title": "Students Reportedly Used Generative Text Tools to Complete School Assignments and Exams",
+    "url": "https://incidentdatabase.ai/cite/339",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Students using generative text for homework; academic integrity issue, not a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3394810c34ae884c",
+    "title": "Purported Graphite Spyware Linked to Paragon Solutions Allegedly Deployed Against Journalists and Civil Society Workers",
+    "url": "https://incidentdatabase.ai/cite/1069",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: General spyware deployment against journalists via standard zero-click exploit with no meaningful AI component.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "018de6a72d77a2dc",
+    "title": "Stable Diffusion Abused by 4chan Users to Deepfake Celebrity Porn",
+    "url": "https://incidentdatabase.ai/cite/314",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake generation and model leak without a cybersecurity attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "fe308ef23fd2f702",
+    "title": "Vanderbilt Peabody Office's Purportedly ChatGPT-Drafted Message About Michigan State Shooting Reportedly Drew Student Backlash",
+    "url": "https://incidentdatabase.ai/cite/482",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Use of ChatGPT to draft a university message resulting in public backlash and reputational harm, with no security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1cf3ce69b32cf721",
+    "title": "Indian Police Allegedly Tortured and Killed Innocent Man Following Facial Misidentification",
+    "url": "https://incidentdatabase.ai/cite/483",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition misidentification leading to police misconduct and tragic harm, lacking a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "56ee714abf979fdd",
+    "title": "Non-consensual Deepfake Porn Targeted Female Content Creators",
+    "url": "https://incidentdatabase.ai/cite/480",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake pornography is an AI harm/privacy violation, but lacks a traditional cybersecurity angle like cyberattacks, fraud, or extortion.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "84ff1ac3e75cbb3f",
+    "title": "Disinformation Deepfake Circulates of State Department Spokesman Matthew Miller Suggesting Belgorod Can Be Attacked with U.S. Weapons",
+    "url": "https://incidentdatabase.ai/cite/702",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political disinformation and influence operations via deepfakes without a cybersecurity exploit or direct cyberattack are considered out of scope.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "65b305459f83146a",
+    "title": "Fake AI-Generated Law Firms Sent Fake DMCA Notices to Increase SEO",
+    "url": "https://incidentdatabase.ai/cite/717",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Fraudulent DMCA notices using generated identities for SEO spam constitute general fraud and online abuse rather than a cybersecurity attack on or with an AI system.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "318a64c31b918d65",
+    "title": "16-Year-Old Allegedly Received Suicide Method Guidance from ChatGPT Before Death",
+    "url": "https://incidentdatabase.ai/cite/1192",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Harm involving chatbot safety and psychological distress without a security exploitation angle is out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "526bafee8a67094f",
+    "title": "Algorithmic Bias in French Welfare System Allegedly Discriminates Against Marginalized Groups",
+    "url": "https://incidentdatabase.ai/cite/822",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic bias and welfare discrimination are AI harms without a cybersecurity incident or attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "46a5a95da5a2b00d",
+    "title": "Man Arrested For Sock Theft by False Facial Match Despite Alibi",
+    "url": "https://incidentdatabase.ai/cite/517",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition error leading to wrongful arrest; no cybersecurity attack or compromise involved.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "64746169c14cdb64",
+    "title": "OpenAI Allegedly Did Not Alert RCMP After ChatGPT Flagged Violent Chats Before British Columbia School Shooting",
+    "url": "https://incidentdatabase.ai/cite/1375",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Safety flags triggered on a user's chats before a real-world shooting, but no cyber attack on AI or AI-enabled cyber attack occurred.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "345ac174a593f150",
+    "title": "Argentine Court Reportedly Annuls Criminal Conviction After Judge Allegedly Used ChatGPT to Draft Ruling Without Disclosure",
+    "url": "https://incidentdatabase.ai/cite/1257",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Judicial use of AI to draft a ruling without disclosure; ethical and procedural issue rather than a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d95004049767ff7a",
+    "title": "Student Reportedly Files Complaint Over Professor's Undisclosed Use of Generative AI at Northeastern University",
+    "url": "https://incidentdatabase.ai/cite/1071",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Academic policy dispute regarding a professor's undisclosed use of generative AI tools, no security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7760daba57031a68",
+    "title": "Facebook Content Moderators Demand Better Working Conditions Due to Allegedly Inadequate AI Content Moderation",
+    "url": "https://incidentdatabase.ai/cite/215",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Content moderation working conditions and accuracy issues, no cyberattack or AI exploitation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1e96ceb8e0b5f9a5",
+    "title": "Purported Republican AI Ad Reportedly Depicts Dystopian Future After Biden Reelection Announcement",
+    "url": "https://incidentdatabase.ai/cite/694",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political campaign advertisement utilizing AI-generated images, no cybersecurity incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9b9f9ee07d7c292b",
+    "title": "AI Romance Apps Reportedly Compromise User Privacy for Data Harvesting",
+    "url": "https://incidentdatabase.ai/cite/636",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Privacy policy issues, data harvesting, and poor security practices in romance apps are standard data privacy harms rather than a cybersecurity incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c66c5a7a9d18a404",
+    "title": "ChatGPT Allegedly Helped a Teenager in Sarthe, France, Plan Terrorist Attacks on Schools and Government Buildings",
+    "url": "https://incidentdatabase.ai/cite/1742",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Radicalization and general assistance with planning provided by a standard chatbot without jailbreak or cyberattack tooling do not qualify as a cybersecurity incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3cfec94f5b95cc44",
+    "title": "A Self-Driving Waymo Robotaxi Reportedly Collided with a Bicyclist",
+    "url": "https://incidentdatabase.ai/cite/647",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Autonomous-vehicle driving collision with no cybersecurity angle or attack involvement.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "11e647d44bd2385c",
+    "title": "Department for Work and Pensions (DWP) Algorithm Wrongly Flags 200,000 for Housing Benefit Fraud",
+    "url": "https://incidentdatabase.ai/cite/738",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic error and welfare administration failure with no security angle or cyberattack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "e9eef88d69a36341",
+    "title": "AI Firm Lovo Reportedly Accused of Illegally Replicating Voice Actors' Voices",
+    "url": "https://incidentdatabase.ai/cite/728",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Voice cloning copyright and likeness lawsuit without a direct cybersecurity attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "6f0c5416939c0ca3",
+    "title": "ChatGPT Reportedly Introduces Errors in Critical Child Protection Court Report",
+    "url": "https://incidentdatabase.ai/cite/807",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI hallucination and data entry privacy leak in government work, not a cybersecurity attack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "db30da338dc631ad",
+    "title": "Shein Accused of AI-Driven Art Theft on Merchandise",
+    "url": "https://incidentdatabase.ai/cite/629",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: This is an intellectual property and copyright infringement dispute regarding digital art replication, lacking a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "99eaba4d4d511ab8",
+    "title": "Uber Allegedly Wrongfully Accused Drivers of Fraud via Automated Systems",
+    "url": "https://incidentdatabase.ai/cite/355",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic bias or administrative wrongful accusation without a cybersecurity breach or attack vector.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5b58d719c025cda2",
+    "title": "Sports Illustrated Is Alleged to Have Used AI to Invent Fake Authors and Their Articles",
+    "url": "https://incidentdatabase.ai/cite/616",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harms with no cybersecurity angle (generation of fake articles and author profiles, journalistic integrity issue).",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "29f7d65313ce1578",
+    "title": "UK Government AI Allegedly Targets Disproportionate Numbers of Certain Nationals for Fraud Review",
+    "url": "https://incidentdatabase.ai/cite/611",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Policy and algorithmic bias concern in government benefit fraud detection without a specific cyber incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "29396890635c31c1",
+    "title": "Unauthorized AI Impersonation of George Carlin Used in Comedy Special",
+    "url": "https://incidentdatabase.ai/cite/627",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Copyright and impersonation issue without a cybersecurity angle (no unauthorized breach, attack or exploit).",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1090c38fd15f3ab3",
+    "title": "Instagram's Exposure of Harmful Content Allegedly Contributed to Teenage Girl's Suicide",
+    "url": "https://incidentdatabase.ai/cite/382",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm regarding toxic content exposure without a security angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1b558dbe9a841214",
+    "title": "False Arrest of Georgia Man Due to Louisiana Police's Faulty Facial Recognition Technology",
+    "url": "https://incidentdatabase.ai/cite/598",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition failure leading to false arrest, no security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a8ee750bcf5a7934",
+    "title": "Alleged Exploitation of Meta's Open-Source LLaMA Model for NSFW and Violent Content",
+    "url": "https://incidentdatabase.ai/cite/578",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Dual-use open-source model use for adult roleplay content, not a security exploit or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "dfdcb44d4b2c61e4",
+    "title": "FTC Targets Edmodo for Unlawful Use of Children’s Data and Delegating Compliance to Schools",
+    "url": "https://incidentdatabase.ai/cite/586",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: COPPA compliance violation regarding children's data collection, no AI security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "bff447fa16100dc8",
+    "title": "Cigna Algorithm PXDX Allegedly Rejected Thousands of Patient Claims En Masse in Breach of California Law",
+    "url": "https://incidentdatabase.ai/cite/591",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Health insurance algorithm denying medical claims is an algorithmic bias, safety, or regulatory issue without a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "e3d5d48768752239",
+    "title": "South Korean Actor Kim Seon-ho's Likeness Allegedly Misused in Purported Deepfake Impersonation Attempts Demanding Money",
+    "url": "https://incidentdatabase.ai/cite/1185",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: General deepfake impersonation fraud targeting an individual celebrity with no enterprise cybersecurity incident or AI system compromise.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2d815a7fde7b32b7",
+    "title": "ChatGPT Allegedly Reinforced Delusions Before Greenwich, Connecticut Murder-Suicide",
+    "url": "https://incidentdatabase.ai/cite/1204",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm involving psychological distress and delusions without a security attack angle, considered out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5ce75ae2769c438c",
+    "title": "Judge Reportedly Disqualifies Butler Snow Lawyers Following Purported Use of ChatGPT-Fabricated Citations in Alabama Prison Litigation",
+    "url": "https://incidentdatabase.ai/cite/1196",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Hallucinated legal citations generated by an AI tool used by lawyers, which is a legal malpractice issue rather than a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "441480c12a82e511",
+    "title": "YouTube's AI Mistakenly Banned Chess Channel over Chess Language Misinterpretation",
+    "url": "https://incidentdatabase.ai/cite/144",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: False positive content moderation error by an AI system, no cybersecurity attack or compromise.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d242963533e37171",
+    "title": "Coupang Allegedly Tweaked Search Algorithms to Boost Own Products",
+    "url": "https://incidentdatabase.ai/cite/435",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Business practice and anti-trust allegation regarding search algorithm manipulation, no cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9be82f09a01cb4d3",
+    "title": "OpenAI Alleged by Lawsuit Violated Users' Privacy Rights by Training AI on Private Info without Informed Consent",
+    "url": "https://incidentdatabase.ai/cite/561",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Privacy lawsuit regarding data scraping for model training, which falls under copyright and data privacy harms rather than cybersecurity incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ce1e7c0b762404d4",
+    "title": "Purportedly AI-Generated Images Allegedly Linked Sami Lushtaku to Banjska Attack Suspect Milan Radoičić",
+    "url": "https://incidentdatabase.ai/cite/1530",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Deepfakes and misinformation used for political smear without a cybersecurity attack vector.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "48aa9f5335408d5f",
+    "title": "Walmart's Bagging-Detection False Positives Exposed Workers to Health Risk",
+    "url": "https://incidentdatabase.ai/cite/364",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Operational AI system failure causing false positives and health risks, no security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "829b3b43ace18fcf",
+    "title": "Reported AI-Assisted Influence Campaigns by GoLaxy Allegedly Targeting Hong Kong and Taiwan Political Discourse",
+    "url": "https://incidentdatabase.ai/cite/1169",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: State-sponsored influence campaign using AI tools for social media manipulation, lacking a direct cyberattack angle.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "cd62b8b33fa42b9e",
+    "title": "Chatbot Tessa gives unauthorized diet advice to users seeking help for eating disorders",
+    "url": "https://incidentdatabase.ai/cite/545",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI health and safety harm (chatbot outputting harmful advice) with no cybersecurity attack or incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "bf028889bfd711df",
+    "title": "Algorithm to Distribute Social Welfare Reported for Oversimplifying Economic Vulnerability",
+    "url": "https://incidentdatabase.ai/cite/546",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI fairness and discrimination issue with no security or cyber attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "02b30a2f55d4499b",
+    "title": "Social Media Recommendation Algorithms Allegedly Repeatedly Exposed 13-Year-Old Blake Gallier to Suicide-Related Videos Before Her Death",
+    "url": "https://incidentdatabase.ai/cite/1653",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Harm caused by recommendation algorithm content moderation issues, out of scope for AI cybersecurity.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "cdb1f22467d23362",
+    "title": "Opaque Fraud Detection Algorithm by the UK’s Department of Work and Pensions Allegedly Discriminated against People with Disabilities",
+    "url": "https://incidentdatabase.ai/cite/189",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic bias and discrimination in a government fraud detection system, no cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "475fc88e1b559b85",
+    "title": "Seedance 2.0 Reportedly Generated Viral Tom Cruise–Brad Pitt Fight Video, Prompting Hollywood IP and Likeness Complaints",
+    "url": "https://incidentdatabase.ai/cite/1377",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Copyright and deepfake IP dispute without a cybersecurity angle (out of scope).",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d3be25139043d6a8",
+    "title": "Betfair's Machine-Learning Risk System Reportedly Failed to Flag Luke Ashton Before Gambling-Related Suicide in England",
+    "url": "https://incidentdatabase.ai/cite/1396",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI algorithmic harm/risk management failure with no security angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7f8ea3559e54ad1b",
+    "title": "Cross-Jurisdictional Facial Recognition Misidentification by NYPD Leads to Wrongful Arrest and Four-Year Jail Time in New Jersey",
+    "url": "https://incidentdatabase.ai/cite/816",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition misidentification and wrongful arrest (AI bias/harm with no security incident angle).",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "bb844c87885bf184",
+    "title": "ChatGPT Use Was Reportedly Cited in Delusional State Before Homicide and Assault in Readfield, Maine",
+    "url": "https://incidentdatabase.ai/cite/1491",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm or psychological issue with no cybersecurity attack angle",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "eaa7a7c297573dea",
+    "title": "ChatGPT Was Allegedly Consulted About Attack Options Before Teen Attempted to Stab Officer at Tira, Israel, Police Station",
+    "url": "https://incidentdatabase.ai/cite/1490",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: General crime involving AI consultation without a cyber attack or security angle",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8e0f19eab801acc4",
+    "title": "ChatGPT Was Alleged to Have Aided Planning of Florida State University Mass Shooting",
+    "url": "https://incidentdatabase.ai/cite/1487",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Physical mass shooting incident where an AI model was allegedly consulted, lacking a cybersecurity angle",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9541ed793de3cf35",
+    "title": "Law Firm Shapiro Arato Bach Reportedly Filed Fictitious Case Citation and Misattributed Quotations Using Harvey's Legal AI Platform in New York Federal Court",
+    "url": "https://incidentdatabase.ai/cite/1728",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI hallucination and legal filing error without a security incident or attack",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2556d02b06bf6131",
+    "title": "Far-Right Teen in Singapore Reportedly Queried AI Chatbot About Ammunition While Planning Mosque Attacks",
+    "url": "https://incidentdatabase.ai/cite/1736",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: An extremist queried an unnamed chatbot for information while planning an attack, but no security vulnerability or AI-enabled attack mechanism is established.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "dfb2f2ef1718f7c4",
+    "title": "Tunisian Man Allegedly Used ChatGPT to Research Bomb-Making During Paris Terror Plot Targeting Louvre and Jewish Community",
+    "url": "https://incidentdatabase.ai/cite/1625",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: A terrorism suspect used ChatGPT for bomb-making research, representing a general AI safety/misuse issue rather than a targeted cybersecurity incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7841c75db79e00d6",
+    "title": "ISWAP Reportedly Used AI Guidance to Breach Nigerian Military Base Defenses by Motorcycle",
+    "url": "https://incidentdatabase.ai/cite/1624",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Militants consulted an AI chatbot for physical tactical advice, lacking any direct computer security or cyberattack angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "dbfc77914d3e3574",
+    "title": "YouTube Recommendation Reportedly Pushed Election Fraud Content to Skeptics Disproportionately",
+    "url": "https://incidentdatabase.ai/cite/348",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic recommendation bias regarding election content is an AI harm without a specific cybersecurity incident or attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3afbc5d7b6f700e3",
+    "title": "Purported AI Voice Clone Allegedly Narrated Shaun Rein's 'The Split' in Unauthorized YouTube 'Podcast' Videos",
+    "url": "https://incidentdatabase.ai/cite/1380",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Deepfake audio used for copyright infringement and impersonation on YouTube without a cybersecurity breach or attack angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "14f868b8daf682d9",
+    "title": "Anthropic's Claude Code AI Coding Tool Reportedly Used Hidden Unicode Markers to Classify Custom API Routing",
+    "url": "https://incidentdatabase.ai/cite/1723",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: An anti-distillation watermarking experiment by a developer within their own coding tool does not constitute a security incident or attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "bd8373395854d047",
+    "title": "DJI Romo Cloud Authorization Bug Reportedly Exposed Camera, Microphone, and Home-Mapping Data From Nearly 7,000 Robot Vacuums",
+    "url": "https://incidentdatabase.ai/cite/1389",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: A software engineer discovered cloud authorization flaws while using an AI coding assistant, but the incident is a standard cloud API security vulnerability, not an AI attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "20a11c82ed9571c4",
+    "title": "Purported Facial Recognition Error Reportedly Led to Arrest and Monthslong Jailing of Tennessee Woman in North Dakota Fraud Case",
+    "url": "https://incidentdatabase.ai/cite/1416",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition error leading to wrongful arrest; no cybersecurity attack or AI system compromise involved.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d9935e7ab09226a6",
+    "title": "Unlabeled Purportedly AI-Generated 'Jessica Foster' Account Reportedly Posed as Pro-Trump Army Service Member to Attract Followers and Funnel Users to Paid Adult Content",
+    "url": "https://incidentdatabase.ai/cite/1422",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Synthetic social media deception account used to attract followers and promote adult content; no cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "85af81d023195193",
+    "title": "American Exceptionalism Institute's Purportedly AI-Generated Ad Drew Defamation Claims Over Marsha Blackburn Pharmaceutical Bribery Allegations",
+    "url": "https://incidentdatabase.ai/cite/1626",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political ad controversy involving AI-generated video and defamation claims; no cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5abe5bd24023c3ad",
+    "title": "Maryland Police Allegedly Relied on Facial Recognition Lead in Wrongful Arrest and Detention of Kimberlee Williams",
+    "url": "https://incidentdatabase.ai/cite/1476",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition error leading to a wrongful arrest; AI harm without a cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "96a8fc59407afc31",
+    "title": "ChatGPT-Generated Image of Nonexistent 'Homeless Man' Was Used in False St. Petersburg, Florida Burglary and Sexual Battery Reports",
+    "url": "https://incidentdatabase.ai/cite/1479",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: False police report filed using an AI-generated image; no cybersecurity attack on or by an AI system.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b6383d6193eea3f7",
+    "title": "Purportedly AI-Recreated Clips from Beastie Boys' 'Sabotage' Video Reportedly Appeared in FBI Promotional Video Posted by Kash Patel",
+    "url": "https://incidentdatabase.ai/cite/1480",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Use of AI-generated video clips in an FBI promotional video; copyright or policy issue, not a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ca53db55b961de5c",
+    "title": "Character.AI Chatbots Reportedly Exposed 11-Year-Old User to Sexual, Violent, and Self-Harm Content",
+    "url": "https://incidentdatabase.ai/cite/1498",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Minor exposed to inappropriate content via chat bots; safety and content moderation issue without a cybersecurity attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c863c879f405aef6",
+    "title": "Baltimore Lawsuit Alleged DraftKings and FanDuel Used Machine-Learning-Driven Targeting to Exploit Vulnerable Gamblers",
+    "url": "https://incidentdatabase.ai/cite/1427",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Lawsuit concerning standard predictive marketing and user retention algorithms for gambling platforms, lacking a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "0d06245782960206",
+    "title": "UK High Court Found Sky Betting & Gaming Unlawfully Used Automated Profiling and Targeted Marketing to Exploit a Recovering Problem Gambler",
+    "url": "https://incidentdatabase.ai/cite/1428",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm involving unlawful profiling and gambling addiction without any cybersecurity angle or attack.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1a5ecd08dd578ed7",
+    "title": "Grok Reportedly Disclosed Adult Performer Siri Dahl's Legal Name and Birthdate, Allegedly Contributing to Doxxing and Harassment",
+    "url": "https://incidentdatabase.ai/cite/1443",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Data privacy disclosure / hallucination of personal details without a security exploit or attack vector.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "88acb8c3e7215c6c",
+    "title": "Harris County, Texas, Deputies Reportedly Detained Two 19-Year-Olds at Gunpoint After Flock Safety License-Plate Reader Detected Different Stolen Camaro",
+    "url": "https://incidentdatabase.ai/cite/1703",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Automated License Plate Reader false positive leading to police detention; no cybersecurity incident or AI attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d59fc9d0a8d6c664",
+    "title": "OpenAI GPT-5.6 Sol Reportedly Deleted Software Engineer's Production Database During Local Testing",
+    "url": "https://incidentdatabase.ai/cite/1672",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Accidental deletion of a production database by an AI coding assistant during local testing due to misconfigured database URLs; no malicious cyberattack or security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9060e21a5f2e9922",
+    "title": "Flock Safety License-Plate Reader Reportedly Misread Plate, Leading Toledo, Ohio, Police to Stop Motorist at Gunpoint and Deploy K-9",
+    "url": "https://incidentdatabase.ai/cite/1717",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: ALPR misread leading to a mistaken police stop; product error and operational failure without a security angle or AI attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3f846579975d3693",
+    "title": "Flock Safety License-Plate Reader Reportedly Misread Plate Digit, Prompting Gunpoint Stop of Two Sisters in Española, New Mexico",
+    "url": "https://incidentdatabase.ai/cite/1698",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Automated license-plate reader misread causing an erroneous police stop; operational error without a cybersecurity incident or AI attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "399a981debc27b09",
+    "title": "Kansas Couple Reportedly Stopped Twice in Kansas and Oklahoma After Flock Safety Alerts Linked Their Plate Number to a Stolen Vehicle",
+    "url": "https://incidentdatabase.ai/cite/1704",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: ANPR misidentification resulting in a law enforcement traffic stop is an AI system error or harm without a cybersecurity incident or attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "0365f19370627df6",
+    "title": "Milwaukee Police Detective Allegedly Used Flock Safety License-Plate Reader 20 Times to Track Two People in Violation of Department Policy",
+    "url": "https://incidentdatabase.ai/cite/1706",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Police officer policy violation and misuse of a database tool lacks an AI attack or cybersecurity exploit component.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "468101d850312a25",
+    "title": "York County, South Carolina, Deputies Reportedly Held Local Motorist at Gunpoint After Flock Safety License-Plate Reader Misread",
+    "url": "https://incidentdatabase.ai/cite/1713",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Automated license-plate reader misidentification leading to a police detention is an operational AI error without a cybersecurity angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b23bea8c08ca72ee",
+    "title": "COEMPT Quality Assurance Engineers Allegedly Violated Indian CBSE Student Data Privacy Rights by Processing It with Google Gemini",
+    "url": "https://incidentdatabase.ai/cite/1507",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Data privacy compliance issue and third-party data processing without a security exploit or cyberattack angle.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9322b38eae5a01ef",
+    "title": "Stanford University Acknowledged Using AI to Alter Student Photo for Campus Banners, Replacing Hispanic Student With Black Woman",
+    "url": "https://incidentdatabase.ai/cite/1708",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI ethics and synthetic media usage policy violation with no cybersecurity incident or attack angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "35dbe05840891b12",
+    "title": "Former Costa Mesa, California, Police Officer Reportedly Used Flock Safety License-Plate Reader System to Track Woman He Was Seeing and Her Romantic Partners",
+    "url": "https://incidentdatabase.ai/cite/1697",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Misuse of automated surveillance and license-plate reader technology without AI-specific cybersecurity exploits or attacks.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7677b8bcf63703e4",
+    "title": "City of Spokane Reportedly Distributed Purported AI-Generated Clocktower Flyer Resembling Graphic Designer Matthew Clinard's Artwork",
+    "url": "https://incidentdatabase.ai/cite/1598",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Copyright infringement dispute over AI-generated art flyer, no cybersecurity incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "1121df639024ce1f",
+    "title": "OpenAI GPT-5.6 Sol Agent Reportedly Deleted Most Files in AI Startup Founder's Mac Home Directory",
+    "url": "https://incidentdatabase.ai/cite/1671",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Accidental file deletion by an autonomous agent during a cleanup task is an agent error / safety incident rather than a security attack or exploitation.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "2f4e7c244feb3949",
+    "title": "California Immigration Attorneys Reportedly Sanctioned Over Briefs Containing Probable Hallucinations in LNU v. Blanche",
+    "url": "https://incidentdatabase.ai/cite/1571",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Legal hallucination case with no cybersecurity angle (out-of-scope AI harm).",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "4a6ff1d4ec9312c4",
+    "title": "Spokane, Washington, Police Reportedly Circulated Purported AI-Generated Image as Authentic Photo of Injured Dog",
+    "url": "https://incidentdatabase.ai/cite/1597",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Synthetic image creation and administrative error by police; no cyberattack or AI security exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d0375ddf0a52568c",
+    "title": "Waymo Robotaxi Reportedly Remained Immobilized While Vandals Smashed Vehicle with Passenger Inside",
+    "url": "https://incidentdatabase.ai/cite/1599",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Autonomous vehicle physical vandalism and safety hazard with no cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "c084c2b7ce2ff3a6",
+    "title": "Turkish National Reportedly Posted a Purportedly AI-Generated Image Depicting Himself with Eric Trump While Promoting Trump Hotel Dubai",
+    "url": "https://incidentdatabase.ai/cite/1639",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Creation of an AI-generated image for social media persona fabrication without a cyber attack or security vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "449bdb93c62f3859",
+    "title": "A.B. Paterson College Teacher in Queensland Allegedly Used AI to Create Explicit Images of Students and Staff",
+    "url": "https://incidentdatabase.ai/cite/1612",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Teacher created explicit images of students and staff using AI; no cyberattack or external breach involved, out-of-scope AI harm/misconduct.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a2dda545005b3db1",
+    "title": "Kate Isaacs, Advocate Against Image-Based Abuse, Reports Being Deepfaked",
+    "url": "https://incidentdatabase.ai/cite/904",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Non-consensual deepfake pornography targeting an activist, lacking a specific cybersecurity or attack vector against an AI system or infrastructure.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "8eadbb4eb811ea7c",
+    "title": "Instagram Algorithms Allegedly Promote Accounts Facilitating Child Sex Abuse Content",
+    "url": "https://incidentdatabase.ai/cite/583",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Algorithmic recommendation flaws promoting illicit content, representing a safety/content moderation issue rather than a cybersecurity incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "e1f72b766eff0d9f",
+    "title": "Deepfake Generated by the Lincoln Project of Trump's Father Used in Political Attack Ad",
+    "url": "https://incidentdatabase.ai/cite/664",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political advertising using deepfakes, no cybersecurity angle or unauthorized attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "00f47c9d3087fae3",
+    "title": "Investigation Reports Unauthorized Deepfake Pornography Harms Thousands of Celebrities",
+    "url": "https://incidentdatabase.ai/cite/660",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: General proliferation of deepfake porn content without a specific cyberattack or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f061652706fbcafe",
+    "title": "GPT-4o's Chinese Tokens Reportedly Compromised by Spam and Pornography Due to Inadequate Filtering",
+    "url": "https://incidentdatabase.ai/cite/729",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Low-quality training data containing spam and pornography is a data quality and content filtering issue, not a cybersecurity attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "3cd5f502c3c3841a",
+    "title": "AI-Generated Obituaries Are Reportedly Intensifying Grief for Bereaved Families",
+    "url": "https://incidentdatabase.ai/cite/752",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI-generated obituaries causing emotional distress is an AI harm and misinformation issue without a cybersecurity attack or vulnerability angle.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "10761451a69d23d8",
+    "title": "Purportedly AI-Generated Audio Allegedly Fabricates Biden's Admission of Role in Pakistani Political Crisis",
+    "url": "https://incidentdatabase.ai/cite/856",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Political misinformation and deepfake audio used for political propaganda, with no direct cyberattack, system compromise, or financial fraud.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a5ba2fb4060d32f9",
+    "title": "TikTok Algorithms Allegedly Linked to Minors' Exposure to Harmful Content",
+    "url": "https://incidentdatabase.ai/cite/869",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI ethics, content moderation, and algorithm harm lawsuit without any cybersecurity incident, attack, or technical breach.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "9e83f348af3b8895",
+    "title": "Sydney Students Allegedly Forced to Retake NAPLAN After AI Predictive Text Error",
+    "url": "https://incidentdatabase.ai/cite/993",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Predictive text malfunction during an exam is a technical glitch rather than a cybersecurity incident or AI attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "a82b7275a8680fd9",
+    "title": "NYPD Facial Recognition System Allegedly Produced Erroneous Match That Reportedly Resulted in Wrongful Detention of Trevis Williams",
+    "url": "https://incidentdatabase.ai/cite/1191",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Facial recognition error and wrongful detention due to a law enforcement system failure, lacking a cybersecurity attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "7032a9fda07dc3ff",
+    "title": "Reported Hack of Tea Dating App Compromises Data from Purportedly AI-Supported Identity and Image Checks",
+    "url": "https://incidentdatabase.ai/cite/1171",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Traditional data breach of a legacy storage system in a dating app; AI features were used for user verification but were not the target or vector of the breach.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "e00b41781f8d3434",
+    "title": "Purported Deepfake Impersonation of Elon Musk Used to Promote Fraudulent '17-Hour' Diabetes Treatment Claims",
+    "url": "https://incidentdatabase.ai/cite/1317",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Misinformation and false advertising without a distinct cybersecurity angle (fraud/scam ad using deepfakes, no technical exploit or cyberattack)",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5249f7682855dce2",
+    "title": "CVE-2026-31504: In the Linux kernel, the following vulnerability has been resolved:\n\nnet: fix fanout UAF in packet_release() via NETDEV_UP…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-31504",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: The vulnerability is in the Linux kernel networking subsystem, unrelated to AI infrastructure or models.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "76c24349d2471daf",
+    "title": "GHSA-w4hm-rrxg-pxcf: Duplicate Advisory: Flowise Execute Flow function has an SSRF vulnerability",
+    "url": "https://github.com/advisories/GHSA-w4hm-rrxg-pxcf",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn and marked as a duplicate of another advisory.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5f89e1ad35da11ae",
+    "title": "GHSA-6j9g-8fxc-25hq: Duplicate Advisory: Flowise contains an unauthenticated sandbox escape",
+    "url": "https://github.com/advisories/GHSA-6j9g-8fxc-25hq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Withdrawn duplicate advisory pointing to an existing record, not a new distinct incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "6ba467d2b9b2831d",
+    "title": "CVE-2026-97620: In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/xe: Flush LSC untyped L1 dataport cache after rcs/ccs…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97620",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Linux kernel DRM driver vulnerability with no relation to AI systems.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ef9c193d9863c501",
+    "title": "CVE-2026-87902: WordPress Core — WordPress Core Remote File Inclusion Vulnerability",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-87902",
+    "publisher": "CISA",
+    "source_id": "kev",
+    "reason": "out of scope: WordPress Core remote file inclusion vulnerability with no AI involvement.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "40407a1cea723849",
+    "title": "An opt-in vulnerability-finding service for open-source software",
+    "url": "https://anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Product launch and vendor announcement regarding an AI security scanning service.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "fcf6e421796d75ad",
+    "title": "Strengthening our defenses against distillation attacks",
+    "url": "https://anthropic.com/research/distillation-defenses",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Vendor feature announcement and defensive measures against distillation without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "f7460fdaa2832c44",
+    "title": "Straiker Named in Two 2026 Gartner® Hype Cycle™ Reports: Secure AI and AI-Driven Cybersecurity",
+    "url": "https://straiker.ai/blog/straiker-named-in-two-2026-gartner-r-hype-cycle-tm-reports-secure-ai-and-ai-driven-cybersecurity",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Product marketing and Gartner Hype Cycle report mention, not a security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "de7e4a82bb7fc257",
+    "title": "How to Run a Deepfake Readiness Drill Before a Cloned Voice Calls Your Team",
+    "url": "https://thehackernews.com/2026/10/how-to-run-deepfake-readiness-drill.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Explainer/advisory piece on how to conduct deepfake readiness drills without a specific targeted incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "0a34dc42eff456a4",
+    "title": "AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host",
+    "url": "https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: A Linux kernel vulnerability found using AI tools, but the incident is a standard software vulnerability with no direct attack on AI or meaningful AI cyberattack involvement.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "5cb1618c1db568b5",
+    "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+    "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+    "publisher": "Google DeepMind",
+    "source_id": "deepmind",
+    "reason": "out of scope: Vendor feature announcement and collaboration to build a scam-detection AI model, not a security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "24cc989c02dbc2a2",
+    "title": "SentinelOne cuts malware analysis from weeks to hours",
+    "url": "https://openai.com/index/sentinelone",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Product launch and vendor feature announcement about SentinelOne using OpenAI.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "6c7c3ccc774eb8b8",
+    "title": "Is AI pentesting as good as a human pentester?",
+    "url": "https://bleepingcomputer.com/news/security/is-ai-pentesting-as-good-as-a-human-pentester",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General opinion piece and explainer comparing AI pentesting with human testers.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "112528776124f7ab",
+    "title": "Android gets AI defenses against messaging scams, fake calls",
+    "url": "https://bleepingcomputer.com/news/security/android-gets-ai-defenses-against-messaging-scams-fake-calls",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Product feature announcement for Android AI security features, not a security incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "d50d68f2f55f562b",
+    "title": "Employees using personal ChatGPT at work? Here's what IT admins need to do",
+    "url": "https://bleepingcomputer.com/news/security/employees-using-personal-chatgpt-at-work-heres-what-it-admins-need-to-do",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General advice article for IT admins about employees using personal AI accounts; no specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "ad82fc30dac0f4b9",
+    "title": "In Other News: ICS-Sniper Attack, Hacking XWorm Malware Operators, $250k Chrome Exploit",
+    "url": "https://securityweek.com/in-other-news-ics-sniper-attack-hacking-xworm-malware-operators-250k-chrome-exploit",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Roundup article mentioning a Langflow flaw among other unrelated security stories without providing details of an AI-specific incident.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "b8a39f16a16f5728",
+    "title": "Straiker Brings Independent AI Agent Red-Teaming to Workday Agent Passport",
+    "url": "https://straiker.ai/blog/straiker-brings-independent-ai-agent-red-teaming-to-workday-agent-passport",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Product launch and partnership announcement for AI red-teaming tools.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "key": "442c2eb5c2c85552",
+    "title": "Show HN: AegisKernel – Test prompt injection attacks on AI agents in the browser",
+    "url": "https://adikshatriyag-crypto.github.io/aegis-kernel",
+    "publisher": "adikshatriyag-crypto.github.io",
+    "source_id": "hn",
+    "reason": "out of scope: This is a product launch and developer tool announcement for testing AI agents, not a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:33:31.967Z"
+  }
+]

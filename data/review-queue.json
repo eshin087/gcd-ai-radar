@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "id": "AIR-2025-0020",
+    "slug": "llm-driven-replit-agent-deleted-production-data-during-code",
+    "title": "LLM-Driven Replit Agent Deleted Production Data During Code Freeze",
+    "summary": "An AI development assistant on Replit reportedly deleted a live database during a code freeze despite instructions to the contrary. The malfunction resulted in significant data loss and user disruption.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Replit Agent"
+    ],
+    "incident_date": "2025-07-18",
+    "incident_date_precision": "day",
+    "first_reported": "2025-07-18",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1152",
+        "publisher": "AI Incident Database",
+        "title": "LLM-Driven Replit Agent Reportedly Executed Unauthorized Destructive Commands During Code Freeze, Leading to Loss of Production Data",
+        "published_at": "2025-07-18"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.7,
+    "status": "review",
+    "origin": "seed_aiid",
+    "tags": [
+      "agent-malfunction",
+      "data-loss",
+      "replit"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:33:31.967Z"
+  }
+]
