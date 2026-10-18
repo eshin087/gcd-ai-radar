@@ -18307,6 +18307,783 @@
     "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
+    "id": "AIR-2023-0018",
+    "slug": "researchers-bypass-cylance-ai-malware-detector-with-universa",
+    "title": "Researchers bypass Cylance AI malware detector with universal string",
+    "summary": "Researchers created a universal bypass string that, when appended to malicious files, successfully evades detection by Cylance's AI malware detector. The research demonstrates a vulnerability in AI-based security classification systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "CylancePROTECT",
+      "Cylance Smart Antivirus"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V004.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V004: Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "publisher": "MITRE ATLAS",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "publisher": "skylightcyber.com",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "publisher": "security7.net",
+        "title": "Statement's from Skylight Cyber CEO",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection",
+      "bypass"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0017",
+    "slug": "azure-red-team-demonstrates-adversarial-evasion-on-microsoft",
+    "title": "Azure Red Team demonstrates adversarial evasion on Microsoft edge AI product",
+    "summary": "The Azure Red Team conducted an automated red team exercise that continuously manipulated target images to induce misclassifications in a Microsoft edge AI product. The finding highlights adversarial evasion risks in machine learning models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Edge AI Product"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V011.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V011: The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Edge AI Evasion",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "red-team",
+      "edge-ai"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0016",
+    "slug": "microsoft-ai-red-team-conducts-red-teaming-exercise-on-azure",
+    "title": "Microsoft AI Red Team conducts red teaming exercise on Azure service",
+    "summary": "Microsoft red teamers executed an exercise against an internal Azure service to disrupt operations. The test combined standard enterprise tactics with adversarial machine learning evasion techniques.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V010.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V010: The Microsoft AI Red Team performed a red team exercise on an internal Azure service with the intention of disrupting its service.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Azure Service Disruption",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "microsoft",
+      "azure",
+      "red-team",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0015",
+    "slug": "mitre-ai-red-team-demonstrates-physical-evasion-attack-on-fa",
+    "title": "MITRE AI Red Team demonstrates physical evasion attack on face identification",
+    "summary": "Researchers demonstrated a physical-domain evasion attack on a commercial face identification service to induce misclassification. The exercise combined traditional enterprise techniques with adversarial machine learning steps.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Commercial Face Identification Service"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V012.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V012: MITRE's AI Red Team demonstrated a physical-domain evasion attack on a commercial face identification service with the intention of inducing a targeted misclassification.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "publisher": "MITRE ATLAS",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "mitre",
+      "adversarial-ml",
+      "evasion",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0014",
+    "slug": "camera-hijack-attack-evades-facial-recognition-in-tax-system",
+    "title": "Camera hijack attack evades facial recognition in tax system fraud",
+    "summary": "Attackers used camera spoofing and hijacking to bypass facial recognition authentication on a government tax system. The scheme enabled unauthorized access and seventy-seven million dollars in fraudulent invoices.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "adversarial_evasion",
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Shanghai government tax office facial recognition service"
+    ],
+    "incident_date": "2018",
+    "incident_date_precision": "year",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V005.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V005: This type of camera hijack attack can evade the traditional live facial recognition authentication model and enable access to privileged systems and victim impersonation.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "publisher": "MITRE ATLAS",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "publisher": "The Wall Street Journal",
+        "title": "Faces are the next target for fraudsters",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "facial-recognition",
+      "camera-hijack",
+      "fraud",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0013",
+    "slug": "cnn-based-botnet-dga-detector-bypassed-via-domain-mutation",
+    "title": "CNN-Based Botnet DGA Detector Bypassed via Domain Mutation",
+    "summary": "Researchers bypassed a convolutional neural network-based botnet domain generation algorithm detector using a generic domain name mutation technique. The method successfully evaded the ML-based detection module in testing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks DGA Detector"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V002.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V002: The Palo Alto Networks Security AI research team was able to bypass a Convolutional Neural Network based botnet Domain Generation Algorithm (DGA) detector using a generic domain name mutation technique.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "publisher": "MITRE ATLAS",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "publisher": "faculty.washington.edu",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://github.com/matthoffman/degas",
+        "publisher": "GitHub",
+        "title": "Degas source code",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial_evasion",
+      "dga",
+      "botnet"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0012",
+    "slug": "mobile-deep-learning-apps-vulnerable-to-neural-payload-injec",
+    "title": "Mobile Deep Learning Apps Vulnerable to Neural Payload Injection",
+    "summary": "Researchers found that many deep learning models in Google Play apps are vulnerable to backdoor attacks via neural payload injection. The empirical study identified multiple critical applications affected by this vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Mobile Deep Learning Apps"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V013.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V013: Deep learning models are increasingly used in mobile applications as critical components.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0013",
+        "publisher": "MITRE ATLAS",
+        "title": "Backdoor Attack on Deep Learning Models in Mobile Apps",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2101.06896",
+        "publisher": "arXiv",
+        "title": "DeepPayload: Black-box Backdoor Attack on Deep Learning Models through Neural Payload Injection",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "backdoor",
+      "data_poisoning",
+      "mobile_apps"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0011",
+    "slug": "kaspersky-antimalware-ml-model-evaded-via-feature-knowledge",
+    "title": "Kaspersky Antimalware ML Model Evaded via Feature Knowledge",
+    "summary": "Researchers demonstrated that feature knowledge is sufficient to conduct adversarial attacks against ML-based malware detectors. The technique successfully evaded detection for most modified malware files without white-box access.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Kaspersky Antimalware ML Model"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V014.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V014: Cloud storage and computations have become popular platforms for deploying ML malware detectors.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0014",
+        "publisher": "MITRE ATLAS",
+        "title": "Confusing Antimalware Neural Networks",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://securelist.com/how-to-confuse-antimalware-neural-networks-adversarial-attacks-and-protection/102949",
+        "publisher": "Kaspersky Securelist",
+        "title": "Article, \"How to confuse antimalware neural networks. Adversarial attacks and protection\"",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial_evasion",
+      "malware_detection",
+      "research"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0010",
+    "slug": "pytorch-nightly-pypi-package-compromised-with-malicious-depe",
+    "title": "PyTorch-Nightly PyPI Package Compromised with Malicious Dependency",
+    "summary": "Threat actors uploaded a malicious dependency matching the name of a PyTorch-nightly package to PyPI, performing a supply chain attack. The compromised packages exposed sensitive data on infected Linux machines before PyTorch announced the incident.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "PyTorch-nightly"
+    ],
+    "incident_date": "2022-12-25",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V015.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V015: Linux packages for PyTorch's pre-release version, called Pytorch-nightly, were compromised from December 25 to 30, 2022 by a malicious binary uploaded to the Python Package Index (PyPI) code repository.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0015",
+        "publisher": "MITRE ATLAS",
+        "title": "Compromised PyTorch Dependency Chain",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://pytorch.org/blog/compromised-nightly-dependency",
+        "publisher": "pytorch.org",
+        "title": "PyTorch statement on compromised dependency",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/pytorch-discloses-malicious-dependency-chain-compromise-over-holidays",
+        "publisher": "BleepingComputer",
+        "title": "Analysis by BleepingComputer",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "supply_chain",
+      "dependency_confusion",
+      "pypi"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0009",
+    "slug": "clearview-ai-code-repository-misconfiguration-exposes-produc",
+    "title": "Clearview AI code repository misconfiguration exposes production credentials and video samples",
+    "summary": "A misconfigured code repository allowed unauthorized user registration, giving external researchers access to production credentials, cloud storage keys, and video samples. The exposed assets included sensitive data linked to the AI system.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Clearview AI Facial Recognition Tool"
+    ],
+    "incident_date": "2020",
+    "incident_date_precision": "year",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V007.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V007: Clearview AI makes a facial recognition tool that searches publicly available photos for matches.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "publisher": "MITRE ATLAS",
+        "title": "ClearviewAI Misconfiguration",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "publisher": "TechCrunch",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "publisher": "gizmodo.com",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "publisher": "The New York Times",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "data-leak",
+      "credential-exposure",
+      "misconfiguration"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0008",
+    "slug": "researchers-replicate-machine-translation-services-and-trans",
+    "title": "Researchers replicate machine translation services and transfer adversarial attacks",
+    "summary": "Academic researchers successfully replicated commercial translation APIs and used the extraction to craft adversarial inputs causing targeted translation errors. The work demonstrates model extraction and adversarial vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Google Translate",
+      "Bing Translator",
+      "Systran Translate"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V006.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V006: Machine translation services (such as Google Translate, Bing Translator, and Systran Translate) provide public-facing UIs and APIs.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "publisher": "MITRE ATLAS",
+        "title": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2004.15015",
+        "publisher": "arXiv",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://ericswallace.com/imitation",
+        "publisher": "ericswallace.com",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "publisher": "thehill.com",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "model-extraction",
+      "adversarial-evasion",
+      "translation"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0007",
+    "slug": "palo-alto-networks-security-team-demonstrates-evasion-of-dee",
+    "title": "Palo Alto Networks security team demonstrates evasion of deep learning malware detector",
+    "summary": "Researchers built a replica deep learning model for malware traffic detection and crafted adversarial HTTP samples to successfully evade it. The finding highlights vulnerability to adversarial perturbation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks C&C Traffic Detector"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V001.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V001: The Palo Alto Networks Security AI research team tested a deep learning model for malware command and control (C&C) traffic detection in HTTP traffic.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "publisher": "MITRE ATLAS",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/1802.03162",
+        "publisher": "arXiv",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0006",
+    "slug": "researchers-evade-proofpoint-email-security-using-a-surrogat",
+    "title": "Researchers evade Proofpoint email security using a surrogate ML model",
+    "summary": "Researchers bypassed an email security classifier by training a copycat model to generate adversarial inputs that avoided spam detection. No real-world malicious exploitation was documented.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion",
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Proofpoint Email Protection System"
+    ],
+    "incident_date": "2019",
+    "incident_date_precision": "year",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V009.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V009: Proof Pudding (CVE-2019-20634) is a code repository that describes how ML researchers evaded ProofPoint's email protection system by first building a copy-cat email protection ML model, and using the insights to bypass the live system.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0008",
+        "publisher": "MITRE ATLAS",
+        "title": "ProofPoint Evasion",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20634",
+        "publisher": "NVD",
+        "title": "National Vulnerability Database entry for CVE-2019-20634",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+        "publisher": "GitHub",
+        "title": "2019 DerbyCon presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://github.com/moohax/Proof-Pudding",
+        "publisher": "GitHub",
+        "title": "Proof Pudding (CVE-2019-20634) Implementation on GitHub",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://youtube.com/watch?ab_channel=AdrianCrenshaw&v=CsvkYoxtexQ",
+        "publisher": "youtube.com",
+        "title": "2019 DerbyCon video presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "model-extraction",
+      "CVE-2019-20634"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0005",
+    "slug": "llm-application-frameworks-allow-remote-code-execution-via-p",
+    "title": "LLM Application Frameworks Allow Remote Code Execution via Prompting",
+    "summary": "Frameworks like langchain and boxcars.ai allow direct query execution through LLMs, enabling remote code execution or SQL injection via prompt inputs. Researchers demonstrated that unauthorized actions could be triggered through conversational input.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ChatGPT",
+      "langchain",
+      "boxcars.ai"
+    ],
+    "incident_date": "2023-03-26",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-26",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/reports/2023/AVID-2023-R0003.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-R0003: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://blog.luitjes.it/posts/injectgpt-most-polite-exploit-ever",
+        "publisher": "blog.luitjes.it",
+        "title": "InjectGPT: the most polite exploit ever",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://reddit.com/r/netsec/comments/121gpay/injectgpt_remote_code_execution_by_asking_nicely",
+        "publisher": "reddit.com",
+        "title": "Reddit thread on InjectGPT",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V028.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V028: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "prompt-injection",
+      "remote-code-execution",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
     "id": "AIR-2023-0001",
     "slug": "code-execution-in-mathgpt-via-prompt-injection",
     "title": "Code Execution in MathGPT via Prompt Injection",
@@ -18370,6 +19147,148 @@
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
     "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2022-0034",
+    "slug": "microsoft-tay-chatbot-manipulated-to-produce-offensive-tweet",
+    "title": "Microsoft Tay chatbot manipulated to produce offensive tweets",
+    "summary": "Microsoft's Tay chatbot was manipulated into posting racist and offensive tweets in 2016. The bot was taken offline within twenty-four hours of its release.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak",
+      "data_poisoning"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Tay"
+    ],
+    "incident_date": "2016-03-24",
+    "incident_date_precision": "day",
+    "first_reported": "2022-12-23",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V013.json",
+        "publisher": "AVID",
+        "title": "AVID-2022-V013: Microsoft's Tay, an artificially intelligent chatbot, was released on March 23, 2016 and removed within 24 hours due to multiple racist, sexist, and anit-semetic tweets generated by the bot.",
+        "published_at": "2022-12-23"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/6",
+        "publisher": "AI Incident Database",
+        "title": "Incident 6: TayBot",
+        "published_at": "2022-12-23"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0009",
+        "publisher": "MITRE ATLAS",
+        "title": "Tay Poisoning",
+        "published_at": "2022-12-23"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "chatbot",
+      "abuse",
+      "content_manipulation"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2022-0033",
+    "slug": "deepfake-video-of-ukrainian-president-used-to-encourage-surr",
+    "title": "Deepfake video of Ukrainian President used to encourage surrender",
+    "summary": "A deepfaked video depicting the Ukrainian President telling soldiers to surrender was posted on websites and social media platforms. The synthetic media was quickly debunked and caused limited impact.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Deepfake President Zelenskyy Video"
+    ],
+    "incident_date": "2022-12-23",
+    "incident_date_precision": "day",
+    "first_reported": "2022-12-23",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V009.json",
+        "publisher": "AVID",
+        "title": "AVID-2022-V009: A quickly-debunked deepfaked video of the Ukrainian President Volodymyr Zelenskyy was posted on various Ukrainian websites and social media platforms encouraging Ukrainians to surrender to Russian forces during the Russia-Ukraine war.",
+        "published_at": "2022-12-23"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/198",
+        "publisher": "AI Incident Database",
+        "title": "Incident 198: Deepfake Video of Ukrainian President Yielding to Russia Posted on Ukrainian Websites and Social Media",
+        "published_at": "2022-12-23"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "deepfake",
+      "disinformation",
+      "ukraine"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2022-0032",
+    "slug": "hive-box-facial-recognition-delivery-lockers-bypassed-with-p",
+    "title": "Hive Box facial-recognition delivery lockers bypassed with printed photos",
+    "summary": "Facial recognition locks on delivery lockers were successfully bypassed by children using a printed photo of the recipient's face. The demonstration highlighted vulnerabilities to presentation attacks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Hive Box Facial-Recognition Locks"
+    ],
+    "incident_date": "2022-12-23",
+    "incident_date_precision": "day",
+    "first_reported": "2022-12-23",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V012.json",
+        "publisher": "AVID",
+        "title": "AVID-2022-V012: Facial-recognition locks by Hive Box, an express delivery locker company in China, were easily opened by a group of fourth-graders in a science-club demo using only a printed photo of the intended recipient’s face, leaving contents vulnerable to theft.",
+        "published_at": "2022-12-23"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/223",
+        "publisher": "AI Incident Database",
+        "title": "Incident 223: Hive Box Facial-Recognition Locks Hacked by Fourth Graders Using Intended Recipient's Facial Photo",
+        "published_at": "2022-12-23"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "facial-recognition",
+      "spoofing",
+      "presentation-attack"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
   },
   {
     "id": "AIR-2022-0028",

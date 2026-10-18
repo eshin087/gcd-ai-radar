@@ -1,5 +1,555 @@
 [
   {
+    "key": "66e9a3154ef79552",
+    "title": "AVID-2022-R0005: When supplied with prompts from the BOLD dataset, toxicity scores for completed sentences tagged with the 'Islam' religion demonstrate a higher degree of toxicity than other religions.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0005.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: AI harm related to demographic bias and toxicity scoring, out of scope for security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "8cedc8a3dfd13d83",
+    "title": "AVID-2022-R0003: Filling in pronouns in sentences tagged with professions using bert-base-uncased were found to be significantly biased on the Winobias dataset.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0003.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: AI harm related to gender stereotype bias in pronoun filling, out of scope for security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "12103e9de90d88dc",
+    "title": "AVID-2022-R0004: Filling in pronouns in sentences tagged with professions using xlm-roberta-base were found to be significantly biased on the Winobias dataset.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0004.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: AI harm related to gender stereotype bias in pronoun filling, out of scope for security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "119adc6a431daa33",
+    "title": "AVID-2022-R0001: Sentence completions by bert-base-uncased were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0001.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: AI harm related to gender bias in sentence completion tasks, out of scope for security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "1e99c0178a4600f9",
+    "title": "AVID-2022-R0002: Sentence completions by xlm-roberta-base were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0002.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: AI harm related to gender bias in sentence completion tasks, out of scope for security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "05bda213005ac8ba",
+    "title": "AVID-2022-V007: An Israeli farmer was imposed a computer generated fine by the tax authority, who allegedly were not able to explain its calculation, and refused to disclose the program and its source code.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V007.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: General AI harm related to algorithmic opacity and tax administration without a security incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "42fdd15d2026feeb",
+    "title": "AVID-2022-V006: Terms-of-service-violating videos related to suicide and self-harm reportedly bypassed YouTube's content moderation algorithms, allegedly resulting in exposure of graphic content to young users via recommended videos.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V006.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Content moderation failure involving policy-violating videos on YouTube, lacking a cybersecurity attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "a9ea16ba4094919d",
+    "title": "AVID-2022-V010: The publicly launched conversational AI demo BlenderBot 3 developed by Meta was reported by its users and acknowledged by its developers to have “occasionally” made offensive and inconsistent remarks such as invoking Jewish stereotypes.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V010.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Chatbot generating offensive and stereotyped remarks, representing AI bias and safety alignment issues rather than a security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "760215617a208ad7",
+    "title": "AVID-2022-V004: Facebook's automatic language translation software incorrectly translated an Arabic post saying \"Good morning\" into Hebrew saying \"hurt them\", leading to the arrest of a Palestinian man in Beitar Illit, Israel.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V004.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Translation error leading to social harm and arrest, classified as an AI error rather than a security exploit or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "0cf22288b2a33b0e",
+    "title": "AVID-2022-V001: Sentence Completion Tasks performed by bert-base-uncased demonstrate significant gender bias, perpetuating negative social and professional stereotypes against females.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V001.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Demonstration of social and professional gender bias in an open-weight language model, representing AI fairness issues rather than a security vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "dc483711d271ecf8",
+    "title": "AVID-2022-V002: Sentence Completion Tasks performed by xlm-roberta-base demonstrate significant gender bias, perpetuating negative social and professional stereotypes against females.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V002.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Demonstration of social and professional gender bias in an open-weight language model, representing AI fairness issues rather than a security vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "c7962061a78392c8",
+    "title": "AVID-2022-V011: Predictive policing algorithms meant to aid law enforcement by predicting future crime show signs of biased output.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V011.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Algorithmic bias in predictive policing without a cybersecurity incident or exploitation angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "9c073b24f4862b3c",
+    "title": "AVID-2022-V005: An Uber autonomous vehicle (AV) in autonomous mode struck and killed a pedestrian in Tempe, Arizona.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V005.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Autonomous vehicle accident involving a pedestrian, categorized as an AI safety/harm issue without a security angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "5d6df383a5ec67f4",
+    "title": "AVID-2022-V008: A Knightscope K5 security robot ran itself into a water fountain in Washington, DC.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V008.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Robot hardware navigation malfunction with no cybersecurity exploit or incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "38d5a6bf0d5b1c08",
+    "title": "AVID-2022-V003: xyz xyz",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2022/AVID-2022-V003.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Fairness and text generation harm research report without a security vulnerability or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "63ef4c963cd83ad6",
+    "title": "AVID-2023-R0002: I asked ChatGPT to recommend papers on explainability, privacy, adversarial ML, etc.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2023/AVID-2023-R0002.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Model hallucination and incorrect citations without a security vulnerability or attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "d4b2e177b64b6c6d",
+    "title": "AVID-2023-R0001: When prompting ChatGPT with lexical constraints, e.g.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2023/AVID-2023-R0001.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Inability to follow lexical constraints is an AI capability limitation, not a security vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "8505ce86266262a2",
+    "title": "AVID-2023-V024: An algorithm developed by Northpointe and used in the penal system is two times more likely to incorrectly label a black person as a high-risk re-offender and is two times more likely to incorrectly label a white person as low-risk for reoffense according to a ProPublica review.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V024.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Algorithmic bias and fairness issue in a criminal risk assessment tool without a cybersecurity incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "ea014cf9be338a73",
+    "title": "AVID-2023-V023: Kronos’s scheduling algorithm and its use by Starbucks managers allegedly negatively impacted financial and scheduling stability for Starbucks employees, which disadvantaged wage workers.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V023.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Workplace scheduling software issues impacting employees, classified as an AI fairness or labour concern rather than security.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "9d8c0a7ecd2651d4",
+    "title": "AVID-2023-V019: A Boeing 737 crashed into the sea, killing 189 people, after faulty sensor data caused an automated manuevering system to repeatedly push the plane's nose downward.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V019.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Autonomous vehicle or traditional flight control system crash without a cybersecurity incident or AI attack angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "03d45fd96a3fe4ee",
+    "title": "AVID-2023-V018: Twenty-four Amazon workers in New Jersey were hospitalized after a robot punctured a can of bear repellent spray in a warehouse.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V018.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Warehouse robot mechanical accident injuring workers, classified as physical safety harm rather than an AI cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "56cd082fad9a18d5",
+    "title": "AVID-2023-V020: Study on database reports of robotic surgery malfunctions (8,061), including those ending in injury (1,391) and death (144), between 2000 and 2013.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V020.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Study on robotic surgery medical device malfunctions and patient safety harms, out of scope for AI radar.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "1aace710c37fc3d1",
+    "title": "AVID-2023-V022: Uber vehicles equipped with technology allowing for autonomous driving running red lights in San Francisco street testing.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V022.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Autonomous vehicle traffic violation during testing, representing a safety and algorithmic performance issue rather than a security exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "8e32bdf1c6ce84cf",
+    "title": "AVID-2023-V021: Uber vehicles equipped with technology allowing for autonomous driving running red lights in San Francisco street testing.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V021.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Autonomous vehicle traffic violation during testing, representing a safety and algorithmic performance issue rather than a security exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "05b29a3fc6843fde",
+    "title": "AVID-2023-V017: YouTube’s content filtering and recommendation algorithms exposed children to disturbing and inappropriate videos.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V017.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Content moderation and recommendation issue exposing children to inappropriate content, categorized as safety and content governance rather than a security breach.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "ccd546b7e10e6c12",
+    "title": "AVID-2023-V003: McAfee Advanced Threat Research noticed an increase in reports of a certain ransomware family that was out of the ordinary.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V003.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Ransomware samples shared on a platform without a clear AI cyberattack angle or AI model vulnerability.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "6a16929bd9c6303d",
+    "title": "AVID-2023-V008: OpenAI built GPT-2, a language model capable of generating high quality text samples.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V008.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: GPT-2 model replication research and ethical release discussions do not constitute a security incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "82c62d054641ad67",
+    "title": "AVID-2023-V016: The publicly available Streamlit application [MathGPT](https://mathgpt.streamlit.app/) uses GPT-3, a large language model (LLM), to answer user-generated math questions.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V016.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: General LLM math limitation and hallucination discussion, not a security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "c7a718b0f05fa39c",
+    "title": "AVID-2023-V027: When asked to recommend papers on explainability, privacy, adversarial ML, etc.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V027.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Hallucination and incorrect citation behavior in ChatGPT is an AI safety and quality issue, not a cybersecurity incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "11e3eb0794c4349f",
+    "title": "AVID-2023-V026: When prompting ChatGPT with lexical constraints, e.g.",
+    "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V026.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Model limitation in following lexical constraints; no security vulnerability or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "08137198f7f4dfab",
+    "title": "AVID-2025-R0001: The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0001.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Model behavior providing answers to math problems contrary to prompt instructions; a functional limitation/academic integrity concern rather than a security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "d46cf7ed91aa27c4",
+    "title": "AVID-2025-R0002: As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0002.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: Model bias in sentiment analysis for neutral phrases; AI harm without a security angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "a12b00b166f62d73",
+    "title": "AVID-2025-R0033: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0033.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "d0f5a1523a9b4506",
+    "title": "AVID-2025-R0032: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0032.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "b911636c66d91c00",
+    "title": "AVID-2025-R0031: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0031.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "cf9a252a78cecd19",
+    "title": "AVID-2025-R0015: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0015.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "5168276ad770c7b7",
+    "title": "AVID-2025-R0014: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0014.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "b6f4eaa99068a3de",
+    "title": "AVID-2025-R0013: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0013.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "fb844dcd17d0728a",
+    "title": "AVID-2025-R0006: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0006.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "afc9b690e322b0ed",
+    "title": "AVID-2025-R0005: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0005.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "c99a267780da4886",
+    "title": "AVID-2025-R0004: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0004.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "4fc2d1ae17f6e018",
+    "title": "AVID-2025-R0024: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0024.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "781e0b9f2721abed",
+    "title": "AVID-2025-R0023: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0023.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "815293e9e4cd3ff3",
+    "title": "AVID-2025-R0022: WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0022.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation report assessing model capabilities and unlearning methods rather than a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "59a573747269f479",
+    "title": "AVID-2025-R0034: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0034.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "683fae7e84435d45",
+    "title": "AVID-2025-R0035: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0035.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "7a428b197bd1ed38",
+    "title": "AVID-2025-R0016: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0016.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "8d3d35e2d114a3ce",
+    "title": "AVID-2025-R0017: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0017.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "b0a03e9f5c857e1f",
+    "title": "AVID-2025-R0007: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0007.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "ecd9669d4ac7cf00",
+    "title": "AVID-2025-R0008: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0008.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "b7b5ebabe0ad37a2",
+    "title": "AVID-2025-R0025: CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models’ risky capabilities in cybersecurity.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0025.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation suite result measuring model behaviour rather than a concrete security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "755753af7c736129",
+    "title": "AVID-2025-R0030: The benchmark agentharm is implemented by Inspect Evals.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0030.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation record tracking safety performance rather than an actual security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "57d38608f1c8165b",
+    "title": "AVID-2025-R0012: The benchmark agentharm is implemented by Inspect Evals.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0012.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation record tracking safety performance rather than an actual security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "82531233e11d985a",
+    "title": "AVID-2025-R0003: The benchmark agentharm is implemented by Inspect Evals.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0003.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation record tracking safety performance rather than an actual security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "key": "913e6bea9691f601",
+    "title": "AVID-2025-R0021: The benchmark agentharm is implemented by Inspect Evals.",
+    "url": "https://github.com/avidml/avid-db/blob/main/reports/2025/AVID-2025-R0021.json",
+    "publisher": "AVID",
+    "source_id": "avid",
+    "reason": "out of scope: This is a benchmark evaluation record tracking safety performance rather than an actual security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
     "key": "d42b120b1a559e66",
     "title": "VirusTotal Poisoning",
     "url": "https://atlas.mitre.org/studies/AML.CS0002",
