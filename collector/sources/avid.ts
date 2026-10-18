@@ -3,7 +3,7 @@ import { httpJson } from "../lib/http";
 import { nowIso } from "../lib/ids";
 import { log } from "../lib/log";
 import { publisherFor } from "../lib/publishers";
-import { truncate } from "../lib/text";
+import { seedCves, truncate } from "../lib/text";
 import type { Candidate, SourceAdapter } from "./types";
 
 /**
@@ -69,7 +69,7 @@ export const avidAdapter: SourceAdapter = {
           published_at: date,
           publisher: "AVID",
           hint: truncate(`${desc}${products ? ` Affects: ${products}.` : ""}${rec.problemtype?.description?.value ? ` Problem: ${rec.problemtype.description.value}` : ""}`, ctx.settings.fetch.hint_max_chars),
-          cve_ids: [],
+          cve_ids: seedCves(refs),
           discovered_at: nowIso(),
           extra: { classifier_hint: HINT, avid_id: id, additional_sources: refs, incident_date: date },
         });

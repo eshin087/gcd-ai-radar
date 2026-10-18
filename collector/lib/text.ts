@@ -95,6 +95,34 @@ export function extractCves(text: string): string[] {
   return [...new Set(found.map((c) => c.toUpperCase()))];
 }
 
+const ADVISORY_LEAD_RE = /^(CVE-\d{4}-\d{4,7}|GHSA(?:-[0-9a-z]{4}){3})\s*:/i;
+const ADVISORY_URL_RE = /(?:nvd\.nist\.gov\/vuln\/detail\/|[?&]field_cve=)(CVE-\d{4}-\d{4,7})\b/i;
+
+/**
+ * The CVE id an advisory link is about, or null when the link is not an
+ * advisory. NVD and KEV links carry the id in the URL; the NVD, GHSA and KEV
+ * adapters title their candidates "<own id>: summary". Any other id in such a
+ * title is a reference ("incomplete fix of CVE-…") and is not returned. A
+ * GHSA advisory without a CVE of its own returns [].
+ */
+export function advisoryCves(link: { url: string; title: string }): string[] | null {
+  const fromUrl = link.url.match(ADVISORY_URL_RE);
+  if (fromUrl) return [fromUrl[1]!.toUpperCase()];
+  const lead = link.title.match(ADVISORY_LEAD_RE);
+  if (!lead) return null;
+  const id = lead[1]!.toUpperCase();
+  return id.startsWith("CVE-") ? [id] : [];
+}
+
+/**
+ * CVE ids for a structured seed record (ATLAS, AVID): the ids of the
+ * advisories it cites (NVD/KEV links). Ids that only appear in prose or in
+ * other reference links (a vendor blog listing five CVEs) are left out.
+ */
+export function seedCves(refs: { url: string; title: string }[]): string[] {
+  return [...new Set(refs.flatMap((r) => advisoryCves(r) ?? []))];
+}
+
 function escapeRe(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
