@@ -929,6 +929,45 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-1392",
+    "slug": "cve-2026-109227-sglang-vulnerable-to-denial-of-service-via-u",
+    "title": "CVE-2026-109227: SGLang vulnerable to denial of service via unbounded memory allocation in video preprocessing",
+    "summary": "SGLang up to version 0.5.21 contains an unbounded memory allocation vulnerability in its video preprocessing handler. Remote attackers can exhaust worker memory and cause a denial of service by submitting high-resolution videos.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "SGLang"
+    ],
+    "incident_date": "2026-10-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-12",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109227",
+        "publisher": "NVD",
+        "title": "CVE-2026-109227: SGLang through 0.5.21 contains an unbounded memory allocation vulnerability in preprocess_video in qwen_vl.py that decodes frames…",
+        "published_at": "2026-10-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-109227",
+      "denial-of-service",
+      "inference-server"
+    ],
+    "created_at": "2026-10-18T16:10:05.462Z",
+    "updated_at": "2026-10-18T16:10:05.462Z"
+  },
+  {
     "id": "AIR-2026-0315",
     "slug": "cve-2026-109311-vllm-audio-transcription-endpoint-heap-overf",
     "title": "CVE-2026-109311: vLLM audio transcription endpoint heap overflow vulnerability",
