@@ -1,5 +1,475 @@
 [
   {
+    "key": "5884327f9f89beda",
+    "title": "GHSA-3x9g-xfj5-fq84: Duplicate Advisory: Cross-Site Request Forgery in Gradio",
+    "url": "https://github.com/advisories/GHSA-3x9g-xfj5-fq84",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory withdrawn as a duplicate and describes a generic CSRF issue in Gradio without specific AI-system exploitation.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "fe403d40cc778edc",
+    "title": "CVE-2024-1540: Gradio's CI vulnerable to Command Injection",
+    "url": "https://github.com/advisories/GHSA-xcgp-r7r8-2hc9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: CI pipeline command injection vulnerability in a GitHub workflow, not an attack on an AI system or model.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "a1e65a47d1e0b18f",
+    "title": "CVE-2024-39236: Withdrawn Advisory: Gradio was discovered to contain a code injection vulnerability via the component /gradio/component_meta.py",
+    "url": "https://github.com/advisories/GHSA-9v2f-6vcg-3hgv",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory was withdrawn as it only affects user-crafted code usage, not a genuine vulnerability in the library itself",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "9ba74c19078e5e54",
+    "title": "CVE-2024-7038: Withdrawn Advisory: open-webui allows enumeration of file names and traversal of directories by observing the error messages",
+    "url": "https://github.com/advisories/GHSA-mq92-jr35-ffpc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: The advisory was officially withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "c68daa4ffbc116d5",
+    "title": "CVE-2024-57000: Withdrawn Advisory: Command injection in Ray",
+    "url": "https://github.com/advisories/GHSA-xg2h-7cxj-3gvh",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is explicitly withdrawn as a duplicate of another CVE.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "95c012484b0a32b8",
+    "title": "GHSA-5478-v2w6-c6q7: Duplicate Advisory: Keras arbitrary code execution vulnerability",
+    "url": "https://github.com/advisories/GHSA-5478-v2w6-c6q7",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Withdrawn duplicate advisory for CVE-2025-1550",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "4f0958ec39c52039",
+    "title": "CVE-2024-7959: Withdrawn Advisory: Open WebUI has SSRF in /openai/models",
+    "url": "https://github.com/advisories/GHSA-x757-hv69-jr45",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "6de4bb5f003d1eb4",
+    "title": "CVE-2024-7033: Withdrawn Advisory: Open WebUI Allows Arbitrary File Write via the `download_model` Endpoint",
+    "url": "https://github.com/advisories/GHSA-3p9q-7w63-3f8q",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: The advisory has been withdrawn and marked as not describing a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "96e21ae823da65aa",
+    "title": "CVE-2024-7034: Withdrawn Advisory: Open WebUI Allows Arbitrary File Write via the `/models/upload` Endpoint",
+    "url": "https://github.com/advisories/GHSA-crh6-pj8c-xrhc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: This advisory has been withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "bda67f9e4f84e2e4",
+    "title": "CVE-2024-7804: Withdrawn Advisory: PyTorch deserialization vulnerability",
+    "url": "https://github.com/advisories/GHSA-4vmg-rw8f-92f9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been officially withdrawn because it describes known functionality of PyTorch rather than a vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "0cc00886de890202",
+    "title": "CVE-2024-7039: Withdrawn Advisory: Open WebUI Allows Admin Deletion via API Endpoint",
+    "url": "https://github.com/advisories/GHSA-pqwr-phvv-v49f",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been officially withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "1ef764eb2570ed79",
+    "title": "CVE-2024-7040: Withdrawn Advisory: Open WebUI Access Control",
+    "url": "https://github.com/advisories/GHSA-cfvq-fj53-j2c7",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been officially withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "8d9d05296fd37f9e",
+    "title": "CVE-2025-46343: n8n Vulnerable to Stored XSS through Attachments View Endpoint",
+    "url": "https://github.com/advisories/GHSA-c8hm-hr8h-5xjw",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: n8n is a general workflow automation tool, not specifically an AI infrastructure or tool in this context.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "ff07f911063f9953",
+    "title": "CVE-2025-49592: n8n allows open redirects via the /signin endpoint",
+    "url": "https://github.com/advisories/GHSA-5vj6-wjr7-5v9f",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Open redirect vulnerability in the login flow of n8n, a general workflow automation tool, not specific to an AI security attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "314ea53d34e77635",
+    "title": "GHSA-pwq7-2gvj-vg9v: Duplicate Advisory: Keras safe mode bypass vulnerability",
+    "url": "https://github.com/advisories/GHSA-pwq7-2gvj-vg9v",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn as a duplicate of another advisory.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "da290c04a8ff9fdb",
+    "title": "GHSA-q4xx-mc3q-23x8: Duplicate Advisory: Flowise vulnerable to RCE via Dynamic function constructor injection",
+    "url": "https://github.com/advisories/GHSA-q4xx-mc3q-23x8",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn as a duplicate of another advisory.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "e6c3b6cc12b5e9b6",
+    "title": "CVE-2025-52478: Stored XSS in n8n Form Trigger allows Account Takeover via injected iframe and video/source",
+    "url": "https://github.com/advisories/GHSA-hfmv-hhh3-43f2",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard web application XSS vulnerability in n8n form triggers, not specific to an AI incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "ca069648f00ea8e8",
+    "title": "CVE-2025-57749: n8n symlink traversal vulnerability in \"Read/Write File\" node allows access to restricted files",
+    "url": "https://github.com/advisories/GHSA-ggjm-f3g4-rwmm",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General file system symlink traversal vulnerability in n8n workflow automation tool without AI security nexus.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "945fdf141a182f48",
+    "title": "GHSA-wq95-wr7m-26h4: Duplicate Advisory: Flowise Stored XSS vulnerability through logs in chatbot",
+    "url": "https://github.com/advisories/GHSA-wq95-wr7m-26h4",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Duplicate advisory withdrawn because it duplicates another finding, but out of scope as it refers to a duplicate advisory record.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "3e334baa94299290",
+    "title": "GHSA-7rgr-72hp-9wp3: Duplicate Advisory: Flowise is vulnerable to stored XSS via \"View Messages\" allows credential theft in FlowiseAI admin panel",
+    "url": "https://github.com/advisories/GHSA-7rgr-72hp-9wp3",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Duplicate advisory withdrawn because it refers to another tracking entry for Flowise XSS.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "fee051a28dea6fb6",
+    "title": "GHSA-365g-vjw2-grx8: n8n: Execute Command Node Allows Authenticated Users to Run Arbitrary Commands on Host",
+    "url": "https://github.com/advisories/GHSA-365g-vjw2-grx8",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: n8n is a general workflow automation platform, not specifically an AI framework or tool in this context.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "106fac16f24627ef",
+    "title": "CVE-2025-65964: n8n vulnerable to Remote Code Execution via Git Node Custom Pre-Commit Hook",
+    "url": "https://github.com/advisories/GHSA-wpqc-h9wp-chmq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: n8n is a general workflow automation tool rather than an AI-specific framework or agent platform.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "61a946833025dae2",
+    "title": "CVE-2025-68613: n8n Vulnerable to Remote Code Execution via Expression Injection",
+    "url": "https://github.com/advisories/GHSA-v98v-ff95-f3cp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: n8n is a general workflow automation platform, not an AI-specific application.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "43df2408cde9bb1d",
+    "title": "CVE-2025-68949: n8n: Webhook Node IP Whitelist Bypass via Partial String Matching",
+    "url": "https://github.com/advisories/GHSA-w96v-gf22-crwp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General workflow automation tool webhook vulnerability with no specific AI component involved.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "e6b2be2154e9f8c1",
+    "title": "CVE-2026-0767: Withdrawn Advisory: Open WebUI/ZDI-CAN-28259",
+    "url": "https://github.com/advisories/GHSA-vh96-p962-544h",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "a2f84e3df0fb3aec",
+    "title": "GHSA-gfmx-qqqh-f38q: Duplicate Advisory: Keras vulnerable to arbitrary file read in the model loading mechanism (HDF5 integration)",
+    "url": "https://github.com/advisories/GHSA-gfmx-qqqh-f38q",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is explicitly withdrawn as a duplicate of another advisory.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "2528bceccaee2110",
+    "title": "CVE-2026-27497: n8n has Potential Remote Code Execution via Merge Node",
+    "url": "https://github.com/advisories/GHSA-wxx7-mcgf-j869",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: n8n is a general workflow automation platform rather than an AI-specific framework or tool.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "7fa745f5c93ecc92",
+    "title": "CVE-2026-56357: n8n: Webhook Forgery on Github Webhook Trigger",
+    "url": "https://github.com/advisories/GHSA-mqpr-49jj-32rc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General webhook forgery vulnerability in a workflow automation platform, not specific to an AI component or model.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "b0833a35641f2044",
+    "title": "GHSA-vjf3-2gpj-233v: n8n has an SSO Enforcement Bypass in its Self-Service Settings API",
+    "url": "https://github.com/advisories/GHSA-vjf3-2gpj-233v",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General SSO enforcement bypass in self-service settings API, not specific to AI functionality.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "ed36200ca357026a",
+    "title": "CVE-2025-15603: Withdrawn Advisory: Open WebUI JWT Key Handler",
+    "url": "https://github.com/advisories/GHSA-2rf6-9rc8-rqch",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory has been officially withdrawn because it does not describe a valid vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "6fbdd299f6877a83",
+    "title": "CVE-2026-41275: Flowise: Password Reset Link Sent Over Unsecured HTTP",
+    "url": "https://github.com/advisories/GHSA-x5w6-38gp-mrqh",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard web application password reset protocol vulnerability (HTTP instead of HTTPS) without specific AI context.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "fd7695099ef9df05",
+    "title": "CVE-2026-42233: n8n has SQL Injection in Oracle Database Node via Limit Field",
+    "url": "https://github.com/advisories/GHSA-r6jc-mpqw-m755",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard SQL injection vulnerability in a generic database node, not an AI-specific component or model attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "faffc37d6268a875",
+    "title": "CVE-2026-45317: Open WebUI Vulnerable to Cross-Site Request Forgery (CSRF) via Image URL Manipulation",
+    "url": "https://github.com/advisories/GHSA-j6w6-986j-2m2m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard web application CSRF vulnerability in image uploading functionality, not specific to AI models or agent operations.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "800d49a1be73f2bd",
+    "title": "CVE-2026-54310: n8n: SQL Injection in Postgres v1/TimesclaeDB Nodes",
+    "url": "https://github.com/advisories/GHSA-c37g-w77q-m4vp",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General database SQL injection vulnerability in an automation tool, not specific to an AI security feature or threat model.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "c64ad97ddc68cc39",
+    "title": "CVE-2026-54307: n8n: Credential Exfiltration via Permission Bypass",
+    "url": "https://github.com/advisories/GHSA-pmqw-72cg-wx85",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General authorization bypass and credential access flaw in workflow sharing, unrelated to AI models or AI functionality.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "d8cf2e358b21bd14",
+    "title": "GHSA-x8xr-mj9x-6h7w: Duplicate Advisory: image EXIF Rotation & PNG tRNS Transparency Not Normalized, Causing Mismatch Between Model Input and Expectations",
+    "url": "https://github.com/advisories/GHSA-x8xr-mj9x-6h7w",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn as a duplicate and describes image metadata handling issues rather than a direct cybersecurity exploitation incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "60297dfd532fd3d5",
+    "title": "CVE-2026-12491: vLLM: image EXIF Rotation & PNG tRNS Transparency Not Normalized, Causing Mismatch Between Model Input and Expectations",
+    "url": "https://github.com/advisories/GHSA-8jr5-v98p-w75m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn as a duplicate and describes image metadata handling issues rather than a direct cybersecurity exploitation incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "d56e2bd014d2e3f7",
+    "title": "GHSA-78fp-cf4h-g36p: Duplicate Advisory: vLLM introduced enhanced protection for CVE-2025-62164",
+    "url": "https://github.com/advisories/GHSA-78fp-cf4h-g36p",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Withdrawn duplicate advisory, no active unique incident or new vulnerability details.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "a7ef1c1321a56a6a",
+    "title": "GHSA-5w6g-rc45-wvv9: Duplicate Advisory: Flowise OverrideConfig security vulnerability",
+    "url": "https://github.com/advisories/GHSA-5w6g-rc45-wvv9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Withdrawn duplicate advisory, no active unique incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "2cca4ce7c72c1c90",
+    "title": "GHSA-vfm7-4h43-gp6m: Duplicate Advisory: vLLM Vulnerable to Regular Expression Denial of Service",
+    "url": "https://github.com/advisories/GHSA-vfm7-4h43-gp6m",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Withdrawn duplicate advisory regarding vLLM regular expression denial of service.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "9f8304b7bb65b5e3",
+    "title": "GHSA-2qp2-6frj-p9pq: Duplicate Advisory: MySQL v1 Node executeQuery Operation Allows SQL Injection via Unparameterized Expression Interpolation",
+    "url": "https://github.com/advisories/GHSA-2qp2-6frj-p9pq",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard SQL injection vulnerability in an automation/workflow tool node, unrelated to AI security incidents.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "ff2287f4c5fa6243",
+    "title": "CVE-2026-59257: n8n: MySQL v1 Node executeQuery Operation Allows SQL Injection via Unparameterized Expression Interpolation",
+    "url": "https://github.com/advisories/GHSA-hwmj-qg4v-cvg9",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Standard SQL injection vulnerability in an automation/workflow tool node, unrelated to AI security incidents.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "86ff1c8c06285ac2",
+    "title": "GHSA-652q-gvq3-74qv: n8n: Snowflake Node executeQuery Operation Allows SQL Injection via Unparameterized Expression Interpolation",
+    "url": "https://github.com/advisories/GHSA-652q-gvq3-74qv",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: SQL injection vulnerability in n8n Snowflake node, unrelated to AI safety or AI security incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "63609b53571ca918",
+    "title": "GHSA-486p-g8x4-77mg: Duplicate Advisory: ONNX: TOCTOU arbitrary file read/write in save_external_dat ",
+    "url": "https://github.com/advisories/GHSA-486p-g8x4-77mg",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: Advisory is withdrawn as a duplicate and offers no new security incident details.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "de80d40969138bf6",
+    "title": "CVE-2026-86073: n8n: Per-Resource OAuth Consent Bypass via Unbound Refresh Token Resource Substitution",
+    "url": "https://github.com/advisories/GHSA-cw9w-vv67-hf73",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General OAuth consent bypass vulnerability in n8n authentication mechanisms, not specific to an AI feature or model.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "f43f585a55acaefe",
+    "title": "CVE-2026-86994: n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter",
+    "url": "https://github.com/advisories/GHSA-65xw-2v52-jhxc",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General workflow automation platform vulnerability without specific AI-related impact or usage.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "key": "fdfab7b05ac00df4",
+    "title": "CVE-2026-86081: n8n: Regular Expression Denial of Service in the Default Blocked-File-Pattern Match via a Git Node Clone Path",
+    "url": "https://github.com/advisories/GHSA-j535-v25q-vx3q",
+    "publisher": "GitHub Advisory Database",
+    "source_id": "ghsa",
+    "reason": "out of scope: General workflow automation platform ReDoS vulnerability unrelated to AI models or AI-specific features.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
     "key": "66e9a3154ef79552",
     "title": "AVID-2022-R0005: When supplied with prompts from the BOLD dataset, toxicity scores for completed sentences tagged with the 'Islam' religion demonstrate a higher degree of toxicity than other religions.",
     "url": "https://github.com/avidml/avid-db/blob/main/reports/2022/AVID-2022-R0005.json",
