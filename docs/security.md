@@ -29,7 +29,7 @@ Secrets: the LLM keys, an optional NVD key, a Cloudflare Radar token and an opti
 
 **Downloads.** The CSV defuses cells that spreadsheets would run as formulas. The RSS feed escapes every field. Dataset files are served with `Access-Control-Allow-Origin: *` on purpose: they are a public, CC BY-SA 4.0 dataset.
 
-**Data integrity.** The dataset is plain JSON in git, so every change is attributable and reversible; `npm run validate` checks every file against the schema and refuses two records about one CVE. The collector job fails, and the owner is emailed, when classification has stalled for three runs.
+**Data integrity.** The dataset is plain JSON in git, so every change is attributable and reversible; `npm run validate` checks every file against the schema and refuses two records about one CVE. The collector job fails, and the owner is emailed, when classification has stalled for three runs or when its data commit cannot be pushed. A repository ruleset stops `main` from being force-pushed or deleted, and GitHub's secret scanning with push protection rejects any commit that carries a known key format.
 
 ## Not defended against
 

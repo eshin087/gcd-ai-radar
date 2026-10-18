@@ -90,16 +90,26 @@ async function main() {
       summarize(summary);
       const settings = loadConfig().settings;
       const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
+      let unpushed = false;
       if (commit && (summary.changedFiles.length || radarChanged)) {
         const c = summary.record.counts;
-        await commitAndPush(`data: run ${summary.record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged)`);
+        const result = await commitAndPush(`data: run ${summary.record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged)`);
+        unpushed = result.committed && !result.pushed;
       }
-      // Health: a job summary on Actions, and a failed job (owner gets an email) when classification has stalled.
+      // Health: a job summary on Actions, and a failed job (owner gets an email) when classification
+      // has stalled or the data commit could not be pushed (rejected by push protection, or the network).
       const stalled = dryRun ? false : classificationStalled((await loadState()).runs, settings.alerts.stalled_runs);
-      const md = runSummaryMarkdown(summary.record, { stalled, stalledRuns: settings.alerts.stalled_runs, pendingWarn: settings.alerts.pending_warn });
+      let md = runSummaryMarkdown(summary.record, { stalled, stalledRuns: settings.alerts.stalled_runs, pendingWarn: settings.alerts.pending_warn });
+      if (unpushed) {
+        md += "\n\n> ❌ The data commit was made but could not be pushed. If GitHub's push protection rejected it, open the run log for the bypass link or remove the flagged text; the next run retries the push.";
+      }
       if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);
       if (stalled) {
         log.error(`classification has stalled: the last ${settings.alerts.stalled_runs} scheduled runs classified nothing while candidates waited`);
+        process.exitCode = 2;
+      }
+      if (unpushed) {
+        log.error("git: the data commit was not pushed; the site will not update until a push succeeds");
         process.exitCode = 2;
       }
       return;
