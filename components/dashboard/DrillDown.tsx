@@ -4,155 +4,39 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, type Ref } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
 import type { CompactRow } from "@/lib/dashboard";
-import { FAMILY_META, type Family } from "@/lib/families";
 import { approxDateLabel, monthLabel } from "@/lib/format";
+import { isDisclosedSelection, selectionLabel, selectionQuery, type Selection } from "@/lib/selection";
+import { shardYear } from "@/lib/shard-year";
 import type { SlimIncident } from "@/lib/slim";
 import type { DateField } from "@/lib/stats";
-import { CATEGORY_META, SEVERITY_META, TARGET_META, TYPE_META, type Category, type IncidentType, type Severity, type Target } from "@/lib/taxonomy";
+import { TARGET_META } from "@/lib/taxonomy";
 
-/** What the user clicked on a chart. */
-export type Selection =
-  | { kind: "month"; month: string }
-  | { kind: "month-category"; month: string; category: Category }
-  | { kind: "month-type"; month: string; type: IncidentType }
-  | { kind: "month-family"; month: string; family: Family }
-  | { kind: "family"; family: Family }
-  | { kind: "target"; target: Target }
-  | { kind: "severity"; severity: Severity }
-  | { kind: "category"; category: Category }
-  | { kind: "type"; type: IncidentType }
-  /** Every incident in the current window and set. */
-  | { kind: "window" }
-  /** Severity 3-4 incidents in the current window. */
-  | { kind: "real" }
-  /** An inclusive month range on the date basis, independent of the window (trailing 12 months, year to date). */
-  | { kind: "range"; from: string; to: string; label: string; toDate?: string; byYear?: boolean }
-  /** Disclosed vulnerabilities (CVEs with no confirmed exploitation), tracked apart from incidents. */
-  | { kind: "disclosed" }
-  | { kind: "disclosed-month"; month: string }
-  | { kind: "disclosed-product"; product: string }
-  | { kind: "disclosed-day"; day: string };
+export { isDisclosedSelection, selectionLabel, selectionQuery, type Selection };
 
-export function isDisclosedSelection(sel: Selection): boolean {
-  return sel.kind === "disclosed" || sel.kind === "disclosed-month" || sel.kind === "disclosed-product" || sel.kind === "disclosed-day";
-}
-
-export function selectionLabel(sel: Selection): string {
-  switch (sel.kind) {
-    case "month":
-      return monthLabel(sel.month, true);
-    case "month-category":
-      return `${CATEGORY_META[sel.category].label} · ${monthLabel(sel.month, true)}`;
-    case "month-type":
-      return `${TYPE_META[sel.type].label} · ${monthLabel(sel.month, true)}`;
-    case "month-family":
-      return `${FAMILY_META[sel.family].label} · ${monthLabel(sel.month, true)}`;
-    case "family":
-      return FAMILY_META[sel.family].label;
-    case "target":
-      return `Target: ${TARGET_META[sel.target].label}`;
-    case "severity":
-      return `Severity ${sel.severity} · ${SEVERITY_META[sel.severity].label}`;
-    case "category":
-      return CATEGORY_META[sel.category].label;
-    case "type":
-      return TYPE_META[sel.type].label;
-    case "window":
-      return "All incidents in view";
-    case "real":
-      return "Real-world incidents · severity 3–4";
-    case "range":
-      return sel.label;
-    case "disclosed":
-      return "Disclosed vulnerabilities";
-    case "disclosed-month":
-      return `Disclosed vulnerabilities · ${monthLabel(sel.month, true)}`;
-    case "disclosed-product":
-      return `Disclosed vulnerabilities · ${sel.product}`;
-    case "disclosed-day":
-      return `Disclosed vulnerabilities · ${sel.day}`;
-  }
-}
-
-/** Query string for the same selection on the Incidents page. */
-export function selectionQuery(sel: Selection, basis: "all" | "real", field: DateField): string {
-  const p = new URLSearchParams();
-  if (basis === "real") p.set("real", "1");
-  if (field === "first_reported") p.set("by", "reported");
-  switch (sel.kind) {
-    case "month":
-      p.set("month", sel.month);
-      break;
-    case "month-category":
-      p.set("month", sel.month);
-      p.set("category", sel.category);
-      break;
-    case "month-type":
-      p.set("month", sel.month);
-      p.set("type", sel.type);
-      break;
-    case "month-family":
-      p.set("month", sel.month);
-      p.set("category", FAMILY_META[sel.family].categories.join(","));
-      break;
-    case "family":
-      p.set("category", FAMILY_META[sel.family].categories.join(","));
-      break;
-    case "target":
-      p.set("target", sel.target);
-      break;
-    case "severity":
-      p.set("severity", String(sel.severity));
-      break;
-    case "category":
-      p.set("category", sel.category);
-      break;
-    case "type":
-      p.set("type", sel.type);
-      break;
-    case "window":
-      break;
-    case "real":
-      p.set("real", "1");
-      break;
-    case "range":
-      p.set("from", sel.from);
-      p.set("to", sel.to);
-      break;
-    case "disclosed":
-      p.set("kind", "disclosed");
-      break;
-    case "disclosed-month":
-      p.set("kind", "disclosed");
-      p.set("month", sel.month);
-      break;
-    case "disclosed-product":
-      p.set("kind", "disclosed");
-      p.set("product", sel.product);
-      break;
-    case "disclosed-day":
-      p.set("kind", "disclosed");
-      p.set("month", sel.day.slice(0, 7));
-      break;
-  }
-  return p.toString();
-}
-
-let cache: Promise<Map<string, SlimIncident>> | null = null;
-function loadSlim(): Promise<Map<string, SlimIncident>> {
-  if (!cache) {
-    cache = fetch("/data/incidents.min.json")
+/** Summaries, products and publishers per year shard (public/data/slim/<year>.json), fetched for the rows on screen. */
+const slimCache = new Map<number, Promise<Map<string, SlimIncident>>>();
+function loadSlim(year: number): Promise<Map<string, SlimIncident>> {
+  let p = slimCache.get(year);
+  if (!p) {
+    p = fetch(`/data/slim/${year}.json`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((rows: SlimIncident[]) => new Map(rows.map((r) => [r.id, r])));
+      .then((rows: SlimIncident[]) => new Map(rows.map((r) => [r.id, r])))
+      .catch((e: Error) => {
+        slimCache.delete(year);
+        throw e;
+      });
+    slimCache.set(year, p);
   }
-  return cache;
+  return p;
 }
 
 const PAGE = 40;
 
 interface Props {
   selection: Selection;
-  rows: CompactRow[];
+  /** The rows behind the selection, or null while their shards load. */
+  rows: CompactRow[] | null;
+  error?: string | null;
   windowLabel: string;
   basis: "all" | "real";
   field: DateField;
@@ -164,28 +48,38 @@ interface Props {
  * its summary, classification, sources and dates. Shown in the dashboard's
  * report drawer.
  */
-export function ReportBody({ selection, rows, windowLabel, basis, field, onClose, titleId, closeRef }: Props & { titleId?: string; closeRef?: Ref<HTMLButtonElement> }) {
-  const [details, setDetails] = useState<Map<string, SlimIncident> | null>(null);
+export function ReportBody({ selection, rows, error, windowLabel, basis, field, onClose, titleId, closeRef }: Props & { titleId?: string; closeRef?: Ref<HTMLButtonElement> }) {
+  const [details, setDetails] = useState<Map<string, SlimIncident>>(new Map());
   const [shown, setShown] = useState(PAGE);
 
+  const sorted = useMemo(() => (rows ? [...rows].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id)) : []), [rows]);
+  const visible = useMemo(() => sorted.slice(0, shown), [sorted, shown]);
+  const yearsOnScreen = useMemo(() => [...new Set(visible.map(shardYear))].join(","), [visible]);
+
   useEffect(() => {
+    if (!yearsOnScreen) return;
     let cancelled = false;
-    loadSlim()
-      .then((m) => {
-        if (!cancelled) setDetails(m);
+    Promise.all(yearsOnScreen.split(",").map((y) => loadSlim(Number(y))))
+      .then((maps) => {
+        if (cancelled) return;
+        setDetails((prev) => {
+          const next = new Map(prev);
+          for (const m of maps) for (const [id, s] of m) next.set(id, s);
+          return next;
+        });
       })
       .catch(() => undefined);
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [yearsOnScreen]);
 
-  const sorted = useMemo(() => [...rows].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id)), [rows]);
   const sev = useMemo(() => {
     const m: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0 };
-    for (const r of rows) m[r.severity] = (m[r.severity] ?? 0) + 1;
+    for (const r of rows ?? []) m[r.severity] = (m[r.severity] ?? 0) + 1;
     return m;
   }, [rows]);
+  const noun = isDisclosedSelection(selection) ? (rows?.length === 1 ? "disclosed vulnerability" : "disclosed vulnerabilities") : rows?.length === 1 ? "incident" : "incidents";
 
   return (
     <>
@@ -199,8 +93,16 @@ export function ReportBody({ selection, rows, windowLabel, basis, field, onClose
           <h2 id={titleId} className="mt-1 text-xl font-semibold tracking-tight">
             {selectionLabel(selection)}
           </h2>
-          <p className="mt-1 text-[13px] text-dim num">
-            {rows.length} {isDisclosedSelection(selection) ? (rows.length === 1 ? "disclosed vulnerability" : "disclosed vulnerabilities") : rows.length === 1 ? "incident" : "incidents"} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
+          <p className="mt-1 text-[13px] text-dim num" aria-live="polite">
+            {rows ? (
+              <>
+                {rows.length} {noun} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
+              </>
+            ) : error ? (
+              <span className="text-sev-4">could not load the incidents: {error}</span>
+            ) : (
+              "loading…"
+            )}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -214,8 +116,8 @@ export function ReportBody({ selection, rows, windowLabel, basis, field, onClose
       </header>
 
       <ol className="divide-y divide-line-soft border-y border-line-soft">
-        {sorted.slice(0, shown).map((r) => {
-          const d = details?.get(r.id);
+        {visible.map((r) => {
+          const d = details.get(r.id);
           return (
             <li key={r.id} className="py-3.5 grid gap-2 sm:grid-cols-[7rem_1fr_auto] sm:gap-4">
               <div className="num text-[12px] text-dim">
@@ -261,7 +163,7 @@ export function ReportBody({ selection, rows, windowLabel, basis, field, onClose
           </button>
         </div>
       )}
-      {rows.length === 0 && <p className="text-[13px] text-dim">Nothing in this selection.</p>}
+      {rows && rows.length === 0 && <p className="text-[13px] text-dim">Nothing in this selection.</p>}
     </>
   );
 }

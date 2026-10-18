@@ -1,4 +1,5 @@
 import { isDisclosedIncident } from "./counting";
+import { buildRelatedIndex, relatedFromIndex, type RelatedIndex } from "./related";
 import type { Incident } from "./schema";
 import type { Category, DatePrecision, IncidentType, Origin, Severity, Target } from "./taxonomy";
 
@@ -44,24 +45,18 @@ export function slim(i: Incident): SlimIncident {
   };
 }
 
-/** Related incidents: shared categories and targets, same type, close in time. */
-export function relatedIncidents(all: Incident[], incident: Incident, limit = 6): Incident[] {
-  const date = Date.parse(`${incident.first_reported}T00:00:00Z`);
-  return all
-    .filter((o) => o.id !== incident.id)
-    .map((o) => {
-      let score = 0;
-      for (const c of o.categories) if (incident.categories.includes(c)) score += 2;
-      for (const t of o.targets) if (incident.targets.includes(t) && t !== "n/a") score += 1;
-      if (o.type === incident.type) score += 0.5;
-      const days = Math.abs(Date.parse(`${o.first_reported}T00:00:00Z`) - date) / 86400000;
-      if (days <= 30) score += 1;
-      else if (days <= 180) score += 0.5;
-      for (const p of o.products) if (incident.products.includes(p)) score += 1.5;
-      return { o, score };
-    })
-    .filter((x) => x.score >= 2)
-    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported))
-    .slice(0, limit)
-    .map((x) => x.o);
+const relatedIndexes = new WeakMap<readonly Incident[], RelatedIndex>();
+
+/**
+ * Related incidents: shared categories, targets and products, same type,
+ * close in time (lib/related.ts). The bucket index is built once per dataset
+ * array and kept for every page rendered from it.
+ */
+export function relatedIncidents(all: readonly Incident[], incident: Incident, limit = 6): Incident[] {
+  let index = relatedIndexes.get(all);
+  if (!index) {
+    index = buildRelatedIndex(all);
+    relatedIndexes.set(all, index);
+  }
+  return relatedFromIndex(index, incident, limit);
 }

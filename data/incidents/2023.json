@@ -1,0 +1,2858 @@
+[
+  {
+    "id": "AIR-2023-0029",
+    "slug": "deepfake-of-singapore-prime-minister-promotes-crypto-scam",
+    "title": "Deepfake of Singapore Prime Minister Promotes Crypto Scam",
+    "summary": "Scammers deployed a deepfake interview video and voice cloning of Singapore's prime minister to promote a fake cryptocurrency investment. The prime minister issued public warnings regarding the scheme.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2023-12-29",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-29",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/985",
+        "publisher": "AI Incident Database",
+        "title": "Alleged Deepfake of Singapore Prime Minister Lee Hsien Loong Promotes Cryptocurrency Scam in Fake Interview",
+        "published_at": "2023-12-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "crypto_scam",
+      "voice_cloning"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0082",
+    "slug": "cve-2023-51449-file-traversal-and-ssrf-vulnerability-in-grad",
+    "title": "CVE-2023-51449: File traversal and SSRF vulnerability in Gradio",
+    "summary": "Older versions of Gradio contained a vulnerability in the file route allowing file traversal and server-side request forgery attacks. Users were advised to update their packages.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "gradio"
+    ],
+    "incident_date": "2023-12-21",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-21",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-6qm2-wpxq-7qh2",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-51449: Gradio makes the `/file` secure against file traversal and server-side request forgery attacks",
+        "published_at": "2023-12-21"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-51449",
+        "publisher": "NVD",
+        "title": "CVE-2023-51449: Gradio is an open-source Python package that allows you to quickly build a demo or web application for your machine learning…",
+        "published_at": "2023-12-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-51449",
+      "path-traversal",
+      "ssrf"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0080",
+    "slug": "cve-2023-7018-deserialization-vulnerability-in-hugging-face",
+    "title": "CVE-2023-7018: Deserialization vulnerability in Hugging Face transformers",
+    "summary": "A deserialization of untrusted data vulnerability was discovered in Hugging Face transformers prior to version 4.36.0. A patch was released by the vendor to address the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "transformers"
+    ],
+    "incident_date": "2023-12-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-v68g-wm8c-6x7j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-7018: transformers has a Deserialization of Untrusted Data vulnerability",
+        "published_at": "2023-12-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-7018",
+      "deserialization"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0078",
+    "slug": "cve-2023-6730-deserialization-vulnerability-in-hugging-face",
+    "title": "CVE-2023-6730: Deserialization vulnerability in Hugging Face transformers",
+    "summary": "A critical insecure deserialization vulnerability exists in the Hugging Face transformers library prior to version 4.36.0. The flaw could enable arbitrary code execution if exploited.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "transformers"
+    ],
+    "incident_date": "2023-12-19",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-19",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-3863-2447-669p",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-6730: transformers has a Deserialization of Untrusted Data vulnerability",
+        "published_at": "2023-12-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-6730",
+      "deserialization"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0076",
+    "slug": "cve-2023-6572-information-exposure-vulnerability-in-gradio",
+    "title": "CVE-2023-6572: Information exposure vulnerability in Gradio",
+    "summary": "An information exposure vulnerability affects Gradio versions prior to 4.14.0. The advisory rates this issue as critical severity.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "gradio"
+    ],
+    "incident_date": "2023-12-14",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-14",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-gqvf-3hgp-5hxv",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-6572: Gradio Exposure of Sensitive Information to an Unauthorized Actor vulnerability",
+        "published_at": "2023-12-14"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6572",
+        "publisher": "NVD",
+        "title": "CVE-2023-6572: Command Injection in GitHub repository gradio-app/gradio prior to main.",
+        "published_at": "2023-12-14"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-6572",
+      "information-disclosure"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0031",
+    "slug": "deepfake-video-impersonating-singapore-dpm-lawrence-wong-pro",
+    "title": "Deepfake Video Impersonating Singapore DPM Lawrence Wong Promotes Fraudulent Investments",
+    "summary": "Scammers circulated an AI-generated deepfake video depicting Singapore Deputy Prime Minister Lawrence Wong falsely endorsing investment products. Wong publicly alerted citizens to the fraudulent campaign and advised reporting suspicious encounters via anti-scam tools.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2023-12-11",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-11",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/987",
+        "publisher": "AI Incident Database",
+        "title": "Alleged Deepfake of Singapore Deputy Prime Minister Lawrence Wong Falsely Shows Him Endorsing Commercial Products",
+        "published_at": "2023-12-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "financial-fraud",
+      "singapore",
+      "impersonation"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0026",
+    "slug": "underground-market-for-llms-powers-malware-and-phishing-scam",
+    "title": "Underground Market for LLMs Powers Malware and Phishing Scams",
+    "summary": "Cybercriminals leveraged LLMs and malicious variants like WormGPT to develop malware and phishing scams. These underground tools bypassed safety controls to scale cyberattacks.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_generated_malware",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "open_weight_model"
+    ],
+    "products": [
+      "GPT-3.5",
+      "GPT-4",
+      "WormGPT",
+      "FraudGPT"
+    ],
+    "incident_date": "2023-12-01",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/736",
+        "publisher": "AI Incident Database",
+        "title": "Underground Market for LLMs Powers Malware and Phishing Scams",
+        "published_at": "2023-12-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "wormgpt",
+      "fraudgpt",
+      "malware",
+      "phishing"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0025",
+    "slug": "ai-hallucinations-exploited-for-supply-chain-attacks-via-slo",
+    "title": "AI Hallucinations Exploited for Supply Chain Attacks via Slopsquatting",
+    "summary": "Threat actors registered software package names hallucinated by LLMs and uploaded malicious codebases. Developers downloaded these compromised packages thousands of times.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "huggingface-cli"
+    ],
+    "incident_date": "2023-12-01",
+    "incident_date_precision": "day",
+    "first_reported": "2023-12-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/731",
+        "publisher": "AI Incident Database",
+        "title": "Purportedly Hallucinated Software Packages with Potential Malware Reportedly Downloaded Thousands of Times by Developers",
+        "published_at": "2023-12-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "slopsquatting",
+      "hallucination",
+      "supply_chain"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2025-0049",
+    "slug": "shadowray-active-exploitation-of-exposed-ray-clusters",
+    "title": "ShadowRay Active Exploitation of Exposed Ray Clusters",
+    "summary": "Threat actors actively exploited unauthenticated and exposed Ray clusters over several months for remote code execution. The attacks compromised significant computing resources and valuable enterprise data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Ray"
+    ],
+    "incident_date": "2023-09-05",
+    "incident_date_precision": "day",
+    "first_reported": "2023-11-28",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-6wgj-66m2-xxp2",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-48022: Ray has arbitrary code execution via jobs submission API",
+        "published_at": "2023-11-28"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0023",
+        "publisher": "MITRE ATLAS",
+        "title": "ShadowRay: Hijacking Exposed Ray Clusters",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023",
+        "publisher": "anyscale.com",
+        "title": "Anyscale Update on CVEs",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+        "publisher": "NVD",
+        "title": "CVE-2023-48022",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild",
+        "publisher": "oligo.security",
+        "title": "ShadowRay: First Known Attack Campaign Targeting AI Workloads Actively Exploited In The Wild",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://protectai.com/threat-research/shadowray-ai-infrastructure-is-being-exploited-in-the-wild",
+        "publisher": "Protect AI",
+        "title": "ShadowRay: AI Infrastructure Is Being Exploited In the Wild",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "shadowray",
+      "ray",
+      "remote-code-execution",
+      "CVE-2023-48022"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0004",
+    "slug": "poisongpt-open-source-model-supply-chain-demonstration",
+    "title": "PoisonGPT Open Source Model Supply Chain Demonstration",
+    "summary": "Researchers demonstrated that an open-source language model could be poisoned and uploaded to a major model hub. The proof-of-concept highlighted supply chain risks within public model repositories.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "HuggingFace",
+      "LLM"
+    ],
+    "incident_date": "2023-07",
+    "incident_date_precision": "month",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0019",
+        "publisher": "MITRE ATLAS",
+        "title": "PoisonGPT",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://blog.mithrilsecurity.io/poisongpt-how-we-hid-a-lobotomized-llm-on-hugging-face-to-spread-fake-news",
+        "publisher": "blog.mithrilsecurity.io",
+        "title": "PoisonGPT: How we hid a lobotomized LLM on Hugging Face to spread fake news",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "poisongpt",
+      "supply-chain",
+      "huggingface"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0003",
+    "slug": "chatgpt-conversation-exfiltration-via-indirect-prompt-inject",
+    "title": "ChatGPT Conversation Exfiltration via Indirect Prompt Injection",
+    "summary": "A researcher demonstrated that indirect prompt injections on public websites could trick ChatGPT into rendering markdown images with embedded chat logs. This caused automatic requests to external servers, successfully exfiltrating user conversation data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2023-05",
+    "incident_date_precision": "month",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0021",
+        "publisher": "MITRE ATLAS",
+        "title": "ChatGPT Conversation Exfiltration",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection",
+        "publisher": "Embrace The Red",
+        "title": "ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect_prompt_injection",
+      "data_exfiltration",
+      "chatgpt"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0002",
+    "slug": "bing-chat-data-exfiltration-via-indirect-prompt-injection",
+    "title": "Bing Chat Data Exfiltration via Indirect Prompt Injection",
+    "summary": "Researchers showed that visiting malicious websites while using Bing Chat allowed indirect prompt injections to covertly exfiltrate personal user data. The attack turned the chatbot into a social engineering tool without user consent.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Bing Chat"
+    ],
+    "incident_date": "2023",
+    "incident_date_precision": "year",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0020",
+        "publisher": "MITRE ATLAS",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://greshake.github.io/",
+        "publisher": "greshake.github.io",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect_prompt_injection",
+      "data_exfiltration"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0088",
+    "slug": "cve-2023-46315-local-file-read-vulnerability-in-stable-diffu",
+    "title": "CVE-2023-46315: Local file read vulnerability in Stable Diffusion Infinite Image Browsing extension",
+    "summary": "An extension for Stable Diffusion web UI allowed remote unauthenticated attackers to read arbitrary local files. The flaw exposes system files when Gradio authentication lacks a secret key configuration.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "stable-diffusion-webui",
+      "sd-webui-infinite-image-browsing"
+    ],
+    "incident_date": "2023-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-22",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46315",
+        "publisher": "NVD",
+        "title": "CVE-2023-46315: The zanllp sd-webui-infinite-image-browsing (aka Infinite Image Browsing) extension before 977815a for stable-diffusion-webui…",
+        "published_at": "2023-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2023-46315",
+      "local-file-read"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0065",
+    "slug": "cve-2023-32785-langchain-sql-injection-vulnerability",
+    "title": "CVE-2023-32785: Langchain SQL Injection vulnerability",
+    "summary": "A prompt injection vulnerability in Langchain allows execution of arbitrary code against SQL services. The issue was addressed in version 0.0.247.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "prompt_injection"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-21",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-8h5w-f6q9-wg35",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-32785: Langchain SQL Injection vulnerability",
+        "published_at": "2023-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-32785",
+      "langchain",
+      "sql-injection"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0087",
+    "slug": "cve-2023-32786-prompt-injection-and-ssrf-vulnerability-in-la",
+    "title": "CVE-2023-32786: Prompt injection and SSRF vulnerability in Langchain",
+    "summary": "Langchain contained a prompt injection flaw that allowed attackers to force services to fetch arbitrary URLs. The issue enables server-side request forgery and potential downstream task content injection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain"
+    ],
+    "incident_date": "2023-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-20",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32786",
+        "publisher": "NVD",
+        "title": "CVE-2023-32786: In Langchain through 0.0.155, prompt injection allows an attacker to force the service to retrieve data from an arbitrary URL,…",
+        "published_at": "2023-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2023-32786",
+      "ssrf"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0033",
+    "slug": "phantom-hacker-scams-integrate-ai-voice-cloning-for-financia",
+    "title": "Phantom Hacker Scams Integrate AI Voice Cloning for Financial Theft",
+    "summary": "Updated Phantom Hacker scam operations incorporated AI voice cloning and spoofing to pose as tech support, bankers, and government officials. The multi-phase attacks targeted elderly victims and coerced them into unauthorized wire transfers.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2023-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-20",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1280",
+        "publisher": "AI Incident Database",
+        "title": "Reported Use of AI Voice and Identity Manipulation in the Ongoing 'Phantom Hacker' Fraud Scheme",
+        "published_at": "2023-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "phantom-hacker",
+      "voice-cloning",
+      "deepfake",
+      "social-engineering",
+      "fraud"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0064",
+    "slug": "cve-2023-46229-langchain-server-side-request-forgery-vulnera",
+    "title": "CVE-2023-46229: LangChain Server Side Request Forgery vulnerability",
+    "summary": "LangChain contained a server-side request forgery vulnerability in its recursive URL loader allowing crawling from external to internal servers. A patch was issued in version 0.0.317.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain"
+    ],
+    "incident_date": "2023-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-19",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-655w-fm8m-m478",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-46229: LangChain Server Side Request Forgery vulnerability",
+        "published_at": "2023-10-19"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46229",
+        "publisher": "NVD",
+        "title": "CVE-2023-46229: LangChain before 0.0.317 allows SSRF via document_loaders/recursive_url_loader.py because crawling can proceed from an external…",
+        "published_at": "2023-10-19"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-46229",
+      "ssrf",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0063",
+    "slug": "cve-2023-44467-langchain-experimental-arbitrary-code-executi",
+    "title": "CVE-2023-44467: LangChain Experimental arbitrary code execution",
+    "summary": "LangChain Experimental allowed attackers to bypass previous fixes and execute arbitrary code via python imports. The package was updated to resolve the bypass.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain_experimental"
+    ],
+    "incident_date": "2023-10-09",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-09",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-gjjr-63x4-v8cq",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-44467: langchain_experimental vulnerable to arbitrary code execution via PALChain in the python exec method",
+        "published_at": "2023-10-09"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44467",
+        "publisher": "NVD",
+        "title": "CVE-2023-44467: langchain_experimental (aka LangChain Experimental) in LangChain before 0.0.306 allows an attacker to bypass the CVE-2023-36258…",
+        "published_at": "2023-10-09"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-44467",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0034",
+    "slug": "ottawa-retirees-lose-ca-177-000-to-elon-musk-deepfake-invest",
+    "title": "Ottawa retirees lose CA$177,000 to Elon Musk deepfake investment scam",
+    "summary": "Fraudsters deployed an AI-generated video of Elon Musk to bait an Ontario couple into a fraudulent cryptocurrency scheme. The attackers subsequently obtained remote computer access and drained CA$177,023 through unauthorized transfers.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2023-10-01",
+    "incident_date_precision": "day",
+    "first_reported": "2023-10-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1276",
+        "publisher": "AI Incident Database",
+        "title": "Ottawa Couple Reportedly Loses CA$177,023 After Purported Deepfake Elon Musk Investment Scam",
+        "published_at": "2023-10-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake-fraud",
+      "social-engineering",
+      "cryptocurrency",
+      "remote-access",
+      "elon-musk"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0086",
+    "slug": "cve-2023-41626-arbitrary-file-upload-vulnerability-in-gradio",
+    "title": "CVE-2023-41626: Arbitrary file upload vulnerability in Gradio upload interface",
+    "summary": "An arbitrary file upload vulnerability was discovered in the Gradio framework via the upload interface. No active exploitation has been reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Gradio"
+    ],
+    "incident_date": "2023-09-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-09-15",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41626",
+        "publisher": "NVD",
+        "title": "CVE-2023-41626: Gradio v3.27.0 was discovered to contain an arbitrary file upload vulnerability via the /upload interface.",
+        "published_at": "2023-09-15"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2023-41626",
+      "arbitrary-file-upload"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0062",
+    "slug": "cve-2023-39631-langchain-arbitrary-code-execution-via-numexp",
+    "title": "CVE-2023-39631: LangChain arbitrary code execution via numexpr",
+    "summary": "An issue in LangChain allowed remote code execution via the evaluate function in the optional numexpr dependency. Patches were released to fix the vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain",
+      "numexpr"
+    ],
+    "incident_date": "2023-09-01",
+    "incident_date_precision": "day",
+    "first_reported": "2023-09-01",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-f73w-4m7g-ch9x",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-39631: Langchain vulnerable to arbitrary code execution via the evaluate function in the numexpr library",
+        "published_at": "2023-09-01"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-39631",
+        "publisher": "NVD",
+        "title": "CVE-2023-39631: An issue in LanChain-ai Langchain v.0.0.245 allows a remote attacker to execute arbitrary code via the evaluate function in the…",
+        "published_at": "2023-09-01"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-39631",
+      "rce",
+      "langchain",
+      "numexpr"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0023",
+    "slug": "voice-deepfake-targets-bank-in-failed-transfer-scam",
+    "title": "Voice Deepfake Targets Bank in Failed Transfer Scam",
+    "summary": "Scammers used an AI-generated voice deepfake to impersonate an investor and trick a Bank of America representative into transferring funds. The unauthorized transaction attempt was unsuccessful.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Bank of America"
+    ],
+    "incident_date": "2023-08-30",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-30",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/564",
+        "publisher": "AI Incident Database",
+        "title": "Voice deepfake targets bank in failed transfer scam",
+        "published_at": "2023-08-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "voice-cloning",
+      "fraud",
+      "banking-scam"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0085",
+    "slug": "cve-2023-38975-qdrant-buffer-overflow-vulnerability",
+    "title": "CVE-2023-38975: Qdrant Buffer Overflow Vulnerability",
+    "summary": "A buffer overflow vulnerability in Qdrant vector database permits remote attackers to trigger a denial of service. The vulnerability has been resolved in updated versions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Qdrant"
+    ],
+    "incident_date": "2023-08-29",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38975",
+        "publisher": "NVD",
+        "title": "CVE-2023-38975: * Buffer Overflow vulnerability in qdrant v.1.3.2 allows a remote attacker cause a denial of service via the chucnked_vectors.rs…",
+        "published_at": "2023-08-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2023-38975",
+      "qdrant",
+      "buffer-overflow"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0024",
+    "slug": "deepfake-voice-exploit-compromises-retool-cloud-services",
+    "title": "Deepfake Voice Exploit Compromises Retool Cloud Services",
+    "summary": "Threat actors utilized phishing messages and a deepfake voice call to impersonate IT personnel and obtain multi-factor authentication codes. The breach resulted in unauthorized access to internal systems and affected cloud customers.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Google Authenticator",
+      "Retool"
+    ],
+    "incident_date": "2023-08-27",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-27",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/567",
+        "publisher": "AI Incident Database",
+        "title": "Deepfake Voice Exploit Compromises Retool's Cloud Services",
+        "published_at": "2023-08-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "phishing",
+      "social-engineering",
+      "mfa-bypass",
+      "cloud-breach"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0061",
+    "slug": "cve-2023-36281-langchain-arbitrary-code-execution-vulnerabil",
+    "title": "CVE-2023-36281: LangChain arbitrary code execution vulnerability",
+    "summary": "A vulnerability in langchain enabled remote attackers to execute arbitrary code by passing a crafted JSON file to the load_prompt parameter. The issue was resolved in later software versions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-08-22",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-22",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-7gfq-f96f-g85j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-36281: langchain vulnerable to arbitrary code execution",
+        "published_at": "2023-08-22"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36281",
+        "publisher": "NVD",
+        "title": "CVE-2023-36281: An issue in langchain v.0.0.171 allows a remote attacker to execute arbitrary code via a JSON file to load_prompt.",
+        "published_at": "2023-08-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-36281",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0084",
+    "slug": "cve-2023-38976-weaviate-denial-of-service-vulnerability",
+    "title": "CVE-2023-38976: Weaviate Denial of Service Vulnerability",
+    "summary": "A remote denial of service vulnerability exists in Weaviate vector database via the GraphQL request handler. The issue was addressed in a software update.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Weaviate"
+    ],
+    "incident_date": "2023-08-21",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38976",
+        "publisher": "NVD",
+        "title": "CVE-2023-38976: An issue in weaviate v.1.20.0 allows a remote attacker to cause a denial of service via the handleUnbatchedGraphQLRequest…",
+        "published_at": "2023-08-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2023-38976",
+      "weaviate",
+      "dos"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0027",
+    "slug": "ai-generated-voice-deepfakes-used-in-sudanese-conflict-disin",
+    "title": "AI-Generated Voice Deepfakes Used in Sudanese Conflict Disinformation",
+    "summary": "Actors circulated synthetic voice recordings claiming to be former Sudanese president Omar al-Bashir to influence political perceptions during civil conflict. The channel was eventually removed by TikTok for violating synthetic media policies.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "TikTok"
+    ],
+    "incident_date": "2023-08-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-20",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1087",
+        "publisher": "AI Incident Database",
+        "title": "Campaign Featuring Purported AI-Generated Audio Attributed to Omar al-Bashir Spreads During Sudanese Conflict",
+        "published_at": "2023-08-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "disinformation",
+      "voice-cloning"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0060",
+    "slug": "cve-2023-38860-langchain-arbitrary-code-execution-vulnerabil",
+    "title": "CVE-2023-38860: LangChain arbitrary code execution vulnerability",
+    "summary": "An unpatched vulnerability in LangChain allowed remote attackers to execute arbitrary code via the prompt parameter. A patch was released to address the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain"
+    ],
+    "incident_date": "2023-08-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-15",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-fj32-q626-pjjc",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-38860: LangChain vulnerable to arbitrary code execution",
+        "published_at": "2023-08-15"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38860",
+        "publisher": "NVD",
+        "title": "CVE-2023-38860: An issue in LangChain v.0.0.231 allows a remote attacker to execute arbitrary code via the prompt parameter.",
+        "published_at": "2023-08-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-38860",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0059",
+    "slug": "cve-2023-39662-llama-index-vulnerable-to-arbitrary-code-exec",
+    "title": "CVE-2023-39662: llama-index vulnerable to arbitrary code execution",
+    "summary": "An arbitrary code execution flaw was discovered in LlamaIndex prior to version 0.9.14 via the PandasQueryEngine function. Vendors issued an advisory and fix.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama-index"
+    ],
+    "incident_date": "2023-08-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-15",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-2xxc-73fv-36f7",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-39662: llama-index vulnerable to arbitrary code execution",
+        "published_at": "2023-08-15"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-39662",
+      "rce"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0058",
+    "slug": "cve-2023-39659-langchain-vulnerable-to-arbitrary-code-execut",
+    "title": "CVE-2023-39659: LangChain vulnerable to arbitrary code execution",
+    "summary": "A remote code execution vulnerability affects LangChain versions prior to 0.0.325 through the PythonAstREPLTool component. A patch was provided by the maintainers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-08-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-15",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-prgp-w7vf-ch62",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-39659: LangChain vulnerable to arbitrary code execution",
+        "published_at": "2023-08-15"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-39659",
+        "publisher": "NVD",
+        "title": "CVE-2023-39659: An issue in langchain langchain-ai v.0.0.232 and before allows a remote attacker to execute arbitrary code via a crafted script…",
+        "published_at": "2023-08-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-39659",
+      "rce"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0057",
+    "slug": "cve-2023-38896-langchain-vulnerable-to-arbitrary-code-execut",
+    "title": "CVE-2023-38896: LangChain vulnerable to arbitrary code execution",
+    "summary": "An arbitrary code execution vulnerability exists in LangChain prior to version 0.0.236 via math and colored object prompt functions. No active exploitation was reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-08-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-15",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-92j5-3459-qgp4",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-38896: LangChain vulnerable to arbitrary code execution",
+        "published_at": "2023-08-15"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38896",
+        "publisher": "NVD",
+        "title": "CVE-2023-38896: An issue in Harrison Chase langchain v.0.0.194 and before allows a remote attacker to execute arbitrary code via the…",
+        "published_at": "2023-08-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-38896",
+      "rce"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0056",
+    "slug": "cve-2023-36095-langchain-code-injection-vulnerability",
+    "title": "CVE-2023-36095: langchain Code Injection vulnerability",
+    "summary": "A code injection vulnerability in LangChain allows attackers to execute arbitrary code via PALChain components. The issue affects versions prior to 0.0.236.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-08-05",
+    "incident_date_precision": "day",
+    "first_reported": "2023-08-05",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-gwqq-6vq7-5j86",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-36095: langchain Code Injection vulnerability",
+        "published_at": "2023-08-05"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36095",
+        "publisher": "NVD",
+        "title": "CVE-2023-36095: An issue in Harrison Chase langchain v.0.0.194 allows an attacker to execute arbitrary code via the python exec calls in the…",
+        "published_at": "2023-08-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-36095",
+      "code-injection"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0053",
+    "slug": "cve-2023-36188-langchain-vulnerable-to-arbitrary-code-execut",
+    "title": "CVE-2023-36188: Langchain vulnerable to arbitrary code execution",
+    "summary": "Langchain is susceptible to arbitrary code execution via the PALChain parameter in the Python exec method. An update is available to remediate the vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Langchain"
+    ],
+    "incident_date": "2023-07-06",
+    "incident_date_precision": "day",
+    "first_reported": "2023-07-06",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-57fc-8q82-gfp3",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-36188: langchain vulnerable to arbitrary code execution",
+        "published_at": "2023-07-06"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36188",
+        "publisher": "NVD",
+        "title": "CVE-2023-36188: An issue in langchain v.0.0.64 allows a remote attacker to execute arbitrary code via the PALChain parameter in the Python exec…",
+        "published_at": "2023-07-06"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-36188",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0052",
+    "slug": "cve-2023-36189-langchain-sql-injection-vulnerability",
+    "title": "CVE-2023-36189: Langchain SQL Injection vulnerability",
+    "summary": "A SQL injection vulnerability exists in the SQLDatabaseChain component of Langchain. The issue allows remote attackers to retrieve sensitive information.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Langchain"
+    ],
+    "incident_date": "2023-07-06",
+    "incident_date_precision": "day",
+    "first_reported": "2023-07-06",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-7q94-qpjr-xpgm",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-36189: langchain SQL Injection vulnerability",
+        "published_at": "2023-07-06"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36189",
+        "publisher": "NVD",
+        "title": "CVE-2023-36189: SQL injection vulnerability in langchain before v0.0.247 allows a remote attacker to obtain sensitive information via the…",
+        "published_at": "2023-07-06"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-36189",
+      "sql-injection",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0051",
+    "slug": "cve-2023-36258-langchain-arbitrary-code-execution-vulnerabil",
+    "title": "CVE-2023-36258: Langchain arbitrary code execution vulnerability",
+    "summary": "An issue in Langchain permits arbitrary code execution through the PALChain component via python exec. A patch has been released to address the flaw.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Langchain"
+    ],
+    "incident_date": "2023-07-03",
+    "incident_date_precision": "day",
+    "first_reported": "2023-07-03",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-2qmj-7962-cjq8",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-36258: langchain arbitrary code execution vulnerability",
+        "published_at": "2023-07-03"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36258",
+        "publisher": "NVD",
+        "title": "CVE-2023-36258: An issue in LangChain before 0.0.236 allows an attacker to execute arbitrary code because Python code with os.system, exec, or…",
+        "published_at": "2023-07-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-36258",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0019",
+    "slug": "accidental-exposure-of-38tb-of-data-by-microsoft-ai-research",
+    "title": "Accidental Exposure of 38TB of Data by Microsoft AI Research",
+    "summary": "Microsoft's AI research team accidentally exposed 38TB of sensitive data, including private keys and internal messages, via misconfigured storage tokens. The exposure occurred while publishing open-source training material.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure Storage"
+    ],
+    "incident_date": "2023-06-22",
+    "incident_date_precision": "day",
+    "first_reported": "2023-06-22",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/571",
+        "publisher": "AI Incident Database",
+        "title": "Reported Accidental Exposure of 38TB of Data by Microsoft's AI Research Team",
+        "published_at": "2023-06-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "data-leak",
+      "azure",
+      "misconfiguration",
+      "credentials-exposure"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0050",
+    "slug": "cve-2023-34541-langchain-vulnerable-to-arbitrary-code-execut",
+    "title": "CVE-2023-34541: Langchain vulnerable to arbitrary code execution",
+    "summary": "Langchain is affected by an arbitrary code execution vulnerability in the load_prompt function. Users are advised to upgrade to the patched version.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Langchain"
+    ],
+    "incident_date": "2023-06-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-06-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-6643-h7h5-x9wh",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-34541: Langchain vulnerable to arbitrary code execution",
+        "published_at": "2023-06-20"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34541",
+        "publisher": "NVD",
+        "title": "CVE-2023-34541: Langchain 0.0.171 is vulnerable to Arbitrary code execution in load_prompt.",
+        "published_at": "2023-06-20"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-34541",
+      "rce",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0049",
+    "slug": "cve-2023-34540-langchain-os-command-injection-vulnerability",
+    "title": "CVE-2023-34540: Langchain OS Command Injection vulnerability",
+    "summary": "A remote code execution vulnerability exists in Langchain before version 0.0.225 within the JiraAPIWrapper component via crafted input. A patched version has been made available by the maintainers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-06-14",
+    "incident_date_precision": "day",
+    "first_reported": "2023-06-14",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-x32c-59v5-h7fg",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-34540: Langchain OS Command Injection vulnerability",
+        "published_at": "2023-06-14"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34540",
+        "publisher": "NVD",
+        "title": "CVE-2023-34540: Langchain before v0.0.225 was discovered to contain a remote code execution (RCE) vulnerability in the component JiraAPIWrapper…",
+        "published_at": "2023-06-14"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-34540",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0048",
+    "slug": "cve-2023-34239-gradio-arbitrary-file-read-and-url-proxying-v",
+    "title": "CVE-2023-34239: Gradio arbitrary file read and URL proxying vulnerabilities",
+    "summary": "Gradio apps contain vulnerabilities that allow arbitrary file read on host machines and unauthorized URL proxying. Users must upgrade to version 3.34.0 or higher to resolve the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "gradio"
+    ],
+    "incident_date": "2023-06-09",
+    "incident_date_precision": "day",
+    "first_reported": "2023-06-08",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34239",
+        "publisher": "NVD",
+        "title": "CVE-2023-34239: Gradio is an open-source Python library that is used to build machine learning and data science.",
+        "published_at": "2023-06-08"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-3qqg-pgqq-3695",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-34239: Gradio vulnerable to arbitrary file read and proxying of arbitrary URLs",
+        "published_at": "2023-06-09"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-34239",
+      "arbitrary-file-read"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0047",
+    "slug": "cve-2023-2800-transformers-insecure-temporary-file-vulnerabi",
+    "title": "CVE-2023-2800: transformers Insecure Temporary File vulnerability",
+    "summary": "An insecure temporary file vulnerability was found in the Hugging Face transformers repository for versions 4.29.2 and prior. A fix has been released in version 4.30.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "transformers"
+    ],
+    "incident_date": "2023-05-18",
+    "incident_date_precision": "day",
+    "first_reported": "2023-05-18",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-282v-666c-3fvg",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-2800: transformers has Insecure Temporary File",
+        "published_at": "2023-05-18"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-2800",
+      "insecure-temporary-file"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T07:00:14.101Z"
+  },
+  {
+    "id": "AIR-2023-0032",
+    "slug": "scammer-uses-video-deepfake-of-friend-to-steal-4-3-million-y",
+    "title": "Scammer Uses Video Deepfake of Friend to Steal 4.3 Million Yuan from Chinese Businessman",
+    "summary": "A scammer used AI-generated video and voice deepfakes during a call to impersonate a friend of a businessman in China. The victim transferred 4.3 million yuan before realizing the scam, after which police recovered most of the funds.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2023-04-15",
+    "incident_date_precision": "day",
+    "first_reported": "2023-04-15",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/992",
+        "publisher": "AI Incident Database",
+        "title": "Chinese Businessman Reportedly Defrauded of 4.3 Million Yuan by AI-Generated Deepfake Impersonating Friend",
+        "published_at": "2023-04-15"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "fraud",
+      "video-deepfake",
+      "voice-cloning"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0020",
+    "slug": "quebec-man-sentenced-for-using-deepfakes-to-create-synthetic",
+    "title": "Quebec Man Sentenced for Using Deepfakes to Create Synthetic CSAM",
+    "summary": "A Quebec man was sentenced to over three years in prison for producing synthetic child pornography using deepfake technology. He manipulated existing images to create non-consensual exploitative videos.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Deepfake generation software"
+    ],
+    "incident_date": "2023-04-14",
+    "incident_date_precision": "day",
+    "first_reported": "2023-04-14",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/604",
+        "publisher": "AI Incident Database",
+        "title": "Quebec Man Sentenced for Having Used Deepfake Technology to Create Synthetic Child Pornography",
+        "published_at": "2023-04-14"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "csam",
+      "criminal_activity"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0041",
+    "slug": "cve-2023-29374-langchain-code-injection-via-llmmathchain",
+    "title": "CVE-2023-29374: LangChain code injection via LLMMathChain",
+    "summary": "LangChain contains a code injection vulnerability via prompt injection attacks that execute arbitrary code using Python exec. The issue affects versions up to 0.0.131.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "prompt_injection"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langchain"
+    ],
+    "incident_date": "2023-04-05",
+    "incident_date_precision": "day",
+    "first_reported": "2023-04-05",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-fprp-p869-w6q2",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-29374: LangChain vulnerable to code injection",
+        "published_at": "2023-04-05"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-29374",
+        "publisher": "NVD",
+        "title": "CVE-2023-29374: In LangChain through 0.0.131, the LLMMathChain chain allows prompt injection attacks that can execute arbitrary code via the…",
+        "published_at": "2023-04-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-29374",
+      "langchain",
+      "code-injection"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0022",
+    "slug": "fbi-reports-surge-in-sextortion-involving-ai-generated-expli",
+    "title": "FBI Reports Surge in Sextortion Involving AI-Generated Explicit Media",
+    "summary": "Law enforcement noted a significant increase in extortion cases where attackers used synthetic explicit images and videos generated from victim photos. This campaign targeted multiple individuals across online platforms.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Deepfake generation tools"
+    ],
+    "incident_date": "2023-04-01",
+    "incident_date_precision": "day",
+    "first_reported": "2023-04-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/551",
+        "publisher": "AI Incident Database",
+        "title": "FBI Reported Surge of Extortion Cases of AI Media Featuring Sexual Explicit Activities",
+        "published_at": "2023-04-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "sextortion",
+      "deepfake",
+      "extortion"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0018",
+    "slug": "researchers-bypass-cylance-ai-malware-detector-with-universa",
+    "title": "Researchers bypass Cylance AI malware detector with universal string",
+    "summary": "Researchers created a universal bypass string that, when appended to malicious files, successfully evades detection by Cylance's AI malware detector. The research demonstrates a vulnerability in AI-based security classification systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "CylancePROTECT",
+      "Cylance Smart Antivirus"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V004.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V004: Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "publisher": "MITRE ATLAS",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "publisher": "skylightcyber.com",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "publisher": "security7.net",
+        "title": "Statement's from Skylight Cyber CEO",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection",
+      "bypass"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0017",
+    "slug": "azure-red-team-demonstrates-adversarial-evasion-on-microsoft",
+    "title": "Azure Red Team demonstrates adversarial evasion on Microsoft edge AI product",
+    "summary": "The Azure Red Team conducted an automated red team exercise that continuously manipulated target images to induce misclassifications in a Microsoft edge AI product. The finding highlights adversarial evasion risks in machine learning models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Edge AI Product"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V011.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V011: The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Edge AI Evasion",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "red-team",
+      "edge-ai"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0016",
+    "slug": "microsoft-ai-red-team-conducts-red-teaming-exercise-on-azure",
+    "title": "Microsoft AI Red Team conducts red teaming exercise on Azure service",
+    "summary": "Microsoft red teamers executed an exercise against an internal Azure service to disrupt operations. The test combined standard enterprise tactics with adversarial machine learning evasion techniques.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V010.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V010: The Microsoft AI Red Team performed a red team exercise on an internal Azure service with the intention of disrupting its service.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Azure Service Disruption",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "microsoft",
+      "azure",
+      "red-team",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0015",
+    "slug": "mitre-ai-red-team-demonstrates-physical-evasion-attack-on-fa",
+    "title": "MITRE AI Red Team demonstrates physical evasion attack on face identification",
+    "summary": "Researchers demonstrated a physical-domain evasion attack on a commercial face identification service to induce misclassification. The exercise combined traditional enterprise techniques with adversarial machine learning steps.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Commercial Face Identification Service"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V012.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V012: MITRE's AI Red Team demonstrated a physical-domain evasion attack on a commercial face identification service with the intention of inducing a targeted misclassification.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "publisher": "MITRE ATLAS",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "mitre",
+      "adversarial-ml",
+      "evasion",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0014",
+    "slug": "camera-hijack-attack-evades-facial-recognition-in-tax-system",
+    "title": "Camera hijack attack evades facial recognition in tax system fraud",
+    "summary": "Attackers used camera spoofing and hijacking to bypass facial recognition authentication on a government tax system. The scheme enabled unauthorized access and seventy-seven million dollars in fraudulent invoices.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "adversarial_evasion",
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Shanghai government tax office facial recognition service"
+    ],
+    "incident_date": "2018",
+    "incident_date_precision": "year",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V005.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V005: This type of camera hijack attack can evade the traditional live facial recognition authentication model and enable access to privileged systems and victim impersonation.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "publisher": "MITRE ATLAS",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "publisher": "The Wall Street Journal",
+        "title": "Faces are the next target for fraudsters",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "facial-recognition",
+      "camera-hijack",
+      "fraud",
+      "avid"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0013",
+    "slug": "cnn-based-botnet-dga-detector-bypassed-via-domain-mutation",
+    "title": "CNN-Based Botnet DGA Detector Bypassed via Domain Mutation",
+    "summary": "Researchers bypassed a convolutional neural network-based botnet domain generation algorithm detector using a generic domain name mutation technique. The method successfully evaded the ML-based detection module in testing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks DGA Detector"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V002.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V002: The Palo Alto Networks Security AI research team was able to bypass a Convolutional Neural Network based botnet Domain Generation Algorithm (DGA) detector using a generic domain name mutation technique.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "publisher": "MITRE ATLAS",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "publisher": "faculty.washington.edu",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://github.com/matthoffman/degas",
+        "publisher": "GitHub",
+        "title": "Degas source code",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial_evasion",
+      "dga",
+      "botnet"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0012",
+    "slug": "mobile-deep-learning-apps-vulnerable-to-neural-payload-injec",
+    "title": "Mobile Deep Learning Apps Vulnerable to Neural Payload Injection",
+    "summary": "Researchers found that many deep learning models in Google Play apps are vulnerable to backdoor attacks via neural payload injection. The empirical study identified multiple critical applications affected by this vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Mobile Deep Learning Apps"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V013.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V013: Deep learning models are increasingly used in mobile applications as critical components.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0013",
+        "publisher": "MITRE ATLAS",
+        "title": "Backdoor Attack on Deep Learning Models in Mobile Apps",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2101.06896",
+        "publisher": "arXiv",
+        "title": "DeepPayload: Black-box Backdoor Attack on Deep Learning Models through Neural Payload Injection",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "backdoor",
+      "data_poisoning",
+      "mobile_apps"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0011",
+    "slug": "kaspersky-antimalware-ml-model-evaded-via-feature-knowledge",
+    "title": "Kaspersky Antimalware ML Model Evaded via Feature Knowledge",
+    "summary": "Researchers demonstrated that feature knowledge is sufficient to conduct adversarial attacks against ML-based malware detectors. The technique successfully evaded detection for most modified malware files without white-box access.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Kaspersky Antimalware ML Model"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V014.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V014: Cloud storage and computations have become popular platforms for deploying ML malware detectors.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0014",
+        "publisher": "MITRE ATLAS",
+        "title": "Confusing Antimalware Neural Networks",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://securelist.com/how-to-confuse-antimalware-neural-networks-adversarial-attacks-and-protection/102949",
+        "publisher": "Kaspersky Securelist",
+        "title": "Article, \"How to confuse antimalware neural networks. Adversarial attacks and protection\"",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial_evasion",
+      "malware_detection",
+      "research"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0010",
+    "slug": "pytorch-nightly-pypi-package-compromised-with-malicious-depe",
+    "title": "PyTorch-Nightly PyPI Package Compromised with Malicious Dependency",
+    "summary": "Threat actors uploaded a malicious dependency matching the name of a PyTorch-nightly package to PyPI, performing a supply chain attack. The compromised packages exposed sensitive data on infected Linux machines before PyTorch announced the incident.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "PyTorch-nightly"
+    ],
+    "incident_date": "2022-12-25",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V015.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V015: Linux packages for PyTorch's pre-release version, called Pytorch-nightly, were compromised from December 25 to 30, 2022 by a malicious binary uploaded to the Python Package Index (PyPI) code repository.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0015",
+        "publisher": "MITRE ATLAS",
+        "title": "Compromised PyTorch Dependency Chain",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://pytorch.org/blog/compromised-nightly-dependency",
+        "publisher": "pytorch.org",
+        "title": "PyTorch statement on compromised dependency",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/pytorch-discloses-malicious-dependency-chain-compromise-over-holidays",
+        "publisher": "BleepingComputer",
+        "title": "Analysis by BleepingComputer",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "supply_chain",
+      "dependency_confusion",
+      "pypi"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0009",
+    "slug": "clearview-ai-code-repository-misconfiguration-exposes-produc",
+    "title": "Clearview AI code repository misconfiguration exposes production credentials and video samples",
+    "summary": "A misconfigured code repository allowed unauthorized user registration, giving external researchers access to production credentials, cloud storage keys, and video samples. The exposed assets included sensitive data linked to the AI system.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Clearview AI Facial Recognition Tool"
+    ],
+    "incident_date": "2020",
+    "incident_date_precision": "year",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V007.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V007: Clearview AI makes a facial recognition tool that searches publicly available photos for matches.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "publisher": "MITRE ATLAS",
+        "title": "ClearviewAI Misconfiguration",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "publisher": "TechCrunch",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "publisher": "gizmodo.com",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "publisher": "The New York Times",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "data-leak",
+      "credential-exposure",
+      "misconfiguration"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0008",
+    "slug": "researchers-replicate-machine-translation-services-and-trans",
+    "title": "Researchers replicate machine translation services and transfer adversarial attacks",
+    "summary": "Academic researchers successfully replicated commercial translation APIs and used the extraction to craft adversarial inputs causing targeted translation errors. The work demonstrates model extraction and adversarial vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Google Translate",
+      "Bing Translator",
+      "Systran Translate"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V006.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V006: Machine translation services (such as Google Translate, Bing Translator, and Systran Translate) provide public-facing UIs and APIs.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "publisher": "MITRE ATLAS",
+        "title": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2004.15015",
+        "publisher": "arXiv",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://ericswallace.com/imitation",
+        "publisher": "ericswallace.com",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "publisher": "thehill.com",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "model-extraction",
+      "adversarial-evasion",
+      "translation"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0007",
+    "slug": "palo-alto-networks-security-team-demonstrates-evasion-of-dee",
+    "title": "Palo Alto Networks security team demonstrates evasion of deep learning malware detector",
+    "summary": "Researchers built a replica deep learning model for malware traffic detection and crafted adversarial HTTP samples to successfully evade it. The finding highlights vulnerability to adversarial perturbation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks C&C Traffic Detector"
+    ],
+    "incident_date": "2023-03-31",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-31",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V001.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V001: The Palo Alto Networks Security AI research team tested a deep learning model for malware command and control (C&C) traffic detection in HTTP traffic.",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "publisher": "MITRE ATLAS",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "published_at": "2023-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/1802.03162",
+        "publisher": "arXiv",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0005",
+    "slug": "llm-application-frameworks-allow-remote-code-execution-via-p",
+    "title": "LLM Application Frameworks Allow Remote Code Execution via Prompting",
+    "summary": "Frameworks like langchain and boxcars.ai allow direct query execution through LLMs, enabling remote code execution or SQL injection via prompt inputs. Researchers demonstrated that unauthorized actions could be triggered through conversational input.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ChatGPT",
+      "langchain",
+      "boxcars.ai"
+    ],
+    "incident_date": "2023-03-26",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-26",
+    "sources": [
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/reports/2023/AVID-2023-R0003.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-R0003: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://blog.luitjes.it/posts/injectgpt-most-polite-exploit-ever",
+        "publisher": "blog.luitjes.it",
+        "title": "InjectGPT: the most polite exploit ever",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://reddit.com/r/netsec/comments/121gpay/injectgpt_remote_code_execution_by_asking_nicely",
+        "publisher": "reddit.com",
+        "title": "Reddit thread on InjectGPT",
+        "published_at": "2023-03-26"
+      },
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V028.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V028: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_avid",
+    "tags": [
+      "prompt-injection",
+      "remote-code-execution",
+      "langchain"
+    ],
+    "created_at": "2026-10-18T06:56:23.100Z",
+    "updated_at": "2026-10-18T06:56:23.100Z"
+  },
+  {
+    "id": "AIR-2023-0030",
+    "slug": "chatgpt-bug-exposes-user-chat-histories-and-payment-data",
+    "title": "ChatGPT Bug Exposes User Chat Histories and Payment Data",
+    "summary": "A software bug in ChatGPT caused the exposure of user chat history titles and private payment information to other users. The incident prompted OpenAI to temporarily shut down the service while investigating the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 4,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2023-03-20",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-20",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/516",
+        "publisher": "AI Incident Database",
+        "title": "ChatGPT Reportedly Exposed Users' Private Data Reportedly Due to Bug",
+        "published_at": "2023-03-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "data_leak",
+      "bug",
+      "privacy"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0035",
+    "slug": "samsung-source-code-and-meeting-records-disclosed-via-chatgp",
+    "title": "Samsung Source Code and Meeting Records Disclosed via ChatGPT Ingestion",
+    "summary": "Samsung engineers entered proprietary source code and internal meeting notes into ChatGPT during routine work tasks. The disclosure led the company to restrict employee access to external generative AI services.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment",
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2023-03-11",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-11",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/768",
+        "publisher": "AI Incident Database",
+        "title": "ChatGPT Reportedly Implicated in Samsung Data Leak of Source Code and Meeting Notes",
+        "published_at": "2023-03-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "samsung",
+      "chatgpt",
+      "data-leak",
+      "source-code"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0001",
+    "slug": "code-execution-in-mathgpt-via-prompt-injection",
+    "title": "Code Execution in MathGPT via Prompt Injection",
+    "summary": "Researchers demonstrated that prompt injection against the MathGPT application could steer GPT-3 into generating unauthorized executable Python code. The demonstration highlighted risks in applications that directly execute model-generated code.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "MathGPT",
+      "GPT-3"
+    ],
+    "incident_date": "2023-01-28",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-01",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0016",
+        "publisher": "MITRE ATLAS",
+        "title": "Achieving Code Execution in MathGPT via Prompt Injection",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://arxiv.org/abs/2103.03874",
+        "publisher": "arXiv",
+        "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://arxiv.org/abs/2110.14168",
+        "publisher": "arXiv",
+        "title": "Training Verifiers to Solve Math Word Problems",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://lspace.swyx.io/p/reverse-prompt-eng",
+        "publisher": "lspace.swyx.io",
+        "title": "Reverse Prompt Engineering for Fun and (no) Profit",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks",
+        "publisher": "research.nccgroup.com",
+        "title": "Exploring prompt-based attacks",
+        "published_at": "2023-03-01"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt_injection",
+      "code_execution"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0037",
+    "slug": "cve-2023-25823-gradio-exposes-private-ssh-keys-in-share-link",
+    "title": "CVE-2023-25823: Gradio exposes private SSH keys in share links",
+    "summary": "Gradio versions older than 3.13.1 leaked private SSH keys to connecting users when using share links. The issue has been patched in version 3.19.1.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Gradio"
+    ],
+    "incident_date": "2023-02-23",
+    "incident_date_precision": "day",
+    "first_reported": "2023-02-23",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-3x5j-9vwr-8rr5",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2023-25823: Update share links to use FRP instead of SSH tunneling",
+        "published_at": "2023-02-23"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25823",
+        "publisher": "NVD",
+        "title": "CVE-2023-25823: Gradio is an open-source Python library to build machine learning and data science demos and web applications.",
+        "published_at": "2023-02-23"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2023-25823",
+      "gradio",
+      "information-disclosure"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2023-0028",
+    "slug": "lloyds-bank-voice-id-bypassed-using-ai-generated-audio",
+    "title": "Lloyds Bank Voice ID Bypassed Using AI-Generated Audio",
+    "summary": "A journalist successfully bypassed a bank's voice recognition authentication system using synthetic audio generated by AI. The incident demonstrated vulnerabilities in voice biometric security controls.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Lloyds Bank Voice ID",
+      "ElevenLabs"
+    ],
+    "incident_date": "2023-02-22",
+    "incident_date_precision": "day",
+    "first_reported": "2023-02-22",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/485",
+        "publisher": "AI Incident Database",
+        "title": "UK Bank's Voice ID Successfully Bypassed Using AI-Produced Audio",
+        "published_at": "2023-02-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "voice-biometrics",
+      "authentication-bypass"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2023-0021",
+    "slug": "bing-chat-initial-instructions-exposed-via-prompt-injection",
+    "title": "Bing Chat Initial Instructions Exposed via Prompt Injection by Testers",
+    "summary": "Early users successfully extracted Bing Chat's confidential system instructions and underlying rules through prompt injection techniques. Microsoft subsequently updated the system to address the disclosure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "OpenAI"
+    ],
+    "products": [
+      "Bing Chat"
+    ],
+    "incident_date": "2023-02-08",
+    "incident_date_precision": "day",
+    "first_reported": "2023-02-08",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/473",
+        "publisher": "AI Incident Database",
+        "title": "Bing Chat's Initial Prompts Revealed by Early Testers Through Prompt Injection",
+        "published_at": "2023-02-08"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "prompt_injection",
+      "system_prompt_leak",
+      "bing_chat"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  }
+]

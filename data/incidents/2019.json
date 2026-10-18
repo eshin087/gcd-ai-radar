@@ -1,0 +1,81 @@
+[
+  {
+    "id": "AIR-2019-0005",
+    "slug": "hive-box-facial-recognition-locks-bypassed-with-printed-phot",
+    "title": "Hive Box Facial Recognition Locks Bypassed With Printed Photos",
+    "summary": "Facial-recognition lockers were easily bypassed by students using a printed photograph of the intended recipient. The vulnerability left delivery locker contents exposed to theft.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Hive Box Facial-Recognition Locks"
+    ],
+    "incident_date": "2019-10-09",
+    "incident_date_precision": "day",
+    "first_reported": "2019-10-09",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/223",
+        "publisher": "AI Incident Database",
+        "title": "Hive Box Facial-Recognition Locks Hacked by Fourth Graders Using Intended Recipient’s Facial Photo",
+        "published_at": "2019-10-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "facial-recognition",
+      "spoofing",
+      "bypass"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2019-0006",
+    "slug": "researchers-demonstrate-adversarial-attack-on-tesla-autopilo",
+    "title": "Researchers demonstrate adversarial attack on Tesla Autopilot lane detection",
+    "summary": "Tencent Keen Security Lab discovered that placing crafted stickers on roadways misled Tesla Autopilot into changing lanes improperly. Tesla downplayed the findings, stating the scenario was unrealistic in real-world driving conditions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Tesla Autopilot"
+    ],
+    "incident_date": "2019-03-29",
+    "incident_date_precision": "day",
+    "first_reported": "2019-03-29",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/159",
+        "publisher": "AI Incident Database",
+        "title": "Tesla Autopilot’s Lane Recognition Allegedly Vulnerable to Adversarial Attacks",
+        "published_at": "2019-03-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "adversarial-attack",
+      "tesla",
+      "computer-vision",
+      "autonomous-vehicles"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  }
+]

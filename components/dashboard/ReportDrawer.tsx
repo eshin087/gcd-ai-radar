@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
-import { ReportBody, type Selection } from "@/components/dashboard/DrillDown";
+import { ReportBody } from "@/components/dashboard/DrillDown";
 import type { Basis, CompactRow } from "@/lib/dashboard";
+import type { Selection } from "@/lib/selection";
 import type { DateField } from "@/lib/stats";
 
 interface Props {
   selection: Selection | null;
-  rows: CompactRow[];
+  /** The rows behind the selection, or null while their year shards load. */
+  rows: CompactRow[] | null;
+  error?: string | null;
   windowLabel: string;
   basis: Basis;
   field: DateField;
@@ -22,7 +25,7 @@ interface Props {
  * focus moves into the drawer and returns to the clicked number afterwards;
  * the page behind does not scroll while it is open.
  */
-export function ReportDrawer({ selection, rows, windowLabel, basis, field, onClose, className = "" }: Props) {
+export function ReportDrawer({ selection, rows, error, windowLabel, basis, field, onClose, className = "" }: Props) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const onCloseRef = useRef(onClose);
   const titleId = useId();
@@ -59,7 +62,7 @@ export function ReportDrawer({ selection, rows, windowLabel, basis, field, onClo
       <button type="button" tabIndex={-1} aria-label="Close report" onClick={onClose} className="drawer-scrim absolute inset-0 cursor-default" />
       <aside className={`drawer-panel absolute inset-y-0 right-0 flex w-full max-w-[660px] flex-col border-l border-line bg-panel shadow-2xl ${className}`}>
         <div className="flex-1 space-y-4 overflow-y-auto overscroll-contain p-5 sm:p-7">
-          <ReportBody key={JSON.stringify(selection)} selection={selection} rows={rows} windowLabel={windowLabel} basis={basis} field={field} onClose={onClose} titleId={titleId} closeRef={closeRef} />
+          <ReportBody key={JSON.stringify(selection)} selection={selection} rows={rows} error={error} windowLabel={windowLabel} basis={basis} field={field} onClose={onClose} titleId={titleId} closeRef={closeRef} />
         </div>
       </aside>
     </div>

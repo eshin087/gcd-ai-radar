@@ -1,0 +1,130 @@
+[
+  {
+    "id": "AIR-2022-0040",
+    "slug": "cve-2021-43831-local-file-access-vulnerability-in-gradio-int",
+    "title": "CVE-2021-43831: Local file access vulnerability in Gradio interface",
+    "summary": "An arbitrary file read vulnerability exists in Gradio versions prior to 2.4.8 due to insecure static file serving. Attackers could access host files via exact relative paths when public links were active.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Gradio"
+    ],
+    "incident_date": "2022-01-21",
+    "incident_date_precision": "day",
+    "first_reported": "2021-12-15",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-43831",
+        "publisher": "NVD",
+        "title": "CVE-2021-43831: Gradio is an open source framework for building interactive machine learning models and demos.",
+        "published_at": "2021-12-15"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-rhq2-3vr9-6mcr",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2021-43831: Files on the host computer can be accessed from the Gradio interface",
+        "published_at": "2022-01-21"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2021-43831",
+      "path_traversal",
+      "gradio"
+    ],
+    "created_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2021-0009",
+    "slug": "deepfake-video-scam-targeting-uk-resident-results-in-financi",
+    "title": "Deepfake Video Scam Targeting UK Resident Results in Financial Loss",
+    "summary": "An individual in Somerset lost 140,000 pounds after being deceived by a Facebook advertisement featuring an AI-generated deepfake video promoting a crypto scam. The victim transferred funds to a fraudulent platform before realizing the deception.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Facebook"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2021-07-13",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1509",
+        "publisher": "AI Incident Database",
+        "title": "Self-Employed Somerset Father Wayne Luxon Reportedly Lost £140,000 After Facebook Deepfake of Martin Lewis Promoted Crypto Scam",
+        "published_at": "2021-07-13"
+      },
+      {
+        "url": "https://wsj.com/articles/humanoid-robot-softbank-jobs-pepper-olympics-11626187461",
+        "publisher": "The Wall Street Journal",
+        "title": "Humanoid Robot Keeps Getting Fired From His Jobs",
+        "published_at": "2021-07-13"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.92,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "financial-fraud",
+      "scam"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2021-0029",
+    "slug": "north-korean-it-workers-use-ai-generated-identities-to-infil",
+    "title": "North Korean IT Workers Use AI-Generated Identities to Infiltrate Companies",
+    "summary": "Operatives utilized AI-generated resumes, face-altering tools, and real-time interview assistance to secure remote employment. The activity enabled unauthorized access, wage theft, and malware deployment at target companies.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2021-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2021-01-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1118",
+        "publisher": "AI Incident Database",
+        "title": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+        "published_at": "2021-01-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "identity_fraud",
+      "insider_threat",
+      "synthetic_identity"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  }
+]

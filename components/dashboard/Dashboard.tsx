@@ -19,6 +19,7 @@ import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import { Segmented } from "@/components/ui/Segmented";
 import { StatTile } from "@/components/ui/StatTile";
 import type { DashboardData } from "@/lib/dashboard";
+import type { Family } from "@/lib/families";
 import { formatPct, monthLabel } from "@/lib/format";
 import { NAV, WINDOW_CHOICES } from "@/lib/site";
 import { pctChange } from "@/lib/stats";
@@ -103,8 +104,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
   const m = useDashboardModel(data);
   const heroRef = useRef<HTMLDivElement>(null);
   const heroGone = useHeroFade(heroRef);
-  const delta = m.priorCount === null ? undefined : pctChange(m.rows.length, m.priorCount);
-  const sourcesInView = m.rows.reduce((s, r) => s + r.source_count, 0);
+  const delta = m.priorCount === null ? undefined : pctChange(m.count, m.priorCount);
   const sel = m.selection;
   const typeSeries = (t: IncidentType) => m.series.map((p) => p.byType[t]);
 
@@ -135,8 +135,8 @@ export function Dashboard({ data }: { data: DashboardData }) {
               </p>
               <AsciiForm as="h1" text="Every AI security incident, counted once." duration={760} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group" aria-label={`${m.rows.length} incidents in the ${m.windowLabel}, open the list`}>
-                  <CountUp value={m.rows.length} className="text-6xl font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current sm:text-7xl" />
+                <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group" aria-label={`${m.count} incidents in the ${m.windowLabel}, open the list`}>
+                  <CountUp value={m.count} className="text-6xl font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current sm:text-7xl" />
                 </button>
                 <span className="text-[15px] text-soft">
                   incidents in the {m.windowLabel}
@@ -153,11 +153,11 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 </Num>{" "}
                 with confirmed exploitation or real-world loss. Attacks on AI systems and attacks powered by AI, deduplicated across{" "}
                 <Num onClick={() => m.setSelection({ kind: "window" })} label="all incidents in view" className="text-ink">
-                  {sourcesInView.toLocaleString("en-US")}
+                  {m.sourcesInWindow.toLocaleString("en-US")}
                 </Num>{" "}
                 sources and linked to the original reporting. Another{" "}
-                <Num onClick={() => m.setSelection({ kind: "disclosed" })} label={`${m.disclosedRows.length} disclosed vulnerabilities`} className="text-ink">
-                  {m.disclosedRows.length.toLocaleString("en-US")}
+                <Num onClick={() => m.setSelection({ kind: "disclosed" })} label={`${m.disclosedCount} disclosed vulnerabilities`} className="text-ink">
+                  {m.disclosedCount.toLocaleString("en-US")}
                 </Num>{" "}
                 disclosed CVEs with no confirmed exploitation are{" "}
                 <a href="#disclosed" className="link">
@@ -279,8 +279,9 @@ export function Dashboard({ data }: { data: DashboardData }) {
           >
             <FamilyMultiples
               data={m.fam}
+              totals={Object.fromEntries(m.families.map((f) => [f.key, f.count])) as Record<Family, number>}
               theme={T}
-              windowTotal={m.rows.length}
+              windowTotal={m.count}
               onFamily={(family) => m.setSelection({ kind: "family", family })}
               onMonth={(month, family) => m.setSelection({ kind: "month-family", month, family })}
             />
@@ -303,7 +304,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                   label="Attacks on AI and AI-enabled attacks per month"
                 />
                 <BarRows
-                  rows={m.types.map((t) => ({ key: t.key, label: TYPE_META[t.key].label, value: t.count, color: T.types[t.key], note: `${Math.round((t.count / Math.max(1, m.rows.length)) * 100)}%` }))}
+                  rows={m.types.map((t) => ({ key: t.key, label: TYPE_META[t.key].label, value: t.count, color: T.types[t.key], note: `${Math.round((t.count / Math.max(1, m.count)) * 100)}%` }))}
                   labelWidth="8.5rem"
                   onPick={(k) => m.setSelection({ kind: "type", type: k as IncidentType })}
                   active={sel?.kind === "type" ? sel.type : null}
@@ -352,7 +353,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
               </div>
               <div className="glass min-w-0 space-y-4 p-5">
                 <div className="grid grid-cols-2 gap-4">
-                  <StatTile label="Disclosed in view" value={m.disclosedRows.length} onValue={() => m.setSelection({ kind: "disclosed" })} compare={`${m.rows.length.toLocaleString("en-US")} incidents`} />
+                  <StatTile label="Disclosed in view" value={m.disclosedCount} onValue={() => m.setSelection({ kind: "disclosed" })} compare={`${m.count.toLocaleString("en-US")} incidents`} />
                   {m.disclosedBusiest && (
                     <StatTile
                       label="Busiest day"
@@ -420,7 +421,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
         <SiteFooter />
       </div>
 
-      <ReportDrawer selection={m.selection} rows={m.selected} windowLabel={m.windowLabel} basis={m.basis} field={m.field} onClose={() => m.setSelection(null)} />
+      <ReportDrawer selection={m.selection} rows={m.selected} error={m.selectedError} windowLabel={m.windowLabel} basis={m.basis} field={m.field} onClose={() => m.setSelection(null)} />
     </div>
   );
 }

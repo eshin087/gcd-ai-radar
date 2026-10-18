@@ -2,9 +2,13 @@
  * Runs before `next build` (npm "prebuild" hook). Produces everything under
  * /public that is derived from /data so the static export can serve it:
  *
- *   public/data/incidents.json        full dataset (published incidents)
- *   public/data/incidents.min.json    slim copy for the client-side incidents list
+ *   public/data/incidents.json        full dataset (published records)
+ *   public/data/incidents.min.json    slim copy of every record (no sources array)
  *   public/data/incidents.csv         spreadsheet-friendly export
+ *   public/data/years/<year>.json     full records per year of first report, plus years/index.json
+ *   public/data/rows/<year>.json      compact rows per year: what the dashboard's drawers fetch
+ *   public/data/slim/<year>.json      slim records per year: what the incidents explorer fetches
+ *   public/data/search-index.json     token index over id, title and products for the explorer's search box
  *   public/data/incidents/<slug>.json one file per incident
  *   public/data/meta.json             counts, last run, generation time
  *   public/feed.xml                   RSS of the 50 most recently reported incidents
@@ -19,6 +23,9 @@ import { slim } from "../lib/slim";
 import { CATEGORY_META, SEVERITY_META, TYPE_META } from "../lib/taxonomy";
 import { isDisclosedIncident, recordKind } from "../lib/counting";
 import { csvCell } from "../lib/csv";
+import { compactRow } from "../lib/rows";
+import { buildSearchIndex } from "../lib/search";
+import { groupByShard } from "../lib/shards";
 import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
@@ -75,14 +82,21 @@ ${items}
 `;
 }
 
+async function resetDir(dir: string) {
+  await fs.rm(dir, { recursive: true, force: true });
+  await fs.mkdir(dir, { recursive: true });
+}
+
 async function main() {
   const { incidents } = await loadIncidents();
   const updated = await lastUpdated();
   const base = siteUrl();
   const dataDir = path.join(PUBLIC, "data");
   const perIncident = path.join(dataDir, "incidents");
-  await fs.rm(perIncident, { recursive: true, force: true });
-  await fs.mkdir(perIncident, { recursive: true });
+  const yearsDir = path.join(dataDir, "years");
+  const rowsDir = path.join(dataDir, "rows");
+  const slimDir = path.join(dataDir, "slim");
+  await Promise.all([perIncident, yearsDir, rowsDir, slimDir].map(resetDir));
 
   const sorted = [...incidents].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id));
   const counted = sorted.filter((i) => !isDisclosedIncident(i));
@@ -90,6 +104,23 @@ async function main() {
   await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map(slim)) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.csv"), toCsv(sorted));
   await Promise.all(sorted.map((i) => fs.writeFile(path.join(perIncident, `${i.slug}.json`), JSON.stringify(i, null, 1) + "\n")));
+
+  // Year shards: the full records for download, compact rows for the dashboard's drawers, slim records for the explorer.
+  const shards = groupByShard(sorted);
+  const yearIndex: { year: number; records: number; incidents: number; disclosed: number; file: string }[] = [];
+  for (const [year, records] of shards) {
+    const disclosed = records.filter(isDisclosedIncident).length;
+    yearIndex.unshift({ year, records: records.length, incidents: records.length - disclosed, disclosed, file: `/data/years/${year}.json` });
+    await Promise.all([
+      fs.writeFile(path.join(yearsDir, `${year}.json`), JSON.stringify(records, null, 1) + "\n"),
+      fs.writeFile(path.join(rowsDir, `${year}.json`), JSON.stringify(records.map(compactRow)) + "\n"),
+      fs.writeFile(path.join(slimDir, `${year}.json`), JSON.stringify(records.map(slim)) + "\n"),
+    ]);
+  }
+  await fs.writeFile(path.join(yearsDir, "index.json"), JSON.stringify({ generated_at: new Date().toISOString(), years: yearIndex }, null, 2) + "\n");
+  const index = buildSearchIndex(sorted);
+  await fs.writeFile(path.join(dataDir, "search-index.json"), JSON.stringify(index) + "\n");
+
   await fs.writeFile(
     path.join(dataDir, "meta.json"),
     JSON.stringify(
@@ -100,6 +131,7 @@ async function main() {
         incidents: counted.length,
         disclosed_vulnerabilities: sorted.length - counted.length,
         counting_rule: "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves",
+        years: yearIndex.map((y) => ({ year: y.year, records: y.records, incidents: y.incidents, disclosed_vulnerabilities: y.disclosed, file: y.file })),
         last_collector_run: updated,
         license: "CC BY-SA 4.0",
         license_url: SITE.dataLicense.url,
@@ -117,7 +149,7 @@ async function main() {
     path.join(PUBLIC, "og"),
   );
   console.log(
-    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

@@ -1,0 +1,782 @@
+[
+  {
+    "id": "AIR-2020-0033",
+    "slug": "botnet-dga-detection-evasion-using-domain-mutation",
+    "title": "Botnet DGA Detection Evasion Using Domain Mutation",
+    "summary": "Researchers bypassed a convolutional neural network-based botnet domain generation algorithm detector using generic domain name mutation techniques. The study tested the robustness of industry machine learning classifiers against adversarial inputs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "DGA detector"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-15",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "publisher": "MITRE ATLAS",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "publisher": "faculty.washington.edu",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://github.com/matthoffman/degas",
+        "publisher": "GitHub",
+        "title": "Degas source code",
+        "published_at": "2020-12-15"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "dga",
+      "botnet"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0032",
+    "slug": "evasion-of-deep-learning-detector-for-malware-c-c-traffic",
+    "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+    "summary": "Researchers crafted adversarial HTTP traffic samples to successfully evade a deep learning model designed for malware command and control detection. The exercise highlighted robustness flaws in AI-based network traffic analysis.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks malware detection system"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-15",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "publisher": "MITRE ATLAS",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://arxiv.org/abs/1802.03162",
+        "publisher": "arXiv",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "published_at": "2020-12-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "deep-learning",
+      "cnc-traffic"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0031",
+    "slug": "bypassing-cylance-ai-malware-detection-via-universal-string",
+    "title": "Bypassing Cylance AI Malware Detection via Universal String",
+    "summary": "Researchers created a universal bypass string appended to malicious files to evade detection by Cylance's AI malware detector. This was a research exercise demonstrating vulnerability in commercial security software.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "CylancePROTECT",
+      "Cylance Smart Antivirus"
+    ],
+    "incident_date": "2019-09-07",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "publisher": "MITRE ATLAS",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "publisher": "skylightcyber.com",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "publisher": "security7.net",
+        "title": "Statements from Skylight Cyber CEO",
+        "published_at": "2020-12-03"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection",
+      "cylance"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0030",
+    "slug": "camera-hijack-and-facial-recognition-evasion-for-tax-fraud",
+    "title": "Camera Hijack and Facial Recognition Evasion for Tax Fraud",
+    "summary": "Perpetrators bypassed a government facial recognition authentication system using camera hijacking to commit major tax fraud. The scheme resulted in significant financial losses totaling 77 million dollars.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Shanghai government tax office facial recognition"
+    ],
+    "incident_date": "2020-01",
+    "incident_date_precision": "month",
+    "first_reported": "2020-12-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "publisher": "MITRE ATLAS",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "publisher": "The Wall Street Journal",
+        "title": "Faces are the next target for fraudsters",
+        "published_at": "2020-12-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "facial-recognition",
+      "camera-hijack",
+      "fraud"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0029",
+    "slug": "model-extraction-and-adversarial-attacks-on-translation-apis",
+    "title": "Model Extraction and Adversarial Attacks on Translation APIs",
+    "summary": "Researchers replicated commercial machine translation services via public APIs and transferred adversarial inputs to trigger targeted errors. The demonstration proved that black-box models are vulnerable to extraction and evasion.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "Microsoft"
+    ],
+    "products": [
+      "Google Translate",
+      "Bing Translator",
+      "Systran Translate"
+    ],
+    "incident_date": "2020-04-30",
+    "incident_date_precision": "day",
+    "first_reported": "2020-11-18",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "publisher": "MITRE ATLAS",
+        "title": "Attack on Machine Translation Services",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://arxiv.org/abs/2004.15015",
+        "publisher": "arXiv",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://ericswallace.com/imitation",
+        "publisher": "ericswallace.com",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "publisher": "thehill.com",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "published_at": "2020-11-18"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "adversarial-evasion",
+      "translation-api"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0028",
+    "slug": "microsoft-edge-ai-product-evasion-red-team-exercise",
+    "title": "Microsoft Edge AI Product Evasion Red Team Exercise",
+    "summary": "The Azure Red Team executed an evasion exercise against a Microsoft edge AI product by manipulating target images. The test successfully forced machine learning misclassifications.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Edge AI Product"
+    ],
+    "incident_date": "2020-02",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Edge AI Evasion",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "edge-ai",
+      "adversarial-evasion"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0027",
+    "slug": "microsoft-internal-azure-ai-service-red-team-exercise",
+    "title": "Microsoft Internal Azure AI Service Red Team Exercise",
+    "summary": "Internal Microsoft Azure services underwent a red team assessment involving traditional intrusion techniques and adversarial machine learning evasion. The exercise demonstrated potential ML-specific vulnerabilities within cloud infrastructure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Azure"
+    ],
+    "incident_date": "2020-01",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Azure Service Disruption",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "adversarial-ml",
+      "azure"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0026",
+    "slug": "face-identification-system-evasion-via-physical-countermeasu",
+    "title": "Face Identification System Evasion via Physical Countermeasures",
+    "summary": "MITRE's AI Red Team demonstrated a physical-domain evasion attack to induce targeted misclassification in a face identification service. The operation combined adversarial machine learning techniques with API exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Commercial Face Identification Service"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "publisher": "MITRE ATLAS",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "facial-recognition",
+      "evasion"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0025",
+    "slug": "proofpoint-email-protection-evasion-via-surrogate-model",
+    "title": "ProofPoint Email Protection Evasion via Surrogate Model",
+    "summary": "Researchers built a surrogate machine learning model to study and bypass Proofpoint's email protection system. The insights allowed them to craft malicious emails that evaded spam detection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ProofPoint Email Protection"
+    ],
+    "incident_date": "2019-09-09",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0008",
+        "publisher": "MITRE ATLAS",
+        "title": "ProofPoint Evasion",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20634",
+        "publisher": "NVD",
+        "title": "National Vulnerability Database entry for CVE-2019-20634",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+        "publisher": "GitHub",
+        "title": "2019 DerbyCon presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://github.com/moohax/Proof-Pudding",
+        "publisher": "GitHub",
+        "title": "Proof Pudding (CVE-2019-20634) Implementation on GitHub",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://youtube.com/watch?ab-channel=AdrianCrenshaw&v=CsvkYoxtexQ",
+        "publisher": "youtube.com",
+        "title": "2019 DerbyCon video presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V009.json",
+        "publisher": "AVID",
+        "title": "AVID-2023-V009: Proof Pudding (CVE-2019-20634) is a code repository that describes how ML researchers evaded ProofPoint's email protection system by first building a copy-cat email protection ML model, and using the insights to bypass the live system.",
+        "published_at": "2023-03-31"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "evasion",
+      "adversarial-ml",
+      "email-security",
+      "CVE-2019-20634"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T18:20:34.882Z"
+  },
+  {
+    "id": "AIR-2020-0024",
+    "slug": "gpt-2-model-replication-by-external-researchers",
+    "title": "GPT-2 Model Replication by External Researchers",
+    "summary": "Researchers successfully replicated OpenAI's GPT-2 language model prior to its full release using publicly available technical information. The event highlighted risks related to tiered release schedules.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "open_weight_model"
+    ],
+    "products": [
+      "GPT-2"
+    ],
+    "incident_date": "2019-08-22",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0007",
+        "publisher": "MITRE ATLAS",
+        "title": "GPT-2 Model Replication",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://wired.com/story/dangerous-ai-open-source",
+        "publisher": "Wired",
+        "title": "Wired Article, \"OpenAI Said Its Code Was Risky. Two Grads Re-Created It Anyway\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://blog.usejournal.com/opengpt-2-we-replicated-gpt-2-because-you-can-too-45e34e6d36dc",
+        "publisher": "blog.usejournal.com",
+        "title": "Medium BlogPost, \"OpenGPT-2: We Replicated GPT-2 Because You Can Too\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "replication",
+      "gpt-2"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0023",
+    "slug": "clearview-ai-repository-misconfiguration-data-leak",
+    "title": "Clearview AI Repository Misconfiguration Data Leak",
+    "summary": "A misconfigured source code repository allowed unauthorized access to Clearview AI production credentials and cloud storage buckets. The breach exposed training video samples and application copies.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Clearview AI facial recognition"
+    ],
+    "incident_date": "2020-04",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "publisher": "MITRE ATLAS",
+        "title": "ClearviewAI Misconfiguration",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "publisher": "TechCrunch",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "publisher": "gizmodo.com",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "publisher": "The New York Times",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "misconfiguration",
+      "credentials-leak",
+      "facial-recognition"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0022",
+    "slug": "microsoft-tay-chatbot-data-poisoning-incident",
+    "title": "Microsoft Tay Chatbot Data Poisoning Incident",
+    "summary": "Microsoft's Twitter chatbot Tay was manipulated by coordinated user inputs to generate offensive language. The bot was decommissioned within 24 hours of its launch following the incident.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Tay"
+    ],
+    "incident_date": "2016-03-23",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0009",
+        "publisher": "MITRE ATLAS",
+        "title": "Tay Poisoning",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/6",
+        "publisher": "AI Incident Database",
+        "title": "AIID - Incident 6: TayBot",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://avidml.org/database/avid-2022-v013",
+        "publisher": "AVID",
+        "title": "AVID - Vulnerability: AVID-2022-v013",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction",
+        "publisher": "Microsoft Security",
+        "title": "Microsoft BlogPost, \"Learning from Tay's introduction\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/in-2016-microsofts-racist-chatbot-revealed-the-dangers-of-online-conversation",
+        "publisher": "spectrum.ieee.org",
+        "title": "IEEE Article, \"In 2016, Microsoft's Racist Chatbot Revealed the Dangers of Online Conversation\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "chatbot",
+      "data-poisoning",
+      "twitter"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0034",
+    "slug": "suicide-clips-evaded-tiktok-content-moderation-in-coordinate",
+    "title": "Suicide Clips Evaded TikTok Content Moderation in Coordinated Attack",
+    "summary": "Coordinated uploads allowed violating video clips to bypass TikTok's automated moderation systems and reach users. The attack resulted in the exposure of harmful content to the platform's audience.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "TikTok automated moderation"
+    ],
+    "incident_date": "2020-09-20",
+    "incident_date_precision": "day",
+    "first_reported": "2020-09-20",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/366",
+        "publisher": "AI Incident Database",
+        "title": "Suicide Clips Evaded TikTok's Automated Moderation in Coordinated Attack",
+        "published_at": "2020-09-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "content_moderation",
+      "evasion",
+      "tiktok"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2020-0005",
+    "slug": "bjp-used-deepfake-videos-of-manoj-tiwari-in-delhi-election",
+    "title": "BJP Used Deepfake Videos of Manoj Tiwari in Delhi Election",
+    "summary": "Political actors used deepfake videos of leader Manoj Tiwari delivering campaign messages in languages he did not speak to influence voters. The deepfakes were distributed via thousands of WhatsApp groups without disclosure.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "WhatsApp"
+    ],
+    "incident_date": "2020-02-07",
+    "incident_date_precision": "day",
+    "first_reported": "2020-06-24",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1336",
+        "publisher": "AI Incident Database",
+        "title": "BJP Used Deepfake Videos of Manoj Tiwari to Target Haryanvi Voters in 2020 Delhi Election",
+        "published_at": "2020-06-24"
+      },
+      {
+        "url": "https://nytimes.com/2020/06/24/technology/facial-recognition-arrest.html",
+        "publisher": "The New York Times",
+        "title": "Wrongfully Accused by an Algorithm",
+        "published_at": "2020-06-24"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "election",
+      "misinformation",
+      "whatsapp"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2020-0001",
+    "slug": "ai-cloned-voice-used-to-deceive-bank-manager-in-fraud-scheme",
+    "title": "AI-Cloned Voice Used to Deceive Bank Manager in Fraud Scheme",
+    "summary": "Scammers used AI voice cloning to impersonate a company director and trick a bank manager into authorizing millions in fraudulent transfers. The multi-jurisdictional fraud triggered international investigations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "AI Voice Cloning Tool"
+    ],
+    "incident_date": "2020-01-15",
+    "incident_date_precision": "day",
+    "first_reported": "2020-01-15",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/147",
+        "publisher": "AI Incident Database",
+        "title": "Reported AI-Cloned Voice Used to Deceive Hong Kong Bank Manager in Purported $35 Million Fraud Scheme",
+        "published_at": "2020-01-15"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.98,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "voice-cloning",
+      "deepfake",
+      "fraud",
+      "social-engineering"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2020-0035",
+    "slug": "quantum-ai-scams-use-deepfakes-and-spoofed-sites-for-investm",
+    "title": "Quantum AI Scams Use Deepfakes and Spoofed Sites for Investment Fraud",
+    "summary": "Global investment scams utilized deepfake endorsements and spoofed media sites to solicit funds from victims. The campaign involved cloaked adtech infrastructure and fake trading platforms.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Quantum AI"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-01-01",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1236",
+        "publisher": "AI Incident Database",
+        "title": "Quantum AI and Related AI-Themed Investment Scams Reportedly Used Deepfake Endorsements and Spoofed Media Sites to Solicit Investments",
+        "published_at": "2020-01-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "investment-scam",
+      "fraud"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-18T06:59:35.797Z"
+  }
+]
