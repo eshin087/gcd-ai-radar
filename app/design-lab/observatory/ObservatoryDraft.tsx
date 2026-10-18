@@ -141,7 +141,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
             n="01"
             kicker="The trend"
             title={m.basis === "real" ? "Real-world incidents, month by month" : "Incidents, month by month"}
-            lede={`By ${m.fieldLabel}, ${monthLabel(m.from, true)} to ${monthLabel(m.to, true)}. The amber line is a three-month average; the dashed line the linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)} a month). The last two months are provisional.`}
+            lede={`By ${m.fieldLabel}, ${monthLabel(m.from, true)} to ${monthLabel(m.to, true)}. The amber line is a three-month average; the dashed line the linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)} a month). The shaded last two months are provisional.`}
           >
             <div className="glass p-5">
               <LabTrend data={m.trend} theme={T} glow provisionalFrom={m.h.provisionalFrom} height={420} activeMonth={m.selection?.kind === "month" ? m.selection.month : null} onBarClick={(month) => m.setSelection({ kind: "month", month })} />
@@ -218,9 +218,18 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
 
         {data.radar && (
           <Reveal>
-            <div className="max-w-xl">
+            <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+              <div className="max-w-xl space-y-2">
+                <div className="divider">
+                  <span className="text-accent">05</span> Context
+                </div>
+                <Scramble as="h2" text="The bots on the wire" onView className="text-2xl font-semibold tracking-tight sm:text-3xl" />
+                <p className="text-[15px] leading-relaxed text-soft">
+                  Not incidents: a weekly reading of how much web traffic is automated and which AI crawlers send it, from Cloudflare Radar. It sits here as background for the counts above and is never added to them.
+                </p>
+              </div>
               <RadarPanel radar={data.radar} className="glass" />
-            </div>
+            </section>
           </Reveal>
         )}
       </main>

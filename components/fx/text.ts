@@ -41,6 +41,16 @@ export function brailleSpark(values: number[]): string {
   return out;
 }
 
+/** Sums a long series into `n` buckets so a sparkline keeps a fixed width. */
+export function fitSeries(values: number[], n: number): number[] {
+  if (values.length <= n) return values;
+  const out = new Array<number>(n).fill(0);
+  values.forEach((v, i) => {
+    out[Math.min(n - 1, Math.floor((i * n) / values.length))]! += v;
+  });
+  return out;
+}
+
 /** Ordinal shade glyph for 1-4 (severity) used as a non-color secondary encoding. */
 export const SHADE = ["", "░", "▒", "▓", "█"] as const;
 

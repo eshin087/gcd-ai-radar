@@ -216,7 +216,7 @@ export function ScopeDraft({ data }: { data: DashboardData }) {
         <Panel
           n="01"
           title={m.basis === "real" ? "Real-world incidents per month" : "Incidents per month"}
-          sub={`${monthLabel(m.from, true)} to ${monthLabel(m.to, true)} · by ${m.fieldLabel} · amber line: 3-month average · dashed: linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)}/month)`}
+          sub={`${monthLabel(m.from, true)} to ${monthLabel(m.to, true)} · by ${m.fieldLabel} · amber line: 3-month average · dashed: linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)}/month) · shaded: provisional`}
         >
           <LabTrend data={m.trend} theme={T} provisionalFrom={m.h.provisionalFrom} height={400} activeMonth={m.selection?.kind === "month" ? m.selection.month : null} onBarClick={(month) => m.setSelection({ kind: "month", month })} />
         </Panel>

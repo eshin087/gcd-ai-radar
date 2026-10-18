@@ -31,7 +31,7 @@ export function TargetBarChart({ data, limit = 10, height, color = BAR_COLOR, hi
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={rows} layout="vertical" margin={{ top: 0, right: 40, bottom: 0, left: 0 }} barCategoryGap="28%">
           <XAxis type="number" hide allowDecimals={false} />
-          <YAxis type="category" dataKey="label" width={150} tickLine={false} axisLine={false} interval={0} />
+          <YAxis type="category" dataKey="label" width={176} tickLine={false} axisLine={false} interval={0} />
           <Tooltip content={<TargetTooltip />} cursor={{ fill: "rgba(140,160,210,0.08)" }} />
           <Bar
             dataKey="count"

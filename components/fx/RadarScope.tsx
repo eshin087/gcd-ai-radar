@@ -98,6 +98,8 @@ export function RadarScope({ rows, now, days = 90, accent, ring, label, severity
     let visible = true;
     let margin = 34;
     const fontFamily = getComputedStyle(document.documentElement).getPropertyValue("--font-plex-mono").trim() || "monospace";
+    const groundVar = getComputedStyle(wrap).getPropertyValue("--color-ground").trim();
+    const ground = /^#[0-9a-f]{6}$/i.test(groundVar) ? groundVar : "#05070d";
 
     const drawBase = () => {
       const b = document.createElement("canvas");
@@ -154,10 +156,18 @@ export function RadarScope({ rows, now, days = 90, accent, ring, label, severity
       for (let i = 0; i < FAMILIES.length; i++) {
         const f = FAMILIES[i]!;
         const a = START + (i + 0.5) * SECTOR;
-        const lx = c + Math.cos(a) * (R + (size < 480 ? 18 : 22));
+        const text = FAMILY_META[f].short.toUpperCase();
+        const half = g.measureText(text).width / 2 + 2;
+        // keep long labels (e.g. DEEPFAKE/SOCIAL) inside the canvas
+        const lx = Math.min(size - half, Math.max(half, c + Math.cos(a) * (R + (size < 480 ? 18 : 22))));
         const ly = c + Math.sin(a) * (R + (size < 480 ? 14 : 22));
+        if (Math.abs(lx - (c + Math.cos(a) * (R + (size < 480 ? 18 : 22)))) > 1) {
+          // a clamped label crosses the rim: give it a backing so it stays legible
+          g.fillStyle = rgba(ground, 0.88);
+          g.fillRect(lx - half, ly - 8, half * 2, 16);
+        }
         g.fillStyle = f === focus ? accent : rgba(ring, 0.95);
-        g.fillText(FAMILY_META[f].short.toUpperCase(), lx, ly);
+        g.fillText(text, lx, ly);
       }
       // centre
       g.strokeStyle = rgba(accent, 0.7);

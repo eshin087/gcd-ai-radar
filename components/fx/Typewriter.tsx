@@ -25,7 +25,6 @@ export function Typewriter({ lines, storageKey, cps = 90, className = "" }: { li
     let seen = false;
     try {
       seen = sessionStorage.getItem(storageKey) === "1";
-      sessionStorage.setItem(storageKey, "1");
     } catch {
       // storage unavailable: just type it
     }
@@ -42,6 +41,12 @@ export function Typewriter({ lines, storageKey, cps = 90, className = "" }: { li
     const tick = (t: number) => {
       if (i >= els.length) {
         delete root.dataset.typing;
+        // mark as seen only once the log has fully typed
+        try {
+          sessionStorage.setItem(storageKey, "1");
+        } catch {
+          // ignore
+        }
         return;
       }
       if (t < wait) {
@@ -61,7 +66,12 @@ export function Typewriter({ lines, storageKey, cps = 90, className = "" }: { li
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      // interrupted (re-render, unmount, dev double-run): restore the full text
+      cancelAnimationFrame(raf);
+      els.forEach((el, k) => (el.textContent = texts[k] ?? ""));
+      delete root.dataset.typing;
+    };
   }, [lines, storageKey, cps]);
 
   return (

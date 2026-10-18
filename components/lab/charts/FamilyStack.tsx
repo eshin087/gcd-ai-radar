@@ -23,7 +23,7 @@ export function FamilyStack({ data, theme, height = 300, onSegmentClick }: { dat
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: -10 }} barCategoryGap="16%">
+        <BarChart data={rows} margin={{ top: 8, right: 22, bottom: 0, left: -10 }} barCategoryGap="16%">
           <CartesianGrid vertical={false} stroke={theme.grid} />
           <XAxis dataKey="month" tickFormatter={(v: string) => monthLabel(v)} tickLine={false} axisLine={{ stroke: theme.grid }} minTickGap={28} />
           <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={44} />

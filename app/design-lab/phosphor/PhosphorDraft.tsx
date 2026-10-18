@@ -9,7 +9,7 @@ import { NextSweep } from "@/components/fx/NextSweep";
 import { Reveal } from "@/components/fx/Reveal";
 import { Typewriter, type TypeLine } from "@/components/fx/Typewriter";
 import { Banner } from "@/components/fx/Banner";
-import { SHADE, brailleSpark } from "@/components/fx/text";
+import { SHADE, brailleSpark, fitSeries } from "@/components/fx/text";
 import { AsciiColumns } from "@/components/lab/charts/AsciiColumns";
 import { AsciiRows } from "@/components/lab/charts/AsciiRows";
 import { useDashboardModel, type WindowKey } from "@/components/lab/useDashboardModel";
@@ -51,10 +51,10 @@ function Readout({ label, value, note, spark, highlight = false }: { label: stri
         {".".repeat(120)}
       </span>
       <span className={highlight ? "text-accent" : "text-ink phosphor-glow"}>{value}</span>
-      {note && <span className="hidden w-28 text-right text-dim sm:inline">{note}</span>}
+      {note && <span className="hidden w-[18ch] shrink-0 text-right text-dim sm:inline">{note}</span>}
       {spark && (
-        <span aria-hidden className="hidden w-[7.5rem] text-dim lg:inline">
-          {brailleSpark(spark)}
+        <span aria-hidden className="hidden shrink-0 pl-[1ch] text-dim xl:inline">
+          {brailleSpark(fitSeries(spark, 24))}
         </span>
       )}
     </div>
@@ -103,13 +103,13 @@ export function PhosphorDraft({ data }: { data: DashboardData }) {
     <div className="lab-root lab-phosphor crt">
       {/* title bar */}
       <div className="border-b border-line bg-panel">
-        <div className="mx-auto flex h-9 max-w-7xl items-center gap-4 overflow-hidden whitespace-nowrap px-4 text-[12px]">
+        <div className="mx-auto flex min-h-9 max-w-7xl flex-wrap items-center gap-x-4 gap-y-1 whitespace-nowrap px-4 py-1.5 text-[12px]">
           <span className="text-accent">●</span>
           <span className="text-soft">gcdairadar — tty1</span>
           <span className="hidden text-dim sm:inline">
             next sweep <NextSweep className="text-ink" />
           </span>
-          <nav aria-label="Primary" className="ml-auto flex items-center gap-3">
+          <nav aria-label="Primary" className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 sm:ml-auto sm:w-auto">
             {NAV.map((n) => (
               <Link key={n.href} href={n.href} className="text-dim hover:text-ink">
                 [{n.label.toLowerCase()}]

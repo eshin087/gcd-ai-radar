@@ -46,7 +46,7 @@ export function LabTrend({ data, theme, provisionalFrom, height = 380, activeMon
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={data} margin={{ top: 22, right: 10, bottom: 0, left: -10 }} barCategoryGap="18%">
+        <ComposedChart data={data} margin={{ top: 22, right: 22, bottom: 0, left: -10 }} barCategoryGap="18%">
           <defs>
             <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={theme.accent} stopOpacity={0.95} />
@@ -64,7 +64,6 @@ export function LabTrend({ data, theme, provisionalFrom, height = 380, activeMon
               fill={theme.provisional}
               strokeOpacity={0}
               ifOverflow="extendDomain"
-              label={{ value: "provisional", position: "insideTopRight", fill: theme.dim, fontSize: 11 }}
             />
           )}
           <Tooltip content={<TrendTooltip theme={theme} />} cursor={{ fill: "rgba(140,160,210,0.07)" }} />
