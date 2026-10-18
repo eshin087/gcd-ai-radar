@@ -109,6 +109,43 @@ function reject(state: State, i: Incident, reason: string) {
   }
 }
 
+/**
+ * Non-interactive decisions: `npm run review -- --approve=AIR-2025-0020,AIR-2025-0021 --reject=AIR-2026-0003 --reason="…"`.
+ * Ids can also be given as a title fragment (case-insensitive) when unique.
+ */
+export async function runReviewBatch(opts: { approve: string[]; reject: string[]; reason?: string; commit: boolean }): Promise<void> {
+  const state = await loadState();
+  const resolve = (ref: string): Incident | undefined => {
+    const byId = state.review.find((i) => i.id === ref);
+    if (byId) return byId;
+    const matches = state.review.filter((i) => i.title.toLowerCase().includes(ref.toLowerCase()));
+    if (matches.length === 1) return matches[0];
+    console.log(C.red(`  "${ref}": ${matches.length === 0 ? "not in the review queue" : "matches several queue items"}`));
+    return undefined;
+  };
+  let approved = 0;
+  let rejected = 0;
+  for (const ref of opts.approve) {
+    const item = resolve(ref);
+    if (!item) continue;
+    approve(state, item);
+    state.review = state.review.filter((i) => i.id !== item.id);
+    approved += 1;
+    console.log(`${C.green("published")} ${item.id} ${item.title}`);
+  }
+  for (const ref of opts.reject) {
+    const item = resolve(ref);
+    if (!item) continue;
+    reject(state, item, opts.reason || "out of scope (manual review)");
+    state.review = state.review.filter((i) => i.id !== item.id);
+    rejected += 1;
+    console.log(`${C.red("rejected")} ${item.id} ${item.title}`);
+  }
+  const changed = await saveState(state);
+  console.log(`approved ${approved} · rejected ${rejected} · ${state.review.length} left in the queue · saved ${changed.join(", ") || "nothing"}`);
+  if (changed.length && opts.commit) await commitAndPush(`data: review (+${approved} published, ${rejected} rejected)`);
+}
+
 export async function runReview(): Promise<void> {
   const state = await loadState();
   const queue = [...state.review].sort((a, b) => a.created_at.localeCompare(b.created_at));

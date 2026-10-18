@@ -6,7 +6,7 @@ import { errorMessage, log, setVerbose } from "./lib/log";
 import { loadState } from "./lib/state";
 import { runCollector, type RunOptions } from "./pipeline/run";
 import { maybeUpdateRadar } from "./radar";
-import { runReview } from "./review/index";
+import { runReview, runReviewBatch } from "./review/index";
 
 /**
  * gcd AI Radar collector.
@@ -16,7 +16,8 @@ import { runReview } from "./review/index";
  *   npm run collect -- --source=hn      only these sources (comma-separated), ignoring schedules
  *   npm run backfill -- <source> --since=2016-01-01
  *   npm run validate                    Zod-validate every file under /data
- *   npm run review                      walk the review queue
+ *   npm run review                      walk the review queue interactively
+ *   npm run review -- --approve=AIR-2026-0001 --reject=AIR-2026-0002 --reason="…"   decide without the walkthrough
  *   npm run radar                       refresh data/radar.json now (--dry-run to only test the token)
  *
  * Flags: --limit=N  --since=YYYY-MM-DD  --no-enrich  --no-commit  --verbose
@@ -116,7 +117,14 @@ async function main() {
       return;
     }
     case "review": {
-      await runReview();
+      const list = (v: string | boolean | undefined) => (typeof v === "string" ? v.split(",").map((s) => s.trim()).filter(Boolean) : []);
+      const approve = list(flags["approve"]);
+      const rejectIds = list(flags["reject"]);
+      if (approve.length || rejectIds.length) {
+        await runReviewBatch({ approve, reject: rejectIds, reason: typeof flags["reason"] === "string" ? flags["reason"] : undefined, commit });
+      } else {
+        await runReview();
+      }
       return;
     }
     case "radar": {
