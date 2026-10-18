@@ -11,7 +11,7 @@ export interface ColumnStack {
   values: number[];
 }
 
-export interface NeonColors {
+export interface ColumnColors {
   grid: string;
   axis: string;
   ink: string;
@@ -31,7 +31,7 @@ interface Props {
   fit?: (number | null)[];
   provisionalFrom?: string;
   height?: number;
-  colors: NeonColors;
+  colors: ColumnColors;
   /** Single-series bars fade from this colour at the top into the stack colour. */
   gradientTop?: string;
   glow?: boolean;
@@ -60,7 +60,7 @@ const PAD = { l: 40, r: 14, t: 26, b: 42 };
  * (a segment opens that slice, the column opens the month). Columns grow in
  * the first time the chart scrolls into view.
  */
-export function NeonColumns({
+export function MonthlyColumns({
   months,
   stacks,
   line,

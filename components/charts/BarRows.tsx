@@ -1,6 +1,6 @@
 "use client";
 
-export interface NeonRow {
+export interface BarRow {
   key: string;
   label: string;
   value: number;
@@ -17,7 +17,7 @@ export interface NeonRow {
  * any count opens its incidents. Bars grow in when the enclosing Reveal
  * arrives (CSS `.grow-x`).
  */
-export function NeonRows({
+export function BarRows({
   rows,
   onPick,
   active = null,
@@ -26,7 +26,7 @@ export function NeonRows({
   max,
   className = "",
 }: {
-  rows: NeonRow[];
+  rows: BarRow[];
   onPick?: (key: string) => void;
   active?: string | null;
   labelWidth?: string;

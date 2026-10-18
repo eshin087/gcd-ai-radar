@@ -80,9 +80,9 @@ function matches(r: CompactRow, s: Selection, field: DateField): boolean {
 }
 
 /**
- * Everything a dashboard layout needs, shared by the design-lab drafts: the
- * three toggles (set, date basis, window), every chart series computed for the
- * current view, and the incidents behind a clicked mark.
+ * Everything the dashboard needs: the three toggles (set, date basis,
+ * window), every chart series computed for the current view, the selections
+ * behind the headline numbers, and the incidents behind a clicked mark.
  */
 export function useDashboardModel(data: DashboardData) {
   const [basis, setBasis] = useState<Basis>("all");

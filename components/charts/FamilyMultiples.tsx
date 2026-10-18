@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { FAMILIES, FAMILY_META, type Family } from "@/lib/families";
 import { monthLabel } from "@/lib/format";
-import type { LabTheme } from "@/lib/lab/themes";
-import type { FamilyPoint } from "../useDashboardModel";
+import type { ChartTheme } from "@/lib/theme";
+import type { FamilyPoint } from "@/components/dashboard/useDashboardModel";
 
 function niceMax(v: number): number {
   if (v <= 4) return Math.max(1, Math.ceil(v));
@@ -27,7 +27,7 @@ export function FamilyMultiples({
   windowTotal,
 }: {
   data: FamilyPoint[];
-  theme: LabTheme;
+  theme: ChartTheme;
   onFamily?: (f: Family) => void;
   onMonth?: (month: string, f: Family) => void;
   /** All incidents in view, for each family's share. */
@@ -56,7 +56,7 @@ function FamilyCard({
   f: Family;
   data: FamilyPoint[];
   n: number;
-  theme: LabTheme;
+  theme: ChartTheme;
   onFamily?: (f: Family) => void;
   onMonth?: (month: string, f: Family) => void;
   windowTotal: number;

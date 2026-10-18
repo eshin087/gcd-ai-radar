@@ -10,27 +10,26 @@ import { Reveal } from "@/components/fx/Reveal";
 import { neuralSweep } from "@/components/fx/scenes/neuralSweep";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Wordmark } from "@/components/layout/Wordmark";
-import { FamilyMultiples } from "@/components/lab/charts/FamilyMultiples";
-import { NeonColumns, type NeonColors } from "@/components/lab/charts/NeonColumns";
-import { NeonRows } from "@/components/lab/charts/NeonRows";
-import { OrdinalSeverity } from "@/components/lab/charts/OrdinalSeverity";
-import { LabTile } from "@/components/lab/LabTile";
-import { ReportDrawer } from "@/components/lab/ReportDrawer";
-import { useDashboardModel, type WindowKey } from "@/components/lab/useDashboardModel";
+import { BarRows } from "@/components/charts/BarRows";
+import { FamilyMultiples } from "@/components/charts/FamilyMultiples";
+import { MonthlyColumns, type ColumnColors } from "@/components/charts/MonthlyColumns";
+import { SeverityMeters } from "@/components/charts/SeverityMeters";
 import { RadarPanel } from "@/components/panels/RadarPanel";
 import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import { Segmented } from "@/components/ui/Segmented";
+import { StatTile } from "@/components/ui/StatTile";
 import type { DashboardData } from "@/lib/dashboard";
 import { formatPct, monthLabel } from "@/lib/format";
-import { ICE as T } from "@/lib/lab/themes";
 import { NAV, WINDOW_CHOICES } from "@/lib/site";
 import { pctChange } from "@/lib/stats";
 import { INCIDENT_TYPES, TARGET_META, TYPE_META, type IncidentType, type Target } from "@/lib/taxonomy";
-import { LabSwitcher } from "../LabSwitcher";
+import { THEME as T } from "@/lib/theme";
+import { ReportDrawer } from "./ReportDrawer";
+import { useDashboardModel, type WindowKey } from "./useDashboardModel";
 
 /** Neural-sweep tones: structure, beam-lit, hot (signals, crossed nodes), faint (rings, dust). Decorative, not data. */
 const SWEEP_PALETTE = ["#4d6ca3", "#ffb35c", "#fff1db", "#56607a"];
-const NC: NeonColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional };
+const NC: ColumnColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional };
 
 /** A number that opens its incidents. */
 function Num({ children, onClick, className = "", label }: { children: ReactNode; onClick: () => void; className?: string; label: string }) {
@@ -93,7 +92,12 @@ function useHeroFade(ref: RefObject<HTMLDivElement | null>) {
   return gone;
 }
 
-export function ObservatoryDraft({ data }: { data: DashboardData }) {
+/**
+ * The dashboard: a neural-sweep ASCII hero that fades as the content slides
+ * over it, then the trend, families, targets/types/severity, radar context and
+ * the latest log. Every count and bar opens its incidents in a side drawer.
+ */
+export function Dashboard({ data }: { data: DashboardData }) {
   const m = useDashboardModel(data);
   const heroRef = useRef<HTMLDivElement>(null);
   const heroGone = useHeroFade(heroRef);
@@ -103,9 +107,9 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
   const typeSeries = (t: IncidentType) => m.series.map((p) => p.byType[t]);
 
   return (
-    <div className="lab-root lab-observatory">
+    <div className="min-h-dvh">
       {/* hero: sticky, fades and recedes as the content slides over it */}
-      <div ref={heroRef} className="obs-hero sticky top-0 z-0">
+      <div ref={heroRef} className="hero-fade sticky top-0 z-0">
         <header className="relative z-20">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4">
             <Wordmark />
@@ -119,7 +123,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
           </div>
         </header>
         <div className="relative mx-auto max-w-7xl px-4">
-          <div aria-hidden className="obs-field relative h-64 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
+          <div aria-hidden className="hero-field relative h-64 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
             <AsciiField scene={() => neuralSweep({ origin: [0.7, 0.5] })} palette={SWEEP_PALETTE} fontSize={12} running={!heroGone} label="A radar beam sweeping a network of neural nodes" className="h-full w-full" />
           </div>
           <div className="relative z-10 flex items-center pb-20 pt-2 lg:min-h-[min(540px,calc(100svh-4rem))]">
@@ -165,7 +169,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
       </div>
 
       {/* content slides up over the hero */}
-      <div className="obs-content relative z-10 -mt-14 bg-ground">
+      <div className="hero-cover relative z-10 -mt-14 bg-ground">
         <div className="z-30 border-y border-line-soft sm:sticky sm:top-0 bg-[color-mix(in_oklab,var(--color-ground)_78%,transparent)] backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3">
             <Segmented
@@ -206,7 +210,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
           >
             <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_352px]">
               <div className="glass min-w-0 p-4 sm:p-5">
-                <NeonColumns
+                <MonthlyColumns
                   months={m.trend.map((p) => p.month)}
                   stacks={[{ key: "total", label: "Incidents", color: T.bar, values: m.trend.map((p) => p.total) }]}
                   line={m.trend.map((p) => p.ma)}
@@ -222,7 +226,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <LabTile
+                <StatTile
                   className="glass p-4"
                   label={`${monthLabel(m.h.thisMonthKey)} so far`}
                   value={m.h.thisMonth}
@@ -232,7 +236,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
                   compareText={`in ${monthLabel(m.h.lastMonthKey)}`}
                   onCompare={() => m.setSelection(m.picks.lastMonth)}
                 />
-                <LabTile
+                <StatTile
                   className="glass p-4"
                   label="Trailing 12 months"
                   value={m.h.trailing12}
@@ -242,7 +246,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
                   compareText="the 12 before"
                   onCompare={() => m.setSelection(m.picks.prior12)}
                 />
-                <LabTile
+                <StatTile
                   className="glass p-4"
                   label="Year to date"
                   value={m.h.yearToDate}
@@ -252,7 +256,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
                   compareText="same point last year"
                   onCompare={() => m.setSelection(m.picks.lastYtd)}
                 />
-                <LabTile className="glass p-4" label="Real-world in view" value={m.realInWindow} accent onValue={() => m.setSelection({ kind: "real" })} compare="severity 3–4" />
+                <StatTile className="glass p-4" label="Real-world in view" value={m.realInWindow} accent onValue={() => m.setSelection({ kind: "real" })} compare="severity 3–4" />
               </div>
             </div>
           </Section>
@@ -276,7 +280,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
             <div className="grid gap-3 lg:grid-cols-3">
               <div className="glass min-w-0 space-y-3 p-5">
                 <h3 className="text-[15px] font-medium">On AI vs by AI</h3>
-                <NeonColumns
+                <MonthlyColumns
                   months={m.series.map((p) => p.month)}
                   stacks={INCIDENT_TYPES.map((t) => ({ key: t, label: TYPE_META[t].label, color: T.types[t], values: typeSeries(t) }))}
                   provisionalFrom={m.h.provisionalFrom}
@@ -288,7 +292,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
                   onSegment={(month, key) => m.setSelection({ kind: "month-type", month, type: key as IncidentType })}
                   label="Attacks on AI and AI-enabled attacks per month"
                 />
-                <NeonRows
+                <BarRows
                   rows={m.types.map((t) => ({ key: t.key, label: TYPE_META[t.key].label, value: t.count, color: T.types[t.key], note: `${Math.round((t.count / Math.max(1, m.rows.length)) * 100)}%` }))}
                   labelWidth="8.5rem"
                   onPick={(k) => m.setSelection({ kind: "type", type: k as IncidentType })}
@@ -297,7 +301,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
               </div>
               <div className="glass space-y-3 p-5">
                 <h3 className="text-[15px] font-medium">Who is hit</h3>
-                <NeonRows
+                <BarRows
                   rows={m.targets
                     .filter((t) => t.count > 0)
                     .slice(0, 10)
@@ -310,7 +314,7 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
               </div>
               <div className="glass space-y-3 p-5">
                 <h3 className="text-[15px] font-medium">How bad</h3>
-                <OrdinalSeverity data={m.severities} theme={T} onPick={(severity) => m.setSelection({ kind: "severity", severity })} active={sel?.kind === "severity" ? sel.severity : null} />
+                <SeverityMeters data={m.severities} theme={T} onPick={(severity) => m.setSelection({ kind: "severity", severity })} active={sel?.kind === "severity" ? sel.severity : null} />
               </div>
             </div>
           </Section>
@@ -360,7 +364,6 @@ export function ObservatoryDraft({ data }: { data: DashboardData }) {
       </div>
 
       <ReportDrawer selection={m.selection} rows={m.selected} windowLabel={m.windowLabel} basis={m.basis} field={m.field} onClose={() => m.setSelection(null)} />
-      <LabSwitcher current="observatory" />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import type { LabTheme } from "@/lib/lab/themes";
+import type { ChartTheme } from "@/lib/theme";
 import type { CountRow } from "@/lib/stats";
 import { SEVERITY_META, type Severity } from "@/lib/taxonomy";
 
@@ -8,7 +8,7 @@ import { SEVERITY_META, type Severity } from "@/lib/taxonomy";
  * Severity as an ordered set of meters: one hue, darker-to-brighter with
  * severity (validated ordinal ramp), label and value in ink, share in dim.
  */
-export function OrdinalSeverity({ data, theme, onPick, active = null }: { data: CountRow<`${Severity}`>[]; theme: LabTheme; onPick?: (s: Severity) => void; active?: Severity | null }) {
+export function SeverityMeters({ data, theme, onPick, active = null }: { data: CountRow<`${Severity}`>[]; theme: ChartTheme; onPick?: (s: Severity) => void; active?: Severity | null }) {
   const total = data.reduce((s, r) => s + r.count, 0) || 1;
   const max = Math.max(1, ...data.map((r) => r.count));
   return (
@@ -31,7 +31,7 @@ export function OrdinalSeverity({ data, theme, onPick, active = null }: { data: 
                 </span>
               </div>
               <div className="mt-1.5 h-2 w-full rounded-[2px]" style={{ background: `color-mix(in oklab, ${theme.severity[s]} 18%, transparent)` }}>
-                <div className="lab-grow h-2 rounded-[2px]" style={{ width: `${(r.count / max) * 100}%`, background: theme.severity[s] }} />
+                <div className="grow-in h-2 rounded-[2px]" style={{ width: `${(r.count / max) * 100}%`, background: theme.severity[s] }} />
               </div>
             </button>
           </li>

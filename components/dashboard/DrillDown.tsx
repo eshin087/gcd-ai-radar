@@ -127,23 +127,10 @@ interface Props {
   onClose: () => void;
 }
 
-/** Inline report panel under the charts (production dashboard). */
-export function DrillDown(props: Props) {
-  // The parent remounts this panel per selection (key), so its state resets by itself.
-  useEffect(() => {
-    document.getElementById("drilldown")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-  return (
-    <section id="drilldown" className="panel p-5 sm:p-6 scroll-mt-20 space-y-4" aria-live="polite">
-      <ReportBody {...props} />
-    </section>
-  );
-}
-
 /**
  * The report itself: what was clicked, how many incidents, and each one with
- * its summary, classification, sources and dates. Used by the inline panel and
- * by the design-lab drawer.
+ * its summary, classification, sources and dates. Shown in the dashboard's
+ * report drawer.
  */
 export function ReportBody({ selection, rows, windowLabel, basis, field, onClose, titleId, closeRef }: Props & { titleId?: string; closeRef?: Ref<HTMLButtonElement> }) {
   const [details, setDetails] = useState<Map<string, SlimIncident> | null>(null);
