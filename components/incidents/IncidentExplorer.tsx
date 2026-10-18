@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
 import { approxDateLabel } from "@/lib/format";
+import { productFamily } from "@/lib/products";
 import type { SlimIncident } from "@/lib/slim";
 import { CATEGORIES, CATEGORY_META, INCIDENT_TYPES, ORIGIN_META, ORIGINS, SEVERITIES, SEVERITY_META, TARGETS, TARGET_META, TYPE_META } from "@/lib/taxonomy";
 
@@ -31,12 +32,14 @@ interface Filters {
   real: string;
   /** "reported" dates by first report instead of incident date for month/year filters. */
   by: string;
+  /** Family of the first product named (lib/products.ts), set by the dashboard's disclosed-vulnerability breakdown. */
+  product: string;
   /** Record kind: "" incidents (default), "disclosed" disclosed vulnerabilities only, "all" both. */
   kind: string;
   sort: "reported" | "incident" | "severity";
 }
 
-const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", kind: "", sort: "reported" };
+const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", sort: "reported" };
 const PAGE = 50;
 
 function readFilters(): Filters {
@@ -58,6 +61,7 @@ function readFilters(): Filters {
     origin: p.get("origin") ?? "",
     real: p.get("real") ?? "",
     by: p.get("by") ?? "",
+    product: p.get("product") ?? "",
     kind: p.get("kind") === "disclosed" || p.get("kind") === "all" ? p.get("kind")! : "",
     sort: sort === "incident" || sort === "severity" ? sort : "reported",
   };
@@ -147,6 +151,7 @@ export function IncidentExplorer() {
       if (filters.year && !filters.month && !i.first_reported.startsWith(filters.year) && !i.incident_date.startsWith(filters.year)) return false;
       if (filters.publisher && !i.publishers.includes(filters.publisher)) return false;
       if (filters.origin && i.origin !== filters.origin) return false;
+      if (filters.product && productFamily(i.products[0] ?? "") !== filters.product) return false;
       if (q) {
         const hay = `${i.title} ${i.summary} ${i.products.join(" ")} ${i.id}`.toLowerCase();
         if (!q.split(/\s+/).every((term) => hay.includes(term))) return false;
@@ -169,6 +174,7 @@ export function IncidentExplorer() {
     ...(filters.from ? [{ key: "from" as const, label: `from: ${filters.from}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
     ...(filters.to ? [{ key: "to" as const, label: `to: ${filters.to}` }] : []),
     ...(filters.real === "1" ? [{ key: "real" as const, label: "real-world only (severity 3–4)" }] : []),
+    ...(filters.product ? [{ key: "product" as const, label: `product: ${filters.product}` }] : []),
   ];
 
   return (

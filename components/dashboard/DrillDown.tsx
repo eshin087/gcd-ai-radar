@@ -128,7 +128,7 @@ export function selectionQuery(sel: Selection, basis: "all" | "real", field: Dat
       break;
     case "disclosed-product":
       p.set("kind", "disclosed");
-      p.set("q", sel.product);
+      p.set("product", sel.product);
       break;
     case "disclosed-day":
       p.set("kind", "disclosed");
