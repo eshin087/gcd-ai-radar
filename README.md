@@ -26,18 +26,16 @@ feeds + APIs ──▶ collector (GitHub Actions, every 6 h) ──▶ /data/*.j
 
 ## Status
 
-Site and collector are built. The collector runs every 6 hours on GitHub Actions and
-needs `GEMINI_API_KEY` (see below) before it can classify; until the first real
-incidents are published, the site renders a clearly labelled synthetic stub dataset.
-Backfill of the historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD,
-GitHub Advisories) follows once classification is live.
+Live at https://gcd-ai-radar.vercel.app. The collector runs every 6 hours on GitHub
+Actions (it needs `GEMINI_API_KEY`, see below) and commits new data to `main`, which
+redeploys the site. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD,
+GitHub Advisories) are backfilled from 2016.
 
 ## Development
 
 ```bash
 npm install
-npm run stub         # regenerate the synthetic stub dataset (design phase only)
-npm run dev          # http://localhost:3000 (uses the stub while data/incidents.json is empty)
+npm run dev          # http://localhost:3000
 npm test             # unit tests (dedupe, schema, stats)
 npm run typecheck && npm run lint
 npm run build        # static export to ./out (runs scripts/prebuild.ts first)

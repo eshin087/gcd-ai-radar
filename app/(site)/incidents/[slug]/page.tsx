@@ -40,7 +40,7 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 
 export default async function IncidentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { incidents, isStub } = await loadIncidents();
+  const { incidents } = await loadIncidents();
   const incident = incidentBySlug(incidents, slug);
   if (!incident) notFound();
   const related = relatedIncidents(incidents, incident);
@@ -54,7 +54,6 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
           </Link>
           <span className="text-faint">/</span>
           <span>{incident.id}</span>
-          {isStub && <span className="text-accent">· synthetic stub record</span>}
         </div>
         <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight">{incident.title}</h1>
         <div className="flex flex-wrap gap-1.5">

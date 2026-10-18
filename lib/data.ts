@@ -17,9 +17,6 @@ import {
  */
 
 export const DATA_DIR = path.join(process.cwd(), "data");
-const STUB_FILE = path.join(DATA_DIR, "stub", "incidents.json");
-/** Below this many published incidents the stub dataset may be used. */
-const STUB_THRESHOLD = 20;
 
 async function readJson<T>(file: string, schema: ZodType<T>): Promise<T | null> {
   let raw: string;
@@ -33,25 +30,13 @@ async function readJson<T>(file: string, schema: ZodType<T>): Promise<T | null> 
   return schema.parse(parsed);
 }
 
-export function stubAllowed(): boolean {
-  return process.env.ALLOW_STUB === "1" || process.env.NODE_ENV === "development";
-}
-
 export interface IncidentData {
   incidents: Incident[];
-  isStub: boolean;
 }
 
 export const loadIncidents = cache(async (): Promise<IncidentData> => {
   const real = (await readJson(path.join(DATA_DIR, "incidents.json"), IncidentsFileSchema)) ?? [];
-  const published = real.filter((i) => i.status === "published");
-  if (published.length < STUB_THRESHOLD && stubAllowed()) {
-    const stub = await readJson(STUB_FILE, IncidentsFileSchema);
-    if (stub && stub.length > 0) {
-      return { incidents: stub.filter((i) => i.status === "published"), isStub: true };
-    }
-  }
-  return { incidents: published, isStub: false };
+  return { incidents: real.filter((i) => i.status === "published") };
 });
 
 export const loadRuns = cache(async (): Promise<RunRecord[]> => {

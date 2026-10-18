@@ -208,7 +208,6 @@ export default function MethodologyPage() {
         <li><strong className="text-ink">Classification error.</strong> A language model assigns type, categories and severity. Spot checks and the review queue catch some mistakes, not all; confidence is shown on every record.</li>
         <li><strong className="text-ink">Source coverage.</strong> Counts rise when sources are added. Changes are listed below.</li>
         <li><strong className="text-ink">Vulnerability volume.</strong> Disclosed vulnerabilities track disclosure activity in a chosen set of packages, not attacks. They are shown as attack surface, apart from the incident counts.</li>
-        <li><strong className="text-ink">Synthetic stub.</strong> While the collector has not yet published real incidents, the site shows a clearly labelled synthetic dataset so layouts can be judged. It is never mixed with real data.</li>
       </ul>
 
       <H2 id="changes">Change log</H2>

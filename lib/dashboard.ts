@@ -31,7 +31,6 @@ export interface CompactRow {
 }
 
 export interface DashboardData {
-  isStub: boolean;
   now: string;
   lastUpdated: string | null;
   /** Month keys the data spans (for the "all" window). */
@@ -59,12 +58,11 @@ export function compactRow(i: Incident): CompactRow {
 }
 
 export async function getDashboardData(): Promise<DashboardData> {
-  const [{ incidents, isStub }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
+  const [{ incidents }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
   const now = new Date();
   const range = yearRange(incidents);
   const earliest = Math.max(range?.min ?? now.getUTCFullYear(), 2016);
   return {
-    isStub,
     now: now.toISOString(),
     lastUpdated: updated,
     span: { from: `${earliest}-01`, to: toMonthKey(now) },

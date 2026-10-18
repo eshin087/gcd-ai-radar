@@ -44,7 +44,6 @@ interface Ctx {
   disclosed: number;
   now: Date;
   siteHost: string;
-  isStub: boolean;
 }
 
 const base = { display: "flex" as const, fontFamily: MONO, color: UI.ink };
@@ -66,7 +65,6 @@ function Frame({ title, subtitle, children, ctx }: { title: string; subtitle: st
             <circle cx="16" cy="16" r="1.8" fill={UI.accent} stroke="none" />
           </svg>
           <div style={{ ...base, fontSize: 24, fontWeight: 600, letterSpacing: 2 }}>{SITE.wordmark}</div>
-          {ctx.isStub && <div style={{ ...base, fontSize: 13, color: UI.accent, marginLeft: 10 }}>synthetic stub data</div>}
         </div>
         <div style={{ ...base, fontSize: 15, color: UI.accent }}>
           {ctx.siteHost} · {ctx.now.toISOString().slice(0, 10)}

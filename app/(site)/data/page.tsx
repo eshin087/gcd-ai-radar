@@ -23,7 +23,7 @@ async function sizeOf(rel: string): Promise<string | null> {
 }
 
 export default async function DataPage() {
-  const { incidents, isStub } = await loadIncidents();
+  const { incidents } = await loadIncidents();
   const disclosed = incidents.filter(isDisclosedIncident).length;
   const base = siteUrl();
   const files = [
@@ -45,7 +45,7 @@ export default async function DataPage() {
           <a href="/methodology#cves" className="link">
             tracked separately
           </a>
-          {isStub ? " (synthetic stub dataset)" : ""}. Everything below is regenerated on every deploy from the JSON files in the repository.
+          . Everything below is regenerated on every deploy from the JSON files in the repository.
         </p>
       </header>
 

@@ -80,7 +80,7 @@ ${items}
 }
 
 async function main() {
-  const { incidents, isStub } = await loadIncidents();
+  const { incidents } = await loadIncidents();
   const updated = await lastUpdated();
   const base = siteUrl();
   const dataDir = path.join(PUBLIC, "data");
@@ -104,7 +104,6 @@ async function main() {
         incidents: counted.length,
         disclosed_vulnerabilities: sorted.length - counted.length,
         counting_rule: "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves",
-        is_stub: isStub,
         last_collector_run: updated,
         license: "CC BY-SA 4.0",
         license_url: SITE.dataLicense.url,
@@ -118,11 +117,11 @@ async function main() {
 
   const t0 = Date.now();
   const written = await renderOgImages(
-    { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, ""), isStub },
+    { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
     path.join(PUBLIC, "og"),
   );
   console.log(
-    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities)${isStub ? " (STUB)" : ""} → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

@@ -11,5 +11,7 @@ export default defineConfig([
     "node_modules/**",
     "next-env.d.ts",
     "public/**",
+    // other Claude Code sessions' worktrees (separate checkouts with their own builds)
+    ".claude/**",
   ]),
 ]);

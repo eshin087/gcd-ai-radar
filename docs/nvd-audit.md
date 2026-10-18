@@ -2,7 +2,7 @@
 
 Audit date: 2026-10-18, against `data/incidents.json` at commit `91f304c`. All window figures use the dashboard default: the last 24 months by incident date, 2024-11 to 2026-10 inclusive, published records only.
 
-**Status: applied on 2026-10-18.** The owner approved config change B, with Gradio kept. `scripts/prune-packages.ts` retired 171 incidents (242 source URLs) after `scripts/repair-cve-dedup.ts` ran (see `docs/cve-dedup.md`). That left 1,911 published incidents, 1,595 of them in the window, with 82.8% infrastructure vulnerabilities, as predicted below. The question of whether disclosed CVEs should count as incidents is still open.
+**Status: applied on 2026-10-18.** The owner approved config change B, with Gradio kept. `scripts/prune-packages.ts` retired 171 incidents (242 source URLs) after `scripts/repair-cve-dedup.ts` ran (see `docs/cve-dedup.md`). That left 1,911 published incidents, 1,595 of them in the window, with 82.8% infrastructure vulnerabilities, as predicted below. The owner then chose option 3 of the counting question at the end: CVEs and advisories with no confirmed exploitation are now "disclosed vulnerabilities", shown as their own series and not counted as incidents (rule in `lib/counting.ts`). After that, the published records split into 402 incidents and 1,509 disclosed vulnerabilities.
 
 ## Answer in brief
 
@@ -169,7 +169,9 @@ Every retired record is infra_vuln and severity 2; none are severity 3 or 4. All
 | AI-generated malware | 3 |
 | Model theft / extraction | 2 |
 
-## Should CVEs count as incidents? (Your decision, not implemented)
+## Should CVEs count as incidents? (Decided 2026-10-18: option 3)
+
+**Decision.** The owner chose option 3 on 2026-10-18 and it is live. A record is a disclosed vulnerability when its severity is below 3 and it comes from the NVD or GHSA backfills, or every source is a vulnerability database (NVD, GitHub Advisory Database, MSRC). Those records stay in the dataset, have their own dashboard section and explorer filter, and carry `record_kind` in the CSV and `disclosed` in the compact JSON, but the headline, charts, tiles, RSS feed and share images count incidents only. Exploited CVEs (severity 3 and above) still count. The analysis that led to the decision follows.
 
 Keyword cleanup cannot fix the 84% share. These figures show why:
 

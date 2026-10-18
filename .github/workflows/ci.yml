@@ -28,5 +28,4 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          ALLOW_STUB: "1"
           NEXT_PUBLIC_SITE_URL: https://gcd-ai-radar.vercel.app

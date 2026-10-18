@@ -51,14 +51,10 @@ describe("IncidentSchema", () => {
 });
 
 describe("data files", () => {
-  it("stub dataset validates and has unique ids and slugs", () => {
-    const raw = JSON.parse(readFileSync(new URL("../data/stub/incidents.json", import.meta.url), "utf8"));
+  it("live incidents file validates and has unique ids and slugs", () => {
+    const raw = JSON.parse(readFileSync(new URL("../data/incidents.json", import.meta.url), "utf8"));
     const parsed = IncidentsFileSchema.parse(raw);
     expect(new Set(parsed.map((i) => i.id)).size).toBe(parsed.length);
     expect(new Set(parsed.map((i) => i.slug)).size).toBe(parsed.length);
-  });
-  it("live incidents file validates", () => {
-    const raw = JSON.parse(readFileSync(new URL("../data/incidents.json", import.meta.url), "utf8"));
-    expect(() => IncidentsFileSchema.parse(raw)).not.toThrow();
   });
 });

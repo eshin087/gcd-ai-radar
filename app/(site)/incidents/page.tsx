@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function IncidentsPage() {
-  const { incidents, isStub } = await loadIncidents();
+  const { incidents } = await loadIncidents();
   const disclosed = incidents.filter(isDisclosedIncident).length;
   return (
     <div className="space-y-5">
@@ -18,7 +18,7 @@ export default async function IncidentsPage() {
           <h1 className="text-2xl font-semibold tracking-tight">Incidents</h1>
           <p className="mt-1 text-[13px] text-dim">
             {(incidents.length - disclosed).toLocaleString("en-US")} incidents, plus {disclosed.toLocaleString("en-US")} disclosed CVEs with no confirmed
-            exploitation under &ldquo;records&rdquo;{isStub ? " (synthetic stub dataset)" : ""}. Filters are mirrored in the URL, so any view can be shared.
+            exploitation under &ldquo;records&rdquo;. Filters are mirrored in the URL, so any view can be shared.
           </p>
         </div>
         <a className="label hover:text-ink" href="/data/incidents.csv">
