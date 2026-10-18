@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseFeed, stripBoilerplate, toIsoDate } from "@/collector/lib/feed";
+import { parseFeed, stripBoilerplate, stripDoctype, toIsoDate } from "@/collector/lib/feed";
 import { cleanGdeltTitle } from "@/collector/sources/gdelt";
 
 const RSS = `<?xml version="1.0"?>
@@ -63,5 +63,28 @@ describe("cleanGdeltTitle", () => {
     expect(cleanGdeltTitle("CVE - 2026 - 95183 : What the Tech ?")).toBe("CVE-2026-95183: What the Tech?");
     expect(cleanGdeltTitle("Hidden  Prompt - Injection  Text , explained")).toBe("Hidden Prompt - Injection Text, explained");
     expect(cleanGdeltTitle("OpenAI ' s agent")).toBe("OpenAI's agent");
+  });
+});
+
+describe("stripDoctype", () => {
+  it("removes a DOCTYPE with entity declarations so they cannot expand", () => {
+    const bomb = `<?xml version="1.0"?>
+<!DOCTYPE lolz [
+ <!ENTITY lol "lol">
+ <!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+ <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+]>
+<rss version="2.0"><channel><title>x</title><item><title>&lol3;</title><link>https://example.org/a</link></item></channel></rss>`;
+    const stripped = stripDoctype(bomb);
+    expect(stripped).not.toContain("<!DOCTYPE");
+    expect(stripped).not.toContain("<!ENTITY");
+    const items = parseFeed(bomb);
+    expect(items).toHaveLength(1);
+    expect(items[0]!.title.length).toBeLessThan(20);
+  });
+
+  it("leaves documents without a DOCTYPE alone", () => {
+    expect(stripDoctype(RSS)).toBe(RSS);
+    expect(stripDoctype(`<!DOCTYPE html><rss/>`)).toBe(`<rss/>`);
   });
 });

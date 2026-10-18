@@ -2,6 +2,9 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import { marked } from "marked";
+
+// docs/sources.md is repository content, but raw HTML in it is still not rendered: text and links only.
+marked.use({ renderer: { html: () => "" } });
 import sourcesConfig from "@/collector/config/sources.json";
 import { loadRuns } from "@/lib/data";
 import { timestampLabel } from "@/lib/format";

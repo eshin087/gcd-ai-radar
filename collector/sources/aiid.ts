@@ -1,7 +1,7 @@
 import ExcelJS from "exceljs";
 import type { Source } from "../../lib/schema";
 import { canonicalUrl, urlKey } from "../lib/canonical";
-import { httpFetch } from "../lib/http";
+import { httpBytes, httpFetch } from "../lib/http";
 import { addDays, nowIso } from "../lib/ids";
 import { log } from "../lib/log";
 import { publisherFor } from "../lib/publishers";
@@ -100,10 +100,7 @@ export interface AiidRecord {
 export async function loadAiidRecords(listingUrl: string, ua: string): Promise<AiidRecord[]> {
   const exportUrl = await latestExportUrl(listingUrl, ua);
   log.info(`aiid: downloading ${exportUrl.split("/").pop()}`);
-  const res = await fetch(exportUrl, { headers: { "user-agent": ua } });
-  if (!res.ok) throw new Error(`aiid: HTTP ${res.status} downloading the export`);
-  const buffer = Buffer.from(await res.arrayBuffer());
-  if (buffer.byteLength > 50_000_000) throw new Error("aiid: export unexpectedly large");
+  const buffer = await httpBytes(exportUrl, { userAgent: ua, timeoutMs: 120_000, maxBytes: 50_000_000 });
 
   const wb = new ExcelJS.Workbook();
   await wb.xlsx.load(buffer as unknown as ArrayBuffer);

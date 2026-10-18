@@ -59,8 +59,18 @@ function atomLink(links: unknown): string {
   return text((alt ?? objs[0])?.["@_href"] ?? "");
 }
 
+/**
+ * Removes any DOCTYPE, with its internal subset. Feeds never need one, and
+ * entity declarations there can expand a few kilobytes into gigabytes
+ * ("billion laughs"); without the declarations an unknown entity stays as
+ * written. Standard XML and HTML entities are unaffected.
+ */
+export function stripDoctype(xml: string): string {
+  return xml.replace(/<!DOCTYPE(?:[^>\[]|\[[\s\S]*?\])*>/gi, "");
+}
+
 export function parseFeed(xml: string): FeedItem[] {
-  const doc = parser.parse(xml.replace(/^﻿/, "")) as Record<string, unknown>;
+  const doc = parser.parse(stripDoctype(xml.replace(/^﻿/, ""))) as Record<string, unknown>;
   const rss = doc["rss"] as Record<string, unknown> | undefined;
   const channel = (rss?.["channel"] ?? (doc["rdf:RDF"] as Record<string, unknown> | undefined)) as Record<string, unknown> | undefined;
   const feed = doc["feed"] as Record<string, unknown> | undefined;

@@ -19,3 +19,8 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+    # Major bumps of the toolchain arrive as separate, reviewable PRs only when
+    # a security advisory needs them; routine majors are not proposed.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
