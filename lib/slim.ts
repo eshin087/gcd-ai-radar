@@ -1,3 +1,4 @@
+import { isDisclosedIncident } from "./counting";
 import type { Incident } from "./schema";
 import type { Category, DatePrecision, IncidentType, Origin, Severity, Target } from "./taxonomy";
 
@@ -18,6 +19,8 @@ export interface SlimIncident {
   source_count: number;
   publishers: string[];
   origin: Origin;
+  /** A CVE or advisory with no confirmed exploitation, tracked apart from incidents (lib/counting.ts). */
+  disclosed: boolean;
 }
 
 export function slim(i: Incident): SlimIncident {
@@ -37,6 +40,7 @@ export function slim(i: Incident): SlimIncident {
     source_count: i.source_count,
     publishers: [...new Set(i.sources.map((s) => s.publisher))],
     origin: i.origin,
+    disclosed: isDisclosedIncident(i),
   };
 }
 
