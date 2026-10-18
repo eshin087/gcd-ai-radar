@@ -1,6 +1,8 @@
 # NVD / GHSA vulnerability record audit
 
-Audit date: 2026-10-18, against `data/incidents.json` at commit `91f304c`. All window figures use the dashboard default: the last 24 months by incident date, 2024-11 to 2026-10 inclusive, published records only. Nothing in `data/` has been changed. The config change proposed below is applied in this branch only; `scripts/prune-packages.ts` was run with `--dry-run` only.
+Audit date: 2026-10-18, against `data/incidents.json` at commit `91f304c`. All window figures use the dashboard default: the last 24 months by incident date, 2024-11 to 2026-10 inclusive, published records only.
+
+**Status: applied on 2026-10-18.** The owner approved config change B, with Gradio kept. `scripts/prune-packages.ts` retired 171 incidents (242 source URLs) after `scripts/repair-cve-dedup.ts` ran (see `docs/cve-dedup.md`). That left 1,911 published incidents, 1,595 of them in the window, with 82.8% infrastructure vulnerabilities, as predicted below. The question of whether disclosed CVEs should count as incidents is still open.
 
 ## Answer in brief
 

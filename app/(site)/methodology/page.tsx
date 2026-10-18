@@ -150,7 +150,7 @@ export default function MethodologyPage() {
           The default time axis is the <em>incident date</em> (when it happened, approximate dates allowed). A toggle switches to <em>first reported</em> (earliest
           source date). Incidents known only to the year are excluded from monthly series but counted in totals.
         </li>
-        <li>The most recent two months are shaded as provisional: reporting lags events, so the latest bars will rise.</li>
+        <li>The most recent two months are marked provisional: reporting lags events, so the latest bars will rise.</li>
         <li>&ldquo;This month&rdquo; compares the current month so far with the whole of last month; &ldquo;year to date&rdquo; compares the same calendar span of the previous year.</li>
         <li>The trend line is a least-squares fit over the visible window; the amber line is a three-month centred average.</li>
       </ul>
@@ -161,8 +161,10 @@ export default function MethodologyPage() {
         and Flowise, frameworks such as LangChain, MCP SDKs, AI coding tools and AI products) are incidents too. They enter at severity 2 (disclosed
         vulnerability) under <em>infrastructure vulnerability</em>, and move to severity 3 when CISA lists them as exploited or a vendor confirms exploitation.
         They dominate raw volume, which is why every chart stacks severity and the real-world view exists. Classic deep-learning libraries (TensorFlow, Keras,
-        PyTorch, ONNX) and generic automation tools (n8n) are deliberately excluded: their memory-safety and web CVEs are about the library, not about an AI
-        system being attacked, and they would swamp the counts (TensorFlow alone had 277). The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
+        PyTorch, ONNX), pre-LLM ML platforms (MLflow, NVIDIA Triton Inference Server, Ray), classic cloud ML services (Azure AI Search, Face and Language,
+        Vertex AI Workbench) and generic tools (n8n) are deliberately excluded: their memory-safety and web CVEs are about the library, not about an AI
+        system being attacked, and they would swamp the counts (TensorFlow alone had 299). A CVE in a general app that merely has an AI or MCP feature is
+        excluded too. The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
         packages across {Object.keys(packages.ghsa).length} ecosystems plus {packages.nvd_keywords.length} NVD search terms; it lives in the repository at{" "}
         <span className="num text-[12px]">collector/config/packages.json</span>.
       </p>
@@ -189,6 +191,11 @@ export default function MethodologyPage() {
       <H2 id="changes">Change log</H2>
       <ul className="list-disc pl-5 space-y-1 num text-[12.5px]">
         <li>2026-10-18 · methodology published; collector sources and taxonomy frozen for v1.</li>
+        <li>2026-10-18 · GitHub advisories and NVD backfilled from 2016.</li>
+        <li>2026-10-18 · CVE allow-list narrowed to LLM and agent-era tooling; 522 records for dropped packages retired (TensorFlow 299, n8n 135, Keras 22, others 66).</li>
+        <li>2026-10-18 · dashboard redesigned; every count opens its incidents, and category colours follow the seven families.</li>
+        <li>2026-10-18 · CVE merging fixed: a record now joins the incident about its own CVE, not one that merely cites it; 6 misplaced sources moved, 2 duplicate pairs merged, 1 lost CVE restored.</li>
+        <li>2026-10-18 · CVE allow-list narrowed again after an audit of the NVD backfill; 171 records retired (MLflow 80, NVIDIA Triton 65, Ray 10, generic apps and classic cloud ML services 16).</li>
       </ul>
     </div>
   );
