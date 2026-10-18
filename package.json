@@ -16,9 +16,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "collect": "tsx collector/cli.ts run",
+    "collect": "tsx collector/cli.ts",
     "backfill": "tsx collector/cli.ts backfill",
     "review": "tsx collector/cli.ts review",
+    "radar": "tsx collector/cli.ts radar",
     "validate": "tsx collector/cli.ts validate",
     "stub": "tsx scripts/make-stub.ts"
   },

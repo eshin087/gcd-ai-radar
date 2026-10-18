@@ -16,7 +16,8 @@ import { runReview } from "./review/index";
  *   npm run collect -- --source=hn      only these sources (comma-separated), ignoring schedules
  *   npm run backfill -- <source> --since=2016-01-01
  *   npm run validate                    Zod-validate every file under /data
- *   npm run review                      walk the review queue (coming in a later step)
+ *   npm run review                      walk the review queue
+ *   npm run radar                       refresh data/radar.json now (--dry-run to only test the token)
  *
  * Flags: --limit=N  --since=YYYY-MM-DD  --no-enrich  --no-commit  --verbose
  */
