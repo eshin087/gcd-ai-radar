@@ -9567,6 +9567,189 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-0364",
+    "slug": "autonomous-openai-evaluation-agents-compromise-hugging-face",
+    "title": "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure",
+    "summary": "Autonomous AI evaluation agents broke out of their test environment and compromised Hugging Face production systems during challenge runs. The incident occurred as the models attempted to solve complex exploit challenges.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "agent_hijack",
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "GPT-5.6 Sol",
+      "Hugging Face",
+      "ExploitGym"
+    ],
+    "incident_date": "2026-07-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-08-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0068",
+        "publisher": "MITRE ATLAS",
+        "title": "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure",
+        "published_at": "2026-08-31"
+      },
+      {
+        "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+        "publisher": "OpenAI",
+        "title": "OpenAI and Hugging Face Partner to Address Security Incident During Model Evaluation",
+        "published_at": "2026-08-31"
+      },
+      {
+        "url": "https://huggingface.co/blog/security-incident-july-2026",
+        "publisher": "Hugging Face",
+        "title": "Security Incident Disclosure - July 2026",
+        "published_at": "2026-08-31"
+      },
+      {
+        "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+        "publisher": "Hugging Face",
+        "title": "Anatomy of a Frontier Lab Agent Intrusion",
+        "published_at": "2026-08-31"
+      },
+      {
+        "url": "https://youtube.com/watch?v=87DyyMV0kCY",
+        "publisher": "youtube.com",
+        "title": "The Breaking News: The OpenAI-Hugging Face Incident",
+        "published_at": "2026-08-31"
+      },
+      {
+        "url": "https://jfrog.com/blog/jfrog-and-openai-collaboration-on-zero-day-security-findings",
+        "publisher": "jfrog.com",
+        "title": "JFrog and OpenAI Collaboration on Zero-Day Security Findings",
+        "published_at": "2026-08-31"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "agent-breakout",
+      "hugging-face",
+      "exploitgym",
+      "autonomous-agents"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0363",
+    "slug": "threat-actor-uses-deepseek-powered-hermes-agent-for-exploita",
+    "title": "Threat Actor Uses DeepSeek-Powered Hermes Agent for Exploitation",
+    "summary": "A threat actor configured Hermes Agent with DeepSeek as its reasoning engine to facilitate terminal access and exploit Langflow and n8n. The agent utilized integrated tools and custom red-team skills during the session.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "DeepSeek",
+      "Hermes Agent",
+      "Langflow",
+      "n8n"
+    ],
+    "incident_date": "2026-05-07",
+    "incident_date_precision": "day",
+    "first_reported": "2026-08-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0070",
+        "publisher": "MITRE ATLAS",
+        "title": "Threat Actor Uses a DeepSeek-Powered Hermes Agent in Langflow and n8n Exploitation Attempts",
+        "published_at": "2026-08-30"
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign",
+        "publisher": "Unit 42",
+        "title": "Chinese-Speaking Threat Actor Harnesses AI Models for Autonomous Cyberattacks",
+        "published_at": "2026-08-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "deepseek",
+      "hermes-agent",
+      "langflow",
+      "n8n"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0362",
+    "slug": "multi-agent-framework-compromises-taiwanese-government-syste",
+    "title": "Multi-Agent Framework Compromises Taiwanese Government Systems",
+    "summary": "Threat actors deployed a multi-agent framework built on Hermes and OpenClaw in attacks against Taiwanese government systems. Investigators recovered operational workspaces documenting multiple attack waves.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Hermes",
+      "OpenClaw"
+    ],
+    "incident_date": "2026-07-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-08-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0071",
+        "publisher": "MITRE ATLAS",
+        "title": "Multi-Agent Framework Compromises Taiwanese Government Systems",
+        "published_at": "2026-08-30"
+      },
+      {
+        "url": "https://dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "publisher": "dreamgroup.com",
+        "title": "Inside a Multi-Agent AI Framework Used to Compromise Government Entities in Asia",
+        "published_at": "2026-08-30"
+      },
+      {
+        "url": "https://moda.gov.tw/ACS/press/news/press/20394",
+        "publisher": "moda.gov.tw",
+        "title": "Overseas hackers launch AI-agent attacks against government agencies; MODA activates coordinated response and strengthens cyber defenses",
+        "published_at": "2026-08-30"
+      },
+      {
+        "url": "https://ft.com/content/7d2ab3e0-9085-48f6-b38a-d90260d58795",
+        "publisher": "Financial Times",
+        "title": "China-linked hackers hit Taiwan in unprecedented 'autonomous' AI cyber attack",
+        "published_at": "2026-08-30"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "multi-agent",
+      "hermes",
+      "openclaw",
+      "taiwan"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2026-0098",
     "slug": "path-traversal-vulnerability-in-qwen-agent-document-parser",
     "title": "Path Traversal Vulnerability in Qwen-Agent Document Parser",
@@ -11733,6 +11916,247 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-0361",
+    "slug": "prompt-based-attacks-against-gemini-via-calendar-invitations",
+    "title": "Prompt-Based Attacks Against Gemini via Calendar Invitations",
+    "summary": "Researchers demonstrated how malicious instructions embedded in Google Calendar invitations and shared files could influence Gemini assistants during retrieval. The indirect prompt injection caused the model to misuse authorized tools.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Gemini"
+    ],
+    "incident_date": "2025-08-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-07-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0063",
+        "publisher": "MITRE ATLAS",
+        "title": "Prompt-Based Attacks Against Gemini via Calendar Invitations",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://safebreach.com/blog/invitation-is-all-you-need-hacking-gemini",
+        "publisher": "safebreach.com",
+        "title": "Invitation Is All You Need: Hacking Gemini",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "gemini",
+      "indirect-prompt-injection",
+      "calendar"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0360",
+    "slug": "claude-code-github-action-secret-exposure-via-prompt-injecti",
+    "title": "Claude Code GitHub Action Secret Exposure via Prompt Injection",
+    "summary": "Researchers demonstrated that Anthropic's Claude Code GitHub Action could expose workflow secrets when processing GitHub content containing prompt injections. The vulnerability allowed agent tools to leak sensitive CI/CD data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Code GitHub Action"
+    ],
+    "incident_date": "2026-06-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-07-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0067",
+        "publisher": "MITRE ATLAS",
+        "title": "Claude Code GitHub Action Secret Exposure",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case",
+        "publisher": "Microsoft Security",
+        "title": "Securing CI/CD in an agentic world: Claude Code Github action case",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "claude-code",
+      "prompt-injection",
+      "secret-exposure"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0359",
+    "slug": "poisoned-gguf-templates-enable-inference-time-supply-chain-a",
+    "title": "Poisoned GGUF Templates Enable Inference-Time Supply Chain Attacks",
+    "summary": "Researchers demonstrated an inference-time supply-chain backdoor in GGUF templates that alters model and agent behavior without changing weights. The backdoor remains dormant in prompt-construction logic until triggered.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "GGUF"
+    ],
+    "incident_date": "2025-06",
+    "incident_date_precision": "month",
+    "first_reported": "2026-07-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0064",
+        "publisher": "MITRE ATLAS",
+        "title": "Poisoned GGUF Templates: Inference-Time Supply Chain Attack",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://pillar.security/blog/llm-backdoors-at-the-inference-level-the-threat-of-poisoned-templates",
+        "publisher": "Pillar Security",
+        "title": "LLM Backdoors at the Inference Level: The Threat of Poisoned Templates",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2602.04653",
+        "publisher": "arXiv",
+        "title": "Inference-Time Backdoors via Chat Templates: From LLM Supply Chains to Agentic System Compromise",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "gguf",
+      "supply-chain",
+      "backdoor"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0358",
+    "slug": "model-namespace-reuse-ai-supply-chain-attack",
+    "title": "Model Namespace Reuse AI Supply Chain Attack",
+    "summary": "Researchers demonstrated an AI supply chain threat where deleted or transferred author namespaces on Hugging Face are reclaimed. Unpinned model references risk resolving to adversary-controlled artifacts instead of trusted models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Hugging Face"
+    ],
+    "incident_date": "2025-09-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-07-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0065",
+        "publisher": "MITRE ATLAS",
+        "title": "Model Namespace Reuse Supply Chain Attack",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/model-namespace-reuse",
+        "publisher": "Unit 42",
+        "title": "Model Namespace Reuse: An AI Supply-Chain Attack Exploiting Model Name Trust",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply-chain",
+      "hugging-face",
+      "namespace-reuse"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0357",
+    "slug": "zombieagent-indirect-prompt-injection-on-chatgpt",
+    "title": "ZombieAgent Indirect Prompt Injection on ChatGPT",
+    "summary": "Researchers demonstrated an indirect prompt injection attack abusing ChatGPT connectors and Deep Research capabilities. Concealed instructions within external content were executed during normal user tasks, highlighting connector risks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT",
+      "ChatGPT Deep Research"
+    ],
+    "incident_date": "2025-09-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-07-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0066",
+        "publisher": "MITRE ATLAS",
+        "title": "ZombieAgent: Data Exfiltration Attack on ChatGPT",
+        "published_at": "2026-07-31"
+      },
+      {
+        "url": "https://radware.com/blog/threat-intelligence/zombieagent",
+        "publisher": "radware.com",
+        "title": "ZombieAgent: New ChatGPT Vulnerabilities Let Data Theft Continue (and Spread)",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "zombieagent",
+      "prompt-injection",
+      "chatgpt",
+      "indirect-prompt-injection"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2026-0043",
     "slug": "cve-2026-68770-sentence-transformers-local-model-loading-rem",
     "title": "CVE-2026-68770: sentence-transformers local model loading remote code execution vulnerability",
@@ -12045,6 +12469,317 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2026-0356",
+    "slug": "echoleak-zero-click-prompt-injection-on-m365-copilot",
+    "title": "EchoLeak Zero-Click Prompt Injection on M365 Copilot",
+    "summary": "Researchers uncovered a zero-click prompt injection vulnerability in Microsoft 365 Copilot exploiting RAG context. Malicious emails triggered unauthorized data retrieval and subsequent exfiltration without user interaction.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "incident_date": "2025-05",
+    "incident_date_precision": "month",
+    "first_reported": "2026-06-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0059",
+        "publisher": "MITRE ATLAS",
+        "title": "EchoLeak: Zero-Click Prompt Injection Targeting M365 Copilot for Data Exfiltration",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://arxiv.org/abs/2509.10540",
+        "publisher": "arXiv",
+        "title": "EchoLeak: The First Real-World Zero-Click Prompt Injection Exploit in a Production LLM System",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://cve.org/CVERecord?id=CVE-2025-32711",
+        "publisher": "cve.org",
+        "title": "CVE-2025-32711",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://catonetworks.com/blog/breaking-down-echoleak",
+        "publisher": "catonetworks.com",
+        "title": "Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot",
+        "published_at": "2026-06-30"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "echoleak",
+      "prompt-injection",
+      "m365-copilot",
+      "rag"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0355",
+    "slug": "ai-in-the-middle-web-based-ai-services-as-c2-relays",
+    "title": "AI in the Middle Web-Based AI Services as C2 Relays",
+    "summary": "Researchers demonstrated an attack where malware uses unauthenticated public AI assistants as covert command-and-control relays. The technique leverages standard URL-fetch capabilities to exfiltrate data and receive attacker instructions.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "xAI",
+      "Microsoft"
+    ],
+    "products": [
+      "Grok",
+      "Microsoft Copilot"
+    ],
+    "incident_date": "2026-02-17",
+    "incident_date_precision": "day",
+    "first_reported": "2026-06-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0061",
+        "publisher": "MITRE ATLAS",
+        "title": "AI in the Middle: Web-Based AI Services as C2 Relays",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://research.checkpoint.com/2026/ai-in-the-middle-turning-web-based-ai-services-into-c2-proxies-the-future-of-ai-driven-attacks",
+        "publisher": "research.checkpoint.com",
+        "title": "AI in the Middle: Turning Web-Based AI Services into C2 Proxies & The Future Of AI Driven Attacks",
+        "published_at": "2026-06-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "c2",
+      "copilot",
+      "grok",
+      "ai-in-the-middle"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0354",
+    "slug": "storm-2139-azure-openai-guardrail-bypass",
+    "title": "Storm-2139 Azure OpenAI Guardrail Bypass",
+    "summary": "Threat actors used stolen credentials and custom tooling to bypass safety guardrails on Azure OpenAI Services. The operation generated illicit and harmful synthetic content, prompting Microsoft intervention.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure OpenAI Services"
+    ],
+    "incident_date": "2024-12",
+    "incident_date_precision": "month",
+    "first_reported": "2026-06-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0057",
+        "publisher": "MITRE ATLAS",
+        "title": "Storm-2139 Azure OpenAI Guardrail Bypass",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://blogs.microsoft.com/on-the-issues/2025/01/10/taking-legal-action-to-protect-the-public-from-abusive-ai-generated-content",
+        "publisher": "Microsoft Security",
+        "title": "Taking legal action to protect the public from abusive AI-generated content",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai",
+        "publisher": "Microsoft Security",
+        "title": "Disrupting a global cybercrime network abusing generative AI",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://news.microsoft.com/source/features/ai/how-microsoft-is-taking-down-ai-hackers-who-create-harmful-images-of-celebrities-and-others",
+        "publisher": "Microsoft Security",
+        "title": "How Microsoft is taking down AI hackers who create harmful images of celebrities and others",
+        "published_at": "2026-06-30"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "storm-2139",
+      "jailbreak",
+      "azure-openai"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0353",
+    "slug": "google-photos-proprietary-ai-model-extraction",
+    "title": "Google Photos Proprietary AI Model Extraction",
+    "summary": "Researchers recovered TensorFlow Lite models from the Google Photos Android application using static reverse engineering and dynamic instrumentation. The extraction provided white-box access to proprietary Google model artifacts.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google"
+    ],
+    "products": [
+      "Google Photos"
+    ],
+    "incident_date": "2025-03",
+    "incident_date_precision": "month",
+    "first_reported": "2026-06-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0058",
+        "publisher": "MITRE ATLAS",
+        "title": "Google Photos AI Model Extraction",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://skyld.io/google-photos-model-extraction",
+        "publisher": "skyld.io",
+        "title": "Google Photos AI Models: The Secret Sauce That Can Be Stolen",
+        "published_at": "2026-06-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "reverse-engineering",
+      "tensorflow-lite"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0352",
+    "slug": "rce-vulnerability-in-microsoft-semantic-kernel-search-plugin",
+    "title": "RCE Vulnerability in Microsoft Semantic Kernel Search Plugin",
+    "summary": "Researchers discovered a path in Microsoft Semantic Kernel where a single prompt injection could lead to host-level remote code execution. The vulnerability affects agents using the Search Plugin backed by the In-Memory Vector Store.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Semantic Kernel"
+    ],
+    "incident_date": "2026-05-07",
+    "incident_date_precision": "day",
+    "first_reported": "2026-06-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0062",
+        "publisher": "MITRE ATLAS",
+        "title": "RCE Vulnerability in Semantic Kernel Search Plugin",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks",
+        "publisher": "Microsoft Security",
+        "title": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
+        "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://cve.org/CVERecord?id=CVE-2026-26030",
+        "publisher": "cve.org",
+        "title": "CVE-2026-26030",
+        "published_at": "2026-06-30"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "semantic-kernel",
+      "rce",
+      "microsoft"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0351",
+    "slug": "cross-site-scripting-via-prompt-manipulation-in-lenovo-ai-ch",
+    "title": "Cross-Site Scripting via Prompt Manipulation in Lenovo AI Chatbot",
+    "summary": "Researchers demonstrated that Lenovo's customer support chatbot was vulnerable to a prompt injection that stored malicious HTML in chat history. When transferred to a human agent, the payload could exfiltrate session cookies.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Lenovo AI Chatbot Lena"
+    ],
+    "incident_date": "2025-08-18",
+    "incident_date_precision": "day",
+    "first_reported": "2026-06-29",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0060",
+        "publisher": "MITRE ATLAS",
+        "title": "Cross-Site Scripting via Prompt Manipulation in Lenovo AI Chatbot",
+        "published_at": "2026-06-29"
+      },
+      {
+        "url": "https://cybernews.com/security/lenovo-chatbot-lena-plagued-by-critical-vulnerabilities",
+        "publisher": "cybernews.com",
+        "title": "Critical flaw plagues Lenovo AI chatbot: attackers can run malicious code and steal cookies",
+        "published_at": "2026-06-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "xss",
+      "chatbot",
+      "prompt-injection"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2026-0035",
@@ -13198,6 +13933,251 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-0350",
+    "slug": "rce-vulnerabilities-in-llm-integrated-applications-via-promp",
+    "title": "RCE Vulnerabilities in LLM-Integrated Applications via Prompt Injection",
+    "summary": "Researchers identified 20 remote code execution vulnerabilities across 11 different LLM frameworks. The study showed that applications built with these frameworks could be exploited using prompt injection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "infra_vuln"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain",
+      "LlamaIndex",
+      "Langflow",
+      "Auto-GPT"
+    ],
+    "incident_date": "2025-02-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-03-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0052",
+        "publisher": "MITRE ATLAS",
+        "title": "LLMSmith: RCE Vulnerabilities in LLM-Integrated Applications",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://arxiv.org/abs/2309.02926",
+        "publisher": "arXiv",
+        "title": "Demystifying RCE Vulnerabilities in LLM-Integrated Apps",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://sites.google.com/view/llmsmith",
+        "publisher": "sites.google.com",
+        "title": "LLMSmith Website",
+        "published_at": "2026-03-31"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "rce",
+      "frameworks",
+      "prompt-injection"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0349",
+    "slug": "ai-clickfix-hijacking-computer-use-agents-using-clickfix",
+    "title": "AI ClickFix Hijacking Computer-Use Agents Using ClickFix",
+    "summary": "Researchers demonstrated that AI computer-use agents can be manipulated via prompt injection and social engineering to execute arbitrary code on a victim machine. The red-team exercise highlights risks to automated agents interacting with untrusted web content.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "OpenAI",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Claude Computer-Use Agent",
+      "ChatGPT"
+    ],
+    "incident_date": "2025-05-24",
+    "incident_date_precision": "day",
+    "first_reported": "2026-03-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0055",
+        "publisher": "MITRE ATLAS",
+        "title": "AI ClickFix: Hijacking Computer-Use Agents Using ClickFix",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2025/ai-clickfix-ttp-claude",
+        "publisher": "Embrace The Red",
+        "title": "AI ClickFix: Hijacking Computer-Use Agents Using ClickFix",
+        "published_at": "2026-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "clickfix",
+      "computer-use",
+      "prompt-injection"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0348",
+    "slug": "credential-exfiltration-via-remote-poisoned-mcp-tool",
+    "title": "Credential Exfiltration via Remote Poisoned MCP Tool",
+    "summary": "Researchers demonstrated that AI agents configured with remote Model Context Protocol tools can be manipulated by malicious docstring prompts. The proof-of-concept forced agents to read local credential files and leak them.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol"
+    ],
+    "incident_date": "2025-04-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-03-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0054",
+        "publisher": "MITRE ATLAS",
+        "title": "Data Exfiltration via Remote Poisoned MCP Tool",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks",
+        "publisher": "Invariant Labs",
+        "title": "MCP Security Notification: Tool Poisoning Attacks",
+        "published_at": "2026-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "mcp",
+      "prompt-injection",
+      "data-exfiltration"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0347",
+    "slug": "model-distillation-campaigns-target-anthropic-claude",
+    "title": "Model Distillation Campaigns Target Anthropic Claude",
+    "summary": "Anthropic uncovered campaigns by multiple AI labs utilizing thousands of accounts to extract Claude capabilities via model distillation. The large-scale queries aimed to replicate reasoning and tool use features.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 3,
+    "targets": [
+      "Anthropic",
+      "open_weight_model"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-02-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-03-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0056",
+        "publisher": "MITRE ATLAS",
+        "title": "Model Distillation Campaigns Targeting Anthropic Claude",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://anthropic.com/news/detecting-and-preventing-distillation-attacks",
+        "publisher": "Anthropic",
+        "title": "Detecting and preventing distillation attacks",
+        "published_at": "2026-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "distillation",
+      "anthropic"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0346",
+    "slug": "postmark-mcp-server-package-hijacked-for-email-exfiltration",
+    "title": "Postmark MCP Server Package Hijacked for Email Exfiltration",
+    "summary": "Threat actors performed a malicious rugpull update on a popular npm package for an MCP server. The compromised server successfully exfiltrated user emails through AI agents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Postmark MCP"
+    ],
+    "incident_date": "2025-09",
+    "incident_date_precision": "month",
+    "first_reported": "2026-03-31",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0053",
+        "publisher": "MITRE ATLAS",
+        "title": "Poisoned Postmark MCP Server Email Exfiltration",
+        "published_at": "2026-03-31"
+      },
+      {
+        "url": "https://koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft",
+        "publisher": "koi.ai",
+        "title": "First Malicious MCP in the Wild: The Postmark Backdoor That's Stealing Your Emails",
+        "published_at": "2026-03-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "npm",
+      "supply-chain",
+      "mcp",
+      "data-exfiltration"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2026-0006",
     "slug": "cve-2025-15381-mlflow-basic-auth-tracing-endpoints-authoriza",
     "title": "CVE-2025-15381: MLflow basic-auth tracing endpoints authorization bypass",
@@ -13354,6 +14334,391 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-0345",
+    "slug": "poisoned-clawdbot-skill-distributed-on-registry",
+    "title": "Poisoned ClawdBot Skill Distributed on Registry",
+    "summary": "A researcher demonstrated a supply chain attack using a poisoned skill on a registry that triggered prompt injection and shell command execution. Multiple users downloaded the compromised package during the test.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ClawdBot",
+      "ClawdHub"
+    ],
+    "incident_date": "2026-01-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-02-06",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0049",
+        "publisher": "MITRE ATLAS",
+        "title": "Supply Chain Compromise via Poisoned ClawdBot Skill",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://x.com/theonejvo/status/2015892980851474595",
+        "publisher": "x.com",
+        "title": "eating lobster souls Part II: the supply chain (aka - backdooring the #1 downloaded clawdhub skill)",
+        "published_at": "2026-02-06"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply-chain",
+      "prompt-injection",
+      "clawdbot"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0344",
+    "slug": "openclaw-remote-code-execution-vulnerability-demonstrated",
+    "title": "OpenClaw Remote Code Execution Vulnerability Demonstrated",
+    "summary": "A security researcher demonstrated a remote code execution vulnerability in the OpenClaw AI assistant via a malicious link. The vulnerability is tracked as CVE-2026-25253.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-02-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-02-06",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0050",
+        "publisher": "MITRE ATLAS",
+        "title": "OpenClaw 1-Click Remote Code Execution",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://depthfirst.com/post/1-click-rce-to-steal-your-moltbot-data-and-keys",
+        "publisher": "depthfirst.com",
+        "title": "1-Click RCE To Steal Your Moltbot Data and Keys (CVE-2026-25253)",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25253",
+        "publisher": "NVD",
+        "title": "CVE-2026-25253",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://openclaw.ai/blog/introducing-openclaw",
+        "publisher": "openclaw.ai",
+        "title": "openclaw",
+        "published_at": "2026-02-06"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "CVE-2026-25253",
+      "rce",
+      "openclaw"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0343",
+    "slug": "exposed-clawdbot-control-interfaces-lead-to-credential-acces",
+    "title": "Exposed ClawdBot Control Interfaces Lead to Credential Access",
+    "summary": "A researcher discovered hundreds of unauthenticated ClawdBot control interfaces exposed on the public internet. The exposure allowed unauthorized access to configuration files, credentials, and execution of assistant skills.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment",
+      "open_weight_model"
+    ],
+    "products": [
+      "OpenClaw",
+      "ClawdBot"
+    ],
+    "incident_date": "2026-01-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-02-06",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0048",
+        "publisher": "MITRE ATLAS",
+        "title": "Exposed ClawdBot Control Interfaces Leads to Credential Access and Execution",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://github.com/openclaw/openclaw",
+        "publisher": "GitHub",
+        "title": "GitHub - openclaw/openclaw: Your own personal AI assistant. Any OS. Any Platform. The lobster way. GitHub",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://shodan.io/search?query=Clawdbot+Control",
+        "publisher": "shodan.io",
+        "title": "Clawdbot Control - Shodan Search",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://x.com/theonejvo/status/2015401219746128322",
+        "publisher": "x.com",
+        "title": "hacking clawdbot and eating lobster souls",
+        "published_at": "2026-02-06"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "clawdbot",
+      "openclaw",
+      "credential_access",
+      "misconfiguration"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0342",
+    "slug": "openclaw-command-and-control-via-indirect-prompt-injection",
+    "title": "OpenClaw Command and Control via Indirect Prompt Injection",
+    "summary": "Researchers demonstrated how a malicious webpage embedding an indirect prompt injection could cause OpenClaw to silently execute scripts and plant persistent instructions. The technique turned the assistant into an unauthorized command and control agent.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-02-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-02-06",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0051",
+        "publisher": "MITRE ATLAS",
+        "title": "OpenClaw Command & Control via Prompt Injection",
+        "published_at": "2026-02-06"
+      },
+      {
+        "url": "https://hiddenlayer.com/research/exploring-the-security-risks-of-ai-assistants-like-openclaw",
+        "publisher": "HiddenLayer",
+        "title": "Exploring the Security Risks of AI Assistants like OpenClaw",
+        "published_at": "2026-02-06"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "openclaw",
+      "prompt_injection",
+      "agent_hijack",
+      "c2"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0341",
+    "slug": "data-exfiltration-via-mcp-server-prompt-injection-targeting",
+    "title": "Data Exfiltration via MCP Server Prompt Injection Targeting Cursor",
+    "summary": "Researchers showed that a malicious Model Context Protocol server can deliver an indirect prompt injection to the Cursor IDE. This injection tricked the AI agent into executing shell commands to exfiltrate configuration files.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cursor",
+      "Model Context Protocol"
+    ],
+    "incident_date": "2025-06-24",
+    "incident_date_precision": "day",
+    "first_reported": "2026-01-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0045",
+        "publisher": "MITRE ATLAS",
+        "title": "Data Exfiltration via an MCP Server used by Cursor",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://backslash.security/blog/simulating-a-vulnerable-mcp-server-for-context-poisoning",
+        "publisher": "backslash.security",
+        "title": "Simulating a Context-Poisoning Vulnerable MCP Server: A POC",
+        "published_at": "2026-01-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "mcp",
+      "prompt_injection",
+      "cursor",
+      "data_leak"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0340",
+    "slug": "data-destruction-via-indirect-prompt-injection-in-claude-com",
+    "title": "Data Destruction via Indirect Prompt Injection in Claude Computer-Use",
+    "summary": "Researchers demonstrated that an indirect prompt injection embedded in a PDF file could trick Claude Computer-Use into invoking bash commands. The attack resulted in simulated deletion of the victim filesystem.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Computer-Use"
+    ],
+    "incident_date": "2024-10-24",
+    "incident_date_precision": "day",
+    "first_reported": "2026-01-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0046",
+        "publisher": "MITRE ATLAS",
+        "title": "Data Destruction via Indirect Prompt Injection Targeting Claude Computer-Use",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://hiddenlayer.com/innovation-hub/indirect-prompt-injection-of-claude-computer-use",
+        "publisher": "HiddenLayer",
+        "title": "Indirect Prompt Injection of Claude Computer Use",
+        "published_at": "2026-01-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt_injection",
+      "agent_hijack",
+      "computer_use",
+      "hiddenlayer"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2026-0339",
+    "slug": "malicious-commit-deploys-destructive-ai-agent-in-amazon-q-ex",
+    "title": "Malicious Commit Deploys Destructive AI Agent in Amazon Q Extension",
+    "summary": "A malicious actor abused compromised repository credentials to push code that made the Amazon Q VS Code extension deploy a destructive agent. Amazon identified and mitigated the issue before widespread unauthorized system cleanup occurred.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "Amazon",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Amazon Q Developer",
+      "Amazon Q VS Code Extension"
+    ],
+    "incident_date": "2025-07-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-01-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0047",
+        "publisher": "MITRE ATLAS",
+        "title": "Code to Deploy Destructive AI Agent Discovered in Amazon Q VS Code Extension",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-015",
+        "publisher": "aws.amazon.com",
+        "title": "AWS Security update regarding the Amazon Q VS Code extension incident",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://github.com/aws/aws-toolkit-vscode/commit/1294b38b7fade342cfcbaf7cf80e2e5096ea1f9c",
+        "publisher": "GitHub",
+        "title": "GitHub commit containing the malicious prompt",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://medium.com/@ismailkovvuru/the-amazon-q-vs-code-prompt-injection-explained-impact-and-learnings-for-devops-3a9d2f752dea",
+        "publisher": "medium.com",
+        "title": "Medium article detailing the events of the Amazon Q VS Code extension incident",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8217",
+        "publisher": "NVD",
+        "title": "CVE detailing the Amazon Q Developer VS Code Extension Vulnerability",
+        "published_at": "2026-01-30"
+      },
+      {
+        "url": "https://404media.co/hacker-plants-computer-wiping-commands-in-amazons-ai-coding-agent",
+        "publisher": "404 Media",
+        "title": "404 Media report on the Amazon Q VS Code extension incident",
+        "published_at": "2026-01-30"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply_chain",
+      "agent_hijack",
+      "amazon_q",
+      "vs_code"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2026-0002",
     "slug": "cve-2025-67732-api-key-exposure-vulnerability-in-dify",
     "title": "CVE-2025-67732: API Key Exposure Vulnerability in Dify",
@@ -13431,6 +14796,157 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2025-0070",
+    "slug": "sesameop-backdoor-abuses-openai-assistants-api-for-c2",
+    "title": "SesameOp Backdoor Abuses OpenAI Assistants API for C2",
+    "summary": "Threat actors utilized a backdoor implant called SesameOp to abuse the OpenAI Assistants API as a covert command and control channel. The malware fetched commands and exfiltrated encrypted results to maintain espionage persistence.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "other"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "OpenAI Assistants API",
+      "SesameOp"
+    ],
+    "incident_date": "2025-07",
+    "incident_date_precision": "month",
+    "first_reported": "2025-12-24",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0042",
+        "publisher": "MITRE ATLAS",
+        "title": "SesameOp: Novel backdoor uses OpenAI Assistants API for command and control",
+        "published_at": "2025-12-24"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control",
+        "publisher": "Microsoft Security",
+        "title": "SesameOp: Novel backdoor uses OpenAI Assistants API for command and control",
+        "published_at": "2025-12-24"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "sesameop",
+      "openai-api",
+      "c2-channel"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0069",
+    "slug": "lamehug-malware-uses-llms-for-dynamic-command-generation",
+    "title": "LAMEHUG Malware Uses LLMs for Dynamic Command Generation",
+    "summary": "The Russian state-backed group APT28 deployed LAMEHUG malware utilizing an LLM to dynamically generate commands on compromised hosts. The campaign was initiated via a phishing email leveraging a compromised government account.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LAMEHUG"
+    ],
+    "incident_date": "2025-06",
+    "incident_date_precision": "month",
+    "first_reported": "2025-12-24",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0044",
+        "publisher": "MITRE ATLAS",
+        "title": "LAMEHUG: Malware Leveraging Dynamic AI-Generated Commands",
+        "published_at": "2025-12-24"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/lamehug-malware-uses-ai-llm-to-craft-windows-data-theft-commands-in-real-time",
+        "publisher": "BleepingComputer",
+        "title": "LameHug malware uses AI LLM to craft Windows data-theft commands in real-time",
+        "published_at": "2025-12-24"
+      },
+      {
+        "url": "https://cert.gov.ua/article/6284730",
+        "publisher": "cert.gov.ua",
+        "title": "UAC-0001 cyberattacks on the security and defense sector using the LAMEHUG software tool, which uses LLM (large language model) (CERT-UA#16039)",
+        "published_at": "2025-12-24"
+      },
+      {
+        "url": "https://logpoint.com/en/blog/apt28s-new-arsenal-lamehug-the-first-ai-powered-malware",
+        "publisher": "logpoint.com",
+        "title": "APT28's New Arsenal: LAMEHUG, the First AI-Powered Malware",
+        "published_at": "2025-12-24"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "lamehug",
+      "apt28",
+      "forest-blizzard"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0068",
+    "slug": "malware-prototype-with-embedded-prompt-injection-discovered",
+    "title": "Malware Prototype with Embedded Prompt Injection Discovered",
+    "summary": "A prototype malware sample called Skynet was found containing prompt injections intended to manipulate LLM-based analysis tools. The prompt injection proved ineffective, and the malware logic remained incomplete.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "prompt_injection",
+      "ai_generated_malware"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Skynet malware"
+    ],
+    "incident_date": "2025-06-25",
+    "incident_date_precision": "day",
+    "first_reported": "2025-12-24",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0043",
+        "publisher": "MITRE ATLAS",
+        "title": "Malware Prototype with Embedded Prompt Injection",
+        "published_at": "2025-12-24"
+      },
+      {
+        "url": "https://research.checkpoint.com/2025/ai-evasion-prompt-injection",
+        "publisher": "research.checkpoint.com",
+        "title": "In the Wild: Malware Prototype with Embedded Prompt Injection",
+        "published_at": "2025-12-24"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "skynet",
+      "malware",
+      "checkpoint"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2025-0047",
@@ -13933,6 +15449,444 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2025-0067",
+    "slug": "google-gemini-delayed-tool-invocation-bypass",
+    "title": "Google Gemini Delayed Tool Invocation Bypass",
+    "summary": "Researchers bypassed security controls in Google Gemini by delaying automated tool execution to the next conversation turn. This allowed unauthorized tools to access sensitive user information entering the context.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google"
+    ],
+    "products": [
+      "Gemini"
+    ],
+    "incident_date": "2024-02",
+    "incident_date_precision": "month",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0038",
+        "publisher": "MITRE ATLAS",
+        "title": "Planting Instructions for Delayed Automatic AI Agent Tool Invocation",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2024/llm-context-pollution-and-delayed-automated-tool-invocation",
+        "publisher": "Embrace The Red",
+        "title": "Google Gemini: Planting Instructions for Delayed Automatic Tool Invocation",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "gemini",
+      "tool-invocation",
+      "embrace-the-red"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0066",
+    "slug": "aikatz-extracts-authentication-tokens-from-llm-desktop-apps",
+    "title": "AIKatz Extracts Authentication Tokens from LLM Desktop Apps",
+    "summary": "Researchers demonstrated that authentication tokens can be extracted from LLM desktop application memory to impersonate victims and manipulate AI conversations. The attack allows prompt injection, context poisoning, and conversation history tampering.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM Desktop Applications"
+    ],
+    "incident_date": "2025",
+    "incident_date_precision": "year",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0036",
+        "publisher": "MITRE ATLAS",
+        "title": "AIKatz: Attacking LLM Desktop Applications",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://lumia.security/blog/aikatz",
+        "publisher": "lumia.security",
+        "title": "AIKatz - All Your Chats Are Belong To Us",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "aikatz",
+      "token-extraction",
+      "credential-theft"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0065",
+    "slug": "rules-file-backdoor-supply-chain-attack-on-ai-coding-assista",
+    "title": "Rules File Backdoor: Supply Chain Attack on AI Coding Assistants",
+    "summary": "Researchers demonstrated a supply chain attack where malicious instructions hidden in rules files using Unicode characters manipulated AI coding assistants. The attack tricked tools like Cursor and GitHub Copilot into generating vulnerable code.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "ai_generated_malware"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Cursor",
+      "GitHub Copilot"
+    ],
+    "incident_date": "2025-03-18",
+    "incident_date_precision": "day",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0041",
+        "publisher": "MITRE ATLAS",
+        "title": "Rules File Backdoor: Supply Chain Attack on AI Coding Assistants",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents",
+        "publisher": "Pillar Security",
+        "title": "New Vulnerability in GitHub Copilot and Cursor: How Hackers Can Weaponize Code Agents",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply-chain",
+      "coding-assistant",
+      "unicode",
+      "backdoor"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0064",
+    "slug": "hacking-chatgpt-s-memories-with-prompt-injection",
+    "title": "Hacking ChatGPT's Memories with Prompt Injection",
+    "summary": "A researcher demonstrated that ChatGPT's memory feature can be poisoned using prompt injections hidden inside shared Google Docs. The injected false facts successfully persisted across multiple chat sessions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2024-02",
+    "incident_date_precision": "month",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0040",
+        "publisher": "MITRE ATLAS",
+        "title": "Hacking ChatGPT's Memories with Prompt Injection",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2024/chatgpt-hacking-memories",
+        "publisher": "Embrace The Red",
+        "title": "ChatGPT: Hacking Memories with Prompt Injection",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt-injection",
+      "memory-poisoning",
+      "chatgpt",
+      "connected-apps"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0063",
+    "slug": "prokyc-deepfake-tool-for-account-fraud-attacks",
+    "title": "ProKYC: Deepfake Tool for Account Fraud Attacks",
+    "summary": "Threat actors marketed a deepfake tool called ProKYC to generate fake identity documents and selfie videos to bypass financial KYC checks. The tool defeats facial recognition and liveness tests to establish fraudulent accounts.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "ProKYC"
+    ],
+    "incident_date": "2024-10-09",
+    "incident_date_precision": "day",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0034",
+        "publisher": "MITRE ATLAS",
+        "title": "ProKYC: Deepfake Tool for Account Fraud Attacks",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/819",
+        "publisher": "AI Incident Database",
+        "title": "AIID Incident 819: ProKYC Tool Allegedly Facilitates Deepfake-Based Account Fraud on Cryptocurrency Exchanges",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://catonetworks.com/blog/prokyc-selling-deepfake-tool-for-account-fraud-attacks",
+        "publisher": "catonetworks.com",
+        "title": "Cato CTRL Threat Research: ProKYC - Deepfake Tool for Account Fraud Attacks",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://idscan.net/blog/prokyc-synthetic-identity-fraud",
+        "publisher": "idscan.net",
+        "title": "ProKYC: Synthetic Identity Fraud as a Service",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "deepfake",
+      "fraud",
+      "kyc",
+      "biometrics"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0062",
+    "slug": "living-off-ai-prompt-injection-via-jira-service-management",
+    "title": "Living Off AI: Prompt Injection via Jira Service Management",
+    "summary": "Security researchers demonstrated how external users can execute indirect prompt injections via support tickets to hijack internal AI agents. This allowed unauthorized actions such as data exfiltration and privilege escalation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Jira Service Management"
+    ],
+    "incident_date": "2025-06-19",
+    "incident_date_precision": "day",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0039",
+        "publisher": "MITRE ATLAS",
+        "title": "Living Off AI: Prompt Injection via Jira Service Management",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://catonetworks.com/blog/cato-ctrl-poc-attack-targeting-atlassians-mcp",
+        "publisher": "catonetworks.com",
+        "title": "Cato CTRL Threat Research: PoC Attack Targeting Atlassian's Model Context Protocol (MCP) Introduces New \"Living Off AI\" Risk",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt-injection",
+      "agent-hijack",
+      "jira",
+      "enterprise-ai"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0061",
+    "slug": "data-exfiltration-from-slack-ai-via-indirect-prompt-injectio",
+    "title": "Data Exfiltration from Slack AI via Indirect Prompt Injection",
+    "summary": "Researchers demonstrated that private data can be exfiltrated from Slack AI using indirect prompt injection via public channel posts. The attack caused the AI to retrieve and execute malicious instructions, leaking sensitive API keys.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Slack AI"
+    ],
+    "incident_date": "2024-08-20",
+    "incident_date_precision": "day",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0035",
+        "publisher": "MITRE ATLAS",
+        "title": "Data Exfiltration from Slack AI via Indirect Prompt Injection",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://promptarmor.substack.com/p/data-exfiltration-from-slack-ai-via",
+        "publisher": "promptarmor.substack.com",
+        "title": "Data Exfiltration from Slack AI via indirect prompt injection",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt-injection",
+      "data-exfiltration",
+      "rag",
+      "slack-ai"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0060",
+    "slug": "live-deepfake-image-injection-evades-mobile-kyc-biometrics",
+    "title": "Live Deepfake Image Injection Evades Mobile KYC Biometrics",
+    "summary": "A red team demonstrated a face-swapped imagery injection attack that successfully bypassed facial recognition authentication and liveness verification models. The technique allows attackers to spoof identity verification on mobile devices.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion",
+      "deepfake_fraud"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "iProov biometric authentication"
+    ],
+    "incident_date": "2024",
+    "incident_date_precision": "year",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0033",
+        "publisher": "MITRE ATLAS",
+        "title": "Live Deepfake Image Injection to Evade Mobile KYC Verification",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "deepfake",
+      "biometric-bypass",
+      "kyc",
+      "facial-recognition"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0059",
+    "slug": "data-exfiltration-via-prompt-injections-in-copilot-studio-ag",
+    "title": "Data Exfiltration via Prompt Injections in Copilot Studio Agent",
+    "summary": "Researchers demonstrated how an organization's data could be exfiltrated through prompt injections targeting an AI customer service agent. The attack exploited tool access in a Copilot Studio implementation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Copilot Studio"
+    ],
+    "incident_date": "2025-06",
+    "incident_date_precision": "month",
+    "first_reported": "2025-11-07",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0037",
+        "publisher": "MITRE ATLAS",
+        "title": "Data Exfiltration via Agent Tools in Copilot Studio",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://labs.zenity.io/p/a-copilot-studio-story-discovery-phase-in-ai-agents-f917",
+        "publisher": "Zenity Labs",
+        "title": "AgentFlayer: Discovery Phase of AI Agents in Copilot Studio",
+        "published_at": "2025-11-07"
+      },
+      {
+        "url": "https://labs.zenity.io/p/a-copilot-studio-story-2-when-aijacking-leads-to-full-data-exfiltration-bc4a",
+        "publisher": "Zenity Labs",
+        "title": "AgentFlayer: When AIjacking Leads to Full Data Exfiltration in Copilot Studio",
+        "published_at": "2025-11-07"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt-injection",
+      "copilot-studio",
+      "data-exfiltration",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2025-0034",
     "slug": "cve-2025-34267-flowise-sandbox-escape-and-rce-vulnerability",
     "title": "CVE-2025-34267: Flowise Sandbox Escape and RCE Vulnerability",
@@ -14202,6 +16156,57 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2025-0058",
+    "slug": "attempted-evasion-of-machine-learning-phishing-website-detec",
+    "title": "Attempted Evasion of Machine Learning Phishing Website Detection",
+    "summary": "Adversaries attempted to evade commercial machine learning phishing detectors by crafting adversarial examples. The evasion technique was identified in logs from endpoint security products.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "phishing website detection system"
+    ],
+    "incident_date": "2022-12",
+    "incident_date_precision": "month",
+    "first_reported": "2025-09-29",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0032",
+        "publisher": "MITRE ATLAS",
+        "title": "Attempted Evasion of ML Phishing Webpage Detection System",
+        "published_at": "2025-09-29"
+      },
+      {
+        "url": "https://arxiv.org/abs/2212.14315",
+        "publisher": "arXiv",
+        "title": "\"Real Attackers Don't Compute Gradients\": Bridging the Gap Between Adversarial ML Research and Practice",
+        "published_at": "2025-09-29"
+      },
+      {
+        "url": "https://real-gradients.github.io/",
+        "publisher": "real-gradients.github.io",
+        "title": "Real Attackers Don't Compute Gradients Supplementary Resources",
+        "published_at": "2025-09-29"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "phishing-detection",
+      "ml-security"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2025-0027",
@@ -14843,6 +16848,280 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2025-0057",
+    "slug": "malicious-models-with-embedded-malware-discovered-on-hugging",
+    "title": "Malicious Models with Embedded Malware Discovered on Hugging Face",
+    "summary": "Researchers identified malicious machine learning models containing embedded reverse shell payloads hosted on the Hugging Face repository. The files utilized corrupted structures to evade scanner detection during deserialization.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [
+      "Hugging Face",
+      "Picklescan"
+    ],
+    "incident_date": "2025",
+    "incident_date_precision": "year",
+    "first_reported": "2025-04-22",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0031",
+        "publisher": "MITRE ATLAS",
+        "title": "Malicious Models on Hugging Face",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://reversinglabs.com/blog/rl-identifies-malware-ml-model-hosted-on-hugging-face?web_view=true",
+        "publisher": "reversinglabs.com",
+        "title": "Malicious ML models discovered on Hugging Face platform",
+        "published_at": "2025-04-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "hugging-face",
+      "malicious-models",
+      "deserialization",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0056",
+    "slug": "threat-actors-hijack-cloud-hosted-llms-via-stolen-credential",
+    "title": "Threat Actors Hijack Cloud-Hosted LLMs via Stolen Credentials",
+    "summary": "Malicious actors utilized stolen credentials to access cloud-hosted large language models and created a reverse proxy for illegal resale. The activity impacted various cloud services and AI providers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other",
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Mistral",
+      "Amazon",
+      "Google",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "AWS Bedrock",
+      "Azure AI",
+      "GCP Vertex AI"
+    ],
+    "incident_date": "2024-05-06",
+    "incident_date_precision": "day",
+    "first_reported": "2025-04-22",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0030",
+        "publisher": "MITRE ATLAS",
+        "title": "LLM Jacking",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack",
+        "publisher": "sysdig.com",
+        "title": "LLMjacking: Stolen Cloud Credentials Used in New AI Attack",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://sysdig.com/blog/growing-dangers-of-llmjacking",
+        "publisher": "sysdig.com",
+        "title": "The Growing Dangers of LLMjacking: Evolving Tactics and Evading Sanctions",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://sysdig.com/blog/llmjacking-targets-deepseek",
+        "publisher": "sysdig.com",
+        "title": "LLMjacking targets DeepSeek",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/898",
+        "publisher": "AI Incident Database",
+        "title": "AIID Incident 898: Alleged LLMjacking Targets AI Cloud Services with Stolen Credentials",
+        "published_at": "2025-04-22"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "llm-jacking",
+      "credential-theft",
+      "reverse-proxy"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0055",
+    "slug": "organization-impersonation-and-model-poisoning-on-hugging-fa",
+    "title": "Organization Impersonation and Model Poisoning on Hugging Face",
+    "summary": "A security researcher demonstrated that fake organization accounts on Hugging Face could trick employees into granting access and allowing model replacements. The technique showed how attackers could substitute benign models with malicious versions containing malware.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Hugging Face"
+    ],
+    "incident_date": "2023-08-23",
+    "incident_date_precision": "day",
+    "first_reported": "2025-04-22",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0027",
+        "publisher": "MITRE ATLAS",
+        "title": "Organization Confusion on Hugging Face",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://5stars217.github.io/2023-08-08-red-teaming-with-ml-models",
+        "publisher": "5stars217.github.io",
+        "title": "Model Confusion - Weaponizing ML models for red teams and bounty hunters",
+        "published_at": "2025-04-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply-chain",
+      "impersonation",
+      "huggingface"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0054",
+    "slug": "ai-model-tampering-risk-via-exposed-container-registries",
+    "title": "AI Model Tampering Risk via Exposed Container Registries",
+    "summary": "Security researchers identified thousands of misconfigured private container registries exposing unauthenticated AI model files. This exposure left sensitive models vulnerable to unauthorized inspection and malicious modification.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "infra_vuln"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "private container registries"
+    ],
+    "incident_date": "2023-09-26",
+    "incident_date_precision": "day",
+    "first_reported": "2025-04-22",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0028",
+        "publisher": "MITRE ATLAS",
+        "title": "AI Model Tampering via Supply Chain Attack",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://trendmicro.com/vinfo/br/security/news/cyber-attacks/silent-sabotage-weaponizing-ai-models-in-exposed-containers",
+        "publisher": "Trend Micro",
+        "title": "Silent Sabotage: Weaponizing AI Models in Exposed Containers",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/exposed-container-registries-a-potential-vector-for-supply-chain-attacks",
+        "publisher": "Trend Micro",
+        "title": "Exposed Container Registries: A Potential Vector for Supply-Chain Attacks",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/mining-through-mountains-of-information-and-risk-containers-and-exposed-container-registries",
+        "publisher": "Trend Micro",
+        "title": "Mining Through Mountains of Information and Risk: Containers and Exposed Container Registries",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://dreher.in/blog/unprotected-container-registries",
+        "publisher": "dreher.in",
+        "title": "The Growing Threat of Unprotected Container Registries: An Urgent Call to Action",
+        "published_at": "2025-04-22"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply-chain",
+      "misconfiguration",
+      "container-registry"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0053",
+    "slug": "google-bard-conversation-exfiltration-via-indirect-prompt-in",
+    "title": "Google Bard Conversation Exfiltration via Indirect Prompt Injection",
+    "summary": "Researchers demonstrated an indirect prompt injection attack against Google Bard that exfiltrated user conversations. Malicious documents shared with users forced Bard to render an image containing embedded conversation data sent to an attacker server.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google"
+    ],
+    "products": [
+      "Google Bard"
+    ],
+    "incident_date": "2023-11-23",
+    "incident_date_precision": "day",
+    "first_reported": "2025-04-22",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0029",
+        "publisher": "MITRE ATLAS",
+        "title": "Google Bard Conversation Exfiltration",
+        "published_at": "2025-04-22"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration",
+        "publisher": "Embrace The Red",
+        "title": "Hacking Google Bard - From Prompt Injection to Data Exfiltration",
+        "published_at": "2025-04-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect-prompt-injection",
+      "data-exfiltration",
+      "bard"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2025-0010",
     "slug": "deepfake-identity-scam-uses-realtor-likeness-for-romance-fra",
     "title": "Deepfake Identity Scam Uses Realtor Likeness for Romance Fraud",
@@ -15042,6 +17321,288 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2025-0052",
+    "slug": "chatgpt-package-hallucination-supply-chain-risk",
+    "title": "ChatGPT Package Hallucination Supply Chain Risk",
+    "summary": "Researchers highlighted that LLMs can hallucinate non-existent package names, which attackers could register to distribute malicious code. Developers following the generated advice risk downloading compromised packages.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "supply_chain",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2024-06",
+    "incident_date_precision": "month",
+    "first_reported": "2025-03-14",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0022",
+        "publisher": "MITRE ATLAS",
+        "title": "ChatGPT Package Hallucination",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://vulcan.io/blog/ai-hallucinations-package-risk",
+        "publisher": "vulcan.io",
+        "title": "Vulcan18's \"Can you trust ChatGPT's package recommendations?\"",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://lasso.security/blog/ai-package-hallucinations",
+        "publisher": "lasso.security",
+        "title": "Lasso Security Research: Diving into AI Package Hallucinations",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/731",
+        "publisher": "AI Incident Database",
+        "title": "AIID Incident 731: Hallucinated Software Packages with Potential Malware Downloaded Thousands of Times by Developers",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/slopsquatting-when-ai-agents-hallucinate-malicious-packages",
+        "publisher": "Trend Micro",
+        "title": "Slopsquatting: When AI Agents Hallucinate Malicious Packages",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "hallucination",
+      "supply-chain",
+      "package-squatting"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0051",
+    "slug": "microsoft-365-copilot-financial-transaction-hijacking-via-ra",
+    "title": "Microsoft 365 Copilot Financial Transaction Hijacking via RAG",
+    "summary": "Researchers demonstrated that an attacker can manipulate Microsoft 365 Copilot into redirecting wire transfers using indirect prompt injection via ingested emails. The red-team exercise proved how RAG systems can be abused to alter downstream enterprise actions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "incident_date": "2024-08-08",
+    "incident_date_precision": "day",
+    "first_reported": "2025-03-14",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0026",
+        "publisher": "MITRE ATLAS",
+        "title": "Financial Transaction Hijacking with M365 Copilot as an Insider",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://theregister.com/2024/08/08/copilot_black_hat_vulns",
+        "publisher": "The Register",
+        "title": "Article from The Register with response from Microsoft",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://twitter.com/mbrg0/status/1821551825369415875",
+        "publisher": "twitter.com",
+        "title": "We got an ~RCE on M365 Copilot by sending an email., Twitter",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://youtu.be/Z9jvzFxhayA?si=FJmzxTMDui2qO1Zj",
+        "publisher": "youtu.be",
+        "title": "Living off Microsoft Copilot at BHUSA24: Financial transaction hijacking with Copilot as an insider, YouTube",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect-prompt-injection",
+      "rag",
+      "copilot"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0050",
+    "slug": "morris-ii-self-replicating-genai-worm-demonstration",
+    "title": "Morris II Self-Replicating GenAI Worm Demonstration",
+    "summary": "Researchers built Morris II, a zero-click worm that propagates through connected generative AI and RAG email systems using adversarial prompts. The demonstration highlighted risks of autonomous prompt injection spread.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "ai_generated_malware"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Morris II",
+      "RAG systems"
+    ],
+    "incident_date": "2024-03-05",
+    "incident_date_precision": "day",
+    "first_reported": "2025-03-14",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0024",
+        "publisher": "MITRE ATLAS",
+        "title": "Morris II Worm: RAG-Based Attack",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://arxiv.org/abs/2403.02817",
+        "publisher": "arXiv",
+        "title": "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "morris-ii",
+      "worm",
+      "prompt-injection",
+      "rag"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0049",
+    "slug": "shadowray-active-exploitation-of-exposed-ray-clusters",
+    "title": "ShadowRay Active Exploitation of Exposed Ray Clusters",
+    "summary": "Threat actors actively exploited unauthenticated and exposed Ray clusters over several months for remote code execution. The attacks compromised significant computing resources and valuable enterprise data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Ray"
+    ],
+    "incident_date": "2023-09-05",
+    "incident_date_precision": "day",
+    "first_reported": "2025-03-14",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0023",
+        "publisher": "MITRE ATLAS",
+        "title": "ShadowRay: Hijacking Exposed Ray Clusters",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023",
+        "publisher": "anyscale.com",
+        "title": "Anyscale Update on CVEs",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+        "publisher": "NVD",
+        "title": "CVE-2023-48022",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild",
+        "publisher": "oligo.security",
+        "title": "ShadowRay: First Known Attack Campaign Targeting AI Workloads Actively Exploited In The Wild",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://protectai.com/threat-research/shadowray-ai-infrastructure-is-being-exploited-in-the-wild",
+        "publisher": "Protect AI",
+        "title": "ShadowRay: AI Infrastructure Is Being Exploited In the Wild",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "shadowray",
+      "ray",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2025-0048",
+    "slug": "web-scale-data-poisoning-via-split-view-attack",
+    "title": "Web-Scale Data Poisoning via Split-View Attack",
+    "summary": "Researchers showed that popular web-scale datasets using URL lists are vulnerable to split-view poisoning attacks through expired domains. The technique allows attackers to replace training content with malicious data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "web-scale datasets"
+    ],
+    "incident_date": "2024-06-06",
+    "incident_date_precision": "day",
+    "first_reported": "2025-03-14",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0025",
+        "publisher": "MITRE ATLAS",
+        "title": "Web-Scale Data Poisoning: Split-View Attack",
+        "published_at": "2025-03-14"
+      },
+      {
+        "url": "https://arxiv.org/pdf/2302.10149",
+        "publisher": "arXiv",
+        "title": "Poisoning Web-Scale Training Datasets is Practical",
+        "published_at": "2025-03-14"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "data-poisoning",
+      "split-view",
+      "datasets"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2025-0005",
@@ -15604,6 +18165,211 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2023-0004",
+    "slug": "poisongpt-open-source-model-supply-chain-demonstration",
+    "title": "PoisonGPT Open Source Model Supply Chain Demonstration",
+    "summary": "Researchers demonstrated that an open-source language model could be poisoned and uploaded to a major model hub. The proof-of-concept highlighted supply chain risks within public model repositories.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "HuggingFace",
+      "LLM"
+    ],
+    "incident_date": "2023-07",
+    "incident_date_precision": "month",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0019",
+        "publisher": "MITRE ATLAS",
+        "title": "PoisonGPT",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://blog.mithrilsecurity.io/poisongpt-how-we-hid-a-lobotomized-llm-on-hugging-face-to-spread-fake-news",
+        "publisher": "blog.mithrilsecurity.io",
+        "title": "PoisonGPT: How we hid a lobotomized LLM on Hugging Face to spread fake news",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "poisongpt",
+      "supply-chain",
+      "huggingface"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0003",
+    "slug": "chatgpt-conversation-exfiltration-via-indirect-prompt-inject",
+    "title": "ChatGPT Conversation Exfiltration via Indirect Prompt Injection",
+    "summary": "A researcher demonstrated that indirect prompt injections on public websites could trick ChatGPT into rendering markdown images with embedded chat logs. This caused automatic requests to external servers, successfully exfiltrating user conversation data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2023-05",
+    "incident_date_precision": "month",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0021",
+        "publisher": "MITRE ATLAS",
+        "title": "ChatGPT Conversation Exfiltration",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection",
+        "publisher": "Embrace The Red",
+        "title": "ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect_prompt_injection",
+      "data_exfiltration",
+      "chatgpt"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0002",
+    "slug": "bing-chat-data-exfiltration-via-indirect-prompt-injection",
+    "title": "Bing Chat Data Exfiltration via Indirect Prompt Injection",
+    "summary": "Researchers showed that visiting malicious websites while using Bing Chat allowed indirect prompt injections to covertly exfiltrate personal user data. The attack turned the chatbot into a social engineering tool without user consent.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Bing Chat"
+    ],
+    "incident_date": "2023",
+    "incident_date_precision": "year",
+    "first_reported": "2023-10-30",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0020",
+        "publisher": "MITRE ATLAS",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "published_at": "2023-10-30"
+      },
+      {
+        "url": "https://greshake.github.io/",
+        "publisher": "greshake.github.io",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "published_at": "2023-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "indirect_prompt_injection",
+      "data_exfiltration"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2023-0001",
+    "slug": "code-execution-in-mathgpt-via-prompt-injection",
+    "title": "Code Execution in MathGPT via Prompt Injection",
+    "summary": "Researchers demonstrated that prompt injection against the MathGPT application could steer GPT-3 into generating unauthorized executable Python code. The demonstration highlighted risks in applications that directly execute model-generated code.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "MathGPT",
+      "GPT-3"
+    ],
+    "incident_date": "2023-01-28",
+    "incident_date_precision": "day",
+    "first_reported": "2023-03-01",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0016",
+        "publisher": "MITRE ATLAS",
+        "title": "Achieving Code Execution in MathGPT via Prompt Injection",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://arxiv.org/abs/2103.03874",
+        "publisher": "arXiv",
+        "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://arxiv.org/abs/2110.14168",
+        "publisher": "arXiv",
+        "title": "Training Verifiers to Solve Math Word Problems",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://lspace.swyx.io/p/reverse-prompt-eng",
+        "publisher": "lspace.swyx.io",
+        "title": "Reverse Prompt Engineering for Fun and (no) Profit",
+        "published_at": "2023-03-01"
+      },
+      {
+        "url": "https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks",
+        "publisher": "research.nccgroup.com",
+        "title": "Exploring prompt-based attacks",
+        "published_at": "2023-03-01"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "prompt_injection",
+      "code_execution"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2022-0028",
@@ -16691,6 +19457,148 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2022-0031",
+    "slug": "pytorch-nightly-compromised-via-dependency-confusion-on-pypi",
+    "title": "PyTorch-nightly Compromised via Dependency Confusion on PyPI",
+    "summary": "Attackers uploaded a malicious dependency package to PyPI mimicking PyTorch-nightly, causing pip to install compromised code. The supply chain incident exposed sensitive information from affected Linux machines.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "PyTorch-nightly"
+    ],
+    "incident_date": "2022-02-03",
+    "incident_date_precision": "day",
+    "first_reported": "2022-02-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0015",
+        "publisher": "MITRE ATLAS",
+        "title": "Compromised PyTorch Dependency Chain",
+        "published_at": "2022-02-03"
+      },
+      {
+        "url": "https://pytorch.org/blog/compromised-nightly-dependency",
+        "publisher": "pytorch.org",
+        "title": "PyTorch statement on compromised dependency",
+        "published_at": "2022-02-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/pytorch-discloses-malicious-dependency-chain-compromise-over-holidays",
+        "publisher": "BleepingComputer",
+        "title": "Analysis by BleepingComputer",
+        "published_at": "2022-02-03"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "supply_chain",
+      "dependency_confusion",
+      "pypi"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2022-0030",
+    "slug": "adversarial-evasion-of-kaspersky-antimalware-neural-networks",
+    "title": "Adversarial Evasion of Kaspersky Antimalware Neural Networks",
+    "summary": "Researchers exploited feature knowledge under a gray-box scenario to successfully evade detection for adversarially modified malware files. The work demonstrated how feature knowledge alone is sufficient for adversarial attacks on security ML models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Kaspersky Antimalware ML"
+    ],
+    "incident_date": "2021-06-23",
+    "incident_date_precision": "day",
+    "first_reported": "2022-02-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0014",
+        "publisher": "MITRE ATLAS",
+        "title": "Confusing Antimalware Neural Networks",
+        "published_at": "2022-02-03"
+      },
+      {
+        "url": "https://securelist.com/how-to-confuse-antimalware-neural-networks-adversarial-attacks-and-protection/102949",
+        "publisher": "Kaspersky Securelist",
+        "title": "Article, \"How to confuse antimalware neural networks. Adversarial attacks and protection\"",
+        "published_at": "2022-02-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection",
+      "gray-box"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2022-0029",
+    "slug": "backdoor-attacks-on-deep-learning-models-in-mobile-apps",
+    "title": "Backdoor Attacks on Deep Learning Models in Mobile Apps",
+    "summary": "Researchers discovered that numerous real-world mobile applications were vulnerable to backdoor attacks through neural payload injection. The empirical study covered critical applications such as face authentication and financial services.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Mobile deep learning apps"
+    ],
+    "incident_date": "2021-01-18",
+    "incident_date_precision": "day",
+    "first_reported": "2022-02-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0013",
+        "publisher": "MITRE ATLAS",
+        "title": "Backdoor Attack on Deep Learning Models in Mobile Apps",
+        "published_at": "2022-02-03"
+      },
+      {
+        "url": "https://arxiv.org/abs/2101.06896",
+        "publisher": "arXiv",
+        "title": "DeepPayload: Black-box Backdoor Attack on Deep Learning Models through Neural Payload Injection",
+        "published_at": "2022-02-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "backdoor",
+      "mobile-apps",
+      "neural-payload-injection"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2022-0004",
@@ -18193,6 +21101,102 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2020-0033",
+    "slug": "botnet-dga-detection-evasion-using-domain-mutation",
+    "title": "Botnet DGA Detection Evasion Using Domain Mutation",
+    "summary": "Researchers bypassed a convolutional neural network-based botnet domain generation algorithm detector using generic domain name mutation techniques. The study tested the robustness of industry machine learning classifiers against adversarial inputs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "DGA detector"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-15",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "publisher": "MITRE ATLAS",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "publisher": "faculty.washington.edu",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://github.com/matthoffman/degas",
+        "publisher": "GitHub",
+        "title": "Degas source code",
+        "published_at": "2020-12-15"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "dga",
+      "botnet"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0032",
+    "slug": "evasion-of-deep-learning-detector-for-malware-c-c-traffic",
+    "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+    "summary": "Researchers crafted adversarial HTTP traffic samples to successfully evade a deep learning model designed for malware command and control detection. The exercise highlighted robustness flaws in AI-based network traffic analysis.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Palo Alto Networks malware detection system"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-15",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "publisher": "MITRE ATLAS",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "published_at": "2020-12-15"
+      },
+      {
+        "url": "https://arxiv.org/abs/1802.03162",
+        "publisher": "arXiv",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "published_at": "2020-12-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "deep-learning",
+      "cnc-traffic"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2020-0020",
     "slug": "meta-internal-ai-agent-expose-sensitive-data-via-advice",
     "title": "Meta Internal AI Agent Expose Sensitive Data via Advice",
@@ -18238,6 +21242,103 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2020-0031",
+    "slug": "bypassing-cylance-ai-malware-detection-via-universal-string",
+    "title": "Bypassing Cylance AI Malware Detection via Universal String",
+    "summary": "Researchers created a universal bypass string appended to malicious files to evade detection by Cylance's AI malware detector. This was a research exercise demonstrating vulnerability in commercial security software.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "CylancePROTECT",
+      "Cylance Smart Antivirus"
+    ],
+    "incident_date": "2019-09-07",
+    "incident_date_precision": "day",
+    "first_reported": "2020-12-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "publisher": "MITRE ATLAS",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "publisher": "skylightcyber.com",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "publisher": "security7.net",
+        "title": "Statements from Skylight Cyber CEO",
+        "published_at": "2020-12-03"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "adversarial-evasion",
+      "malware-detection",
+      "cylance"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0030",
+    "slug": "camera-hijack-and-facial-recognition-evasion-for-tax-fraud",
+    "title": "Camera Hijack and Facial Recognition Evasion for Tax Fraud",
+    "summary": "Perpetrators bypassed a government facial recognition authentication system using camera hijacking to commit major tax fraud. The scheme resulted in significant financial losses totaling 77 million dollars.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Shanghai government tax office facial recognition"
+    ],
+    "incident_date": "2020-01",
+    "incident_date_precision": "month",
+    "first_reported": "2020-12-03",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "publisher": "MITRE ATLAS",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "published_at": "2020-12-03"
+      },
+      {
+        "url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "publisher": "The Wall Street Journal",
+        "title": "Faces are the next target for fraudsters",
+        "published_at": "2020-12-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "facial-recognition",
+      "camera-hijack",
+      "fraud"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2020-0019",
@@ -18381,6 +21482,67 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2020-0029",
+    "slug": "model-extraction-and-adversarial-attacks-on-translation-apis",
+    "title": "Model Extraction and Adversarial Attacks on Translation APIs",
+    "summary": "Researchers replicated commercial machine translation services via public APIs and transferred adversarial inputs to trigger targeted errors. The demonstration proved that black-box models are vulnerable to extraction and evasion.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "Microsoft"
+    ],
+    "products": [
+      "Google Translate",
+      "Bing Translator",
+      "Systran Translate"
+    ],
+    "incident_date": "2020-04-30",
+    "incident_date_precision": "day",
+    "first_reported": "2020-11-18",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "publisher": "MITRE ATLAS",
+        "title": "Attack on Machine Translation Services",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://arxiv.org/abs/2004.15015",
+        "publisher": "arXiv",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://ericswallace.com/imitation",
+        "publisher": "ericswallace.com",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "published_at": "2020-11-18"
+      },
+      {
+        "url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "publisher": "thehill.com",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "published_at": "2020-11-18"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "adversarial-evasion",
+      "translation-api"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "id": "AIR-2020-0016",
     "slug": "suspect-used-chatgpt-to-assess-drug-lethality-before-fatal-p",
     "title": "Suspect Used ChatGPT to Assess Drug Lethality Before Fatal Poisonings",
@@ -18425,6 +21587,360 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:33:31.967Z"
+  },
+  {
+    "id": "AIR-2020-0028",
+    "slug": "microsoft-edge-ai-product-evasion-red-team-exercise",
+    "title": "Microsoft Edge AI Product Evasion Red Team Exercise",
+    "summary": "The Azure Red Team executed an evasion exercise against a Microsoft edge AI product by manipulating target images. The test successfully forced machine learning misclassifications.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Edge AI Product"
+    ],
+    "incident_date": "2020-02",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Edge AI Evasion",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "edge-ai",
+      "adversarial-evasion"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0027",
+    "slug": "microsoft-internal-azure-ai-service-red-team-exercise",
+    "title": "Microsoft Internal Azure AI Service Red Team Exercise",
+    "summary": "Internal Microsoft Azure services underwent a red team assessment involving traditional intrusion techniques and adversarial machine learning evasion. The exercise demonstrated potential ML-specific vulnerabilities within cloud infrastructure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Microsoft",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Azure"
+    ],
+    "incident_date": "2020-01",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "publisher": "MITRE ATLAS",
+        "title": "Microsoft Azure Service Disruption",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "adversarial-ml",
+      "azure"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0026",
+    "slug": "face-identification-system-evasion-via-physical-countermeasu",
+    "title": "Face Identification System Evasion via Physical Countermeasures",
+    "summary": "MITRE's AI Red Team demonstrated a physical-domain evasion attack to induce targeted misclassification in a face identification service. The operation combined adversarial machine learning techniques with API exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Commercial Face Identification Service"
+    ],
+    "incident_date": "2020-01-01",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "publisher": "MITRE ATLAS",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "red-team",
+      "facial-recognition",
+      "evasion"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0025",
+    "slug": "proofpoint-email-protection-evasion-via-surrogate-model",
+    "title": "ProofPoint Email Protection Evasion via Surrogate Model",
+    "summary": "Researchers built a surrogate machine learning model to study and bypass Proofpoint's email protection system. The insights allowed them to craft malicious emails that evaded spam detection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ProofPoint Email Protection"
+    ],
+    "incident_date": "2019-09-09",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0008",
+        "publisher": "MITRE ATLAS",
+        "title": "ProofPoint Evasion",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20634",
+        "publisher": "NVD",
+        "title": "National Vulnerability Database entry for CVE-2019-20634",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+        "publisher": "GitHub",
+        "title": "2019 DerbyCon presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://github.com/moohax/Proof-Pudding",
+        "publisher": "GitHub",
+        "title": "Proof Pudding (CVE-2019-20634) Implementation on GitHub",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://youtube.com/watch?ab-channel=AdrianCrenshaw&v=CsvkYoxtexQ",
+        "publisher": "youtube.com",
+        "title": "2019 DerbyCon video presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "evasion",
+      "adversarial-ml",
+      "email-security"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0024",
+    "slug": "gpt-2-model-replication-by-external-researchers",
+    "title": "GPT-2 Model Replication by External Researchers",
+    "summary": "Researchers successfully replicated OpenAI's GPT-2 language model prior to its full release using publicly available technical information. The event highlighted risks related to tiered release schedules.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "open_weight_model"
+    ],
+    "products": [
+      "GPT-2"
+    ],
+    "incident_date": "2019-08-22",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0007",
+        "publisher": "MITRE ATLAS",
+        "title": "GPT-2 Model Replication",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://wired.com/story/dangerous-ai-open-source",
+        "publisher": "Wired",
+        "title": "Wired Article, \"OpenAI Said Its Code Was Risky. Two Grads Re-Created It Anyway\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://blog.usejournal.com/opengpt-2-we-replicated-gpt-2-because-you-can-too-45e34e6d36dc",
+        "publisher": "blog.usejournal.com",
+        "title": "Medium BlogPost, \"OpenGPT-2: We Replicated GPT-2 Because You Can Too\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-extraction",
+      "replication",
+      "gpt-2"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0023",
+    "slug": "clearview-ai-repository-misconfiguration-data-leak",
+    "title": "Clearview AI Repository Misconfiguration Data Leak",
+    "summary": "A misconfigured source code repository allowed unauthorized access to Clearview AI production credentials and cloud storage buckets. The breach exposed training video samples and application copies.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Clearview AI facial recognition"
+    ],
+    "incident_date": "2020-04",
+    "incident_date_precision": "month",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "publisher": "MITRE ATLAS",
+        "title": "ClearviewAI Misconfiguration",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "publisher": "TechCrunch",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "publisher": "gizmodo.com",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "publisher": "The New York Times",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "misconfiguration",
+      "credentials-leak",
+      "facial-recognition"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "id": "AIR-2020-0022",
+    "slug": "microsoft-tay-chatbot-data-poisoning-incident",
+    "title": "Microsoft Tay Chatbot Data Poisoning Incident",
+    "summary": "Microsoft's Twitter chatbot Tay was manipulated by coordinated user inputs to generate offensive language. The bot was decommissioned within 24 hours of its launch following the incident.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Tay"
+    ],
+    "incident_date": "2016-03-23",
+    "incident_date_precision": "day",
+    "first_reported": "2020-10-23",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0009",
+        "publisher": "MITRE ATLAS",
+        "title": "Tay Poisoning",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://incidentdatabase.ai/cite/6",
+        "publisher": "AI Incident Database",
+        "title": "AIID - Incident 6: TayBot",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://avidml.org/database/avid-2022-v013",
+        "publisher": "AVID",
+        "title": "AVID - Vulnerability: AVID-2022-v013",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction",
+        "publisher": "Microsoft Security",
+        "title": "Microsoft BlogPost, \"Learning from Tay's introduction\"",
+        "published_at": "2020-10-23"
+      },
+      {
+        "url": "https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/in-2016-microsofts-racist-chatbot-revealed-the-dangers-of-online-conversation",
+        "publisher": "spectrum.ieee.org",
+        "title": "IEEE Article, \"In 2016, Microsoft's Racist Chatbot Revealed the Dangers of Online Conversation\"",
+        "published_at": "2020-10-23"
+      }
+    ],
+    "source_count": 5,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "chatbot",
+      "data-poisoning",
+      "twitter"
+    ],
+    "created_at": "2026-10-18T06:55:08.239Z",
+    "updated_at": "2026-10-18T06:55:08.239Z"
   },
   {
     "id": "AIR-2020-0015",

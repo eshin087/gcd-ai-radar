@@ -244,5 +244,42 @@
       }
     },
     "errors": []
+  },
+  {
+    "id": "run-20261018T065507",
+    "started_at": "2026-10-18T06:55:07.656Z",
+    "finished_at": "2026-10-18T06:56:10.034Z",
+    "mode": "backfill",
+    "sources": [
+      {
+        "id": "atlas",
+        "ok": true,
+        "items": 73,
+        "duration_ms": 417
+      }
+    ],
+    "counts": {
+      "fetched": 73,
+      "prefiltered": 72,
+      "merged": 0,
+      "classified": 71,
+      "published": 68,
+      "review": 0,
+      "rejected": 3,
+      "pending": 0
+    },
+    "llm": {
+      "calls": 15,
+      "prompt_tokens": 36978,
+      "completion_tokens": 18572,
+      "by_model": {
+        "gemini-lite/gemini-3.5-flash-lite": {
+          "calls": 15,
+          "prompt_tokens": 36978,
+          "completion_tokens": 18572
+        }
+      }
+    },
+    "errors": []
   }
 ]

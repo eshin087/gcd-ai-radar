@@ -1,5 +1,35 @@
 [
   {
+    "key": "d42b120b1a559e66",
+    "title": "VirusTotal Poisoning",
+    "url": "https://atlas.mitre.org/studies/AML.CS0002",
+    "publisher": "MITRE ATLAS",
+    "source_id": "atlas",
+    "reason": "out of scope: Malware submission pattern on a virus sharing platform is a general security incident without a meaningful AI component or target.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "key": "86b0804078ee285a",
+    "title": "Arbitrary Code Execution with Google Colab",
+    "url": "https://atlas.mitre.org/studies/AML.CS0018",
+    "publisher": "MITRE ATLAS",
+    "source_id": "atlas",
+    "reason": "out of scope: Standard notebook sharing risks in Google Colab without a specific AI model compromise or AI-enabled attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
+    "key": "ce49f08b01005c08",
+    "title": "Bypassing ID.me Identity Verification",
+    "url": "https://atlas.mitre.org/studies/AML.CS0017",
+    "publisher": "MITRE ATLAS",
+    "source_id": "atlas",
+    "reason": "out of scope: Bypassing biometric identity verification using physical disguises and stolen documents does not involve an AI model or AI-enabled attack being the core security incident vector.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T06:55:08.239Z"
+  },
+  {
     "key": "1384b1b573254ba3",
     "title": "Buenos Aires Government Reportedly Used Children's Personal Data in Facial Recognition System for Fugitives",
     "url": "https://incidentdatabase.ai/cite/76",
