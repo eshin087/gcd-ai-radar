@@ -16,7 +16,9 @@ feeds + APIs ──▶ collector (GitHub Actions, every 6 h) ──▶ /data/*.j
                  fetch → pre-filter → dedupe → LLM classify → publish/review/reject → commit
 ```
 
-- All data lives as JSON in [`/data`](data). Every commit to `main` redeploys the site.
+- All data lives as JSON in [`/data`](data), the published records sharded by year of first
+  report (`data/incidents/<year>.json`), so a collector run rewrites one small file. Every
+  commit to `main` redeploys the site.
 - The collector (`/collector`, TypeScript) classifies candidates with free-tier LLMs
   (Gemini first, Groq as fallback). Anything that cannot be classified waits in
   `data/pending.json`; nothing is dropped and nothing is published unclassified.
@@ -49,6 +51,7 @@ npm run collect                # fetch, classify, publish, commit
 npm run backfill -- aiid       # one-time seeds: aiid | atlas | avid | nvd | ghsa
 npm run review                 # walk through data/review-queue.json
 npm run validate               # Zod-validate every file under /data
+npx tsx scripts/shard-incidents.ts   # rebuild data/incidents/<year>.json from a pre-shard data/incidents.json
 ```
 
 ## Secrets and variables (GitHub Actions)

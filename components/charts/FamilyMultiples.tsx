@@ -21,12 +21,19 @@ function niceMax(v: number): number {
  */
 export function FamilyMultiples({
   data,
+  totals,
   theme,
   onFamily,
   onMonth,
   windowTotal,
 }: {
   data: FamilyPoint[];
+  /**
+   * Each family's count in the window. A year-only incident date is in the
+   * window but in no month, so the total can exceed the sum of the columns;
+   * without it the columns are summed.
+   */
+  totals?: Record<Family, number>;
   theme: ChartTheme;
   onFamily?: (f: Family) => void;
   onMonth?: (month: string, f: Family) => void;
@@ -34,11 +41,11 @@ export function FamilyMultiples({
   windowTotal: number;
 }) {
   const n = data.length;
-  const families = FAMILIES.filter((f) => f !== "other" || data.some((p) => p.values.other > 0));
+  const families = FAMILIES.filter((f) => f !== "other" || (totals?.other ?? 0) > 0 || data.some((p) => p.values.other > 0));
   return (
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
       {families.map((f) => (
-        <FamilyCard key={f} f={f} data={data} n={n} theme={theme} onFamily={onFamily} onMonth={onMonth} windowTotal={windowTotal} />
+        <FamilyCard key={f} f={f} data={data} total={totals?.[f]} n={n} theme={theme} onFamily={onFamily} onMonth={onMonth} windowTotal={windowTotal} />
       ))}
     </div>
   );
@@ -47,6 +54,7 @@ export function FamilyMultiples({
 function FamilyCard({
   f,
   data,
+  total: windowCount,
   n,
   theme,
   onFamily,
@@ -55,6 +63,7 @@ function FamilyCard({
 }: {
   f: Family;
   data: FamilyPoint[];
+  total?: number;
   n: number;
   theme: ChartTheme;
   onFamily?: (f: Family) => void;
@@ -63,7 +72,7 @@ function FamilyCard({
 }) {
   const [hover, setHover] = useState<number | null>(null);
   const vals = data.map((p) => p.values[f]);
-  const total = vals.reduce((a, b) => a + b, 0);
+  const total = windowCount ?? vals.reduce((a, b) => a + b, 0);
   const top = niceMax(Math.max(1, ...vals));
   const peakAt = vals.indexOf(Math.max(...vals));
   const share = windowTotal > 0 ? (total / windowTotal) * 100 : 0;

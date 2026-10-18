@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { productFamily } from "../lib/products";
 
-/** Product names as filed in data/incidents.json, by the family they should show under. */
+/** Product names as filed in the dataset (data/incidents/<year>.json), by the family they should show under. */
 const FAMILIES: Record<string, string[]> = {
   Langflow: ["Langflow", "Langflow OSS", "IBM Langflow OSS", "langflow", "IBM Langflow Desktop", "Langflow Desktop"],
   "Open WebUI": ["Open WebUI", "open-webui"],

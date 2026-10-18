@@ -30,10 +30,11 @@ export default async function DataPage() {
     { href: "/data/incidents.json", label: "incidents.json", blurb: "Every published record, incidents and disclosed CVEs, with all fields and every source." },
     { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array, with a disclosed flag; what the incidents page uses." },
     { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per record for spreadsheets, with a record_kind column; list fields are semicolon-separated." },
+    { href: "/data/years/index.json", label: "years/<year>.json", blurb: "The full records of one year of first report, one file per year; index.json lists the years and their counts." },
     { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time and licence." },
     { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
   ];
-  const sized = await Promise.all(files.map(async (f) => ({ ...f, size: await sizeOf(f.href) })));
+  const sized = await Promise.all(files.map(async (f) => ({ ...f, size: f.label.includes("<year>") ? null : await sizeOf(f.href) })));
 
   return (
     <div className="max-w-4xl space-y-8 text-[15px] leading-relaxed text-soft">
@@ -63,7 +64,7 @@ export default async function DataPage() {
           ))}
         </ul>
         <p className="mt-2 text-[12px] text-dim">
-          Per-incident JSON is at <span className="num">/data/incidents/&lt;slug&gt;.json</span>; the canonical URL of a record is{" "}
+          The dataset is stored by year in the repository (<span className="num">data/incidents/&lt;year&gt;.json</span>), and the per-year downloads mirror those files. Per-incident JSON is at <span className="num">/data/incidents/&lt;slug&gt;.json</span>; the canonical URL of a record is{" "}
           <span className="num">{base}/incidents/&lt;slug&gt;</span>. Field definitions are on the{" "}
           <Link href="/methodology" className="link">methodology page</Link>; the schema is <span className="num">lib/schema.ts</span> in the repository.
         </p>

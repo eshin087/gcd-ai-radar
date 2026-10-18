@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IncidentExplorer } from "@/components/incidents/IncidentExplorer";
 import { isDisclosedIncident } from "@/lib/counting";
 import { loadIncidents } from "@/lib/data";
+import { explorerFacets } from "@/lib/explorer";
 
 export const metadata: Metadata = {
   title: "Incidents",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default async function IncidentsPage() {
   const { incidents } = await loadIncidents();
   const disclosed = incidents.filter(isDisclosedIncident).length;
+  const facets = explorerFacets(incidents);
   return (
     <div className="space-y-5">
       <header className="flex flex-wrap items-end justify-between gap-3">
@@ -25,7 +27,7 @@ export default async function IncidentsPage() {
           download csv →
         </a>
       </header>
-      <IncidentExplorer />
+      <IncidentExplorer facets={facets} />
     </div>
   );
 }

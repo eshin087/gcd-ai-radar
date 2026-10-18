@@ -1,6 +1,7 @@
-import { readFileSync } from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { IncidentSchema, IncidentsFileSchema } from "@/lib/schema";
+import { IncidentSchema } from "@/lib/schema";
+import { readIncidents } from "@/lib/shards";
 
 const valid = {
   id: "AIR-2026-0042",
@@ -51,9 +52,9 @@ describe("IncidentSchema", () => {
 });
 
 describe("data files", () => {
-  it("live incidents file validates and has unique ids and slugs", () => {
-    const raw = JSON.parse(readFileSync(new URL("../data/incidents.json", import.meta.url), "utf8"));
-    const parsed = IncidentsFileSchema.parse(raw);
+  it("live incident shards validate and have unique ids and slugs", async () => {
+    const { incidents: parsed, layout } = await readIncidents(path.join(process.cwd(), "data"));
+    expect(layout).not.toBe("empty");
     expect(new Set(parsed.map((i) => i.id)).size).toBe(parsed.length);
     expect(new Set(parsed.map((i) => i.slug)).size).toBe(parsed.length);
   });

@@ -1,50 +1,65 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
+import { createShardStore } from "@/components/useShards";
+import { EMPTY_FILTERS, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
 import { approxDateLabel } from "@/lib/format";
 import { productFamily } from "@/lib/products";
+import { hitIds, hitYears, matchesTerms, queryTerms, searchIndex, searchableText, tokenize, type SearchIndex } from "@/lib/search";
 import type { SlimIncident } from "@/lib/slim";
 import { CATEGORIES, CATEGORY_META, INCIDENT_TYPES, ORIGIN_META, ORIGINS, SEVERITIES, SEVERITY_META, TARGETS, TARGET_META, TYPE_META } from "@/lib/taxonomy";
 
 /**
- * Client-side explorer over /data/incidents.min.json. Filters live in the URL
- * query string so any view can be linked to. No libraries: plain substring
- * search over title, summary and products.
+ * Client-side explorer over the year shards of slim records
+ * (/data/slim/<year>.json). The current year loads first; older years load
+ * when the filters, the sort or the list's length need them (lib/explorer.ts
+ * yearsNeeded). Search uses the prebuilt token index (/data/search-index.json)
+ * over id, title and products, so it never needs the whole dataset. Filters
+ * live in the URL query string so any view can be linked to.
  */
 
-interface Filters {
-  q: string;
-  type: string;
-  category: string;
-  severity: string;
-  target: string;
-  year: string;
-  /** YYYY-MM, set by dashboard drill-downs. */
-  month: string;
-  /** Inclusive YYYY-MM range, set by dashboard drill-downs (trailing 12 months, year to date). */
-  from: string;
-  to: string;
-  publisher: string;
-  origin: string;
-  /** "1" = real-world only (severity 3-4), set by dashboard drill-downs. */
-  real: string;
-  /** "reported" dates by first report instead of incident date for month/year filters. */
-  by: string;
-  /** Family of the first product named (lib/products.ts), set by the dashboard's disclosed-vulnerability breakdown. */
-  product: string;
-  /** Record kind: "" incidents (default), "disclosed" disclosed vulnerabilities only, "all" both. */
-  kind: string;
-  sort: "reported" | "incident" | "severity";
-}
-
-const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", sort: "reported" };
+type Filters = ExplorerFilters;
+const EMPTY = EMPTY_FILTERS;
 const PAGE = 50;
 
-function readFilters(): Filters {
-  if (typeof window === "undefined") return EMPTY;
-  const p = new URLSearchParams(window.location.search);
+const slimShards = createShardStore<SlimIncident>((year) => `/data/slim/${year}.json`);
+
+let indexPromise: Promise<SearchIndex> | null = null;
+function loadSearchIndex(): Promise<SearchIndex> {
+  if (!indexPromise) {
+    indexPromise = fetch("/data/search-index.json")
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .catch((e: Error) => {
+        indexPromise = null;
+        throw e;
+      });
+  }
+  return indexPromise;
+}
+
+/**
+ * The URL query string is the explorer's state store: filters are parsed
+ * from it on every change and written back with replaceState, so a view is a
+ * link. useSyncExternalStore reads it (empty on the server and during
+ * hydration, then the real query), and writeFilters notifies the subscribers.
+ */
+const urlListeners = new Set<() => void>();
+function subscribeUrl(cb: () => void) {
+  urlListeners.add(cb);
+  window.addEventListener("popstate", cb);
+  return () => {
+    urlListeners.delete(cb);
+    window.removeEventListener("popstate", cb);
+  };
+}
+const getSearch = () => window.location.search;
+const getServerSearch = () => "";
+const noop = () => () => {};
+
+function parseFilters(search: string): Filters {
+  const p = new URLSearchParams(search);
   const sort = p.get("sort");
   return {
     ...EMPTY,
@@ -73,6 +88,7 @@ function writeFilters(f: Filters) {
   for (const [k, v] of Object.entries(f)) if (v && !(k === "sort" && v === "reported")) p.set(k, v);
   const qs = p.toString();
   window.history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
+  for (const cb of urlListeners) cb();
 }
 
 function Select({ label, value, onChange, children }: { label: string; value: string; onChange: (v: string) => void; children: React.ReactNode }) {
@@ -90,52 +106,47 @@ function Select({ label, value, onChange, children }: { label: string; value: st
   );
 }
 
-export function IncidentExplorer() {
-  const [all, setAll] = useState<SlimIncident[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [filters, setFilters] = useState<Filters>(EMPTY);
+export function IncidentExplorer({ facets }: { facets: ExplorerFacets }) {
+  // Filters come from the URL; nothing loads until hydration has read it, so a linked view fetches only its own years.
+  const search = useSyncExternalStore(subscribeUrl, getSearch, getServerSearch);
+  const ready = useSyncExternalStore(noop, () => true, () => false);
+  const filters = useMemo(() => parseFilters(search), [search]);
   const [shown, setShown] = useState(PAGE);
+  const [index, setIndex] = useState<SearchIndex | null>(null);
+  const [indexError, setIndexError] = useState<string | null>(null);
 
+  // The search index is fetched the first time a query is set (or linked to).
+  const wantIndex = filters.q.trim().length > 0;
   useEffect(() => {
+    if (!wantIndex || index) return;
     let cancelled = false;
-    fetch("/data/incidents.min.json")
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((rows: SlimIncident[]) => {
-        if (cancelled) return;
-        // Apply the URL's filters once the data is here, so the first render is already the linked view.
-        setFilters(readFilters());
-        setAll(rows);
+    loadSearchIndex()
+      .then((i) => {
+        if (!cancelled) setIndex(i);
       })
       .catch((e: Error) => {
-        if (!cancelled) setError(e.message);
+        if (!cancelled) setIndexError(e.message);
       });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [wantIndex, index]);
+
+  const hits = useMemo(() => (index && filters.q.trim() ? searchIndex(index, filters.q) : null), [index, filters.q]);
+  const hitIdSet = useMemo(() => (index && hits ? hitIds(index, hits) : null), [index, hits]);
+  const searchYears = useMemo(() => (index && hits ? hitYears(index, hits) : null), [index, hits]);
+
+  const needed = useMemo(() => (ready ? yearsNeeded(filters, facets, searchYears, shown) : { years: [], reason: "newest" as const }), [ready, filters, facets, searchYears, shown]);
+  const shards = slimShards.useShards(needed.years);
+  const all = shards.partial;
 
   const update = (patch: Partial<Filters>) => {
-    const next = { ...filters, ...patch };
-    setFilters(next);
+    writeFilters({ ...filters, ...patch });
     setShown(PAGE);
-    writeFilters(next);
   };
 
-  const years = useMemo(() => {
-    const set = new Set<string>();
-    for (const i of all ?? []) set.add(i.first_reported.slice(0, 4));
-    return [...set].sort().reverse();
-  }, [all]);
-
-  const publishers = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const i of all ?? []) for (const p of i.publishers) counts.set(p, (counts.get(p) ?? 0) + 1);
-    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 60);
-  }, [all]);
-
   const results = useMemo(() => {
-    if (!all) return [];
-    const q = filters.q.trim().toLowerCase();
+    const terms = queryTerms(filters.q);
     const dateOf = (i: SlimIncident) => (filters.by === "reported" ? i.first_reported : i.incident_date.length === 4 ? `${i.incident_date}-07` : i.incident_date);
     const rows = all.filter((i) => {
       if (filters.kind === "" && i.disclosed) return false;
@@ -152,9 +163,10 @@ export function IncidentExplorer() {
       if (filters.publisher && !i.publishers.includes(filters.publisher)) return false;
       if (filters.origin && i.origin !== filters.origin) return false;
       if (filters.product && productFamily(i.products[0] ?? "") !== filters.product) return false;
-      if (q) {
-        const hay = `${i.title} ${i.summary} ${i.products.join(" ")} ${i.id}`.toLowerCase();
-        if (!q.split(/\s+/).every((term) => hay.includes(term))) return false;
+      if (terms.length) {
+        // The index decides once it is here; until then the same token test runs on the rows already loaded.
+        if (hitIdSet) return hitIdSet.has(i.id);
+        if (!matchesTerms(tokenize(searchableText(i)), terms)) return false;
       }
       return true;
     });
@@ -164,11 +176,15 @@ export function IncidentExplorer() {
       return b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id);
     });
     return rows;
-  }, [all, filters]);
+  }, [all, filters, hitIdSet]);
 
-  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by" && k !== "kind").length;
-  const inKind = all ? all.filter((i) => (filters.kind === "all" ? true : filters.kind === "disclosed" ? i.disclosed : !i.disclosed)).length : 0;
+  const complete = ready && shards.missing.length === 0 && needed.reason !== "index";
+  const inKind = totalOfKind(facets, filters.kind);
   const kindNoun = filters.kind === "disclosed" ? "disclosed vulnerabilities" : filters.kind === "all" ? "records" : "incidents";
+  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by" && k !== "kind").length;
+  /** The default list is the newest years only; older ones arrive as the list grows. */
+  const newestOnly = needed.reason === "newest" && needed.years.length < facets.years.length;
+  const canGrow = results.length > shown || (newestOnly && complete);
   const chips: { key: keyof Filters; label: string }[] = [
     ...(filters.month ? [{ key: "month" as const, label: `month: ${filters.month}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
     ...(filters.from ? [{ key: "from" as const, label: `from: ${filters.from}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
@@ -176,6 +192,24 @@ export function IncidentExplorer() {
     ...(filters.real === "1" ? [{ key: "real" as const, label: "real-world only (severity 3–4)" }] : []),
     ...(filters.product ? [{ key: "product" as const, label: `product: ${filters.product}` }] : []),
   ];
+
+  let status: React.ReactNode;
+  if (shards.error) status = <span className="text-sev-4">could not load the dataset: {shards.error}</span>;
+  else if (indexError) status = <span className="text-sev-4">could not load the search index: {indexError}</span>;
+  else if (!ready || (!complete && results.length === 0)) status = needed.reason === "index" ? "loading the search index…" : "loading…";
+  else if (newestOnly && active === 0)
+    status = (
+      <>
+        {inKind.toLocaleString("en-US")} {kindNoun} · newest first
+      </>
+    );
+  else
+    status = (
+      <>
+        {results.length.toLocaleString("en-US")} of {inKind.toLocaleString("en-US")} {kindNoun}
+        {!complete && <span className="text-faint"> · loading {needed.reason === "index" ? "the search index" : "older years"}…</span>}
+      </>
+    );
 
   return (
     <div className="space-y-5">
@@ -186,7 +220,10 @@ export function IncidentExplorer() {
             type="search"
             value={filters.q}
             onChange={(e) => update({ q: e.target.value })}
-            placeholder="title, summary, product, id"
+            onFocus={() => {
+              if (!index) loadSearchIndex().then(setIndex).catch(() => undefined);
+            }}
+            placeholder="title, product, id"
             className="h-9 rounded-[3px] border border-line bg-panel px-2 text-[13.5px] text-ink placeholder:text-faint focus:border-accent focus:outline-none"
           />
         </label>
@@ -224,15 +261,15 @@ export function IncidentExplorer() {
         </Select>
         <Select label="year" value={filters.year} onChange={(v) => update({ year: v })}>
           <option value="">all</option>
-          {years.map((y) => (
-            <option key={y} value={y}>
-              {y}
+          {facets.years.map((y) => (
+            <option key={y.year} value={String(y.year)}>
+              {y.year}
             </option>
           ))}
         </Select>
         <Select label="source" value={filters.publisher} onChange={(v) => update({ publisher: v })}>
           <option value="">all</option>
-          {publishers.map(([p, n]) => (
+          {facets.publishers.map(([p, n]) => (
             <option key={p} value={p}>
               {p} ({n})
             </option>
@@ -254,25 +291,18 @@ export function IncidentExplorer() {
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3 text-[13px] text-dim">
-        <div className="num">
-          {all ? (
-            <>
-              {results.length.toLocaleString("en-US")} of {inKind.toLocaleString("en-US")} {kindNoun}
-              {chips.map((c) => (
-                <button key={c.key} type="button" onClick={() => update({ [c.key]: "" } as Partial<Filters>)} className="ml-3 inline-flex items-center gap-1 rounded-[3px] border border-accent/40 bg-accent-tint px-1.5 py-0.5 font-mono text-[11px] text-accent" title="remove this filter">
-                  {c.label} ×
-                </button>
-              ))}
-              {active > 0 && (
-                <button type="button" onClick={() => update({ ...EMPTY })} className="ml-3 link">
-                  clear filters
-                </button>
-              )}
-            </>
-          ) : error ? (
-            <span className="text-sev-4">could not load the dataset: {error}</span>
-          ) : (
-            "loading…"
+        <div className="num" aria-live="polite">
+          {status}
+          {ready &&
+            chips.map((c) => (
+              <button key={c.key} type="button" onClick={() => update({ [c.key]: "" } as Partial<Filters>)} className="ml-3 inline-flex items-center gap-1 rounded-[3px] border border-accent/40 bg-accent-tint px-1.5 py-0.5 font-mono text-[11px] text-accent" title="remove this filter">
+                {c.label} ×
+              </button>
+            ))}
+          {ready && active > 0 && (
+            <button type="button" onClick={() => update({ ...EMPTY })} className="ml-3 link">
+              clear filters
+            </button>
           )}
         </div>
         <label className="flex items-center gap-2">
@@ -326,14 +356,14 @@ export function IncidentExplorer() {
         ))}
       </ol>
 
-      {results.length > shown && (
+      {canGrow && (
         <div className="text-center">
           <button type="button" onClick={() => setShown(shown + PAGE)} className="label border border-line rounded-[3px] px-3 py-2 hover:text-ink">
-            show {Math.min(PAGE, results.length - shown)} more
+            {results.length > shown ? `show ${Math.min(PAGE, results.length - shown)} more` : "load older years"}
           </button>
         </div>
       )}
-      {all && results.length === 0 && <p className="text-[13px] text-dim">No incidents match these filters.</p>}
+      {complete && results.length === 0 && <p className="text-[13px] text-dim">No {kindNoun} match these filters.</p>}
     </div>
   );
 }
