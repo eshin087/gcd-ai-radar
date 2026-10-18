@@ -1,1 +1,55 @@
-null
+{
+  "fetched_at": "2026-10-18T07:06:03.596Z",
+  "range": "7d",
+  "bot_share": {
+    "value": 39.3,
+    "previous": 39.51
+  },
+  "ai_crawler_share_of_bots": 17.58,
+  "derived_ai_share_of_requests": 6.91,
+  "top_ai_bots": [
+    {
+      "name": "Googlebot",
+      "share": 23.55
+    },
+    {
+      "name": "ClaudeBot",
+      "share": 13.32
+    },
+    {
+      "name": "Meta-ExternalAgent",
+      "share": 8.29
+    },
+    {
+      "name": "Bingbot",
+      "share": 7.83
+    }
+  ],
+  "crawl_purpose": [
+    {
+      "name": "Training",
+      "share": 42.28
+    },
+    {
+      "name": "Mixed Purpose",
+      "share": 39.17
+    },
+    {
+      "name": "Search",
+      "share": 12.26
+    },
+    {
+      "name": "User Action",
+      "share": 4.67
+    },
+    {
+      "name": "Undeclared",
+      "share": 1.63
+    }
+  ],
+  "attribution": {
+    "source": "Cloudflare Radar",
+    "url": "https://radar.cloudflare.com/ai-insights",
+    "license": "CC BY-NC 4.0"
+  }
+}
