@@ -127,7 +127,7 @@ export function IncidentExplorer() {
     const dateOf = (i: SlimIncident) => (filters.by === "reported" ? i.first_reported : i.incident_date.length === 4 ? `${i.incident_date}-07` : i.incident_date);
     const rows = all.filter((i) => {
       if (filters.type && i.type !== filters.type) return false;
-      if (filters.category && !i.categories.includes(filters.category as SlimIncident["categories"][number])) return false;
+      if (filters.category && !filters.category.split(",").some((c) => i.categories.includes(c as SlimIncident["categories"][number]))) return false;
       if (filters.severity && String(i.severity) !== filters.severity) return false;
       if (filters.real === "1" && i.severity < 3) return false;
       if (filters.target && !i.targets.includes(filters.target as SlimIncident["targets"][number])) return false;

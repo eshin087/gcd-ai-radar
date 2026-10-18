@@ -1,0 +1,255 @@
+/*
+ * Design-lab themes. Each draft root redefines the Tailwind color variables,
+ * so every existing component (drill-down report, badges, lists) re-skins
+ * without a fork. Category chips map to the 7 validated family colors.
+ */
+
+.lab-root {
+  min-height: 100dvh;
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.lab-amber,
+.lab-observatory {
+  --sev-1: #5f482e;
+  --sev-2: #a06f30;
+  --sev-3: #e29936;
+  --sev-4: #ffc858;
+  --type-attack_on_ai: #c48225;
+  --type-ai_enabled_attack: #32a0c5;
+  --cat-prompt_injection: #b48500;
+  --cat-jailbreak: #b48500;
+  --cat-infra_vuln: #3a97cf;
+  --cat-data_leak: #cd639e;
+  --cat-model_theft_extraction: #cd639e;
+  --cat-agent_hijack: #779d24;
+  --cat-supply_chain: #887ede;
+  --cat-data_poisoning: #887ede;
+  --cat-adversarial_evasion: #887ede;
+  --cat-deepfake_fraud: #d86844;
+  --cat-ai_phishing_social_engineering: #d86844;
+  --cat-ai_generated_malware: #00a697;
+  --cat-ai_assisted_intrusion: #00a697;
+  --cat-other: #5b6478;
+}
+
+.lab-observatory {
+  --color-ground: #05070d;
+  --color-panel: #0a0e19;
+  --color-panel-2: #0e1322;
+}
+
+/* ---------- Phosphor (green CRT) ---------- */
+.lab-phosphor {
+  --color-ground: #030a06;
+  --color-panel: #06120b;
+  --color-panel-2: #0a1a10;
+  --color-line: rgba(86, 244, 135, 0.3);
+  --color-line-soft: rgba(86, 244, 135, 0.12);
+  --color-ink: #8dfdb0;
+  --color-soft: #6fe598;
+  --color-dim: #3fa865;
+  --color-faint: #2a6640;
+  --color-accent: #ffb35c;
+  --color-accent-tint: rgba(255, 179, 92, 0.12);
+  --color-sev-3: #ffb35c;
+  --color-type-by: #9a76d4;
+  --font-sans: var(--font-plex-mono), ui-monospace, monospace;
+  --sev-1: #295233;
+  --sev-2: #3b834e;
+  --sev-3: #43b966;
+  --sev-4: #56f487;
+  --type-attack_on_ai: #36a558;
+  --type-ai_enabled_attack: #9a76d4;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+.lab-phosphor {
+  --cat-prompt_injection: #43b966;
+  --cat-jailbreak: #43b966;
+  --cat-infra_vuln: #43b966;
+  --cat-data_leak: #43b966;
+  --cat-model_theft_extraction: #43b966;
+  --cat-agent_hijack: #43b966;
+  --cat-supply_chain: #43b966;
+  --cat-data_poisoning: #43b966;
+  --cat-adversarial_evasion: #43b966;
+  --cat-deepfake_fraud: #43b966;
+  --cat-ai_phishing_social_engineering: #43b966;
+  --cat-ai_generated_malware: #43b966;
+  --cat-ai_assisted_intrusion: #43b966;
+  --cat-other: #2a6640;
+}
+.lab-phosphor ::selection {
+  background: rgba(86, 244, 135, 0.3);
+}
+.phosphor-glow {
+  text-shadow: 0 0 6px color-mix(in oklab, currentColor 45%, transparent);
+}
+.crt::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 70;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+}
+.crt::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 71;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.55) 100%);
+}
+.tty {
+  position: relative;
+  border: 1px solid var(--color-line);
+  padding: 1.25rem 1rem 1rem;
+}
+.tty-title {
+  position: absolute;
+  top: -0.72em;
+  left: 0.75rem;
+  padding: 0 0.4rem;
+  background: var(--color-ground);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-soft);
+  white-space: nowrap;
+  max-width: calc(100% - 1.5rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cursor::after {
+  content: "█";
+  margin-left: 2px;
+  color: var(--color-accent);
+  animation: lab-blink 1.06s steps(1) infinite;
+}
+[data-typing] .cursor::after {
+  animation: none;
+}
+@keyframes lab-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Shared motion ---------- */
+.reveal {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.8s ease;
+}
+.reveal[data-armed="1"]:not([data-in]) {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+}
+.lab-grow {
+  transform-origin: left;
+  animation: lab-grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes lab-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-accent) 60%, transparent);
+  animation: lab-pulse 1.8s infinite;
+}
+@keyframes lab-pulse {
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.ticker {
+  display: flex;
+  width: max-content;
+  animation: lab-ticker 90s linear infinite;
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+@keyframes lab-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.scroll-cue {
+  animation: lab-bob 2.2s ease-in-out infinite;
+}
+@keyframes lab-bob {
+  50% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+}
+.glass {
+  background: color-mix(in oklab, var(--color-panel) 72%, transparent);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.bracket::before {
+  content: "[ ";
+  color: var(--color-faint);
+}
+.bracket::after {
+  content: " ]";
+  color: var(--color-faint);
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dim);
+}
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-line-soft);
+}
+.stars {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(226, 232, 245, 0.35), transparent 60%),
+    radial-gradient(1px 1px at 72% 34%, rgba(226, 232, 245, 0.25), transparent 60%),
+    radial-gradient(1px 1px at 38% 76%, rgba(226, 232, 245, 0.2), transparent 60%),
+    radial-gradient(1px 1px at 88% 82%, rgba(226, 232, 245, 0.25), transparent 60%),
+    radial-gradient(1px 1px at 56% 8%, rgba(226, 232, 245, 0.3), transparent 60%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-armed="1"]:not([data-in]) {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .lab-grow,
+  .ticker,
+  .scroll-cue,
+  .live-dot,
+  .cursor::after {
+    animation: none !important;
+  }
+}

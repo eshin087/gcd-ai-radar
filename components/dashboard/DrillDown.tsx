@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
 import type { CompactRow } from "@/lib/dashboard";
+import { FAMILY_META, type Family } from "@/lib/families";
 import { approxDateLabel, monthLabel } from "@/lib/format";
 import type { SlimIncident } from "@/lib/slim";
 import type { DateField } from "@/lib/stats";
@@ -14,6 +15,8 @@ export type Selection =
   | { kind: "month"; month: string }
   | { kind: "month-category"; month: string; category: Category }
   | { kind: "month-type"; month: string; type: IncidentType }
+  | { kind: "month-family"; month: string; family: Family }
+  | { kind: "family"; family: Family }
   | { kind: "target"; target: Target }
   | { kind: "severity"; severity: Severity }
   | { kind: "category"; category: Category };
@@ -26,6 +29,10 @@ export function selectionLabel(sel: Selection): string {
       return `${CATEGORY_META[sel.category].label} · ${monthLabel(sel.month, true)}`;
     case "month-type":
       return `${TYPE_META[sel.type].label} · ${monthLabel(sel.month, true)}`;
+    case "month-family":
+      return `${FAMILY_META[sel.family].label} · ${monthLabel(sel.month, true)}`;
+    case "family":
+      return FAMILY_META[sel.family].label;
     case "target":
       return `Target: ${TARGET_META[sel.target].label}`;
     case "severity":
@@ -51,6 +58,13 @@ export function selectionQuery(sel: Selection, basis: "all" | "real", field: Dat
     case "month-type":
       p.set("month", sel.month);
       p.set("type", sel.type);
+      break;
+    case "month-family":
+      p.set("month", sel.month);
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      break;
+    case "family":
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
       break;
     case "target":
       p.set("target", sel.target);
