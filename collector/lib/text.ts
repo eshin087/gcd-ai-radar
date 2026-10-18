@@ -170,8 +170,8 @@ export function stripHtml(s: string): string {
   return decodeEntities(
     s
       .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
-      .replace(/<script[^>]*>[\s\S]*?<\/script\s*>/gi, " ")
-      .replace(/<style[^>]*>[\s\S]*?<\/style\s*>/gi, " ")
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ")
       .replace(/<[^>]+>/g, " "),
   )
     .replace(/\s+/g, " ")
