@@ -44,9 +44,14 @@ export type SourceConfig = z.infer<typeof SourceConfigSchema>;
 
 const ProviderSchema = z.object({
   id: z.string(),
-  kind: z.enum(["gemini", "groq"]),
+  /** openai_compatible covers OpenRouter, Cloudflare Workers AI, Ollama, vLLM and any /v1/chat/completions endpoint. */
+  kind: z.enum(["gemini", "groq", "openai_compatible"]),
   model: z.string(),
   env: z.string(),
+  /** openai_compatible only: API base ending in /v1 (default https://api.openai.com/v1). */
+  base_url: z.string().url().optional(),
+  /** openai_compatible only: json_schema (strict) or json_object for endpoints without schema support. */
+  json_mode: z.enum(["json_schema", "json_object"]).default("json_schema"),
   rpm: z.number().int().positive(),
   daily_calls: z.number().int().positive(),
   batch_size: z.number().int().positive(),

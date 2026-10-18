@@ -4,6 +4,7 @@ import { sleep } from "../lib/http";
 import { log } from "../lib/log";
 import { geminiClient } from "./gemini";
 import { groqClient } from "./groq";
+import { openaiCompatibleClient } from "./openai-compatible";
 import { extractJson } from "./schemas";
 import { LlmUnavailable, NoProviderAvailable, type LlmClient, type LlmJsonRequest, type LlmUsage } from "./types";
 
@@ -71,7 +72,8 @@ export class LlmRouter {
         log.warn(`provider ${cfg.id}: ${cfg.env} is not set, skipping`);
         continue;
       }
-      const client = cfg.kind === "gemini" ? geminiClient(cfg, apiKey) : groqClient(cfg, apiKey);
+      const client =
+        cfg.kind === "gemini" ? geminiClient(cfg, apiKey) : cfg.kind === "groq" ? groqClient(cfg, apiKey) : openaiCompatibleClient(cfg, apiKey);
       this.slots.push({ cfg, client, usedToday: usedToday[usageKey(cfg)] ?? 0, dead: false, failures: 0, recent: [] });
     }
   }

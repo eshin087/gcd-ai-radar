@@ -1,5 +1,5 @@
 {
-  "_comment": "Collector behaviour. Thresholds and budgets are deliberately conservative until free-tier limits are confirmed in Google AI Studio.",
+  "_comment": "Collector behaviour. Thresholds and budgets are deliberately conservative until free-tier limits are confirmed in Google AI Studio. Providers run in order; to add any OpenAI-compatible endpoint (OpenRouter, Cloudflare Workers AI, Ollama, vLLM) append { \"id\": \"openrouter\", \"kind\": \"openai_compatible\", \"base_url\": \"https://openrouter.ai/api/v1\", \"model\": \"<model>:free\", \"env\": \"OPENROUTER_API_KEY\", \"json_mode\": \"json_object\", \"rpm\": 10, \"daily_calls\": 40, \"batch_size\": 3 } and set that env var as a repo secret (also add it to collect.yml).",
   "confidence_threshold": 0.8,
   "review_severity_4": false,
   "dedupe": {

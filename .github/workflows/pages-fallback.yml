@@ -1,0 +1,52 @@
+name: pages-fallback
+
+# Fallback hosting if Vercel's free tier ever goes away: builds the static
+# export and publishes ./out to GitHub Pages. Manual only. Enable Pages
+# (Settings → Pages → Source: GitHub Actions) and, because the site uses
+# root-relative paths, serve it from a custom domain or a user/org site
+# root rather than the /<repo>/ sub-path.
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: "Public URL the site will be served from (used for canonical links, OG and RSS)"
+        type: string
+        default: "https://eshin087.github.io"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ inputs.site_url }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

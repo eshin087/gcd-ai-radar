@@ -70,6 +70,20 @@ Set secrets from your own terminal, never by pasting keys into a chat or issue:
 gh secret set GEMINI_API_KEY
 ```
 
+## If a free tier disappears
+
+Every dependency has a documented way out, and the site keeps working with degraded
+features rather than errors:
+
+| If this goes away | What happens | What to do |
+|---|---|---|
+| Gemini free tier | The router falls through to Groq; if that is gone too, candidates wait in `data/pending.json` and the run exits cleanly | Add any OpenAI-compatible endpoint (OpenRouter, Cloudflare Workers AI, a local Ollama) as a provider in `collector/config/settings.json` (`kind: "openai_compatible"`, see the `_comment` there) and set its env var |
+| Groq free tier | Nothing visible; Gemini carries the load | Remove or replace the provider entry |
+| Cloudflare Radar | The sidebar panel hides; the last good `data/radar.json` is kept | None required |
+| A feed or API | Its errors show on the Sources page; every other source proceeds | Fix or disable the entry in `collector/config/sources.json` |
+| GitHub Actions schedules | Nothing runs | `keepalive.yml` re-enables the cron weekly; or run `npm run collect` from any machine with the keys in `.env` |
+| Vercel | The site stops deploying | Run the `pages-fallback` workflow (GitHub Pages, manual trigger) or deploy `./out` from `npm run build` to any static host |
+
 ## Licences
 
 Code: [MIT](LICENSE). Data: [CC BY-SA 4.0](LICENSE-DATA.md), with upstream attributions listed there.
