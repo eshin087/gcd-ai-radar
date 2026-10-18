@@ -1,0 +1,52 @@
+{
+  "name": "gcd-ai-radar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "gcd AI Radar: an observatory of AI cybersecurity incidents, counted honestly and charted over time.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "tsx scripts/prebuild.ts",
+    "build": "next build",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "collect": "tsx collector/cli.ts run",
+    "backfill": "tsx collector/cli.ts backfill",
+    "review": "tsx collector/cli.ts review",
+    "validate": "tsx collector/cli.ts validate",
+    "stub": "tsx scripts/make-stub.ts"
+  },
+  "dependencies": {
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.10.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@google/genai": "^2.30.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.2",
+    "fast-xml-parser": "^5.11.2",
+    "fastest-levenshtein": "^1.0.16",
+    "groq-sdk": "^1.6.0",
+    "p-limit": "^7.3.3",
+    "p-retry": "^8.0.1",
+    "satori": "^0.62.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

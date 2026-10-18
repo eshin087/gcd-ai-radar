@@ -1,0 +1,35 @@
+{
+  "_comment": "Allow-list of AI frameworks, inference servers, agent tooling and AI developer tools whose CVEs count as infra_vuln incidents. GitHub Advisory Database is queried per ecosystem with `affects=`; NVD with keywordSearch (keywordExactMatch for multi-word terms). Edit to widen or narrow coverage; the Methodology page lists this file.",
+  "ghsa": {
+    "pip": [
+      "langchain", "langchain-core", "langchain-community", "langchain-experimental", "langgraph",
+      "llama-index", "llama-index-core", "vllm", "open-webui", "mlflow", "gradio", "langflow",
+      "litellm", "transformers", "torch", "ray", "anything-llm", "dify", "lollms", "haystack-ai",
+      "autogen", "crewai", "semantic-kernel", "mcp", "fastmcp", "ollama", "llama-cpp-python",
+      "chromadb", "qdrant-client", "weaviate-client", "sentence-transformers", "diffusers",
+      "accelerate", "peft", "trl", "datasets", "huggingface-hub", "tensorflow", "keras",
+      "onnx", "onnxruntime", "triton", "nvidia-nemo", "bentoml", "kserve", "feast", "label-studio",
+      "jupyter-ai", "comfyui", "openai", "anthropic", "google-generativeai", "pyautogen",
+      "guardrails-ai", "nemoguardrails", "promptflow", "agno", "phidata", "browser-use"
+    ],
+    "npm": [
+      "langchain", "@langchain/core", "@langchain/community", "llamaindex", "@modelcontextprotocol/sdk",
+      "@modelcontextprotocol/server-filesystem", "@modelcontextprotocol/inspector", "mcp-remote",
+      "ai", "@ai-sdk/openai", "openai", "@anthropic-ai/sdk", "@anthropic-ai/claude-code",
+      "@google/genai", "flowise", "n8n", "lobe-chat", "@lobehub/chat", "chatbot-ui", "librechat",
+      "@openai/codex", "@google/gemini-cli", "ollama", "@huggingface/inference", "@xenova/transformers"
+    ],
+    "go": ["github.com/ollama/ollama", "github.com/mark3labs/mcp-go", "github.com/tmc/langchaingo"],
+    "rust": ["mistralrs", "candle-core", "llm"],
+    "maven": ["dev.langchain4j:langchain4j", "org.springframework.ai:spring-ai-core", "io.modelcontextprotocol.sdk:mcp"]
+  },
+  "nvd_keywords": [
+    "vLLM", "Ollama", "LangChain", "LlamaIndex", "Open WebUI", "MLflow", "Gradio", "Langflow",
+    "LiteLLM", "llama.cpp", "llama-cpp-python", "Model Context Protocol", "AnythingLLM", "Dify",
+    "Flowise", "ComfyUI", "Ray Dashboard", "Triton Inference Server", "Hugging Face transformers",
+    "Jupyter AI", "Lollms", "LocalAI", "Text Generation WebUI", "ChromaDB", "Qdrant", "Weaviate",
+    "Copilot Studio", "Microsoft 365 Copilot", "GitHub Copilot", "Azure AI", "Amazon Bedrock",
+    "Vertex AI", "Gemini CLI", "Claude Code", "Codex CLI", "Cursor IDE", "Windsurf", "Lovable",
+    "NVIDIA NeMo", "NVIDIA Riva", "TensorRT-LLM", "BentoML", "KServe", "Label Studio"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "_comment": "Query strings for query-driven discovery sources (HN Algolia, GDELT, Bluesky). Edit freely; phrases are quoted per source automatically. Keep each query specific enough to avoid general AI product news.",
+  "queries": [
+    "prompt injection",
+    "indirect prompt injection",
+    "AI jailbreak",
+    "LLM jailbreak",
+    "LLM vulnerability",
+    "AI agent hacked",
+    "agent hijacking",
+    "MCP vulnerability",
+    "Model Context Protocol security",
+    "deepfake fraud",
+    "deepfake scam",
+    "voice clone scam",
+    "AI-generated malware",
+    "AI phishing",
+    "LLM data leak",
+    "model weights leaked",
+    "training data poisoning",
+    "AI supply chain attack",
+    "malicious model Hugging Face",
+    "Copilot vulnerability",
+    "ChatGPT exploit",
+    "Claude vulnerability",
+    "Gemini vulnerability",
+    "AI-assisted intrusion",
+    "autonomous AI attack"
+  ]
+}

@@ -1,0 +1,30 @@
+/** Site-wide constants. Branding follows the gcd family conventions. */
+
+export const SITE = {
+  name: "gcdAIRadar",
+  wordmark: "gcdairadar",
+  tagline: "An observatory of AI cybersecurity incidents",
+  description:
+    "gcd AI Radar records, counts and charts AI cybersecurity incidents: attacks on AI systems and AI-enabled attacks, deduplicated and linked to original reporting.",
+  github: "https://github.com/eshin087/gcd-ai-radar",
+  author: "GCD",
+  family: [
+    { name: "gcdatlas", url: "https://gcdatlas.com", blurb: "the real universe, drawn in ASCII" },
+    { name: "gcdTracker", url: "https://gcdtracker.vercel.app", blurb: "AI traffic and agent activity" },
+    { name: "gcdSignal", url: "https://gcdsignal.vercel.app", blurb: "a local-first AI news reader" },
+  ],
+  dataLicense: { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  codeLicense: { name: "MIT", url: "https://github.com/eshin087/gcd-ai-radar/blob/main/LICENSE" },
+} as const;
+
+export const NAV = [
+  { href: "/", label: "Dashboard" },
+  { href: "/incidents", label: "Incidents" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/sources", label: "Sources" },
+  { href: "/data", label: "Data" },
+  { href: "/about", label: "About" },
+] as const;
+
+/** Year the default dashboard window starts at (full range is available). */
+export const DEFAULT_START_YEAR = 2020;

@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# generated at build time by scripts/prebuild.ts
+public/data/
+public/og/
+public/feed.xml
+
+# local env and secrets (never commit keys)
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel/
+
+# collector scratch
+collector/.cache/
+
+# os / editor
+.DS_Store
+Thumbs.db

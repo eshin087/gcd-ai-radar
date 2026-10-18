@@ -1,0 +1,56 @@
+{
+  "_comment": "Collector behaviour. Thresholds and budgets are deliberately conservative until free-tier limits are confirmed in Google AI Studio.",
+  "confidence_threshold": 0.8,
+  "review_severity_4": false,
+  "dedupe": {
+    "lookback_days": 90,
+    "merge_similarity": 0.85,
+    "llm_check_similarity": 0.55,
+    "date_window_days": 14
+  },
+  "fetch": {
+    "timeout_ms": 20000,
+    "retries": 3,
+    "max_body_bytes": 3000000,
+    "user_agent": "gcd-ai-radar/0.1 (+https://github.com/eshin087/gcd-ai-radar; incident observatory, feeds and official APIs only)",
+    "hint_max_chars": 600
+  },
+  "gdelt": {
+    "spacing_ms": 45000,
+    "timespan": "24h",
+    "max_records": 75
+  },
+  "providers": [
+    {
+      "id": "gemini-primary",
+      "kind": "gemini",
+      "model": "gemini-3.8-flash",
+      "env": "GEMINI_API_KEY",
+      "rpm": 10,
+      "daily_calls": 200,
+      "batch_size": 5
+    },
+    {
+      "id": "gemini-lite",
+      "kind": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "env": "GEMINI_API_KEY",
+      "rpm": 10,
+      "daily_calls": 400,
+      "batch_size": 5
+    },
+    {
+      "id": "groq",
+      "kind": "groq",
+      "model": "openai/gpt-oss-120b",
+      "env": "GROQ_API_KEY",
+      "rpm": 20,
+      "daily_calls": 500,
+      "batch_size": 2
+    }
+  ],
+  "retention": {
+    "rejected_days": 90,
+    "runs_keep": 400
+  }
+}

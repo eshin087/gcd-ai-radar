@@ -1,0 +1,35 @@
+{
+  "_comment": "Cheap pre-filter applied to title + feed description before any LLM call. A candidate from a non-specialist source must match at least one ai_term AND one security_term, and no negative_term. Matching is case-insensitive, on word boundaries.",
+  "ai_terms": [
+    "ai", "a.i.", "artificial intelligence", "llm", "llms", "large language model", "language model",
+    "machine learning", "ml model", "neural network", "deep learning", "generative ai", "genai",
+    "chatbot", "chatgpt", "gpt-4", "gpt-5", "openai", "claude", "anthropic", "gemini", "bard",
+    "copilot", "llama", "mistral", "grok", "deepseek", "qwen", "hugging face", "huggingface",
+    "prompt", "prompts", "jailbreak", "jailbreaking", "agent", "agents", "agentic", "mcp",
+    "model context protocol", "rag", "retrieval-augmented", "fine-tuning", "fine-tuned",
+    "deepfake", "deepfakes", "voice clone", "voice cloning", "synthetic media", "face swap",
+    "langchain", "llamaindex", "vllm", "ollama", "open webui", "mlflow", "gradio", "langflow",
+    "litellm", "llama.cpp", "pytorch", "tensorflow", "comfyui", "anythingllm", "dify", "flowise",
+    "model weights", "training data", "inference server", "ai model", "ai models", "ai system",
+    "ai-powered", "ai powered", "ai-generated", "ai generated", "ai-enabled", "ai-assisted"
+  ],
+  "security_terms": [
+    "vulnerability", "vulnerabilities", "cve-", "exploit", "exploited", "exploitation", "zero-day",
+    "0-day", "rce", "remote code execution", "code execution", "injection", "attack", "attacks",
+    "attacker", "attackers", "hack", "hacked", "hacker", "hackers", "hacking", "breach", "breached",
+    "leak", "leaked", "leaks", "exfiltrat", "exposed", "exposure", "malware", "ransomware",
+    "phishing", "scam", "scams", "fraud", "fraudster", "backdoor", "backdoored", "poisoning",
+    "poisoned", "supply chain", "supply-chain", "compromise", "compromised", "intrusion",
+    "threat actor", "apt", "espionage", "stolen", "theft", "extortion", "patch", "patched",
+    "advisory", "disclosed", "disclosure", "security flaw", "security bug", "bypass", "hijack",
+    "hijacked", "exfiltration", "credential", "credentials", "unauthorized", "unauthorised",
+    "ssrf", "deserialization", "path traversal", "authentication bypass", "privilege escalation",
+    "data breach", "jailbreak", "prompt injection", "red team", "adversarial"
+  ],
+  "negative_terms": [
+    "webinar", "sponsored", "whitepaper", "white paper", "stock price", "shares fell", "shares rose",
+    "earnings", "quarterly results", "ipo", "funding round", "raises $", "series a", "series b",
+    "job posting", "hiring", "we're hiring", "coupon", "discount", "black friday", "review: the best",
+    "horoscope", "recipe"
+  ]
+}
