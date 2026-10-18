@@ -4,7 +4,7 @@ import { httpFetch } from "../lib/http";
 import { nowIso } from "../lib/ids";
 import { log } from "../lib/log";
 import { publisherFor } from "../lib/publishers";
-import { truncate } from "../lib/text";
+import { seedCves, truncate } from "../lib/text";
 import { lookbackStart } from "./rss";
 import type { Candidate, SourceAdapter } from "./types";
 
@@ -95,7 +95,7 @@ export const atlasAdapter: SourceAdapter = {
         published_at: created,
         publisher: "MITRE ATLAS",
         hint: truncate(`${summary} Case study type: ${type}.${cs.target ? ` Target: ${cs.target}.` : ""}${cs.actor ? ` Actor: ${cs.actor}.` : ""}`, ctx.settings.fetch.hint_max_chars),
-        cve_ids: [],
+        cve_ids: seedCves(refs),
         discovered_at: nowIso(),
         extra: {
           classifier_hint: `${HINT} incident_date: ${incidentDate} (granularity ${cs["date-granularity"] ?? "unknown"}).`,

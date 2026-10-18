@@ -2,7 +2,7 @@ import type { Incident } from "../../lib/schema";
 import type { Settings } from "../lib/config";
 import { daysBetween } from "../lib/ids";
 import type { State } from "../lib/state";
-import { extractCves, titleSimilarity } from "../lib/text";
+import { advisoryCves, extractCves, titleSimilarity } from "../lib/text";
 import type { Candidate } from "../sources/types";
 
 /**
@@ -10,7 +10,8 @@ import type { Candidate } from "../sources/types";
  * articles must end up as one incident with many sources:
  *
  *   1. canonical URL already seen            → skip (or merge if it maps to an incident)
- *   2. shared CVE id with an existing record → merge
+ *   2. shared CVE id with an existing record → merge (ids the record is
+ *      about, see cvesOfIncident; an id it merely cites does not count)
  *   3. title similarity vs. recent records   → merge (≥ merge_similarity),
  *                                              ask the LLM (≥ llm_check_similarity), or new
  *   4. remaining candidates clustered among themselves the same way; middling
@@ -71,11 +72,33 @@ interface Indexed {
   cves: Set<string>;
 }
 
+/**
+ * The CVE ids an incident is about, not every id its sources mention. An
+ * advisory source (NVD, GHSA, KEV) counts only for its own id: a GHSA title
+ * such as "CVE-2026-54008: … (incomplete-fix sibling of CVE-2026-45401)"
+ * cites 45401 but is not about it. Other sources count for the ids in their
+ * headlines. The title and tags come from the classifier, whose titles repeat
+ * cited ids (AIR-2025-0393) and have carried a neighbouring item's id
+ * (AIR-2025-0367), and merges add the merged record's ids to tags, so they
+ * count only for records with no advisory source (news, where tags keep ids
+ * read from the article text).
+ */
 export function cvesOfIncident(inc: Incident): Set<string> {
   const set = new Set<string>();
-  for (const t of inc.tags) for (const c of extractCves(t)) set.add(c);
-  for (const c of extractCves(inc.title)) set.add(c);
-  for (const s of inc.sources) for (const c of extractCves(s.title)) set.add(c);
+  let advisory = false;
+  for (const s of inc.sources) {
+    const own = advisoryCves(s);
+    if (own) {
+      advisory = true;
+      for (const c of own) set.add(c);
+    } else {
+      for (const c of extractCves(s.title)) set.add(c);
+    }
+  }
+  if (!advisory) {
+    for (const t of inc.tags) for (const c of extractCves(t)) set.add(c);
+    for (const c of extractCves(inc.title)) set.add(c);
+  }
   return set;
 }
 

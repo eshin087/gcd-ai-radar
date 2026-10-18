@@ -23,6 +23,18 @@ function normalizeTags(tags: string[]): string[] {
   return [...out].slice(0, 20);
 }
 
+/**
+ * The classifier titles advisories "CVE-…: summary" and has copied a
+ * neighbouring batch item's id into that slot. The leading id must be one the
+ * cluster carries: swap in the cluster's id when it has exactly one, else drop it.
+ */
+export function fixLeadingCve(title: string, cves: string[]): string {
+  const m = title.match(/^(CVE-\d{4}-\d{4,7})\s*:\s*/i);
+  if (!m || cves.includes(m[1]!.toUpperCase())) return title;
+  const rest = title.slice(m[0].length);
+  return cves.length === 1 ? `${cves[0]}: ${rest}` : rest;
+}
+
 /** Adds a candidate as a source; returns false if the URL is already there. */
 export function mergeSource(target: Incident, c: Candidate, now: string): boolean {
   if (target.sources.some((s) => s.url === c.url)) return false;
@@ -73,7 +85,7 @@ export function buildIncident(
   return {
     id,
     slug,
-    title: truncate(item.title.trim().replace(/[.\s]+$/, ""), 160),
+    title: truncate(fixLeadingCve(item.title.trim().replace(/[.\s]+$/, ""), cves), 160),
     summary: truncate(item.summary.trim(), 700),
     type: item.type,
     categories: [...new Set(item.categories)].slice(0, 4),
