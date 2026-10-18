@@ -1,5 +1,55 @@
 [
   {
+    "key": "e7fca0079dc175c1",
+    "title": "CVE-2021-30201: The API /vsaWS/KaseyaWS.asmx can be used to submit XML to the system.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-30201",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: False positive match on an IT management software CVE (Kaseya VSA) with no connection to AI infrastructure or tooling.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "key": "30b539a611a6ef3b",
+    "title": "CVE-2013-10034: An unrestricted file upload vulnerability exists in Kaseya KServer versions prior to 6.3.0.2.",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-10034",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: The affected software is Kaseya KServer, a traditional IT management platform, and the match on an AI keyword was a false positive.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "key": "b5f4dac704428be0",
+    "title": "CVE-2026-23194: In the Linux kernel, the following vulnerability has been resolved:\n\nrust_binder: correctly handle FDA objects of length…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23194",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Linux kernel binder vulnerability triggered by keyword match; unrelated to AI.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "key": "a662f9186233dc98",
+    "title": "CVE-2026-13323: In Open VSX Registry before 1.0.2, the /vscode/unpkg/ endpoint serves user-supplied HTML files with Content-Type: text/html and…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13323",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: General developer extension registry vulnerability unrelated to AI models or AI-specific infrastructure.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "key": "000dbee1a1ce2475",
+    "title": "CVE-2026-72560: A server-side request forgery vulnerability in HumanSignal Label Studio through 1.24.0.dev0 exists because…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72560",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Label Studio is a general data labeling tool, and SSRF in import-from-URL is a generic web application vulnerability not specific to AI security.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
     "key": "5884327f9f89beda",
     "title": "GHSA-3x9g-xfj5-fq84: Duplicate Advisory: Cross-Site Request Forgery in Gradio",
     "url": "https://github.com/advisories/GHSA-3x9g-xfj5-fq84",
