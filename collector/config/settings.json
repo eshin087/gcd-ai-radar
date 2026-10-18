@@ -16,7 +16,7 @@
     "hint_max_chars": 600
   },
   "gdelt": {
-    "spacing_ms": 45000,
+    "spacing_ms": 30000,
     "timespan": "24h",
     "max_records": 75
   },

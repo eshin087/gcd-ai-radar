@@ -35,6 +35,8 @@ export const SourceConfigSchema = z.object({
   enabled: z.boolean().default(true),
   /** Regex (case-insensitive) a title must match to be considered. */
   title_filter: z.string().optional(),
+  /** Regex (case-insensitive) a URL must match (sitemap sources). */
+  url_filter: z.string().optional(),
   max_bytes: z.number().int().positive().optional(),
   notes: z.string().optional(),
 });

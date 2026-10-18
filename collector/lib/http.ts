@@ -19,6 +19,8 @@ export interface HttpOptions {
   lastModified?: string;
   /** Do not retry on these statuses (default: 4xx except 429). */
   noRetryStatuses?: number[];
+  /** Initial backoff between retries (doubles each attempt). */
+  backoffMs?: number;
 }
 
 export interface HttpResult {
@@ -143,8 +145,8 @@ export async function httpFetch(url: string, opts: HttpOptions = {}): Promise<Ht
     {
       retries: opts.retries ?? DEFAULTS.retries,
       factor: 2,
-      minTimeout: 1500,
-      maxTimeout: 20000,
+      minTimeout: opts.backoffMs ?? 1500,
+      maxTimeout: Math.max(20000, (opts.backoffMs ?? 1500) * 4),
       randomize: true,
       onFailedAttempt: ({ error, attemptNumber, retriesLeft }) => {
         log.debug("retrying", { url, attempt: attemptNumber, left: retriesLeft, error: error.message });

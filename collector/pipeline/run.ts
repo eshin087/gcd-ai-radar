@@ -105,6 +105,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
           lastSuccessAt: lastSuccess.get(src.id) ?? null,
           since: opts.since,
           limit: opts.limit,
+          seenKeys: new Set(Object.keys(state.seen)),
         };
         const t0 = Date.now();
         try {

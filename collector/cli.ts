@@ -5,6 +5,8 @@ import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
 import { loadState } from "./lib/state";
 import { runCollector, type RunOptions } from "./pipeline/run";
+import { maybeUpdateRadar } from "./radar";
+import { runReview } from "./review/index";
 
 /**
  * gcd AI Radar collector.
@@ -81,7 +83,8 @@ async function main() {
       };
       const summary = await runCollector(opts);
       summarize(summary);
-      if (commit && summary.changedFiles.length) {
+      const radarChanged = !sourceIds ? await maybeUpdateRadar(loadConfig().settings, { dryRun }) : false;
+      if (commit && (summary.changedFiles.length || radarChanged)) {
         const c = summary.record.counts;
         await commitAndPush(`data: run ${summary.record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged)`);
       }
@@ -111,9 +114,15 @@ async function main() {
       });
       return;
     }
-    case "review":
-    case "radar":
-      throw new Error(`"${command}" arrives in a later step`);
+    case "review": {
+      await runReview();
+      return;
+    }
+    case "radar": {
+      const changed = await maybeUpdateRadar(loadConfig().settings, { dryRun, force: true });
+      if (changed && commit) await commitAndPush("data: radar refresh");
+      return;
+    }
     default:
       throw new Error(`unknown command "${command}"`);
   }

@@ -38,6 +38,8 @@ export interface SourceContext {
   since?: string;
   /** Debug cap on items per source. */
   limit?: number;
+  /** Candidate keys already processed (seen.json); adapters that must fetch per page use it to skip work. */
+  seenKeys?: Set<string>;
 }
 
 export interface SourceAdapter {

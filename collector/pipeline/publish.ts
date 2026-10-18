@@ -1,4 +1,4 @@
-import type { Incident, Source } from "../../lib/schema";
+import { SourceSchema, type Incident, type Source } from "../../lib/schema";
 import type { Status } from "../../lib/taxonomy";
 import { extractCves, truncate } from "../lib/text";
 import type { ClassificationItem } from "../llm/schemas";
@@ -45,6 +45,15 @@ export function buildIncident(
 ): Incident {
   const byUrl = new Map<string, Source>();
   for (const m of cluster.members) if (!byUrl.has(m.url)) byUrl.set(m.url, sourceFromCandidate(m));
+  // Structured seeds (ATLAS, AIID, AVID) carry the original reports they cite.
+  for (const m of cluster.members) {
+    const extra = m.extra?.["additional_sources"];
+    if (!Array.isArray(extra)) continue;
+    for (const raw of extra) {
+      const parsed = SourceSchema.safeParse(raw);
+      if (parsed.success && !byUrl.has(parsed.data.url) && byUrl.size < 15) byUrl.set(parsed.data.url, parsed.data);
+    }
+  }
   const sources = [...byUrl.values()].sort((a, b) => a.published_at.localeCompare(b.published_at));
   const first_reported = sources[0]!.published_at;
 
