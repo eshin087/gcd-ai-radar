@@ -17,6 +17,7 @@ import type { Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { CATEGORY_META, SEVERITY_META, TYPE_META } from "../lib/taxonomy";
+import { isDisclosedIncident, recordKind } from "../lib/counting";
 import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
@@ -33,12 +34,12 @@ function csvCell(v: unknown): string {
 function toCsv(incidents: Incident[]): string {
   const cols = [
     "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
-    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "tags", "summary", "first_source_url", "url",
+    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "tags", "summary", "first_source_url", "url",
   ];
   const lines = [cols.join(",")];
   const base = siteUrl();
   for (const i of incidents) {
-    const row: Record<string, unknown> = { ...i, first_source_url: i.sources[0]?.url ?? "", url: `${base}/incidents/${i.slug}` };
+    const row: Record<string, unknown> = { ...i, record_kind: recordKind(i), first_source_url: i.sources[0]?.url ?? "", url: `${base}/incidents/${i.slug}` };
     lines.push(cols.map((c) => csvCell(row[c])).join(","));
   }
   return lines.join("\n") + "\n";
@@ -88,6 +89,7 @@ async function main() {
   await fs.mkdir(perIncident, { recursive: true });
 
   const sorted = [...incidents].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id));
+  const counted = sorted.filter((i) => !isDisclosedIncident(i));
   await fs.writeFile(path.join(dataDir, "incidents.json"), JSON.stringify(sorted, null, 1) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map(slim)) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.csv"), toCsv(sorted));
@@ -98,7 +100,10 @@ async function main() {
       {
         generated_at: new Date().toISOString(),
         site: base,
-        incidents: sorted.length,
+        records: sorted.length,
+        incidents: counted.length,
+        disclosed_vulnerabilities: sorted.length - counted.length,
+        counting_rule: "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves",
         is_stub: isStub,
         last_collector_run: updated,
         license: "CC BY-SA 4.0",
@@ -108,12 +113,16 @@ async function main() {
       2,
     ) + "\n",
   );
-  await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(sorted, base, updated));
+  // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
+  await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
 
   const t0 = Date.now();
-  const written = await renderOgImages({ incidents: sorted, now: new Date(), siteHost: base.replace(/^https?:\/\//, ""), isStub }, path.join(PUBLIC, "og"));
+  const written = await renderOgImages(
+    { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, ""), isStub },
+    path.join(PUBLIC, "og"),
+  );
   console.log(
-    `prebuild: ${sorted.length} incidents${isStub ? " (STUB)" : ""} → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities)${isStub ? " (STUB)" : ""} → public/data (+${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

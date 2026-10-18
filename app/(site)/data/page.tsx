@@ -1,3 +1,4 @@
+import { isDisclosedIncident } from "@/lib/counting";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
@@ -23,11 +24,12 @@ async function sizeOf(rel: string): Promise<string | null> {
 
 export default async function DataPage() {
   const { incidents, isStub } = await loadIncidents();
+  const disclosed = incidents.filter(isDisclosedIncident).length;
   const base = siteUrl();
   const files = [
-    { href: "/data/incidents.json", label: "incidents.json", blurb: "Every published incident with all fields and every source." },
-    { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array; what the incidents page uses." },
-    { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per incident for spreadsheets; list fields are semicolon-separated." },
+    { href: "/data/incidents.json", label: "incidents.json", blurb: "Every published record, incidents and disclosed CVEs, with all fields and every source." },
+    { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array, with a disclosed flag; what the incidents page uses." },
+    { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per record for spreadsheets, with a record_kind column; list fields are semicolon-separated." },
     { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time and licence." },
     { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
   ];
@@ -38,8 +40,12 @@ export default async function DataPage() {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight text-ink">Data</h1>
         <p className="mt-1 text-[13px] text-dim">
-          {incidents.length.toLocaleString("en-US")} published incidents{isStub ? " (synthetic stub dataset)" : ""}. Everything below is regenerated on every
-          deploy from the JSON files in the repository.
+          {incidents.length.toLocaleString("en-US")} published records: {(incidents.length - disclosed).toLocaleString("en-US")} incidents and{" "}
+          {disclosed.toLocaleString("en-US")} disclosed CVEs with no confirmed exploitation, which are{" "}
+          <a href="/methodology#cves" className="link">
+            tracked separately
+          </a>
+          {isStub ? " (synthetic stub dataset)" : ""}. Everything below is regenerated on every deploy from the JSON files in the repository.
         </p>
       </header>
 

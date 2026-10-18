@@ -63,8 +63,12 @@ export default function MethodologyPage() {
         </li>
       </ul>
       <p>
-        Research papers and lab write-ups that demonstrate a working attack count (severity 1). Vulnerability records for AI frameworks, model
-        servers, agent tooling and AI products count (severity 2, or 3 once exploitation is confirmed).
+        Research papers and lab write-ups that demonstrate a working attack count (severity 1). CVEs and advisories for AI frameworks, model servers,
+        agent tooling and AI products count once exploitation is confirmed (severity 3 or 4). Until then they are{" "}
+        <a href="#cves" className="link">
+          disclosed vulnerabilities
+        </a>
+        : kept, shown and downloadable as their own series, but not counted as incidents.
       </p>
 
       <H2 id="out-of-scope">What does not count</H2>
@@ -145,6 +149,10 @@ export default function MethodologyPage() {
       <H2 id="counting">Counting rules</H2>
       <ul className="list-disc pl-5 space-y-1">
         <li>One real-world event is one incident, however many articles cover it. Each article becomes a source on that incident.</li>
+        <li>
+          Disclosed vulnerabilities, CVEs and advisories with no confirmed exploitation, are never part of an incident count, chart, tile or the RSS feed. The
+          dashboard shows them as a separate monthly series.
+        </li>
         <li>Monthly charts count each incident once, under its primary category.</li>
         <li>
           The default time axis is the <em>incident date</em> (when it happened, approximate dates allowed). A toggle switches to <em>first reported</em> (earliest
@@ -157,12 +165,27 @@ export default function MethodologyPage() {
 
       <H2 id="cves">Vulnerability records</H2>
       <p>
-        CVEs and advisories for an allow-list of LLM and agent-era tooling (inference servers such as vLLM and Ollama, app builders such as Open WebUI, Langflow
-        and Flowise, frameworks such as LangChain, MCP SDKs, AI coding tools and AI products) are incidents too. They enter at severity 2 (disclosed
-        vulnerability) under <em>infrastructure vulnerability</em>, and move to severity 3 when CISA lists them as exploited or a vendor confirms exploitation.
-        They dominate raw volume, which is why every chart stacks severity and the real-world view exists. Classic deep-learning libraries (TensorFlow, Keras,
+        The collector reads CVEs and advisories for an allow-list of LLM and agent-era tooling from NVD, the GitHub Advisory Database and Microsoft&rsquo;s
+        Security Update Guide: inference servers such as vLLM and Ollama, app builders such as Open WebUI, Langflow and Flowise, frameworks such as LangChain,
+        MCP SDKs, AI coding tools and AI products. They are classified like everything else, under <em>infrastructure vulnerability</em>.
+      </p>
+      <p>
+        A record with no confirmed exploitation is a <strong className="text-ink">disclosed vulnerability</strong>. It keeps severity 2 and its own page, appears
+        on the dashboard as a separate monthly series and in the incidents explorer under &ldquo;records&rdquo;, but it is not counted as an incident. Vendors
+        and CVE numbering authorities file advisories in batches, as many as 30 for one product on one day, and more than 99% of these records never see a
+        confirmed attack: counting them made the incident trend a measure of CVE issuance. A CVE becomes an incident, at severity 3, when CISA lists it as
+        exploited or the vendor confirms exploitation.
+      </p>
+      <p>
+        The exact rule: a record is a disclosed vulnerability when its severity is below 3 and it either comes from the NVD or GitHub advisory backfills or
+        every one of its sources is a vulnerability database. Anything reported by the press or by researchers counts as an incident. Downloads keep every
+        record; the CSV carries a <span className="num text-[12px]">record_kind</span> column and the compact JSON a{" "}
+        <span className="num text-[12px]">disclosed</span> flag.
+      </p>
+      <p>
+        Classic deep-learning libraries (TensorFlow, Keras,
         PyTorch, ONNX) and generic automation tools (n8n) are deliberately excluded: their memory-safety and web CVEs are about the library, not about an AI
-        system being attacked, and they would swamp the counts (TensorFlow alone had 299). The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
+        system being attacked, and they would swamp the disclosed series (TensorFlow alone had 299). The allow-list has {Object.values(packages.ghsa).flat().length}{" "}
         packages across {Object.keys(packages.ghsa).length} ecosystems plus {packages.nvd_keywords.length} NVD search terms; it lives in the repository at{" "}
         <span className="num text-[12px]">collector/config/packages.json</span>.
         Pre-LLM ML platforms (MLflow, NVIDIA Triton Inference Server, Ray), classic cloud ML services (Azure AI Search, Face and Language, Vertex AI
@@ -184,7 +207,7 @@ export default function MethodologyPage() {
         <li><strong className="text-ink">Researcher-heavy early years.</strong> Before 2023 most records come from research write-ups and case studies, not news.</li>
         <li><strong className="text-ink">Classification error.</strong> A language model assigns type, categories and severity. Spot checks and the review queue catch some mistakes, not all; confidence is shown on every record.</li>
         <li><strong className="text-ink">Source coverage.</strong> Counts rise when sources are added. Changes are listed below.</li>
-        <li><strong className="text-ink">Vulnerability volume.</strong> CVE records track disclosure activity in a chosen set of packages, not attacks; read them as attack surface, not as breaches.</li>
+        <li><strong className="text-ink">Vulnerability volume.</strong> Disclosed vulnerabilities track disclosure activity in a chosen set of packages, not attacks. They are shown as attack surface, apart from the incident counts.</li>
         <li><strong className="text-ink">Synthetic stub.</strong> While the collector has not yet published real incidents, the site shows a clearly labelled synthetic dataset so layouts can be judged. It is never mixed with real data.</li>
       </ul>
 
@@ -194,6 +217,8 @@ export default function MethodologyPage() {
         <li>2026-10-18 · GitHub advisories and NVD backfilled from 2016.</li>
         <li>2026-10-18 · CVE allow-list narrowed to LLM and agent-era tooling; 522 records for dropped packages retired (TensorFlow 299, n8n 135, Keras 22, others 66).</li>
         <li>2026-10-18 · dashboard redesigned; every count opens its incidents, and category colours follow the seven families.</li>
+        <li>2026-10-18 · after an audit of the vulnerability records, MLflow, Triton, Ray, classic cloud ML services and false positives left the allow-list (171 records retired), and CVE merges were repaired.</li>
+        <li>2026-10-18 · CVEs and advisories with no confirmed exploitation leave the incident counts and become a separate series, &ldquo;disclosed vulnerabilities&rdquo;.</li>
       </ul>
     </div>
   );

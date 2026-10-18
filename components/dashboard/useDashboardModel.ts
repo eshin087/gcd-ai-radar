@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Selection } from "@/components/dashboard/DrillDown";
+import { isDisclosedSelection, type Selection } from "@/components/dashboard/DrillDown";
 import type { Basis, CompactRow, DashboardData } from "@/lib/dashboard";
 import { FAMILIES, familyOf, type Family } from "@/lib/families";
 import { monthLabel } from "@/lib/format";
@@ -69,6 +69,14 @@ function matches(r: CompactRow, s: Selection, field: DateField): boolean {
       return true;
     case "real":
       return isRealWorld(r);
+    case "disclosed":
+      return true;
+    case "disclosed-month":
+      return m === s.month;
+    case "disclosed-product":
+      return r.product === s.product;
+    case "disclosed-day":
+      return dateOf(r, field) === s.day;
     case "range": {
       // Mirrors headline(): month tiles skip year-only dates, year tiles keep them; toDate caps "same period last year".
       const d = dateOf(r, field);
@@ -95,7 +103,9 @@ export function useDashboardModel(data: DashboardData) {
   const from = win === "all" ? data.span.from : shiftMonth(to, -(Number(win.replace("m", "")) - 1));
   const windowLabel = win === "all" ? `all time (${monthLabel(from)} onward)` : `last ${win.replace("m", "")} months`;
 
-  const basisRows = useMemo(() => (basis === "real" ? data.rows.filter(isRealWorld) : data.rows), [data.rows, basis]);
+  // Disclosed vulnerabilities never enter the incident views; they are their own series below.
+  const basisRows = useMemo(() => (basis === "real" ? data.rows.filter(isRealWorld) : data.rows.filter((r) => !r.disclosed)), [data.rows, basis]);
+  const disclosedBase = useMemo(() => data.rows.filter((r) => r.disclosed), [data.rows]);
   const rows = useMemo(() => inWindow(basisRows, from, to, field), [basisRows, from, to, field]);
   const series = useMemo(() => monthlySeries(rows, { from, to, dateField: field }), [rows, from, to, field]);
   const trend = useMemo(() => addTrend(series), [series]);
@@ -109,11 +119,32 @@ export function useDashboardModel(data: DashboardData) {
   const latestRows = useMemo(() => latest(basisRows, 12), [basisRows]);
   const realInWindow = useMemo(() => rows.filter(isRealWorld).length, [rows]);
   const allInWindow = useMemo(() => inWindow(data.rows, from, to, field).length, [data.rows, from, to, field]);
+  // Disclosed vulnerabilities in view, and what they look like.
+  const disclosedRows = useMemo(() => inWindow(disclosedBase, from, to, field), [disclosedBase, from, to, field]);
+  const disclosedSeries = useMemo(() => monthlySeries(disclosedRows, { from, to, dateField: field }), [disclosedRows, from, to, field]);
+  const disclosedProducts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const r of disclosedRows) if (r.product) counts.set(r.product, (counts.get(r.product) ?? 0) + 1);
+    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([key, count]) => ({ key, count }));
+  }, [disclosedRows]);
+  /** The day with the most disclosures in view: vendors file CVEs in batches. */
+  const disclosedBusiest = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const r of disclosedRows) {
+      const d = dateOf(r, field);
+      if (d.length === 10) counts.set(d, (counts.get(d) ?? 0) + 1);
+    }
+    let best: { day: string; count: number } | null = null;
+    for (const [day, count] of counts) if (!best || count > best.count) best = { day, count };
+    return best;
+  }, [disclosedRows, field]);
+
   // A month range (trailing 12 months, year to date) can reach outside the window, so it reads the whole set.
-  const selected = useMemo(
-    () => (selection ? (selection.kind === "range" ? basisRows : rows).filter((r) => matches(r, selection, field)) : []),
-    [selection, rows, basisRows, field],
-  );
+  const selected = useMemo(() => {
+    if (!selection) return [];
+    const pool = isDisclosedSelection(selection) ? disclosedRows : selection.kind === "range" ? basisRows : rows;
+    return pool.filter((r) => matches(r, selection, field));
+  }, [selection, rows, basisRows, disclosedRows, field]);
 
   /** Selections behind every headline number, so each one opens its incidents. */
   const picks = useMemo(() => {
@@ -168,6 +199,10 @@ export function useDashboardModel(data: DashboardData) {
     priorCount,
     selected,
     picks,
+    disclosedRows,
+    disclosedSeries,
+    disclosedProducts,
+    disclosedBusiest,
     fieldLabel: field === "incident_date" ? "incident date" : "first report",
   };
 }

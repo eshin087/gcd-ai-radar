@@ -26,7 +26,16 @@ export type Selection =
   /** Severity 3-4 incidents in the current window. */
   | { kind: "real" }
   /** An inclusive month range on the date basis, independent of the window (trailing 12 months, year to date). */
-  | { kind: "range"; from: string; to: string; label: string; toDate?: string; byYear?: boolean };
+  | { kind: "range"; from: string; to: string; label: string; toDate?: string; byYear?: boolean }
+  /** Disclosed vulnerabilities (CVEs with no confirmed exploitation), tracked apart from incidents. */
+  | { kind: "disclosed" }
+  | { kind: "disclosed-month"; month: string }
+  | { kind: "disclosed-product"; product: string }
+  | { kind: "disclosed-day"; day: string };
+
+export function isDisclosedSelection(sel: Selection): boolean {
+  return sel.kind === "disclosed" || sel.kind === "disclosed-month" || sel.kind === "disclosed-product" || sel.kind === "disclosed-day";
+}
 
 export function selectionLabel(sel: Selection): string {
   switch (sel.kind) {
@@ -54,6 +63,14 @@ export function selectionLabel(sel: Selection): string {
       return "Real-world incidents · severity 3–4";
     case "range":
       return sel.label;
+    case "disclosed":
+      return "Disclosed vulnerabilities";
+    case "disclosed-month":
+      return `Disclosed vulnerabilities · ${monthLabel(sel.month, true)}`;
+    case "disclosed-product":
+      return `Disclosed vulnerabilities · ${sel.product}`;
+    case "disclosed-day":
+      return `Disclosed vulnerabilities · ${sel.day}`;
   }
 }
 
@@ -101,6 +118,21 @@ export function selectionQuery(sel: Selection, basis: "all" | "real", field: Dat
     case "range":
       p.set("from", sel.from);
       p.set("to", sel.to);
+      break;
+    case "disclosed":
+      p.set("kind", "disclosed");
+      break;
+    case "disclosed-month":
+      p.set("kind", "disclosed");
+      p.set("month", sel.month);
+      break;
+    case "disclosed-product":
+      p.set("kind", "disclosed");
+      p.set("q", sel.product);
+      break;
+    case "disclosed-day":
+      p.set("kind", "disclosed");
+      p.set("month", sel.day.slice(0, 7));
       break;
   }
   return p.toString();
@@ -160,14 +192,15 @@ export function ReportBody({ selection, rows, windowLabel, basis, field, onClose
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div className="label">
-            incident report · {basis === "real" ? "real-world only" : "all incidents"} · by {field === "incident_date" ? "incident date" : "first report"} ·{" "}
+            {isDisclosedSelection(selection) ? "disclosed vulnerabilities · not counted as incidents" : `incident report · ${basis === "real" ? "real-world only" : "all incidents"}`} · by{" "}
+            {field === "incident_date" ? "incident date" : "first report"} ·{" "}
             {selection.kind === "range" ? (selection.from === selection.to ? monthLabel(selection.from, true) : `${monthLabel(selection.from, true)} to ${monthLabel(selection.to, true)}`) : windowLabel}
           </div>
           <h2 id={titleId} className="mt-1 text-xl font-semibold tracking-tight">
             {selectionLabel(selection)}
           </h2>
           <p className="mt-1 text-[13px] text-dim num">
-            {rows.length} incident{rows.length === 1 ? "" : "s"} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
+            {rows.length} {isDisclosedSelection(selection) ? (rows.length === 1 ? "disclosed vulnerability" : "disclosed vulnerabilities") : rows.length === 1 ? "incident" : "incidents"} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -228,7 +261,7 @@ export function ReportBody({ selection, rows, windowLabel, basis, field, onClose
           </button>
         </div>
       )}
-      {rows.length === 0 && <p className="text-[13px] text-dim">No incidents in this selection.</p>}
+      {rows.length === 0 && <p className="text-[13px] text-dim">Nothing in this selection.</p>}
     </>
   );
 }

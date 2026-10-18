@@ -44,7 +44,7 @@ export function BarRows({
             <button
               type="button"
               onClick={() => onPick?.(r.key)}
-              aria-label={`${r.label}: ${r.value} incidents`}
+              aria-label={`${r.label}: ${r.value}, open the list`}
               className={`group grid w-full items-center gap-3 rounded-[3px] px-1.5 py-1 text-left transition-colors ${on ? "bg-accent-tint" : "hover:bg-panel-2"} ${onPick ? "" : "cursor-default"}`}
               style={{ gridTemplateColumns: `${labelWidth} minmax(0,1fr) auto` }}
             >

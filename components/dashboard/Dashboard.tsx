@@ -29,6 +29,8 @@ import { useDashboardModel, type WindowKey } from "./useDashboardModel";
 
 /** Neural-sweep tones: structure, beam-lit, hot (signals, crossed nodes), faint (rings, dust). Decorative, not data. */
 const SWEEP_PALETTE = ["#4d6ca3", "#ffb35c", "#fff1db", "#56607a"];
+/** Disclosed vulnerabilities: a neutral slate, apart from the incident blue (single series, contrast 4.9:1 on the surface). */
+const DISCLOSED_COLOR = "#6b7fa8";
 const NC: ColumnColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional };
 
 /** A number that opens its incidents. */
@@ -153,7 +155,15 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 <Num onClick={() => m.setSelection({ kind: "window" })} label="all incidents in view" className="text-ink">
                   {sourcesInView.toLocaleString("en-US")}
                 </Num>{" "}
-                sources and linked to the original reporting.
+                sources and linked to the original reporting. Another{" "}
+                <Num onClick={() => m.setSelection({ kind: "disclosed" })} label={`${m.disclosedRows.length} disclosed vulnerabilities`} className="text-ink">
+                  {m.disclosedRows.length.toLocaleString("en-US")}
+                </Num>{" "}
+                disclosed CVEs with no confirmed exploitation are{" "}
+                <a href="#disclosed" className="link">
+                  tracked separately
+                </a>
+                .
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/incidents" className="glass px-4 py-2 text-[13px] text-ink hover:border-accent">
@@ -315,6 +325,53 @@ export function Dashboard({ data }: { data: DashboardData }) {
               <div className="glass space-y-3 p-5">
                 <h3 className="text-[15px] font-medium">How bad</h3>
                 <SeverityMeters data={m.severities} theme={T} onPick={(severity) => m.setSelection({ kind: "severity", severity })} active={sel?.kind === "severity" ? sel.severity : null} />
+                <p className="text-[12px] text-dim">Severity 2 here means a flaw that was reported as news. CVEs with no confirmed exploitation are tracked separately below.</p>
+              </div>
+            </div>
+          </Section>
+
+          <Section
+            id="disclosed"
+            n="04"
+            kicker="Disclosed, not exploited"
+            title="Vulnerabilities, tracked separately"
+            lede="CVEs and advisories for AI frameworks and tools with no confirmed exploitation. They show how much attack surface is being found and patched, not attacks, so none of them are in the counts above. A CVE joins the incidents once CISA or the vendor confirms exploitation."
+          >
+            <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_352px]">
+              <div className="glass min-w-0 p-4 sm:p-5">
+                <MonthlyColumns
+                  months={m.disclosedSeries.map((p) => p.month)}
+                  stacks={[{ key: "disclosed", label: "Disclosed vulnerabilities", color: DISCLOSED_COLOR, values: m.disclosedSeries.map((p) => p.total) }]}
+                  provisionalFrom={m.h.provisionalFrom}
+                  height={300}
+                  colors={NC}
+                  activeMonth={sel?.kind === "disclosed-month" ? sel.month : null}
+                  onMonth={(month) => m.setSelection({ kind: "disclosed-month", month })}
+                  label="Disclosed vulnerabilities per month"
+                />
+              </div>
+              <div className="glass min-w-0 space-y-4 p-5">
+                <div className="grid grid-cols-2 gap-4">
+                  <StatTile label="Disclosed in view" value={m.disclosedRows.length} onValue={() => m.setSelection({ kind: "disclosed" })} compare={`${m.rows.length.toLocaleString("en-US")} incidents`} />
+                  {m.disclosedBusiest && (
+                    <StatTile
+                      label="Busiest day"
+                      value={m.disclosedBusiest.count}
+                      onValue={() => m.setSelection({ kind: "disclosed-day", day: m.disclosedBusiest!.day })}
+                      compare={`on ${m.disclosedBusiest.day}`}
+                    />
+                  )}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-[12.5px] text-dim">Most disclosures, by product</h3>
+                  <BarRows
+                    rows={m.disclosedProducts.slice(0, 8).map((p) => ({ key: p.key, label: p.key, value: p.count, color: DISCLOSED_COLOR }))}
+                    labelWidth="9rem"
+                    glow={false}
+                    onPick={(k) => m.setSelection({ kind: "disclosed-product", product: k })}
+                    active={sel?.kind === "disclosed-product" ? sel.product : null}
+                  />
+                </div>
               </div>
             </div>
           </Section>
@@ -324,7 +381,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
               <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
                 <div className="max-w-xl space-y-2">
                   <div className="divider">
-                    <span className="text-accent">04</span> Context
+                    <span className="text-accent">05</span> Context
                   </div>
                   <AsciiForm as="h2" text="The bots on the wire" onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
                   <p className="text-[14px] leading-relaxed text-soft">
@@ -336,7 +393,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
             </Reveal>
           )}
 
-          <Section n="05" kicker="Latest" title="Just reported" lede="The six newest incidents. Each one opens with every source, its classification and related incidents.">
+          <Section n="06" kicker="Latest" title="Just reported" lede="The six newest incidents. Each one opens with every source, its classification and related incidents.">
             <ol className="glass divide-y divide-line-soft">
               {m.latestRows.slice(0, 6).map((r) => (
                 <li key={r.id}>

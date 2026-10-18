@@ -1,3 +1,4 @@
+import { isDisclosedIncident } from "@/lib/counting";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -64,6 +65,16 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
           ))}
         </div>
         <p className="text-[16px] text-soft leading-relaxed">{incident.summary}</p>
+        {isDisclosedIncident(incident) && (
+          <p className="panel px-4 py-3 text-[13.5px] text-soft">
+            <span className="label mr-2">disclosed CVE</span>
+            No confirmed exploitation, so this record is tracked as a disclosed vulnerability and not counted as an incident. It moves into the counts if CISA
+            or the vendor confirms exploitation.{" "}
+            <Link href="/methodology#cves" className="link">
+              Why
+            </Link>
+          </p>
+        )}
       </header>
 
       <section>

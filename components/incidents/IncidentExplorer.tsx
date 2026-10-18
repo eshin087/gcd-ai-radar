@@ -31,10 +31,12 @@ interface Filters {
   real: string;
   /** "reported" dates by first report instead of incident date for month/year filters. */
   by: string;
+  /** Record kind: "" incidents (default), "disclosed" disclosed vulnerabilities only, "all" both. */
+  kind: string;
   sort: "reported" | "incident" | "severity";
 }
 
-const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", sort: "reported" };
+const EMPTY: Filters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", kind: "", sort: "reported" };
 const PAGE = 50;
 
 function readFilters(): Filters {
@@ -56,6 +58,7 @@ function readFilters(): Filters {
     origin: p.get("origin") ?? "",
     real: p.get("real") ?? "",
     by: p.get("by") ?? "",
+    kind: p.get("kind") === "disclosed" || p.get("kind") === "all" ? p.get("kind")! : "",
     sort: sort === "incident" || sort === "severity" ? sort : "reported",
   };
 }
@@ -131,6 +134,8 @@ export function IncidentExplorer() {
     const q = filters.q.trim().toLowerCase();
     const dateOf = (i: SlimIncident) => (filters.by === "reported" ? i.first_reported : i.incident_date.length === 4 ? `${i.incident_date}-07` : i.incident_date);
     const rows = all.filter((i) => {
+      if (filters.kind === "" && i.disclosed) return false;
+      if (filters.kind === "disclosed" && !i.disclosed) return false;
       if (filters.type && i.type !== filters.type) return false;
       if (filters.category && !filters.category.split(",").some((c) => i.categories.includes(c as SlimIncident["categories"][number]))) return false;
       if (filters.severity && String(i.severity) !== filters.severity) return false;
@@ -156,7 +161,9 @@ export function IncidentExplorer() {
     return rows;
   }, [all, filters]);
 
-  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by").length;
+  const active = Object.entries(filters).filter(([k, v]) => v && k !== "sort" && k !== "by" && k !== "kind").length;
+  const inKind = all ? all.filter((i) => (filters.kind === "all" ? true : filters.kind === "disclosed" ? i.disclosed : !i.disclosed)).length : 0;
+  const kindNoun = filters.kind === "disclosed" ? "disclosed vulnerabilities" : filters.kind === "all" ? "records" : "incidents";
   const chips: { key: keyof Filters; label: string }[] = [
     ...(filters.month ? [{ key: "month" as const, label: `month: ${filters.month}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
     ...(filters.from ? [{ key: "from" as const, label: `from: ${filters.from}${filters.by === "reported" ? " (first reported)" : ""}` }] : []),
@@ -225,6 +232,11 @@ export function IncidentExplorer() {
             </option>
           ))}
         </Select>
+        <Select label="records" value={filters.kind} onChange={(v) => update({ kind: v })}>
+          <option value="">incidents</option>
+          <option value="disclosed">disclosed CVEs</option>
+          <option value="all">both</option>
+        </Select>
         <Select label="origin" value={filters.origin} onChange={(v) => update({ origin: v })}>
           <option value="">all</option>
           {ORIGINS.map((o) => (
@@ -239,7 +251,7 @@ export function IncidentExplorer() {
         <div className="num">
           {all ? (
             <>
-              {results.length.toLocaleString("en-US")} of {all.length.toLocaleString("en-US")} incidents
+              {results.length.toLocaleString("en-US")} of {inKind.toLocaleString("en-US")} {kindNoun}
               {chips.map((c) => (
                 <button key={c.key} type="button" onClick={() => update({ [c.key]: "" } as Partial<Filters>)} className="ml-3 inline-flex items-center gap-1 rounded-[3px] border border-accent/40 bg-accent-tint px-1.5 py-0.5 font-mono text-[11px] text-accent" title="remove this filter">
                   {c.label} ×
@@ -284,6 +296,11 @@ export function IncidentExplorer() {
               </Link>
               <p className="mt-1 text-[13px] text-dim leading-relaxed line-clamp-2">{i.summary}</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {i.disclosed && (
+                  <span className="inline-flex items-center rounded-[3px] border border-line px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em] text-dim" title="A CVE or advisory with no confirmed exploitation: tracked separately, not counted as an incident">
+                    disclosed CVE
+                  </span>
+                )}
                 <SeverityBadge severity={i.severity} />
                 <TypeBadge type={i.type} short />
                 {i.categories.map((c) => (

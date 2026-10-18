@@ -38,7 +38,10 @@ async function loadFonts(): Promise<Font[]> {
 }
 
 interface Ctx {
+  /** Incidents only: disclosed vulnerabilities are left out (lib/counting.ts). */
   incidents: Incident[];
+  /** How many disclosed vulnerabilities were left out. */
+  disclosed: number;
   now: Date;
   siteHost: string;
   isStub: boolean;
@@ -176,7 +179,7 @@ export async function renderOgImages(ctx: Ctx, outDir: string): Promise<string[]
       <Frame ctx={ctx} title={SITE.tagline} subtitle={`${monthLabel(recent[0]!.month, true)} to ${monthLabel(to, true)} · incidents per month, 3-month average in amber`}>
         <div style={{ ...base, flexDirection: "column", width: chartW, justifyContent: "space-between" }}>
           <div style={{ ...base, gap: 56 }}>
-            <Stat label="incidents tracked" value={h.total.toLocaleString("en-US")} />
+            <Stat label="incidents" value={h.total.toLocaleString("en-US")} />
             <Stat label="real-world · sev 3–4" value={realCount.toLocaleString("en-US")} accent />
             <Stat label="trailing 12 months" value={`${h.trailing12.toLocaleString("en-US")} ${pct(h.trailingDeltaPct)}`} />
           </div>

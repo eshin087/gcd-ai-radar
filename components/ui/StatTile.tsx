@@ -46,7 +46,7 @@ export function StatTile({
       <div className="text-[12.5px] text-dim">{label}</div>
       <div className="flex flex-wrap items-baseline gap-2.5">
         {onValue ? (
-          <button type="button" onClick={onValue} className="group text-left" aria-label={`${label}: ${value} incidents, open the list`}>
+          <button type="button" onClick={onValue} className="group text-left" aria-label={`${label}: ${value}, open the list`}>
             <CountUp value={value} className={`${valueClass} underline decoration-transparent decoration-dotted underline-offset-[6px] group-hover:decoration-[color:var(--color-accent)]`} />
           </button>
         ) : (

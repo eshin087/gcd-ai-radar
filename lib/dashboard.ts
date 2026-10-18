@@ -1,3 +1,4 @@
+import { isDisclosedIncident } from "./counting";
 import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import type { Incident, Radar } from "./schema";
 import { toMonthKey, yearRange } from "./stats";
@@ -22,6 +23,10 @@ export interface CompactRow {
   severity: Incident["severity"];
   targets: Incident["targets"];
   source_count: number;
+  /** A CVE or advisory with no confirmed exploitation: its own series, not an incident (lib/counting.ts). */
+  disclosed: boolean;
+  /** First product named, for the disclosed-vulnerability breakdown (empty for incidents). */
+  product: string;
 }
 
 export interface DashboardData {
@@ -47,6 +52,8 @@ export function compactRow(i: Incident): CompactRow {
     severity: i.severity,
     targets: i.targets,
     source_count: i.source_count,
+    disclosed: isDisclosedIncident(i),
+    product: isDisclosedIncident(i) ? (i.products[0] ?? "") : "",
   };
 }
 
