@@ -1,13 +1,13 @@
 {
-  "_comment": "Allow-list of LLM/agent-era AI frameworks, inference servers, agent tooling, AI app builders and AI developer tools whose CVEs count as infra_vuln incidents. Deliberately excludes classic deep-learning libraries (TensorFlow, Keras, PyTorch, ONNX) whose memory-safety CVEs are about the library, not about AI systems being attacked, and generic automation tools (n8n). GitHub Advisory Database is queried per ecosystem with `affects=`; NVD with keywordSearch (keywordExactMatch for multi-word terms). Edit to widen or narrow coverage; the Methodology page explains this file. Changing it only affects future runs; scripts/prune-packages.ts removes already-published records for dropped packages.",
+  "_comment": "Allow-list of LLM/agent-era AI frameworks, inference servers, agent tooling, AI app builders and AI developer tools whose CVEs count as infra_vuln incidents. Deliberately excludes classic deep-learning libraries (TensorFlow, Keras, PyTorch, ONNX) whose memory-safety CVEs are about the library, not about AI systems being attacked, pre-LLM ML platforms (MLflow, NVIDIA Triton Inference Server, Ray), classic cloud ML services (Azure AI Search/Face/Language, Vertex AI Workbench) and generic tools (n8n). GitHub Advisory Database is queried per ecosystem with `affects=`; NVD with keywordSearch (keywordExactMatch for multi-word terms). Edit to widen or narrow coverage; the Methodology page explains this file. Changing it only affects future runs; scripts/prune-packages.ts removes already-published records for dropped packages.",
   "ghsa": {
     "pip": [
       "langchain", "langchain-core", "langchain-community", "langchain-experimental", "langgraph",
-      "llama-index", "llama-index-core", "vllm", "open-webui", "mlflow", "gradio", "langflow",
-      "litellm", "transformers", "ray", "anything-llm", "dify", "lollms", "haystack-ai",
+      "llama-index", "llama-index-core", "vllm", "open-webui", "gradio", "langflow",
+      "litellm", "transformers", "anything-llm", "dify", "lollms", "haystack-ai",
       "autogen", "crewai", "semantic-kernel", "mcp", "fastmcp", "ollama", "llama-cpp-python",
       "chromadb", "qdrant-client", "weaviate-client", "sentence-transformers", "diffusers",
-      "peft", "trl", "huggingface-hub", "triton", "nvidia-nemo", "comfyui", "openai", "anthropic",
+      "peft", "trl", "huggingface-hub", "nvidia-nemo", "comfyui", "openai", "anthropic",
       "google-generativeai", "pyautogen", "guardrails-ai", "nemoguardrails", "promptflow", "agno",
       "phidata", "browser-use", "lightllm", "sglang", "text-generation-inference", "localai"
     ],
@@ -23,16 +23,16 @@
     "maven": ["dev.langchain4j:langchain4j", "org.springframework.ai:spring-ai-core", "io.modelcontextprotocol.sdk:mcp"]
   },
   "nvd_keywords": [
-    "vLLM", "Ollama", "LangChain", "LlamaIndex", "Open WebUI", "MLflow", "Gradio", "Langflow",
+    "vLLM", "Ollama", "LangChain", "LlamaIndex", "Open WebUI", "Gradio", "Langflow",
     "LiteLLM", "llama.cpp", "llama-cpp-python", "Model Context Protocol", "AnythingLLM", "Dify",
-    "Flowise", "ComfyUI", "Ray Dashboard", "Triton Inference Server", "Hugging Face transformers",
+    "Flowise", "ComfyUI", "Hugging Face transformers",
     "Lollms", "LocalAI", "Text Generation WebUI", "ChromaDB", "Qdrant", "Weaviate",
-    "Copilot Studio", "Microsoft 365 Copilot", "GitHub Copilot", "Azure AI", "Amazon Bedrock",
-    "Vertex AI", "Gemini CLI", "Claude Code", "Codex CLI", "Cursor IDE", "Windsurf", "Lovable",
+    "Copilot Studio", "Microsoft 365 Copilot", "GitHub Copilot", "Azure AI Foundry", "Azure OpenAI", "Amazon Bedrock",
+    "Vertex AI Agent", "Gemini CLI", "Claude Code", "Codex CLI", "Cursor IDE", "Windsurf", "Lovable",
     "NVIDIA NeMo", "TensorRT-LLM", "SGLang", "Text Generation Inference"
   ],
   "dropped_packages": {
-    "_comment": "Packages removed from the allow-list on 2026-10-18; scripts/prune-packages.ts retires their published records and marks them rejected so no adapter brings them back.",
-    "names": ["tensorflow", "tensorflow lite", "tflite", "keras", "pytorch", "torch", "onnx", "onnxruntime", "onnx runtime", "n8n", "jupyter", "jupyter ai", "jupyter-ai", "label studio", "label-studio", "feast", "kserve", "bentoml", "datasets", "accelerate"]
+    "_comment": "Packages removed from the allow-list on 2026-10-18 (second batch from docs/nvd-audit.md: tandoor recipes onward); scripts/prune-packages.ts retires their published records and marks them rejected so no adapter brings them back.",
+    "names": ["tensorflow", "tensorflow lite", "tflite", "keras", "pytorch", "torch", "onnx", "onnxruntime", "onnx runtime", "n8n", "jupyter", "jupyter ai", "jupyter-ai", "label studio", "label-studio", "feast", "kserve", "bentoml", "datasets", "accelerate", "tandoor recipes", "wallos", "openpanel", "1panel", "next.js", "kiota", "kibana", "azure ai face service", "azure ai search", "azure ai language", "vertex ai workbench", "vertex ai search for commerce", "vertex ai experiments", "google-cloud-aiplatform", "triton inference server", "nvidia triton", "mlflow", "ray", "ray dashboard"]
   }
 }
