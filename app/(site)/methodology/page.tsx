@@ -217,7 +217,8 @@ export default function MethodologyPage() {
         <li>2026-10-18 · GitHub advisories and NVD backfilled from 2016.</li>
         <li>2026-10-18 · CVE allow-list narrowed to LLM and agent-era tooling; 522 records for dropped packages retired (TensorFlow 299, n8n 135, Keras 22, others 66).</li>
         <li>2026-10-18 · dashboard redesigned; every count opens its incidents, and category colours follow the seven families.</li>
-        <li>2026-10-18 · after an audit of the vulnerability records, MLflow, Triton, Ray, classic cloud ML services and false positives left the allow-list (171 records retired), and CVE merges were repaired.</li>
+        <li>2026-10-18 · CVE merging fixed: a record now joins the incident about its own CVE, not one that merely cites it; 6 misplaced sources moved, 2 duplicate pairs merged, 1 lost CVE restored.</li>
+        <li>2026-10-18 · CVE allow-list narrowed again after an audit of the NVD backfill; 171 records retired (MLflow 80, NVIDIA Triton 65, Ray 10, generic apps and classic cloud ML services 16).</li>
         <li>2026-10-18 · CVEs and advisories with no confirmed exploitation leave the incident counts and become a separate series, &ldquo;disclosed vulnerabilities&rdquo;.</li>
       </ul>
     </div>
