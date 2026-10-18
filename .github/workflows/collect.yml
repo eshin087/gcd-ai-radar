@@ -31,12 +31,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 75
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
           persist-credentials: true
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -54,8 +54,11 @@ jobs:
           COLLECTOR_GIT_NAME: ${{ vars.COLLECTOR_GIT_NAME }}
           COLLECTOR_GIT_EMAIL: ${{ vars.COLLECTOR_GIT_EMAIL }}
           COLLECTOR_DEBUG: ${{ inputs.verbose && '1' || '' }}
+          # workflow inputs are passed as environment variables, never interpolated into the script
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+          INPUT_SOURCE: ${{ inputs.source }}
         run: |
           ARGS=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          if [ -n "${{ inputs.source }}" ]; then ARGS="$ARGS --source=${{ inputs.source }}"; fi
+          if [ "$INPUT_DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "$INPUT_SOURCE" ]; then ARGS="$ARGS --source=$INPUT_SOURCE"; fi
           npm run collect -- $ARGS

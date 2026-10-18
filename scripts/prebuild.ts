@@ -18,17 +18,13 @@ import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { CATEGORY_META, SEVERITY_META, TYPE_META } from "../lib/taxonomy";
 import { isDisclosedIncident, recordKind } from "../lib/counting";
+import { csvCell } from "../lib/csv";
 import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
 
 function escapeXml(s: string): string {
   return s.replace(/[<>&'"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" })[c]!);
-}
-
-function csvCell(v: unknown): string {
-  const s = Array.isArray(v) ? v.join("; ") : String(v ?? "");
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 }
 
 function toCsv(incidents: Incident[]): string {

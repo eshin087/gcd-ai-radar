@@ -21,8 +21,11 @@ const approxDate = z
   .string()
   .regex(/^\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01]))?)?$/, "YYYY, YYYY-MM or YYYY-MM-DD");
 
+/** Only web URLs: a stored link is rendered as an <a href>, so no other scheme may get in. */
+const webUrl = z.url({ protocol: /^https?$/ });
+
 export const SourceSchema = z.object({
-  url: z.url(),
+  url: webUrl,
   publisher: z.string().min(1).max(120),
   title: z.string().min(1).max(300),
   published_at: isoDate,
@@ -132,7 +135,7 @@ export const RadarSchema = z.object({
   crawl_purpose: z.array(z.object({ name: z.string(), share: z.number() })),
   attribution: z.object({
     source: z.string(),
-    url: z.url(),
+    url: webUrl,
     license: z.string(),
   }),
 });

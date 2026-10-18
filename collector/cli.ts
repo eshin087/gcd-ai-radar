@@ -1,10 +1,12 @@
 import { existsSync, readFileSync } from "node:fs";
+import { appendFile } from "node:fs/promises";
 import path from "node:path";
 import { commitAndPush } from "./git";
 import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
 import { loadState } from "./lib/state";
 import { cveClashes } from "./pipeline/dedupe";
+import { classificationStalled, runSummaryMarkdown } from "./pipeline/health";
 import { runCollector, type RunOptions } from "./pipeline/run";
 import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
@@ -86,10 +88,19 @@ async function main() {
       };
       const summary = await runCollector(opts);
       summarize(summary);
-      const radarChanged = !sourceIds ? await maybeUpdateRadar(loadConfig().settings, { dryRun }) : false;
+      const settings = loadConfig().settings;
+      const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
       if (commit && (summary.changedFiles.length || radarChanged)) {
         const c = summary.record.counts;
         await commitAndPush(`data: run ${summary.record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged)`);
+      }
+      // Health: a job summary on Actions, and a failed job (owner gets an email) when classification has stalled.
+      const stalled = dryRun ? false : classificationStalled((await loadState()).runs, settings.alerts.stalled_runs);
+      const md = runSummaryMarkdown(summary.record, { stalled, stalledRuns: settings.alerts.stalled_runs, pendingWarn: settings.alerts.pending_warn });
+      if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);
+      if (stalled) {
+        log.error(`classification has stalled: the last ${settings.alerts.stalled_runs} scheduled runs classified nothing while candidates waited`);
+        process.exitCode = 2;
       }
       return;
     }

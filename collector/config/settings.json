@@ -52,6 +52,11 @@
       "batch_size": 2
     }
   ],
+  "alerts": {
+    "_comment": "The job fails (so GitHub emails the owner) after stalled_runs consecutive scheduled runs that classified nothing while candidates waited, e.g. every LLM provider down or out of quota. pending_warn only warns in the job summary.",
+    "stalled_runs": 3,
+    "pending_warn": 300
+  },
   "retention": {
     "rejected_days": 90,
     "runs_keep": 400

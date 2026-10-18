@@ -86,6 +86,15 @@ export const SettingsSchema = z.object({
     rejected_days: z.number().int().positive(),
     runs_keep: z.number().int().positive(),
   }),
+  /** When the unattended run should raise its hand (collector/pipeline/health.ts). */
+  alerts: z
+    .object({
+      /** Fail the job after this many consecutive scheduled runs that classified nothing while candidates waited. */
+      stalled_runs: z.number().int().min(1),
+      /** Warn in the job summary when this many candidates are waiting for classification. */
+      pending_warn: z.number().int().min(0),
+    })
+    .default({ stalled_runs: 3, pending_warn: 300 }),
 });
 export type Settings = z.infer<typeof SettingsSchema>;
 
