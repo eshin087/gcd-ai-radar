@@ -29,7 +29,7 @@ function referenceRelated(all: Incident[], incident: Incident, limit = 6, yearWi
       return { o, score };
     })
     .filter((x) => x.score >= 2)
-    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported))
+    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported) || b.o.id.localeCompare(a.o.id))
     .slice(0, limit)
     .map((x) => x.o);
 }

@@ -1,6 +1,6 @@
 # Security model
 
-What gcd AI Radar is exposed to, what protects it, and where to report a problem. Audits with measurements and dated findings live in `docs/audit-2026-10.md`.
+What GCD AI RADAR is exposed to, what protects it, and where to report a problem. Audits with measurements and dated findings live in `docs/audit-2026-10.md`.
 
 ## What runs where
 
