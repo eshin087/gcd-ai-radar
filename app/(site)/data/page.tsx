@@ -31,6 +31,7 @@ export default async function DataPage() {
     { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array, with a disclosed flag; what the incidents page uses." },
     { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per record for spreadsheets, with a record_kind column; list fields are semicolon-separated." },
     { href: "/data/years/index.json", label: "years/<year>.json", blurb: "The full records of one year of first report, one file per year; index.json lists the years and their counts." },
+    { href: "/data/summary.json", label: "summary.json", blurb: "The headline numbers and the last 24 months in one small file, for widgets and newsletters." },
     { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time and licence." },
     { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
   ];
@@ -47,6 +48,10 @@ export default async function DataPage() {
             tracked separately
           </a>
           . Everything below is regenerated on every deploy from the JSON files in the repository.
+        </p>
+        <p className="mt-3 panel px-3 py-2 text-[13px]">
+          Building on the numbers? The <Link href="/api" className="link">API page</Link> documents every file and field, the counting rules to keep,
+          how to cite the data, and an embeddable card.
         </p>
       </header>
 
