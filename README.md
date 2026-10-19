@@ -73,6 +73,8 @@ npm run collect                # fetch, classify, publish, commit
 npm run backfill -- aiid       # one-time seeds: aiid | atlas | avid | nvd | ghsa
 npm run review                 # walk through data/review-queue.json
 npm run validate               # Zod-validate every file under /data
+npm run briefing               # weekly briefing for the ISO week that ended last Sunday (Mondays on Actions)
+npm run briefing -- --week=2026-W42 --weeks=8 --force --no-commit   # backfill or rewrite weeks locally
 npx tsx scripts/shard-incidents.ts   # rebuild data/incidents/<year>.json from a pre-shard data/incidents.json
 ```
 

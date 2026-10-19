@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { FAMILIES } from "./families";
 import {
   CATEGORIES,
   DATE_PRECISIONS,
@@ -140,3 +141,87 @@ export const RadarSchema = z.object({
   }),
 });
 export type Radar = z.infer<typeof RadarSchema>;
+
+/**
+ * The weekly briefing, data/briefings/<ISO week>.json (lib/briefing.ts
+ * computes the numbers, collector/briefing.ts adds the narrative). Every
+ * number is reproducible from the incident records; the narrative is a
+ * language model's text and is marked as such.
+ */
+const count = z.number().int().min(0);
+const isoWeek = z.string().regex(/^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$/, "YYYY-Www");
+
+export const DeltaSchema = z.object({
+  now: count,
+  before: count,
+  change: z.number().int(),
+  pct: z.number().nullable(),
+});
+
+export const BriefingIncidentSchema = z.object({
+  id: z.string().regex(/^AIR-\d{4}-\d{4}$/),
+  slug: z.string(),
+  title: z.string().min(1).max(160),
+  type: z.enum(INCIDENT_TYPES),
+  /** Primary category and its family. */
+  category: z.enum(CATEGORIES),
+  family: z.enum(FAMILIES),
+  severity: SeveritySchema,
+  targets: z.array(z.enum(TARGETS)).min(1),
+  first_reported: isoDate,
+  source_count: z.number().int().min(1),
+});
+export type BriefingIncident = z.infer<typeof BriefingIncidentSchema>;
+
+export const BriefingNumbersSchema = z.object({
+  week: isoWeek,
+  start: isoDate,
+  end: isoDate,
+  counts: z.object({
+    records: count,
+    incidents: count,
+    real_world: count,
+    disclosed_vulnerabilities: count,
+    by_type: z.record(z.enum(INCIDENT_TYPES), count),
+    by_family: z.record(z.enum(FAMILIES), count),
+    by_severity: z.record(z.enum(["1", "2", "3", "4"]), count),
+  }),
+  previous: z.object({ week: isoWeek, incidents: count, real_world: count, disclosed_vulnerabilities: count }),
+  deltas: z.object({ incidents: DeltaSchema, real_world: DeltaSchema, disclosed_vulnerabilities: DeltaSchema }),
+  busiest_family: z.object({ family: z.enum(FAMILIES), count: count.min(1) }).nullable(),
+  top_targets: z.array(z.object({ target: z.enum(TARGETS), count: count.min(1) })).max(3),
+  notable: z.array(BriefingIncidentSchema).max(5),
+});
+export type BriefingNumbers = z.infer<typeof BriefingNumbersSchema>;
+
+export const BriefingNarrativeSchema = z.object({
+  headline: z.string().min(1).max(140),
+  text: z.string().min(1).max(2000),
+  provider: z.string(),
+  model: z.string(),
+  generated_at: isoDateTime,
+});
+
+export const BriefingSchema = BriefingNumbersSchema.extend({
+  generated_at: isoDateTime,
+  /** Null when no language model was available; `notes` says so. */
+  narrative: BriefingNarrativeSchema.nullable(),
+  notes: z.array(z.string()),
+  /** The dataset the numbers were computed from, for reproducibility. */
+  dataset: z.object({ records: count, incidents: count, last_collector_run: isoDateTime.nullable() }),
+});
+export type Briefing = z.infer<typeof BriefingSchema>;
+
+export const BriefingIndexEntrySchema = z.object({
+  week: isoWeek,
+  start: isoDate,
+  end: isoDate,
+  generated_at: isoDateTime,
+  incidents: count,
+  real_world: count,
+  disclosed_vulnerabilities: count,
+  headline: z.string().nullable(),
+  file: z.string(),
+});
+export const BriefingIndexSchema = z.object({ generated_at: isoDateTime, briefings: z.array(BriefingIndexEntrySchema) });
+export type BriefingIndex = z.infer<typeof BriefingIndexSchema>;

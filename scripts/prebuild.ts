@@ -12,14 +12,17 @@
  *   public/data/incidents/<slug>.json one file per incident
  *   public/data/meta.json             counts, last run, generation time
  *   public/data/summary.json          headline numbers and the 24-month series, for widgets (lib/summary.ts)
+ *   public/data/briefings/<week>.json the weekly briefings, plus briefings/index.json
  *   public/feed.xml                   RSS of the 50 most recently reported incidents
+ *   public/briefing.xml               RSS of the weekly briefings
  *   public/og/*.png                   chart images for sharing (satori + sharp)
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { MetaFile, YearIndexFile } from "../lib/api-docs";
-import { lastUpdated, loadIncidents, siteUrl } from "../lib/data";
-import type { Incident } from "../lib/schema";
+import { briefingSummaryLine } from "../lib/briefing";
+import { lastUpdated, loadBriefings, loadIncidents, siteUrl } from "../lib/data";
+import type { Briefing, Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { ATLAS_RELEASE, CATEGORY_META, OWASP_LLM_EDITION, SEVERITY_META, TYPE_META, atlasFor, owaspFor } from "../lib/taxonomy";
@@ -90,6 +93,46 @@ ${items}
 `;
 }
 
+function briefingRss(briefings: Briefing[], base: string): string {
+  const items = briefings
+    .slice(0, 52)
+    .map((b) => {
+      const url = `${base}/briefing/${b.week}`;
+      const title = b.narrative ? `${b.week}: ${b.narrative.headline}` : `This week in AI security, ${b.week}`;
+      const notable = b.notable.map((i) => `${i.title} (severity ${i.severity})`).join("; ");
+      const desc = [
+        `${b.start} to ${b.end}. ${briefingSummaryLine(b)}.`,
+        b.narrative ? `${b.narrative.text.replace(/\s+/g, " ")} (Written by a language model from the week's records.)` : "",
+        notable ? `Most notable: ${notable}.` : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
+      return `    <item>
+      <title>${escapeXml(title)}</title>
+      <link>${escapeXml(url)}</link>
+      <guid isPermaLink="true">${escapeXml(url)}</guid>
+      <pubDate>${new Date(b.generated_at).toUTCString()}</pubDate>
+      <description>${escapeXml(desc)}</description>
+    </item>`;
+    })
+    .join("\n");
+  const lastBuild = briefings[0] ? new Date(briefings[0].generated_at).toUTCString() : new Date().toUTCString();
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(SITE.name)} — this week in AI security</title>
+    <link>${escapeXml(base)}/briefing</link>
+    <atom:link href="${escapeXml(base)}/briefing.xml" rel="self" type="application/rss+xml" />
+    <description>A weekly briefing on AI cybersecurity incidents: counts from the data, the most notable incidents and a short narrative.</description>
+    <language>en</language>
+    <lastBuildDate>${lastBuild}</lastBuildDate>
+    <copyright>Data CC BY-SA 4.0 · ${escapeXml(SITE.author)}</copyright>
+${items}
+  </channel>
+</rss>
+`;
+}
+
 async function resetDir(dir: string) {
   await fs.rm(dir, { recursive: true, force: true });
   await fs.mkdir(dir, { recursive: true });
@@ -104,7 +147,8 @@ async function main() {
   const yearsDir = path.join(dataDir, "years");
   const rowsDir = path.join(dataDir, "rows");
   const slimDir = path.join(dataDir, "slim");
-  await Promise.all([perIncident, yearsDir, rowsDir, slimDir].map(resetDir));
+  const briefingsDir = path.join(dataDir, "briefings");
+  await Promise.all([perIncident, yearsDir, rowsDir, slimDir, briefingsDir].map(resetDir));
 
   const sorted = [...incidents].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id));
   const counted = sorted.filter((i) => !isDisclosedIncident(i));
@@ -155,13 +199,40 @@ async function main() {
   // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
   await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
 
+  // Weekly briefings: copied as validated, plus an index, and their own feed.
+  const briefings = await loadBriefings();
+  await Promise.all(briefings.map((b) => fs.writeFile(path.join(briefingsDir, `${b.week}.json`), JSON.stringify(b, null, 2) + "\n")));
+  await fs.writeFile(
+    path.join(briefingsDir, "index.json"),
+    JSON.stringify(
+      {
+        generated_at: new Date().toISOString(),
+        briefings: briefings.map((b) => ({
+          week: b.week,
+          start: b.start,
+          end: b.end,
+          generated_at: b.generated_at,
+          incidents: b.counts.incidents,
+          real_world: b.counts.real_world,
+          disclosed_vulnerabilities: b.counts.disclosed_vulnerabilities,
+          headline: b.narrative?.headline ?? null,
+          file: `/data/briefings/${b.week}.json`,
+          url: `${base}/briefing/${b.week}`,
+        })),
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  await fs.writeFile(path.join(PUBLIC, "briefing.xml"), briefingRss(briefings, base));
+
   const t0 = Date.now();
   const written = await renderOgImages(
     { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
     path.join(PUBLIC, "og"),
   );
   console.log(
-    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/data/summary.json, public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/data/summary.json, public/feed.xml, ${briefings.length} briefings + public/briefing.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

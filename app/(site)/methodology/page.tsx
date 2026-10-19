@@ -95,6 +95,7 @@ const SECTIONS = [
   ["pipeline", "How incidents are found and classified"],
   ["counting", "Counting rules"],
   ["cves", "Vulnerability records"],
+  ["briefing", "The weekly briefing"],
   ["sources", "Sources we read, and sources we deliberately do not"],
   ["limits", "Limitations and biases"],
   ["changes", "Change log"],
@@ -329,6 +330,33 @@ export default function MethodologyPage() {
         Workbench) and general apps whose CVE only touches an AI or MCP feature are excluded for the same reason.
       </p>
 
+      <H2 id="briefing">The weekly briefing</H2>
+      <p>
+        <Link href="/briefing" className="link">This week in AI security</Link> is written every Monday at 06:17 UTC for the ISO week (Monday to Sunday,
+        UTC) that has just ended. It has two parts, made differently:
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          <strong className="text-ink">The numbers and the list come from the data.</strong> A record belongs to the week of its first-reported date. The
+          counts follow the rules above: disclosed CVEs are a separate line, never incidents. The comparison is with the week before, counted from the same
+          records. The busiest family is the one with the most incidents by primary category, the top targets leave out &ldquo;not applicable&rdquo;, and the
+          five most notable incidents are ranked by severity, then number of sources. Anyone can recompute all of it from the dataset.
+        </li>
+        <li>
+          <strong className="text-ink">The narrative is written by a language model.</strong> The classifier model (Gemini, with Groq as fallback) is given
+          only the week&rsquo;s counts and records (titles, summaries, severities, families and targets) and asked for 120 to 180 words that use nothing else.
+          The reply is validated before it is kept: every count in it must be one of the week&rsquo;s numbers or appear in the records, and it may not call a
+          count unchanged when it changed, contain links, or run too long or short. A reply that fails twice is discarded. If no model is available the
+          briefing is published with the numbers and the list only, and says so.
+        </li>
+      </ul>
+      <p>
+        Limits: the checks catch wrong numbers, not every wrong word, so a narrative can still misstate what a record says; the incident pages and their sources
+        are the reference. A briefing is a snapshot taken on Monday. Records first reported in that week but collected later are not added, so the dashboard,
+        which recounts on every build, can show more for the same week. A week with few incidents is described from few records, and its comparison with the
+        week before can swing widely.
+      </p>
+
       <H2 id="sources">Sources we read, and sources we deliberately do not</H2>
       <p>
         The <Link href="/sources" className="link">Sources page</Link> lists every feed, API and dataset with its licence and live health. Some well-known outlets are
@@ -362,6 +390,7 @@ export default function MethodologyPage() {
           from categories; explorer filters and CSV columns added.
         </li>
         <li>2026-10-18 · product watch pages: every product family with records gets a page listing its disclosed CVEs, confirmed exploitation and CISA KEV flags (the classifier&rsquo;s cisa-kev tag). No counting rule changed.</li>
+        <li>2026-10-19 · weekly briefing added, &ldquo;This week in AI security&rdquo;: numbers from the data, narrative by a language model; backfilled for 2026-W35 to 2026-W42.</li>
       </ul>
     </div>
   );

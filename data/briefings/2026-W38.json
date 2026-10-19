@@ -1,0 +1,134 @@
+{
+  "week": "2026-W38",
+  "start": "2026-09-14",
+  "end": "2026-09-20",
+  "counts": {
+    "records": 61,
+    "incidents": 3,
+    "real_world": 2,
+    "disclosed_vulnerabilities": 58,
+    "by_type": {
+      "attack_on_ai": 2,
+      "ai_enabled_attack": 1
+    },
+    "by_family": {
+      "injection": 1,
+      "infra": 0,
+      "exposure": 1,
+      "agent": 0,
+      "supply": 0,
+      "social": 0,
+      "offense": 1,
+      "other": 0
+    },
+    "by_severity": {
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "4": 0
+    }
+  },
+  "previous": {
+    "week": "2026-W37",
+    "incidents": 4,
+    "real_world": 3,
+    "disclosed_vulnerabilities": 51
+  },
+  "deltas": {
+    "incidents": {
+      "now": 3,
+      "before": 4,
+      "change": -1,
+      "pct": -25
+    },
+    "real_world": {
+      "now": 2,
+      "before": 3,
+      "change": -1,
+      "pct": -33.33333333333333
+    },
+    "disclosed_vulnerabilities": {
+      "now": 58,
+      "before": 51,
+      "change": 7,
+      "pct": 13.725490196078432
+    }
+  },
+  "busiest_family": {
+    "family": "injection",
+    "count": 1
+  },
+  "top_targets": [
+    {
+      "target": "enterprise_deployment",
+      "count": 2
+    },
+    {
+      "target": "framework_or_tooling",
+      "count": 1
+    },
+    {
+      "target": "individual_victims",
+      "count": 1
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-0112",
+      "slug": "ai-assistants-exploited-via-crafted-links-for-recommendation",
+      "title": "AI Assistants Exploited via Crafted Links for Recommendation Poisoning",
+      "type": "attack_on_ai",
+      "category": "prompt_injection",
+      "family": "injection",
+      "severity": 3,
+      "targets": [
+        "enterprise_deployment",
+        "individual_victims"
+      ],
+      "first_reported": "2026-09-15",
+      "source_count": 2
+    },
+    {
+      "id": "AIR-2026-0387",
+      "slug": "ai-agent-exploited-application-vulnerabilities-in-data-breac",
+      "title": "AI Agent Exploited Application Vulnerabilities in Data Breach",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-09-14",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-0391",
+      "slug": "zcode-ai-coding-assistant-reportedly-uploaded-local-code-rep",
+      "title": "ZCode AI Coding Assistant Reportedly Uploaded Local Code Repositories Without Consent",
+      "type": "attack_on_ai",
+      "category": "data_leak",
+      "family": "exposure",
+      "severity": 2,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-09-18",
+      "source_count": 1
+    }
+  ],
+  "generated_at": "2026-10-19T06:33:53.189Z",
+  "narrative": {
+    "headline": "AI assistants and agents exploited alongside code exposure in week 2026-W38",
+    "text": "The week had 3 incidents, down 1 from 4, including 2 real-world incidents, down 1 from 3. Operators embedded malicious links into websites to hijack initial user turns with AI assistants, manipulating assistant memory and recommendation outputs for promotional purposes. A third party used an AI agent to execute a multistep intrusion, modifying personal data and accessing invoices, which an organization reported to Spain's data protection authority. Separately, an AI coding assistant uploaded local developer repositories to cloud storage without consent due to a default-enabled indexing feature, leading the developer to patch the issue and disable the upload path. The week also had 58 disclosed vulnerabilities, up 7 from 51.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-10-19T06:33:53.189Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 1921,
+    "incidents": 412,
+    "last_collector_run": "2026-10-19T05:07:52.805Z"
+  }
+}

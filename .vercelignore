@@ -4,6 +4,7 @@
 public/data
 public/og
 public/feed.xml
+public/briefing.xml
 out
 .next
 node_modules

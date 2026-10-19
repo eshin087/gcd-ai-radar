@@ -20,6 +20,7 @@
     "backfill": "tsx collector/cli.ts backfill",
     "review": "tsx collector/cli.ts review",
     "radar": "tsx collector/cli.ts radar",
+    "briefing": "tsx collector/cli.ts briefing",
     "validate": "tsx collector/cli.ts validate"
   },
   "dependencies": {

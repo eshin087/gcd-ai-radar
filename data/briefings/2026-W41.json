@@ -1,0 +1,97 @@
+{
+  "week": "2026-W41",
+  "start": "2026-10-05",
+  "end": "2026-10-11",
+  "counts": {
+    "records": 58,
+    "incidents": 1,
+    "real_world": 1,
+    "disclosed_vulnerabilities": 57,
+    "by_type": {
+      "attack_on_ai": 1,
+      "ai_enabled_attack": 0
+    },
+    "by_family": {
+      "injection": 0,
+      "infra": 1,
+      "exposure": 0,
+      "agent": 0,
+      "supply": 0,
+      "social": 0,
+      "offense": 0,
+      "other": 0
+    },
+    "by_severity": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0
+    }
+  },
+  "previous": {
+    "week": "2026-W40",
+    "incidents": 2,
+    "real_world": 2,
+    "disclosed_vulnerabilities": 10
+  },
+  "deltas": {
+    "incidents": {
+      "now": 1,
+      "before": 2,
+      "change": -1,
+      "pct": -50
+    },
+    "real_world": {
+      "now": 1,
+      "before": 2,
+      "change": -1,
+      "pct": -50
+    },
+    "disclosed_vulnerabilities": {
+      "now": 57,
+      "before": 10,
+      "change": 47,
+      "pct": 470
+    }
+  },
+  "busiest_family": {
+    "family": "infra",
+    "count": 1
+  },
+  "top_targets": [
+    {
+      "target": "framework_or_tooling",
+      "count": 1
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-0241",
+      "slug": "langflow-remote-code-execution-via-mcp-stdio-transport",
+      "title": "Langflow Remote Code Execution via MCP Stdio Transport",
+      "type": "attack_on_ai",
+      "category": "infra_vuln",
+      "family": "infra",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-10-05",
+      "source_count": 2
+    }
+  ],
+  "generated_at": "2026-10-19T06:34:01.704Z",
+  "narrative": {
+    "headline": "Langflow remote code execution vulnerability exploited in the wild",
+    "text": "The week had 1 incident, down 1 from 2, which was also 1 real-world incident, down 1 from 2. The notable incident involved Langflow, which contained a vulnerability allowing authenticated users to achieve remote code execution through unvalidated model context protocol server configuration commands. Honeypot exploitation attempts were actively observed in the wild. Infrastructure vulnerabilities was the busiest family and Framework / tooling was the most-listed target. The week also had 57 disclosed vulnerabilities, up 47 from 10.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-10-19T06:34:01.704Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 1921,
+    "incidents": 412,
+    "last_collector_run": "2026-10-19T05:07:52.805Z"
+  }
+}

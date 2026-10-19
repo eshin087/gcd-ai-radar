@@ -11,6 +11,7 @@ next-env.d.ts
 public/data/
 public/og/
 public/feed.xml
+public/briefing.xml
 
 # local env and secrets (never commit keys)
 .env
