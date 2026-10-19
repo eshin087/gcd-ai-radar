@@ -113,6 +113,23 @@ describe("related incidents from the bucket index", () => {
     expect(relatedFromIndex(index, lone)).toHaveLength(6);
   });
 
+  it("breaks a tie on score and day by id, not by the bucket a candidate came from", () => {
+    // 0102 sits in the first bucket the incident reads (c:agent_hijack), 0103 in the second (c:data_leak);
+    // both score 3.5 (category, type, within 30 days) on the same day, so only the id can order them.
+    const incident = inc("AIR-2026-0101", "2026-03-01", { categories: ["agent_hijack", "data_leak"], targets: ["Anthropic"] });
+    const tied = [
+      incident,
+      inc("AIR-2026-0102", "2026-03-05", { categories: ["agent_hijack"], targets: ["Google"] }),
+      inc("AIR-2026-0103", "2026-03-05", { categories: ["data_leak"], targets: ["Meta"] }),
+    ];
+    const index = buildRelatedIndex(tied);
+    expect(relatedCandidates(index, incident).map((i) => i.id)).toEqual(["AIR-2026-0102", "AIR-2026-0103"]);
+    expect(relatedFromIndex(index, incident, 2).map((i) => i.id)).toEqual(["AIR-2026-0103", "AIR-2026-0102"]);
+    // at the end of the list the tie decides which record is shown at all
+    expect(relatedFromIndex(index, incident, 1).map((i) => i.id)).toEqual(["AIR-2026-0103"]);
+    expect(relatedFromIndex(index, incident, 1).map((i) => i.id)).toEqual(referenceRelated(tied, incident, 1).map((i) => i.id));
+  });
+
   it("relatedIncidents() reuses one index per dataset array", () => {
     const a = relatedIncidents(fixtures, base).map((i) => i.id);
     const b = relatedIncidents(fixtures, fixtures[1]!).map((i) => i.id);
