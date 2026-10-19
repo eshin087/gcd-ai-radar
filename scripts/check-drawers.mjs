@@ -295,11 +295,11 @@ async function runChecks(client, base) {
     await navigate(client, `${base}/`);
     await view.setup();
     const columns = await evaluate(client, COLUMN_PROBES);
-    // the calendar view of the trend panel: the first day with a count
+    // the calendar view of the trend panel: the first day with a count (only days with a count are buttons)
     await toggle(client, "Trend view", "Calendar");
-    const day = await evaluate(client, `document.querySelector('section#trend rect[role="button"]')?.getAttribute("aria-label") ?? null`);
-    if (day) {
-      const r = await probe(client, { selector: `section#trend rect[aria-label="${day.replace(/"/g, '\\"')}"]` });
+    const hasDay = await evaluate(client, `Boolean(document.querySelector('section#trend rect[role="button"]'))`);
+    if (hasDay) {
+      const r = await probe(client, { selector: 'section#trend rect[role="button"]', index: 0 });
       const ok = !r.error && r.shown !== null && r.shown === r.drawer && r.closed;
       results.push({ view: view.name, name: "calendar day", ok, ...r });
       if (verbose || !ok) console.log(`${ok ? "ok  " : "FAIL"} ${view.name} · calendar day: ${r.error ?? `shows ${r.shown}, drawer ${r.drawer}, closed ${r.closed}`}`);
