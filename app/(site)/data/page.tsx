@@ -78,6 +78,15 @@ export default async function DataPage() {
         </p>
       </section>
 
+      <section className="space-y-2">
+        <h2 className="label">Product pages</h2>
+        <p className="text-[13px] text-dim">
+          The <Link href="/products" className="link">product index</Link> lists every product family with records, and each product has its own page at{" "}
+          <span className="num">{base}/products/&lt;slug&gt;</span> with its disclosed CVEs, confirmed exploitation and CISA KEV flags, newest first. Product
+          names are grouped into families for display only (<span className="num">lib/products.ts</span>); the downloads keep each name as filed.
+        </p>
+      </section>
+
       <section>
         <h2 className="label mb-2">Chart images</h2>
         <p className="text-[12.5px] text-dim mb-3">1200×630 PNGs for posts and slides, regenerated with the data. Link back to the site when you use them.</p>

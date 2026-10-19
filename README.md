@@ -25,6 +25,8 @@ feeds + APIs ──▶ collector (GitHub Actions, every 6 h) ──▶ /data/*.j
 - Counts are per incident, not per article: one event covered by fifteen outlets is one
   incident with fifteen sources.
 - Only titles, links, dates and our own two-sentence summaries are stored. No article text.
+- Product watch pages (`/products`, built by `buildProductIndex` in `lib/products.ts`) list each
+  product family's disclosed CVEs, confirmed exploitation and CISA KEV flags, newest first.
 
 ## Status
 
