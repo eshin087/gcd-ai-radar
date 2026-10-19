@@ -35,6 +35,26 @@ Actions (it needs `GEMINI_API_KEY`, see below) and commits new data to `main`, w
 redeploys the site. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD,
 GitHub Advisories) are backfilled from 2016.
 
+## Reuse: API and embed
+
+Everything the site counts is published as static files with open CORS, documented field by
+field at [`/api`](https://gcd-ai-radar.vercel.app/api) (`app/(site)/api/page.tsx`, field notes in
+`lib/api-docs.ts`).
+
+- `/data/summary.json` holds the headline numbers (totals, real-world, trailing 12 and 24 months
+  with the prior window and delta, this month, year to date) and the last 24 months, built by
+  `lib/summary.ts` from the same functions as the dashboard and checked by `tests/summary.test.ts`.
+- `/embed` is a card for other sites' iframes: `?theme=dark|light`, `?window=12m|24m`, `?compact=1`.
+  `vercel.json` lets only that path be framed (`tests/headers.test.ts` checks it).
+
+```html
+<iframe src="https://gcd-ai-radar.vercel.app/embed?theme=dark&amp;window=12m" title="AI cybersecurity incidents, last 12 months" width="360" height="260" loading="lazy" style="border:0;max-width:100%"></iframe>
+```
+
+Counts carried elsewhere must keep the counting rules on the API page: disclosed vulnerabilities are
+never incidents, and the latest months are provisional. Data is CC BY-SA 4.0: cite the site with a
+link and the date you accessed it.
+
 ## Development
 
 ```bash

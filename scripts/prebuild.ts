@@ -11,21 +11,24 @@
  *   public/data/search-index.json     token index over id, title and products for the explorer's search box
  *   public/data/incidents/<slug>.json one file per incident
  *   public/data/meta.json             counts, last run, generation time
+ *   public/data/summary.json          headline numbers and the 24-month series, for widgets (lib/summary.ts)
  *   public/feed.xml                   RSS of the 50 most recently reported incidents
  *   public/og/*.png                   chart images for sharing (satori + sharp)
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import type { MetaFile, YearIndexFile } from "../lib/api-docs";
 import { lastUpdated, loadIncidents, siteUrl } from "../lib/data";
 import type { Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { ATLAS_RELEASE, CATEGORY_META, OWASP_LLM_EDITION, SEVERITY_META, TYPE_META, atlasFor, owaspFor } from "../lib/taxonomy";
 import { isDisclosedIncident, recordKind } from "../lib/counting";
-import { csvCell } from "../lib/csv";
+import { CSV_COLUMNS, csvCell } from "../lib/csv";
 import { compactRow } from "../lib/rows";
 import { buildSearchIndex } from "../lib/search";
 import { groupByShard } from "../lib/shards";
+import { COUNTING_RULE_NOTE, buildSummary } from "../lib/summary";
 import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
@@ -35,11 +38,7 @@ function escapeXml(s: string): string {
 }
 
 function toCsv(incidents: Incident[]): string {
-  const cols = [
-    "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
-    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "owasp_llm", "atlas", "tags", "summary",
-    "first_source_url", "url",
-  ];
+  const cols: readonly string[] = CSV_COLUMNS;
   const lines = [cols.join(",")];
   const base = siteUrl();
   for (const i of incidents) {
@@ -117,7 +116,7 @@ async function main() {
 
   // Year shards: the full records for download, compact rows for the dashboard's drawers, slim records for the explorer.
   const shards = groupByShard(sorted);
-  const yearIndex: { year: number; records: number; incidents: number; disclosed: number; file: string }[] = [];
+  const yearIndex: YearIndexFile["years"] = [];
   for (const [year, records] of shards) {
     const disclosed = records.filter(isDisclosedIncident).length;
     yearIndex.unshift({ year, records: records.length, incidents: records.length - disclosed, disclosed, file: `/data/years/${year}.json` });
@@ -127,34 +126,32 @@ async function main() {
       fs.writeFile(path.join(slimDir, `${year}.json`), JSON.stringify(records.map(slim)) + "\n"),
     ]);
   }
-  await fs.writeFile(path.join(yearsDir, "index.json"), JSON.stringify({ generated_at: new Date().toISOString(), years: yearIndex }, null, 2) + "\n");
+  const yearIndexFile: YearIndexFile = { generated_at: new Date().toISOString(), years: yearIndex };
+  await fs.writeFile(path.join(yearsDir, "index.json"), JSON.stringify(yearIndexFile, null, 2) + "\n");
   const index = buildSearchIndex(sorted);
   await fs.writeFile(path.join(dataDir, "search-index.json"), JSON.stringify(index) + "\n");
 
-  await fs.writeFile(
-    path.join(dataDir, "meta.json"),
-    JSON.stringify(
-      {
-        generated_at: new Date().toISOString(),
-        site: base,
-        records: sorted.length,
-        incidents: counted.length,
-        disclosed_vulnerabilities: sorted.length - counted.length,
-        counting_rule: "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves",
-        years: yearIndex.map((y) => ({ year: y.year, records: y.records, incidents: y.incidents, disclosed_vulnerabilities: y.disclosed, file: y.file })),
-        last_collector_run: updated,
-        standards_mapping: {
-          owasp_llm_top_10: OWASP_LLM_EDITION,
-          mitre_atlas_release: ATLAS_RELEASE,
-          rule: "derived from type and categories, not classified per record; see /methodology#standards",
-        },
-        license: "CC BY-SA 4.0",
-        license_url: SITE.dataLicense.url,
-      },
-      null,
-      2,
-    ) + "\n",
-  );
+  // meta.json and summary.json are documented field by field on /api (lib/api-docs.ts)
+  const meta: MetaFile = {
+    generated_at: new Date().toISOString(),
+    site: base,
+    records: sorted.length,
+    incidents: counted.length,
+    disclosed_vulnerabilities: sorted.length - counted.length,
+    counting_rule: COUNTING_RULE_NOTE,
+    years: yearIndex.map((y) => ({ year: y.year, records: y.records, incidents: y.incidents, disclosed_vulnerabilities: y.disclosed, file: y.file })),
+    last_collector_run: updated,
+    standards_mapping: {
+      owasp_llm_top_10: OWASP_LLM_EDITION,
+      mitre_atlas_release: ATLAS_RELEASE,
+      rule: "derived from type and categories, not classified per record; see /methodology#standards",
+    },
+    license: SITE.dataLicense.name,
+    license_url: SITE.dataLicense.url,
+  };
+  await fs.writeFile(path.join(dataDir, "meta.json"), JSON.stringify(meta, null, 2) + "\n");
+  const summary = buildSummary(sorted, { now: new Date(), site: base, lastUpdated: updated });
+  await fs.writeFile(path.join(dataDir, "summary.json"), JSON.stringify(summary, null, 2) + "\n");
   // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
   await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
 
@@ -164,7 +161,7 @@ async function main() {
     path.join(PUBLIC, "og"),
   );
   console.log(
-    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/data/summary.json, public/feed.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

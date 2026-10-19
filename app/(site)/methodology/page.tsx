@@ -4,6 +4,8 @@ import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import packages from "@/collector/config/packages.json";
 import queries from "@/collector/config/queries.json";
 import settings from "@/collector/config/settings.json";
+import { RuleText } from "@/components/ui/RuleText";
+import { COUNTING_RULES, DISCLOSED_RULE } from "@/lib/counting-rules";
 import { SITE } from "@/lib/site";
 import {
   ATLAS_RELEASE,
@@ -293,19 +295,11 @@ export default function MethodologyPage() {
 
       <H2 id="counting">Counting rules</H2>
       <ul className="list-disc pl-5 space-y-1">
-        <li>One real-world event is one incident, however many articles cover it. Each article becomes a source on that incident.</li>
-        <li>
-          Disclosed vulnerabilities, CVEs and advisories with no confirmed exploitation, are never part of an incident count, chart, tile or the RSS feed. The
-          dashboard shows them as a separate monthly series.
-        </li>
-        <li>Monthly charts count each incident once, under its primary category.</li>
-        <li>
-          The default time axis is the <em>incident date</em> (when it happened, approximate dates allowed). A toggle switches to <em>first reported</em> (earliest
-          source date). Incidents known only to the year are excluded from monthly series but counted in totals.
-        </li>
-        <li>The most recent two months are marked provisional: reporting lags events, so the latest bars will rise.</li>
-        <li>&ldquo;This month&rdquo; compares the current month so far with the whole of last month; &ldquo;year to date&rdquo; compares the same calendar span of the previous year.</li>
-        <li>The trend line is a least-squares fit over the visible window; the amber line is a three-month centred average.</li>
+        {COUNTING_RULES.map((r) => (
+          <li key={r.id}>
+            <RuleText text={r.text} />
+          </li>
+        ))}
       </ul>
 
       <H2 id="cves">Vulnerability records</H2>
@@ -322,9 +316,7 @@ export default function MethodologyPage() {
         exploited or the vendor confirms exploitation.
       </p>
       <p>
-        The exact rule: a record is a disclosed vulnerability when its severity is below 3 and it either comes from the NVD or GitHub advisory backfills or
-        every one of its sources is a vulnerability database. Anything reported by the press or by researchers counts as an incident. Downloads keep every
-        record; the CSV carries a <span className="num text-[12px]">record_kind</span> column and the compact JSON a{" "}
+        The exact rule: {DISCLOSED_RULE.charAt(0).toLowerCase() + DISCLOSED_RULE.slice(1)} Downloads keep every record; the CSV carries a <span className="num text-[12px]">record_kind</span> column and the compact JSON a{" "}
         <span className="num text-[12px]">disclosed</span> flag.
       </p>
       <p>

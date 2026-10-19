@@ -12,7 +12,8 @@ export function SiteFooter() {
             two-sentence summaries, never article text, and links to original reporting.
           </p>
           <p>
-            <a className="link" href={SITE.github}>the code on GitHub</a>
+            <a className="link" href={SITE.github}>the code on GitHub</a> ·{" "}
+            <Link className="link" href="/api">API, embed and citation</Link>
           </p>
         </div>
         <div className="space-y-2">
