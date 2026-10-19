@@ -22,6 +22,7 @@ export interface MetaFile {
   counting_rule: string;
   years: { year: number; records: number; incidents: number; disclosed_vulnerabilities: number; file: string }[];
   last_collector_run: string | null;
+  standards_mapping: { owasp_llm_top_10: string; mitre_atlas_release: string; rule: string };
   license: string;
   license_url: string;
 }
@@ -178,6 +179,7 @@ export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }>
   counting_rule: { type: "string", note: "The disclosed-vulnerability rule in one sentence." },
   years: { type: "object[]", note: "Per year of first report: year, records, incidents, disclosed_vulnerabilities, file (the years/<year>.json path)." },
   last_collector_run: { type: "string (RFC 3339) | null", note: "When the collector last finished a run; null before the first run." },
+  standards_mapping: { type: "{ owasp_llm_top_10, mitre_atlas_release, rule }", note: "The OWASP LLM Top 10 edition and MITRE ATLAS release the CSV's owasp_llm and atlas columns refer to. Those columns are derived from type and categories, not classified per record." },
   license: { type: "string", note: "\"CC BY-SA 4.0\"." },
   license_url: { type: "string (URL)", note: "The licence text." },
 };

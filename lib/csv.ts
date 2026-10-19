@@ -14,5 +14,6 @@ export function csvCell(v: unknown): string {
 /** Columns of public/data/incidents.csv, in order. The API page documents this list, so a change here is a documented change. */
 export const CSV_COLUMNS = [
   "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
-  "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "tags", "summary", "first_source_url", "url",
+  "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "owasp_llm", "atlas", "tags", "summary",
+  "first_source_url", "url",
 ] as const;

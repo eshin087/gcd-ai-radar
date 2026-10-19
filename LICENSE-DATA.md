@@ -23,6 +23,10 @@ When you redistribute the data, keep these notices:
 - **AI Incident Database** (incidentdatabase.ai), CC BY-SA 4.0. McGregor, S. (2021)
   "Preventing Repeated Real World AI Failures by Cataloging Incidents: The AI Incident Database."
 - **MITRE ATLAS** (atlas.mitre.org), Apache 2.0. © 2021-2026 The MITRE Corporation.
+  Case studies, and the technique ids and names in the `atlas` export column.
+- **OWASP Top 10 for LLM Applications 2025** (genai.owasp.org), CC BY-SA 4.0. © OWASP Foundation.
+  Entry ids and names in the `owasp_llm` export column. The mapping from categories to OWASP
+  entries and ATLAS techniques is gcd AI Radar's own and is not endorsed by OWASP or MITRE.
 - **AVID, the AI Vulnerability Database** (avidml.org), MIT.
 - **NVD**: "This product uses the NVD API but is not endorsed or certified by the NVD."
 - **GitHub Advisory Database** (github.com/advisories), CC BY 4.0.

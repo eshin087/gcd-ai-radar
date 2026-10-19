@@ -284,8 +284,13 @@ console.log(\`\${t.incidents} AI cybersecurity incidents from \${t.from} to \${t
         Columns in this order. List fields (categories, targets, products, tags) are joined with &ldquo;; &rdquo;.{" "}
         <span className="num text-[12.5px]">record_kind</span> is <span className="num text-[12.5px]">incident</span> or{" "}
         <span className="num text-[12.5px]">disclosed_vulnerability</span>; <span className="num text-[12.5px]">first_source_url</span> is the first
-        source&rsquo;s link and <span className="num text-[12.5px]">url</span> the record&rsquo;s page here. A cell that a spreadsheet would run as a
-        formula is prefixed with a single quote.
+        source&rsquo;s link and <span className="num text-[12.5px]">url</span> the record&rsquo;s page here.{" "}
+        <span className="num text-[12.5px]">owasp_llm</span> and <span className="num text-[12.5px]">atlas</span> list the OWASP LLM Top 10 entries and
+        MITRE ATLAS techniques an incident maps to; they are derived from its type and categories, not classified per record (
+        <Link href="/methodology#standards" className="link">
+          standards mapping
+        </Link>
+        ), and meta.json names the editions. A cell that a spreadsheet would run as a formula is prefixed with a single quote.
       </p>
       <p className="num text-[12px] text-dim break-words">{CSV_COLUMNS.join(", ")}</p>
 
