@@ -1,5 +1,15 @@
 [
   {
+    "key": "03d3ba9d36cc0643",
+    "title": "⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
+    "url": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: General weekly recap newsletter with no specific security incident isolated for reporting.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T22:32:46.941Z"
+  },
+  {
     "key": "deffbecb700c2479",
     "title": "MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks",
     "url": "https://securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks",
