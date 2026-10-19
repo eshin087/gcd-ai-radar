@@ -91,13 +91,13 @@ export function relatedCandidates(index: RelatedIndex, incident: Incident, every
   return out;
 }
 
-/** Ranks candidates by score, newest first among equals. */
+/** Ranks candidates by score, newest first among equals, then by id: the order never depends on the order candidates arrive in. */
 export function rankRelated(incident: Incident, candidates: readonly Incident[], limit: number): Incident[] {
   const time = Date.parse(`${incident.first_reported}T00:00:00Z`);
   return candidates
     .map((o) => ({ o, score: relatedScore(incident, time, o) }))
     .filter((x) => x.score >= RELATED_MIN_SCORE)
-    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported))
+    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported) || b.o.id.localeCompare(a.o.id))
     .slice(0, limit)
     .map((x) => x.o);
 }
