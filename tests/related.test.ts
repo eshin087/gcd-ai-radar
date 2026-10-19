@@ -29,7 +29,7 @@ function referenceRelated(all: Incident[], incident: Incident, limit = 6, yearWi
       return { o, score };
     })
     .filter((x) => x.score >= 2)
-    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported))
+    .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported) || b.o.id.localeCompare(a.o.id))
     .slice(0, limit)
     .map((x) => x.o);
 }
@@ -111,6 +111,14 @@ describe("related incidents from the bucket index", () => {
     expect(relatedCandidates(index, lone, true).map((i) => i.id).sort()).toEqual(["AIR-2024-0007", "AIR-2026-0001", "AIR-2026-0002", "AIR-2026-0009", "AIR-2026-0010", "AIR-2027-0008"]);
     expect(relatedFromIndex(index, lone).map((i) => i.id)).toEqual(referenceRelated(fixtures, lone).map((i) => i.id));
     expect(relatedFromIndex(index, lone)).toHaveLength(6);
+  });
+
+  it("breaks a tie on score and date by id, whatever order the candidates arrive in", () => {
+    const a = inc("AIR-2026-0107", "2026-06-12", { categories: ["agent_hijack"], targets: ["Google"] });
+    const b = inc("AIR-2026-0130", "2026-06-12", { categories: ["agent_hijack"], targets: ["Google"] });
+    expect(rankRelated(base, [a, b], 6).map((i) => i.id)).toEqual(["AIR-2026-0130", "AIR-2026-0107"]);
+    expect(rankRelated(base, [b, a], 6).map((i) => i.id)).toEqual(["AIR-2026-0130", "AIR-2026-0107"]);
+    expect(referenceRelated([base, a, b], base).map((i) => i.id)).toEqual(["AIR-2026-0130", "AIR-2026-0107"]);
   });
 
   it("relatedIncidents() reuses one index per dataset array", () => {
