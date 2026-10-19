@@ -29,6 +29,7 @@ function referenceRelated(all: Incident[], incident: Incident, limit = 6, yearWi
       return { o, score };
     })
     .filter((x) => x.score >= 2)
+    // the id key is implicit in the old scan (readIncidents sorts by first report, then id, both descending); spelled out so the reference does not depend on input order
     .sort((a, b) => b.score - a.score || b.o.first_reported.localeCompare(a.o.first_reported) || b.o.id.localeCompare(a.o.id))
     .slice(0, limit)
     .map((x) => x.o);
@@ -111,6 +112,18 @@ describe("related incidents from the bucket index", () => {
     expect(relatedCandidates(index, lone, true).map((i) => i.id).sort()).toEqual(["AIR-2024-0007", "AIR-2026-0001", "AIR-2026-0002", "AIR-2026-0009", "AIR-2026-0010", "AIR-2027-0008"]);
     expect(relatedFromIndex(index, lone).map((i) => i.id)).toEqual(referenceRelated(fixtures, lone).map((i) => i.id));
     expect(relatedFromIndex(index, lone)).toHaveLength(6);
+  });
+
+  it("breaks a tie in score and date by id, whatever order the buckets give", () => {
+    // AIR-2025-0109 on the live data: 0130 and 0107 tie at 5.5 on the same day; 0107 is found first, through a category 0130 does not share
+    const incident = inc("AIR-2025-0109", "2025-04-29", { categories: ["ai_assisted_intrusion", "deepfake_fraud"], targets: ["enterprise_deployment"] });
+    const viaIntrusion = inc("AIR-2025-0107", "2025-04-23", { categories: ["ai_assisted_intrusion"], targets: ["enterprise_deployment"] });
+    const viaDeepfake = inc("AIR-2025-0130", "2025-04-23", { categories: ["deepfake_fraud"], targets: ["enterprise_deployment"] });
+    const records = [incident, viaIntrusion, viaDeepfake];
+    const index = buildRelatedIndex(records);
+    expect(relatedCandidates(index, incident).map((i) => i.id)).toEqual(["AIR-2025-0107", "AIR-2025-0130"]);
+    expect(relatedFromIndex(index, incident, 1).map((i) => i.id)).toEqual(["AIR-2025-0130"]);
+    expect(relatedFromIndex(index, incident, 1)).toEqual(referenceRelated(records, incident, 1));
   });
 
   it("relatedIncidents() reuses one index per dataset array", () => {
