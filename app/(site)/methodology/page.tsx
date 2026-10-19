@@ -151,7 +151,7 @@ export default function MethodologyPage() {
       <h3 className="text-[13px] font-medium text-ink mt-4">Categories</h3>
       <dl className="divide-y divide-line-soft">
         {CATEGORIES.map((c) => (
-          <div key={c} className="grid grid-cols-[11rem_1fr] gap-3 py-2">
+          <div key={c} className="grid gap-2 py-2.5 sm:grid-cols-[max-content_1fr] sm:gap-4">
             <dt>
               <CategoryBadge category={c} short={false} />
             </dt>
@@ -162,7 +162,7 @@ export default function MethodologyPage() {
       <h3 className="text-[13px] font-medium text-ink mt-4">Severity</h3>
       <dl className="divide-y divide-line-soft">
         {SEVERITIES.map((s) => (
-          <div key={s} className="grid grid-cols-[11rem_1fr] gap-3 py-2">
+          <div key={s} className="grid gap-2 py-2.5 sm:grid-cols-[max-content_1fr] sm:gap-4">
             <dt>
               <SeverityBadge severity={s} short={false} />
             </dt>
@@ -364,6 +364,7 @@ export default function MethodologyPage() {
         <li>2026-10-18 · CVE merging fixed: a record now joins the incident about its own CVE, not one that merely cites it; 6 misplaced sources moved, 2 duplicate pairs merged, 1 lost CVE restored.</li>
         <li>2026-10-18 · CVE allow-list narrowed again after an audit of the NVD backfill; 171 records retired (MLflow 80, NVIDIA Triton 65, Ray 10, generic apps and classic cloud ML services 16).</li>
         <li>2026-10-18 · CVEs and advisories with no confirmed exploitation leave the incident counts and become a separate series, &ldquo;disclosed vulnerabilities&rdquo;.</li>
+        <li>2026-10-18 · site renamed GCD AI RADAR; dashboard charts redrawn as a family stream, slope, radar, severity heatmap, target bubbles, flow, calendar and running total. No counting rule changed.</li>
         <li>
           2026-10-18 · records mapped to the OWASP Top 10 for LLM Applications ({OWASP_LLM_EDITION}) and MITRE ATLAS techniques (release {ATLAS_RELEASE}), derived
           from categories; explorer filters and CSV columns added.

@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-[9rem_1fr] gap-3 py-2.5 border-t border-line-soft text-[14px]">
+    <div className="grid gap-1 border-t border-line-soft py-2.5 text-[14px] sm:grid-cols-[9rem_1fr] sm:gap-3">
       <dt className="label pt-0.5">{label}</dt>
       <dd className="min-w-0">{children}</dd>
     </div>
