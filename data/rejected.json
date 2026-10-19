@@ -1,5 +1,105 @@
 [
   {
+    "key": "7a3190d2a348dcb7",
+    "title": "LLM01: 2025 Prompt Injection",
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection",
+    "publisher": "OWASP GenAI",
+    "source_id": "hn",
+    "reason": "out of scope: General guidance and taxonomy entry without a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "1aeadb79401911c4",
+    "title": "ACE: An AI-Orchestrated Intrusion Detection and Compliance Mapping Engine",
+    "url": "https://arxiv.org/abs/2610.22702",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only research paper proposing an AI-orchestrated intrusion detection and compliance mapping framework.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "ca77b72797d7faad",
+    "title": "GRAD: Graph-Structured Antibody Defense for LLM Agents",
+    "url": "https://arxiv.org/abs/2610.22828",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only research paper proposing a graph-structured defense against agent memory poisoning.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "9384c51870cb2c9c",
+    "title": "SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval",
+    "url": "https://arxiv.org/abs/2610.22959",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only research paper proposing a secure memory governance framework for AI agents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "cee614930759a55e",
+    "title": "MobileJailBench: Red Queen Jailbreak Benchmarking for Mobile Agents",
+    "url": "https://arxiv.org/abs/2610.23303",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a benchmark for mobile agent jailbreaks rather than demonstrating a new concrete vulnerability or attack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "bf85c050a9e1a948",
+    "title": "Provable Authority: A Protocol for Verifiable Authority Resolution and Control Across Human, Organizational, and Agentic Transactions",
+    "url": "https://arxiv.org/abs/2610.22899",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper discusses protocols for payment authorization and agentic commerce governance without detailing a specific cyberattack or AI vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "92ed7a2565002880",
+    "title": "Veil-Then-Reveal: Protecting PII Privacy via Reversible Pseudo-Anonymization in Zero-Trust User--LLM Interaction",
+    "url": "https://arxiv.org/abs/2610.22800",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a user-side defense mechanism (pseudo-anonymization) to protect PII during LLM interactions, which falls under out-of-scope defence proposals.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "eb4f01163a0b0d16",
+    "title": "When Core-Network Elements Become Reachable: Field-Level Exploitability Analysis in Diameter",
+    "url": "https://arxiv.org/abs/2610.22943",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper discusses LLMs evaluating protocol exploitability and presents a tool to improve their reliability, falling under benchmarking and defence/reliability analysis rather than an AI attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "374261e61b2f9ec4",
+    "title": "ABF-Bench: A Verifiable Benchmark for Agentic Blockchain Forensics",
+    "url": "https://arxiv.org/abs/2610.23656",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces a benchmark for evaluating agentic blockchain forensics, falling under benchmarks and research out-of-scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "key": "f429cf03f53777e7",
+    "title": "Identify, Classify, Act: Per-Instruction Controlled Compliance for LLMs over External Data",
+    "url": "https://arxiv.org/abs/2610.22874",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a defensive mechanism and classification framework against prompt injections over external data, falling under defence-only research.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
     "key": "57b835d01ecdfd10",
     "title": "CVE-2026-59970: Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists.",
     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59970",

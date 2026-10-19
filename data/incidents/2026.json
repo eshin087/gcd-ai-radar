@@ -1,5 +1,412 @@
 [
   {
+    "id": "AIR-2026-1402",
+    "slug": "stealthy-poisoning-attacks-via-reused-kv-cache-of-reasoning",
+    "title": "Stealthy Poisoning Attacks via Reused KV Cache of Reasoning",
+    "summary": "Researchers demonstrate a black-box poisoning attack called R2ECAP that plants poisoned reasoning traces by exploiting reused key-value caches in large language models. The attack manipulates model behavior solely through interactions with the chat interface.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22873",
+        "publisher": "arXiv",
+        "title": "Stealthy Poisoning Attacks via Reused KV Cache of Reasoning",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "kv-cache",
+      "data-poisoning",
+      "reasoning-traces",
+      "black-box-attack"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1401",
+    "slug": "ignored-not-refused-analyzing-indirect-prompt-injection-in-a",
+    "title": "Ignored, Not Refused: Analyzing Indirect Prompt Injection in Agents",
+    "summary": "An audit of agent execution trajectories reveals that most failed indirect prompt injections are ignored rather than actively refused by small tool-using models. The findings highlight subtle safety vulnerabilities in agentic tool use.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "InjecAgent",
+      "AgentDojo"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23254",
+        "publisher": "arXiv",
+        "title": "Ignored, Not Refused: What Low Prompt-Injection Success Rates Hide in Small Tool-Using Agents",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "indirect-prompt-injection",
+      "agents"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1400",
+    "slug": "echo-response-harmfulness-optimization-based-jailbreak-attac",
+    "title": "ECHO: Response Harmfulness Optimization-Based Jailbreak Attack",
+    "summary": "Researchers propose ECHO, an optimization-based jailbreak attack that replaces compliance proxies with direct response harmfulness evaluations. The method demonstrates improved capability in bypassing model safety alignments.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "ECHO"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23030",
+        "publisher": "arXiv",
+        "title": "ECHO: Replacing the Compliance Proxy with Response Harmfulness in Optimization-Based Jailbreak Attack",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "optimization",
+      "safety-alignment"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1399",
+    "slug": "reddarwin-evolving-jailbreak-skills-against-frontier-llms",
+    "title": "RedDarwin: Evolving Jailbreak Skills against Frontier LLMs",
+    "summary": "Researchers present RedDarwin, an agentic framework designed to evolve reusable jailbreak skills against frontier large language models. The study demonstrates how automated attack methods adapt to model safety safeguards.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "RedDarwin"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23726",
+        "publisher": "arXiv",
+        "title": "RedDarwin: Evolving Jailbreak Skills against Frontier LLMs",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "red-teaming",
+      "llm-safety"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1398",
+    "slug": "llm-attacker-red-team-framework-for-privacy-in-split-llms",
+    "title": "LLM-Attacker Red-Team Framework for Privacy in Split LLMs",
+    "summary": "Researchers proposed LLM-Attacker, a unified red-team framework designed to evaluate text reconstruction privacy risks in split and distributed language model systems. The tool standardizes message recording and prediction scoring across different architectures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM-Attacker"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22722",
+        "publisher": "arXiv",
+        "title": "The LLM-Attacker: A Unified Red-Team Framework for Privacy Evaluation of Split and Distributed LLM Systems",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "split-llm",
+      "privacy-evaluation",
+      "text-reconstruction",
+      "red-teaming"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1397",
+    "slug": "backdoor-as-a-service-black-box-ml-backdoor-activation-attac",
+    "title": "Backdoor-as-a-Service Black-Box ML Backdoor Activation Attack",
+    "summary": "Researchers developed a fully black-box technique utilizing genetic search to activate latent secondary behaviors in machine learning models without training-time manipulation. The approach highlights risks in models lacking traditional data poisoning indicators.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Backdoor-as-a-Service"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22459",
+        "publisher": "arXiv",
+        "title": "Everyone's a little bit racist: a novel ML backdoor attack in black-box mode",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "black-box",
+      "genetic-search",
+      "machine-learning"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1396",
+    "slug": "mobileinject-cross-modal-consistency-injection-against-mobil",
+    "title": "MobileInject Cross-Modal Consistency Injection Against Mobile Agents",
+    "summary": "Researchers presented MobileInject to evaluate how multimodal large language model mobile agents are vulnerable to indirect cross-modal prompt injection. The attack embeds malicious instructions within cross-application smartphone content to steer agent behavior.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "individual_victims"
+    ],
+    "products": [
+      "MobileInject",
+      "Mobile MLLM Agents"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23307",
+        "publisher": "arXiv",
+        "title": "MobileInject: Evaluating Reasoning-to-Action Security of MLLM-Based Mobile Agents under Cross-Modal Consistency Injection",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multimodal",
+      "prompt-injection",
+      "mobile-agents",
+      "mllm"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1395",
+    "slug": "authorization-grounded-workflow-attacks-on-tool-using-agents",
+    "title": "Authorization-Grounded Workflow Attacks on Tool-Using Agents",
+    "summary": "Researchers demonstrated a workflow attack against tool-using language model agents that bypasses explicit policy overrides by routing through coherent approval steps. The technique was evaluated as part of the OpenClaw Agent Security Attack Competition.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23077",
+        "publisher": "arXiv",
+        "title": "When Approval Becomes Execution: Authorization-Grounded Workflow Attacks on Tool-Using Agents",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "workflow-attack",
+      "authorization",
+      "agent-security",
+      "tool-use"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1394",
+    "slug": "trojanforge-automated-repository-poisoning-against-coding-ag",
+    "title": "TrojanForge Automated Repository Poisoning Against Coding Agents",
+    "summary": "Researchers introduced TrojanForge, an automated framework designed to poison code repositories and compromise coding agents. The tool leverages abstract syntax trees and security review agents to deploy malicious payloads realistically.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "TrojanForge"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.23109",
+        "publisher": "arXiv",
+        "title": "Trojan Horse: Automated Repository Poisoning against Coding Agents",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "repository-poisoning",
+      "coding-agents",
+      "ast",
+      "trojanforge"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
+    "id": "AIR-2026-1393",
+    "slug": "model-as-a-trojan-self-activating-covert-dns-exfiltration-in",
+    "title": "Model-as-a-Trojan: Self-Activating Covert DNS Exfiltration in LLM Weights",
+    "summary": "Researchers demonstrated that fine-tuning open-weight models can embed covert DNS exfiltration behaviors directly into model parameters. The attack triggers malicious shell execution and data leakage during agent tool use.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "open-weight LLM"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22578",
+        "publisher": "arXiv",
+        "title": "Model-as-a-Trojan: Self-Activating Covert DNS Exfiltration Baked Into the Weights of an LLM Agent",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "model-trojan",
+      "dns-exfiltration",
+      "supply-chain",
+      "weight-poisoning"
+    ],
+    "created_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-10-19T05:07:38.588Z"
+  },
+  {
     "id": "AIR-2026-0338",
     "slug": "ai-agent-hacked-into-crypto-wallet-and-stole-funds",
     "title": "AI Agent Hacked into Crypto Wallet and Stole Funds",
