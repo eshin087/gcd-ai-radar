@@ -1,0 +1,199 @@
+/*
+ * The embeddable card (/embed). Its options are data attributes on .embed,
+ * set before first paint by the inline script in app/embed/page.tsx:
+ *   data-theme   dark | light
+ *   data-window  12m | 24m
+ *   data-compact 0 | 1
+ * Both windows are in the markup; CSS shows one. The light theme re-points
+ * the palette tokens from app/globals.css, so Tailwind utilities follow it.
+ */
+.embed {
+  --embed-bar: #3a97cf;
+  --embed-prov: rgba(140, 160, 210, 0.09);
+  flex: 1;
+  display: flex;
+  min-height: 100dvh;
+  background: var(--color-panel);
+  color: var(--color-ink);
+}
+
+/* Light tokens: text pairs and the bar colour pass contrast on white (dataviz validator, bar #2a7fb3). */
+.embed[data-theme="light"] {
+  color-scheme: light;
+  --color-ground: #f4f6fa;
+  --color-panel: #ffffff;
+  --color-panel-2: #f0f2f7;
+  --color-line: rgba(30, 40, 70, 0.2);
+  --color-line-soft: rgba(30, 40, 70, 0.09);
+  --color-ink: #0b1020;
+  --color-soft: #283149;
+  --color-dim: #556079;
+  --color-faint: #8a93a8;
+  --color-accent: #a85a00;
+  --color-sev-3: #b4410c;
+  --color-type-by: #0b6f94;
+  --embed-bar: #2a7fb3;
+  --embed-prov: rgba(30, 40, 70, 0.06);
+}
+
+.embed-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+}
+
+.embed-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.embed-brand:hover {
+  color: var(--color-accent);
+}
+
+.embed-body {
+  display: grid;
+  gap: 10px;
+  align-items: end;
+}
+.embed-label {
+  font-size: 12px;
+  color: var(--color-dim);
+}
+.embed-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+.embed-value {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+.embed-prior {
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--color-dim);
+}
+.embed-real {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color-soft);
+}
+
+.embed-spark {
+  margin: 0;
+  min-width: 0;
+}
+.embed-bars {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  height: 40px;
+  border-bottom: 1px solid var(--color-line);
+}
+.embed-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+}
+.embed-col[data-prov] {
+  background: var(--embed-prov);
+}
+.embed-bar {
+  width: 100%;
+  background: var(--embed-bar);
+  border-radius: 2px 2px 0 0;
+}
+.embed-bars:hover .embed-col:not(:hover) .embed-bar {
+  opacity: 0.45;
+}
+.embed-axis {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--color-dim);
+}
+
+.embed-foot {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 8px;
+  font-size: 10px;
+  color: var(--color-dim);
+}
+.embed-link {
+  color: var(--color-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+}
+.embed-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.embed[data-window="12m"] [data-w="24m"],
+.embed[data-window="24m"] [data-w="12m"] {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .embed-card {
+    padding: 14px 18px;
+  }
+  .embed-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 20px;
+  }
+}
+
+/* compact=1: one line of figures, no chart */
+.embed[data-compact="1"] .embed-card {
+  gap: 6px;
+  padding: 10px 12px;
+}
+.embed[data-compact="1"] .embed-body {
+  grid-template-columns: none;
+}
+.embed[data-compact="1"] .embed-spark,
+.embed[data-compact="1"] .embed-prior {
+  display: none;
+}
+.embed[data-compact="1"] .embed-figures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 10px;
+}
+.embed[data-compact="1"] .embed-headline {
+  order: -1;
+  margin-top: 0;
+}
+.embed[data-compact="1"] .embed-value {
+  font-size: 24px;
+}
+.embed[data-compact="1"] .embed-real {
+  margin-top: 0;
+}
