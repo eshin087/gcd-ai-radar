@@ -1,4 +1,4 @@
-# gcd AI Radar
+# GCD AI RADAR
 
 A public, zero-cost observatory of AI cybersecurity incidents. It records,
 counts, categorizes and charts two kinds of incident, deduplicated and linked

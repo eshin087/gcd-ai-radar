@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Data",
-  description: "Download the full gcd AI Radar dataset as JSON or CSV, subscribe to the RSS feed of new incidents, and reuse the chart images.",
+  description: "Download the full GCD AI RADAR dataset as JSON or CSV, subscribe to the RSS feed of new incidents, and reuse the chart images.",
 };
 
 async function sizeOf(rel: string): Promise<string | null> {
@@ -107,7 +107,7 @@ export default async function DataPage() {
           <a className="link" href={SITE.dataLicense.url}>
             CC BY-SA 4.0
           </a>
-          : reuse it, including commercially, with credit to &ldquo;gcd AI Radar&rdquo; and a link, and keep derivative datasets under the same licence. Records
+          : reuse it, including commercially, with credit to &ldquo;{SITE.name}&rdquo; and a link, and keep derivative datasets under the same licence. Records
           carry their origin; when you redistribute the data, keep these upstream notices:
         </p>
         <ul className="list-disc pl-5 space-y-1 text-[13px]">

@@ -68,7 +68,7 @@ export default function AboutPage() {
           <a className="link" href={SITE.codeLicense.url}>
             {SITE.codeLicense.name}
           </a>
-          . Cite the site as &ldquo;gcd AI Radar&rdquo; with a link and the date you accessed it; the <Link href="/data" className="link">data page</Link> has
+          . Cite the site as &ldquo;{SITE.name}&rdquo; with a link and the date you accessed it; the <Link href="/data" className="link">data page</Link> has
           downloads and the full attribution block for upstream sources.
         </p>
       </section>

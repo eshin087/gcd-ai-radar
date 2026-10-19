@@ -16,7 +16,7 @@ import type { Candidate } from "../sources/types";
  * budgets are small, and the output schema does most of the constraining.
  */
 
-const SCOPE_RULES = `You classify candidate news items, research papers and vulnerability records for gcd AI Radar, a public observatory of AI cybersecurity incidents.
+const SCOPE_RULES = `You classify candidate news items, research papers and vulnerability records for GCD AI RADAR, a public observatory of AI cybersecurity incidents.
 
 IN SCOPE (in_scope = true), exactly two types:
 - attack_on_ai: ${TYPE_META.attack_on_ai.definition}

@@ -91,15 +91,7 @@ export function relatedCandidates(index: RelatedIndex, incident: Incident, every
   return out;
 }
 
-/**
- * Ranks candidates by score, newest first among equals, then by id
- * descending. The id is what makes the order total: candidates arrive in
- * bucket order, which depends on which of the incident's categories,
- * products and targets found them first, so two records with the same score
- * and date would otherwise land in whichever order the buckets gave. The
- * full scan this replaced broke that tie by dataset order, which is the same
- * id descending (lib/shards.ts sorts by first report, then id).
- */
+/** Ranks candidates by score, newest first among equals, then by id so equal records order the same whatever list they came from. */
 export function rankRelated(incident: Incident, candidates: readonly Incident[], limit: number): Incident[] {
   const time = Date.parse(`${incident.first_reported}T00:00:00Z`);
   return candidates

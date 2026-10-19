@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState, type Ref } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
 import type { CompactRow } from "@/lib/dashboard";
 import { approxDateLabel, monthLabel } from "@/lib/format";
@@ -40,7 +40,6 @@ interface Props {
   windowLabel: string;
   basis: "all" | "real";
   field: DateField;
-  onClose: () => void;
 }
 
 /**
@@ -48,7 +47,7 @@ interface Props {
  * its summary, classification, sources and dates. Shown in the dashboard's
  * report drawer.
  */
-export function ReportBody({ selection, rows, error, windowLabel, basis, field, onClose, titleId, closeRef }: Props & { titleId?: string; closeRef?: Ref<HTMLButtonElement> }) {
+export function ReportBody({ selection, rows, error, windowLabel, field, titleId }: Props & { titleId?: string }) {
   const [details, setDetails] = useState<Map<string, SlimIncident>>(new Map());
   const [shown, setShown] = useState(PAGE);
 
@@ -83,36 +82,23 @@ export function ReportBody({ selection, rows, error, windowLabel, basis, field, 
 
   return (
     <>
-      <header className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <div className="label">
-            {isDisclosedSelection(selection) ? "disclosed vulnerabilities · not counted as incidents" : `incident report · ${basis === "real" ? "real-world only" : "all incidents"}`} · by{" "}
-            {field === "incident_date" ? "incident date" : "first report"} ·{" "}
-            {selection.kind === "range" ? (selection.from === selection.to ? monthLabel(selection.from, true) : `${monthLabel(selection.from, true)} to ${monthLabel(selection.to, true)}`) : windowLabel}
-          </div>
-          <h2 id={titleId} className="mt-1 text-xl font-semibold tracking-tight">
-            {selectionLabel(selection)}
-          </h2>
-          <p className="mt-1 text-[13px] text-dim num" aria-live="polite">
-            {rows ? (
-              <>
-                {rows.length} {noun} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
-              </>
-            ) : error ? (
-              <span className="text-sev-4">could not load the incidents: {error}</span>
-            ) : (
-              "loading…"
-            )}
-          </p>
-        </div>
-        <div className="flex items-center gap-3">
-          <Link href={`/incidents?${selectionQuery(selection, basis, field)}`} className="label hover:text-ink">
-            open in incidents →
-          </Link>
-          <button ref={closeRef} type="button" onClick={onClose} className="label border border-line rounded-[3px] px-2 py-1 hover:text-ink" aria-label="Close report">
-            close ×
-          </button>
-        </div>
+      <header>
+        <h2 id={titleId} className="text-xl font-semibold tracking-tight">
+          {selectionLabel(selection)}
+        </h2>
+        <p className="mt-1 text-[13px] text-dim num" aria-live="polite">
+          {rows ? (
+            <>
+              {rows.length} {noun} · severity 1:{sev[1]} 2:{sev[2]} 3:{sev[3]} 4:{sev[4]}
+              {field === "first_reported" ? " · by first report" : ""}
+              {selection.kind === "range" ? ` · ${selection.from === selection.to ? monthLabel(selection.from, true) : `${monthLabel(selection.from, true)} to ${monthLabel(selection.to, true)}`}` : ` · ${windowLabel}`}
+            </>
+          ) : error ? (
+            <span className="text-sev-4">could not load the incidents: {error}</span>
+          ) : (
+            "loading…"
+          )}
+        </p>
       </header>
 
       <ol className="divide-y divide-line-soft border-y border-line-soft">
