@@ -2,7 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { cache } from "react";
 import type { ZodType } from "zod";
-import { RadarSchema, RunsFileSchema, type Incident, type Radar, type RunRecord } from "./schema";
+import { BriefingSchema, RadarSchema, RunsFileSchema, type Briefing, type Incident, type Radar, type RunRecord } from "./schema";
 import { incidentFiles, incidentFilesSignature, readIncidents } from "./shards";
 
 /**
@@ -67,6 +67,24 @@ export const loadRadar = cache(async (): Promise<Radar | null> => {
     return null;
   }
 });
+
+/** Weekly briefings from data/briefings/<week>.json, newest week first; empty until the first Monday run. */
+export const loadBriefings = cache(async (): Promise<Briefing[]> => {
+  const dir = path.join(DATA_DIR, "briefings");
+  let names: string[];
+  try {
+    names = await fs.readdir(dir);
+  } catch {
+    return [];
+  }
+  const files = names.filter((n) => /^\d{4}-W\d{2}\.json$/.test(n));
+  const briefings = await Promise.all(files.map((n) => readJson(path.join(dir, n), BriefingSchema)));
+  return briefings.filter((b): b is Briefing => b !== null).sort((a, b) => b.week.localeCompare(a.week));
+});
+
+export function briefingByWeek(briefings: readonly Briefing[], week: string): Briefing | undefined {
+  return briefings.find((b) => b.week === week);
+}
 
 /** Most recent successful run, or null when the collector has never run. */
 export async function lastUpdated(): Promise<string | null> {

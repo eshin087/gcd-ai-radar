@@ -33,8 +33,10 @@ export default async function DataPage() {
     { href: "/data/years/index.json", label: "years/<year>.json", blurb: "The full records of one year of first report, one file per year; index.json lists the years and their counts." },
     { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time and licence." },
     { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
+    { href: "/briefing.xml", label: "briefing.xml", blurb: "RSS feed of the weekly briefing, This week in AI security." },
+    { href: "/data/briefings/index.json", label: "briefings/<week>.json", blurb: "Every weekly briefing: its counts, deltas, notable incidents and narrative; index.json lists the weeks." },
   ];
-  const sized = await Promise.all(files.map(async (f) => ({ ...f, size: f.label.includes("<year>") ? null : await sizeOf(f.href) })));
+  const sized = await Promise.all(files.map(async (f) => ({ ...f, size: f.label.includes("<") ? null : await sizeOf(f.href) })));
 
   return (
     <div className="max-w-4xl space-y-8 text-[15px] leading-relaxed text-soft">

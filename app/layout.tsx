@@ -41,7 +41,14 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/favicon.svg" },
-  alternates: { types: { "application/rss+xml": "/feed.xml" } },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/feed.xml", title: `${SITE.name}: new incidents` },
+        { url: "/briefing.xml", title: `${SITE.name}: this week in AI security` },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

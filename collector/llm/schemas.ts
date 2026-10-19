@@ -92,3 +92,15 @@ export function extractJson(text: string): unknown {
     throw new Error(`LLM returned non-JSON: ${body.slice(0, 160)}`);
   }
 }
+
+/** The weekly briefing's narrative (collector/briefing.ts). Length, numbers and links are checked separately in collector/lib/narrative.ts. */
+export const BriefingNarrativeOutputSchema = z.object({
+  headline: z.string().min(10).max(140),
+  narrative: z.string().min(200).max(1800),
+});
+export type BriefingNarrativeOutput = z.infer<typeof BriefingNarrativeOutputSchema>;
+
+export const BRIEFING_NARRATIVE_JSON_SCHEMA = strictObject({
+  headline: { type: "string" },
+  narrative: { type: "string" },
+});

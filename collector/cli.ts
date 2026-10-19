@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
+import { briefingCommitMessage, briefingMarkdown, readBriefings, runBriefing } from "./briefing";
 import { commitAndPush } from "./git";
 import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
@@ -22,6 +23,8 @@ import { runReview, runReviewBatch } from "./review/index";
  *   npm run review                      walk the review queue interactively
  *   npm run review -- --approve=AIR-2026-0001 --reject=AIR-2026-0002 --reason="…"   decide without the walkthrough
  *   npm run radar                       refresh data/radar.json now (--dry-run to only test the token)
+ *   npm run briefing                    write data/briefings/<week>.json for the ISO week that ended on Sunday (skips if present)
+ *   npm run briefing -- --week=2026-W41 --weeks=8 --force   a given week, the 8 weeks ending there, rewrite existing ones
  *
  * Flags: --limit=N  --since=YYYY-MM-DD  --no-enrich  --no-commit  --verbose
  */
@@ -134,6 +137,7 @@ async function main() {
         process.exitCode = 1;
         return;
       }
+      const briefings = await readBriefings();
       log.info("config and data files are valid", {
         incidents: state.incidents.length,
         review: state.review.length,
@@ -141,7 +145,29 @@ async function main() {
         pending: state.pending.length,
         seen: Object.keys(state.seen).length,
         runs: state.runs.length,
+        briefings: briefings.length,
       });
+      return;
+    }
+    case "briefing": {
+      const week = typeof flags["week"] === "string" ? flags["week"] : undefined;
+      const weeks = typeof flags["weeks"] === "string" ? Number(flags["weeks"]) : undefined;
+      if (weeks !== undefined && !(Number.isInteger(weeks) && weeks >= 1)) throw new Error("--weeks needs a whole number of weeks, e.g. --weeks=8");
+      const summary = await runBriefing({ week, weeks, force: Boolean(flags["force"]), dryRun });
+      log.info(
+        `briefing: ${summary.written.length} written, ${summary.skipped.length} skipped${summary.withoutNarrative.length ? `, ${summary.withoutNarrative.length} without a narrative (${summary.withoutNarrative.join(", ")})` : ""}`,
+        { llm: summary.llm },
+      );
+      if (process.env.GITHUB_STEP_SUMMARY && summary.written.length) {
+        await appendFile(process.env.GITHUB_STEP_SUMMARY, `${summary.written.map(briefingMarkdown).join("\n\n")}\n`);
+      }
+      if (commit && summary.written.length) {
+        const result = await commitAndPush(briefingCommitMessage(summary.written));
+        if (result.committed && !result.pushed) {
+          log.error("git: the briefing commit was not pushed; the site will not show it until a push succeeds");
+          process.exitCode = 2;
+        }
+      }
       return;
     }
     case "review": {

@@ -1,0 +1,74 @@
+name: briefing
+
+# Writes "This week in AI security", data/briefings/<ISO week>.json, every
+# Monday morning for the week that ended on Sunday: the numbers computed from
+# the published records, and a short narrative asked of the classifier LLM
+# from those records only. Shares the collector's concurrency group so the two
+# never commit at the same time; the site rebuilds from the data commit.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "ISO week to write, e.g. 2026-W42 (default: the week that ended last Sunday)"
+        type: string
+        default: ""
+      weeks:
+        description: "Also write this many weeks ending with that one, skipping those already written (catch-up)"
+        type: string
+        default: ""
+      force:
+        description: "Rewrite briefings that already exist"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Compute and print the briefing without writing or committing"
+        type: boolean
+        default: false
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Write the weekly briefing
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COLLECTOR_GIT_NAME: ${{ vars.COLLECTOR_GIT_NAME }}
+          COLLECTOR_GIT_EMAIL: ${{ vars.COLLECTOR_GIT_EMAIL }}
+          # workflow inputs are passed as environment variables, never interpolated into the script
+          INPUT_WEEK: ${{ inputs.week }}
+          INPUT_WEEKS: ${{ inputs.weeks }}
+          INPUT_FORCE: ${{ inputs.force }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS=""
+          if [ -n "$INPUT_WEEK" ]; then ARGS="$ARGS --week=$INPUT_WEEK"; fi
+          if [ -n "$INPUT_WEEKS" ]; then ARGS="$ARGS --weeks=$INPUT_WEEKS"; fi
+          if [ "$INPUT_FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "$INPUT_DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          npm run briefing -- $ARGS

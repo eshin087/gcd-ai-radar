@@ -20,6 +20,7 @@ export const SITE = {
 export const NAV = [
   { href: "/", label: "Dashboard" },
   { href: "/incidents", label: "Incidents" },
+  { href: "/briefing", label: "Briefing" },
   { href: "/methodology", label: "Methodology" },
   { href: "/sources", label: "Sources" },
   { href: "/data", label: "Data" },
