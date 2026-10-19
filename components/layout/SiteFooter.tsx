@@ -26,6 +26,11 @@ export function SiteFooter() {
             the GitHub Advisory Database (CC BY 4.0) and CISA KEV (CC0). This product uses the NVD API
             but is not endorsed or certified by the NVD.
           </p>
+          <p>
+            Incidents are mapped to the OWASP Top 10 for LLM Applications (CC BY-SA 4.0, © OWASP
+            Foundation) and MITRE ATLAS techniques (Apache 2.0, © MITRE); the{" "}
+            <Link className="link" href="/methodology#standards">mapping</Link> is not endorsed by either.
+          </p>
         </div>
         <div className="space-y-2">
           <div className="label">credits</div>

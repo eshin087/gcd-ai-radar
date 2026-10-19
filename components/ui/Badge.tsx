@@ -1,5 +1,17 @@
 import { CATEGORY_COLORS, SEVERITY_COLORS, TYPE_COLORS } from "@/lib/palette";
-import { CATEGORY_META, SEVERITY_META, TYPE_META, type Category, type IncidentType, type Severity } from "@/lib/taxonomy";
+import {
+  ATLAS_TECHNIQUES,
+  CATEGORY_META,
+  OWASP_LLM_META,
+  SEVERITY_META,
+  TYPE_META,
+  owaspLabel,
+  type AtlasTechniqueId,
+  type Category,
+  type IncidentType,
+  type OwaspLlmId,
+  type Severity,
+} from "@/lib/taxonomy";
 
 /**
  * Chips carry identity in a colored swatch; the text stays in ink tokens so it
@@ -35,6 +47,20 @@ export function SeverityBadge({ severity, short = true }: { severity: Severity; 
     <Chip color={`var(--sev-${severity}, ${SEVERITY_COLORS[severity]})`} title={meta.definition}>
       <span className="num">{severity}</span> {short ? meta.short : meta.label}
     </Chip>
+  );
+}
+
+/**
+ * OWASP LLM Top 10 and MITRE ATLAS ids: neutral chips with no swatch, since
+ * they restate the categories in another vocabulary rather than add a new
+ * dimension to colour. The full name is in the tooltip.
+ */
+export function StandardBadge({ standard, id }: { standard: "owasp"; id: OwaspLlmId } | { standard: "atlas"; id: AtlasTechniqueId }) {
+  const title = standard === "owasp" ? `OWASP ${owaspLabel(id)} ${OWASP_LLM_META[id].name}` : `MITRE ATLAS ${id} ${ATLAS_TECHNIQUES[id]}`;
+  return (
+    <span title={title} className="inline-flex items-center rounded-[3px] border border-line-soft px-1.5 py-0.5 font-mono text-[10.5px] tracking-[0.04em] whitespace-nowrap text-dim">
+      {id}
+    </span>
   );
 }
 

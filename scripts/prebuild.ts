@@ -3,8 +3,8 @@
  * /public that is derived from /data so the static export can serve it:
  *
  *   public/data/incidents.json        full dataset (published records)
- *   public/data/incidents.min.json    slim copy of every record (no sources array)
- *   public/data/incidents.csv         spreadsheet-friendly export
+ *   public/data/incidents.min.json    slim copy of every record (no sources array), plus the derived owasp_llm and atlas ids
+ *   public/data/incidents.csv         spreadsheet-friendly export, with record_kind, owasp_llm and atlas columns
  *   public/data/years/<year>.json     full records per year of first report, plus years/index.json
  *   public/data/rows/<year>.json      compact rows per year: what the dashboard's drawers fetch
  *   public/data/slim/<year>.json      slim records per year: what the incidents explorer fetches
@@ -20,7 +20,7 @@ import { lastUpdated, loadIncidents, siteUrl } from "../lib/data";
 import type { Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
-import { CATEGORY_META, SEVERITY_META, TYPE_META } from "../lib/taxonomy";
+import { ATLAS_RELEASE, CATEGORY_META, OWASP_LLM_EDITION, SEVERITY_META, TYPE_META, atlasFor, owaspFor } from "../lib/taxonomy";
 import { isDisclosedIncident, recordKind } from "../lib/counting";
 import { csvCell } from "../lib/csv";
 import { compactRow } from "../lib/rows";
@@ -37,12 +37,21 @@ function escapeXml(s: string): string {
 function toCsv(incidents: Incident[]): string {
   const cols = [
     "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
-    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "tags", "summary", "first_source_url", "url",
+    "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "owasp_llm", "atlas", "tags", "summary",
+    "first_source_url", "url",
   ];
   const lines = [cols.join(",")];
   const base = siteUrl();
   for (const i of incidents) {
-    const row: Record<string, unknown> = { ...i, record_kind: recordKind(i), first_source_url: i.sources[0]?.url ?? "", url: `${base}/incidents/${i.slug}` };
+    const row: Record<string, unknown> = {
+      ...i,
+      record_kind: recordKind(i),
+      // derived from type and categories (lib/taxonomy.ts, /methodology#standards)
+      owasp_llm: owaspFor(i),
+      atlas: atlasFor(i),
+      first_source_url: i.sources[0]?.url ?? "",
+      url: `${base}/incidents/${i.slug}`,
+    };
     lines.push(cols.map((c) => csvCell(row[c])).join(","));
   }
   return lines.join("\n") + "\n";
@@ -101,7 +110,8 @@ async function main() {
   const sorted = [...incidents].sort((a, b) => b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id));
   const counted = sorted.filter((i) => !isDisclosedIncident(i));
   await fs.writeFile(path.join(dataDir, "incidents.json"), JSON.stringify(sorted, null, 1) + "\n");
-  await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map(slim)) + "\n");
+  // The download carries the derived standards ids; the explorer's slim shards stay lean and derive them in the browser.
+  await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map((i) => ({ ...slim(i), owasp_llm: owaspFor(i), atlas: atlasFor(i) }))) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.csv"), toCsv(sorted));
   await Promise.all(sorted.map((i) => fs.writeFile(path.join(perIncident, `${i.slug}.json`), JSON.stringify(i, null, 1) + "\n")));
 
@@ -133,6 +143,11 @@ async function main() {
         counting_rule: "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves",
         years: yearIndex.map((y) => ({ year: y.year, records: y.records, incidents: y.incidents, disclosed_vulnerabilities: y.disclosed, file: y.file })),
         last_collector_run: updated,
+        standards_mapping: {
+          owasp_llm_top_10: OWASP_LLM_EDITION,
+          mitre_atlas_release: ATLAS_RELEASE,
+          rule: "derived from type and categories, not classified per record; see /methodology#standards",
+        },
         license: "CC BY-SA 4.0",
         license_url: SITE.dataLicense.url,
       },

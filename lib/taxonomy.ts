@@ -245,3 +245,193 @@ export const ORIGIN_META: Record<Origin, { label: string }> = {
 
 export const DATE_PRECISIONS = ["day", "month", "year"] as const;
 export type DatePrecision = (typeof DATE_PRECISIONS)[number];
+
+/*
+ * Standards mapping: OWASP Top 10 for LLM Applications and MITRE ATLAS.
+ *
+ * Each incident is also expressed in two public vocabularies so teams can
+ * filter and cite in their own terms. The mapping is derived from a record's
+ * type and categories through the table below. It is never classified per
+ * record, so every record with the same type and categories gets the same
+ * answer and nothing needs re-classifying when the table changes.
+ *
+ * The rule for a row: an entry is listed only when the category, as defined
+ * in CATEGORY_META, falls within what the entry itself describes. A category
+ * that straddles several entries, or fits none, maps to nothing rather than
+ * to a guess, and the row says why. The Methodology page renders this table.
+ *
+ * Verified 2026-10-18 against genai.owasp.org/llm-top-10 (2025 edition,
+ * CC BY-SA 4.0, OWASP Foundation) and ATLAS data release 2026.09
+ * (github.com/mitre-atlas/atlas-data, Apache 2.0, © 2021-2026 The MITRE Corporation).
+ */
+
+export const OWASP_LLM_EDITION = "2025";
+export const OWASP_LLM_IDS = ["LLM01", "LLM02", "LLM03", "LLM04", "LLM05", "LLM06", "LLM07", "LLM08", "LLM09", "LLM10"] as const;
+export type OwaspLlmId = (typeof OWASP_LLM_IDS)[number];
+
+/** Names and official entry pages as published for the 2025 edition (the slugs are OWASP's own, including LLM01's shorter one). */
+export const OWASP_LLM_META: Record<OwaspLlmId, { name: string; url: string }> = {
+  LLM01: { name: "Prompt Injection", url: "https://genai.owasp.org/llmrisk/llm01-prompt-injection/" },
+  LLM02: { name: "Sensitive Information Disclosure", url: "https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" },
+  LLM03: { name: "Supply Chain", url: "https://genai.owasp.org/llmrisk/llm032025-supply-chain/" },
+  LLM04: { name: "Data and Model Poisoning", url: "https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" },
+  LLM05: { name: "Improper Output Handling", url: "https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/" },
+  LLM06: { name: "Excessive Agency", url: "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" },
+  LLM07: { name: "System Prompt Leakage", url: "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/" },
+  LLM08: { name: "Vector and Embedding Weaknesses", url: "https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/" },
+  LLM09: { name: "Misinformation", url: "https://genai.owasp.org/llmrisk/llm092025-misinformation/" },
+  LLM10: { name: "Unbounded Consumption", url: "https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" },
+};
+
+/** The full citation form, as OWASP writes it: "LLM01:2025". */
+export function owaspLabel(id: OwaspLlmId): string {
+  return `${id}:${OWASP_LLM_EDITION}`;
+}
+
+export const ATLAS_RELEASE = "2026.09";
+
+/**
+ * The ATLAS techniques the table uses, with their names in that release.
+ * Sub-techniques carry their parent's name first, as atlas.mitre.org titles them.
+ */
+export const ATLAS_TECHNIQUES = {
+  "AML.T0010": "AI Supply Chain Compromise",
+  "AML.T0015": "Evade AI Model",
+  "AML.T0016.002": "Obtain Capabilities: Generative AI",
+  "AML.T0043": "Craft Adversarial Data",
+  "AML.T0048.004": "External Harms: AI Intellectual Property Theft",
+  "AML.T0051": "LLM Prompt Injection",
+  "AML.T0052": "Phishing",
+  "AML.T0053": "AI Agent Tool Invocation",
+  "AML.T0054": "LLM Jailbreak",
+  "AML.T0073": "Impersonation",
+  "AML.T0088": "Generate Deepfakes",
+} as const;
+export type AtlasTechniqueId = keyof typeof ATLAS_TECHNIQUES;
+export const ATLAS_TECHNIQUE_IDS = (Object.keys(ATLAS_TECHNIQUES) as AtlasTechniqueId[]).sort();
+
+export function atlasUrl(id: AtlasTechniqueId): string {
+  return `https://atlas.mitre.org/techniques/${id}`;
+}
+
+export interface StandardsRow {
+  owasp: readonly OwaspLlmId[];
+  atlas: readonly AtlasTechniqueId[];
+  /** One or two sentences: why these entries, or why none. Rendered on the Methodology page. */
+  why: string;
+}
+
+export const STANDARDS_BY_CATEGORY: Record<Category, StandardsRow> = {
+  prompt_injection: {
+    owasp: ["LLM01"],
+    atlas: ["AML.T0051"],
+    why: "The same concept in both frameworks, direct and indirect.",
+  },
+  jailbreak: {
+    owasp: ["LLM01"],
+    atlas: ["AML.T0054"],
+    why: "OWASP treats jailbreaking as a form of prompt injection; ATLAS gives it its own technique.",
+  },
+  agent_hijack: {
+    owasp: ["LLM06"],
+    atlas: ["AML.T0053"],
+    why: "Excessive Agency is the weakness that lets manipulated or malfunctioning model output cause damaging actions, and AI Agent Tool Invocation is the act. Prompt injection is a common trigger but not the only one, so LLM01 is not added.",
+  },
+  data_leak: {
+    owasp: ["LLM02"],
+    atlas: [],
+    why: "Sensitive Information Disclosure is the closest OWASP entry; OWASP describes it mostly through model output, while some records here are storage misconfigurations. No ATLAS technique: the category mixes misconfigured storage, application bugs and prompt-induced leakage, and LLM Data Leakage (AML.T0057) covers only the last.",
+  },
+  model_theft_extraction: {
+    owasp: ["LLM10"],
+    atlas: ["AML.T0048.004"],
+    why: "The 2025 list folded model theft into Unbounded Consumption (model extraction through the API, functional replication). ATLAS AI Intellectual Property Theft covers stolen and extracted models alike; Extract AI Model (AML.T0024.002) is not added because some records are stolen weights.",
+  },
+  supply_chain: {
+    owasp: ["LLM03"],
+    atlas: ["AML.T0010"],
+    why: "The same concept in both frameworks: compromised models, packages and other AI dependencies.",
+  },
+  data_poisoning: {
+    owasp: ["LLM04"],
+    atlas: [],
+    why: "LLM04 covers pre-training, fine-tuning and embedding data. ATLAS separates training-data poisoning (AML.T0020) from RAG poisoning (AML.T0070) and the records do not say which, so neither is derived.",
+  },
+  adversarial_evasion: {
+    owasp: [],
+    atlas: ["AML.T0015", "AML.T0043"],
+    why: "Inputs crafted to make a model misclassify are Craft Adversarial Data used to Evade AI Model. The OWASP LLM list has no entry for classifier evasion; that lives in OWASP's separate Machine Learning Security Top 10.",
+  },
+  infra_vuln: {
+    owasp: ["LLM03"],
+    atlas: [],
+    why: "LLM03 names vulnerable third-party packages as its first example, and a CVE in an AI framework, inference server or MCP server is that risk for the teams who deploy it. No ATLAS technique: ATLAS describes what attackers do, and a vulnerability record does not say how the flaw was or would be exploited.",
+  },
+  deepfake_fraud: {
+    owasp: [],
+    atlas: ["AML.T0088", "AML.T0073"],
+    why: "Generate Deepfakes, used for Impersonation. No OWASP entry: no LLM application is the vulnerable party.",
+  },
+  ai_generated_malware: {
+    owasp: [],
+    atlas: ["AML.T0016.002"],
+    why: "ATLAS lists obtaining generative AI to write malware under Obtain Capabilities. No OWASP entry: the AI is the attacker's tool, not the vulnerable system.",
+  },
+  ai_phishing_social_engineering: {
+    owasp: [],
+    atlas: ["AML.T0052"],
+    why: "ATLAS Phishing, whose description covers generative AI scaling phishing campaigns. No OWASP entry: the AI is the attacker's tool, not the vulnerable system.",
+  },
+  ai_assisted_intrusion: {
+    owasp: [],
+    atlas: [],
+    why: "ATLAS has techniques for single steps (autonomous reconnaissance, autonomous exploit development, generating malicious commands), but the category does not record which step AI helped with, so none is derived. No OWASP entry: the AI is the attacker's tool.",
+  },
+  other: {
+    owasp: [],
+    atlas: [],
+    why: "No defined scope, so nothing to map.",
+  },
+};
+
+/** Rows that differ when the type changes what a category means. A pair listed here replaces the category's row. */
+export const STANDARDS_BY_TYPE_CATEGORY: Partial<Record<`${IncidentType}:${Category}`, StandardsRow>> = {
+  "ai_enabled_attack:supply_chain": {
+    owasp: [],
+    atlas: [],
+    why: "When AI is the weapon, the supply chain attacked is ordinary software (npm and PyPI packages), so the AI supply-chain entries (LLM03, AML.T0010) do not follow.",
+  },
+};
+
+export function standardsRow(type: IncidentType, category: Category): StandardsRow {
+  return STANDARDS_BY_TYPE_CATEGORY[`${type}:${category}`] ?? STANDARDS_BY_CATEGORY[category];
+}
+
+type Classified = { type: IncidentType; categories: readonly Category[] };
+
+/** OWASP LLM Top 10 entries for a record: the union over its categories, in list order. */
+export function owaspFor(i: Classified): OwaspLlmId[] {
+  const ids = new Set(i.categories.flatMap((c) => standardsRow(i.type, c).owasp));
+  return OWASP_LLM_IDS.filter((id) => ids.has(id));
+}
+
+/** ATLAS techniques for a record: the union over its categories, in id order. */
+export function atlasFor(i: Classified): AtlasTechniqueId[] {
+  const ids = new Set(i.categories.flatMap((c) => standardsRow(i.type, c).atlas));
+  return ATLAS_TECHNIQUE_IDS.filter((id) => ids.has(id));
+}
+
+const ALL_ROWS: StandardsRow[] = [...Object.values(STANDARDS_BY_CATEGORY), ...Object.values(STANDARDS_BY_TYPE_CATEGORY)];
+
+/** Entries some row can produce, in list order: what the explorer offers as filter values. */
+export const OWASP_IN_USE: OwaspLlmId[] = OWASP_LLM_IDS.filter((id) => ALL_ROWS.some((r) => r.owasp.includes(id)));
+/** OWASP entries no row produces; the Methodology page lists them. */
+export const OWASP_NOT_DERIVED: OwaspLlmId[] = OWASP_LLM_IDS.filter((id) => !OWASP_IN_USE.includes(id));
+export const ATLAS_IN_USE: AtlasTechniqueId[] = ATLAS_TECHNIQUE_IDS.filter((id) => ALL_ROWS.some((r) => r.atlas.includes(id)));
+
+export function isOwaspInUse(v: string): v is OwaspLlmId {
+  return (OWASP_IN_USE as string[]).includes(v);
+}
+export function isAtlasInUse(v: string): v is AtlasTechniqueId {
+  return (ATLAS_IN_USE as string[]).includes(v);
+}
