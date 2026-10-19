@@ -1,5 +1,5 @@
 import { FAMILY_META, familyOf, type Family } from "./families";
-import { monthLabel } from "./format";
+import { dateLabel, monthLabel } from "./format";
 import { inBasis, type Basis, type CompactRow } from "./rows";
 import { dateOf, isRealWorld, monthKey, primaryCategory, shiftMonth, windowKey, type DateField, type Headline } from "./stats";
 import { CATEGORY_META, SEVERITY_META, TARGET_META, TYPE_META, type Category, type IncidentType, type Severity, type Target } from "./taxonomy";
@@ -31,7 +31,17 @@ export type Selection =
   | { kind: "disclosed" }
   | { kind: "disclosed-month"; month: string }
   | { kind: "disclosed-product"; product: string }
-  | { kind: "disclosed-day"; day: string };
+  | { kind: "disclosed-day"; day: string }
+  /** Incidents of the basis on one full-dated day (calendar). */
+  | { kind: "day"; day: string }
+  /** One cell of the family by severity heatmap. */
+  | { kind: "family-severity"; family: Family; severity: Severity }
+  /** One ribbon of the flow: a type into a family. */
+  | { kind: "type-family"; type: IncidentType; family: Family }
+  /** One ribbon of the flow or one bubble: a family onto a target. */
+  | { kind: "family-target"; family: Family; target: Target }
+  /** A family's count in another window (the prior window of the slope and radar charts), independent of the current window. */
+  | { kind: "family-range"; family: Family; from: string; to: string; label: string };
 
 export function isDisclosedSelection(sel: Selection): boolean {
   return sel.kind === "disclosed" || sel.kind === "disclosed-month" || sel.kind === "disclosed-product" || sel.kind === "disclosed-day";
@@ -71,6 +81,16 @@ export function selectionLabel(sel: Selection): string {
       return `Disclosed vulnerabilities · ${sel.product}`;
     case "disclosed-day":
       return `Disclosed vulnerabilities · ${sel.day}`;
+    case "day":
+      return dateLabel(sel.day);
+    case "family-severity":
+      return `${FAMILY_META[sel.family].label} · severity ${sel.severity}, ${SEVERITY_META[sel.severity].label}`;
+    case "type-family":
+      return `${TYPE_META[sel.type].label} → ${FAMILY_META[sel.family].label}`;
+    case "family-target":
+      return `${FAMILY_META[sel.family].label} → ${TARGET_META[sel.target].label}`;
+    case "family-range":
+      return `${FAMILY_META[sel.family].label} · ${sel.label}`;
   }
 }
 
@@ -134,12 +154,33 @@ export function selectionQuery(sel: Selection, basis: Basis, field: DateField): 
       p.set("kind", "disclosed");
       p.set("month", sel.day.slice(0, 7));
       break;
+    case "day":
+      p.set("month", sel.day.slice(0, 7));
+      break;
+    case "family-severity":
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      p.set("severity", String(sel.severity));
+      break;
+    case "type-family":
+      p.set("type", sel.type);
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      break;
+    case "family-target":
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      p.set("target", sel.target);
+      break;
+    case "family-range":
+      p.set("category", FAMILY_META[sel.family].categories.join(","));
+      p.set("from", sel.from);
+      p.set("to", sel.to);
+      break;
   }
   return p.toString();
 }
 
 /** The months a selection draws rows from: its own range for a headline tile, the window for everything else. */
 export function selectionMonths(sel: Selection, from: string, to: string): { from: string; to: string } {
+  if (sel.kind === "family-range") return { from: sel.from, to: sel.to };
   if (sel.kind !== "range") return { from, to };
   if (sel.byYear) return { from: `${sel.from.slice(0, 4)}-01`, to: `${sel.to.slice(0, 4)}-12` };
   return { from: sel.from, to: sel.to };
@@ -156,7 +197,7 @@ export function inPool(r: CompactRow, sel: Selection, basis: Basis, field: DateF
     if (!r.disclosed) return false;
   } else {
     if (!inBasis(r, basis)) return false;
-    if (sel.kind === "range") return true;
+    if (sel.kind === "range" || sel.kind === "family-range") return true;
   }
   const k = windowKey(dateOf(r, field));
   return k >= from && k <= to;
@@ -201,6 +242,19 @@ export function matches(r: CompactRow, s: Selection, field: DateField): boolean 
       return r.product === s.product;
     case "disclosed-day":
       return d === s.day;
+    case "day":
+      return d === s.day;
+    case "family-severity":
+      return familyOf(primaryCategory(r)) === s.family && r.severity === s.severity;
+    case "type-family":
+      return r.type === s.type && familyOf(primaryCategory(r)) === s.family;
+    case "family-target":
+      return familyOf(primaryCategory(r)) === s.family && r.targets.includes(s.target);
+    case "family-range": {
+      // Window membership, like the family totals: a year-only date sits in July of its year.
+      const k = windowKey(d);
+      return familyOf(primaryCategory(r)) === s.family && k >= s.from && k <= s.to;
+    }
     case "range": {
       // Mirrors headline(): month tiles skip year-only dates, year tiles keep them; toDate caps "same period last year".
       if (s.byYear) return d.slice(0, 4) >= s.from.slice(0, 4) && d.slice(0, 4) <= s.to.slice(0, 4) && (!s.toDate || d <= s.toDate);

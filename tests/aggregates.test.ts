@@ -123,6 +123,13 @@ function checkEveryNumber(rows: CompactRow[]) {
         for (const t of v.targets) expect1(`target ${t.key}`, t.count, { kind: "target", target: t.key }, basis, field, from, to);
         for (const s of v.severities) expect1(`severity ${s.key}`, s.count, { kind: "severity", severity: Number(s.key) as 1 | 2 | 3 | 4 }, basis, field, from, to);
         for (const p of v.disclosedProducts) expect1(`product ${p.key}`, p.count, { kind: "disclosed-product", product: p.key }, basis, field, from, to);
+        for (const f of FAMILIES) {
+          for (const s of SEVERITIES) expect1(`heatmap ${f} ${s}`, v.famSev[f][s], { kind: "family-severity", family: f, severity: s }, basis, field, from, to);
+          for (const t of INCIDENT_TYPES) expect1(`flow ${t} ${f}`, v.typeFam[t][f], { kind: "type-family", type: t, family: f }, basis, field, from, to);
+          for (const tg of TARGETS) expect1(`bubble ${f} ${tg}`, v.famTarget[f][tg] ?? 0, { kind: "family-target", family: f, target: tg }, basis, field, from, to);
+          if (v.prior && v.priorFamilies) expect1(`prior ${f}`, v.priorFamilies[f], { kind: "family-range", family: f, from: v.prior.from, to: v.prior.to, label: "prior" }, basis, field, from, to);
+        }
+        for (const [day, count] of Object.entries(v.dayCounts)) expect1(`day ${day}`, count, { kind: "day", day }, basis, field, from, to);
         if (v.disclosedBusiest) expect1("busiest day", v.disclosedBusiest.count, { kind: "disclosed-day", day: v.disclosedBusiest.day }, basis, field, from, to);
         v.series.forEach((p, i) => {
           expect1(`column ${p.month}`, p.total, { kind: "month", month: p.month }, basis, field, from, to);
@@ -182,8 +189,21 @@ function checkAgainstStats(rows: CompactRow[]) {
         expect(v.disclosedBusiest).toEqual(best);
         if (win !== "all") {
           const n = Number(win.replace("m", ""));
-          expect(v.priorCount).toBe(inWindow(basisRows, shiftMonth(from, -n), shiftMonth(from, -1), field).length);
-        } else expect(v.priorCount).toBeNull();
+          const before = inWindow(basisRows, shiftMonth(from, -n), shiftMonth(from, -1), field);
+          expect(v.priorCount).toBe(before.length);
+          expect(v.priorFamilies).toEqual(Object.fromEntries(countBy(before, (r) => familyOf(primaryCategory(r)), FAMILIES).map((c) => [c.key, c.count])));
+        } else {
+          expect(v.priorCount).toBeNull();
+          expect(v.priorFamilies).toBeNull();
+        }
+        // joint counts add up to the marginals they were cut from
+        for (const f of FAMILIES) expect(SEVERITIES.reduce((s, sv) => s + v.famSev[f][sv], 0)).toBe(v.families.find((x) => x.key === f)!.count);
+        for (const t of INCIDENT_TYPES) expect(FAMILIES.reduce((s, f) => s + v.typeFam[t][f], 0)).toBe(v.types.find((x) => x.key === t)!.count);
+        for (const tg of TARGETS) expect(FAMILIES.reduce((s, f) => s + (v.famTarget[f][tg] ?? 0), 0)).toBe(v.targets.find((x) => x.key === tg)!.count);
+        expect(Object.values(v.dayCounts).reduce((s, n) => s + n, 0)).toBe(inView.filter((r) => dateOf(r, field).length === 10).length);
+        // notable: in the window, in the basis, best first
+        for (const r of v.notable) expect(inView.some((x) => x.id === r.id)).toBe(true);
+        for (let i = 1; i < v.notable.length; i++) expect(v.notable[i - 1]!.severity).toBeGreaterThanOrEqual(v.notable[i]!.severity);
       }
     }
   }
