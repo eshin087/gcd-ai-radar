@@ -13,7 +13,7 @@ import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
 
 /**
- * gcd AI Radar collector.
+ * GCD AI RADAR collector.
  *
  *   npm run collect                     fetch, classify, publish, commit, push
  *   npm run collect -- --dry-run        everything except writing and committing

@@ -2,7 +2,7 @@
   "name": "gcd-ai-radar",
   "version": "0.1.0",
   "private": true,
-  "description": "gcd AI Radar: an observatory of AI cybersecurity incidents, counted honestly and charted over time.",
+  "description": "GCD AI RADAR: an observatory of AI cybersecurity incidents, counted honestly and charted over time.",
   "license": "MIT",
   "type": "module",
   "engines": {

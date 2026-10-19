@@ -1,5 +1,5 @@
 /**
- * Controlled vocabularies for gcd AI Radar.
+ * Controlled vocabularies for GCD AI RADAR.
  *
  * This file is the single source of truth for the incident taxonomy. It is
  * imported by the Zod schema (validation), the collector prompts (so the

@@ -1,11 +1,11 @@
 /** Site-wide constants. Branding follows the gcd family conventions. */
 
 export const SITE = {
-  name: "gcdAIRadar",
-  wordmark: "gcdairadar",
+  name: "GCD AI RADAR",
+  wordmark: "GCD AI RADAR",
   tagline: "An observatory of AI cybersecurity incidents",
   description:
-    "gcd AI Radar records, counts and charts AI cybersecurity incidents: attacks on AI systems and AI-enabled attacks, deduplicated and linked to original reporting.",
+    "GCD AI RADAR records, counts and charts AI cybersecurity incidents: attacks on AI systems and AI-enabled attacks, deduplicated and linked to original reporting.",
   github: "https://github.com/eshin087/gcd-ai-radar",
   author: "GCD",
   family: [

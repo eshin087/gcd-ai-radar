@@ -5,41 +5,60 @@ import { useEffect, useRef, useState, type ReactNode, type RefObject } from "rea
 import { AsciiField } from "@/components/fx/AsciiField";
 import { AsciiForm } from "@/components/fx/AsciiForm";
 import { CountUp } from "@/components/fx/CountUp";
-import { Ago } from "@/components/fx/NextSweep";
+import { Ago, NextSweep } from "@/components/fx/NextSweep";
 import { Reveal } from "@/components/fx/Reveal";
-import { neuralSweep } from "@/components/fx/scenes/neuralSweep";
+import { agentSwarm } from "@/components/fx/scenes/agentSwarm";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { BarRows } from "@/components/charts/BarRows";
-import { FamilyMultiples } from "@/components/charts/FamilyMultiples";
+import { CalendarHeatmap } from "@/components/charts/CalendarHeatmap";
+import { CumulativeTimeline } from "@/components/charts/CumulativeTimeline";
+import { FamilyRadar } from "@/components/charts/FamilyRadar";
+import { FamilySlope } from "@/components/charts/FamilySlope";
+import { FamilyStream } from "@/components/charts/FamilyStream";
+import { FlowSankey } from "@/components/charts/FlowSankey";
 import { MonthlyColumns, type ColumnColors } from "@/components/charts/MonthlyColumns";
-import { SeverityMeters } from "@/components/charts/SeverityMeters";
+import { SeverityHeatmap } from "@/components/charts/SeverityHeatmap";
+import { TargetBubbles } from "@/components/charts/TargetBubbles";
 import { RadarPanel } from "@/components/panels/RadarPanel";
 import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import { Segmented } from "@/components/ui/Segmented";
 import { StatTile } from "@/components/ui/StatTile";
-import type { DashboardData } from "@/lib/dashboard";
-import type { Family } from "@/lib/families";
+import type { CompactRow, DashboardData } from "@/lib/dashboard";
+import { FAMILIES, type Family } from "@/lib/families";
 import { formatPct, monthLabel } from "@/lib/format";
 import { NAV, WINDOW_CHOICES } from "@/lib/site";
-import { pctChange } from "@/lib/stats";
-import { INCIDENT_TYPES, TARGET_META, TYPE_META, type IncidentType, type Target } from "@/lib/taxonomy";
+import { dateOf, monthKey, pctChange, shiftMonth } from "@/lib/stats";
+import type { IncidentType, Severity, Target } from "@/lib/taxonomy";
 import { THEME as T } from "@/lib/theme";
 import { ReportDrawer } from "./ReportDrawer";
 import { useDashboardModel, type WindowKey } from "./useDashboardModel";
 
-/** Neural-sweep tones: structure, beam-lit, hot (signals, crossed nodes), faint (rings, dust). Decorative, not data. */
-const SWEEP_PALETTE = ["#4d6ca3", "#ffb35c", "#fff1db", "#56607a"];
+/** Agent-swarm tones: structure, beam-lit, hot (packets, pinged agents), faint (rings, dust), agents. Decorative, not data. */
+const SWARM_PALETTE = ["#4d6ca3", "#ffb35c", "#fff1db", "#56607a", "#7fdcff"];
 /** Disclosed vulnerabilities: a neutral slate, apart from the incident blue (single series, contrast 4.9:1 on the surface). */
 const DISCLOSED_COLOR = "#6b7fa8";
 const NC: ColumnColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional };
+/** The trend panel's three views of the same months. */
+type TrendView = "columns" | "timeline" | "calendar";
 
-/** A number that opens its incidents. */
-function Num({ children, onClick, className = "", label }: { children: ReactNode; onClick: () => void; className?: string; label: string }) {
+/** A readout line in the hero's terminal panel: [ ok ] label ........ value  note. A count opens its incidents. */
+function Readout({ tag, label, value, note, onOpen, ariaLabel }: { tag: "ok" | "--"; label: string; value: number | ReactNode; note?: ReactNode; onOpen?: () => void; ariaLabel?: string }) {
+  const shown = typeof value === "number" ? <CountUp value={value} /> : value;
   return (
-    <button type="button" onClick={onClick} aria-label={label} className={`num underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent hover:decoration-[color:var(--color-accent)] ${className}`}>
-      {children}
-    </button>
+    <div className="flex items-baseline gap-2 whitespace-nowrap">
+      <span className={tag === "ok" ? "text-accent" : "text-faint"}>[ {tag} ]</span>
+      <span className="text-soft">{label}</span>
+      <span aria-hidden className="leader">{".".repeat(96)}</span>
+      {onOpen ? (
+        <button type="button" onClick={onOpen} aria-label={ariaLabel ?? `${label}: open the list`} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent hover:decoration-[color:var(--color-accent)]">
+          {shown}
+        </button>
+      ) : (
+        <span className="num text-ink">{shown}</span>
+      )}
+      {note && <span className="hidden text-[12px] text-dim sm:inline">{note}</span>}
+    </div>
   );
 }
 
@@ -47,14 +66,12 @@ function Section({ id, n, kicker, title, lede, children }: { id?: string; n: str
   return (
     <Reveal>
       <section id={id} className="scroll-mt-20 space-y-4">
-        <header className="flex flex-wrap items-end justify-between gap-x-10 gap-y-2">
-          <div className="min-w-0 space-y-1.5">
-            <div className="divider">
-              <span className="text-accent">{n}</span> {kicker}
-            </div>
-            <AsciiForm as="h2" text={title} onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
+        <header className="space-y-2">
+          <div className="divider">
+            <span className="text-accent">{n}</span> {kicker}
           </div>
-          {lede && <p className="max-w-xl text-[14px] leading-relaxed text-soft">{lede}</p>}
+          <AsciiForm as="h2" text={title} onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
+          {lede && <p className="max-w-3xl text-[15px] leading-relaxed text-soft">{lede}</p>}
         </header>
         {children}
       </section>
@@ -104,9 +121,16 @@ export function Dashboard({ data }: { data: DashboardData }) {
   const m = useDashboardModel(data);
   const heroRef = useRef<HTMLDivElement>(null);
   const heroGone = useHeroFade(heroRef);
+  const [trendView, setTrendView] = useState<TrendView>("columns");
   const delta = m.priorCount === null ? undefined : pctChange(m.count, m.priorCount);
   const sel = m.selection;
-  const typeSeries = (t: IncidentType) => m.series.map((p) => p.byType[t]);
+  const famTotals = Object.fromEntries(m.families.map((f) => [f.key, f.count])) as Record<Family, number>;
+  const famShown = FAMILIES.filter((f) => f !== "other" || famTotals.other > 0 || (m.priorFamilies?.other ?? 0) > 0);
+  const priorLabel = m.prior ? `${m.win.replace("m", "")} months before` : "";
+  const nowLabel = m.win === "all" ? "all time" : `last ${m.win.replace("m", "")} months`;
+  const monthOf = (r: CompactRow) => monthKey(dateOf(r, m.field));
+  const today = data.now.slice(0, 10);
+  const calendarFrom = shiftMonth(m.to, -11);
 
   return (
     <div className="min-h-dvh">
@@ -126,14 +150,11 @@ export function Dashboard({ data }: { data: DashboardData }) {
         </header>
         <div className="relative mx-auto max-w-7xl px-4">
           <div aria-hidden className="hero-field relative h-64 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
-            <AsciiField scene={() => neuralSweep({ origin: [0.7, 0.5] })} palette={SWEEP_PALETTE} fontSize={12} running={!heroGone} label="A radar beam sweeping a network of neural nodes" className="h-full w-full" />
+            <AsciiField scene={() => agentSwarm({ origin: [0.7, 0.5] })} palette={SWARM_PALETTE} fontSize={12} running={!heroGone} label="A radar beam sweeping a swarm of AI agents calling tools and reporting back" className="h-full w-full" />
           </div>
           <div className="relative z-10 flex items-center pb-20 pt-2 lg:min-h-[min(540px,calc(100svh-4rem))]">
-            <div className="max-w-xl space-y-5">
-              <p className="label bracket">
-                observatory · live · <Ago iso={data.lastUpdated} />
-              </p>
-              <AsciiForm as="h1" text="Every AI security incident, counted once." duration={760} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
+            <div className="min-w-0 max-w-xl space-y-5">
+              <AsciiForm as="h1" text="Every AI security incident, counted once." duration={2600} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                 <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group" aria-label={`${m.count} incidents in the ${m.windowLabel}, open the list`}>
                   <CountUp value={m.count} className="text-6xl font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current sm:text-7xl" />
@@ -147,24 +168,28 @@ export function Dashboard({ data }: { data: DashboardData }) {
                   )}
                 </span>
               </div>
-              <p className="text-[15px] leading-relaxed text-soft">
-                <Num onClick={() => m.setSelection({ kind: "real" })} label={`${m.realInWindow} real-world incidents`} className="text-ink">
-                  {m.realInWindow.toLocaleString("en-US")}
-                </Num>{" "}
-                with confirmed exploitation or real-world loss. Attacks on AI systems and attacks powered by AI, deduplicated across{" "}
-                <Num onClick={() => m.setSelection({ kind: "window" })} label="all incidents in view" className="text-ink">
-                  {m.sourcesInWindow.toLocaleString("en-US")}
-                </Num>{" "}
-                sources and linked to the original reporting. Another{" "}
-                <Num onClick={() => m.setSelection({ kind: "disclosed" })} label={`${m.disclosedCount} disclosed vulnerabilities`} className="text-ink">
-                  {m.disclosedCount.toLocaleString("en-US")}
-                </Num>{" "}
-                disclosed CVEs with no confirmed exploitation are{" "}
-                <a href="#disclosed" className="link">
-                  tracked separately
-                </a>
-                .
-              </p>
+              {/* the readout: the hero's numbers as a terminal log, every count opening its incidents */}
+              <div className="tty font-mono text-[13px] sm:text-[13.5px]">
+                <span className="tty-title">┤ observatory · live ├</span>
+                <div className="space-y-1.5">
+                  <div className="truncate text-dim">
+                    <span className="text-accent">$</span> radar --set {m.basis} --by {m.field === "incident_date" ? "incident-date" : "first-reported"} --window {m.win}
+                  </div>
+                  <Readout tag="ok" label="real-world" value={m.realInWindow} note="severity 3–4 · confirmed exploitation or loss" onOpen={() => m.setSelection({ kind: "real" })} ariaLabel={`${m.realInWindow} real-world incidents`} />
+                  <Readout tag="ok" label="sources" value={m.sourcesInWindow} note="deduplicated · one event, counted once" onOpen={() => m.setSelection({ kind: "window" })} ariaLabel="all incidents in view" />
+                  <Readout tag="--" label="disclosed CVEs" value={m.disclosedCount} note="no confirmed exploitation · tracked apart" onOpen={() => m.setSelection({ kind: "disclosed" })} ariaLabel={`${m.disclosedCount} disclosed vulnerabilities`} />
+                  <Readout
+                    tag="ok"
+                    label="last sweep"
+                    value={<Ago iso={data.lastUpdated} />}
+                    note={
+                      <>
+                        next in <NextSweep className="text-soft" />
+                      </>
+                    }
+                  />
+                </div>
+              </div>
               <div className="flex flex-wrap gap-3">
                 <Link href="/incidents" className="glass px-4 py-2 text-[13px] text-ink hover:border-accent">
                   Explore incidents →
@@ -219,21 +244,58 @@ export function Dashboard({ data }: { data: DashboardData }) {
             lede={`By ${m.fieldLabel}, ${monthLabel(m.from, true)} to ${monthLabel(m.to, true)}. Amber: three-month average. Dashed: linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)} a month). The bracketed months are provisional.`}
           >
             <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_352px]">
-              <div className="glass min-w-0 p-4 sm:p-5">
-                <MonthlyColumns
-                  months={m.trend.map((p) => p.month)}
-                  stacks={[{ key: "total", label: "Incidents", color: T.bar, values: m.trend.map((p) => p.total) }]}
-                  line={m.trend.map((p) => p.ma)}
-                  fit={m.trend.map((p) => p.fit)}
-                  provisionalFrom={m.h.provisionalFrom}
-                  height={372}
-                  colors={NC}
-                  gradientTop={T.accent}
-                  glow
-                  activeMonth={sel?.kind === "month" ? sel.month : null}
-                  onMonth={(month) => m.setSelection({ kind: "month", month })}
-                  label="Incidents per month"
-                />
+              <div className="glass min-w-0 space-y-3 p-4 sm:p-5">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <Segmented
+                    label="Trend view"
+                    size="sm"
+                    value={trendView}
+                    onChange={setTrendView}
+                    options={[
+                      { key: "columns", label: "Per month", title: "Incidents per month with the three-month average and the linear trend" },
+                      { key: "timeline", label: "Running total", title: "The running total, with the most notable incidents pinned on the curve" },
+                      { key: "calendar", label: "Calendar", title: "The last twelve months day by day" },
+                    ]}
+                  />
+                  <span className="text-[11.5px] text-faint">
+                    {trendView === "columns" ? "amber: three-month average · dashed: linear trend" : trendView === "timeline" ? "markers: the biggest incidents in the window, by severity and sources" : "one cell per day, darker is busier"}
+                  </span>
+                </div>
+                {trendView === "columns" && (
+                  <MonthlyColumns
+                    months={m.trend.map((p) => p.month)}
+                    stacks={[{ key: "total", label: "Incidents", color: T.bar, values: m.trend.map((p) => p.total) }]}
+                    line={m.trend.map((p) => p.ma)}
+                    fit={m.trend.map((p) => p.fit)}
+                    provisionalFrom={m.h.provisionalFrom}
+                    height={340}
+                    colors={NC}
+                    gradientTop={T.accent}
+                    glow
+                    activeMonth={sel?.kind === "month" ? sel.month : null}
+                    onMonth={(month) => m.setSelection({ kind: "month", month })}
+                    label="Incidents per month"
+                  />
+                )}
+                {trendView === "timeline" && (
+                  <CumulativeTimeline
+                    months={m.series.map((p) => p.month)}
+                    totals={m.series.map((p) => p.total)}
+                    notable={m.notable}
+                    monthOf={monthOf}
+                    provisionalFrom={m.h.provisionalFrom}
+                    height={340}
+                    theme={T}
+                    activeMonth={sel?.kind === "month" ? sel.month : null}
+                    onMonth={(month) => m.setSelection({ kind: "month", month })}
+                    label="Running total of incidents, with the most notable ones marked"
+                  />
+                )}
+                {trendView === "calendar" && (
+                  <div className="flex min-h-[340px] flex-col justify-center">
+                    <CalendarHeatmap dayCounts={m.dayCounts} from={calendarFrom} to={today} theme={T} activeDay={sel?.kind === "day" ? sel.day : null} onDay={(day) => m.setSelection({ kind: "day", day })} label="Incidents per day over the last twelve months" />
+                  </div>
+                )}
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <StatTile
@@ -275,59 +337,107 @@ export function Dashboard({ data }: { data: DashboardData }) {
             n="02"
             kicker="What kind"
             title="Seven families of incident"
-            lede="Each panel has its own scale, labelled on the right, so small families stay readable. Compare sizes by the totals. A total opens the family, a column opens that month."
+            lede="The stream is the same months as above, split into families: its height is the volume, its bands are the mix. Beside it, each family now against the window before. Hover a band for the month, click it for the incidents; the legend counts open each family."
           >
-            <FamilyMultiples
-              data={m.fam}
-              totals={Object.fromEntries(m.families.map((f) => [f.key, f.count])) as Record<Family, number>}
-              theme={T}
-              windowTotal={m.count}
-              onFamily={(family) => m.setSelection({ kind: "family", family })}
-              onMonth={(month, family) => m.setSelection({ kind: "month-family", month, family })}
-            />
-          </Section>
-
-          <Section n="03" kicker="Who and how bad" title="Targets, types and severity" lede="Attacks on AI systems against attacks that used AI, who was hit, and how far each incident went, from a research demonstration to confirmed real-world loss.">
-            <div className="grid gap-3 lg:grid-cols-3">
-              <div className="glass min-w-0 space-y-3 p-5">
-                <h3 className="text-[15px] font-medium">On AI vs by AI</h3>
-                <MonthlyColumns
-                  months={m.series.map((p) => p.month)}
-                  stacks={INCIDENT_TYPES.map((t) => ({ key: t, label: TYPE_META[t].label, color: T.types[t], values: typeSeries(t) }))}
+            <div className="grid gap-3 xl:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
+              <div className="glass min-w-0 p-4 sm:p-5">
+                <FamilyStream
+                  data={m.fam}
+                  totals={famTotals}
+                  theme={T}
                   provisionalFrom={m.h.provisionalFrom}
-                  height={210}
-                  colors={NC}
-                  peak={false}
-                  activeMonth={sel?.kind === "month" ? sel.month : null}
-                  onMonth={(month) => m.setSelection({ kind: "month", month })}
-                  onSegment={(month, key) => m.setSelection({ kind: "month-type", month, type: key as IncidentType })}
-                  label="Attacks on AI and AI-enabled attacks per month"
-                />
-                <BarRows
-                  rows={m.types.map((t) => ({ key: t.key, label: TYPE_META[t.key].label, value: t.count, color: T.types[t.key], note: `${Math.round((t.count / Math.max(1, m.count)) * 100)}%` }))}
-                  labelWidth="8.5rem"
-                  onPick={(k) => m.setSelection({ kind: "type", type: k as IncidentType })}
-                  active={sel?.kind === "type" ? sel.type : null}
+                  height={300}
+                  activeFamily={sel?.kind === "family" ? sel.family : sel?.kind === "month-family" ? sel.family : null}
+                  onFamily={(family) => m.setSelection({ kind: "family", family })}
+                  onMonth={(month, family) => m.setSelection({ kind: "month-family", month, family })}
+                  label="Incidents per month by family, as a stream"
                 />
               </div>
-              <div className="glass space-y-3 p-5">
-                <h3 className="text-[15px] font-medium">Who is hit</h3>
-                <BarRows
-                  rows={m.targets
-                    .filter((t) => t.count > 0)
-                    .slice(0, 10)
-                    .map((t) => ({ key: t.key, label: TARGET_META[t.key].label, value: t.count, color: T.bar }))}
-                  labelWidth="9.5rem"
-                  onPick={(k) => m.setSelection({ kind: "target", target: k as Target })}
-                  active={sel?.kind === "target" ? sel.target : null}
+              <div className="glass min-w-0 space-y-2 p-4 sm:p-5">
+                <h3 className="text-[15px] font-medium">Movers</h3>
+                {m.prior && m.priorFamilies ? (
+                  <FamilySlope
+                    rows={famShown.map((f) => ({ key: f, now: famTotals[f], prior: m.priorFamilies![f] }))}
+                    theme={T}
+                    priorLabel={priorLabel}
+                    nowLabel={nowLabel}
+                    height={300}
+                    active={sel?.kind === "family" ? sel.family : null}
+                    onNow={(family) => m.setSelection({ kind: "family", family })}
+                    onPrior={(family) => m.setSelection({ kind: "family-range", family, from: m.prior!.from, to: m.prior!.to, label: priorLabel })}
+                    label="Each family's count in the window before against now"
+                  />
+                ) : (
+                  <p className="text-[13px] leading-relaxed text-dim">Pick a 12, 24 or 36 month window to compare each family with the window before it.</p>
+                )}
+              </div>
+            </div>
+          </Section>
+
+          <Section n="03" kicker="Who and how bad" title="Shape, severity, targets" lede="The radar is the window's shape against the window before. The heatmap is where each family lands on the severity scale, from research demonstrations to confirmed real-world loss. The bubbles are who is hit by what, and the flow below follows every incident from attack on AI or by AI, through its family, onto its targets.">
+            <div className="grid gap-3 lg:grid-cols-3">
+              <div className="glass min-w-0 space-y-2 p-5">
+                <h3 className="text-[15px] font-medium">The shape of the threat</h3>
+                <FamilyRadar
+                  families={famShown}
+                  now={famTotals}
+                  prior={m.priorFamilies}
+                  theme={T}
+                  nowLabel={nowLabel}
+                  priorLabel={priorLabel}
+                  active={sel?.kind === "family" ? sel.family : null}
+                  onNow={(family) => m.setSelection({ kind: "family", family })}
+                  onPrior={(family) => m.prior && m.setSelection({ kind: "family-range", family, from: m.prior.from, to: m.prior.to, label: priorLabel })}
+                  label="Families on a radar chart, this window against the window before"
+                />
+                <p className="text-[12px] text-dim">{m.prior ? `Solid: ${nowLabel}. Dashed: the ${priorLabel}.` : "Solid: all time. Pick a shorter window to compare it with the one before."}</p>
+              </div>
+              <div className="glass min-w-0 space-y-3 p-5">
+                <h3 className="text-[15px] font-medium">How bad, by family</h3>
+                <SeverityHeatmap
+                  families={famShown}
+                  counts={m.famSev}
+                  theme={T}
+                  active={sel?.kind === "family-severity" ? { family: sel.family, severity: sel.severity } : null}
+                  onCell={(family, severity) => m.setSelection({ kind: "family-severity", family, severity })}
+                  onFamily={(family) => m.setSelection({ kind: "family", family })}
+                  onSeverity={(severity: Severity) => m.setSelection({ kind: "severity", severity })}
+                />
+                <p className="text-[12px] text-dim">Severity 2 here means a flaw that was reported as news. CVEs with no confirmed exploitation are tracked separately below.</p>
+              </div>
+              <div className="glass min-w-0 space-y-3 p-5">
+                <h3 className="text-[15px] font-medium">Who is hit, by what</h3>
+                <TargetBubbles
+                  families={famShown}
+                  targets={m.targets.filter((t) => t.count > 0).slice(0, 10)}
+                  counts={m.famTarget}
+                  familyTotals={famTotals}
+                  theme={T}
+                  active={sel?.kind === "family-target" ? { family: sel.family, target: sel.target } : null}
+                  onCell={(family, target) => m.setSelection({ kind: "family-target", family, target })}
+                  onTarget={(target: Target) => m.setSelection({ kind: "target", target })}
+                  onFamily={(family) => m.setSelection({ kind: "family", family })}
                 />
                 <p className="text-[12px] text-dim">An incident can name several targets.</p>
               </div>
-              <div className="glass space-y-3 p-5">
-                <h3 className="text-[15px] font-medium">How bad</h3>
-                <SeverityMeters data={m.severities} theme={T} onPick={(severity) => m.setSelection({ kind: "severity", severity })} active={sel?.kind === "severity" ? sel.severity : null} />
-                <p className="text-[12px] text-dim">Severity 2 here means a flaw that was reported as news. CVEs with no confirmed exploitation are tracked separately below.</p>
-              </div>
+            </div>
+            <div className="glass min-w-0 space-y-2 p-4 sm:p-5">
+              <h3 className="text-[15px] font-medium">The flow: on AI or by AI, into a family, onto its targets</h3>
+              <FlowSankey
+                types={m.types}
+                families={famShown.map((f) => ({ key: f, count: famTotals[f] }))}
+                targets={m.targets.filter((t) => t.count > 0)}
+                typeFam={m.typeFam}
+                famTarget={m.famTarget}
+                theme={T}
+                onType={(type: IncidentType) => m.setSelection({ kind: "type", type })}
+                onFamily={(family) => m.setSelection({ kind: "family", family })}
+                onTarget={(target) => m.setSelection({ kind: "target", target })}
+                onTypeFamily={(type, family) => m.setSelection({ kind: "type-family", type, family })}
+                onFamilyTarget={(family, target) => m.setSelection({ kind: "family-target", family, target })}
+                label="Flow of incidents from type to family to target"
+              />
+              <p className="text-[12px] text-dim">Ribbon width is the count. The right column counts target mentions, so an incident naming two targets appears in both.</p>
             </div>
           </Section>
 
@@ -380,14 +490,25 @@ export function Dashboard({ data }: { data: DashboardData }) {
           {data.radar && (
             <Reveal>
               <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-                <div className="max-w-xl space-y-2">
+                <div className="max-w-xl space-y-3">
                   <div className="divider">
                     <span className="text-accent">05</span> Context
                   </div>
                   <AsciiForm as="h2" text="The bots on the wire" onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
-                  <p className="text-[14px] leading-relaxed text-soft">
+                  <p className="text-[15.5px] leading-relaxed text-soft">
                     Not incidents: a weekly reading of how much web traffic is automated and which AI crawlers send it, from Cloudflare Radar. Background for the counts above, never added to them.
                   </p>
+                  <ul className="space-y-2 text-[14px] leading-relaxed text-dim">
+                    <li>
+                      <span className="text-soft">Bot share</span> is the part of all HTTP requests Cloudflare classifies as automated, over the last seven days.
+                    </li>
+                    <li>
+                      <span className="text-soft">AI crawlers</span> are the slice of that bot traffic sent by known AI user agents; their share of all requests is derived from the two, not measured.
+                    </li>
+                    <li>
+                      <span className="text-soft">Crawl purpose</span> is what those crawlers declare they fetch pages for: model training, search, or acting on a user&rsquo;s request.
+                    </li>
+                  </ul>
                 </div>
                 <RadarPanel radar={data.radar} className="glass" />
               </section>
