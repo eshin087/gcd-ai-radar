@@ -1,0 +1,116 @@
+{
+  "week": "2026-W35",
+  "start": "2026-08-24",
+  "end": "2026-08-30",
+  "counts": {
+    "records": 34,
+    "incidents": 2,
+    "real_world": 2,
+    "disclosed_vulnerabilities": 32,
+    "by_type": {
+      "attack_on_ai": 0,
+      "ai_enabled_attack": 2
+    },
+    "by_family": {
+      "injection": 0,
+      "infra": 0,
+      "exposure": 0,
+      "agent": 0,
+      "supply": 0,
+      "social": 0,
+      "offense": 2,
+      "other": 0
+    },
+    "by_severity": {
+      "1": 0,
+      "2": 0,
+      "3": 2,
+      "4": 0
+    }
+  },
+  "previous": {
+    "week": "2026-W34",
+    "incidents": 4,
+    "real_world": 3,
+    "disclosed_vulnerabilities": 6
+  },
+  "deltas": {
+    "incidents": {
+      "now": 2,
+      "before": 4,
+      "change": -2,
+      "pct": -50
+    },
+    "real_world": {
+      "now": 2,
+      "before": 3,
+      "change": -1,
+      "pct": -33.33333333333333
+    },
+    "disclosed_vulnerabilities": {
+      "now": 32,
+      "before": 6,
+      "change": 26,
+      "pct": 433.3333333333333
+    }
+  },
+  "busiest_family": {
+    "family": "offense",
+    "count": 2
+  },
+  "top_targets": [
+    {
+      "target": "framework_or_tooling",
+      "count": 2
+    },
+    {
+      "target": "open_weight_model",
+      "count": 1
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-0362",
+      "slug": "multi-agent-framework-compromises-taiwanese-government-syste",
+      "title": "Multi-Agent Framework Compromises Taiwanese Government Systems",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-08-30",
+      "source_count": 4
+    },
+    {
+      "id": "AIR-2026-0363",
+      "slug": "threat-actor-uses-deepseek-powered-hermes-agent-for-exploita",
+      "title": "Threat Actor Uses DeepSeek-Powered Hermes Agent for Exploitation",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "open_weight_model",
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-08-30",
+      "source_count": 2
+    }
+  ],
+  "generated_at": "2026-10-19T06:33:46.497Z",
+  "narrative": {
+    "headline": "Threat actors deployed AI agents to target government systems and exploit tools",
+    "text": "The week had 2 incidents, down 2 from 4, including 2 real-world incidents, down 1 from 3. Threat actors deployed a multi-agent framework built on Hermes and OpenClaw in attacks against Taiwanese government systems, where investigators recovered operational workspaces documenting multiple attack waves. In another incident, a threat actor configured Hermes Agent with DeepSeek as its reasoning engine to facilitate terminal access and exploit Langflow and n8n using integrated tools and custom red-team skills. The week also had 32 disclosed vulnerabilities, up 26 from 6.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-10-19T06:33:46.497Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 1921,
+    "incidents": 412,
+    "last_collector_run": "2026-10-19T05:07:52.805Z"
+  }
+}

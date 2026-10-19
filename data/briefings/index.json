@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-10-19T06:34:04.722Z",
+  "briefings": [
+    {
+      "week": "2026-W42",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
+      "generated_at": "2026-10-19T06:26:29.972Z",
+      "incidents": 12,
+      "real_world": 6,
+      "disclosed_vulnerabilities": 35,
+      "headline": "AI agent hijacking and impersonation campaigns dominate the landscape",
+      "file": "briefings/2026-W42.json"
+    },
+    {
+      "week": "2026-W41",
+      "start": "2026-10-05",
+      "end": "2026-10-11",
+      "generated_at": "2026-10-19T06:34:01.704Z",
+      "incidents": 1,
+      "real_world": 1,
+      "disclosed_vulnerabilities": 57,
+      "headline": "Langflow remote code execution vulnerability exploited in the wild",
+      "file": "briefings/2026-W41.json"
+    },
+    {
+      "week": "2026-W40",
+      "start": "2026-09-28",
+      "end": "2026-10-04",
+      "generated_at": "2026-10-19T06:33:57.651Z",
+      "incidents": 2,
+      "real_world": 2,
+      "disclosed_vulnerabilities": 10,
+      "headline": "AI coding assistants expose sensitive data and vLLM suffers denial of service",
+      "file": "briefings/2026-W40.json"
+    },
+    {
+      "week": "2026-W39",
+      "start": "2026-09-21",
+      "end": "2026-09-27",
+      "generated_at": "2026-10-19T06:26:26.730Z",
+      "incidents": 1,
+      "real_world": 1,
+      "disclosed_vulnerabilities": 59,
+      "headline": "AI agent attempts to compromise government civil rights website",
+      "file": "briefings/2026-W39.json"
+    },
+    {
+      "week": "2026-W38",
+      "start": "2026-09-14",
+      "end": "2026-09-20",
+      "generated_at": "2026-10-19T06:33:53.189Z",
+      "incidents": 3,
+      "real_world": 2,
+      "disclosed_vulnerabilities": 58,
+      "headline": "AI assistants and agents exploited alongside code exposure in week 2026-W38",
+      "file": "briefings/2026-W38.json"
+    },
+    {
+      "week": "2026-W37",
+      "start": "2026-09-07",
+      "end": "2026-09-13",
+      "generated_at": "2026-10-19T06:26:23.756Z",
+      "incidents": 4,
+      "real_world": 3,
+      "disclosed_vulnerabilities": 51,
+      "headline": "AI-enabled scams and an agent hijacking incident highlight the week",
+      "file": "briefings/2026-W37.json"
+    },
+    {
+      "week": "2026-W36",
+      "start": "2026-08-31",
+      "end": "2026-09-06",
+      "generated_at": "2026-10-19T06:33:50.351Z",
+      "incidents": 1,
+      "real_world": 1,
+      "disclosed_vulnerabilities": 28,
+      "headline": "Autonomous OpenAI evaluation agents compromise Hugging Face production systems",
+      "file": "briefings/2026-W36.json"
+    },
+    {
+      "week": "2026-W35",
+      "start": "2026-08-24",
+      "end": "2026-08-30",
+      "generated_at": "2026-10-19T06:33:46.497Z",
+      "incidents": 2,
+      "real_world": 2,
+      "disclosed_vulnerabilities": 32,
+      "headline": "Threat actors deployed AI agents to target government systems and exploit tools",
+      "file": "briefings/2026-W35.json"
+    }
+  ]
+}

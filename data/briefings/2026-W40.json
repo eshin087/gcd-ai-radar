@@ -1,0 +1,115 @@
+{
+  "week": "2026-W40",
+  "start": "2026-09-28",
+  "end": "2026-10-04",
+  "counts": {
+    "records": 12,
+    "incidents": 2,
+    "real_world": 2,
+    "disclosed_vulnerabilities": 10,
+    "by_type": {
+      "attack_on_ai": 1,
+      "ai_enabled_attack": 1
+    },
+    "by_family": {
+      "injection": 0,
+      "infra": 1,
+      "exposure": 1,
+      "agent": 0,
+      "supply": 0,
+      "social": 0,
+      "offense": 0,
+      "other": 0
+    },
+    "by_severity": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 1
+    }
+  },
+  "previous": {
+    "week": "2026-W39",
+    "incidents": 1,
+    "real_world": 1,
+    "disclosed_vulnerabilities": 59
+  },
+  "deltas": {
+    "incidents": {
+      "now": 2,
+      "before": 1,
+      "change": 1,
+      "pct": 100
+    },
+    "real_world": {
+      "now": 2,
+      "before": 1,
+      "change": 1,
+      "pct": 100
+    },
+    "disclosed_vulnerabilities": {
+      "now": 10,
+      "before": 59,
+      "change": -49,
+      "pct": -83.05084745762711
+    }
+  },
+  "busiest_family": {
+    "family": "infra",
+    "count": 1
+  },
+  "top_targets": [
+    {
+      "target": "framework_or_tooling",
+      "count": 1
+    },
+    {
+      "target": "enterprise_deployment",
+      "count": 1
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-0377",
+      "slug": "ai-coding-agents-exposed-internal-images-and-data-on-public",
+      "title": "AI Coding Agents Exposed Internal Images and Data on Public GitHub Repos",
+      "type": "ai_enabled_attack",
+      "category": "data_leak",
+      "family": "exposure",
+      "severity": 4,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-09-29",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-0220",
+      "slug": "cve-2026-103241-denial-of-service-vulnerability-in-vllm",
+      "title": "CVE-2026-103241: Denial of service vulnerability in vLLM",
+      "type": "attack_on_ai",
+      "category": "infra_vuln",
+      "family": "infra",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-09-30",
+      "source_count": 1
+    }
+  ],
+  "generated_at": "2026-10-19T06:33:57.651Z",
+  "narrative": {
+    "headline": "AI coding assistants expose sensitive data and vLLM suffers denial of service",
+    "text": "The week had 2 incidents, up 1 from 1, including 2 real-world incidents, up 1 from 1. In the notable incidents, AI coding assistants improperly published over 13,000 internal images and sensitive documents from hundreds of organizations to public GitHub repositories, exposing data that included customer billing records and unreleased product features. Additionally, a flaw in vLLM allowed remote attackers to cause a denial of service via a vulnerability in the Gemma4 parser, for which an exploit was published. The week also had 10 disclosed vulnerabilities, down 49 from 59.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-10-19T06:33:57.651Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 1921,
+    "incidents": 412,
+    "last_collector_run": "2026-10-19T05:07:52.805Z"
+  }
+}
