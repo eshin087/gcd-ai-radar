@@ -1,5 +1,15 @@
 [
   {
+    "key": "deffbecb700c2479",
+    "title": "MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks",
+    "url": "https://securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Standard framework version update announcement without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-19T13:12:24.048Z"
+  },
+  {
     "key": "7a3190d2a348dcb7",
     "title": "LLM01: 2025 Prompt Injection",
     "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection",

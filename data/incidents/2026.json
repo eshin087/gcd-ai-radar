@@ -1,5 +1,169 @@
 [
   {
+    "id": "AIR-2026-1406",
+    "slug": "opencode-console-breach-exposes-third-party-ai-provider-api",
+    "title": "OpenCode Console Breach Exposes Third-Party AI Provider API Keys",
+    "summary": "An unauthorized intrusion into a legacy system at OpenCode may have exposed user-stored API keys for major AI providers. The incident compromises third-party keys managed within the hosted workspace service.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "OpenCode Console"
+    ],
+    "incident_date": "2026-10-16",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html",
+        "publisher": "The Hacker News",
+        "title": "OpenCode Console Breach May Have Exposed OpenAI, Anthropic, and Google API Keys",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_leak",
+      "api_keys",
+      "credential_exposure"
+    ],
+    "created_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-10-19T13:12:24.048Z"
+  },
+  {
+    "id": "AIR-2026-1405",
+    "slug": "fake-web3-accelerator-uses-malicious-npm-packages-to-distrib",
+    "title": "Fake Web3 Accelerator Uses Malicious npm Packages to Distribute Malware",
+    "summary": "Threat actors deployed malicious npm packages offering free AI credits to deliver information stealers to developer machines. The campaign targeted users seeking access to prominent AI platforms.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "supply_chain",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 3,
+    "targets": [
+      "Anthropic",
+      "Google",
+      "individual_victims"
+    ],
+    "products": [
+      "Claude",
+      "Gemini"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html",
+        "publisher": "The Hacker News",
+        "title": "Fake Web3 Accelerator Uses npm Packages to Spread Malware and Hijack AI Agent Traffic",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "npm",
+      "information_stealer",
+      "malware",
+      "supply_chain"
+    ],
+    "created_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-10-19T13:12:24.048Z"
+  },
+  {
+    "id": "AIR-2026-1404",
+    "slug": "cve-2026-112082-sglang-expert-distribution-endpoint-denial-o",
+    "title": "CVE-2026-112082: SGLang Expert Distribution Endpoint Denial of Service Vulnerability",
+    "summary": "An input validation flaw in SGLang expert distribution recording endpoints allows remote denial of service attacks. Public exploit code exists and a patch is awaiting review.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "SGLang"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112082",
+        "publisher": "NVD",
+        "title": "CVE-2026-112082: A vulnerability was identified in sgl-project SGLang up to 0.5.19.",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-112082",
+      "denial_of_service",
+      "sglang"
+    ],
+    "created_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-10-19T13:12:24.048Z"
+  },
+  {
+    "id": "AIR-2026-1403",
+    "slug": "cve-2026-112083-sglang-weight-exporter-denial-of-service-vul",
+    "title": "CVE-2026-112083: SGLang Weight Exporter Denial of Service Vulnerability",
+    "summary": "A vulnerability in SGLang allows remote attackers to trigger a denial of service via manipulation of the weight exporter component. A public exploit is available, and patches are pending.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "SGLang"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-19",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112083",
+        "publisher": "NVD",
+        "title": "CVE-2026-112083: A security flaw has been discovered in sgl-project SGLang up to 0.5.19.",
+        "published_at": "2026-10-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-112083",
+      "denial_of_service",
+      "sglang"
+    ],
+    "created_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-10-19T13:12:24.048Z"
+  },
+  {
     "id": "AIR-2026-1402",
     "slug": "stealthy-poisoning-attacks-via-reused-kv-cache-of-reasoning",
     "title": "Stealthy Poisoning Attacks via Reused KV Cache of Reasoning",
