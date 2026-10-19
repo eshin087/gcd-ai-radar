@@ -219,6 +219,7 @@ export default function MethodologyPage() {
         <li>2026-10-18 · CVE merging fixed: a record now joins the incident about its own CVE, not one that merely cites it; 6 misplaced sources moved, 2 duplicate pairs merged, 1 lost CVE restored.</li>
         <li>2026-10-18 · CVE allow-list narrowed again after an audit of the NVD backfill; 171 records retired (MLflow 80, NVIDIA Triton 65, Ray 10, generic apps and classic cloud ML services 16).</li>
         <li>2026-10-18 · CVEs and advisories with no confirmed exploitation leave the incident counts and become a separate series, &ldquo;disclosed vulnerabilities&rdquo;.</li>
+        <li>2026-10-18 · product watch pages: every product family with records gets a page listing its disclosed CVEs, confirmed exploitation and CISA KEV flags (the classifier&rsquo;s cisa-kev tag). No counting rule changed.</li>
       </ul>
     </div>
   );
