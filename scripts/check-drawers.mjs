@@ -252,7 +252,12 @@ const PROBES = [
   { name: "type attack on AI", selector: 'button[aria-label^="Attack on AI:"]' },
   { name: "type AI-enabled", selector: 'button[aria-label^="AI-enabled attack:"]' },
   { name: "target framework", selector: 'button[aria-label^="Framework / tooling:"]' },
-  { name: "target second bar", selector: 'button[aria-label^="Framework / tooling:"] ~ *, li:has(button[aria-label^="Framework / tooling:"]) + li button', index: 0 },
+  // the bubble matrix: the row after "Framework / tooling" starts with the next target's total
+  { name: "target next row", selector: 'li:has(> button[aria-label^="Framework / tooling:"]) + li > button', index: 0 },
+  { name: "heatmap cell", selector: 'button[aria-label*=", severity "]:not([disabled])', index: 0 },
+  { name: "bubble", selector: 'li[role="row"] button[aria-label*=" on "]:not([disabled])', index: 0 },
+  // only when the window has a window before it (not for "All")
+  { name: "slope prior", selector: 'button[aria-label*=" months before:"]', index: 0, optional: true },
   { name: "tile disclosed in view", selector: 'button[aria-label^="Disclosed in view:"]' },
   { name: "tile busiest day", selector: 'button[aria-label^="Busiest day:"]' },
   { name: "product top bar", selector: 'section#disclosed button[aria-label$=", open the list"]:not([aria-label^="Disclosed in view"]):not([aria-label^="Busiest day"])' },
@@ -290,6 +295,16 @@ async function runChecks(client, base) {
     await navigate(client, `${base}/`);
     await view.setup();
     const columns = await evaluate(client, COLUMN_PROBES);
+    // the calendar view of the trend panel: the first day with a count
+    await toggle(client, "Trend view", "Calendar");
+    const day = await evaluate(client, `document.querySelector('section#trend rect[role="button"]')?.getAttribute("aria-label") ?? null`);
+    if (day) {
+      const r = await probe(client, { selector: `section#trend rect[aria-label="${day.replace(/"/g, '\\"')}"]` });
+      const ok = !r.error && r.shown !== null && r.shown === r.drawer && r.closed;
+      results.push({ view: view.name, name: "calendar day", ok, ...r });
+      if (verbose || !ok) console.log(`${ok ? "ok  " : "FAIL"} ${view.name} · calendar day: ${r.error ?? `shows ${r.shown}, drawer ${r.drawer}, closed ${r.closed}`}`);
+    }
+    await toggle(client, "Trend view", "Per month");
     const probes = [
       ...PROBES,
       ...columns.trend.map((label) => ({ name: `column ${label.split(":")[0]}`, selector: `section#trend [aria-label="${label}"]` })),
@@ -297,6 +312,7 @@ async function runChecks(client, base) {
     ];
     for (const p of probes) {
       const r = await probe(client, { selector: p.selector, index: p.index, numFrom: p.numFrom });
+      if (p.optional && r.error?.startsWith("no element")) continue;
       const ok = !r.error && r.shown !== null && r.shown === r.drawer && r.closed;
       results.push({ view: view.name, name: p.name, ok, ...r });
       if (verbose || !ok) console.log(`${ok ? "ok  " : "FAIL"} ${view.name} · ${p.name}: ${r.error ?? `shows ${r.shown}, drawer ${r.drawer} (${r.items} listed${r.items < r.drawer ? ", paged" : ""}), closed ${r.closed}`}`);
