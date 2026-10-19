@@ -5,7 +5,28 @@ import packages from "@/collector/config/packages.json";
 import queries from "@/collector/config/queries.json";
 import settings from "@/collector/config/settings.json";
 import { SITE } from "@/lib/site";
-import { CATEGORIES, CATEGORY_META, REAL_WORLD_MIN_SEVERITY, SEVERITIES, SEVERITY_META, TARGETS, TARGET_META, TYPE_META } from "@/lib/taxonomy";
+import {
+  ATLAS_RELEASE,
+  ATLAS_TECHNIQUES,
+  CATEGORIES,
+  CATEGORY_META,
+  OWASP_LLM_EDITION,
+  OWASP_LLM_META,
+  OWASP_NOT_DERIVED,
+  REAL_WORLD_MIN_SEVERITY,
+  SEVERITIES,
+  SEVERITY_META,
+  STANDARDS_BY_CATEGORY,
+  STANDARDS_BY_TYPE_CATEGORY,
+  TARGETS,
+  TARGET_META,
+  TYPE_META,
+  atlasUrl,
+  owaspLabel,
+  type Category,
+  type IncidentType,
+  type StandardsRow,
+} from "@/lib/taxonomy";
 
 export const metadata: Metadata = {
   title: "Methodology",
@@ -20,10 +41,55 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
   );
 }
 
+/** One row of the standards table: the entries with links, or "none", then the reason. */
+function StandardsCell({ row }: { row: StandardsRow }) {
+  return (
+    <dd className="text-[13px] space-y-1">
+      <div>
+        <span className="label mr-2">owasp</span>
+        {row.owasp.length === 0 ? (
+          <span className="text-dim">none</span>
+        ) : (
+          row.owasp.map((id, n) => (
+            <span key={id}>
+              {n > 0 && " · "}
+              <a href={OWASP_LLM_META[id].url} className="link" rel="noopener noreferrer" target="_blank">
+                <span className="num">{id}</span> {OWASP_LLM_META[id].name}
+              </a>
+            </span>
+          ))
+        )}
+      </div>
+      <div>
+        <span className="label mr-2">atlas</span>
+        {row.atlas.length === 0 ? (
+          <span className="text-dim">none</span>
+        ) : (
+          row.atlas.map((id, n) => (
+            <span key={id}>
+              {n > 0 && " · "}
+              <a href={atlasUrl(id)} className="link" rel="noopener noreferrer" target="_blank">
+                <span className="num">{id}</span> {ATLAS_TECHNIQUES[id]}
+              </a>
+            </span>
+          ))
+        )}
+      </div>
+      <p className="text-[12.5px] text-dim">{row.why}</p>
+    </dd>
+  );
+}
+
+const TYPE_CATEGORY_ROWS = Object.entries(STANDARDS_BY_TYPE_CATEGORY).map(([key, row]) => {
+  const [type, category] = key.split(":") as [IncidentType, Category];
+  return { key, type, category, row: row! };
+});
+
 const SECTIONS = [
   ["scope", "What counts"],
   ["out-of-scope", "What does not count"],
   ["taxonomy", "Taxonomy"],
+  ["standards", "Standards mapping"],
   ["pipeline", "How incidents are found and classified"],
   ["counting", "Counting rules"],
   ["cves", "Vulnerability records"],
@@ -113,6 +179,85 @@ export default function MethodologyPage() {
       <p className="text-[13px]">
         Targets are normalised to a short controlled list; a free-text product field sits alongside.{" "}
         {TARGETS.map((t) => TARGET_META[t].label).join(" · ")}.
+      </p>
+
+      <H2 id="standards">Standards mapping</H2>
+      <p>
+        Every record is also expressed in two public frameworks, so security teams can filter and cite in the vocabulary they already use: the{" "}
+        <a href="https://genai.owasp.org/llm-top-10/" className="link" rel="noopener noreferrer" target="_blank">
+          OWASP Top 10 for LLM Applications
+        </a>{" "}
+        ({OWASP_LLM_EDITION} edition) and{" "}
+        <a href="https://atlas.mitre.org/" className="link" rel="noopener noreferrer" target="_blank">
+          MITRE ATLAS
+        </a>{" "}
+        techniques (data release {ATLAS_RELEASE}). OWASP names the weakness in an LLM application; ATLAS names what the adversary did.
+      </p>
+      <p>
+        The mapping is <strong className="text-ink">derived from the categories</strong>, not classified per record. Each category, and where the type changes its
+        meaning a type and category pair, maps to fixed entries in the table below. A record carries the union over its categories. The same type and categories
+        always give the same entries, and changing the table re-maps every record at the next build without re-classifying anything.
+      </p>
+      <p>
+        The rule for a row: an entry is listed only when the category, as defined above, falls within what the entry itself describes. A category that
+        straddles several entries, or fits none, maps to nothing rather than to a stretch. A record with no entry is not evidence that no entry applies; it means
+        the category alone cannot say which.
+      </p>
+      <h3 className="text-[13px] font-medium text-ink mt-4">By category</h3>
+      <dl className="divide-y divide-line-soft">
+        {CATEGORIES.map((c) => (
+          <div key={c} className="grid gap-2 py-3 sm:grid-cols-[11rem_1fr] sm:gap-3">
+            <dt>
+              <CategoryBadge category={c} short={false} />
+            </dt>
+            <StandardsCell row={STANDARDS_BY_CATEGORY[c]} />
+          </div>
+        ))}
+      </dl>
+      <h3 className="text-[13px] font-medium text-ink mt-4">Where the type changes the answer</h3>
+      <dl className="divide-y divide-line-soft">
+        {TYPE_CATEGORY_ROWS.map(({ key, type, category, row }) => (
+          <div key={key} className="grid gap-2 py-3 sm:grid-cols-[11rem_1fr] sm:gap-3">
+            <dt className="text-[13px] text-ink">
+              {TYPE_META[type].label} + {CATEGORY_META[category].label.toLowerCase()}
+            </dt>
+            <StandardsCell row={row} />
+          </div>
+        ))}
+      </dl>
+      <h3 className="text-[13px] font-medium text-ink mt-4">OWASP entries never derived</h3>
+      <p className="text-[13px]">
+        No category isolates{" "}
+        {OWASP_NOT_DERIVED.map((id, n) => (
+          <span key={id}>
+            {n > 0 && (n === OWASP_NOT_DERIVED.length - 1 ? " or " : ", ")}
+            <a href={OWASP_LLM_META[id].url} className="link" rel="noopener noreferrer" target="_blank">
+              <span className="num">{owaspLabel(id)}</span> {OWASP_LLM_META[id].name}
+            </a>
+          </span>
+        ))}
+        , so no record is tagged with them, though some records involve them: a system prompt exposed in a data leak, or a package name an LLM hallucinated. The
+        explorer&rsquo;s OWASP filter lists only the entries the table can produce.
+      </p>
+      <h3 className="text-[13px] font-medium text-ink mt-4">Limits</h3>
+      <ul className="list-disc pl-5 space-y-1 text-[13px]">
+        <li>The mapping inherits every classification error: a record in the wrong category gets the wrong entries.</li>
+        <li>
+          Counting by OWASP entry or ATLAS technique is counting by category in another vocabulary. The numbers are no more precise than the categories.
+        </li>
+        <li>
+          LLM03 Supply Chain includes every infrastructure vulnerability, following OWASP&rsquo;s own first example. Most disclosed CVEs therefore carry LLM03;
+          they stay out of incident counts as described under{" "}
+          <a href="#cves" className="link">
+            vulnerability records
+          </a>
+          .
+        </li>
+        <li>New OWASP editions and ATLAS releases are checked when they appear; a change to the table is recorded in the change log below.</li>
+      </ul>
+      <p className="text-[12.5px] text-dim">
+        OWASP Top 10 for LLM Applications © OWASP Foundation, CC BY-SA 4.0. MITRE ATLAS © 2021-2026 The MITRE Corporation, Apache 2.0. Entry ids and names are
+        used to reference them; the mapping is {SITE.name}&rsquo;s own and is not endorsed by OWASP or MITRE.
       </p>
 
       <H2 id="pipeline">How incidents are found and classified</H2>
@@ -248,6 +393,10 @@ export default function MethodologyPage() {
         <li>2026-10-18 · CVE allow-list narrowed again after an audit of the NVD backfill; 171 records retired (MLflow 80, NVIDIA Triton 65, Ray 10, generic apps and classic cloud ML services 16).</li>
         <li>2026-10-18 · CVEs and advisories with no confirmed exploitation leave the incident counts and become a separate series, &ldquo;disclosed vulnerabilities&rdquo;.</li>
         <li>2026-10-18 · site renamed GCD AI RADAR; dashboard charts redrawn as a family stream, slope, radar, severity heatmap, target bubbles, flow, calendar and running total. No counting rule changed.</li>
+        <li>
+          2026-10-18 · records mapped to the OWASP Top 10 for LLM Applications ({OWASP_LLM_EDITION}) and MITRE ATLAS techniques (release {ATLAS_RELEASE}), derived
+          from categories; explorer filters and CSV columns added.
+        </li>
         <li>2026-10-19 · weekly briefing added, &ldquo;This week in AI security&rdquo;: numbers from the data, narrative by a language model; backfilled for 2026-W35 to 2026-W42.</li>
       </ul>
     </div>

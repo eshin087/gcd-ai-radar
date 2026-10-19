@@ -2,6 +2,7 @@ import { shardManifest, shardsFor, type ShardInfo } from "./aggregates";
 import { compactRow } from "./rows";
 import type { Incident } from "./schema";
 import type { DateField } from "./stats";
+import { atlasFor, owaspFor, type Category, type IncidentType } from "./taxonomy";
 
 /**
  * What the incidents explorer knows before it has downloaded any record: the
@@ -63,10 +64,14 @@ export interface ExplorerFilters {
   product: string;
   /** Record kind: "" incidents (default), "disclosed" disclosed vulnerabilities only, "all" both. */
   kind: string;
+  /** OWASP Top 10 for LLM Applications id (LLM01…), derived from type and categories (lib/taxonomy.ts owaspFor). */
+  owasp: string;
+  /** MITRE ATLAS technique id (AML.T0051…), derived the same way (lib/taxonomy.ts atlasFor). */
+  atlas: string;
   sort: "reported" | "incident" | "severity";
 }
 
-export const EMPTY_FILTERS: ExplorerFilters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", sort: "reported" };
+export const EMPTY_FILTERS: ExplorerFilters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", owasp: "", atlas: "", sort: "reported" };
 
 export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
   return f.by === "reported" ? "first_reported" : "incident_date";
@@ -74,7 +79,14 @@ export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
 
 /** Filters that can match a record in any year, so every shard is needed to answer them. */
 export function hasCategoricalFilter(f: ExplorerFilters): boolean {
-  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product);
+  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product || f.owasp || f.atlas);
+}
+
+/** The OWASP and ATLAS filters: computed from the record's type and categories, so the data files need no extra fields. */
+export function matchesStandards(i: { type: IncidentType; categories: readonly Category[] }, f: Pick<ExplorerFilters, "owasp" | "atlas">): boolean {
+  if (f.owasp && !(owaspFor(i) as string[]).includes(f.owasp)) return false;
+  if (f.atlas && !(atlasFor(i) as string[]).includes(f.atlas)) return false;
+  return true;
 }
 
 function countOfKind(y: YearFacet, kind: string): number {

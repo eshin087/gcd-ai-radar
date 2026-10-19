@@ -6,6 +6,7 @@ import Link from "next/link";
 import { loadIncidents, siteUrl } from "@/lib/data";
 import { OG_IMAGES } from "@/lib/og-list";
 import { SITE } from "@/lib/site";
+import { ATLAS_RELEASE, OWASP_LLM_EDITION } from "@/lib/taxonomy";
 
 export const metadata: Metadata = {
   title: "Data",
@@ -28,10 +29,10 @@ export default async function DataPage() {
   const base = siteUrl();
   const files = [
     { href: "/data/incidents.json", label: "incidents.json", blurb: "Every published record, incidents and disclosed CVEs, with all fields and every source." },
-    { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array, with a disclosed flag; what the incidents page uses." },
-    { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per record for spreadsheets, with a record_kind column; list fields are semicolon-separated." },
+    { href: "/data/incidents.min.json", label: "incidents.min.json", blurb: "Compact records without the sources array, with a disclosed flag and the derived owasp_llm and atlas ids." },
+    { href: "/data/incidents.csv", label: "incidents.csv", blurb: "One row per record for spreadsheets, with record_kind, owasp_llm and atlas columns; list fields are semicolon-separated." },
     { href: "/data/years/index.json", label: "years/<year>.json", blurb: "The full records of one year of first report, one file per year; index.json lists the years and their counts." },
-    { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time and licence." },
+    { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time, licence and the standards versions mapped to." },
     { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
     { href: "/briefing.xml", label: "briefing.xml", blurb: "RSS feed of the weekly briefing, This week in AI security." },
     { href: "/data/briefings/index.json", label: "briefings/<week>.json", blurb: "Every weekly briefing: its counts, deltas, notable incidents and narrative; index.json lists the weeks." },
@@ -70,6 +71,13 @@ export default async function DataPage() {
           <span className="num">{base}/incidents/&lt;slug&gt;</span>. Field definitions are on the{" "}
           <Link href="/methodology" className="link">methodology page</Link>; the schema is <span className="num">lib/schema.ts</span> in the repository.
         </p>
+        <p className="mt-2 text-[12px] text-dim">
+          <span className="num">owasp_llm</span> holds OWASP Top 10 for LLM Applications {OWASP_LLM_EDITION} ids (<span className="num">LLM01</span>…) and{" "}
+          <span className="num">atlas</span> MITRE ATLAS technique ids (<span className="num">AML.T0051</span>…, release {ATLAS_RELEASE}). Both are derived from each
+          record&rsquo;s type and categories by a fixed table, not classified per record, and either may be empty; the table and its limits are under{" "}
+          <Link href="/methodology#standards" className="link">standards mapping</Link>. The full JSON files keep the stored record only; the same table in{" "}
+          <span className="num">lib/taxonomy.ts</span> reproduces the two lists from it.
+        </p>
       </section>
 
       <section>
@@ -105,7 +113,11 @@ export default async function DataPage() {
         </p>
         <ul className="list-disc pl-5 space-y-1 text-[13px]">
           <li>AI Incident Database (incidentdatabase.ai), CC BY-SA 4.0. McGregor, S. (2021) &ldquo;Preventing Repeated Real World AI Failures by Cataloging Incidents: The AI Incident Database.&rdquo;</li>
-          <li>MITRE ATLAS (atlas.mitre.org), Apache 2.0. © 2021-2026 The MITRE Corporation.</li>
+          <li>MITRE ATLAS (atlas.mitre.org), Apache 2.0. © 2021-2026 The MITRE Corporation. Case studies, and the technique ids and names in the standards mapping.</li>
+          <li>
+            OWASP Top 10 for LLM Applications {OWASP_LLM_EDITION} (genai.owasp.org), CC BY-SA 4.0. © OWASP Foundation. Entry ids and names in the standards mapping; the
+            mapping itself is {SITE.name}&rsquo;s and is not endorsed by OWASP or MITRE.
+          </li>
           <li>AVID, the AI Vulnerability Database (avidml.org), MIT.</li>
           <li>NVD: this product uses the NVD API but is not endorsed or certified by the NVD.</li>
           <li>GitHub Advisory Database (github.com/advisories), CC BY 4.0.</li>
