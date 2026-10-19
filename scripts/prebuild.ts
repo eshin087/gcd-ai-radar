@@ -149,11 +149,9 @@ async function main() {
     license: SITE.dataLicense.name,
     license_url: SITE.dataLicense.url,
   };
-  await fs.writeFile(path.join(dataDir, "meta.json"), JSON.stringify(meta, null, 2) + "
-");
+  await fs.writeFile(path.join(dataDir, "meta.json"), JSON.stringify(meta, null, 2) + "\n");
   const summary = buildSummary(sorted, { now: new Date(), site: base, lastUpdated: updated });
-  await fs.writeFile(path.join(dataDir, "summary.json"), JSON.stringify(summary, null, 2) + "
-");
+  await fs.writeFile(path.join(dataDir, "summary.json"), JSON.stringify(summary, null, 2) + "\n");
   // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
   await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
 
