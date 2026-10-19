@@ -2,14 +2,33 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
+import { CategoryBadge, SeverityBadge, StandardBadge, TypeBadge } from "@/components/ui/Badge";
 import { createShardStore } from "@/components/useShards";
-import { EMPTY_FILTERS, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
+import { EMPTY_FILTERS, matchesStandards, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
 import { approxDateLabel } from "@/lib/format";
 import { productFamily } from "@/lib/products";
 import { hitIds, hitYears, matchesTerms, queryTerms, searchIndex, searchableText, tokenize, type SearchIndex } from "@/lib/search";
 import type { SlimIncident } from "@/lib/slim";
-import { CATEGORIES, CATEGORY_META, INCIDENT_TYPES, ORIGIN_META, ORIGINS, SEVERITIES, SEVERITY_META, TARGETS, TARGET_META, TYPE_META } from "@/lib/taxonomy";
+import {
+  ATLAS_IN_USE,
+  ATLAS_TECHNIQUES,
+  CATEGORIES,
+  CATEGORY_META,
+  INCIDENT_TYPES,
+  ORIGIN_META,
+  ORIGINS,
+  OWASP_IN_USE,
+  OWASP_LLM_META,
+  SEVERITIES,
+  SEVERITY_META,
+  TARGETS,
+  TARGET_META,
+  TYPE_META,
+  atlasFor,
+  isAtlasInUse,
+  isOwaspInUse,
+  owaspFor,
+} from "@/lib/taxonomy";
 
 /**
  * Client-side explorer over the year shards of slim records
@@ -61,6 +80,8 @@ const noop = () => () => {};
 function parseFilters(search: string): Filters {
   const p = new URLSearchParams(search);
   const sort = p.get("sort");
+  const owasp = p.get("owasp") ?? "";
+  const atlas = p.get("atlas") ?? "";
   return {
     ...EMPTY,
     q: p.get("q") ?? "",
@@ -78,6 +99,9 @@ function parseFilters(search: string): Filters {
     by: p.get("by") ?? "",
     product: p.get("product") ?? "",
     kind: p.get("kind") === "disclosed" || p.get("kind") === "all" ? p.get("kind")! : "",
+    // only ids the mapping can produce: anything else would select nothing while the select showed "all"
+    owasp: isOwaspInUse(owasp) ? owasp : "",
+    atlas: isAtlasInUse(atlas) ? atlas : "",
     sort: sort === "incident" || sort === "severity" ? sort : "reported",
   };
 }
@@ -163,6 +187,7 @@ export function IncidentExplorer({ facets }: { facets: ExplorerFacets }) {
       if (filters.publisher && !i.publishers.includes(filters.publisher)) return false;
       if (filters.origin && i.origin !== filters.origin) return false;
       if (filters.product && productFamily(i.products[0] ?? "") !== filters.product) return false;
+      if (!matchesStandards(i, filters)) return false;
       if (terms.length) {
         // The index decides once it is here; until then the same token test runs on the rows already loaded.
         if (hitIdSet) return hitIdSet.has(i.id);
@@ -288,6 +313,28 @@ export function IncidentExplorer({ facets }: { facets: ExplorerFacets }) {
             </option>
           ))}
         </Select>
+        <Select label="owasp llm top 10" value={filters.owasp} onChange={(v) => update({ owasp: v })}>
+          <option value="">all</option>
+          {OWASP_IN_USE.map((id) => (
+            <option key={id} value={id}>
+              {id} {OWASP_LLM_META[id].name}
+            </option>
+          ))}
+        </Select>
+        <Select label="mitre atlas" value={filters.atlas} onChange={(v) => update({ atlas: v })}>
+          <option value="">all</option>
+          {ATLAS_IN_USE.map((id) => (
+            <option key={id} value={id}>
+              {id} {ATLAS_TECHNIQUES[id]}
+            </option>
+          ))}
+        </Select>
+        <p className="text-[11px] text-faint sm:col-span-2 lg:col-span-4 xl:col-span-4 self-end pb-2">
+          OWASP and ATLAS ids are derived from the categories.{" "}
+          <Link href="/methodology#standards" className="link">
+            How
+          </Link>
+        </p>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3 text-[13px] text-dim">
@@ -341,6 +388,12 @@ export function IncidentExplorer({ facets }: { facets: ExplorerFacets }) {
                 <TypeBadge type={i.type} short />
                 {i.categories.map((c) => (
                   <CategoryBadge key={c} category={c} />
+                ))}
+                {owaspFor(i).map((id) => (
+                  <StandardBadge key={id} standard="owasp" id={id} />
+                ))}
+                {atlasFor(i).map((id) => (
+                  <StandardBadge key={id} standard="atlas" id={id} />
                 ))}
                 <span className="num self-center text-[10.5px] text-faint">
                   {i.targets.map((t) => TARGET_META[t].label).join(", ")}

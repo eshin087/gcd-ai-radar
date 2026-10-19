@@ -8,7 +8,20 @@ import { incidentBySlug, loadIncidents } from "@/lib/data";
 import { approxDateLabel, dateLabel, timestampLabel } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import { relatedIncidents } from "@/lib/slim";
-import { CATEGORY_META, ORIGIN_META, SEVERITY_META, TARGET_META, TYPE_META } from "@/lib/taxonomy";
+import {
+  ATLAS_RELEASE,
+  ATLAS_TECHNIQUES,
+  CATEGORY_META,
+  ORIGIN_META,
+  OWASP_LLM_META,
+  SEVERITY_META,
+  TARGET_META,
+  TYPE_META,
+  atlasFor,
+  atlasUrl,
+  owaspFor,
+  owaspLabel,
+} from "@/lib/taxonomy";
 
 export const dynamicParams = false;
 
@@ -44,6 +57,8 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
   const incident = incidentBySlug(incidents, slug);
   if (!incident) notFound();
   const related = relatedIncidents(incidents, incident);
+  const owasp = owaspFor(incident);
+  const atlas = atlasFor(incident);
 
   return (
     <article className="max-w-4xl space-y-8">
@@ -93,6 +108,42 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
                 </li>
               ))}
             </ul>
+          </Row>
+          <Row label="owasp llm top 10">
+            {owasp.length > 0 ? (
+              <ul className="space-y-0.5">
+                {owasp.map((id) => (
+                  <li key={id}>
+                    <a href={OWASP_LLM_META[id].url} rel="noopener noreferrer" target="_blank" className="link">
+                      <span className="num">{owaspLabel(id)}</span> {OWASP_LLM_META[id].name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span className="text-dim">no entry for these categories</span>
+            )}
+          </Row>
+          <Row label="mitre atlas">
+            {atlas.length > 0 ? (
+              <ul className="space-y-0.5">
+                {atlas.map((id) => (
+                  <li key={id}>
+                    <a href={atlasUrl(id)} rel="noopener noreferrer" target="_blank" className="link">
+                      <span className="num">{id}</span> {ATLAS_TECHNIQUES[id]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span className="text-dim">no technique for these categories</span>
+            )}
+            <div className="mt-1 text-[11.5px] text-dim">
+              Both rows are derived from the type and categories (OWASP 2025 edition, ATLAS release {ATLAS_RELEASE}), not classified per record.{" "}
+              <Link href="/methodology#standards" className="link">
+                How
+              </Link>
+            </div>
           </Row>
           <Row label="severity">
             <span className="num">{incident.severity}</span> · {SEVERITY_META[incident.severity].label}

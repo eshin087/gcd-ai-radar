@@ -67,6 +67,15 @@ Not used after verification: Google News RSS search (robots.txt disallows `/rss`
 | NVD CVE API 2.0 | `services.nvd.nist.gov/rest/json/cves/2.0` with `keywordSearch` + `keywordExactMatch` for the allow-listed products, incremental by last-modified date in windows of at most 120 days; 5 requests per 30 s without a key, 50 with a free key | US government work, public domain | "This product uses the NVD API but is not endorsed or certified by the NVD." (footer and record pages) | cve id, published, description, CVSS, references, KEV flag | in use |
 | GitHub Advisory Database | `api.github.com/advisories?ecosystem=…&affects=…&modified=>=…` for the allow-listed packages | CC BY 4.0 | link to github.com/advisories | ghsa id, cve id, summary, description, severity, affected packages and ranges, dates | in use |
 
+## Reference frameworks
+
+Not fetched by the collector. Their ids and names are copied into `lib/taxonomy.ts`, which maps each category to them (see the Methodology page, "Standards mapping"). Checked again when a new edition or release appears.
+
+| Framework | Version used | Verified from | Licence | Attribution | Used for |
+|---|---|---|---|---|---|
+| OWASP Top 10 for LLM Applications | 2025 edition (LLM01-LLM10) | `genai.owasp.org/llm-top-10/` and each entry's `genai.owasp.org/llmrisk/…` page, 2026-10-18 | CC BY-SA 4.0 ("Unless otherwise specified, all content on the site is Creative Commons Attribution-ShareAlike v4.0") | © OWASP Foundation, with link | entry ids, names and links on incident pages, explorer filter, `owasp_llm` export column |
+| MITRE ATLAS techniques | data release 2026.09 (`dist/v6/ATLAS-2026.09.yaml`) | `github.com/mitre-atlas/atlas-data`; technique pages at `atlas.mitre.org/techniques/<id>`, 2026-10-18 | Apache 2.0, © 2021-2026 The MITRE Corporation | link to atlas.mitre.org | technique ids, names and links on incident pages, explorer filter, `atlas` export column |
+
 ## Sidebar signal
 
 | Source | Access | Licence | Attribution | Status |
