@@ -361,6 +361,7 @@ export default function MethodologyPage() {
           2026-10-18 · records mapped to the OWASP Top 10 for LLM Applications ({OWASP_LLM_EDITION}) and MITRE ATLAS techniques (release {ATLAS_RELEASE}), derived
           from categories; explorer filters and CSV columns added.
         </li>
+        <li>2026-10-18 · product watch pages: every product family with records gets a page listing its disclosed CVEs, confirmed exploitation and CISA KEV flags (the classifier&rsquo;s cisa-kev tag). No counting rule changed.</li>
       </ul>
     </div>
   );
