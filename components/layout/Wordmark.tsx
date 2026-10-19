@@ -25,7 +25,7 @@ export function RadarGlyph({ size = 18, className }: { size?: number; className?
 
 export function Wordmark({ href = "/", className = "" }: { href?: string; className?: string }) {
   return (
-    <Link href={href} className={`inline-flex items-center gap-2 ${className}`} aria-label={`${SITE.name} home`}>
+    <Link href={href} className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap ${className}`} aria-label={`${SITE.name} home`}>
       <RadarGlyph className="text-accent" />
       <span className="wordmark">{SITE.wordmark}</span>
     </Link>

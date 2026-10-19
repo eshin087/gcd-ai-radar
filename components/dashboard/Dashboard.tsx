@@ -139,7 +139,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
         <header className="relative z-20">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4">
             <Wordmark />
-            <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
+            <nav aria-label="Primary" className="hidden items-center gap-4 lg:flex xl:gap-6">
               {NAV.map((n) => (
                 <Link key={n.href} href={n.href} className="label hover:text-ink">
                   {n.label}
@@ -147,6 +147,15 @@ export function Dashboard({ data }: { data: DashboardData }) {
               ))}
             </nav>
           </div>
+          <nav aria-label="Primary mobile" className="overflow-x-auto border-b border-line-soft lg:hidden">
+            <div className="flex h-10 items-center gap-5 whitespace-nowrap px-4">
+              {NAV.map((n) => (
+                <Link key={n.href} href={n.href} className="label hover:text-ink">
+                  {n.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
         </header>
         <div className="relative mx-auto max-w-7xl px-4">
           <div aria-hidden className="hero-field relative h-64 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
