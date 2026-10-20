@@ -233,7 +233,7 @@ body {
   opacity: calc(1 - var(--p) * 1.1);
   transform: translateY(calc(var(--p) * -56px)) scale(calc(1 - var(--p) * 0.045));
   transform-origin: 50% 0;
-  filter: blur(calc(var(--p) * 6px));
+  /* no blur: a filter over the animated banner is redrawn every frame, too costly on slower machines */
   will-change: opacity, transform;
 }
 .hero-field {

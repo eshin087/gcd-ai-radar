@@ -10,7 +10,7 @@ import { FATE_WORD, KIND_LABEL, SYSTEM_LABEL, threatFeed, type Fate, type FeedEv
 type Entry = { id: number; at: string; born: number; done: boolean } & ({ sim: FeedEvent } | { real: IntelCase });
 
 /** Entries the tube shows, one line each. */
-const ENTRIES = 6;
+const ENTRIES = 5;
 /** ms between new entries, and from an attack's arrival to its result */
 const GAP = 4000;
 const RESOLVE = 2000;
@@ -118,7 +118,7 @@ const Cursor = () => <span className="cursor-block" />;
 /**
  * The hero's terminal, an ice-cyan phosphor CRT running `tail -f` on the
  * threat feed: a reverse-video status bar, a boot line, the 90-day numbers,
- * then the last six entries, one line each, newest at the bottom. A new one
+ * then the last five entries, one line each, newest at the bottom. A new one
  * arrives every four seconds and types itself out (an attack's type and
  * target); two seconds later its result lands (white-cyan when the defences
  * stop it, red on a breach, an amber spinner while it is tracked), and the
@@ -152,9 +152,9 @@ export function FeedTerminal({ intel, className = "" }: { intel: ThreatIntel; cl
   }, [ids, reduced]);
 
   return (
-    <div className={`crt crt-feed relative overflow-hidden rounded-[14px] border-[5px] font-mono text-[12px] uppercase leading-[1.65] backdrop-blur sm:text-[13px] ${className}`}>
-      <div className="crt-text relative space-y-px px-3.5 pb-3 pt-2.5">
-        <div className="crt-rev -mx-1 mb-1.5 flex items-center justify-between gap-3 rounded-[2px] px-1.5 font-semibold tracking-[0.08em]">
+    <div className={`crt crt-feed relative overflow-hidden rounded-[12px] border-[4px] font-mono text-[10.5px] uppercase leading-[1.6] sm:text-[11.5px] ${className}`}>
+      <div className="crt-text relative space-y-px px-3 pb-2 pt-2">
+        <div className="crt-rev -mx-1 mb-1 flex items-center justify-between gap-3 rounded-[2px] px-1.5 font-semibold tracking-[0.08em]">
           <span className="truncate">Threat feed · tail -f</span>
           <span className="flex shrink-0 items-center gap-1.5">
             <span className="cursor-blink inline-block size-[7px] rounded-full bg-[#04101c]" />
@@ -175,7 +175,7 @@ export function FeedTerminal({ intel, className = "" }: { intel: ThreatIntel; cl
             </>
           )}
         </div>
-        <div className="flex flex-col justify-end overflow-hidden pt-1" style={{ height: `${ENTRIES * 1.65}em`, boxSizing: "content-box" }}>
+        <div className="flex flex-col justify-end overflow-hidden pt-1" style={{ height: `${ENTRIES * 1.6}em`, boxSizing: "content-box" }}>
           <div ref={logRef} role="log" aria-label="Simulated attacks drawn from the last 90 days of incidents, with the latest real cases">
             {entries.map((e) => {
               const n = e.done || reduced || !e.born ? Infinity : Math.max(0, Math.floor((now - e.born) / TYPE));

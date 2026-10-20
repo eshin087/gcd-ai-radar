@@ -77,6 +77,11 @@ export interface GlyphController {
   fovY?: number;
   /** where the scene's centre sits on wide layouts, in NDC x (default 0) */
   shift?: number;
+  /**
+   * Also compile a light variant of `frag` with LITE defined, and show it until the full shader is
+   * ready: for scenes whose full shader takes seconds to compile on some drivers (Direct3D above all).
+   */
+  lite?: boolean;
   init?(gl: WebGL2RenderingContext): void;
   frame(f: FrameInfo, set: Setter): void;
   /** HTML labels pinned to the scene this frame, in CSS px from the top-left */
@@ -233,27 +238,52 @@ const DIR_CHARS = ["-", "/", "|", "\\"];
 interface Program {
   p: WebGLProgram;
   u: Map<string, WebGLUniformLocation | null>;
+  shaders: WebGLShader[];
+  state: "compiling" | "ready" | "failed";
 }
 
-function compile(gl: WebGL2RenderingContext, type: number, src: string): WebGLShader {
+function shader(gl: WebGL2RenderingContext, type: number, src: string): WebGLShader {
   const s = gl.createShader(type)!;
   gl.shaderSource(s, src);
   gl.compileShader(s);
-  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS) && !gl.isContextLost()) {
-    const log = gl.getShaderInfoLog(s) ?? "";
-    gl.deleteShader(s);
-    throw new Error(`glyph shader: ${log}`);
-  }
   return s;
 }
 
+/**
+ * Compiles and links a program without asking whether it worked: asking blocks until the driver is
+ * done, which for a big scene shader can take seconds. `settle` asks later, once the driver says the
+ * work is finished (KHR_parallel_shader_compile).
+ */
 function program(gl: WebGL2RenderingContext, fs: string, vs = VS): Program {
   const p = gl.createProgram()!;
-  gl.attachShader(p, compile(gl, gl.VERTEX_SHADER, vs));
-  gl.attachShader(p, compile(gl, gl.FRAGMENT_SHADER, fs));
+  const v = shader(gl, gl.VERTEX_SHADER, vs);
+  const f = shader(gl, gl.FRAGMENT_SHADER, fs);
+  gl.attachShader(p, v);
+  gl.attachShader(p, f);
   gl.linkProgram(p);
-  if (!gl.getProgramParameter(p, gl.LINK_STATUS) && !gl.isContextLost()) throw new Error(`glyph program: ${gl.getProgramInfoLog(p) ?? ""}`);
-  return { p, u: new Map() };
+  return { p, u: new Map(), shaders: [v, f], state: "compiling" };
+}
+
+/** COMPLETION_STATUS_KHR, from KHR_parallel_shader_compile */
+const COMPLETION_STATUS = 0x91b1;
+
+/** Whether a program has finished compiling (without blocking, when the driver can tell us), and if so whether it linked. */
+function settle(gl: WebGL2RenderingContext, pr: Program, parallel: boolean, mayBlock: boolean): Program["state"] {
+  if (pr.state !== "compiling") return pr.state;
+  if (gl.isContextLost()) return pr.state;
+  if (parallel ? !gl.getProgramParameter(pr.p, COMPLETION_STATUS) : !mayBlock) return pr.state;
+  if (gl.getProgramParameter(pr.p, gl.LINK_STATUS)) pr.state = "ready";
+  else {
+    pr.state = "failed";
+    const logs = pr.shaders.map((x) => gl.getShaderInfoLog(x) ?? "").join(" ");
+    console.warn(`glyph program: ${gl.getProgramInfoLog(pr.p) ?? ""} ${logs}`.slice(0, 2000));
+  }
+  for (const x of pr.shaders) {
+    gl.detachShader(pr.p, x);
+    gl.deleteShader(x);
+  }
+  pr.shaders = [];
+  return pr.state;
 }
 
 function loc(gl: WebGL2RenderingContext, pr: Program, name: string) {
@@ -289,7 +319,13 @@ export class GlyphEngine {
   private gl: WebGL2RenderingContext;
   private hdr: boolean;
   private out: number;
+  /** whether the driver compiles in the background and can say when it is done */
+  private parallel: boolean;
   private scene: Program;
+  /** the light variant shown while `scene` compiles (scenes with `lite`), else null */
+  private sceneLite: Program | null;
+  /** the scene program being drawn with: the light one until the full one is ready */
+  private active: Program | null = null;
   private cellP: Program;
   private glowP: Program;
   private finalP: Program;
@@ -332,6 +368,9 @@ export class GlyphEngine {
     this.gl = gl;
     this.hdr = !!gl.getExtension("EXT_color_buffer_float");
     this.out = this.hdr ? 1 : 0.125;
+    this.parallel = !!gl.getExtension("KHR_parallel_shader_compile");
+    // the light variant first, so it is ready first
+    this.sceneLite = ctl.lite ? program(gl, SCENE_COMMON.replace("#version 300 es\n", "#version 300 es\n#define LITE 1\n") + ctl.frag) : null;
     this.scene = program(gl, SCENE_COMMON + ctl.frag);
     this.cellP = program(gl, FS_CELL);
     this.glowP = program(gl, FS_GLOW);
@@ -357,22 +396,52 @@ export class GlyphEngine {
     this.fbGlowB = gl.createFramebuffer()!;
     this.vao = gl.createVertexArray()!;
     ctl.init?.(gl);
-    const sc = this.scene;
+    // uniforms go to whichever scene program is drawing this frame
+    const sc = () => this.active!;
     this.setter = {
-      f: (n, v) => gl.uniform1f(loc(gl, sc, n), v),
-      v2: (n, x, y) => gl.uniform2f(loc(gl, sc, n), x, y),
-      v3: (n, x, y, z) => gl.uniform3f(loc(gl, sc, n), x, y, z),
-      v4: (n, x, y, z, w) => gl.uniform4f(loc(gl, sc, n), x, y, z, w),
-      v4v: (n, d) => gl.uniform4fv(loc(gl, sc, n), d),
+      f: (n, v) => gl.uniform1f(loc(gl, sc(), n), v),
+      v2: (n, x, y) => gl.uniform2f(loc(gl, sc(), n), x, y),
+      v3: (n, x, y, z) => gl.uniform3f(loc(gl, sc(), n), x, y, z),
+      v4: (n, x, y, z, w) => gl.uniform4f(loc(gl, sc(), n), x, y, z, w),
+      v4v: (n, d) => gl.uniform4fv(loc(gl, sc(), n), d),
       tex: (n, unit, t) => {
         gl.activeTexture(gl.TEXTURE0 + unit);
         gl.bindTexture(gl.TEXTURE_2D, t);
-        gl.uniform1i(loc(gl, sc, n), unit);
+        gl.uniform1i(loc(gl, sc(), n), unit);
       },
       points: (data, count, cam) => {
         this.pending = { data, count, cam };
       },
     };
+  }
+
+  /**
+   * Checks on the shaders without waiting for them: true once the frame programs and a scene program
+   * (the light one, then the full one) are ready to draw. Without KHR_parallel_shader_compile the
+   * check has to wait for the driver, so callers pass mayBlock only when the page can afford a stall.
+   * Throws when nothing can be drawn (a frame program, or every scene program, failed).
+   */
+  poll(mayBlock = false): boolean {
+    const gl = this.gl;
+    if (gl.isContextLost()) return false;
+    // the small frame programs are cheap enough to wait for
+    for (const pr of [this.cellP, this.glowP, this.finalP, this.pointsP]) if (settle(gl, pr, this.parallel, true) === "failed") throw new Error("glyph frame program failed");
+    const lite = this.sceneLite ? settle(gl, this.sceneLite, this.parallel, true) : "failed";
+    const full = settle(gl, this.scene, this.parallel, mayBlock || !this.sceneLite);
+    if (full === "ready" && this.active !== this.scene) {
+      this.active = this.scene;
+      if (this.sceneLite) {
+        gl.deleteProgram(this.sceneLite.p);
+        this.sceneLite = null;
+      }
+    } else if (!this.active && lite === "ready") this.active = this.sceneLite;
+    if (full === "failed" && lite === "failed") throw new Error("glyph scene program failed");
+    return !!this.active;
+  }
+
+  /** whether the full scene shader is drawing (not the light one, nor nothing yet) */
+  get complete() {
+    return this.active === this.scene;
   }
 
   get grid() {
@@ -495,9 +564,10 @@ export class GlyphEngine {
   /** The frame description the controller saw last (for labels). */
   last: FrameInfo | null = null;
 
-  render(t: number, dt: number, pointer: { x: number; y: number; on: boolean }) {
+  /** Draws a frame; false (and nothing drawn) until a scene program is ready (see poll). */
+  render(t: number, dt: number, pointer: { x: number; y: number; on: boolean }): boolean {
     const gl = this.gl;
-    if (gl.isContextLost()) return;
+    if (gl.isContextLost() || !this.active) return false;
     gl.bindVertexArray(this.vao);
     gl.disable(gl.BLEND);
     const sw = this.cols * 2;
@@ -511,7 +581,7 @@ export class GlyphEngine {
     // 1. the scene, HDR, at twice the glyph grid
     gl.bindFramebuffer(gl.FRAMEBUFFER, this.fbScene);
     gl.viewport(0, 0, sw, sh);
-    gl.useProgram(this.scene.p);
+    gl.useProgram(this.active.p);
     const s = this.setter;
     s.v2("uRes", sw, sh);
     s.v2("uTan", tanX, tanY);
@@ -606,6 +676,7 @@ export class GlyphEngine {
     gl.uniform3f(loc(gl, f, "uBg"), this.opts.bg[0], this.opts.bg[1], this.opts.bg[2]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     gl.activeTexture(gl.TEXTURE0);
+    return true;
   }
 
   /** Development probe: the cell texture's glyph indices and colours, read back (used to check software renderers). */
@@ -643,7 +714,7 @@ export class GlyphEngine {
     this.ctl.dispose?.(gl);
     for (const t of [this.sceneTex, this.cellTex, this.glowA, this.glowB, this.atlasTex]) gl.deleteTexture(t);
     for (const fb of [this.fbScene, this.fbCell, this.fbGlowA, this.fbGlowB]) gl.deleteFramebuffer(fb);
-    for (const p of [this.scene, this.cellP, this.glowP, this.finalP, this.pointsP]) gl.deleteProgram(p.p);
+    for (const p of [this.scene, this.sceneLite, this.cellP, this.glowP, this.finalP, this.pointsP]) if (p) gl.deleteProgram(p.p);
     gl.deleteVertexArray(this.vao);
     gl.deleteVertexArray(this.pointsVao);
     gl.deleteBuffer(this.pointsBuf);
