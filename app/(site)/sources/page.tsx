@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { marked } from "marked";
 
 // docs/sources.md is repository content, but raw HTML in it is still not rendered: text and links only.
@@ -8,6 +9,7 @@ marked.use({ renderer: { html: () => "" } });
 import sourcesConfig from "@/collector/config/sources.json";
 import { loadRuns } from "@/lib/data";
 import { timestampLabel } from "@/lib/format";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sources",
@@ -97,6 +99,31 @@ export default async function SourcesPage() {
         ) : (
           <p className="text-[13px] text-dim">The collector has not run yet. Per-source status appears here after the first run.</p>
         )}
+      </section>
+
+      {/* the full attribution text, moved here from the footer, which links to this anchor */}
+      <section id="licences" className="glass scroll-mt-24 space-y-3 p-5 text-[13.5px] leading-relaxed text-soft">
+        <h2 className="text-[1.05rem] font-semibold tracking-tight text-ink">Licences and credits</h2>
+        <p>
+          {SITE.name} is a non-commercial reference site. It stores titles, links and its own two-sentence summaries, never article text, and links to original reporting.
+        </p>
+        <p>
+          data <a className="link" href={SITE.dataLicense.url}>{SITE.dataLicense.name}</a> · code <a className="link" href={SITE.codeLicense.url}>{SITE.codeLicense.name}</a>
+        </p>
+        <p>
+          Includes data from the AI Incident Database (CC BY-SA 4.0), MITRE ATLAS (Apache 2.0), NVD, the GitHub Advisory Database (CC BY 4.0) and CISA KEV (CC0). This product uses the NVD API but is not endorsed or certified by the NVD.
+        </p>
+        <p>
+          Incidents are mapped to the OWASP Top 10 for LLM Applications (CC BY-SA 4.0, © OWASP Foundation) and MITRE ATLAS techniques (Apache 2.0, © MITRE); the{" "}
+          <Link className="link" href="/methodology#standards">
+            mapping
+          </Link>{" "}
+          is not endorsed by either.
+        </p>
+        <p>
+          Powered by <a className="link" href="https://www.gdeltproject.org/">GDELT</a>. Search powered by <a className="link" href="https://hn.algolia.com/">Algolia</a>. Thank you to arXiv for use of its open access interoperability. Traffic signal:{" "}
+          <a className="link" href="https://radar.cloudflare.com/">Cloudflare Radar</a> (CC BY-NC 4.0).
+        </p>
       </section>
 
       <section className="prose-sources" dangerouslySetInnerHTML={{ __html: html }} />

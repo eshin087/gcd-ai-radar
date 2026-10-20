@@ -180,6 +180,9 @@ async function navigate(client, url) {
     await sleep(100);
   }
   await sleep(600);
+  // the "more" fold (the flow, the bot traffic) is closed on load; open it so its numbers are probed too
+  await evaluate(client, `document.querySelectorAll("details").forEach((d) => { d.open = true; })`);
+  await sleep(300);
 }
 
 /** Runs in the page: clicks a number, waits for its drawer to settle, reads the drawer's count, closes it. */
@@ -192,8 +195,11 @@ async function probe(spec) {
   const numText = spec.numFrom === "num" ? el.querySelector(".num")?.textContent : (label.match(/:\\s*(\\d[\\d,]*)/) || label.match(/(\\d[\\d,]*)/) || [])[1];
   const shown = numText == null ? null : Number(String(numText).replace(/,/g, ""));
   el.scrollIntoView({ block: "center" });
-  // dispatched, not el.click(): the monthly columns are SVG rects with role=button
-  el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
+  // dispatched, not el.click(): the monthly columns are SVG rects with role=button.
+  // clickAt places the click along the element's width (a sparkline picks its month by x).
+  const box = el.getBoundingClientRect();
+  const at = spec.clickAt == null ? {} : { clientX: box.left + Math.min(box.width - 1, box.width * spec.clickAt), clientY: box.top + box.height / 2 };
+  el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, ...at }));
   const t0 = Date.now();
   let text = "";
   while (Date.now() - t0 < 10000) {
@@ -240,24 +246,40 @@ const PROBES = [
   { name: "hero real-world", selector: 'button[aria-label$="real-world incidents"]' },
   { name: "hero disclosed", selector: 'button[aria-label$="disclosed vulnerabilities"]' },
   { name: "tile this month", selector: 'button[aria-label*=" so far:"]' },
-  // the tiles' comparison lines carry no aria-label: the three StatTiles with one, in page order
-  { name: "tile last month", selector: "button:has(> span.num.text-soft)", index: 0, numFrom: "num" },
   { name: "tile trailing 12", selector: 'button[aria-label^="Trailing 12 months:"]' },
-  { name: "tile prior 12", selector: "button:has(> span.num.text-soft)", index: 1, numFrom: "num" },
   { name: "tile year to date", selector: 'button[aria-label^="Year to date:"]' },
-  { name: "tile last year same period", selector: "button:has(> span.num.text-soft)", index: 2, numFrom: "num" },
   { name: "tile real-world in view", selector: 'button[aria-label^="Real-world in view:"]' },
   { name: "family infra", selector: 'button[aria-label^="Infrastructure vulnerabilities:"]' },
   { name: "family injection", selector: 'button[aria-label^="Prompt injection & jailbreaks:"]' },
   { name: "type attack on AI", selector: 'button[aria-label^="Attack on AI:"]' },
   { name: "type AI-enabled", selector: 'button[aria-label^="AI-enabled attack:"]' },
   { name: "target framework", selector: 'button[aria-label^="Framework / tooling:"]' },
-  // the bubble matrix: the row after "Framework / tooling" starts with the next target's total
-  { name: "target next row", selector: 'li:has(> button[aria-label^="Framework / tooling:"]) + li > button', index: 0 },
-  { name: "heatmap cell", selector: 'button[aria-label*=", severity "]:not([disabled])', index: 0 },
-  { name: "bubble", selector: 'li[role="row"] button[aria-label*=" on "]:not([disabled])', index: 0 },
-  // only when the window has a window before it (not for "All")
-  { name: "slope prior", selector: 'button[aria-label*=" months before:"]', index: 0, optional: true },
+  // section 02: a family's month, clicked at the right end of its sparkline (the newest month with a count)
+  { name: "family sparkline month", selector: '[data-chart="family-rows"] svg[role="button"]:not([aria-label$=": 0 incidents"])', index: 0, clickAt: 1 },
+  // the movers' dumbbells, only when the window has a window before it (not for "All")
+  { name: "dumbbell before", selector: '[data-chart="dumbbell"] button[aria-label*=" months before:"]', index: 0, optional: true },
+  { name: "dumbbell now", selector: '[data-chart="dumbbell"] button[aria-label$=" incidents"]:not([aria-label*=" months before:"])', index: 0, optional: true },
+  // section 03: the radar's labels, the harm bars and the target bars
+  { name: "radar label", selector: '[data-chart="radar"] button[aria-label$=" incidents"]', index: 0 },
+  { name: "harm segment", selector: '[data-chart="harm-bars"] button[aria-label*=", severity "]', index: 0 },
+  // not in the real-world-only view, which has no severity 1-2 incidents
+  { name: "harm segment, not yet harmful", selector: '[data-chart="harm-bars"] button[aria-label*=", severity 1 "]', index: 0, optional: true },
+  { name: "harm family total", selector: '[data-chart="harm-bars"] li button[aria-label$=" incidents"]:not([aria-label*=", severity "])', index: 1 },
+  { name: "harm severity total", selector: '[data-chart="harm-bars"] button[aria-label^="Severity 3:"]' },
+  { name: "target next row", selector: '[data-chart="target-bars"] li:nth-child(2) button[data-total]' },
+  { name: "target top family", selector: '[data-chart="target-bars"] button[aria-label*=" on "]', index: 0 },
+  { name: "target second family", selector: '[data-chart="target-bars"] li:nth-child(2) button[aria-label*=" on "]', index: 1, optional: true },
+  { name: "target also hit", selector: '[data-chart="target-bars"] p button[data-total]', index: 0, optional: true },
+  // section 05: attacked products (attacks and their CVEs) and the agentic watch
+  { name: "stack attacks", selector: '[data-chart="stack"] button[aria-label$=" incidents"]', index: 0, optional: true },
+  { name: "stack CVEs", selector: '[data-chart="stack"] button[aria-label$=" disclosed vulnerabilities"]', index: 0, optional: true },
+  { name: "agentic all", selector: '[data-chart="agentic"] button[aria-label^="Incidents involving AI agents:"]', optional: true },
+  { name: "agentic slice", selector: '[data-chart="agentic"] button[aria-label$=" incidents"]', index: 1, optional: true },
+  { name: "agent tooling CVEs", selector: '[data-chart="agentic"] button[aria-label^="CVEs disclosed in agent tooling:"]' },
+  // section 06: the standards
+  { name: "owasp entry", selector: '[data-chart="owasp"] button[aria-label$=" incidents"]', index: 0, optional: true },
+  { name: "owasp any", selector: 'button[aria-label^="Mapped to the OWASP list:"]' },
+  { name: "atlas technique", selector: '[data-chart="atlas"] button[aria-label$=" incidents"]', index: 0, optional: true },
   { name: "tile disclosed in view", selector: 'button[aria-label^="Disclosed in view:"]' },
   { name: "tile busiest day", selector: 'button[aria-label^="Busiest day:"]' },
   { name: "product top bar", selector: 'section#disclosed button[aria-label$=", open the list"]:not([aria-label^="Disclosed in view"]):not([aria-label^="Busiest day"])' },
@@ -266,7 +288,7 @@ const PROBES = [
 /** Monthly columns are many; probe the two newest with a count, in the trend chart and the disclosed chart. */
 const COLUMN_PROBES = `
 (() => {
-  const pick = (root) => [...root.querySelectorAll('[aria-label$=" incidents"]')].filter((b) => !/: 0 incidents$/.test(b.getAttribute("aria-label"))).slice(-2).map((b) => b.getAttribute("aria-label"));
+  const pick = (root) => [...root.querySelectorAll('svg [role="button"][aria-label$=" incidents"]')].filter((b) => !/: 0 incidents$/.test(b.getAttribute("aria-label"))).slice(-2).map((b) => b.getAttribute("aria-label"));
   const trend = document.querySelector("section#trend");
   const disclosed = document.querySelector("section#disclosed");
   return { trend: trend ? pick(trend) : [], disclosed: disclosed ? pick(disclosed) : [] };
@@ -311,7 +333,7 @@ async function runChecks(client, base) {
       ...columns.disclosed.map((label) => ({ name: `disclosed column ${label.split(":")[0]}`, selector: `section#disclosed [aria-label="${label}"]` })),
     ];
     for (const p of probes) {
-      const r = await probe(client, { selector: p.selector, index: p.index, numFrom: p.numFrom });
+      const r = await probe(client, { selector: p.selector, index: p.index, numFrom: p.numFrom, clickAt: p.clickAt });
       if (p.optional && r.error?.startsWith("no element")) continue;
       const ok = !r.error && r.shown !== null && r.shown === r.drawer && r.closed;
       results.push({ view: view.name, name: p.name, ok, ...r });

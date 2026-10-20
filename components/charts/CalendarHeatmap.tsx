@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FocusEvent, type MouseEvent } from "react";
 import { dateLabel } from "@/lib/format";
 import type { ChartTheme } from "@/lib/theme";
 import { heat } from "./hooks";
@@ -32,11 +32,16 @@ function iso(d: Date): string {
  * A year of days: one column per week, one row per weekday, each cell
  * shaded by that day's incidents on the accent ramp. Bursts and quiet weeks
  * read at a glance; a cell opens its day. Scrolls sideways on narrow screens
- * and starts scrolled to the newest weeks.
+ * and starts scrolled to the newest weeks. The tooltip lives outside the
+ * scroller (so it can never widen it and flash a scrollbar), placed from the
+ * hovered cell's box and clamped inside the panel.
  */
 export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay = null, label }: Props) {
+  const wrap = useRef<HTMLDivElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
-  const [hover, setHover] = useState<{ day: string; x: number; y: number } | null>(null);
+  const tipRef = useRef<HTMLDivElement>(null);
+  /** The hovered day and its cell's box in the wrapper's coordinates. */
+  const [hover, setHover] = useState<{ day: string; cx: number; top: number; bottom: number } | null>(null);
 
   const { cells, weeks, monthMarks, max } = useMemo(() => {
     const start = new Date(`${from}-01T00:00:00Z`);
@@ -74,9 +79,35 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
     if (el) el.scrollLeft = el.scrollWidth;
   }, [width]);
 
+  const point = (day: string) => (e: MouseEvent<SVGRectElement> | FocusEvent<SVGRectElement>) => {
+    const box = wrap.current?.getBoundingClientRect();
+    const cell = e.currentTarget.getBoundingClientRect();
+    if (!box) return;
+    setHover({ day, cx: cell.left + cell.width / 2 - box.left, top: cell.top - box.top, bottom: cell.bottom - box.top });
+  };
+
+  // clamp the tooltip inside the wrapper once its size is known; flip below the cell when there is no room above
+  useLayoutEffect(() => {
+    const tip = tipRef.current;
+    const box = wrap.current;
+    if (!tip || !box || !hover) return;
+    const w = tip.offsetWidth;
+    const h = tip.offsetHeight;
+    tip.style.left = `${Math.max(0, Math.min(box.clientWidth - w, hover.cx - w / 2))}px`;
+    tip.style.top = `${hover.top - h - 6 >= 0 ? hover.top - h - 6 : hover.bottom + 6}px`;
+    tip.style.visibility = "visible";
+  }, [hover]);
+
   return (
-    <div className="space-y-2">
-      <div ref={scroller} className="relative overflow-x-auto pb-1" onMouseLeave={() => setHover(null)}>
+    <div ref={wrap} className="relative space-y-2">
+      {/* first child, so the space-y margins between the scroller and the legend stay as they were */}
+      {hover && (
+        <div ref={tipRef} className="pointer-events-none absolute left-0 top-0 z-10 whitespace-nowrap rounded-[4px] border border-line bg-panel/95 px-2 py-1 text-[11.5px] shadow-xl backdrop-blur" style={{ visibility: "hidden" }}>
+          <span className="text-soft">{dateLabel(hover.day)}</span> <span className="num text-ink">{dayCounts[hover.day] ?? 0}</span>
+          {(dayCounts[hover.day] ?? 0) > 0 && <span className="ml-1.5 text-faint">click to open</span>}
+        </div>
+      )}
+      <div ref={scroller} className="overflow-x-auto pb-1" onMouseLeave={() => setHover(null)} onScroll={() => setHover(null)}>
         <svg width={width} height={height} role="img" aria-label={label} className="block">
           {DAYS.map((d, r) =>
             d ? (
@@ -110,8 +141,9 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
                 tabIndex={c.count > 0 && onDay ? 0 : -1}
                 aria-label={`${dateLabel(c.day)}: ${c.count} incidents`}
                 className={c.count > 0 && onDay ? "cursor-pointer outline-none" : undefined}
-                onMouseEnter={() => setHover({ day: c.day, x, y })}
-                onFocus={() => setHover({ day: c.day, x, y })}
+                onMouseEnter={point(c.day)}
+                onFocus={point(c.day)}
+                onBlur={() => setHover((h) => (h?.day === c.day ? null : h))}
                 onClick={() => c.count > 0 && onDay?.(c.day)}
                 onKeyDown={(e) => {
                   if ((e.key === "Enter" || e.key === " ") && c.count > 0) {
@@ -123,12 +155,6 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
             );
           })}
         </svg>
-        {hover && (
-          <div className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[4px] border border-line bg-panel/95 px-2 py-1 text-[11.5px] shadow-xl backdrop-blur" style={{ left: Math.max(0, hover.x - 60), top: Math.max(0, hover.y - 34) }}>
-            <span className="text-soft">{dateLabel(hover.day)}</span> <span className="num text-ink">{dayCounts[hover.day] ?? 0}</span>
-            {(dayCounts[hover.day] ?? 0) > 0 && <span className="ml-1.5 text-faint">click to open</span>}
-          </div>
-        )}
       </div>
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[11px] text-dim">
         <span>
