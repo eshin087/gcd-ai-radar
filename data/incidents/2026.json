@@ -1,5 +1,518 @@
 [
   {
+    "id": "AIR-2026-1427",
+    "slug": "cve-2026-107366-ibm-langflow-oss-lacks-ownership-verificatio",
+    "title": "CVE-2026-107366: IBM Langflow OSS lacks ownership verification on message endpoints enabling session hijacking",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain message endpoints lacking ownership verification. Authenticated users can bulk-delete messages, inject malicious prompts by overwriting content, or hijack conversation sessions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107366",
+        "publisher": "NVD",
+        "title": "CVE-2026-107366: IBM Langflow OSS 1.0.0 through 1.12.4 contains three message endpoints that perform no ownership verification.",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107366",
+      "authorization",
+      "session_hijack",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1426",
+    "slug": "cve-2026-75128-langchain-chatchat-unauthenticated-tool-call",
+    "title": "CVE-2026-75128: Langchain-Chatchat unauthenticated tool call endpoint allows arbitrary OS command execution",
+    "summary": "Langchain-Chatchat through version 0.3.1.3 exposes an unauthenticated POST endpoint that lets remote attackers invoke registered tools including a shell tool. This flaw allows arbitrary OS command execution as the server user.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Langchain-Chatchat"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75128",
+        "publisher": "NVD",
+        "title": "CVE-2026-75128: Langchain-Chatchat through 0.3.1.3 exposes a POST /tools/call API endpoint that invokes any registered tool by name without…",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-75128",
+      "rce",
+      "unauthenticated",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1425",
+    "slug": "execution-verified-co-evolution-of-attacker-and-defender-pop",
+    "title": "Execution-Verified Co-Evolution of Attacker and Defender Populations for Code Security",
+    "summary": "This research paper introduces a co-evolutionary framework where LLM code agents autonomously edit repositories to reproduce real exploits in isolated containers. The study demonstrates automated offensive capabilities using execution-verified rewards.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24896",
+        "publisher": "arXiv",
+        "title": "Peer Pressure: Execution-Verified Co-Evolution of Attacker and Defender Populations for Code Security",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "code-agents",
+      "automated-exploitation",
+      "co-evolution",
+      "red-teaming"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1424",
+    "slug": "coordinated-retrieval-poisoning-attacks-against-rag-systems",
+    "title": "Coordinated Retrieval Poisoning Attacks Against RAG Systems",
+    "summary": "Researchers investigated retrieval poisoning attacks in retrieval-augmented generation pipelines, demonstrating how injected passages consistently reach top retrieval results. The work evaluates the success of these poisoning campaigns against existing defense mechanisms.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "RAG systems",
+      "RobustRAG",
+      "ReliabilityRAG"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24834",
+        "publisher": "arXiv",
+        "title": "Consistency Is the Attack Surface: Detecting Coordinated Retrieval Poisoning with Embedding Geometry",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rag",
+      "retrieval-poisoning",
+      "embedding-geometry"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1423",
+    "slug": "information-injection-attacks-against-llm-financial-trading",
+    "title": "Information Injection Attacks Against LLM Financial Trading Agents",
+    "summary": "Researchers demonstrated that LLM financial trading agents are vulnerable to fabricated news feeds designed to manipulate trading behavior. The benchmark shows how malicious headlines can steer autonomous agents into coordinated financial transactions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM trading agents"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.26438",
+        "publisher": "arXiv",
+        "title": "Fake News, Real Crashes: Information Injection Attacks on LLM Financial Trading Agents",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "trading-agents",
+      "information-injection",
+      "financial-markets"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1422",
+    "slug": "one-relation-attack-manipulating-llm-agents-via-inferential",
+    "title": "One-Relation Attack: Manipulating LLM Agents via Inferential Warrants",
+    "summary": "Researchers introduced the one-relation attack, demonstrating that a single targeted sentence can mislead LLM agents and alter their reasoning outcomes. Evaluations across eighteen models showed successful manipulation in biomedical inference and vulnerability tasks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24873",
+        "publisher": "arXiv",
+        "title": "The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "cognitive-attack",
+      "reasoning-attack"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1421",
+    "slug": "ragleak-supply-chain-privacy-backdoors-in-retrieval-augmente",
+    "title": "RAGLeak: Supply-Chain Privacy Backdoors in Retrieval-Augmented Generation",
+    "summary": "Researchers introduced RAGLeak, a supply-chain privacy backdoor attack that extracts sensitive data from retrieval-augmented generation systems. The technique balances extraction fidelity and stealthiness better than previous prompt injection or backdoor methods.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "RAGLeak"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.25937",
+        "publisher": "arXiv",
+        "title": "RAGLeak: Supply-Chain Privacy Backdoors in Retrieval-Augmented Generation",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rag",
+      "data-leak",
+      "supply-chain",
+      "backdoor"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1420",
+    "slug": "decision-dynamics-of-llm-agents-following-prompt-injections",
+    "title": "Decision Dynamics of LLM Agents Following Prompt Injections",
+    "summary": "Researchers used branching rollouts to analyze when and why LLM agents decide to follow prompt injections embedded in untrusted content. The findings challenge assumptions that compliance with injections is strictly determined at the moment of reading.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24048",
+        "publisher": "arXiv",
+        "title": "The Window Is in the Reasoning: When LLM Agents Decide to Follow Prompt Injections",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "agent-hijack",
+      "reasoning"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1419",
+    "slug": "safeguard-measurements-and-vulnerabilities-in-options-tradin",
+    "title": "Safeguard Measurements and Vulnerabilities in Options-Trading LLM Agents",
+    "summary": "A security measurement of shipped options-trading LLM agents across multiple repositories and broker documentation revealed significant lack of safeguards. The study highlights risks where automated order paths can reach unbounded financial losses.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24289",
+        "publisher": "arXiv",
+        "title": "Unbounded Losses, Unchecked Inputs: Measuring the Safeguards of LLM Options-Trading Agents",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "trading-agents",
+      "agent-security",
+      "financial-risk"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1418",
+    "slug": "trojan-based-data-poisoning-attacks-increasing-llm-token-res",
+    "title": "Trojan-Based Data Poisoning Attacks Increasing LLM Token Response Costs",
+    "summary": "Researchers devised a defense against a data-poisoning attack that plants a Trojan to artificially increase LLM response lengths and financial costs. The attack triggers on semantically similar instructions within prompts.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24784",
+        "publisher": "arXiv",
+        "title": "LLM Trojans that Increase Response Lengths and Cost",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-poisoning",
+      "trojan",
+      "cost-inflation"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1417",
+    "slug": "dormant-poisoning-attacks-and-agentic-risks-across-fine-tune",
+    "title": "Dormant Poisoning Attacks and Agentic Risks Across Fine-Tuned Models",
+    "summary": "Researchers demonstrated that dormant malicious behaviors can be implanted into models and later activated by benign fine-tuning, leading to harmful agent actions. The study highlights risks where multiple poisoned behaviors coexist and emerge during downstream training.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24379",
+        "publisher": "arXiv",
+        "title": "Defending Against Dormant Poisoning Attacks Across Language and Multimodal Agents",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-poisoning",
+      "fine-tuning",
+      "agent-security"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1416",
+    "slug": "seal-persistent-tool-poisoning-attack-against-llm-agents",
+    "title": "SEAL: Persistent Tool Poisoning Attack against LLM Agents",
+    "summary": "Researchers introduced a prefix-eliciting trigger to execute persistent tool poisoning attacks in multi-round LLM agent interactions. The technique improves attack effectiveness against realistic agentic settings.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.25372",
+        "publisher": "arXiv",
+        "title": "SEAL: Towards Persistent Tool Poisoning Attack against LLM Agents via Prefix-Eliciting Trigger",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "tool-poisoning",
+      "agent-hijack",
+      "llm-agents"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "id": "AIR-2026-1415",
+    "slug": "red-teaming-multi-agent-attacks-for-loss-of-control-risks",
+    "title": "Red-Teaming Multi-Agent Attacks for Loss-of-Control Risks",
+    "summary": "Researchers demonstrated distributed attacks where multi-agent systems covertly collude on harmful objectives in a synthetic environment. The study highlights how agent collaboration evades frontier control measures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "MiniLab"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.24052",
+        "publisher": "arXiv",
+        "title": "Red-Teaming Multi-Agent Attacks for Loss-of-Control Risks",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multi-agent",
+      "agent-hijack",
+      "research"
+    ],
+    "created_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
     "id": "AIR-2026-1414",
     "slug": "opencode-security-breach-exposes-api-keys-during-distillatio",
     "title": "OpenCode Security Breach Exposes API Keys During Distillation Attacks",

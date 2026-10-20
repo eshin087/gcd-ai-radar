@@ -1233,5 +1233,239 @@
       "meta-eng: engineering.fb.com resolves to a non-public address (192.0.66.236)",
       "owasp-genai: genai.owasp.org resolves to a non-public address (192.0.78.252)"
     ]
+  },
+  {
+    "id": "run-20261020T044448",
+    "started_at": "2026-10-20T04:44:48.868Z",
+    "finished_at": "2026-10-20T04:59:25.154Z",
+    "mode": "scheduled",
+    "sources": [
+      {
+        "id": "thn",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 193
+      },
+      {
+        "id": "krebs",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 180
+      },
+      {
+        "id": "securityweek",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 376
+      },
+      {
+        "id": "bleepingcomputer",
+        "ok": true,
+        "items": 11,
+        "duration_ms": 64
+      },
+      {
+        "id": "openai",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 138
+      },
+      {
+        "id": "anthropic",
+        "ok": true,
+        "items": 3,
+        "duration_ms": 481
+      },
+      {
+        "id": "google-security",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 198
+      },
+      {
+        "id": "darkreading",
+        "ok": true,
+        "items": 5,
+        "duration_ms": 886
+      },
+      {
+        "id": "deepmind",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 251
+      },
+      {
+        "id": "ms-security",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 56
+      },
+      {
+        "id": "ms-threat-intel",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 34
+      },
+      {
+        "id": "ms-ai",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 104
+      },
+      {
+        "id": "msrc-sug",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 717
+      },
+      {
+        "id": "meta-eng",
+        "ok": false,
+        "items": 0,
+        "error": "engineering.fb.com resolves to a non-public address (192.0.66.236)",
+        "duration_ms": 29
+      },
+      {
+        "id": "simonw-pi",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 69
+      },
+      {
+        "id": "gtig",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 1390
+      },
+      {
+        "id": "embracethered",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 67
+      },
+      {
+        "id": "simonw-sec",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 218
+      },
+      {
+        "id": "trailofbits",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 160
+      },
+      {
+        "id": "unit42",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 46
+      },
+      {
+        "id": "talos",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 69
+      },
+      {
+        "id": "owasp-genai",
+        "ok": false,
+        "items": 0,
+        "error": "genai.owasp.org resolves to a non-public address (192.0.78.252)",
+        "duration_ms": 7
+      },
+      {
+        "id": "straiker",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 78
+      },
+      {
+        "id": "trendmicro",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 156
+      },
+      {
+        "id": "checkmarx-zero",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 277
+      },
+      {
+        "id": "hiddenlayer",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 80
+      },
+      {
+        "id": "arxiv-cscr",
+        "ok": true,
+        "items": 51,
+        "duration_ms": 106
+      },
+      {
+        "id": "unit42-ai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 974
+      },
+      {
+        "id": "ghsa",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 423
+      },
+      {
+        "id": "kev",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 75
+      },
+      {
+        "id": "hn",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 6048
+      },
+      {
+        "id": "nvd",
+        "ok": true,
+        "items": 66,
+        "duration_ms": 259035
+      },
+      {
+        "id": "gdelt",
+        "ok": true,
+        "items": 8,
+        "duration_ms": 852528
+      }
+    ],
+    "counts": {
+      "fetched": 169,
+      "prefiltered": 103,
+      "merged": 0,
+      "classified": 32,
+      "published": 13,
+      "review": 0,
+      "rejected": 19,
+      "pending": 0
+    },
+    "llm": {
+      "calls": 7,
+      "prompt_tokens": 17002,
+      "completion_tokens": 8214,
+      "by_model": {
+        "gemini-lite/gemini-3.5-flash-lite": {
+          "calls": 7,
+          "prompt_tokens": 17002,
+          "completion_tokens": 8214
+        }
+      }
+    },
+    "errors": [
+      "meta-eng: engineering.fb.com resolves to a non-public address (192.0.66.236)",
+      "owasp-genai: genai.owasp.org resolves to a non-public address (192.0.78.252)"
+    ]
   }
 ]

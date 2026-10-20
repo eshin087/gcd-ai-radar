@@ -1,5 +1,195 @@
 [
   {
+    "key": "10f786f3efbdb8d0",
+    "title": "Narratives Mislead: An Empirical Study of How LLMs Misjudge CVSS Severity in Bug Bounty Reports",
+    "url": "https://arxiv.org/abs/2610.24623",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research study evaluating LLM accuracy in assigning CVSS severity scores, lacking a security incident or attack context.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "d4ad5dc9e3669f0c",
+    "title": "How Effectively Do Security Skills Guide Coding Agents in Vulnerability Detection in Linux Kernel?",
+    "url": "https://arxiv.org/abs/2610.25705",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmarking paper assessing coding agents' ability to detect existing Linux kernel vulnerabilities without exploiting or attacking AI systems.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "fdca32d340c396c2",
+    "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+    "url": "https://arxiv.org/abs/2610.26088",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research benchmark evaluating reward hacking and prediction-time leakage in clinical modeling agents without reporting a security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "61de791fe65430b1",
+    "title": "The Missing Compliance Class: LLM Graders That Collapse Jailbreak Success, and a Free Check",
+    "url": "https://arxiv.org/abs/2610.24872",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a research paper analyzing the evaluation methodology and reliability of LLM graders for jailbreaks rather than demonstrating a new security exploit or attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "9e57ed1bc6e8d8ca",
+    "title": "Adaptive Cyber-Defense for Evolving Attacker Capabilities using Reinforcement Learning and Behavior Trees",
+    "url": "https://arxiv.org/abs/2610.25420",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper focuses purely on adaptive cyber-defense and reinforcement learning benchmarks without demonstrating a novel AI attack, vulnerability, or offensive AI use.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "285fb48b7e6e1430",
+    "title": "SpanGuard: Decoupling Instruction Localization from Authorization for Lightweight IPI Defense",
+    "url": "https://arxiv.org/abs/2610.26013",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defensive guardrail mechanism (SpanGuard) against indirect prompt injection rather than demonstrating an attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "05ec0b8ac872046b",
+    "title": "Predicting CVSS and CWE from CVE Descriptions with Fine-Tuned Small Language Models",
+    "url": "https://arxiv.org/abs/2610.24297",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Focuses on fine-tuning small language models for predicting CVSS and CWE metrics from CVE descriptions, representing general NLP application research rather than a security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "3f29886db5932abe",
+    "title": "SoK: PIAtlas: Decomposing the Unbounded Prompt Injection Attack Space",
+    "url": "https://arxiv.org/abs/2610.24999",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Systematization of knowledge paper proposing a taxonomy of prompt injection rather than demonstrating a novel exploit, vulnerability or attack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "c2b719c2c51d9736",
+    "title": "Budgeted Attack Scheduling for LLM Red-Teaming: The Roles of Static Priors, Semantic Guidance, and Online Feedback",
+    "url": "https://arxiv.org/abs/2610.25897",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper focuses on optimizing red-teaming efficiency and attack scheduling for evaluation rather than presenting a novel security incident or vulnerability.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "e3502b0e3f7a3bcf",
+    "title": "SPIDES: Information-Flow Control for Browser Agents",
+    "url": "https://arxiv.org/abs/2610.24277",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a defense framework (SPIDES) for browser agents rather than documenting an exploited incident or active vulnerability.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "1680bad78ae7e0be",
+    "title": "CAT-RAG: Improving Secure Code Generation with Category-Aware Agentic Retrieval",
+    "url": "https://arxiv.org/abs/2610.24907",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This research paper proposes a defensive RAG framework for secure code generation, which falls under out-of-scope defence proposals.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "c49026a7cd59a10a",
+    "title": "Many Repairs, One Direction: Steering Code Models Toward Safer Cryptographic API Use",
+    "url": "https://arxiv.org/abs/2610.25133",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a research paper on steering code models toward safer cryptographic API usage, representing an AI safety and defense study.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "abbad31796bca171",
+    "title": "Secure Agentic Coding through Counterexample-Grounded Feedback",
+    "url": "https://arxiv.org/abs/2610.25916",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a defensive method for secure agentic coding using feedback, making it an out-of-scope defense proposal.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "42101200ba2bf813",
+    "title": "Policy Is Not Capability: Some Safety Benchmarks Measure Which Definition of \"Unsafe\" You Trained On",
+    "url": "https://arxiv.org/abs/2610.25060",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper analyzes guardrail classifiers and safety benchmarks without reporting a specific security incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "86feb6fd018f3964",
+    "title": "Game of Phones: Harnessing Game Theory and LLMs in 'Bot Wars' to Counteract Phone Scams",
+    "url": "https://arxiv.org/abs/2610.26781",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This research paper proposes a defense mechanism (strategic scam-baiting using game theory) rather than an attack, vulnerability, or offensive AI use.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "a63ef7607e683772",
+    "title": "Accountable partial understanding: securing the epistemic attack surface of agentic systems",
+    "url": "https://arxiv.org/abs/2610.26799",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a theoretical analysis and taxonomy of agentic AI security risks without demonstrating a specific new exploit or vulnerability incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "cd96c597a594310b",
+    "title": "RATION: Towards Quantitative Risk-Based Access Control for AI Agents",
+    "url": "https://arxiv.org/abs/2610.24311",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a defensive mechanism (quantitative risk-based access control) for AI agents, making it out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "8a67864a69bb4b52",
+    "title": "AdaFedXplain: Adaptive Federated Learning with Explainable AI for Ransomware Detection",
+    "url": "https://arxiv.org/abs/2610.25318",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a machine learning defense methodology for ransomware detection, which is out of scope as a defense-only paper.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
+    "key": "bc731611d1a2ba06",
+    "title": "Beyond Attack Success Rate: Cost-Aware Metric for Evaluating Iterative LLM Jailbreaks",
+    "url": "https://arxiv.org/abs/2610.26589",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a benchmark and evaluation metric paper for LLM jailbreaks, falling under out-of-scope benchmarks without reporting a specific new vulnerability exploit.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T04:59:02.302Z"
+  },
+  {
     "key": "03d3ba9d36cc0643",
     "title": "⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
     "url": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
