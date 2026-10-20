@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
 import { useReducedMotion } from "@/components/fx/useReducedMotion";
 import { monthLabel } from "@/lib/format";
+import { monthTicks, niceStep } from "./hooks";
 
 export interface ColumnStack {
   key: string;
@@ -18,6 +19,8 @@ export interface ColumnColors {
   dim: string;
   accent: string;
   provisional: string;
+  /** The panel surface, for gaps, rings and the provisional hatch. */
+  surface?: string;
 }
 
 interface Props {
@@ -29,13 +32,16 @@ interface Props {
   lineLabel?: string;
   /** Optional dashed linear trend. */
   fit?: (number | null)[];
+  /** Tooltip-only split of each month (families), shown as a stacked mini bar and the largest parts. */
+  breakdown?: ColumnStack[];
   provisionalFrom?: string;
   height?: number;
   colors: ColumnColors;
   /** Single-series bars fade from this colour at the top into the stack colour. */
   gradientTop?: string;
+  /** A soft bloom under the bars. */
   glow?: boolean;
-  /** Label the tallest column. */
+  /** Mark the tallest column. */
   peak?: boolean;
   activeMonth?: string | null;
   onMonth?: (month: string) => void;
@@ -45,20 +51,43 @@ interface Props {
   tooltipClassName?: string;
 }
 
-function niceStep(raw: number): number {
-  const p = Math.pow(10, Math.floor(Math.log10(Math.max(raw, 1e-9))));
-  const f = raw / p;
-  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+const PAD = { l: 40, r: 14, t: 30, b: 52 };
+const TIP_W = 214;
+const LINE_MS = 1500;
+const LINE_DELAY = 520;
+
+const easeInOut = (k: number) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2);
+
+/** The point a fraction `t` of the way along a polyline (by length). */
+function along(pts: [number, number][], t: number): [number, number] {
+  if (pts.length === 0) return [0, 0];
+  const lens: number[] = [];
+  let total = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const l = Math.hypot(pts[i]![0] - pts[i - 1]![0], pts[i]![1] - pts[i - 1]![1]);
+    lens.push(l);
+    total += l;
+  }
+  let d = t * total;
+  for (let i = 0; i < lens.length; i++) {
+    if (d <= lens[i]! || i === lens.length - 1) {
+      const k = lens[i]! === 0 ? 0 : Math.min(1, d / lens[i]!);
+      return [pts[i]![0] + (pts[i + 1]![0] - pts[i]![0]) * k, pts[i]![1] + (pts[i + 1]![1] - pts[i]![1]) * k];
+    }
+    d -= lens[i]!;
+  }
+  return pts[pts.length - 1]!;
 }
 
-const PAD = { l: 40, r: 14, t: 26, b: 42 };
-
 /**
- * Monthly column chart drawn in SVG: solid stacked segments with a 1.5px gap,
- * rounded data-ends, optional glow, an average line that draws itself in,
- * provisional months bracketed under the axis, hover breakdown and click-through
- * (a segment opens that slice, the column opens the month). Columns grow in
- * the first time the chart scrolls into view.
+ * Monthly columns in SVG. On arrival the columns rise one after another on an
+ * eased curve, the average line draws itself with a glowing head riding its
+ * tip, and the peak marker starts a slow pulse. The bars wear a luminous
+ * gradient over a soft bloom and a faint floor reflection; provisional months
+ * carry a slowly drifting hatch. Hovering a month dims the others, drops a
+ * crosshair and shows its count with the family mix; a click (or Enter on a
+ * focused month) opens the month. Under reduced motion everything is drawn
+ * in place and nothing moves.
  */
 export function MonthlyColumns({
   months,
@@ -66,6 +95,7 @@ export function MonthlyColumns({
   line,
   lineLabel = "3-month average",
   fit,
+  breakdown,
   provisionalFrom,
   height = 340,
   colors,
@@ -79,11 +109,18 @@ export function MonthlyColumns({
   tooltipClassName = "",
 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<SVGPathElement>(null);
+  const runRef = useRef<SVGGElement>(null);
+  const linePtsRef = useRef<[number, number][]>([]);
   const [width, setWidth] = useState(720);
   const [shown, setShown] = useState(false);
+  const [drawn, setDrawn] = useState(false);
   const [hover, setHover] = useState<number | null>(null);
   const uid = useId().replace(/:/g, "");
   const reduced = useReducedMotion();
+  const on = shown || reduced;
+  const lineDone = drawn || reduced;
+  const surface = colors.surface ?? "#070a12";
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -116,49 +153,127 @@ export function MonthlyColumns({
   const plotH = height - PAD.t - PAD.b;
   const base = PAD.t + plotH;
   const band = plotW / Math.max(1, n);
-  const barW = Math.max(2, Math.min(24, band * 0.66));
+  const barW = Math.max(2, Math.min(24, band * 0.64));
   const y = (v: number) => PAD.t + plotH * (1 - v / ymax);
   const cx = (i: number) => PAD.l + (i + 0.5) * band;
   const peakIdx = totals.reduce((best, v, i) => (v > (totals[best] ?? -1) ? i : best), 0);
   const provIdx = provisionalFrom ? months.findIndex((m) => m >= provisionalFrom) : -1;
   const labelEvery = Math.max(1, Math.ceil(n / Math.max(1, plotW / 62)));
   const single = stacks.length === 1;
+  const barColor = stacks[0]?.color ?? colors.accent;
+  const stagger = Math.min(34, 680 / Math.max(1, n));
 
-  const linePath = (vals: (number | null)[]) => {
-    let d = "";
-    let pen = false;
-    vals.forEach((v, i) => {
-      if (v === null || v === undefined) {
-        pen = false;
-        return;
-      }
-      d += `${pen ? "L" : "M"}${cx(i).toFixed(1)},${y(v).toFixed(1)}`;
-      pen = true;
+  // the average line as a polyline; its last point carries the glowing head
+  const linePts: [number, number][] = [];
+  (line ?? []).forEach((v, i) => {
+    if (v !== null && v !== undefined) linePts.push([cx(i), y(v)]);
+  });
+  const lineD = linePts.map((p, i) => `${i ? "L" : "M"}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join("");
+  const lineEnd = linePts[linePts.length - 1];
+  useEffect(() => {
+    linePtsRef.current = linePts;
+  });
+
+  // draw the average in: dash offset and the travelling head move together, one frame loop, no re-renders
+  useEffect(() => {
+    const path = lineRef.current;
+    const run = runRef.current;
+    if (!shown || reduced || drawn || !path || !run) return;
+    let raf = 0;
+    const t0 = performance.now() + LINE_DELAY;
+    const tick = (t: number) => {
+      const k = Math.min(1, Math.max(0, (t - t0) / LINE_MS));
+      const e = easeInOut(k);
+      path.style.strokeDashoffset = String(1 - e);
+      const [px, py] = along(linePtsRef.current, e);
+      run.setAttribute("transform", `translate(${px.toFixed(1)},${py.toFixed(1)})`);
+      run.style.opacity = k > 0 && k < 1 ? "1" : "0";
+      if (k < 1) raf = requestAnimationFrame(tick);
+      else setDrawn(true);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [shown, reduced, drawn]);
+
+  /** Column i as stacked segments, each a path with a rounded data end on top. */
+  const segmentsOf = (i: number) => {
+    const x = cx(i) - barW / 2;
+    const segs: { key: string; color: string; d: string; top: number }[] = [];
+    let acc = 0;
+    const visible = stacks.filter((st) => (st.values[i] ?? 0) > 0);
+    visible.forEach((st, k) => {
+      const v = st.values[i] ?? 0;
+      const bottom = y(acc) - (k > 0 ? 2 : 0);
+      acc += v;
+      const top = Math.min(y(acc), bottom - 1.5);
+      const isTop = k === visible.length - 1;
+      const r = isTop ? Math.min(4, bottom - top, barW / 2) : 0;
+      segs.push({ key: st.key, color: st.color, top, d: `M${x},${bottom}V${top + r}Q${x},${top} ${x + r},${top}H${x + barW - r}Q${x + barW},${top} ${x + barW},${top + r}V${bottom}Z` });
     });
-    return d;
+    return segs;
   };
+  const rise = (i: number, origin = base): CSSProperties => ({
+    transform: on ? "scaleY(1)" : "scaleY(0)",
+    transformOrigin: `0px ${origin}px`,
+    transition: reduced ? "none" : `transform 980ms cubic-bezier(.16,1,.3,1) ${Math.round(80 + i * stagger)}ms, opacity 220ms`,
+  });
+  const dimmed = (i: number) => hover !== null && hover !== i;
 
-  const tip = hover !== null ? hover : null;
-  const tipLeft = tip === null ? 0 : Math.min(Math.max(cx(tip) - 95, 0), width - 190);
+  const tip = hover;
+  const tipRight = tip !== null && cx(tip) + barW / 2 + 12 + TIP_W <= width;
+  const tipLeft = tip === null ? 0 : tipRight ? cx(tip) + barW / 2 + 12 : Math.max(0, cx(tip) - barW / 2 - 12 - TIP_W);
+  const parts = tip !== null && breakdown ? breakdown.map((b) => ({ b, v: b.values[tip] ?? 0 })).filter((p) => p.v > 0) : [];
+  const partsTotal = parts.reduce((s, p) => s + p.v, 0);
+  const topParts = [...parts].sort((a, b) => b.v - a.v).slice(0, 4);
 
   return (
     <div ref={wrapRef} className="relative w-full select-none" style={{ height }}>
       <svg width={width} height={height} role="img" aria-label={label} className="absolute inset-0 block overflow-visible">
         <defs>
-          {single && gradientTop && (
-            <linearGradient id={`g-${uid}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={gradientTop} stopOpacity={0.98} />
-              <stop offset="55%" stopColor={stacks[0]!.color} stopOpacity={0.9} />
-              <stop offset="100%" stopColor={stacks[0]!.color} stopOpacity={0.4} />
-            </linearGradient>
-          )}
+          <linearGradient id={`g-${uid}`} x1="0" y1="0" x2="0" y2="1">
+            {single && gradientTop ? (
+              <>
+                <stop offset="0%" stopColor={gradientTop} stopOpacity={1} />
+                <stop offset="16%" stopColor={gradientTop} stopOpacity={0.9} />
+                <stop offset="52%" stopColor={barColor} stopOpacity={0.95} />
+                <stop offset="100%" stopColor={barColor} stopOpacity={0.32} />
+              </>
+            ) : (
+              <>
+                <stop offset="0%" stopColor={barColor} stopOpacity={1} />
+                <stop offset="100%" stopColor={barColor} stopOpacity={0.45} />
+              </>
+            )}
+          </linearGradient>
+          <linearGradient id={`r-${uid}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={barColor} stopOpacity={0.3} />
+            <stop offset="100%" stopColor={barColor} stopOpacity={0} />
+          </linearGradient>
+          <linearGradient id={`f-${uid}`} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor={barColor} stopOpacity={0} />
+            <stop offset="18%" stopColor={barColor} stopOpacity={0.55} />
+            <stop offset="82%" stopColor={barColor} stopOpacity={0.55} />
+            <stop offset="100%" stopColor={barColor} stopOpacity={0} />
+          </linearGradient>
+          <filter id={`bloom-${uid}`} x="-60%" y="-20%" width="220%" height="140%">
+            <feGaussianBlur stdDeviation="5.5" />
+          </filter>
           <filter id={`glow-${uid}`} x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="3.2" result="b" />
+            <feGaussianBlur stdDeviation="3" result="b" />
             <feMerge>
               <feMergeNode in="b" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          {/* provisional hatch: dark stripes over a bar, faint ones over the band; both drift slowly */}
+          <pattern id={`hb-${uid}`} width={5} height={5} patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width={1.8} height={5} fill={surface} fillOpacity={0.5} />
+            {!reduced && <animateTransform attributeName="patternTransform" type="translate" additive="sum" from="0 0" to="5 0" dur="4s" repeatCount="indefinite" />}
+          </pattern>
+          <pattern id={`hp-${uid}`} width={7} height={7} patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width={1} height={7} fill={colors.ink} fillOpacity={0.07} />
+            {!reduced && <animateTransform attributeName="patternTransform" type="translate" additive="sum" from="0 0" to="7 0" dur="7s" repeatCount="indefinite" />}
+          </pattern>
         </defs>
 
         {/* grid and y labels */}
@@ -171,23 +286,38 @@ export function MonthlyColumns({
           </g>
         ))}
 
-        {/* provisional band, bracketed under the axis */}
+        {/* provisional band, hatched and bracketed under the axis */}
         {provIdx >= 0 && (
           <g aria-hidden>
             <rect x={PAD.l + provIdx * band} y={PAD.t} width={PAD.l + plotW - (PAD.l + provIdx * band)} height={plotH} fill={colors.provisional} />
-            <path
-              d={`M${PAD.l + provIdx * band + 3},${base + 24}v-4M${PAD.l + provIdx * band + 3},${base + 24}H${PAD.l + plotW - 3}v-4`}
-              stroke={colors.dim}
-              fill="none"
-              strokeWidth={1}
-            />
-            <text x={(PAD.l + provIdx * band + PAD.l + plotW) / 2} y={base + 37} textAnchor="middle" fontSize={10} fill={colors.dim} className="num">
+            <rect x={PAD.l + provIdx * band} y={PAD.t} width={PAD.l + plotW - (PAD.l + provIdx * band)} height={plotH} fill={`url(#hp-${uid})`} />
+            <path d={`M${PAD.l + provIdx * band + 3},${base + 32}v-4M${PAD.l + provIdx * band + 3},${base + 32}H${PAD.l + plotW - 3}v-4`} stroke={colors.dim} fill="none" strokeWidth={1} />
+            <text x={(PAD.l + provIdx * band + PAD.l + plotW) / 2} y={base + 45} textAnchor="middle" fontSize={10} fill={colors.dim} className="num">
               provisional
             </text>
           </g>
         )}
 
-        {/* hit areas under the columns: hover highlight, keyboard focus, click per month */}
+        {/* floor: a lit baseline and the bars' faint reflections under it */}
+        <g aria-hidden pointerEvents="none">
+          <rect x={PAD.l} y={base} width={plotW} height={1} fill={`url(#f-${uid})`} opacity={on ? 1 : 0} style={{ transition: reduced ? "none" : "opacity 900ms 200ms" }} />
+          {months.map((m, i) => {
+            const h = base - y(totals[i] ?? 0);
+            if (h <= 0) return null;
+            const rh = Math.min(14, h * 0.28);
+            return <rect key={m} x={cx(i) - barW / 2} y={base + 2} width={barW} height={rh} rx={1} fill={`url(#r-${uid})`} opacity={dimmed(i) ? 0.3 : 1} style={rise(i, base + 2)} />;
+          })}
+        </g>
+
+        {/* hover column and crosshair */}
+        {hover !== null && (
+          <g pointerEvents="none" aria-hidden>
+            <rect x={PAD.l + hover * band} y={PAD.t} width={band} height={plotH} fill={colors.ink} fillOpacity={0.035} />
+            <line x1={cx(hover)} x2={cx(hover)} y1={PAD.t - 6} y2={base} stroke={colors.ink} strokeOpacity={0.28} strokeWidth={1} />
+          </g>
+        )}
+
+        {/* hit areas under the columns: hover, keyboard focus, click per month */}
         {months.map((m, i) => (
           <rect
             key={m}
@@ -195,7 +325,7 @@ export function MonthlyColumns({
             y={PAD.t}
             width={band}
             height={plotH}
-            fill={hover === i || activeMonth === m ? "rgba(160,180,220,0.07)" : "transparent"}
+            fill={activeMonth === m ? "rgba(255,179,92,0.06)" : "transparent"}
             tabIndex={onMonth ? 0 : -1}
             role={onMonth ? "button" : undefined}
             aria-label={`${monthLabel(m, true)}: ${totals[i]} incidents`}
@@ -214,106 +344,123 @@ export function MonthlyColumns({
             style={{ pointerEvents: "all" }}
           />
         ))}
+
+        {/* bloom: a blurred copy of the bars behind them */}
+        {glow && (
+          <g aria-hidden pointerEvents="none" filter={`url(#bloom-${uid})`} opacity={0.5}>
+            {months.map((m, i) => (
+              <g key={m} opacity={dimmed(i) ? 0.15 : 1} style={rise(i)}>
+                {segmentsOf(i).map((s) => (
+                  <path key={s.key} d={s.d} fill={activeMonth === m ? colors.accent : single && gradientTop ? `url(#g-${uid})` : s.color} />
+                ))}
+              </g>
+            ))}
+          </g>
+        )}
+
         {/* columns */}
-        <g filter={glow ? `url(#glow-${uid})` : undefined}>
+        <g>
           {months.map((m, i) => {
-            const x = cx(i) - barW / 2;
             const prov = provIdx >= 0 && i >= provIdx;
             const isActive = activeMonth === m;
-            const segs: { key: string; color: string; top: number; bottom: number }[] = [];
-            let acc = 0;
-            for (const st of stacks) {
-              const v = st.values[i] ?? 0;
-              if (v <= 0) continue;
-              const bottom = y(acc);
-              acc += v;
-              segs.push({ key: st.key, color: st.color, top: y(acc), bottom });
-            }
+            const segs = segmentsOf(i);
+            const top = segs[segs.length - 1];
             return (
               <g
                 key={m}
-                style={{
-                  transform: shown ? "scaleY(1)" : "scaleY(0)",
-                  transformOrigin: `0px ${base}px`,
-                  transition: reduced ? "none" : `transform 760ms cubic-bezier(.2,.7,.2,1) ${i * 22}ms`,
-                }}
-                opacity={prov ? 0.6 : 1}
+                style={rise(i)}
+                opacity={dimmed(i) ? 0.32 : prov ? 0.88 : 1}
                 className={onMonth ? "cursor-pointer" : undefined}
                 onMouseEnter={() => setHover(i)}
                 onMouseLeave={() => setHover((h) => (h === i ? null : h))}
                 onClick={() => onMonth?.(m)}
               >
-                {segs.map((s, k) => {
-                  const isTop = k === segs.length - 1;
-                  const bottom = s.bottom - (k > 0 ? 1.5 : 0);
-                  const top = Math.min(s.top, bottom - 1.5);
-                  const h = bottom - top;
-                  const r = isTop ? Math.min(4, h, barW / 2) : 0;
-                  const d = `M${x},${bottom}V${top + r}Q${x},${top} ${x + r},${top}H${x + barW - r}Q${x + barW},${top} ${x + barW},${top + r}V${bottom}Z`;
-                  return (
-                    <path
-                      key={s.key}
-                      d={d}
-                      fill={isActive ? colors.accent : single && gradientTop ? `url(#g-${uid})` : s.color}
-                      className={onSegment ? "cursor-pointer" : undefined}
-                      onClick={(e) => {
-                        if (!onSegment) return;
-                        e.stopPropagation();
-                        onSegment(m, s.key);
-                      }}
-                    />
-                  );
-                })}
+                {segs.map((s) => (
+                  <path
+                    key={s.key}
+                    d={s.d}
+                    fill={isActive ? colors.accent : single ? `url(#g-${uid})` : s.color}
+                    className={onSegment ? "cursor-pointer" : undefined}
+                    onClick={(e) => {
+                      if (!onSegment) return;
+                      e.stopPropagation();
+                      onSegment(m, s.key);
+                    }}
+                  />
+                ))}
+                {prov && segs.map((s) => <path key={`h-${s.key}`} d={s.d} fill={`url(#hb-${uid})`} pointerEvents="none" />)}
+                {/* the lit data end */}
+                {top && barW >= 4 && (
+                  <rect x={cx(i) - barW / 2 + 2} y={top.top + 0.5} width={barW - 4} height={1.2} rx={0.6} fill="#fff" fillOpacity={hover === i ? 0.85 : 0.5} pointerEvents="none" />
+                )}
               </g>
             );
           })}
         </g>
 
-        {/* average and trend lines */}
-        {fit && <path pointerEvents="none" d={linePath(fit)} fill="none" stroke={colors.dim} strokeWidth={1} strokeDasharray="5 4" opacity={0.8} />}
-        {line && (
-          <path
-            pointerEvents="none"
-            d={linePath(line)}
-            fill="none"
-            stroke={colors.accent}
-            strokeWidth={2}
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            pathLength={1}
-            strokeDasharray={1}
-            strokeDashoffset={shown ? 0 : 1}
-            style={{ transition: reduced ? "none" : "stroke-dashoffset 1400ms cubic-bezier(.3,.6,.2,1) 300ms" }}
-            filter={`url(#glow-${uid})`}
-          />
+        {/* trend and average lines */}
+        {fit && <path pointerEvents="none" d={fit.map((v, i) => (v === null || v === undefined ? "" : `${i ? "L" : "M"}${cx(i).toFixed(1)},${y(v).toFixed(1)}`)).join("")} fill="none" stroke={colors.dim} strokeWidth={1} strokeDasharray="5 4" opacity={0.75} />}
+        {line && lineD && (
+          <g pointerEvents="none">
+            <path
+              ref={lineRef}
+              d={lineD}
+              fill="none"
+              stroke={colors.accent}
+              strokeWidth={2}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              filter={`url(#glow-${uid})`}
+              pathLength={lineDone ? undefined : 1}
+              strokeDasharray={lineDone ? undefined : 1}
+              strokeDashoffset={lineDone ? undefined : 1}
+            />
+            {/* the head riding the tip while the line draws (moved by the frame loop) */}
+            {!lineDone && (
+              <g ref={runRef} opacity={0}>
+                <circle r={8} fill={colors.accent} fillOpacity={0.22} filter={`url(#glow-${uid})`} />
+                <circle r={3.2} fill="#ffe6c4" stroke={colors.accent} strokeWidth={1.5} />
+              </g>
+            )}
+            {lineDone && lineEnd && (
+              <g transform={`translate(${lineEnd[0].toFixed(1)},${lineEnd[1].toFixed(1)})`}>
+                <circle r={6} fill={colors.accent} fillOpacity={0.35} className={reduced ? undefined : "chart-pulse"} />
+                <circle r={3.2} fill="#ffe6c4" stroke={colors.accent} strokeWidth={1.5} filter={`url(#glow-${uid})`} />
+              </g>
+            )}
+          </g>
         )}
 
-        {/* peak label */}
+        {/* peak marker */}
         {peak && totals[peakIdx]! > 0 && (
-          <text pointerEvents="none" x={Math.min(Math.max(cx(peakIdx), PAD.l + 24), PAD.l + plotW - 24)} y={y(totals[peakIdx]!) - 8} textAnchor="middle" fontSize={11} fill={colors.ink} className="num" style={{ opacity: shown ? 1 : 0, transition: "opacity 400ms 700ms" }}>
-            peak {totals[peakIdx]}
-          </text>
+          <g pointerEvents="none" style={{ opacity: on ? 1 : 0, transition: reduced ? "none" : "opacity 500ms 900ms" }}>
+            <circle cx={cx(peakIdx)} cy={y(totals[peakIdx]!) - 8} r={4.5} fill="none" stroke={colors.ink} strokeOpacity={0.6} className={reduced ? undefined : "chart-pulse chart-pulse-slow"} />
+            <circle cx={cx(peakIdx)} cy={y(totals[peakIdx]!) - 8} r={2} fill={colors.ink} />
+            <text x={Math.min(Math.max(cx(peakIdx), PAD.l + 24), PAD.l + plotW - 24)} y={y(totals[peakIdx]!) - 17} textAnchor="middle" fontSize={11} fill={colors.ink} className="num">
+              peak {totals[peakIdx]}
+            </text>
+          </g>
         )}
 
         {/* x labels */}
-        {months.map((m, i) =>
-          (n - 1 - i) % labelEvery === 0 ? (
-            <text key={m} x={Math.min(Math.max(cx(i), PAD.l + 18), PAD.l + plotW - 18)} y={base + 15} textAnchor="middle" fontSize={11} fill={colors.axis} className="num">
-              {monthLabel(m)}
-            </text>
-          ) : null,
-        )}
-
+        {monthTicks(n, labelEvery, cx, PAD.l + 18, PAD.l + plotW - 18).map(({ i, at }) => (
+          <text key={months[i]} x={at} y={base + 24} textAnchor="middle" fontSize={11} fill={hover === i ? colors.ink : colors.axis} className="num">
+            {monthLabel(months[i]!)}
+          </text>
+        ))}
       </svg>
 
       {tip !== null && (
-        <div className={`pointer-events-none absolute top-0 z-10 w-[190px] rounded-[4px] border border-line bg-panel/95 p-2.5 text-[12px] shadow-xl backdrop-blur ${tooltipClassName}`} style={{ left: tipLeft }}>
+        <div
+          className={`pointer-events-none absolute z-10 rounded-[5px] border border-line bg-[color-mix(in_oklab,var(--color-panel)_94%,transparent)] p-3 text-[12px] shadow-[0_14px_40px_rgba(0,0,0,0.55)] backdrop-blur ${tooltipClassName}`}
+          style={{ left: tipLeft, top: PAD.t - 6, width: TIP_W }}
+        >
           <div className="flex items-baseline justify-between gap-2">
             <span className="text-soft">{monthLabel(months[tip]!, true)}</span>
-            <span className="num text-[14px] font-semibold text-ink">{totals[tip]}</span>
+            <span className="num text-[18px] font-semibold leading-none text-ink">{totals[tip]}</span>
           </div>
           {!single && (
-            <ul className="mt-1.5 space-y-0.5">
+            <ul className="mt-2 space-y-1">
               {stacks
                 .map((s) => ({ s, v: s.values[tip] ?? 0 }))
                 .filter((e) => e.v > 0)
@@ -322,7 +469,7 @@ export function MonthlyColumns({
                 .map(({ s, v }) => (
                   <li key={s.key} className="flex items-center justify-between gap-2 text-dim">
                     <span className="flex min-w-0 items-center gap-1.5">
-                      <span className="inline-block size-2 shrink-0 rounded-[2px]" style={{ background: s.color }} />
+                      <span className="inline-block h-[2px] w-2.5 shrink-0 rounded-full" style={{ background: s.color }} />
                       <span className="truncate">{s.label}</span>
                     </span>
                     <span className="num text-ink">{v}</span>
@@ -330,14 +477,38 @@ export function MonthlyColumns({
                 ))}
             </ul>
           )}
+          {partsTotal > 0 && (
+            <>
+              <div className="mt-2.5 flex h-1.5 gap-[2px]" aria-hidden>
+                {parts.map(({ b, v }, k) => (
+                  <span key={b.key} className={`${k === 0 ? "rounded-l-full" : ""} ${k === parts.length - 1 ? "rounded-r-full" : ""}`} style={{ flexGrow: v, flexBasis: 0, minWidth: 2, background: b.color }} />
+                ))}
+              </div>
+              <ul className="mt-2 space-y-1">
+                {topParts.map(({ b, v }) => (
+                  <li key={b.key} className="flex items-center justify-between gap-2 text-dim">
+                    <span className="flex min-w-0 items-center gap-1.5">
+                      <span className="inline-block h-[2px] w-2.5 shrink-0 rounded-full" style={{ background: b.color }} />
+                      <span className="truncate">{b.label}</span>
+                    </span>
+                    <span className="num text-ink">{v}</span>
+                  </li>
+                ))}
+              </ul>
+              {parts.length > topParts.length && <div className="mt-1 text-[11px] text-faint">and {parts.length - topParts.length} more</div>}
+            </>
+          )}
           {line && line[tip] !== null && line[tip] !== undefined && (
-            <div className="mt-1.5 flex justify-between text-dim">
-              <span>{lineLabel}</span>
-              <span className="num text-accent">{line[tip]!.toFixed(1)}</span>
+            <div className="mt-2 flex items-center justify-between gap-2 text-dim">
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block h-[2px] w-2.5 rounded-full bg-accent" />
+                {lineLabel}
+              </span>
+              <span className="num text-soft">{line[tip]!.toFixed(1)}</span>
             </div>
           )}
-          {provIdx >= 0 && tip >= provIdx && <div className="mt-1 text-[11px] text-faint">provisional: reporting lag</div>}
-          <div className="mt-1 text-[11px] text-faint">click for the incidents</div>
+          {provIdx >= 0 && tip >= provIdx && <div className="mt-1.5 text-[11px] text-faint">provisional: reports still arriving</div>}
+          {onMonth && <div className="mt-2 border-t border-line-soft pt-1.5 text-[11px] text-faint">click for the incidents</div>}
         </div>
       )}
     </div>

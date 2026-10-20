@@ -17,7 +17,23 @@ import {
   type Headline,
   type MonthlyPoint,
 } from "./stats";
-import { CATEGORIES, INCIDENT_TYPES, SEVERITIES, TARGETS, type Category, type IncidentType, type Severity, type Target } from "./taxonomy";
+import {
+  ATLAS_TECHNIQUE_IDS,
+  CATEGORIES,
+  INCIDENT_TYPES,
+  OWASP_LLM_IDS,
+  SEVERITIES,
+  TARGETS,
+  atlasFor,
+  owaspFor,
+  type AtlasTechniqueId,
+  type Category,
+  type IncidentType,
+  type OwaspLlmId,
+  type Severity,
+  type Target,
+} from "./taxonomy";
+import { AGENTIC_SLICES, agenticSlices, isAgentTooling, stackProducts, type AgenticSlice } from "./watch";
 
 /**
  * Build-time aggregates for the dashboard. The home page used to embed a
@@ -29,8 +45,9 @@ import { CATEGORIES, INCIDENT_TYPES, SEVERITIES, TARGETS, type Category, type In
  * by type, category, severity and target for all incidents and for the
  * real-world subset, the joint counts the matrix charts draw (family by
  * severity, type by family, family by target), a day-of-month tally for the
- * calendar, plus the disclosed-vulnerability series with its product
- * breakdown. Headline numbers (lib/stats.ts headline()), the newest incidents
+ * calendar, the standards, stack and agent tallies (OWASP LLM Top 10, MITRE
+ * ATLAS, attacked products, agentic incidents), plus the
+ * disclosed-vulnerability series with its product breakdown. Headline numbers (lib/stats.ts headline()), the newest incidents
  * and the most notable ones are precomputed per basis. deriveView() turns the
  * aggregates into exactly the numbers useDashboardModel computed from rows,
  * and tests/aggregates.test.ts checks every one against a row count.
@@ -82,13 +99,22 @@ export interface Tally {
   famTarget: Partial<Record<string, number>>;
   /** Rows with a full date on this basis, by day of month ("DD"), for the calendar. */
   day: Partial<Record<string, number>>;
+  /** Per OWASP LLM entry and ATLAS technique (an incident once per entry it maps to), and how many map to any OWASP entry. */
+  owasp: Partial<Record<OwaspLlmId, number>>;
+  owaspAny: number;
+  atlas: Partial<Record<AtlasTechniqueId, number>>;
+  /** Attacks on AI per product family named (lib/watch.ts stackProducts). */
+  product: Partial<Record<string, number>>;
+  /** Agentic incidents per slice (lib/watch.ts). */
+  agentic: Partial<Record<AgenticSlice, number>>;
 }
 
-/** Disclosed vulnerabilities in one month; products as [index into Aggregates.products, count]. */
+/** Disclosed vulnerabilities in one month; products as [index into Aggregates.products, count]; agent: those in agent tooling. */
 export interface DisclosedTally {
   n: number;
   sources: number;
   product: [number, number][];
+  agent: number;
 }
 
 export interface Cell {
@@ -127,7 +153,7 @@ export interface Aggregates {
 }
 
 function emptyTally(): Tally {
-  return { n: 0, sources: 0, type: {}, category: {}, severity: {}, target: {}, famSev: {}, typeFam: {}, famTarget: {}, day: {} };
+  return { n: 0, sources: 0, type: {}, category: {}, severity: {}, target: {}, famSev: {}, typeFam: {}, famTarget: {}, day: {}, owasp: {}, owaspAny: 0, atlas: {}, product: {}, agentic: {} };
 }
 
 function bump<K extends string>(rec: Partial<Record<K, number>>, key: K, by = 1) {
@@ -149,12 +175,19 @@ function addRow(t: Tally, r: CompactRow, d: string) {
     bump(t.famTarget, `${fam}|${target}`);
   }
   if (d.length === 10) bump(t.day, d.slice(8, 10));
+  const owasp = owaspFor(r);
+  for (const id of owasp) bump(t.owasp, id);
+  if (owasp.length) t.owaspAny += 1;
+  for (const id of atlasFor(r)) bump(t.atlas, id);
+  for (const p of stackProducts(r)) bump(t.product, p);
+  for (const slice of agenticSlices(r)) bump(t.agentic, slice);
 }
 
 interface DisclosedBuilder {
   n: number;
   sources: number;
   product: Map<number, number>;
+  agent: number;
 }
 interface CellBuilder {
   all?: Tally;
@@ -167,9 +200,10 @@ interface MonthBuilder extends CellBuilder {
 
 function addToCell(cell: CellBuilder, r: CompactRow, d: string, productIndex: (label: string) => number) {
   if (r.disclosed) {
-    const dt = (cell.disclosed ??= { n: 0, sources: 0, product: new Map() });
+    const dt = (cell.disclosed ??= { n: 0, sources: 0, product: new Map(), agent: 0 });
     dt.n += 1;
     dt.sources += r.source_count;
+    if (isAgentTooling(r.product)) dt.agent += 1;
     if (r.product) dt.product.set(productIndex(r.product), (dt.product.get(productIndex(r.product)) ?? 0) + 1);
     return;
   }
@@ -181,7 +215,7 @@ function finishCell(c: CellBuilder): Cell {
   const out: Cell = {};
   if (c.all) out.all = c.all;
   if (c.real) out.real = c.real;
-  if (c.disclosed) out.disclosed = { n: c.disclosed.n, sources: c.disclosed.sources, product: [...c.disclosed.product.entries()].sort((a, b) => a[0] - b[0]) };
+  if (c.disclosed) out.disclosed = { n: c.disclosed.n, sources: c.disclosed.sources, product: [...c.disclosed.product.entries()].sort((a, b) => a[0] - b[0]), agent: c.disclosed.agent };
   return out;
 }
 
@@ -326,6 +360,11 @@ function addTally(acc: Tally, t: Tally | undefined) {
   addSparse(acc.famSev, t.famSev);
   addSparse(acc.typeFam, t.typeFam);
   addSparse(acc.famTarget, t.famTarget);
+  addSparse(acc.owasp, t.owasp);
+  acc.owaspAny += t.owaspAny;
+  addSparse(acc.atlas, t.atlas);
+  addSparse(acc.product, t.product);
+  addSparse(acc.agentic, t.agentic);
 }
 
 function toMonthlyPoint(month: string, t: Tally | undefined): MonthlyPoint {
@@ -388,6 +427,20 @@ export interface DashboardView {
   disclosedProducts: CountRow[];
   disclosedBusiest: { day: string; count: number } | null;
   latestRows: CompactRow[];
+  /** OWASP LLM Top 10 in list order, with the count of incidents mapped to any entry; the window before, or null for the full span. */
+  owasp: CountRow<OwaspLlmId>[];
+  owaspAny: number;
+  priorOwasp: Record<OwaspLlmId, number> | null;
+  /** ATLAS techniques, most incidents first; the window before, or null. */
+  atlas: CountRow<AtlasTechniqueId>[];
+  priorAtlas: Record<AtlasTechniqueId, number> | null;
+  /** Attacked product families, most attacks first, with their disclosed vulnerabilities in the window (by first product, like disclosedProducts). */
+  stack: { key: string; count: number; cves: number }[];
+  /** Agentic incidents per slice, the window before (or null), the "all" slice per month, and disclosed vulnerabilities in agent tooling. */
+  agentic: Record<AgenticSlice, number>;
+  priorAgentic: Record<AgenticSlice, number> | null;
+  agenticSeries: number[];
+  disclosedAgent: number;
 }
 
 function cellsBetween(agg: Aggregates, field: DateField, from: string, to: string): [string, MonthCell | undefined][] {
@@ -433,6 +486,7 @@ export function deriveView(agg: Aggregates, opts: ViewOptions): DashboardView {
   for (const [m, c] of cells) for (const [dd, n] of Object.entries(c?.[basis]?.day ?? {})) if (n) dayCounts[`${m}-${dd}`] = n;
 
   let disclosedCount = 0;
+  let disclosedAgent = 0;
   const productCounts = new Map<number, number>();
   const disclosedSeries: { month: string; total: number }[] = [];
   for (const [m, c] of cells) {
@@ -440,9 +494,11 @@ export function deriveView(agg: Aggregates, opts: ViewOptions): DashboardView {
     for (const d of [c?.disclosed, c?.yearOnly?.disclosed]) {
       if (!d) continue;
       disclosedCount += d.n;
+      disclosedAgent += d.agent;
       for (const [i, n] of d.product) productCounts.set(i, (productCounts.get(i) ?? 0) + n);
     }
   }
+  const cvesByLabel = new Map([...productCounts.entries()].map(([i, n]) => [agg.products[i]!, n]));
 
   let realInWindow = 0;
   let allInWindow = 0;
@@ -474,6 +530,11 @@ export function deriveView(agg: Aggregates, opts: ViewOptions): DashboardView {
   }
   notable.sort(notableOrder);
 
+  const owaspOf = (t: Tally) => Object.fromEntries(OWASP_LLM_IDS.map((id) => [id, t.owasp[id] ?? 0])) as Record<OwaspLlmId, number>;
+  const atlasOf = (t: Tally) => Object.fromEntries(ATLAS_TECHNIQUE_IDS.map((id) => [id, t.atlas[id] ?? 0])) as Record<AtlasTechniqueId, number>;
+  const agenticOf = (t: Tally) => Object.fromEntries(AGENTIC_SLICES.map((k) => [k, t.agentic[k] ?? 0])) as Record<AgenticSlice, number>;
+  const atlasNow = atlasOf(inWindow);
+
   return {
     from,
     to,
@@ -503,5 +564,18 @@ export function deriveView(agg: Aggregates, opts: ViewOptions): DashboardView {
       .sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)),
     disclosedBusiest: agg.busiest[field][win],
     latestRows: agg.latest[basis],
+    owasp: OWASP_LLM_IDS.map((id) => ({ key: id, count: inWindow.owasp[id] ?? 0 })),
+    owaspAny: inWindow.owaspAny,
+    priorOwasp: priorTally ? owaspOf(priorTally) : null,
+    atlas: ATLAS_TECHNIQUE_IDS.map((id) => ({ key: id, count: atlasNow[id] })).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)),
+    priorAtlas: priorTally ? atlasOf(priorTally) : null,
+    stack: Object.entries(inWindow.product)
+      .map(([key, n]) => ({ key, count: n ?? 0, cves: cvesByLabel.get(key) ?? 0 }))
+      .filter((p) => p.count > 0)
+      .sort((a, b) => b.count - a.count || b.cves - a.cves || a.key.localeCompare(b.key)),
+    agentic: agenticOf(inWindow),
+    priorAgentic: priorTally ? agenticOf(priorTally) : null,
+    agenticSeries: cells.map(([, c]) => c?.[basis]?.agentic.all ?? 0),
+    disclosedAgent,
   };
 }

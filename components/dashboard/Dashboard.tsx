@@ -1,64 +1,55 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
-import { AsciiField } from "@/components/fx/AsciiField";
+import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { AsciiForm } from "@/components/fx/AsciiForm";
 import { CountUp } from "@/components/fx/CountUp";
 import { Ago, NextSweep } from "@/components/fx/NextSweep";
 import { Reveal } from "@/components/fx/Reveal";
-import { agentSwarm } from "@/components/fx/scenes/agentSwarm";
+import { FeedTerminal } from "@/components/fx/glyph/FeedTerminal";
+import { GlyphField } from "@/components/fx/glyph/GlyphField";
+import { circuitWorld } from "@/components/fx/glyph/scenes/circuitWorld";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { BarRows } from "@/components/charts/BarRows";
 import { CalendarHeatmap } from "@/components/charts/CalendarHeatmap";
 import { CumulativeTimeline } from "@/components/charts/CumulativeTimeline";
+import { FamilyDumbbell } from "@/components/charts/FamilyDumbbell";
 import { FamilyRadar } from "@/components/charts/FamilyRadar";
-import { FamilySlope } from "@/components/charts/FamilySlope";
-import { FamilyStream } from "@/components/charts/FamilyStream";
+import { FamilyRows } from "@/components/charts/FamilyRows";
 import { FlowSankey } from "@/components/charts/FlowSankey";
+import { HarmBars } from "@/components/charts/HarmBars";
 import { MonthlyColumns, type ColumnColors } from "@/components/charts/MonthlyColumns";
-import { SeverityHeatmap } from "@/components/charts/SeverityHeatmap";
-import { TargetBubbles } from "@/components/charts/TargetBubbles";
+import { RankRows } from "@/components/charts/RankRows";
+import { TargetBars } from "@/components/charts/TargetBars";
 import { RadarPanel } from "@/components/panels/RadarPanel";
 import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import { Segmented } from "@/components/ui/Segmented";
 import { StatTile } from "@/components/ui/StatTile";
-import type { CompactRow, DashboardData } from "@/lib/dashboard";
-import { FAMILIES, type Family } from "@/lib/families";
+import type { Basis, CompactRow, DashboardData } from "@/lib/dashboard";
+import { FAMILIES, FAMILY_META, type Family } from "@/lib/families";
+import { productSlug } from "@/lib/products";
 import { formatPct, monthLabel } from "@/lib/format";
 import { NAV, WINDOW_CHOICES } from "@/lib/site";
-import { dateOf, monthKey, pctChange, shiftMonth } from "@/lib/stats";
-import type { IncidentType, Severity, Target } from "@/lib/taxonomy";
+import { dateOf, monthKey, monthRange, pctChange, shiftMonth } from "@/lib/stats";
+import { ATLAS_RELEASE, ATLAS_TECHNIQUES, OWASP_LLM_EDITION, OWASP_LLM_META, atlasUrl, type IncidentType, type Severity, type Target } from "@/lib/taxonomy";
+import { AGENTIC_META, AGENTIC_SLICES } from "@/lib/watch";
 import { THEME as T } from "@/lib/theme";
 import { ReportDrawer } from "./ReportDrawer";
 import { useDashboardModel, type WindowKey } from "./useDashboardModel";
 
-/** Agent-swarm tones: structure, beam-lit, hot (packets, pinged agents), faint (rings, dust), agents. Decorative, not data. */
-const SWARM_PALETTE = ["#4d6ca3", "#ffb35c", "#fff1db", "#56607a", "#7fdcff"];
 /** Disclosed vulnerabilities: a neutral slate, apart from the incident blue (single series, contrast 4.9:1 on the surface). */
 const DISCLOSED_COLOR = "#6b7fa8";
-const NC: ColumnColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional };
+const NC: ColumnColors = { grid: T.grid, axis: T.axis, ink: T.ink, dim: T.dim, accent: T.accent, provisional: T.provisional, surface: T.surface };
 /** The trend panel's three views of the same months. */
 type TrendView = "columns" | "timeline" | "calendar";
 
-/** A readout line in the hero's terminal panel: [ ok ] label ........ value  note. A count opens its incidents. */
-function Readout({ tag, label, value, note, onOpen, ariaLabel }: { tag: "ok" | "--"; label: string; value: number | ReactNode; note?: ReactNode; onOpen?: () => void; ariaLabel?: string }) {
-  const shown = typeof value === "number" ? <CountUp value={value} /> : value;
+/** A count in the hero's line under its headline number: a dotted underline, opening its incidents. */
+function HeroCount({ value, onOpen, ariaLabel }: { value: number; onOpen: () => void; ariaLabel: string }) {
   return (
-    <div className="flex items-baseline gap-2 whitespace-nowrap">
-      <span className={tag === "ok" ? "text-accent" : "text-faint"}>[ {tag} ]</span>
-      <span className="text-soft">{label}</span>
-      <span aria-hidden className="leader">{".".repeat(96)}</span>
-      {onOpen ? (
-        <button type="button" onClick={onOpen} aria-label={ariaLabel ?? `${label}: open the list`} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent hover:decoration-[color:var(--color-accent)]">
-          {shown}
-        </button>
-      ) : (
-        <span className="num text-ink">{shown}</span>
-      )}
-      {note && <span className="hidden text-[12px] text-dim sm:inline">{note}</span>}
-    </div>
+    <button type="button" onClick={onOpen} aria-label={ariaLabel} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent hover:decoration-[color:var(--color-accent)]">
+      <CountUp value={value} />
+    </button>
   );
 }
 
@@ -71,12 +62,34 @@ function Section({ id, n, kicker, title, lede, children }: { id?: string; n: str
             <span className="text-accent">{n}</span> {kicker}
           </div>
           <AsciiForm as="h2" text={title} onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
-          {lede && <p className="max-w-3xl text-[15px] leading-relaxed text-soft">{lede}</p>}
+          {lede && <p className="max-w-5xl text-[15px] leading-relaxed text-soft">{lede}</p>}
         </header>
         {children}
       </section>
     </Reveal>
   );
+}
+
+/**
+ * A chart panel's heading: the title, then one line on how to read the chart.
+ * The line keeps a two-line height from md up, so panels side by side start
+ * their charts level; `short` panels, whose notes all fit one line, keep one.
+ */
+function PanelHead({ title, note, aside, short = false }: { title: string; note?: ReactNode; aside?: ReactNode; short?: boolean }) {
+  return (
+    <header className="space-y-1.5">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h3 className="text-[16px] font-medium leading-snug text-ink">{title}</h3>
+        {aside}
+      </div>
+      {note && <p className={`text-[13px] leading-snug text-dim ${short ? "" : "md:min-h-[2lh]"}`}>{note}</p>}
+    </header>
+  );
+}
+
+/** A line sample for a legend in running text: solid (this window) or dashed (the window before). */
+function LineSwatch({ dashed = false }: { dashed?: boolean }) {
+  return <span aria-hidden className={`mx-1 inline-block w-4 -translate-y-[3px] border-t-2 ${dashed ? "border-dashed border-dim" : "border-accent"}`} />;
 }
 
 /** Scroll progress over the hero: drives its fade (CSS --p) and pauses its animation once covered. */
@@ -113,9 +126,11 @@ function useHeroFade(ref: RefObject<HTMLDivElement | null>) {
 }
 
 /**
- * The dashboard: a neural-sweep ASCII hero that fades as the content slides
- * over it, then the trend, families, targets/types/severity, radar context and
- * the latest log. Every count and bar opens its incidents in a side drawer.
+ * The dashboard: a hero (the circuit-world banner, an armoured chip of the
+ * company's AI systems under attack, with the threat-feed terminal) that
+ * fades as the content slides over it, then the trend, families,
+ * targets/types/severity, the standards and agentic panels and the latest log.
+ * Every count and bar opens its incidents in a side drawer.
  */
 export function Dashboard({ data }: { data: DashboardData }) {
   const m = useDashboardModel(data);
@@ -131,11 +146,38 @@ export function Dashboard({ data }: { data: DashboardData }) {
   const monthOf = (r: CompactRow) => monthKey(dateOf(r, m.field));
   const today = data.now.slice(0, 10);
   const calendarFrom = shiftMonth(m.to, -11);
+  const dayOfMonth = Number(today.slice(8, 10));
+  const daysInMonth = new Date(Date.UTC(Number(today.slice(0, 4)), Number(today.slice(5, 7)), 0)).getUTCDate();
+
+  // the stat tiles' sparklines, from the monthly aggregates (month-placed incidents, as the headline month counts are)
+  const { agg } = data;
+  const { field, basis, series, prior } = m;
+  const thisMonthKey = m.h.thisMonthKey;
+  const tiles = useMemo(() => {
+    const cells = agg.months[field];
+    const count = (k: string, b: Basis = basis) => cells[k]?.[b]?.n ?? 0;
+    const running = (ks: string[]) => {
+      let s = 0;
+      return ks.map((k) => (s += count(k)));
+    };
+    const last12 = monthRange(shiftMonth(thisMonthKey, -11), thisMonthKey);
+    const year = Number(thisMonthKey.slice(0, 4));
+    return {
+      monthly: last12.map((k) => count(k)),
+      /** Each month's trailing-12 total, ending at the tile's value. */
+      rolling: last12.map((k) => monthRange(shiftMonth(k, -11), k).reduce((s, j) => s + count(j), 0)),
+      ytd: running(monthRange(`${year}-01`, thisMonthKey)),
+      lastYear: running(monthRange(`${year - 1}-01`, `${year - 1}-12`)),
+      real: series.map((p) => cells[p.month]?.real?.n ?? 0),
+      /** Real-world incidents in the window before (window membership, year-only dates included, like realInWindow). */
+      priorReal: prior ? monthRange(prior.from, prior.to).reduce((s, k) => s + (cells[k]?.real?.n ?? 0) + (cells[k]?.yearOnly?.real?.n ?? 0), 0) : null,
+    };
+  }, [agg, field, basis, thisMonthKey, series, prior]);
 
   return (
     <div className="min-h-dvh">
-      {/* hero: sticky, fades and recedes as the content slides over it */}
-      <div ref={heroRef} className="hero-fade sticky top-0 z-0">
+      {/* hero: on desktop sticky, fading and receding as the content slides over it; below lg it scrolls away normally */}
+      <div ref={heroRef} className="hero-fade relative z-0 lg:sticky lg:top-0">
         <header className="relative z-20">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4">
             <Wordmark />
@@ -158,12 +200,21 @@ export function Dashboard({ data }: { data: DashboardData }) {
           </nav>
         </header>
         <div className="relative mx-auto max-w-7xl px-4">
-          <div aria-hidden className="hero-field relative h-64 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
-            <AsciiField scene={() => agentSwarm({ origin: [0.7, 0.5] })} palette={SWARM_PALETTE} fontSize={12} running={!heroGone} label="A radar beam sweeping a swarm of AI agents calling tools and reporting back" className="h-full w-full" />
+          {/* the banner: a band above the text on phones, behind it on wide screens */}
+          <div aria-hidden className="hero-field relative h-72 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
+            <GlyphField
+              scene={() => circuitWorld({ intel: data.intel })}
+              running={!heroGone}
+              label="A camera journey over a chip package whose districts are AI systems, where defender agents catch red fault packets from the last 90 days of attacks and scrub infected blocks clean"
+              className="h-full w-full"
+            />
           </div>
-          <div className="relative z-10 flex items-center pb-20 pt-2 lg:min-h-[min(540px,calc(100svh-4rem))]">
+          <div className="relative z-10 flex items-center pb-20 pt-2 lg:min-h-[min(640px,calc(100svh-4rem))]">
             <div className="min-w-0 max-w-xl space-y-5">
-              <AsciiForm as="h1" text="Every AI security incident, counted once." duration={2600} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
+              <AsciiForm as="h1" text="Threat intelligence for the AI era." duration={2600} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
+              <p className="max-w-xl text-[15px] leading-relaxed text-soft">
+                The live, source-verified record of attacks on and with AI, from prompt injection and agent hijacking to model theft and deepfake fraud. Every incident counted once, so security teams can see what is hitting now and what is rising next.
+              </p>
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                 <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group" aria-label={`${m.count} incidents in the ${m.windowLabel}, open the list`}>
                   <CountUp value={m.count} className="text-6xl font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current sm:text-7xl" />
@@ -177,28 +228,17 @@ export function Dashboard({ data }: { data: DashboardData }) {
                   )}
                 </span>
               </div>
-              {/* the readout: the hero's numbers as a terminal log, every count opening its incidents */}
-              <div className="tty font-mono text-[13px] sm:text-[13.5px]">
-                <span className="tty-title">┤ observatory · live ├</span>
-                <div className="space-y-1.5">
-                  <div className="truncate text-dim">
-                    <span className="text-accent">$</span> radar --set {m.basis} --by {m.field === "incident_date" ? "incident-date" : "first-reported"} --window {m.win}
-                  </div>
-                  <Readout tag="ok" label="real-world" value={m.realInWindow} note="severity 3–4 · confirmed exploitation or loss" onOpen={() => m.setSelection({ kind: "real" })} ariaLabel={`${m.realInWindow} real-world incidents`} />
-                  <Readout tag="ok" label="sources" value={m.sourcesInWindow} note="deduplicated · one event, counted once" onOpen={() => m.setSelection({ kind: "window" })} ariaLabel="all incidents in view" />
-                  <Readout tag="--" label="disclosed CVEs" value={m.disclosedCount} note="no confirmed exploitation · tracked apart" onOpen={() => m.setSelection({ kind: "disclosed" })} ariaLabel={`${m.disclosedCount} disclosed vulnerabilities`} />
-                  <Readout
-                    tag="ok"
-                    label="last sweep"
-                    value={<Ago iso={data.lastUpdated} />}
-                    note={
-                      <>
-                        next in <NextSweep className="text-soft" />
-                      </>
-                    }
-                  />
-                </div>
+              {/* the counts behind the headline number, each opening its incidents */}
+              <div className="space-y-1">
+                <p className="text-[14px] leading-relaxed text-soft">
+                  <HeroCount value={m.realInWindow} onOpen={() => m.setSelection({ kind: "real" })} ariaLabel={`${m.realInWindow} real-world incidents`} /> real-world (severity 3–4) ·{" "}
+                  <HeroCount value={m.disclosedCount} onOpen={() => m.setSelection({ kind: "disclosed" })} ariaLabel={`${m.disclosedCount} disclosed vulnerabilities`} /> disclosed CVEs, tracked apart
+                </p>
+                <p className="font-mono text-[12px] text-dim">
+                  last sweep <Ago iso={data.lastUpdated} className="text-soft" /> · next in <NextSweep className="text-soft" />
+                </p>
               </div>
+              <FeedTerminal intel={data.intel} className="w-full max-w-[560px]" />
               <div className="flex flex-wrap gap-3">
                 <Link href="/incidents" className="glass px-4 py-2 text-[13px] text-ink hover:border-accent">
                   Explore incidents →
@@ -213,8 +253,8 @@ export function Dashboard({ data }: { data: DashboardData }) {
       </div>
 
       {/* content slides up over the hero */}
-      <div className="hero-cover relative z-10 -mt-14 bg-ground">
-        <div className="z-30 border-y border-line-soft sm:sticky sm:top-0 bg-[color-mix(in_oklab,var(--color-ground)_78%,transparent)] backdrop-blur-md">
+      <div className="hero-cover relative z-10 bg-ground lg:-mt-14">
+        <div className="z-30 border-y border-line-soft bg-ground sm:sticky sm:top-0 lg:bg-[color-mix(in_oklab,var(--color-ground)_78%,transparent)] lg:backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3">
             <Segmented
               label="Incident set"
@@ -250,9 +290,9 @@ export function Dashboard({ data }: { data: DashboardData }) {
             n="01"
             kicker="The trend"
             title={m.basis === "real" ? "Real-world incidents, month by month" : "Incidents, month by month"}
-            lede={`By ${m.fieldLabel}, ${monthLabel(m.from, true)} to ${monthLabel(m.to, true)}. Amber: three-month average. Dashed: linear trend (${m.slope >= 0 ? "+" : ""}${m.slope.toFixed(2)} a month). The bracketed months are provisional.`}
+            lede={`By ${m.fieldLabel}, ${monthLabel(m.from, true)} to ${monthLabel(m.to, true)}, a trend of ${m.slope >= 0 ? "+" : "−"}${Math.abs(m.slope).toFixed(2)} a month. The bracketed months are provisional.`}
           >
-            <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_352px]">
+            <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_400px]">
               <div className="glass min-w-0 space-y-3 p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <Segmented
@@ -276,6 +316,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                     stacks={[{ key: "total", label: "Incidents", color: T.bar, values: m.trend.map((p) => p.total) }]}
                     line={m.trend.map((p) => p.ma)}
                     fit={m.trend.map((p) => p.fit)}
+                    breakdown={famShown.map((f) => ({ key: f, label: FAMILY_META[f].short, color: T.families[f], values: m.fam.map((p) => p.values[f]) }))}
                     provisionalFrom={m.h.provisionalFrom}
                     height={340}
                     colors={NC}
@@ -307,155 +348,346 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 )}
               </div>
               <div className="grid grid-cols-2 gap-3">
+                {/* large tiles, one fixed layout: label, value and change, unit, the trend to the edges, its span at the foot; the comparisons live in the chips' tooltips */}
                 <StatTile
-                  className="glass p-4"
+                  className="glass"
+                  size="lg"
                   label={`${monthLabel(m.h.thisMonthKey)} so far`}
                   value={m.h.thisMonth}
+                  unit={`day ${dayOfMonth} of ${daysInMonth}`}
                   delta={m.h.monthDeltaPct}
+                  deltaTitle={`against all of ${monthLabel(m.h.lastMonthKey, true)} (${m.h.lastMonth})`}
                   onValue={() => m.setSelection(m.picks.thisMonth)}
-                  compareValue={m.h.lastMonth}
-                  compareText={`in ${monthLabel(m.h.lastMonthKey)}`}
-                  onCompare={() => m.setSelection(m.picks.lastMonth)}
+                  spark={tiles.monthly}
+                  sparkNote="monthly"
+                  axis={[monthLabel(shiftMonth(thisMonthKey, -11)), monthLabel(thisMonthKey)]}
                 />
                 <StatTile
-                  className="glass p-4"
+                  className="glass"
+                  size="lg"
                   label="Trailing 12 months"
                   value={m.h.trailing12}
+                  unit="sum of 12 months"
                   delta={m.h.trailingDeltaPct}
+                  deltaTitle={`against the 12 months before (${m.h.prior12})`}
                   onValue={() => m.setSelection(m.picks.trailing12)}
-                  compareValue={m.h.prior12}
-                  compareText="the 12 before"
-                  onCompare={() => m.setSelection(m.picks.prior12)}
+                  spark={tiles.rolling}
+                  sparkNote="rolling"
+                  axis={[monthLabel(shiftMonth(thisMonthKey, -11)), monthLabel(thisMonthKey)]}
                 />
                 <StatTile
-                  className="glass p-4"
+                  className="glass"
+                  size="lg"
                   label="Year to date"
                   value={m.h.yearToDate}
+                  unit={
+                    <>
+                      against <span aria-hidden className="mx-0.5 inline-block w-4 -translate-y-[3px] border-t-[1.5px] border-dashed border-dim" /> {Number(thisMonthKey.slice(0, 4)) - 1}
+                    </>
+                  }
                   delta={m.h.yoyPct}
+                  deltaTitle={`against the same point last year (${m.h.lastYearSamePeriod})`}
                   onValue={() => m.setSelection(m.picks.ytd)}
-                  compareValue={m.h.lastYearSamePeriod}
-                  compareText="same point last year"
-                  onCompare={() => m.setSelection(m.picks.lastYtd)}
+                  spark={tiles.ytd}
+                  sparkCompare={tiles.lastYear}
+                  sparkSlots={12}
+                  sparkNote="running"
+                  axis={[monthLabel(`${thisMonthKey.slice(0, 4)}-01`), monthLabel(`${thisMonthKey.slice(0, 4)}-12`)]}
                 />
-                <StatTile className="glass p-4" label="Real-world in view" value={m.realInWindow} accent onValue={() => m.setSelection({ kind: "real" })} compare="severity 3–4" />
+                <StatTile
+                  className="glass"
+                  size="lg"
+                  label="Real-world in view"
+                  value={m.realInWindow}
+                  unit="severity 3–4"
+                  accent
+                  delta={tiles.priorReal === null ? undefined : pctChange(m.realInWindow, tiles.priorReal)}
+                  deltaTitle={`against the ${priorLabel} (${tiles.priorReal ?? 0}); ${m.count > 0 ? Math.round((m.realInWindow / m.count) * 100) : 0}% of the view`}
+                  onValue={() => m.setSelection({ kind: "real" })}
+                  spark={tiles.real}
+                  sparkColor={T.severity[3]}
+                  sparkNote="monthly"
+                  axis={[monthLabel(m.from), monthLabel(m.to)]}
+                />
               </div>
             </div>
           </Section>
 
+          <Section n="02" kicker="Latest" title="Just reported" lede="The six newest incidents. Each opens with every source, its classification and related incidents.">
+            <ol className="glass divide-y divide-line-soft">
+              {m.latestRows.slice(0, 6).map((r) => (
+                <li key={r.id}>
+                  <Link href={`/incidents/${r.slug}`} className="group grid items-center gap-x-4 gap-y-1.5 px-4 py-2.5 transition-colors hover:bg-panel-2 sm:grid-cols-[6.5rem_minmax(0,1fr)_auto]">
+                    <span className="num text-[12px] text-dim">{r.first_reported}</span>
+                    <span className="truncate text-[14px] text-ink group-hover:text-accent">{r.title}</span>
+                    <span className="flex flex-wrap items-center gap-1.5">
+                      <SeverityBadge severity={r.severity} />
+                      {r.categories[0] && <CategoryBadge category={r.categories[0]} />}
+                      <span className="num text-[11px] text-faint">{r.source_count} src</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            <Link href="/incidents" className="label inline-block hover:text-ink">
+              all incidents →
+            </Link>
+          </Section>
+
           <Section
-            n="02"
+            n="03"
             kicker="What kind"
             title="Seven families of incident"
-            lede="The stream is the same months as above, split into families: its height is the volume, its bands are the mix. Beside it, each family now against the window before. Hover a band for the month, click it for the incidents; the legend counts open each family."
+            lede="Each family's share, month-by-month shape and change against the window before. Every count and month opens its incidents."
           >
-            <div className="grid gap-3 xl:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
-              <div className="glass min-w-0 p-4 sm:p-5">
-                <FamilyStream
-                  data={m.fam}
+            <div className="grid gap-3 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead
+                  title="The families, largest first"
+                  note={m.prior ? `Share of the window, the months on each family's own scale, the count and its change on the ${priorLabel}.` : "Share of the window, the months on each family's own scale and the count. Pick 12, 24 or 36 months to see the change."}
+                />
+                <FamilyRows
+                  families={famShown}
                   totals={famTotals}
+                  prior={m.priorFamilies}
+                  series={m.fam}
                   theme={T}
-                  provisionalFrom={m.h.provisionalFrom}
-                  height={300}
-                  activeFamily={sel?.kind === "family" ? sel.family : sel?.kind === "month-family" ? sel.family : null}
+                  priorLabel={`the ${priorLabel}`}
+                  active={sel?.kind === "family" ? sel.family : sel?.kind === "month-family" ? sel.family : null}
                   onFamily={(family) => m.setSelection({ kind: "family", family })}
                   onMonth={(month, family) => m.setSelection({ kind: "month-family", month, family })}
-                  label="Incidents per month by family, as a stream"
                 />
               </div>
-              <div className="glass min-w-0 space-y-2 p-4 sm:p-5">
-                <h3 className="text-[15px] font-medium">Movers</h3>
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead title="Movers" note={m.prior ? `Largest change first: where each family stood in the ${priorLabel}, and where it stands now.` : undefined} />
                 {m.prior && m.priorFamilies ? (
-                  <FamilySlope
+                  <FamilyDumbbell
                     rows={famShown.map((f) => ({ key: f, now: famTotals[f], prior: m.priorFamilies![f] }))}
                     theme={T}
                     priorLabel={priorLabel}
                     nowLabel={nowLabel}
-                    height={300}
                     active={sel?.kind === "family" ? sel.family : null}
                     onNow={(family) => m.setSelection({ kind: "family", family })}
                     onPrior={(family) => m.setSelection({ kind: "family-range", family, from: m.prior!.from, to: m.prior!.to, label: priorLabel })}
                     label="Each family's count in the window before against now"
                   />
                 ) : (
-                  <p className="text-[13px] leading-relaxed text-dim">Pick a 12, 24 or 36 month window to compare each family with the window before it.</p>
+                  <p className="text-[14px] leading-relaxed text-dim">Pick a 12, 24 or 36 month window to compare each family with the window before it.</p>
                 )}
               </div>
             </div>
           </Section>
 
-          <Section n="03" kicker="Who and how bad" title="Shape, severity, targets" lede="The radar is the window's shape against the window before. The heatmap is where each family lands on the severity scale, from research demonstrations to confirmed real-world loss. The bubbles are who is hit by what, and the flow below follows every incident from attack on AI or by AI, through its family, onto its targets.">
-            <div className="grid gap-3 lg:grid-cols-3">
-              <div className="glass min-w-0 space-y-2 p-5">
-                <h3 className="text-[15px] font-medium">The shape of the threat</h3>
-                <FamilyRadar
-                  families={famShown}
-                  now={famTotals}
-                  prior={m.priorFamilies}
-                  theme={T}
-                  nowLabel={nowLabel}
-                  priorLabel={priorLabel}
-                  active={sel?.kind === "family" ? sel.family : null}
-                  onNow={(family) => m.setSelection({ kind: "family", family })}
-                  onPrior={(family) => m.prior && m.setSelection({ kind: "family-range", family, from: m.prior.from, to: m.prior.to, label: priorLabel })}
-                  label="Families on a radar chart, this window against the window before"
+          <Section
+            n="04"
+            kicker="Who and how bad"
+            title="Shape, severity, targets"
+            lede="Which families dominate, how much harm each has done and who they hit. Every count and bar opens its incidents."
+          >
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)]">
+              <div className="glass flex min-w-0 flex-col gap-4 p-4 sm:p-5">
+                <PanelHead
+                  title="The shape of the threat"
+                  note={
+                    m.prior ? (
+                      <>
+                        <LineSwatch />
+                        {nowLabel} <LineSwatch dashed />
+                        {priorLabel}. Square-root scale, so the small families still show.
+                      </>
+                    ) : (
+                      <>
+                        <LineSwatch />
+                        all time. Square-root scale, so the small families still show.
+                      </>
+                    )
+                  }
                 />
-                <p className="text-[12px] text-dim">{m.prior ? `Solid: ${nowLabel}. Dashed: the ${priorLabel}.` : "Solid: all time. Pick a shorter window to compare it with the one before."}</p>
+                <div className="flex flex-1 items-center">
+                  <FamilyRadar
+                    families={famShown}
+                    now={famTotals}
+                    prior={m.priorFamilies}
+                    theme={T}
+                    nowLabel={nowLabel}
+                    priorLabel={priorLabel}
+                    active={sel?.kind === "family" ? sel.family : null}
+                    onNow={(family) => m.setSelection({ kind: "family", family })}
+                    onPrior={(family) => m.prior && m.setSelection({ kind: "family-range", family, from: m.prior.from, to: m.prior.to, label: priorLabel })}
+                    label="Families on a radar chart, this window against the window before, on a square-root scale"
+                  />
+                </div>
               </div>
-              <div className="glass min-w-0 space-y-3 p-5">
-                <h3 className="text-[15px] font-medium">How bad, by family</h3>
-                <SeverityHeatmap
+              <div className="glass flex min-w-0 flex-col gap-4 p-4 sm:p-5">
+                <PanelHead title="How bad, by family" note="Bar length is the count; the % did harm (severity 3–4). Disclosed: a flaw reported as news." />
+                <HarmBars
                   families={famShown}
                   counts={m.famSev}
                   theme={T}
                   active={sel?.kind === "family-severity" ? { family: sel.family, severity: sel.severity } : null}
-                  onCell={(family, severity) => m.setSelection({ kind: "family-severity", family, severity })}
+                  onSegment={(family, severity) => m.setSelection({ kind: "family-severity", family, severity })}
                   onFamily={(family) => m.setSelection({ kind: "family", family })}
                   onSeverity={(severity: Severity) => m.setSelection({ kind: "severity", severity })}
                 />
-                <p className="text-[12px] text-dim">Severity 2 here means a flaw that was reported as news. CVEs with no confirmed exploitation are tracked separately below.</p>
               </div>
-              <div className="glass min-w-0 space-y-3 p-5">
-                <h3 className="text-[15px] font-medium">Who is hit, by what</h3>
-                <TargetBubbles
+              <div className="glass flex min-w-0 flex-col gap-4 p-4 sm:p-5 md:col-span-2 xl:col-span-1">
+                <PanelHead title="Who is hit, by what" note="Incidents naming each target (one can name several), and the families that hit it most." />
+                <TargetBars
                   families={famShown}
-                  targets={m.targets.filter((t) => t.count > 0).slice(0, 10)}
+                  targets={m.targets.filter((t) => t.count > 0)}
                   counts={m.famTarget}
-                  familyTotals={famTotals}
                   theme={T}
                   active={sel?.kind === "family-target" ? { family: sel.family, target: sel.target } : null}
-                  onCell={(family, target) => m.setSelection({ kind: "family-target", family, target })}
                   onTarget={(target: Target) => m.setSelection({ kind: "target", target })}
-                  onFamily={(family) => m.setSelection({ kind: "family", family })}
+                  onSegment={(family, target) => m.setSelection({ kind: "family-target", family, target })}
+                  rows={8}
                 />
-                <p className="text-[12px] text-dim">An incident can name several targets.</p>
               </div>
             </div>
-            <div className="glass min-w-0 space-y-2 p-4 sm:p-5">
-              <h3 className="text-[15px] font-medium">The flow: on AI or by AI, into a family, onto its targets</h3>
-              <FlowSankey
-                types={m.types}
-                families={famShown.map((f) => ({ key: f, count: famTotals[f] }))}
-                targets={m.targets.filter((t) => t.count > 0)}
-                typeFam={m.typeFam}
-                famTarget={m.famTarget}
-                theme={T}
-                onType={(type: IncidentType) => m.setSelection({ kind: "type", type })}
-                onFamily={(family) => m.setSelection({ kind: "family", family })}
-                onTarget={(target) => m.setSelection({ kind: "target", target })}
-                onTypeFamily={(type, family) => m.setSelection({ kind: "type-family", type, family })}
-                onFamilyTarget={(family, target) => m.setSelection({ kind: "family-target", family, target })}
-                label="Flow of incidents from type to family to target"
-              />
-              <p className="text-[12px] text-dim">Ribbon width is the count. The right column counts target mentions, so an incident naming two targets appears in both.</p>
+          </Section>
+
+          <Section
+            n="05"
+            kicker="Your stack"
+            title="Products, agents and the standards"
+            lede="The AI products attacks named, the incidents involving AI agents, and the window in OWASP and MITRE ATLAS terms."
+          >
+            <div className="grid gap-3 xl:grid-cols-2">
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead
+                  short
+                  title="Is my stack hit?"
+                  note="Attacks on AI systems that name the product, and its CVEs in the window."
+                  aside={
+                    <Link href="/products" className="label hover:text-ink">
+                      every product →
+                    </Link>
+                  }
+                />
+                {m.stack.length > 0 ? (
+                  <RankRows
+                    chart="stack"
+                    color={T.bar}
+                    head={{ label: "product", count: "attacks", extra: "CVEs" }}
+                    rows={m.stack.slice(0, 8).map((p) => ({
+                      key: p.key,
+                      label: p.key,
+                      labelHref: `/products/${productSlug(p.key)}`,
+                      count: p.count,
+                      countName: `${p.key}, attacks on it`,
+                      onCount: () => m.setSelection({ kind: "product", product: p.key }),
+                      extra: { count: p.cves, name: `${p.key}, CVEs`, onClick: () => m.setSelection({ kind: "disclosed-product", product: p.key }) },
+                    }))}
+                  />
+                ) : (
+                  <p className="text-[14px] text-dim">No attack on an AI system named a product in this window.</p>
+                )}
+              </div>
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead short title="Agentic AI watch" note="Agents or their tools turned on their users; one incident can sit in several rows." />
+                <RankRows
+                  chart="agentic"
+                  color={T.families.agent}
+                  max={m.agentic.all}
+                  head={{ label: "incidents involving agents", count: "count", change: m.prior ? "vs before" : undefined }}
+                  rows={[
+                    ...AGENTIC_SLICES.map((k) => ({
+                      key: k,
+                      label: AGENTIC_META[k].label,
+                      title: AGENTIC_META[k].title,
+                      count: m.agentic[k],
+                      countName: AGENTIC_META[k].label,
+                      onCount: () => m.setSelection({ kind: "agentic", slice: k }),
+                      prior: m.priorAgentic ? m.priorAgentic[k] : null,
+                    })),
+                    {
+                      key: "cves",
+                      label: "CVEs disclosed in agent tooling",
+                      title: "Disclosed vulnerabilities in MCP servers and SDKs, coding agents and agent platforms (lib/watch.ts)",
+                      bar: false,
+                      count: m.disclosedAgent,
+                      countName: "CVEs disclosed in agent tooling",
+                      unit: "disclosed vulnerabilities",
+                      onCount: () => m.setSelection({ kind: "disclosed-agentic" }),
+                      divider: true,
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+            <div className="grid gap-3 xl:grid-cols-2">
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead short title="OWASP Top 10 for LLM Applications" note={`The ${OWASP_LLM_EDITION} list in its own order; a code opens the entry on owasp.org.`} />
+                <RankRows
+                  chart="owasp"
+                  color={T.accent}
+                  head={{ label: "entry", count: "incidents", change: m.prior ? "vs before" : undefined }}
+                  rows={m.owasp.map((o) => ({
+                    key: o.key,
+                    code: o.key,
+                    codeHref: OWASP_LLM_META[o.key].url,
+                    label: OWASP_LLM_META[o.key].name,
+                    count: o.count,
+                    countName: `OWASP ${o.key} ${OWASP_LLM_META[o.key].name}`,
+                    onCount: () => m.setSelection({ kind: "owasp", id: o.key }),
+                    prior: m.priorOwasp ? m.priorOwasp[o.key] : null,
+                  }))}
+                />
+                <p className="text-[13px] leading-snug text-dim">
+                  <button type="button" onClick={() => m.setSelection({ kind: "owasp", id: "any" })} aria-label={`Mapped to the OWASP list: ${m.owaspAny} incidents`} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent">
+                    {m.owaspAny.toLocaleString("en-US")}
+                  </button>{" "}
+                  of{" "}
+                  <button type="button" onClick={() => m.setSelection({ kind: "window" })} aria-label={`All incidents in view: ${m.count} incidents`} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent">
+                    {m.count.toLocaleString("en-US")}
+                  </button>{" "}
+                  incidents map to an entry; deepfakes and AI-as-weapon attacks map to none.
+                </p>
+              </div>
+              <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                <PanelHead short title="MITRE ATLAS techniques" note={`Release ${ATLAS_RELEASE}, most incidents first; an id opens the technique on atlas.mitre.org.`} />
+                <RankRows
+                  chart="atlas"
+                  color="#7fdcff"
+                  codeWidth="7.25rem"
+                  head={{ label: "technique", count: "incidents", change: m.prior ? "vs before" : undefined }}
+                  rows={m.atlas.slice(0, 10).map((a) => ({
+                    key: a.key,
+                    code: a.key,
+                    codeHref: atlasUrl(a.key),
+                    label: ATLAS_TECHNIQUES[a.key],
+                    count: a.count,
+                    countName: `ATLAS ${a.key} ${ATLAS_TECHNIQUES[a.key]}`,
+                    onCount: () => m.setSelection({ kind: "atlas", id: a.key }),
+                    prior: m.priorAtlas ? m.priorAtlas[a.key] : null,
+                  }))}
+                />
+                {m.atlas.slice(10).some((a) => a.count > 0) && (
+                  <p className="flex flex-wrap gap-x-3 text-[13px] text-dim">
+                    <span className="text-faint">Also</span>
+                    {m.atlas
+                      .slice(10)
+                      .filter((a) => a.count > 0)
+                      .map((a) => (
+                        <span key={a.key}>
+                          {ATLAS_TECHNIQUES[a.key]}{" "}
+                          <button type="button" onClick={() => m.setSelection({ kind: "atlas", id: a.key })} aria-label={`ATLAS ${a.key} ${ATLAS_TECHNIQUES[a.key]}: ${a.count} incidents`} className="num text-ink underline decoration-dotted decoration-[color:var(--color-faint)] underline-offset-4 hover:text-accent">
+                            {a.count}
+                          </button>
+                        </span>
+                      ))}
+                  </p>
+                )}
+              </div>
             </div>
           </Section>
 
           <Section
             id="disclosed"
-            n="04"
+            n="06"
             kicker="Disclosed, not exploited"
             title="Vulnerabilities, tracked separately"
-            lede="CVEs and advisories for AI frameworks and tools with no confirmed exploitation. They show how much attack surface is being found and patched, not attacks, so none of them are in the counts above. A CVE joins the incidents once CISA or the vendor confirms exploitation."
+            lede="CVEs for AI tools with no confirmed exploitation: attack surface, not attacks. None counts above until it is exploited."
           >
             <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_352px]">
               <div className="glass min-w-0 p-4 sm:p-5">
@@ -463,7 +695,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                   months={m.disclosedSeries.map((p) => p.month)}
                   stacks={[{ key: "disclosed", label: "Disclosed vulnerabilities", color: DISCLOSED_COLOR, values: m.disclosedSeries.map((p) => p.total) }]}
                   provisionalFrom={m.h.provisionalFrom}
-                  height={300}
+                  height={240}
                   colors={NC}
                   activeMonth={sel?.kind === "disclosed-month" ? sel.month : null}
                   onMonth={(month) => m.setSelection({ kind: "disclosed-month", month })}
@@ -485,7 +717,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 <div className="space-y-2">
                   <h3 className="text-[12.5px] text-dim">Most disclosures, by product</h3>
                   <BarRows
-                    rows={m.disclosedProducts.slice(0, 8).map((p) => ({ key: p.key, label: p.key, value: p.count, color: DISCLOSED_COLOR }))}
+                    rows={m.disclosedProducts.slice(0, 5).map((p) => ({ key: p.key, label: p.key, value: p.count, color: DISCLOSED_COLOR }))}
                     labelWidth="9rem"
                     glow={false}
                     onPick={(k) => m.setSelection({ kind: "disclosed-product", product: k })}
@@ -496,58 +728,47 @@ export function Dashboard({ data }: { data: DashboardData }) {
             </div>
           </Section>
 
-          {data.radar && (
-            <Reveal>
-              <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-                <div className="max-w-xl space-y-3">
-                  <div className="divider">
-                    <span className="text-accent">05</span> Context
-                  </div>
-                  <AsciiForm as="h2" text="The bots on the wire" onView className="text-2xl font-semibold tracking-tight sm:text-[28px]" />
-                  <p className="text-[15.5px] leading-relaxed text-soft">
-                    Not incidents: a weekly reading of how much web traffic is automated and which AI crawlers send it, from Cloudflare Radar. Background for the counts above, never added to them.
-                  </p>
-                  <ul className="space-y-2 text-[14px] leading-relaxed text-dim">
-                    <li>
-                      <span className="text-soft">Bot share</span> is the part of all HTTP requests Cloudflare classifies as automated, over the last seven days.
-                    </li>
-                    <li>
-                      <span className="text-soft">AI crawlers</span> are the slice of that bot traffic sent by known AI user agents; their share of all requests is derived from the two, not measured.
-                    </li>
-                    <li>
-                      <span className="text-soft">Crawl purpose</span> is what those crawlers declare they fetch pages for: model training, search, or acting on a user&rsquo;s request.
-                    </li>
-                  </ul>
-                </div>
-                <RadarPanel radar={data.radar} className="glass" />
-              </section>
-            </Reveal>
-          )}
 
-          <Section n="06" kicker="Latest" title="Just reported" lede="The six newest incidents. Each one opens with every source, its classification and related incidents.">
-            <ol className="glass divide-y divide-line-soft">
-              {m.latestRows.slice(0, 6).map((r) => (
-                <li key={r.id}>
-                  <Link href={`/incidents/${r.slug}`} className="group grid items-center gap-x-4 gap-y-1.5 px-4 py-2.5 transition-colors hover:bg-panel-2 sm:grid-cols-[6.5rem_minmax(0,1fr)_auto]">
-                    <span className="num text-[12px] text-dim">{r.first_reported}</span>
-                    <span className="truncate text-[14px] text-ink group-hover:text-accent">{r.title}</span>
-                    <span className="flex flex-wrap items-center gap-1.5">
-                      <SeverityBadge severity={r.severity} />
-                      {r.categories[0] && <CategoryBadge category={r.categories[0]} />}
-                      <span className="num text-[11px] text-faint">{r.source_count} src</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-            <Link href="/incidents" className="label inline-block hover:text-ink">
-              all incidents →
-            </Link>
-          </Section>
+
+          {/* the fold: background that most visits skip, kept one click away so the page stays short */}
+          <details className="group/more">
+            <summary className="glass flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 transition-colors hover:border-accent [&::-webkit-details-marker]:hidden">
+              <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="label text-accent">more</span>
+                <span className="text-[15px] text-ink">The incident flow, from attack to target{data.radar ? ", and AI bot traffic on the web" : ""}</span>
+              </span>
+              <span aria-hidden className="text-[14px] text-dim transition-transform group-open/more:rotate-180">
+                ▾
+              </span>
+            </summary>
+            <div className="mt-12 space-y-16">
+              <Section n="07" kicker="Flow" title="On AI or by AI, into a family, onto its targets" lede="Every incident in the window from its type through its family onto the targets it names.">
+                <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
+                  <PanelHead title="The flow" note="Ribbon width is the count. The right column counts target mentions, so an incident naming two targets is in both." />
+                  <FlowSankey
+                    types={m.types}
+                    families={famShown.map((f) => ({ key: f, count: famTotals[f] }))}
+                    targets={m.targets.filter((t) => t.count > 0)}
+                    typeFam={m.typeFam}
+                    famTarget={m.famTarget}
+                    theme={T}
+                    onType={(type: IncidentType) => m.setSelection({ kind: "type", type })}
+                    onFamily={(family) => m.setSelection({ kind: "family", family })}
+                    onTarget={(target) => m.setSelection({ kind: "target", target })}
+                    onTypeFamily={(type, family) => m.setSelection({ kind: "type-family", type, family })}
+                    onFamilyTarget={(family, target) => m.setSelection({ kind: "family-target", family, target })}
+                    label="Flow of incidents from type to family to target"
+                  />
+                </div>
+              </Section>
+              {data.radar && (
+                <Section n="08" kicker="Context" title="The bots on the wire" lede="Not incidents: Cloudflare Radar's weekly reading of automated web traffic and the AI crawlers behind it, as background for the counts above.">
+                  <RadarPanel radar={data.radar} variant="bare" className="glass" />
+                </Section>
+              )}
+            </div>
+          </details>
         </main>
-        <div aria-hidden className="overflow-hidden whitespace-nowrap font-mono text-[12px] leading-none text-faint">
-          {"_.-·´¯`·.¸¸.·´¯`·.¸_.-·´¯`·.¸¸.·´¯`·.¸".repeat(12)}
-        </div>
         <SiteFooter />
       </div>
 

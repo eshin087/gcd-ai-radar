@@ -27,6 +27,12 @@ export interface CompactRow {
   disclosed: boolean;
   /** Family of the first product named (lib/products.ts), for the disclosed-vulnerability breakdown (empty for incidents). */
   product: string;
+  /**
+   * Families of every product an incident names, once each, for the stack and
+   * agent panels (lib/watch.ts); empty for disclosed vulnerabilities. Optional
+   * so rows built elsewhere (test fixtures) need not spell it out.
+   */
+  products?: string[];
 }
 
 export function compactRow(i: Incident): CompactRow {
@@ -45,6 +51,7 @@ export function compactRow(i: Incident): CompactRow {
     source_count: i.source_count,
     disclosed,
     product: disclosed ? productFamily(i.products[0] ?? "") : "",
+    products: disclosed ? [] : [...new Set(i.products.map(productFamily).filter(Boolean))],
   };
 }
 

@@ -3,6 +3,7 @@ import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import { compactRow, type Basis, type CompactRow } from "./rows";
 import type { Radar } from "./schema";
 import { toMonthKey, yearRange } from "./stats";
+import { buildThreatIntel, type ThreatIntel } from "./threatIntel";
 
 /**
  * Build-time payload for the dashboard: monthly aggregates for both date
@@ -21,6 +22,8 @@ export interface DashboardData {
   span: { from: string; to: string };
   agg: Aggregates;
   radar: Radar | null;
+  /** The last 90 days by first report, for the hero's threat feed. */
+  intel: ThreatIntel;
 }
 
 export async function getDashboardData(): Promise<DashboardData> {
@@ -29,11 +32,13 @@ export async function getDashboardData(): Promise<DashboardData> {
   const range = yearRange(incidents);
   const earliest = Math.max(range?.min ?? now.getUTCFullYear(), 2016);
   const span = { from: `${earliest}-01`, to: toMonthKey(now) };
+  const rows = incidents.map(compactRow);
   return {
     now: now.toISOString(),
     lastUpdated: updated,
     span,
-    agg: buildAggregates(incidents.map(compactRow), { now, span }),
+    agg: buildAggregates(rows, { now, span }),
     radar,
+    intel: buildThreatIntel(rows, now),
   };
 }

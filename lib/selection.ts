@@ -2,7 +2,24 @@ import { FAMILY_META, familyOf, type Family } from "./families";
 import { dateLabel, monthLabel } from "./format";
 import { inBasis, type Basis, type CompactRow } from "./rows";
 import { dateOf, isRealWorld, monthKey, primaryCategory, shiftMonth, windowKey, type DateField, type Headline } from "./stats";
-import { CATEGORY_META, SEVERITY_META, TARGET_META, TYPE_META, type Category, type IncidentType, type Severity, type Target } from "./taxonomy";
+import {
+  ATLAS_TECHNIQUES,
+  CATEGORY_META,
+  OWASP_LLM_META,
+  SEVERITY_META,
+  TARGET_META,
+  TYPE_META,
+  atlasFor,
+  owaspFor,
+  owaspLabel,
+  type AtlasTechniqueId,
+  type Category,
+  type IncidentType,
+  type OwaspLlmId,
+  type Severity,
+  type Target,
+} from "./taxonomy";
+import { AGENTIC_META, agenticSlices, isAgentTooling, stackProducts, type AgenticSlice } from "./watch";
 
 /**
  * What a click on the dashboard selects, and which rows it selects. The same
@@ -41,10 +58,20 @@ export type Selection =
   /** One ribbon of the flow or one bubble: a family onto a target. */
   | { kind: "family-target"; family: Family; target: Target }
   /** A family's count in another window (the prior window of the slope and radar charts), independent of the current window. */
-  | { kind: "family-range"; family: Family; from: string; to: string; label: string };
+  | { kind: "family-range"; family: Family; from: string; to: string; label: string }
+  /** Incidents mapped to an OWASP LLM Top 10 entry, or to any entry ("any"), from their type and categories. */
+  | { kind: "owasp"; id: OwaspLlmId | "any" }
+  /** Incidents mapped to a MITRE ATLAS technique, the same way. */
+  | { kind: "atlas"; id: AtlasTechniqueId }
+  /** Attacks on AI that name a product family (lib/watch.ts stackProducts). */
+  | { kind: "product"; product: string }
+  /** Incidents involving AI agents, or one slice of them (lib/watch.ts). */
+  | { kind: "agentic"; slice: AgenticSlice }
+  /** Disclosed vulnerabilities whose product is agent tooling (MCP, coding agents). */
+  | { kind: "disclosed-agentic" };
 
 export function isDisclosedSelection(sel: Selection): boolean {
-  return sel.kind === "disclosed" || sel.kind === "disclosed-month" || sel.kind === "disclosed-product" || sel.kind === "disclosed-day";
+  return sel.kind === "disclosed" || sel.kind === "disclosed-month" || sel.kind === "disclosed-product" || sel.kind === "disclosed-day" || sel.kind === "disclosed-agentic";
 }
 
 export function selectionLabel(sel: Selection): string {
@@ -91,6 +118,16 @@ export function selectionLabel(sel: Selection): string {
       return `${FAMILY_META[sel.family].label} → ${TARGET_META[sel.target].label}`;
     case "family-range":
       return `${FAMILY_META[sel.family].label} · ${sel.label}`;
+    case "owasp":
+      return sel.id === "any" ? "Mapped to the OWASP Top 10 for LLM Applications" : `OWASP ${owaspLabel(sel.id)} · ${OWASP_LLM_META[sel.id].name}`;
+    case "atlas":
+      return `MITRE ATLAS ${sel.id} · ${ATLAS_TECHNIQUES[sel.id]}`;
+    case "product":
+      return `${sel.product} · attacks on it`;
+    case "agentic":
+      return AGENTIC_META[sel.slice].label;
+    case "disclosed-agentic":
+      return "Disclosed vulnerabilities in agent tooling";
   }
 }
 
@@ -174,6 +211,23 @@ export function selectionQuery(sel: Selection, basis: Basis, field: DateField): 
       p.set("from", sel.from);
       p.set("to", sel.to);
       break;
+    case "owasp":
+      if (sel.id !== "any") p.set("owasp", sel.id);
+      break;
+    case "atlas":
+      p.set("atlas", sel.id);
+      break;
+    case "product":
+      // the explorer's product filter reads the first product named, so it can list fewer
+      p.set("type", "attack_on_ai");
+      p.set("product", sel.product);
+      break;
+    case "agentic":
+      p.set("category", "agent_hijack");
+      break;
+    case "disclosed-agentic":
+      p.set("kind", "disclosed");
+      break;
   }
   return p.toString();
 }
@@ -255,6 +309,16 @@ export function matches(r: CompactRow, s: Selection, field: DateField): boolean 
       const k = windowKey(d);
       return familyOf(primaryCategory(r)) === s.family && k >= s.from && k <= s.to;
     }
+    case "owasp":
+      return s.id === "any" ? owaspFor(r).length > 0 : owaspFor(r).includes(s.id);
+    case "atlas":
+      return atlasFor(r).includes(s.id);
+    case "product":
+      return stackProducts(r).includes(s.product);
+    case "agentic":
+      return agenticSlices(r).includes(s.slice);
+    case "disclosed-agentic":
+      return isAgentTooling(r.product);
     case "range": {
       // Mirrors headline(): month tiles skip year-only dates, year tiles keep them; toDate caps "same period last year".
       if (s.byYear) return d.slice(0, 4) >= s.from.slice(0, 4) && d.slice(0, 4) <= s.to.slice(0, 4) && (!s.toDate || d <= s.toDate);

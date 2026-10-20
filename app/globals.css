@@ -63,9 +63,107 @@ body {
   .link {
     @apply text-soft underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent transition-colors;
   }
-  .wordmark {
-    @apply font-display text-[20px] tracking-[0.08em] text-ink;
-    text-shadow: 0 0 18px rgba(127, 220, 255, 0.25);
+}
+
+/* The radar mark (components/layout/Wordmark.tsx): the beam turns clockwise in
+   4 s from its -40° pose and crosses the contact 21.6% into the turn, when the
+   contact lights and pings. Named brand-* so they never collide with the
+   radar chart's own one-turn radar-sweep keyframes further down. */
+.brand-sweep {
+  transform-origin: 16px 16px;
+  animation: brand-sweep 4s linear infinite;
+}
+@keyframes brand-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.brand-blip {
+  animation: brand-blip 4s linear infinite;
+}
+@keyframes brand-blip {
+  0%,
+  21% {
+    opacity: 0.35;
+  }
+  23% {
+    opacity: 1;
+  }
+  75%,
+  100% {
+    opacity: 0.35;
+  }
+}
+.brand-ping {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: brand-ping 4s ease-out infinite;
+}
+@keyframes brand-ping {
+  0%,
+  21.5% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  22.5% {
+    opacity: 0.9;
+  }
+  45%,
+  100% {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-sweep,
+  .brand-blip,
+  .brand-ping {
+    animation: none;
+  }
+}
+
+/* The trend's large stat tiles (StatTile size="lg"): the whole tile is the
+   value's button, so it lights up on hover and shows the focus ring; the
+   trend's glow brightens with it, and its end dot pulses. */
+.glow-tile {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.glow-tile:hover {
+  border-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
+  box-shadow: 0 14px 40px -22px color-mix(in oklab, var(--color-accent) 55%, transparent);
+}
+.glow-tile:has(button:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.glow-tile .glow-halo {
+  transition: stroke-opacity 0.25s ease;
+}
+.glow-tile:hover .glow-halo {
+  stroke-opacity: 0.95;
+}
+.glow-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: glow-pulse 2.4s ease-out infinite;
+}
+@keyframes glow-pulse {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3.4);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow-pulse {
+    animation: none;
+    opacity: 0;
   }
 }
 
@@ -129,39 +227,6 @@ body {
     radial-gradient(1px 1px at 56% 8%, rgba(226, 232, 245, 0.3), transparent 60%);
 }
 
-/* Terminal panel: a ruled box with its title cut into the top edge */
-.tty {
-  position: relative;
-  border: 1px solid var(--color-line);
-  border-radius: 4px;
-  padding: 1.1rem 1rem 0.9rem;
-  background: color-mix(in oklab, var(--color-panel) 72%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.tty-title {
-  position: absolute;
-  top: -0.72em;
-  left: 0.75rem;
-  max-width: calc(100% - 1.5rem);
-  overflow: hidden;
-  padding: 0 0.4rem;
-  background: var(--color-ground);
-  font-family: var(--font-plex-mono), monospace;
-  font-size: 11.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-dim);
-  white-space: nowrap;
-}
-.leader {
-  flex: 1 1 0.75rem;
-  min-width: 0.75rem;
-  overflow: hidden;
-  color: var(--color-faint);
-  white-space: nowrap;
-}
-
 /* Hero: sticky, fades as the content covers it */
 .hero-fade {
   --p: 0;
@@ -172,16 +237,16 @@ body {
   will-change: opacity, transform;
 }
 .hero-field {
-  -webkit-mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 28%, #000 58%), radial-gradient(ellipse 66% 100% at 72% 50%, #000 58%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(90deg, transparent 24%, #000 56%), radial-gradient(ellipse 58% 92% at 72% 50%, #000 48%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 28%, #000 58%), radial-gradient(ellipse 66% 100% at 72% 50%, #000 58%, transparent 100%);
   mask-composite: intersect;
 }
 @media (max-width: 1023px) {
   .hero-field {
-    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 50%, transparent 100%);
     -webkit-mask-composite: source-over;
-    mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 50%, transparent 100%);
     mask-composite: add;
   }
 }
@@ -193,6 +258,40 @@ body {
   height: 96px;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--color-ground));
+}
+/* Phones and tablets: the hero scrolls away like any block (no sticky, blur or scale) and ends in a short fade */
+@media (max-width: 1023px) {
+  .hero-fade {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    will-change: auto;
+  }
+  .hero-cover::before {
+    top: -40px;
+    height: 40px;
+  }
+}
+
+/* Chart markers that breathe: the average line's head and the peak (off under reduced motion) */
+.chart-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: chart-pulse 2.6s ease-in-out infinite;
+}
+.chart-pulse-slow {
+  animation-duration: 3.4s;
+}
+@keyframes chart-pulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 /* The radar chart's one-turn sweep on arrival */
@@ -301,6 +400,7 @@ body {
   }
   .grow-in,
   .grow-x,
+  .chart-pulse,
   .drawer-scrim,
   .drawer-panel,
   .ascii-form [data-c][data-done] {

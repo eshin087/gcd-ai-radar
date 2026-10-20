@@ -23,7 +23,8 @@ import {
   yearRange,
   type DateField,
 } from "@/lib/stats";
-import { INCIDENT_TYPES, SEVERITIES, TARGETS } from "@/lib/taxonomy";
+import { INCIDENT_TYPES, OWASP_LLM_IDS, SEVERITIES, TARGETS, atlasFor, owaspFor } from "@/lib/taxonomy";
+import { AGENTIC_SLICES, agenticSlices, isAgentTooling, stackProducts } from "@/lib/watch";
 
 /**
  * The dashboard's contract: every number it shows is the length of the list
@@ -49,6 +50,7 @@ function row(partial: Partial<CompactRow> & { id: string; incident_date: string;
     source_count: 1,
     disclosed: false,
     product: "",
+    products: [],
     ...partial,
   };
 }
@@ -67,6 +69,11 @@ const FIXTURES: CompactRow[] = [
   row({ id: "AIR-2026-9007", incident_date: "2019-06-05", first_reported: "2026-10-03", severity: 3, categories: ["supply_chain"], targets: ["open_weight_model"] }),
   // first reported before the incident date (90 live records do this)
   row({ id: "AIR-2024-9008", incident_date: "2025-01-10", first_reported: "2024-12-20", severity: 2, categories: ["jailbreak"], targets: ["Microsoft"] }),
+  // an agent hijacked through a poisoned MCP server, on a product family; and the same family named by an AI-enabled attack (not a stack hit)
+  row({ id: "AIR-2026-9010", incident_date: "2026-04-11", first_reported: "2026-04-12", severity: 3, categories: ["agent_hijack", "supply_chain", "data_leak"], targets: ["framework_or_tooling"], products: ["MCP servers & tools", "Cursor"] }),
+  row({ id: "AIR-2026-9011", incident_date: "2026-06", first_reported: "2026-06-30", severity: 4, type: "ai_enabled_attack", categories: ["ai_assisted_intrusion", "agent_hijack"], targets: ["enterprise_deployment"], products: ["Cursor"] }),
+  // a disclosed vulnerability in agent tooling
+  row({ id: "AIR-2026-9012", incident_date: "2026-08-02", first_reported: "2026-08-02", disclosed: true, product: "MCP SDKs", categories: ["infra_vuln"], targets: ["framework_or_tooling"] }),
 ];
 
 async function liveRows(): Promise<CompactRow[]> {
@@ -131,6 +138,16 @@ function checkEveryNumber(rows: CompactRow[]) {
         }
         for (const [day, count] of Object.entries(v.dayCounts)) expect1(`day ${day}`, count, { kind: "day", day }, basis, field, from, to);
         if (v.disclosedBusiest) expect1("busiest day", v.disclosedBusiest.count, { kind: "disclosed-day", day: v.disclosedBusiest.day }, basis, field, from, to);
+        // the standards, stack and agent panels
+        for (const o of v.owasp) expect1(`owasp ${o.key}`, o.count, { kind: "owasp", id: o.key }, basis, field, from, to);
+        expect1("owasp any", v.owaspAny, { kind: "owasp", id: "any" }, basis, field, from, to);
+        for (const a of v.atlas) expect1(`atlas ${a.key}`, a.count, { kind: "atlas", id: a.key }, basis, field, from, to);
+        for (const p of v.stack) {
+          expect1(`stack ${p.key}`, p.count, { kind: "product", product: p.key }, basis, field, from, to);
+          expect1(`stack cves ${p.key}`, p.cves, { kind: "disclosed-product", product: p.key }, basis, field, from, to);
+        }
+        for (const k of AGENTIC_SLICES) expect1(`agentic ${k}`, v.agentic[k], { kind: "agentic", slice: k }, basis, field, from, to);
+        expect1("agent tooling cves", v.disclosedAgent, { kind: "disclosed-agentic" }, basis, field, from, to);
         v.series.forEach((p, i) => {
           expect1(`column ${p.month}`, p.total, { kind: "month", month: p.month }, basis, field, from, to);
           for (const t of INCIDENT_TYPES) expect1(`column ${p.month} ${t}`, p.byType[t], { kind: "month-type", month: p.month, type: t }, basis, field, from, to);
@@ -196,6 +213,23 @@ function checkAgainstStats(rows: CompactRow[]) {
           expect(v.priorCount).toBeNull();
           expect(v.priorFamilies).toBeNull();
         }
+        // the standards, stack and agent tallies against the row-level rules
+        const count = (rs: CompactRow[], f: (r: CompactRow) => readonly string[]) => {
+          const m = new Map<string, number>();
+          for (const r of rs) for (const k of new Set(f(r))) m.set(k, (m.get(k) ?? 0) + 1);
+          return m;
+        };
+        const owasp = count(inView, owaspFor);
+        expect(v.owasp).toEqual(OWASP_LLM_IDS.map((id) => ({ key: id, count: owasp.get(id) ?? 0 })));
+        expect(v.owaspAny).toBe(inView.filter((r) => owaspFor(r).length > 0).length);
+        const atlas = count(inView, atlasFor);
+        for (const a of v.atlas) expect(a.count).toBe(atlas.get(a.key) ?? 0);
+        const stack = count(inView, stackProducts);
+        expect(v.stack.map((p) => [p.key, p.count])).toEqual([...stack.entries()].sort((a, b) => b[1] - a[1] || (products.get(b[0]) ?? 0) - (products.get(a[0]) ?? 0) || a[0].localeCompare(b[0])));
+        for (const p of v.stack) expect(p.cves).toBe(products.get(p.key) ?? 0);
+        const agentic = count(inView, agenticSlices);
+        for (const k of AGENTIC_SLICES) expect(v.agentic[k]).toBe(agentic.get(k) ?? 0);
+        expect(v.disclosedAgent).toBe(disclosedRows.filter((r) => isAgentTooling(r.product)).length);
         // joint counts add up to the marginals they were cut from
         for (const f of FAMILIES) expect(SEVERITIES.reduce((s, sv) => s + v.famSev[f][sv], 0)).toBe(v.families.find((x) => x.key === f)!.count);
         for (const t of INCIDENT_TYPES) expect(FAMILIES.reduce((s, f) => s + v.typeFam[t][f], 0)).toBe(v.types.find((x) => x.key === t)!.count);
@@ -256,13 +290,13 @@ describe("aggregate shape", () => {
     // shards: year of first report, with the month range of their rows on each basis
     expect(agg.shards.map((s) => s.year)).toEqual([2024, 2025, 2026]);
     const s2026 = agg.shards.find((s) => s.year === 2026)!;
-    expect(s2026.records).toBe(6);
+    expect(s2026.records).toBe(9);
     expect(s2026.min.incident_date).toBe("2019-06"); // AIR-2026-9007
     expect(s2026.max.first_reported).toBe("2026-10");
     expect(shardsFor(agg.shards, "incident_date", "2019-01", "2019-12")).toEqual([2026]);
     expect(shardsFor(agg.shards, "first_reported", "2019-01", "2019-12")).toEqual([]);
     // the product table is shared
-    expect(agg.products.sort()).toEqual(["Fixture Product", "Other Fixture"]);
+    expect(agg.products.sort()).toEqual(["Fixture Product", "MCP SDKs", "Other Fixture"]);
     expect(agg.busiest.incident_date["12m" as WindowKey]).toEqual({ day: "2026-09-09", count: 2 });
     for (const s of SEVERITIES) expect(typeof s).toBe("number");
     expect(TARGETS.length).toBeGreaterThan(0);

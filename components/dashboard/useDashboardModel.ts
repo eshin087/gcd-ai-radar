@@ -106,6 +106,17 @@ export function useDashboardModel(data: DashboardData) {
     disclosedSeries: view.disclosedSeries,
     disclosedProducts: view.disclosedProducts,
     disclosedBusiest: view.disclosedBusiest,
+    /** The standards, stack and agent panels. */
+    owasp: view.owasp,
+    owaspAny: view.owaspAny,
+    priorOwasp: view.priorOwasp,
+    atlas: view.atlas,
+    priorAtlas: view.priorAtlas,
+    stack: view.stack,
+    agentic: view.agentic,
+    priorAgentic: view.priorAgentic,
+    agenticSeries: view.agenticSeries,
+    disclosedAgent: view.disclosedAgent,
     fieldLabel: field === "incident_date" ? "incident date" : "first report",
   };
 }
