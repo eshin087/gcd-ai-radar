@@ -1,5 +1,25 @@
 [
   {
+    "key": "243637334aa76cc6",
+    "title": "Decision model as prompt-injection judge: 40 of 40 on 78 texts",
+    "url": "https://loomcycle.dev/blog/decision-model-as-prompt-injection-judge",
+    "publisher": "loomcycle.dev",
+    "source_id": "hn",
+    "reason": "out of scope: A blog post about a decision model tool proposal and benchmarks for prompt injection detection without a specific security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T17:10:36.613Z"
+  },
+  {
+    "key": "ddd8256c72187f6d",
+    "title": "Building a System One Model for Prompt Injection",
+    "url": "https://stackone.com/blog/system-one-model-prompt-injection",
+    "publisher": "stackone.com",
+    "source_id": "hn",
+    "reason": "out of scope: An engineering blog post describing defensive architecture and implementation details for prompt injection defense without reporting an incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T17:10:36.613Z"
+  },
+  {
     "key": "10f786f3efbdb8d0",
     "title": "Narratives Mislead: An Empirical Study of How LLMs Misjudge CVSS Severity in Bug Bounty Reports",
     "url": "https://arxiv.org/abs/2610.24623",

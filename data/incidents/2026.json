@@ -1,5 +1,122 @@
 [
   {
+    "id": "AIR-2026-1430",
+    "slug": "ai-platform-cairn-abused-by-threat-actors-to-compromise-over",
+    "title": "AI Platform Cairn Abused by Threat Actors to Compromise Over 100 Organizations",
+    "summary": "Multiple threat actor groups abused the Cairn AI platform to gain persistent access and conduct financial theft against numerous organizations. The attacks highlight the risks of offensive capabilities in automated AI tools.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cairn"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://securityweek.com/ai-platform-cairn-abused-to-hack-over-100-organizations",
+        "publisher": "SecurityWeek",
+        "title": "AI Platform Cairn Abused to Hack Over 100 Organizations",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cairn",
+      "unauthorized-access",
+      "cybercrime"
+    ],
+    "created_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-10-20T17:10:36.613Z"
+  },
+  {
+    "id": "AIR-2026-1429",
+    "slug": "hackers-abuse-ai-penetration-testing-tool-cairn-for-automate",
+    "title": "Hackers Abuse AI Penetration Testing Tool Cairn for Automated Attack Campaign",
+    "summary": "Attackers leveraged the AI pen-test platform Cairn to compromise hundreds of global websites and target major companies. The campaign involved automated intrusions and data exfiltration.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cairn"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/hackers-abuse-ai-pen-test-tool-cairn",
+        "publisher": "Dark Reading",
+        "title": "Hackers Abuse AI Pen-Test Tool Cairn to Automate Massive Attack Spree",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cairn",
+      "pen-test-tool",
+      "ai-assisted-intrusion"
+    ],
+    "created_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-10-20T17:10:36.613Z"
+  },
+  {
+    "id": "AIR-2026-1428",
+    "slug": "threat-actors-use-autonomous-ai-agents-to-breach-over-1-200",
+    "title": "Threat Actors Use Autonomous AI Agents to Breach Over 1,200 Websites",
+    "summary": "Criminal operators utilized autonomous AI agents to launch automated cyberattacks against more than 1,200 websites. Security researchers observed the campaign after the operators left their control panels exposed online.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cairn"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-agents",
+      "autonomous-attack",
+      "intrusion"
+    ],
+    "created_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-10-20T17:10:36.613Z"
+  },
+  {
     "id": "AIR-2026-1427",
     "slug": "cve-2026-107366-ibm-langflow-oss-lacks-ownership-verificatio",
     "title": "CVE-2026-107366: IBM Langflow OSS lacks ownership verification on message endpoints enabling session hijacking",
