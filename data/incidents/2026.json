@@ -1,5 +1,168 @@
 [
   {
+    "id": "AIR-2026-1434",
+    "slug": "cve-2026-111768-mcp-typescript-sdk-suffered-from-request-val",
+    "title": "CVE-2026-111768: MCP TypeScript SDK suffered from request validation memory exhaustion",
+    "summary": "The MCP TypeScript SDK lacked limits on array elements and object keys during request validation, allowing a single crafted HTTP request within size limits to exhaust server memory. This caused the process to crash with a JavaScript heap out of memory error.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-46jr-4wx8-v453",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-111768: MCP TypeScript SDK: One HTTP request within the default size limit could exhaust server memory during validation",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-111768",
+      "mcp",
+      "dos"
+    ],
+    "created_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-10-20T22:08:19.958Z"
+  },
+  {
+    "id": "AIR-2026-1433",
+    "slug": "cve-2026-111771-mcp-typescript-sdk-accepted-bearer-tokens-is",
+    "title": "CVE-2026-111771: MCP TypeScript SDK accepted bearer tokens issued for other services",
+    "summary": "Server-side bearer authentication in the MCP TypeScript SDK failed to validate the audience claim of incoming tokens. Consequently, MCP servers could accept valid tokens issued for entirely different services if they shared an authorization server.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-rvq5-wwqv-78pq",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-111771: MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-111771",
+      "mcp",
+      "authentication"
+    ],
+    "created_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-10-20T22:08:19.958Z"
+  },
+  {
+    "id": "AIR-2026-1432",
+    "slug": "cve-2026-111769-mcp-typescript-client-sdk-leaked-custom-head",
+    "title": "CVE-2026-111769: MCP TypeScript client SDK leaked custom headers on cross-origin redirects",
+    "summary": "HTTP client transports and OAuth requests in the MCP TypeScript SDK followed cross-origin redirects, improperly re-sending sensitive custom headers and request bodies. This could expose authorization tokens and credentials to untrusted third-party servers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-6prh-2h8m-c8cw",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-111769: MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request…",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-111769",
+      "mcp",
+      "oauth",
+      "redirect"
+    ],
+    "created_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-10-20T22:08:19.958Z"
+  },
+  {
+    "id": "AIR-2026-1431",
+    "slug": "cve-2026-111767-mcp-typescript-sdk-experimental-tasks-lacked",
+    "title": "CVE-2026-111767: MCP TypeScript SDK experimental tasks lacked session isolation",
+    "summary": "An access control vulnerability in the MCP TypeScript SDK allowed clients sharing an in-memory task store to view and cancel each other's tasks due to missing session validation. The maintainers recommended stopping the use of the deprecated experimental tasks feature.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-22jm-h49p-29qw",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-111767: MCP TypeScript SDK: Experimental tasks were not tied to the session that created them",
+        "published_at": "2026-10-20"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111767",
+        "publisher": "NVD",
+        "title": "CVE-2026-111767: MCP TypeScript SDK is the official TypeScript SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-111767",
+      "mcp",
+      "access-control"
+    ],
+    "created_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-10-20T22:08:19.958Z"
+  },
+  {
     "id": "AIR-2026-1430",
     "slug": "ai-platform-cairn-abused-by-threat-actors-to-compromise-over",
     "title": "AI Platform Cairn Abused by Threat Actors to Compromise Over 100 Organizations",

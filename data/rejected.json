@@ -1,5 +1,15 @@
 [
   {
+    "key": "ce590a1bed5006e5",
+    "title": "Prompt injection scanners should be positional, not phrasal",
+    "url": "https://attest.rta.lat/article",
+    "publisher": "attest.rta.lat",
+    "source_id": "hn",
+    "reason": "out of scope: Opinion piece/blog post discussing prompt-injection detection methodology without a specific security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-20T22:08:19.958Z"
+  },
+  {
     "key": "243637334aa76cc6",
     "title": "Decision model as prompt-injection judge: 40 of 40 on 78 texts",
     "url": "https://loomcycle.dev/blog/decision-model-as-prompt-injection-judge",
