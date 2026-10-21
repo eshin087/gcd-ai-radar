@@ -1,3 +1,12 @@
+/* A glyph field's canvas fades in over its poster at its first frame (GlyphField). */
+.glyph-canvas {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.glyph-canvas.is-live {
+  opacity: 1;
+}
+
 /* Labels pinned over glyph scenes (GlyphField moves them with translate3d): on a
    dark plate so they stay readable over busy glyphs. */
 .glyph-label {
@@ -101,7 +110,7 @@
   border-color: #0b1524;
   background:
     radial-gradient(120% 95% at 50% 40%, rgba(80, 200, 255, 0.075), transparent 72%),
-    rgba(6, 11, 20, 0.94);
+    rgba(6, 11, 20, 0.97);
   box-shadow:
     inset 0 0 55px rgba(0, 0, 0, 0.8),
     inset 0 0 0 1px rgba(140, 225, 255, 0.09),

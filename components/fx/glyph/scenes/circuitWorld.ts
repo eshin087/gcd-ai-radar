@@ -97,6 +97,14 @@ const vec3 LSH = vec3(-.28, .62, -.73);
 
 /** the die point being shaded, for patterns that run across block borders (the power mesh) */
 vec2 gQ;
+/** a pixel that lands on a block's own surface is shaded once, after shadeDie, by blockShade with these
+    (one call site instead of two halves the shader's compile time on Direct3D) */
+int gBi;
+vec2 gBq;
+vec2 gBf;
+float gBface;
+float gBgloss;
+float gBpw;
 /** light the die gives off itself (data, attacks, the defences, heat), kept apart from the metal the lamp lights */
 vec3 gEm;
 /** transistor-level detail, laid down only when the lens is close enough to resolve it */
@@ -589,6 +597,13 @@ vec3 blockShade(int bi, vec2 q, vec2 fp, float face, vec3 rd, float gloss, float
     em = heatCol(heat)*heat*.06;
   } else {
     gMicro = vec3(0.);
+#ifdef LITE
+    // the light version, shown while the full one compiles: each district as its big parts only
+    float big = bigForm(bi, p, sz, fp);
+    body = big;
+    col = A*big*gloss*1.1;
+    em = CY*gClk*body*.1;
+#else
     Art m = art(bi, p, sz, fp);
     body = m.m + m.arr;
     col = (A*m.m + dB(bi)*m.arr + dT(bi)*m.top*.6*(1. + 2.5*pw))*gloss*.75*(face > .5 ? 1.35 : 1.) + gMicro*gloss*1.2;
@@ -596,6 +611,7 @@ vec3 blockShade(int bi, vec2 q, vec2 fp, float face, vec3 rd, float gloss, float
     float far = smoothstep(.035, .1, fp.x);
     col = mix(col, A*bigForm(bi, p, sz, fp)*gloss*1.1, far*.85);
     em = AMD*min(m.am, 1.8)*.4 + (bi == 0 ? uMood.rgb : CY)*m.acc*.6 + dT(bi)*m.top*pw*.3 + CY*gClk*body*.1;
+#endif
     // a heat map: a busy or attacked block glows warm through its structure
     em += heatCol(heat)*heat*body*.4;
     if(face < .5){
@@ -670,7 +686,10 @@ vec3 shadeDie(vec3 ro, vec3 rd, vec2 q, float tp, vec2 fp){
   vec2 cq = qs - PLLC;
   gClk = exp(-pow((abs(cq.x) + abs(cq.y) - uWave.x)/.35, 2.))*uWave.y;
   float pw = exp(-pow((qs.x - uWave.z)/1.3, 2.))*uWave.w;
-  if(face > .5) return blockShade(bi, qs, fs, face, rd, gloss, pw);
+  if(face > .5){
+    gBi = bi; gBq = qs; gBf = fs; gBface = face; gBgloss = gloss; gBpw = pw;
+    return vec3(0.);
+  }
   vec3 pc;
   if(peelArt(q, fp, pc)) return pc*gloss;
   if(eD < 1.32) return ioRing(q, aq, eD, fp, metal, gloss)*smoothstep(-.03, .06, eD);
@@ -739,7 +758,10 @@ vec3 shadeDie(vec3 ro, vec3 rd, vec2 q, float tp, vec2 fp){
     float d = sdBox2(q - (B.xy + B.zw)*.5, (B.zw - B.xy)*.5);
     if(d < bdist){ bdist = d; bi = i; }
   }
-  if(bdist <= 0.) return blockShade(bi, q, fp, 0., rd, gloss, pw);
+  if(bdist <= 0.){
+    gBi = bi; gBq = q; gBf = fp; gBface = 0.; gBgloss = gloss; gBpw = pw;
+    return vec3(0.);
+  }
   vec4 B = uBlk[bi];
   vec4 S = uBlkS[bi];
   vec4 E = uBlkE[bi];
@@ -895,7 +917,9 @@ void main(){
   if(rd.y < 0. && abs(q.x) < DX && abs(q.y) < DZ && tp < th){
     tHit = tp;
     hitXZ = q;
+    gBi = -1;
     col = shadeDie(ro, rd, q, tp, fp);
+    if(gBi >= 0) col = blockShade(gBi, gBq, gBf, gBface, rd, gBgloss, gBpw);
   } else if(ts < th){
     tHit = ts;
     vec3 P = ro + rd*ts;
@@ -2186,6 +2210,8 @@ export function circuitWorld(o: { intel: ThreatIntel; emit?: Emit }): GlyphContr
   return {
     frag: FRAG,
     fovY: 34,
+    // its full shader takes seconds to compile on Direct3D: a light variant (no fine district art) shows first
+    lite: true,
     shift: 0.4,
     frame(f, set) {
       const t = f.t;

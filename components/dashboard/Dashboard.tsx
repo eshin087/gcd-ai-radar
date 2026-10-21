@@ -8,7 +8,6 @@ import { Ago, NextSweep } from "@/components/fx/NextSweep";
 import { Reveal } from "@/components/fx/Reveal";
 import { FeedTerminal } from "@/components/fx/glyph/FeedTerminal";
 import { GlyphField } from "@/components/fx/glyph/GlyphField";
-import { circuitWorld } from "@/components/fx/glyph/scenes/circuitWorld";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { BarRows } from "@/components/charts/BarRows";
@@ -203,7 +202,10 @@ export function Dashboard({ data }: { data: DashboardData }) {
           {/* the banner: a band above the text on phones, behind it on wide screens */}
           <div aria-hidden className="hero-field relative h-72 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
             <GlyphField
-              scene={() => circuitWorld({ intel: data.intel })}
+              // the scene's code loads on demand, after the page; the poster shows until its first frame
+              scene={() => import("@/components/fx/glyph/scenes/circuitWorld").then((s) => s.circuitWorld({ intel: data.intel }))}
+              poster="/hero/circuit-poster.webp"
+              posterAt="72% 50%"
               running={!heroGone}
               label="A camera journey over a chip package whose districts are AI systems, where defender agents catch red fault packets from the last 90 days of attacks and scrub infected blocks clean"
               className="h-full w-full"
@@ -238,7 +240,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                   last sweep <Ago iso={data.lastUpdated} className="text-soft" /> · next in <NextSweep className="text-soft" />
                 </p>
               </div>
-              <FeedTerminal intel={data.intel} className="w-full max-w-[560px]" />
+              <FeedTerminal intel={data.intel} className="w-full max-w-[480px]" />
               <div className="flex flex-wrap gap-3">
                 <Link href="/incidents" className="glass px-4 py-2 text-[13px] text-ink hover:border-accent">
                   Explore incidents →
@@ -254,7 +256,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
 
       {/* content slides up over the hero */}
       <div className="hero-cover relative z-10 bg-ground lg:-mt-14">
-        <div className="z-30 border-y border-line-soft bg-ground sm:sticky sm:top-0 lg:bg-[color-mix(in_oklab,var(--color-ground)_78%,transparent)] lg:backdrop-blur-md">
+        <div className="z-30 border-y border-line-soft bg-ground sm:sticky sm:top-0 lg:bg-[color-mix(in_oklab,var(--color-ground)_94%,transparent)]">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3">
             <Segmented
               label="Incident set"
