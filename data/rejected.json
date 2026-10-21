@@ -1,5 +1,15 @@
 [
   {
+    "key": "918065aafd8b1ca4",
+    "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
+    "url": "https://simonwillison.net/2026/Oct/21/php-security-release",
+    "publisher": "Simon Willison",
+    "source_id": "simonw-sec",
+    "reason": "out of scope: General cybersecurity incident involving PHP RCE with no AI involvement",
+    "confidence": 1,
+    "rejected_at": "2026-10-21T21:54:09.300Z"
+  },
+  {
     "key": "67cf959bd95dd8f1",
     "title": "Your AI agent fixed the bug, but what else did it change?",
     "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change",

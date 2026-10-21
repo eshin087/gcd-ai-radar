@@ -1,5 +1,169 @@
 [
   {
+    "id": "AIR-2026-1460",
+    "slug": "storm-0940-uses-artex-agentic-ai-in-connectwise-supply-chain",
+    "title": "Storm-0940 Uses ARTEX Agentic AI in ConnectWise Supply Chain Campaign",
+    "summary": "The Storm-0940 threat group utilized ARTEX agentic AI to accelerate a ConnectWise supply chain compromise, leading to credential abuse across Microsoft 365 environments. The operation demonstrates nation-state threat actors leveraging AI to scale intrusion activities.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment",
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft 365",
+      "ConnectWise",
+      "ARTEX"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise",
+        "publisher": "Microsoft Security",
+        "title": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "storm-0940",
+      "artex",
+      "agentic_ai",
+      "ai_assisted_intrusion",
+      "supply_chain"
+    ],
+    "created_at": "2026-10-21T21:54:09.300Z",
+    "updated_at": "2026-10-21T21:54:09.300Z"
+  },
+  {
+    "id": "AIR-2026-1459",
+    "slug": "cve-2026-114493-localai-gallery-ssrf-vulnerability",
+    "title": "CVE-2026-114493: LocalAI Gallery SSRF Vulnerability",
+    "summary": "LocalAI versions 4.6.0 through 4.11.0 contain a server-side request forgery vulnerability allowing attackers to access internal or cloud metadata addresses. The flaw occurs due to insufficient URL validation in the gallery configuration component.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LocalAI"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114493",
+        "publisher": "NVD",
+        "title": "CVE-2026-114493: LocalAI v4.6.0 through v4.11.0 contains a server-side request forgery vulnerability in core/gallery/gallery.go that validates…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114493",
+      "ssrf",
+      "localai",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T21:54:09.300Z",
+    "updated_at": "2026-10-21T21:54:09.300Z"
+  },
+  {
+    "id": "AIR-2026-1458",
+    "slug": "litellm-compromised-in-supply-chain-attack-delivering-creden",
+    "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer",
+    "summary": "The LiteLLM Python package version 1.107.0 was compromised via PyPI and Docker images to distribute a credential stealer and backdoor. The malicious package has since been quarantined by PyPI.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
+        "publisher": "The Hacker News",
+        "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "litellm",
+      "supply_chain",
+      "credential_stealer",
+      "pypi"
+    ],
+    "created_at": "2026-10-21T21:54:09.300Z",
+    "updated_at": "2026-10-21T21:54:09.300Z"
+  },
+  {
+    "id": "AIR-2026-1457",
+    "slug": "cve-2026-114123-d365-f-o-mcp-server-authentication-bypass-vu",
+    "title": "CVE-2026-114123: D365 F&O MCP Server authentication bypass vulnerability",
+    "summary": "An authentication bypass vulnerability exists in D365 F&O MCP Server prior to version 1.11.0 due to default empty API keys. The issue allows unauthenticated requests when the optional key is left blank during deployment.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "D365 F&O MCP Server"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114123",
+        "publisher": "NVD",
+        "title": "CVE-2026-114123: D365 F&O MCP Server is a Model Context Protocol server for querying Dynamics 365 Finance & Operations X++ code and metadata.",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114123",
+      "mcp",
+      "authentication_bypass",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T21:54:09.300Z",
+    "updated_at": "2026-10-21T21:54:09.300Z"
+  },
+  {
     "id": "AIR-2026-1456",
     "slug": "threat-actor-used-ai-to-plan-and-execute-cybercrime-activiti",
     "title": "Threat Actor Used AI to Plan and Execute Cybercrime Activities",
