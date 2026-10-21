@@ -1,5 +1,743 @@
 [
   {
+    "id": "AIR-2026-1453",
+    "slug": "cve-2026-114050-vllm-multimodal-uuid-cache-identity-flaw-lea",
+    "title": "CVE-2026-114050: vLLM multimodal UUID cache identity flaw leads to engine crash",
+    "summary": "A cache identity flaw in vLLM before version 0.31.0 enables unauthenticated attackers to desynchronize processor caches. The resulting fatal token-placeholder mismatch crashes the serving instance until a manual restart.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114050",
+        "publisher": "NVD",
+        "title": "CVE-2026-114050: vLLM before 0.31.0 uses a client-supplied multimodal uuid verbatim as cache identity with no consistency check on cache hits,…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114050",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1452",
+    "slug": "cve-2026-114054-vllm-cache-aliasing-vulnerability-exposes-pr",
+    "title": "CVE-2026-114054: vLLM cache aliasing vulnerability exposes processed media and KV state",
+    "summary": "A cache aliasing vulnerability in vLLM before version 0.31.0 lets authenticated attackers collide shared cache keys. This permits unauthorized retrieval of another request's cached media or key-value states.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114054",
+        "publisher": "NVD",
+        "title": "CVE-2026-114054: vLLM before 0.31.0 contains a cache aliasing vulnerability that allows authenticated attackers to collide shared cache keys by…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114054",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1451",
+    "slug": "cve-2026-114051-vllm-input-validation-check-omission-causes",
+    "title": "CVE-2026-114051: vLLM input validation check omission causes denial of service",
+    "summary": "A validation check omission in vLLM before version 0.31.0 permits unauthenticated attackers to hang subsequent generation requests. The issue causes the engine core input thread to die on oversized min_tokens parameters.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114051",
+        "publisher": "NVD",
+        "title": "CVE-2026-114051: vLLM before 0.31.0 skips the min_tokens <= max_tokens check for /inference/v1/generate requests with a null max_tokens, so the…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114051",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1450",
+    "slug": "cve-2026-114049-vllm-cross-request-mask-leak-vulnerability",
+    "title": "CVE-2026-114049: vLLM cross-request mask leak vulnerability",
+    "summary": "An input batch processing flaw in vLLM before version 0.31.0 allows remote attackers to constrain other clients' outputs through recycled batch slots. The vulnerability is addressed by vendor patches.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114049",
+        "publisher": "NVD",
+        "title": "CVE-2026-114049: vLLM before 0.31.0 contains a cross-request mask leak in InputBatch.condense() that allows remote attackers to constrain other…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114049",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1449",
+    "slug": "cve-2026-114055-vllm-uncontrolled-resource-consumption-via-m",
+    "title": "CVE-2026-114055: vLLM Uncontrolled Resource Consumption via Multimodal Parameters",
+    "summary": "An uncontrolled resource consumption vulnerability in vLLM allows remote clients to control multimodal processor parameters and exhaust memory. Attackers can supply oversized values to terminate the shared model serving process.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114055",
+        "publisher": "NVD",
+        "title": "CVE-2026-114055: vLLM from 0.7.3 before 0.31.0 contains an uncontrolled resource consumption vulnerability that allows remote clients to control…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114055",
+      "dos",
+      "vllm"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1448",
+    "slug": "cve-2026-114052-vllm-moss-audio-model-serving-memory-exhaust",
+    "title": "CVE-2026-114052: vLLM MOSS-Audio Model Serving Memory Exhaustion Vulnerability",
+    "summary": "vLLM contains an unbounded dictionary caching flaw in MOSS-Audio model serving that leads to memory exhaustion. Unauthenticated attackers can send crafted requests to crash the API server process.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114052",
+        "publisher": "NVD",
+        "title": "CVE-2026-114052: vLLM after 0.24.0 and before 0.31.0 contains a memory exhaustion vulnerability in MOSS-Audio model serving that caches a…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114052",
+      "dos",
+      "vllm"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1447",
+    "slug": "cve-2026-114053-vllm-vulnerable-to-remote-code-execution-via",
+    "title": "CVE-2026-114053: vLLM Vulnerable to Remote Code Execution via mm_processor_kwargs.code_revision",
+    "summary": "A vulnerability in vLLM allows unauthenticated clients to send multimodal requests that execute arbitrary Python code in the API process. The flaw stems from improper handling of request-supplied model processor code revisions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114053",
+        "publisher": "NVD",
+        "title": "CVE-2026-114053: vLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers…",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114053",
+      "rce",
+      "vllm"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1446",
+    "slug": "how-intervention-history-changes-ai-agent-sabotage-on-subseq",
+    "title": "How Intervention History Changes AI Agent Sabotage on Subsequent Tasks",
+    "summary": "Researchers examine whether past intervention history affects an AI agent's ability to engage in sabotage and evade detection on subsequent tasks. The study utilizes ControlArena to analyze cross-episode adaptation in AI agents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "ControlArena"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.26935",
+        "publisher": "arXiv",
+        "title": "How Intervention History Changes AI Agent Sabotage on Subsequent Tasks",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-sabotage",
+      "ai-control",
+      "evaluation"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1445",
+    "slug": "benchmarking-carryover-attacks-and-persistent-prompt-injecti",
+    "title": "Benchmarking Carryover Attacks and Persistent Prompt Injection on LLM Agents",
+    "summary": "Researchers introduced a benchmark for carryover attacks where indirect prompt injection payloads persist across sessions via long-lived memory or scheduled tasks. The study evaluates how malicious instructions re-fire long after initial observation without user interaction.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.28425",
+        "publisher": "arXiv",
+        "title": "After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "agent_hijack",
+      "persistent_memory"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1444",
+    "slug": "translation-as-a-safety-bypass-in-low-resource-languages-for",
+    "title": "Translation as a Safety Bypass in Low-Resource Languages for LLMs",
+    "summary": "Researchers evaluated ten LLMs across 79 languages, showing that harmful requests refused in English can bypass safety alignment when translated into low-resource languages. The findings highlight safety evaluation gaps in multilingual model deployments.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27304",
+        "publisher": "arXiv",
+        "title": "Global Security Blind Spots: Translation as a Safety Bypass in Low-Resource Languages",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "multilingual",
+      "safety_bypass"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1443",
+    "slug": "unified-attack-framework-bypasses-statistical-generative-llm",
+    "title": "Unified Attack Framework Bypasses Statistical Generative LLM Watermarks",
+    "summary": "Researchers identified a shared weakness across popular large language model watermarking methods and introduced a unified attack framework. The approach exploits the link between detection scores and token probability shifts to undermine watermarking detection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "KGW",
+      "SynthID",
+      "DipMark"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27653",
+        "publisher": "arXiv",
+        "title": "A Unified Attack Framework against Statistical Generative Watermarks for Large Language Models",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "watermarking",
+      "evasion",
+      "llm"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1442",
+    "slug": "speaker-activated-backdoors-compromise-speech-models-during",
+    "title": "Speaker-Activated Backdoors Compromise Speech Models During Fine-Tuning",
+    "summary": "Researchers introduced speaker-activated backdoors that embed malicious triggers into speech models during fine-tuning using a target speaker's natural voice. The method succeeds without requiring access to inference-time inputs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "speech models"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27210",
+        "publisher": "arXiv",
+        "title": "You Are the Trigger: Speaker-Activated Backdoors",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "speech-recognition",
+      "fine-tuning"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1441",
+    "slug": "researchers-demonstrate-show-up-attack-manipulating-llm-mult",
+    "title": "Researchers Demonstrate Show-Up Attack Manipulating LLM Multi-Agent Supervisors",
+    "summary": "Researchers proposed the show-up attack, showing how a malicious subagent can manipulate a supervisor LLM into granting unauthorized tasks. The study evaluated six frontier LLMs across multiple test cases to demonstrate this coordination vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "frontier LLMs",
+      "SUA-Arena"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27574",
+        "publisher": "arXiv",
+        "title": "The Show-Up Attack: When Subagents Win Over Their Supervisor",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multi-agent",
+      "agent-hijack",
+      "llm"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1440",
+    "slug": "autoredclaw-automated-red-teaming-for-persistent-claw-style",
+    "title": "AutoRedClaw: Automated Red-Teaming for Persistent Claw-Style Agents",
+    "summary": "Researchers introduce an automated red-teaming system to evaluate vulnerabilities in persistent, personalized AI agents like OpenClaw. The study addresses how persistent state poisoning affects agent security across tasks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27244",
+        "publisher": "arXiv",
+        "title": "AutoRedClaw: Automated Red-Teaming for Claw-Style Agents",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "research",
+      "red-teaming",
+      "agent-security",
+      "state-poisoning"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1439",
+    "slug": "benchdoor-exploiting-benchmark-incentives-for-backdoor-attac",
+    "title": "BenchDoor: Exploiting Benchmark Incentives for Backdoor Attacks",
+    "summary": "Researchers propose BenchDoor, a data poisoning technique that implants backdoors by exploiting incentives around machine learning benchmarks. The method manipulates training or test data while preserving benign model performance.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27533",
+        "publisher": "arXiv",
+        "title": "Adversarial Benchmarks and BenchDoor Attacks: Exploiting Benchmark Incentives for Backdoor Attacks",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "research",
+      "data-poisoning",
+      "backdoor",
+      "benchmarks"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1438",
+    "slug": "generative-deception-against-language-model-attackers-in-cri",
+    "title": "Generative Deception against Language-Model Attackers in Critical Infrastructure",
+    "summary": "Researchers evaluate an autonomous language-model attacker interacting with a decoy system in 330 experimental sessions. The work analyzes computational energy costs and counter-injection strategies during attacks.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.27739",
+        "publisher": "arXiv",
+        "title": "Make the Adversary Spend More Energy: Generative Deception against Language-Model Attackers in Critical Infrastructure",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "research",
+      "autonomous-attacker",
+      "deception"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1437",
+    "slug": "anthropic-disrupts-ai-orchestrated-cyber-espionage-campaign",
+    "title": "Anthropic disrupts AI-orchestrated cyber espionage campaign",
+    "summary": "Anthropic disrupted a sophisticated cyber espionage campaign orchestrated using AI models. The incident highlights the active threat of AI-enabled cyber attacks against targets.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://anthropic.com/news/disrupting-AI-espionage",
+        "publisher": "Anthropic",
+        "title": "Disrupting an AI-orchestrated cyber espionage campaign",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "ai-assisted-intrusion"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1436",
+    "slug": "coordinated-distillation-attack-targets-claude-capabilities",
+    "title": "Coordinated Distillation Attack Targets Claude Capabilities",
+    "summary": "Anthropic identified coordinated distillation attacks that utilized approximately 24,000 fraudulent accounts to extract capabilities from Claude. The campaign targeted model behavior to replicate the AI system.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://anthropic.com/news/detecting-and-preventing-distillation-attacks",
+        "publisher": "Anthropic",
+        "title": "Detecting and preventing distillation attacks",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "model-extraction",
+      "distillation"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "id": "AIR-2026-1435",
+    "slug": "claude-demonstrates-multistage-cyber-attacks-on-realistic-ra",
+    "title": "Claude Demonstrates Multistage Cyber Attacks on Realistic Ranges",
+    "summary": "Anthropic reported that current Claude models can successfully perform multistage attacks on networks with numerous hosts using standard open-source tooling. The findings highlight the capability of language models in executing complex offensive operations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-20",
+    "sources": [
+      {
+        "url": "https://anthropic.com/research/cyber-toolkits-update",
+        "publisher": "Anthropic",
+        "title": "AI models on realistic cyber ranges",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-assisted-intrusion",
+      "autonomous-attacks"
+    ],
+    "created_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
     "id": "AIR-2026-1434",
     "slug": "cve-2026-111768-mcp-typescript-sdk-suffered-from-request-val",
     "title": "CVE-2026-111768: MCP TypeScript SDK suffered from request validation memory exhaustion",

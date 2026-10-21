@@ -1,5 +1,155 @@
 [
   {
+    "key": "bea23034a697284d",
+    "title": "eMudhra Intermediate CA Compromise",
+    "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates",
+    "publisher": "Simon Willison",
+    "source_id": "simonw-sec",
+    "reason": "out of scope: General cybersecurity incident involving a certificate authority compromise, with no AI model or system involved.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "8f821d2daf004954",
+    "title": "Using Claude to reduce the attack surface of code",
+    "url": "https://anthropic.com/research/attack-surface-reduction",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Product capability announcement and security defense feature preview without a specific reported incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "9388e44114c74365",
+    "title": "AI to defend critical infrastructure",
+    "url": "https://anthropic.com/research/critical-infrastructure-defense",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Research collaboration announcement on AI defensive capabilities without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "2e73395f48581a29",
+    "title": "HydraPoT: A Configurable Multi-Agent Framework for Cost-Aware LLM-Assisted Honeypots",
+    "url": "https://arxiv.org/abs/2610.27722",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only paper describing a configurable multi-agent honeypot framework for defensive deception, with no offensive attack demonstration.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "ddf3afecc3b37190",
+    "title": "When Models Know but Can't Linearly Say: Relational Encoding Limits Linear Vulnerability Classification in Code LLMs",
+    "url": "https://arxiv.org/abs/2610.27257",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing an evaluation benchmark for code LLMs without demonstrating a novel attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "05252a645383ca71",
+    "title": "Privacy-Preserving Personalized Federated Learning (PPP-FL) for Medical Imaging",
+    "url": "https://arxiv.org/abs/2610.27470",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper focusing on federated learning architecture and privacy protection mechanisms rather than a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "c7c3612e32e6904a",
+    "title": "Contextual Candour: Role-Aware Graduated Disclosure for LLMs over Mixed-Sensitivity Contexts",
+    "url": "https://arxiv.org/abs/2610.28067",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a defense and access-control mechanism for LLMs, out of scope per guidelines.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "2d93b2b57ccb1648",
+    "title": "Context-Aware Prompt Injection Detection via Small Language Models in RAG Pipelines: nokast-secureRAG",
+    "url": "https://arxiv.org/abs/2610.28364",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a defense mechanism (RAG firewall model) rather than demonstrating a new attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "901f362933ac0373",
+    "title": "MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2610.28397",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a security guardrail framework for multi-agent systems, categorized as a defense proposal.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "09ce5a5fb3a69f43",
+    "title": "CyberHull: Deterministic Malicious URL Isolation via Convex Hull",
+    "url": "https://arxiv.org/abs/2610.27675",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a defensive framework (CyberHull) for detecting malicious URLs rather than demonstrating an attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "1c2469e764a40bd3",
+    "title": "AgenticVulHunter: Bringing Local Agentic Vulnerability Hunting to Your Terminal",
+    "url": "https://arxiv.org/abs/2610.27383",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes an agentic tool (AgenticVulHunter) for vulnerability scanning and secure code review, which is a defensive/developer tool.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "09a240867af1e593",
+    "title": "Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory",
+    "url": "https://arxiv.org/abs/2610.28315",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper analyzing privacy dynamics and memory accumulation in LLM agents without demonstrating a specific security attack or exploitation.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "70ab7b2f9fbc8e6a",
+    "title": "Mind Your Boundaries: Boundary-Aware Model Obfuscation against Cross-node Attack",
+    "url": "https://arxiv.org/abs/2610.27135",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a defense (boundary-aware model obfuscation) against cross-node attacks, which is out of scope as a defence-only paper.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "b90e2fd0c78c6bf4",
+    "title": "KNOX: Hardware-assisted Regulatory Sandbox for Generative Models",
+    "url": "https://arxiv.org/abs/2610.27543",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a hardware-assisted regulatory sandbox for generative models, constituting a defense/compliance architecture rather than an incident or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
+    "key": "4e7c0b945ab427c4",
+    "title": "Model Exposure on One Device Endangers Others: Rethinking Edge Neural Network Security across Devices",
+    "url": "https://arxiv.org/abs/2610.27152",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper focuses on proposing a defence framework (VeilNN) against cross-device attacks, making it a defence-only paper without a novel attack demonstration.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-21T05:04:24.513Z"
+  },
+  {
     "key": "ce590a1bed5006e5",
     "title": "Prompt injection scanners should be positional, not phrasal",
     "url": "https://attest.rta.lat/article",
