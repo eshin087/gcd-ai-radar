@@ -1,5 +1,15 @@
 [
   {
+    "key": "f31f85df952cebdb",
+    "title": "The Harness Is the Hard Part of Agentic Pentesting",
+    "url": "https://thehackernews.com/2026/10/the-harness-is-hard-part-of-agentic.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Opinion piece and discussion on engineering AI pentesting agents without describing a specific new attack or vulnerability incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T12:05:24.160Z"
+  },
+  {
     "key": "bea23034a697284d",
     "title": "eMudhra Intermediate CA Compromise",
     "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates",
