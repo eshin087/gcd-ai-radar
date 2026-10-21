@@ -1,5 +1,122 @@
 [
   {
+    "id": "AIR-2026-1456",
+    "slug": "threat-actor-used-ai-to-plan-and-execute-cybercrime-activiti",
+    "title": "Threat Actor Used AI to Plan and Execute Cybercrime Activities",
+    "summary": "An investigation revealed how a threat actor bypassed AI safety controls to coordinate credential theft and database exfiltration. The incident demonstrates the tactical use of generative AI in planning malicious campaigns.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "jailbreak"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis",
+        "publisher": "Unit 42",
+        "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-assisted-attack",
+      "credential-theft",
+      "exfiltration"
+    ],
+    "created_at": "2026-10-21T17:47:10.255Z",
+    "updated_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "id": "AIR-2026-1455",
+    "slug": "cybercartel-deploys-ai-driven-carliy0s-framework-against-lat",
+    "title": "CyberCartel deploys AI-driven CARLIY0S framework against Latin American banks",
+    "summary": "Researchers uncovered that the CyberCartel group utilized multiple AI models in the CARLIY0S campaign to target and attack Latin American financial institutions. Evidence of the operation was discovered within the group's own systems.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "CARLIY0S"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://straiker.ai/blog/inside-carliy0s-how-cybercartel-used-multiple-ai-models-to-attack-latin-american-banks",
+        "publisher": "Straiker",
+        "title": "CARLIY0S: CyberCartel's AI Attacks on Latin American Banks",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cybercartel",
+      "carliy0s",
+      "financial-institutions"
+    ],
+    "created_at": "2026-10-21T17:47:10.255Z",
+    "updated_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "id": "AIR-2026-1454",
+    "slug": "clickfix-malware-campaign-leverages-fake-ai-tools-and-chatbo",
+    "title": "ClickFix malware campaign leverages fake AI tools and chatbot platforms as lures",
+    "summary": "Cybercriminals are using fake AI software installers, malicious search results, and chatbot platforms in ClickFix campaigns to trick users into executing malware. These lures leverage the popularity of AI tools to evade traditional defenses.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "ClickFix"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/clickfix-has-never-been-bigger-and-ai-tools-are-its-most-convincing-lure-yet",
+        "publisher": "BleepingComputer",
+        "title": "ClickFix has never been bigger, and AI tools are its most convincing lure yet",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "clickfix",
+      "social-engineering",
+      "malware"
+    ],
+    "created_at": "2026-10-21T17:47:10.255Z",
+    "updated_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
     "id": "AIR-2026-1453",
     "slug": "cve-2026-114050-vllm-multimodal-uuid-cache-identity-flaw-lea",
     "title": "CVE-2026-114050: vLLM multimodal UUID cache identity flaw leads to engine crash",

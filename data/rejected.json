@@ -1,5 +1,55 @@
 [
   {
+    "key": "67cf959bd95dd8f1",
+    "title": "Your AI agent fixed the bug, but what else did it change?",
+    "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change",
+    "publisher": "Trail of Bits",
+    "source_id": "trailofbits",
+    "reason": "out of scope: Product launch and vendor feature announcement of AI security tooling, not a security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "key": "03d9b0413f07228d",
+    "title": "‘Context Bombs’ Cut AI Attack Success by Misleading Agents With Fake Targets",
+    "url": "https://securityweek.com/context-bombs-cut-ai-attack-success-by-misleading-agents-with-fake-targets",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Research paper or article proposing a defensive technique (Context Bombs) against AI agent attacks, without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "key": "d3f519557f32dd3d",
+    "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+    "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Policy, coordination, and community initiative announcement without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "key": "d84514219b4e7c7f",
+    "title": "High-Severity Flaws Exploited in Three Days as Ransomware Dominates Q3: Rapid7",
+    "url": "https://securityweek.com/high-severity-flaws-exploited-in-three-days-as-ransomware-dominates-q3-rapid7",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Statistical survey and report findings on ransomware and vulnerability trends without detailing a specific AI security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
+    "key": "2460cf975c10b18d",
+    "title": "Google Hardens Chrome Against ClickFix Attacks, Insecure HTTP Connections",
+    "url": "https://securityweek.com/google-hardens-chrome-against-clickfix-attacks-insecure-http-connections",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product security hardening announcement featuring server-side Gemini analysis to block scams, without an AI incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-21T17:47:10.255Z"
+  },
+  {
     "key": "f31f85df952cebdb",
     "title": "The Harness Is the Hard Part of Agentic Pentesting",
     "url": "https://thehackernews.com/2026/10/the-harness-is-hard-part-of-agentic.html",
