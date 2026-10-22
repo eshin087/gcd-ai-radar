@@ -2596,6 +2596,11 @@
   "status": "rejected",
   "at": "2026-10-18T06:33:31.967Z"
  },
+ "259a06e6bcda2cd2": {
+  "status": "published",
+  "id": "AIR-2026-1470",
+  "at": "2026-10-22T22:10:34.459Z"
+ },
  "25acbda74a0e8878": {
   "status": "published",
   "id": "AIR-2026-0704",
@@ -11219,6 +11224,10 @@
   "id": "AIR-2026-1208",
   "at": "2026-10-18T10:04:21.885Z"
  },
+ "a45e553ca30bdb4a": {
+  "status": "rejected",
+  "at": "2026-10-22T22:10:34.459Z"
+ },
  "a4627a087d6590fa": {
   "status": "published",
   "id": "AIR-2026-0141",
@@ -12373,6 +12382,11 @@
   "status": "published",
   "id": "AIR-2026-1042",
   "at": "2026-10-18T10:04:21.885Z"
+ },
+ "b57b1f6a14271e76": {
+  "status": "published",
+  "id": "AIR-2026-1471",
+  "at": "2026-10-22T22:10:34.459Z"
  },
  "b594b2da30fa1b05": {
   "status": "published",

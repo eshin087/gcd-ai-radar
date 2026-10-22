@@ -1,5 +1,15 @@
 [
   {
+    "key": "a45e553ca30bdb4a",
+    "title": "ThreatsDay: AI Secrets Leak, PingCAP Source Theft, Signal Hang-Up Flaw, Laravel Auth Bypass + 21 More",
+    "url": "https://thehackernews.com/2026/10/threatsday-ai-secrets-leak-pingcap.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundup overview article mentioning multiple general cybersecurity stories without a specific single focused incident analysis.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-22T22:10:34.459Z"
+  },
+  {
     "key": "8ea0bda983f61217",
     "title": "Fears of Advanced AI Attacks Haven’t Materialized, but There’s Still a Threat",
     "url": "https://checkmarx.com/zero-post/fears-of-advanced-ai-attacks-havent-materialized-but-theres-still-a-threat",

@@ -1,5 +1,85 @@
 [
   {
+    "id": "AIR-2026-1471",
+    "slug": "litellm-release-pipeline-compromised-to-distribute-info-stea",
+    "title": "LiteLLM release pipeline compromised to distribute info-stealer malware",
+    "summary": "Threat actors compromised LiteLLM release pipelines on PyPI and Docker Hub to distribute malicious packages containing info-stealer payloads. The malware targets environment variables, credentials, and sensitive secrets on affected systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware",
+        "publisher": "BleepingComputer",
+        "title": "LiteLLM release pipeline hacked to distribute info-stealer malware",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "pypi",
+      "docker",
+      "malware",
+      "litellm"
+    ],
+    "created_at": "2026-10-22T22:10:34.459Z",
+    "updated_at": "2026-10-22T22:10:34.459Z"
+  },
+  {
+    "id": "AIR-2026-1470",
+    "slug": "cve-2026-114612-litellm-vulnerable-to-privilege-escalation-v",
+    "title": "CVE-2026-114612: LiteLLM vulnerable to privilege escalation via cryptographic context reuse",
+    "summary": "A vulnerability in LiteLLM proxy server allows authenticated internal users to forge administrator credentials through cryptographic context reuse. Exploiting this flaw permits administrative access and arbitrary command execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114612",
+        "publisher": "NVD",
+        "title": "CVE-2026-114612: LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format.",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114612",
+      "litellm",
+      "privilege-escalation"
+    ],
+    "created_at": "2026-10-22T22:10:34.459Z",
+    "updated_at": "2026-10-22T22:10:34.459Z"
+  },
+  {
     "id": "AIR-2026-1469",
     "slug": "cve-2026-114510-flexible-graphrag-contains-a-cypher-injectio",
     "title": "CVE-2026-114510: Flexible GraphRAG contains a Cypher injection vulnerability in FalkorDBAdapter",
