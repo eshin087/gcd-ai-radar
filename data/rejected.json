@@ -1,5 +1,35 @@
 [
   {
+    "key": "8ea0bda983f61217",
+    "title": "Fears of Advanced AI Attacks Haven’t Materialized, but There’s Still a Threat",
+    "url": "https://checkmarx.com/zero-post/fears-of-advanced-ai-attacks-havent-materialized-but-theres-still-a-threat",
+    "publisher": "Checkmarx",
+    "source_id": "checkmarx-zero",
+    "reason": "out of scope: Survey or report commentary discussing general trends without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T17:21:18.622Z"
+  },
+  {
+    "key": "49897ddbe2469767",
+    "title": "Machine speed attacks require machine speed detection and response",
+    "url": "https://bleepingcomputer.com/news/security/machine-speed-attacks-require-machine-speed-detection-and-response",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General cybersecurity article mentioning malicious AI installers without detailing a specific AI-specific attack incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-22T17:21:18.622Z"
+  },
+  {
+    "key": "6cf146c7e71fd559",
+    "title": "Quoting Armin Ronacher",
+    "url": "https://simonwillison.net/2026/Oct/22/armin-ronacher",
+    "publisher": "Simon Willison",
+    "source_id": "simonw-sec",
+    "reason": "out of scope: Opinion and commentary snippet without any specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T17:21:18.622Z"
+  },
+  {
     "key": "9201054eeb4c743a",
     "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
     "url": "https://openai.com/index/cloudflare-cyber",

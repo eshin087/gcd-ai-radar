@@ -1,5 +1,44 @@
 [
   {
+    "id": "AIR-2026-1469",
+    "slug": "cve-2026-114510-flexible-graphrag-contains-a-cypher-injectio",
+    "title": "CVE-2026-114510: Flexible GraphRAG contains a Cypher injection vulnerability in FalkorDBAdapter",
+    "summary": "A vulnerability in Flexible GraphRAG allows attackers to influence ingested documents and cause an early string termination in Cypher queries. The flaw affects versions 0.6.0 through 0.8.2 when specific graph backends are configured.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Flexible GraphRAG"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114510",
+        "publisher": "NVD",
+        "title": "CVE-2026-114510: Flexible GraphRAG is a Python framework for building graph and retrieval-augmented generation applications across multiple graph,…",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114510",
+      "cypher-injection",
+      "graphrag"
+    ],
+    "created_at": "2026-10-22T17:21:18.622Z",
+    "updated_at": "2026-10-22T17:21:18.622Z"
+  },
+  {
     "id": "AIR-2026-1468",
     "slug": "opencode-flaw-allows-malicious-mcp-servers-to-execute-code",
     "title": "OpenCode Flaw Allows Malicious MCP Servers to Execute Code",
