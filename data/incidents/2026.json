@@ -1,5 +1,127 @@
 [
   {
+    "id": "AIR-2026-1468",
+    "slug": "opencode-flaw-allows-malicious-mcp-servers-to-execute-code",
+    "title": "OpenCode Flaw Allows Malicious MCP Servers to Execute Code",
+    "summary": "A vulnerability in the OpenCode AI coding agent enabled malicious Model Context Protocol servers to execute arbitrary code on developer machines during sign-in. The vendor resolved the issue in version 1.18.33.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenCode"
+    ],
+    "incident_date": "2026-09",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html",
+        "publisher": "The Hacker News",
+        "title": "OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "mcp",
+      "opencode",
+      "rce",
+      "model_context_protocol"
+    ],
+    "created_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-10-22T12:03:53.156Z"
+  },
+  {
+    "id": "AIR-2026-1467",
+    "slug": "storm-0940-uses-artex-ai-agents-in-connectwise-supply-chain",
+    "title": "Storm-0940 Uses ARTEX AI Agents in ConnectWise Supply Chain Attack",
+    "summary": "A China-linked threat actor group utilized an agentic AI penetration testing framework named ARTEX during a supply chain attack against ConnectWise Cloud Backup. The tool was abused to accelerate operations against targeted organizations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ARTEX",
+      "ConnectWise Cloud Backup"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+        "publisher": "The Hacker News",
+        "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "storm-0940",
+      "artex",
+      "supply_chain",
+      "connectwise"
+    ],
+    "created_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-10-22T12:03:53.156Z"
+  },
+  {
+    "id": "AIR-2026-1466",
+    "slug": "litellm-package-compromised-in-supply-chain-incident-via-rel",
+    "title": "LiteLLM Package Compromised in Supply Chain Incident via Release Pipeline",
+    "summary": "Threat actors compromised LiteLLM release pipelines to push a malicious package version containing a credential stealer to PyPI and Docker Hub. The incident resulted from compromised security controls and suspected token leaks in AI gateway logs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html",
+        "publisher": "The Hacker News",
+        "title": "LiteLLM Suspects GitHub Token Leak in AI Gateway Logs Behind Malicious Package Release",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply_chain",
+      "pypi",
+      "dockerhub",
+      "credential_stealer"
+    ],
+    "created_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-10-22T12:03:53.156Z"
+  },
+  {
     "id": "AIR-2026-1465",
     "slug": "research-demonstrates-persistent-prompt-injection-via-llm-lo",
     "title": "Research Demonstrates Persistent Prompt Injection via LLM Long-Term Memory",
