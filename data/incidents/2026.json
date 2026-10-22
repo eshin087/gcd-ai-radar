@@ -1,5 +1,201 @@
 [
   {
+    "id": "AIR-2026-1465",
+    "slug": "research-demonstrates-persistent-prompt-injection-via-llm-lo",
+    "title": "Research Demonstrates Persistent Prompt Injection via LLM Long-Term Memory",
+    "summary": "Researchers demonstrate how persistent memory features in conversational AI enable cross-session prompt injection attacks and compromise. The work highlights new security risks when combining long-term memory with large language models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM agents"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.28810",
+        "publisher": "arXiv",
+        "title": "Combining Long-Term Memory and LLMs Comes at a High Cost: From Prompt Injection to Persistent Compromise",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "persistent_memory",
+      "llm_security"
+    ],
+    "created_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "id": "AIR-2026-1464",
+    "slug": "black-box-red-teaming-of-multi-agent-systems-via-reinforceme",
+    "title": "Black-Box Red-Teaming of Multi-Agent Systems via Reinforcement Learning",
+    "summary": "Researchers present ReMAS, a reinforcement learning-based red-teaming framework designed to generate adversarial prompts against multi-agent systems. The approach successfully extracts system prompts from sub-agents that do not directly interact with users.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.28966",
+        "publisher": "arXiv",
+        "title": "Black-Box Red-Teaming of Multi-Agent Systems via Reinforcement Learning",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "red-teaming",
+      "multi-agent-systems",
+      "system-prompt-extraction"
+    ],
+    "created_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "id": "AIR-2026-1463",
+    "slug": "utility-hijacking-attacks-on-instruction-tuning-data-selecti",
+    "title": "Utility-Hijacking Attacks on Instruction-Tuning Data Selection",
+    "summary": "This research paper introduces utility-hijacking, a systematic supplier-side attack against instruction-data selectors used for fine-tuning. The study shows how harmful records can bypass filters to compromise the safety of fine-tuned models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.29886",
+        "publisher": "arXiv",
+        "title": "Characterizing and Defending Utility-Hijacking in Instruction-Tuning Data Selection",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "instruction-tuning",
+      "data-poisoning",
+      "fine-tuning"
+    ],
+    "created_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "id": "AIR-2026-1462",
+    "slug": "compaction-laundering-attack-on-context-compacting-coding-ag",
+    "title": "Compaction Laundering Attack on Context-Compacting Coding Agents",
+    "summary": "Researchers demonstrate an exploitable trust boundary in popular open-source coding agents where context compaction destroys message provenance. Attackers can forge user turns that survive conversation summarization and persist in the agent's memory.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.29869",
+        "publisher": "arXiv",
+        "title": "Compaction Laundering: Provenance Destruction in Context-Compacting Coding Agents",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "coding-agents",
+      "context-compaction",
+      "provenance-destruction"
+    ],
+    "created_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "id": "AIR-2026-1461",
+    "slug": "prompt-injection-and-anti-forensic-attacks-on-llm-digital-fo",
+    "title": "Prompt Injection and Anti-Forensic Attacks on LLM Digital Forensics",
+    "summary": "Researchers explore how attacker-controlled evidence in digital forensics can be used for indirect prompt injection against LLM assistants. The study highlights that the reasoning layers of forensic tools represent a new anti-forensic target vulnerable to manipulation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.29747",
+        "publisher": "arXiv",
+        "title": "Prompt Injection Through Forensic Evidence: A Taxonomy and Proof of Concept of Anti-Forensic Attacks on LLM-Assisted Digital Investigations",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "digital-forensics",
+      "anti-forensics"
+    ],
+    "created_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
     "id": "AIR-2026-1460",
     "slug": "storm-0940-uses-artex-agentic-ai-in-connectwise-supply-chain",
     "title": "Storm-0940 Uses ARTEX Agentic AI in ConnectWise Supply Chain Campaign",

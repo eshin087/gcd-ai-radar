@@ -1,5 +1,125 @@
 [
   {
+    "key": "9201054eeb4c743a",
+    "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+    "url": "https://openai.com/index/cloudflare-cyber",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Vendor product announcement and use case discussing how Cloudflare uses OpenAI for defense and development, with no specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "ca68d2cf3b1b8778",
+    "title": "Google Chrome adds Gemini-powered scam detection, warns users of ClickFix attacks",
+    "url": "https://bleepingcomputer.com/news/google/google-chrome-adds-gemini-powered-scam-detection-warns-users-of-clickfix-attacks",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Product feature announcement for Google Chrome adding AI-powered scam and ClickFix detection, not a security incident involving AI.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "decf0930585db464",
+    "title": "Measuring AI capabilities in intelligence targeting and conventional weapons",
+    "url": "https://anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Research paper discussing capability evaluations and benchmarks for military and tactical tasks without demonstrating a novel real-world attack incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "ef5310643da2a096",
+    "title": "How Much Does the Harness Matter, and for Whom? A Multi-Model Study of Context in LLM-Driven Vulnerability Discovery",
+    "url": "https://arxiv.org/abs/2610.28802",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Academic research paper studying the effectiveness of LLM agents on vulnerability discovery across codebases, which is benchmark and methodology research.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "251aa12a07cb72d7",
+    "title": "AI Security Literacy: Ecosystem-based Competency Framework and K-12 Learning Platform",
+    "url": "https://arxiv.org/abs/2610.28859",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Academic paper proposing an educational competency framework for K-12 AI security literacy, with no specific incident or active threat.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "afc174d3f3a65447",
+    "title": "Where AI Vulnerability Discovery Harnesses Go Quiet: Structural False Negatives and Hidden Vulnerabilities",
+    "url": "https://arxiv.org/abs/2610.29379",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Discusses structural false negatives in AI vulnerability discovery harnesses and engineering limitations rather than demonstrating an active exploit or security attack on AI.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "23a809694262fbcd",
+    "title": "GhostFaceMPC: Privacy-Preserving Face Recognition with Multi-Party Computation",
+    "url": "https://arxiv.org/abs/2610.29987",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a privacy-preserving defense/system architecture for facial recognition using multi-party computation, not an attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "a254cb1e7ad7c36e",
+    "title": "PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust",
+    "url": "https://arxiv.org/abs/2610.28987",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a defense architecture (PerMIT) with provable integrity guarantees for LLM persistent memory, making it a defence-only paper.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "188425d739cdac37",
+    "title": "A Unified Evaluation Framework of Physical Adversarial Robustness in the Edge VLM Era",
+    "url": "https://arxiv.org/abs/2610.29196",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a benchmarking and evaluation framework for physical adversarial robustness in Vision-Language Models, classified as out of scope (benchmark/evaluation).",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "586758d42831d359",
+    "title": "CertMoE: Robustness Certification for Mixture-of-Experts LLMs via Routing-Aware Smoothing",
+    "url": "https://arxiv.org/abs/2610.29395",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a robustness certification framework (CertMoE) for Mixture-of-Experts models, which is a defense-only proposal.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "fa7fd340035a2711",
+    "title": "Correlated Failures of AI Approval Monitors",
+    "url": "https://arxiv.org/abs/2610.29178",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a research paper proposing a defense or analyzing abstract failure modes of AI monitors rather than demonstrating a specific exploit or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "key": "916f31a36e473d34",
+    "title": "LightSplit: Practical Privacy-Preserving Split Learning via Orthogonal Projections (Full Version)",
+    "url": "https://arxiv.org/abs/2605.13265",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a privacy-preserving technique (LightSplit) for split learning, which is a defensive/efficiency mechanism rather than an attack or vulnerability exploitation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
     "key": "918065aafd8b1ca4",
     "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
     "url": "https://simonwillison.net/2026/Oct/21/php-security-release",
