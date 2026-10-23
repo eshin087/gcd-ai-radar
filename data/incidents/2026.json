@@ -953,9 +953,15 @@
         "publisher": "The Hacker News",
         "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://securityweek.com/litellm-compromised-in-fresh-supply-chain-attack",
+        "publisher": "SecurityWeek",
+        "title": "LiteLLM Compromised in Fresh Supply Chain Attack",
+        "published_at": "2026-10-23"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -966,7 +972,7 @@
       "pypi"
     ],
     "created_at": "2026-10-21T21:54:09.300Z",
-    "updated_at": "2026-10-21T21:54:09.300Z"
+    "updated_at": "2026-10-23T12:12:09.941Z"
   },
   {
     "id": "AIR-2026-1457",
