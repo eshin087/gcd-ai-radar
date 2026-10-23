@@ -1,5 +1,123 @@
 [
   {
+    "id": "AIR-2026-1484",
+    "slug": "cve-2026-57207-netbox-mcp-server-lacks-http-endpoint-authent",
+    "title": "CVE-2026-57207: NetBox MCP Server lacks HTTP endpoint authentication",
+    "summary": "Prior to version 1.2.1, the NetBox Model Context Protocol server running over HTTP lacks authentication on its endpoint. Any reachable client can obtain an active session and full access to NetBox tools without credentials.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "NetBox MCP Server"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57207",
+        "publisher": "NVD",
+        "title": "CVE-2026-57207: NetBox MCP Server is a simple read-only Model Context Protocol server for NetBox.",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-57207",
+      "mcp",
+      "authentication-bypass"
+    ],
+    "created_at": "2026-10-23T17:30:13.346Z",
+    "updated_at": "2026-10-23T17:30:13.346Z"
+  },
+  {
+    "id": "AIR-2026-1483",
+    "slug": "cve-2026-115478-obsidian-tc-mcp-server-suffers-from-path-mat",
+    "title": "CVE-2026-115478: obsidian-tc MCP server suffers from path materialization flaw",
+    "summary": "A vulnerability in the obsidian-tc Model Context Protocol server improperly preserves note ownership during SQLite memory regeneration. This allows hand-authored or orphan notes to be overwritten when another entity shares a sanitized path name.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "obsidian-tc"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115478",
+        "publisher": "NVD",
+        "title": "CVE-2026-115478: obsidian-tc is a governed, agent-ready Model Context Protocol server for Obsidian vaults.",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115478",
+      "mcp",
+      "model-context-protocol"
+    ],
+    "created_at": "2026-10-23T17:30:13.346Z",
+    "updated_at": "2026-10-23T17:30:13.346Z"
+  },
+  {
+    "id": "AIR-2026-1482",
+    "slug": "cve-2026-115477-obsidian-tc-mcp-server-bypasses-user-confirm",
+    "title": "CVE-2026-115477: obsidian-tc MCP server bypasses user confirmation check",
+    "summary": "A vulnerability in the obsidian-tc Model Context Protocol server allows tool calls to complete even if human confirmation was declined or cancelled. The flaw relies on the client echoing a validly bound request state back to the server upon resubmission.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "obsidian-tc"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115477",
+        "publisher": "NVD",
+        "title": "CVE-2026-115477: obsidian-tc is a governed, agent-ready Model Context Protocol server for Obsidian vaults.",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115477",
+      "mcp",
+      "model-context-protocol"
+    ],
+    "created_at": "2026-10-23T17:30:13.346Z",
+    "updated_at": "2026-10-23T17:30:13.346Z"
+  },
+  {
     "id": "AIR-2026-1481",
     "slug": "amplifying-latency-and-cost-of-llm-inference-via-rowhammer-a",
     "title": "Amplifying Latency and Cost of LLM Inference via Rowhammer Attack",

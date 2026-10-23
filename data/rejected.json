@@ -1,5 +1,25 @@
 [
   {
+    "key": "c9b185f7e7b1e3d4",
+    "title": "As AI Risks Grow, Insurers Split on Covering the Damage",
+    "url": "https://darkreading.com/cyber-risk/cyber-insurance-covering-ai-damage",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Policy and insurance news without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-23T17:30:13.346Z"
+  },
+  {
+    "key": "a8c5eecae22ca508",
+    "title": "In Other News: Tor Exit Relays Hijacked, Banks Spot Rogue AI Agents, Self-Rebuilding macOS Ransomware",
+    "url": "https://securityweek.com/in-other-news-tor-exit-relays-hijacked-banks-spot-rogue-ai-agents-self-rebuilding-macos-ransomware",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: General cybersecurity roundup news article mentioning rogue AI agents in passing without details of a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T17:30:13.346Z"
+  },
+  {
     "key": "5594bd018f8a0770",
     "title": "MPIDetector: Detecting Multi-modal Prompt Injection via LLM-based Reasoning",
     "url": "https://arxiv.org/abs/2610.30202",
