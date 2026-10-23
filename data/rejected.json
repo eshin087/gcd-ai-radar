@@ -1,5 +1,135 @@
 [
   {
+    "key": "5594bd018f8a0770",
+    "title": "MPIDetector: Detecting Multi-modal Prompt Injection via LLM-based Reasoning",
+    "url": "https://arxiv.org/abs/2610.30202",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes MPIDetector, a detection and defense mechanism against multi-modal prompt injection, making it out of scope as a defence-only paper.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "3ebd142aab2a70ac",
+    "title": "ReDence: A Hybrid Agentic and Decision-Model Framework for Rapid, Evidence-Grounded Detection of Modern Social Engineering Scams",
+    "url": "https://arxiv.org/abs/2610.30963",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces ReDence, a defense and detection framework for social engineering scams, without presenting a specific security incident or attack on AI.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "058bf61744494ef9",
+    "title": "Social-HUMINT: An LLM-Augmented Unified Framework for Measuring Social Media Exposure",
+    "url": "https://arxiv.org/abs/2610.31573",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a framework for measuring social media exposure and profiling using LLMs, without a specific offensive security incident or attack demonstration.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "056e69b89b8bf2a6",
+    "title": "Bridging the Closed-World Gap: Interpretable Anomaly Detection via a Hybrid TSK-FCM Ensemble on the BETH Dataset",
+    "url": "https://arxiv.org/abs/2610.30576",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a machine learning defense model and ensemble for anomaly detection, which falls under out-of-scope defence-only research.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "783b3e2869654123",
+    "title": "AIRO: A Streaming-Based Machine Learning Framework for Threat Detection and Security in Industrial Internet of Things",
+    "url": "https://arxiv.org/abs/2610.30713",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper introducing a machine learning framework for IIoT threat detection, which is a defensive application.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "d8804c330dc3d585",
+    "title": "The Psychology of an AI Hacker",
+    "url": "https://arxiv.org/abs/2610.30361",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper investigating internal emotion representations in AI models to improve performance, rather than an attack or vulnerability.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "c8600569811c8862",
+    "title": "JANUS: Agentic Cross-Language Fuzzing Harness Generation for Android Native Libraries",
+    "url": "https://arxiv.org/abs/2610.30218",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a fuzzing harness generation tool for Android native libraries using AI, which is a defensive or engineering utility rather than an attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "41f054ebc69e08b1",
+    "title": "Protection Is Not One Event: A Survey of RAG Protection Research by Measured Endpoint",
+    "url": "https://arxiv.org/abs/2610.30193",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a literature survey paper reviewing RAG defence mechanisms rather than demonstrating a novel exploit or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "469483b80b9928ae",
+    "title": "SecLog-Bench: A Scalable Benchmark for Cybersecurity Log Reasoning with Scaffolded Evidence",
+    "url": "https://arxiv.org/abs/2610.31000",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a benchmark and evaluation dataset proposal for cybersecurity log reasoning without demonstrating a specific attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "b64070c77da14cc1",
+    "title": "Parameters efficient language model with latent cross-attention for IoT intrusion detection",
+    "url": "https://arxiv.org/abs/2610.30222",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a resource-efficient Transformer architecture for IoT intrusion detection, which falls under model optimisation rather than an offensive or defensive security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "7ae5f4b44b132907",
+    "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+    "url": "https://arxiv.org/abs/2610.31404",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces a benchmark for evaluating agent susceptibility to phishing rather than demonstrating a novel exploit or vulnerability, making it an out-of-scope benchmark paper.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "2c95af1506d91508",
+    "title": "Your Token Is Gone: A Token-Consumption Countermeasure for Disrupting LLM-Based Scam Systems",
+    "url": "https://arxiv.org/abs/2610.30666",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a defense-only research paper proposing a countermeasure against LLM-based scams, which places it out of scope per instructions.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "key": "1e0f4d94bc7e1244",
+    "title": "The Next AI Incident May Have No Hacker - OpEd",
+    "url": "https://eurasiareview.com/23102026-the-next-ai-incident-may-have-no-hacker-oped",
+    "publisher": "eurasiareview.com",
+    "source_id": "gdelt",
+    "reason": "out of scope: This is an opinion or editorial piece without a specific incident, making it out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
     "key": "a45e553ca30bdb4a",
     "title": "ThreatsDay: AI Secrets Leak, PingCAP Source Theft, Signal Hang-Up Flaw, Laravel Auth Bypass + 21 More",
     "url": "https://thehackernews.com/2026/10/threatsday-ai-secrets-leak-pingcap.html",

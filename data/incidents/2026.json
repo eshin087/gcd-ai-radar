@@ -1,5 +1,407 @@
 [
   {
+    "id": "AIR-2026-1481",
+    "slug": "amplifying-latency-and-cost-of-llm-inference-via-rowhammer-a",
+    "title": "Amplifying Latency and Cost of LLM Inference via Rowhammer Attack",
+    "summary": "Researchers introduced LLVMhammer, demonstrating that CPU DRAM Rowhammer bit-flips in Triton's JIT compilation pipeline can degrade GPU-based LLM inference performance. The attack successfully amplifies inference latency and cost while maintaining output correctness.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Triton",
+      "LLVM"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30798",
+        "publisher": "arXiv",
+        "title": "Amplifying Latency and Cost of LLM Inference via Rowhammer Attack",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rowhammer",
+      "hardware",
+      "gpu",
+      "inference",
+      "triton"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1480",
+    "slug": "membership-inference-attack-on-private-evolution-synthetic-d",
+    "title": "Membership Inference Attack on Private Evolution Synthetic Data",
+    "summary": "Researchers demonstrated a membership inference attack against Private Evolution, showing that differential privacy guarantees do not eliminate empirical privacy risks in black-box synthetic data generation. The findings highlight vulnerabilities in privacy preservation when leveraging pre-trained foundation models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Private Evolution"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30514",
+        "publisher": "arXiv",
+        "title": "Membership Inference Attack on Private Evolution",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "membership_inference",
+      "privacy",
+      "synthetic_data"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1479",
+    "slug": "mirage-targeted-jailbreaks-against-post-generation-safety-ch",
+    "title": "Mirage: Targeted Jailbreaks Against Post-Generation Safety Checkers",
+    "summary": "Researchers proposed Mirage, a multimodal jailbreak attack that bypasses post-generation safety checkers in diffusion models. The technique conceals malicious targets within imperceptible perturbations on benign input images.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "diffusion models"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30348",
+        "publisher": "arXiv",
+        "title": "Mirage: Targeted Jailbreaks Against Post-Generation Safety Checkers in Multimodal Diffusion Models",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "diffusion-models",
+      "multimodal",
+      "adversarial-perturbation"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1478",
+    "slug": "automated-screening-of-privacy-risks-in-medical-ai",
+    "title": "Automated Screening of Privacy Risks in Medical AI",
+    "summary": "A study highlights how membership inference attacks can reveal whether specific patient records were used to train medical AI models. The findings demonstrate individual privacy exposure despite seemingly safe cohort averages.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "medical AI models"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30229",
+        "publisher": "arXiv",
+        "title": "Automated screening of privacy risks in medical AI",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "membership-inference",
+      "privacy-breach",
+      "medical-ai"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1477",
+    "slug": "agent-mosaic-confidentiality-leaks-in-agentic-llm-systems",
+    "title": "Agent Mosaic: Confidentiality Leaks in Agentic LLM Systems",
+    "summary": "Researchers demonstrated that LLM agents can assemble and disclose sensitive conclusions from multiple accessible documents through a mosaic effect. The study highlights privacy and confidentiality risks in agentic workflows over sensitive data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "GPT-5.6-Sol"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30418",
+        "publisher": "arXiv",
+        "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "agentic-ai",
+      "mosaic-effect"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1476",
+    "slug": "data-void-exploits-and-disinformation-in-web-searching-llms",
+    "title": "Data-Void Exploits and Disinformation in Web-Searching LLMs",
+    "summary": "Researchers demonstrated how disinformers exploit data voids in search spaces to trick web-searching LLMs into citing and propagating false narratives. The study highlights vulnerabilities in retrieval-augmented generative search systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30365",
+        "publisher": "arXiv",
+        "title": "Data-Void Exploits in Web-Searching LLMs",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-poisoning",
+      "search-manipulation",
+      "disinformation"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1475",
+    "slug": "phishgen-evaluation-of-llm-driven-phishing-website-generatio",
+    "title": "PhishGen Evaluation of LLM-Driven Phishing Website Generation",
+    "summary": "Researchers evaluated the capabilities of large language models in automatically generating functional and visually deceptive phishing websites. The study benchmarks LLM-generated pages against human deception standards.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30226",
+        "publisher": "arXiv",
+        "title": "PhishGen: Understanding LLM Capabilities in Automated Phishing Website Generation",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "automated-attacks",
+      "llm"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1474",
+    "slug": "afterdeletebench-auditing-post-deletion-information-persiste",
+    "title": "AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents",
+    "summary": "Researchers introduce AfterDeleteBench to audit memory persistence vulnerabilities in LLM agents where deleted records remain accessible via descendants. The controlled behavioral audit highlights failure modes in agentic memory management.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AfterDeleteBench"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.31366",
+        "publisher": "arXiv",
+        "title": "AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "memory-persistence",
+      "data-leak",
+      "llm-agents"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1473",
+    "slug": "mig-cow-transferable-adversarial-attacks-on-deepfake-detecto",
+    "title": "MIG-COW: Transferable Adversarial Attacks on Deepfake Detectors",
+    "summary": "Researchers propose MIG-COW, an adversarial attack framework generating imperceptible inputs to bypass heterogeneous deepfake detectors. The method achieves high white-box attack success rates across various CNN and ViT models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "MIG-COW"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.30914",
+        "publisher": "arXiv",
+        "title": "MIG-COW: Transferable Adversarial Attacks on Deepfake Detectors via Gradient Decomposition",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "adversarial-attack",
+      "deepfake",
+      "evasion"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
+    "id": "AIR-2026-1472",
+    "slug": "cve-2026-108456-server-side-request-forgery-in-azure-ai-foun",
+    "title": "CVE-2026-108456: Server-side request forgery in Azure AI Foundry",
+    "summary": "An SSRF vulnerability in Azure AI Foundry allows an authorized attacker to elevate privileges over a network. Microsoft published an advisory and CVE-2026-108456 to address the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure AI Foundry"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-22",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108456",
+        "publisher": "NVD",
+        "title": "CVE-2026-108456: Server-side request forgery (ssrf) in Azure AI Foundry allows an authorized attacker to elevate privileges over a network.",
+        "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108456",
+        "publisher": "MSRC",
+        "title": "CVE-2026-108456 Azure AI Foundry Elevation of Privilege Vulnerability",
+        "published_at": "2026-10-22"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-108456",
+      "ssrf",
+      "privilege-escalation"
+    ],
+    "created_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-23T05:05:04.694Z"
+  },
+  {
     "id": "AIR-2026-1471",
     "slug": "litellm-release-pipeline-compromised-to-distribute-info-stea",
     "title": "LiteLLM release pipeline compromised to distribute info-stealer malware",
@@ -185,9 +587,15 @@
         "publisher": "The Hacker News",
         "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
         "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
+        "publisher": "Dark Reading",
+        "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
+        "published_at": "2026-10-22"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -198,7 +606,7 @@
       "connectwise"
     ],
     "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-22T12:03:53.156Z"
+    "updated_at": "2026-10-23T05:05:04.694Z"
   },
   {
     "id": "AIR-2026-1466",
