@@ -1,5 +1,25 @@
 [
   {
+    "key": "c1d8a45e5f00233b",
+    "title": "Straiker Wins Five 2026 Top InfoSec Innovator Awards | Straiker",
+    "url": "https://straiker.ai/blog/straiker-wins-five-top-infosec-innovator-awards-for-2026",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Vendor product award announcement and marketing release without a specific cybersecurity incident.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
+    "key": "a7611ad9edc57742",
+    "title": "Microsoft Teams to get AI-powered, context-aware phishing detection",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-teams-to-get-ai-powered-context-aware-phishing-detection",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Product feature announcement for a security defense feature in Microsoft Teams, not an incident or attack.",
+    "confidence": 0.98,
+    "rejected_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
     "key": "c9b185f7e7b1e3d4",
     "title": "As AI Risks Grow, Insurers Split on Covering the Damage",
     "url": "https://darkreading.com/cyber-risk/cyber-insurance-covering-ai-damage",

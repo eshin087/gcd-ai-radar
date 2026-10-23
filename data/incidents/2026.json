@@ -1,5 +1,124 @@
 [
   {
+    "id": "AIR-2026-1490",
+    "slug": "threat-actors-deploy-open-weight-ai-models-for-mass-attacks",
+    "title": "Threat actors deploy open-weight AI models for mass attacks",
+    "summary": "Attackers targeted over a hundred sites using open-weight models to orchestrate automated attacks at minimal cost. In another case, public models were abused to achieve full domain control.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "open-weight models"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cybersecurity-operations/ai-tools-massive-attacks-little-cost",
+        "publisher": "Dark Reading",
+        "title": "AI Tools Are Generating Massive Attacks for Little Cost",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-enabled-attack",
+      "open-weight",
+      "automation"
+    ],
+    "created_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
+    "id": "AIR-2026-1489",
+    "slug": "litellm-1-107-0-compromised-via-malicious-python-startup-hoo",
+    "title": "LiteLLM 1.107.0 compromised via malicious Python startup hooks",
+    "summary": "Threat actors compromised the LiteLLM 1.107.0 release to execute remote code and steal credentials through Python startup hooks. Microsoft Threat Intelligence detailed the attack vectors along with detections and mitigation steps.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "infra_vuln"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks",
+        "publisher": "Microsoft Security",
+        "title": "Inside the LiteLLM 1.107.0 supply chain compromise: Credential theft through Python startup hooks",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "credential-theft",
+      "litellm"
+    ],
+    "created_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
+    "id": "AIR-2026-1487",
+    "slug": "ransomware-affiliates-execute-intrusions-using-autonomous-ai",
+    "title": "Ransomware Affiliates Execute Intrusions Using Autonomous AI Agent Framework",
+    "summary": "Ransomware affiliates deployed an AI-driven intrusion ecosystem named Phantom to execute automated cyberattacks and data extortion. The framework acts as an autonomous red team and kill chain tool for threat actors.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Phantom"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html",
+        "publisher": "The Hacker News",
+        "title": "Exposed Infrastructure Reveals How Ransomware Affiliates Used AI Agents to Execute Intrusions",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "ai_agents",
+      "phantom"
+    ],
+    "created_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
     "id": "AIR-2026-1484",
     "slug": "cve-2026-57207-netbox-mcp-server-lacks-http-endpoint-authent",
     "title": "CVE-2026-57207: NetBox MCP Server lacks HTTP endpoint authentication",
@@ -963,6 +1082,84 @@
     "updated_at": "2026-10-22T04:45:27.696Z"
   },
   {
+    "id": "AIR-2026-1486",
+    "slug": "vllm-denial-of-service-through-multimodal-uuid-cache-desynch",
+    "title": "vLLM Denial of Service through Multimodal UUID Cache Desynchronization",
+    "summary": "A cache identity vulnerability in vLLM permits unauthenticated attackers to desynchronize multimodal processor caches. This triggers a fatal token mismatch that crashes the serving instance.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-hfwf-hgvp-4rr8",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-hfwf-hgvp-4rr8: Duplicate Advisory: vLLM vulnerable to remote denial of service through forged multimodal UUID cache desynchronization",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "dos",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
+    "id": "AIR-2026-1485",
+    "slug": "vllm-denial-of-service-via-unvalidated-mm-processor-kwargs",
+    "title": "vLLM Denial of Service via Unvalidated mm_processor_kwargs",
+    "summary": "An unvalidated parameter vulnerability in vLLM allows remote clients to exhaust server memory using large multimodal processor configurations. The issue can cause the shared inference server to crash and terminate.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-3cgq-c484-rx5j",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-3cgq-c484-rx5j: Duplicate Advisory: vLLM 0.7.3 before 0.31.0 DoS via Unvalidated mm_processor_kwargs",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "dos",
+      "vllm",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-10-23T22:00:30.389Z"
+  },
+  {
     "id": "AIR-2026-1460",
     "slug": "storm-0940-uses-artex-agentic-ai-in-connectwise-supply-chain",
     "title": "Storm-0940 Uses ARTEX Agentic AI in ConnectWise Supply Chain Campaign",
@@ -1274,9 +1471,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-114050: vLLM before 0.31.0 uses a client-supplied multimodal uuid verbatim as cache identity with no consistency check on cache hits,…",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-p92p-rxj5-7p2x",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-114050: vLLM: Forged multimodal UUID + P0/P1 processor-cache eviction drift: unauthenticated remote crash of the whole vLLM engine",
+        "published_at": "2026-10-23"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -1286,7 +1489,7 @@
       "infra_vuln"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z"
+    "updated_at": "2026-10-23T22:00:30.389Z"
   },
   {
     "id": "AIR-2026-1452",
@@ -1431,9 +1634,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-114055: vLLM from 0.7.3 before 0.31.0 contains an uncontrolled resource consumption vulnerability that allows remote clients to control…",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-gx7p-2j49-hfq4",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-114055: vLLM : DoS via unvalidated mm_processor_kwargs in multimodal image processors (Isaac, InternVL, H2OVL, etc.)",
+        "published_at": "2026-10-23"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -1443,7 +1652,7 @@
       "vllm"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z"
+    "updated_at": "2026-10-23T22:00:30.389Z"
   },
   {
     "id": "AIR-2026-1448",
@@ -28887,9 +29096,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-7873: IBM Langflow OSS 1.0.0 through 1.10.0 allows authenticated attackers to execute arbitrary OS commands and read sensitive files…",
         "published_at": "2026-06-30"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-v798-mcc6-2m3m",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-7873: Langflow: Code Injection Vulnerability in Code Validation Endpoint",
+        "published_at": "2026-06-30"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -28899,7 +29114,7 @@
       "rce"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-23T22:00:30.389Z"
   },
   {
     "id": "AIR-2026-1143",
