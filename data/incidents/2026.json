@@ -11093,6 +11093,47 @@
     "updated_at": "2026-10-18T06:33:31.967Z"
   },
   {
+    "id": "AIR-2026-1495",
+    "slug": "fraud-ring-used-ai-cloned-voices-of-relatives-to-steal-valua",
+    "title": "Fraud Ring Used AI-Cloned Voices of Relatives to Steal Valuables",
+    "summary": "A Greek fraud ring used AI voice cloning to impersonate relatives and deceive victims into surrendering money and valuables. Police arrested suspects and estimated total illicit proceeds exceeding €1 million.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Telephony"
+    ],
+    "incident_date": "2026-09-18",
+    "incident_date_precision": "day",
+    "first_reported": "2026-09-18",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1748",
+        "publisher": "AI Incident Database",
+        "title": "Fraud Ring in Greece Allegedly Used AI-Cloned Relatives' Voices to Steal Money and Valuables",
+        "published_at": "2026-09-18"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "voice-cloning",
+      "fraud",
+      "vishing"
+    ],
+    "created_at": "2026-10-24T11:03:56.982Z",
+    "updated_at": "2026-10-24T11:03:56.982Z"
+  },
+  {
     "id": "AIR-2026-0391",
     "slug": "zcode-ai-coding-assistant-reportedly-uploaded-local-code-rep",
     "title": "ZCode AI Coding Assistant Reportedly Uploaded Local Code Repositories Without Consent",
@@ -47703,6 +47744,48 @@
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
     "updated_at": "2026-10-18T10:04:21.885Z"
+  },
+  {
+    "id": "AIR-2026-1494",
+    "slug": "scammers-used-ai-cloned-lawyer-voice-to-defraud-bank-fideura",
+    "title": "Scammers Used AI-Cloned Lawyer Voice to Defraud Bank Fideuram",
+    "summary": "Scammers used an AI-cloned voice to impersonate a CEO and trick an Italian private bank into transferring approximately €95 million overseas. Prosecutors opened a fraud investigation after part of the funds remained missing.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "WhatsApp"
+    ],
+    "incident_date": "2026-02-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-02-23",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1749",
+        "publisher": "AI Incident Database",
+        "title": "Scammers Allegedly Used an AI-Cloned Lawyer's Voice to Defraud Italian Private Bank Fideuram",
+        "published_at": "2026-02-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "deepfake",
+      "voice-cloning",
+      "fraud",
+      "social-engineering"
+    ],
+    "created_at": "2026-10-24T11:03:56.982Z",
+    "updated_at": "2026-10-24T11:03:56.982Z"
   },
   {
     "id": "AIR-2026-0799",

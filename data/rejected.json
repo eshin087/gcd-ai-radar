@@ -1,5 +1,25 @@
 [
   {
+    "key": "6ce029212ed8c171",
+    "title": "Students Allegedly Used AI to Create and Share Fake Nude Images of Classmates in Puente Alto, Chile",
+    "url": "https://incidentdatabase.ai/cite/1757",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI non-consensual image generation harms without a cybersecurity angle (out of scope per guidelines).",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-24T11:03:56.982Z"
+  },
+  {
+    "key": "5f9622a53f0778de",
+    "title": "Woman in Kyrgyzstan Alleged a Former Classmate Used an AI Bot to Create a Nude Image From Her Instagram Photo",
+    "url": "https://incidentdatabase.ai/cite/1755",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI image generation harassment incident without a broader cybersecurity breach or attack context.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-24T11:03:56.982Z"
+  },
+  {
     "key": "fe512e7c7801e3e3",
     "title": "AI phishing puts SMEs in firing line, but many still see no need for cyber cover",
     "url": "https://it-online.co.za/2026/10/23/ai-phishing-puts-smes-in-firing-line-but-many-still-see-no-need-for-cyber-cover",
