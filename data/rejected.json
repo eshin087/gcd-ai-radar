@@ -1,5 +1,15 @@
 [
   {
+    "key": "fe512e7c7801e3e3",
+    "title": "AI phishing puts SMEs in firing line, but many still see no need for cyber cover",
+    "url": "https://it-online.co.za/2026/10/23/ai-phishing-puts-smes-in-firing-line-but-many-still-see-no-need-for-cyber-cover",
+    "publisher": "it-online.co.za",
+    "source_id": "gdelt",
+    "reason": "out of scope: General article discussing SME risk perception regarding AI phishing without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-24T05:11:14.762Z"
+  },
+  {
     "key": "c1d8a45e5f00233b",
     "title": "Straiker Wins Five 2026 Top InfoSec Innovator Awards | Straiker",
     "url": "https://straiker.ai/blog/straiker-wins-five-top-infosec-innovator-awards-for-2026",

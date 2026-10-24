@@ -1,5 +1,125 @@
 [
   {
+    "id": "AIR-2026-1493",
+    "slug": "cve-2026-115886-mlflow-genai-scorer-endpoints-allow-unsafe-d",
+    "title": "CVE-2026-115886: MLflow GenAI scorer endpoints allow unsafe deserialization",
+    "summary": "MLflow versions 3.12.0rc0 through 3.17.0 accept serialized third-party scorer data in GenAI evaluate and invoke endpoints without constraining constructors. When specific optional packages are installed, this can be exploited by attackers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MLflow"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115886",
+        "publisher": "NVD",
+        "title": "CVE-2026-115886: MLflow is an open source AI engineering platform for agents, large language models, and machine learning models.",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115886",
+      "mlflow",
+      "deserialization"
+    ],
+    "created_at": "2026-10-24T05:11:14.762Z",
+    "updated_at": "2026-10-24T05:11:14.762Z"
+  },
+  {
+    "id": "AIR-2026-1492",
+    "slug": "ghsa-7xgj-8392-5q4r-fastmcp-post-transform-component-authori",
+    "title": "GHSA-7xgj-8392-5q4r: FastMCP post-transform component authorization bypass",
+    "summary": "FastMCP skipped post-transform component authorization on direct calls, allowing clients to invoke denied tools or prompts. The maintainers released fixes to properly authorize final transformed components.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "fastmcp"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-7xgj-8392-5q4r",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-7xgj-8392-5q4r: FastMCP: Post-transform component authorization is skipped on direct calls",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "ghsa-7xgj-8392-5q4r",
+      "fastmcp",
+      "authorization",
+      "mcp"
+    ],
+    "created_at": "2026-10-24T05:11:14.762Z",
+    "updated_at": "2026-10-24T05:11:14.762Z"
+  },
+  {
+    "id": "AIR-2026-1491",
+    "slug": "ghsa-vqqp-x5qm-5qp4-fastmcp-oauth-client-provider-issuer-bin",
+    "title": "GHSA-vqqp-x5qm-5qp4: FastMCP OAuth client provider issuer binding vulnerability",
+    "summary": "FastMCP client wrappers construct M2M OAuth providers without issuer binding, allowing untrusted servers to redirect client secrets. The vulnerability affects stable versions 4.0.0 through 4.1.1 and has been patched.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "fastmcp",
+      "fastmcp-slim"
+    ],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-vqqp-x5qm-5qp4",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-vqqp-x5qm-5qp4: FastMCP MCP client wrappers construct M2M OAuth providers without issuer binding — client secret redirectable to attacker-advertised…",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "ghsa-vqqp-x5qm-5qp4",
+      "fastmcp",
+      "oauth",
+      "mcp"
+    ],
+    "created_at": "2026-10-24T05:11:14.762Z",
+    "updated_at": "2026-10-24T05:11:14.762Z"
+  },
+  {
     "id": "AIR-2026-1490",
     "slug": "threat-actors-deploy-open-weight-ai-models-for-mass-attacks",
     "title": "Threat actors deploy open-weight AI models for mass attacks",
