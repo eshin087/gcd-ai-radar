@@ -1,5 +1,46 @@
 [
   {
+    "id": "AIR-2026-1496",
+    "slug": "litellm-master-key-leak-leads-to-malicious-package-release",
+    "title": "LiteLLM Master Key Leak Leads to Malicious Package Release",
+    "summary": "An accidentally published master key allowed attackers to compromise a release pipeline and push a malicious Python package. The incident highlights supply chain risks associated with exposed AI platform credentials.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-24",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-24",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
+        "publisher": "The Hacker News",
+        "title": "Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline",
+        "published_at": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "litellm",
+      "supply-chain",
+      "credential-leak"
+    ],
+    "created_at": "2026-10-24T16:11:16.609Z",
+    "updated_at": "2026-10-24T16:11:16.609Z"
+  },
+  {
     "id": "AIR-2026-1493",
     "slug": "cve-2026-115886-mlflow-genai-scorer-endpoints-allow-unsafe-d",
     "title": "CVE-2026-115886: MLflow GenAI scorer endpoints allow unsafe deserialization",
