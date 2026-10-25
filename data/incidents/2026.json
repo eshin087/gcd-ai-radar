@@ -1,5 +1,438 @@
 [
   {
+    "id": "AIR-2026-1507",
+    "slug": "ai-coding-agents-hijacked-using-malicious-agents-md-instruct",
+    "title": "AI coding agents hijacked using malicious AGENTS.md instruction file",
+    "summary": "Researchers discovered a malicious markdown instruction file placed inside a Downloads folder that tricked an AI coding agent into executing unauthorized actions. The attack successfully forced the agent to install a rogue npm package.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "AI coding agents"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder",
+        "publisher": "BleepingComputer",
+        "title": "AI coding agents hijacked using AGENTS.md file in Downloads folder",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "prompt-injection",
+      "supply-chain",
+      "coding-agent"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1506",
+    "slug": "cve-2026-116181-vllm-input-validation-flaw-permits-engine-cr",
+    "title": "CVE-2026-116181: vLLM input validation flaw permits engine crashes via out-of-vocabulary tokens",
+    "summary": "Improper input validation in vLLM allows remote attackers to supply invalid stop_token_ids and terminate the engine. The issue can also impact memory buffers in the V2 runner.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116181",
+        "publisher": "NVD",
+        "title": "CVE-2026-116181: vLLM from 0.20.1 before 0.29.0 contains an improper input validation vulnerability that allows remote attackers to crash the…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116181",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1505",
+    "slug": "cve-2026-116179-vllm-video-frame-count-cap-bypass-causes-res",
+    "title": "CVE-2026-116179: vLLM video frame-count cap bypass causes resource exhaustion and crash",
+    "summary": "An input validation flaw in vLLM enables API clients to override frame-count limits through media_io_kwargs. Attackers can exploit this to exhaust memory and crash the API frontend.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116179",
+        "publisher": "NVD",
+        "title": "CVE-2026-116179: vLLM from 0.18.0 before 0.31.0 contains a resource exhaustion vulnerability that allows API clients to bypass the video/jpeg…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116179",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1504",
+    "slug": "cve-2026-116176-vllm-server-side-request-forgery-leads-to-nc",
+    "title": "CVE-2026-116176: vLLM server-side request forgery leads to NCCL unique_id and KV-cache leakage",
+    "summary": "A server-side request forgery vulnerability in vLLM allows API callers to force outbound connections using a crafted X-Request-Id header. Attackers can leak sensitive cache tensors or block prefill workers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116176",
+        "publisher": "NVD",
+        "title": "CVE-2026-116176: vLLM from 0.9.2 before 0.24.0 contains a server-side request forgery vulnerability that allows API callers to force outbound…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116176",
+      "ssrf",
+      "vllm",
+      "data-leak"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1503",
+    "slug": "cve-2026-116172-vllm-rust-grpc-converter-allows-max-logprobs",
+    "title": "CVE-2026-116172: vLLM Rust gRPC converter allows max_logprobs limit bypass and engine crash",
+    "summary": "Improper input validation in vLLM allows remote attackers to send oversized top_n values via gRPC. This triggers torch.topk failures that terminate the engine core.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116172",
+        "publisher": "NVD",
+        "title": "CVE-2026-116172: vLLM from 0.22.0 before 0.24.0 contains an improper input validation vulnerability in the Rust gRPC converter that allows remote…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116172",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1502",
+    "slug": "cve-2026-116175-vllm-audio-processing-path-vulnerable-to-dec",
+    "title": "CVE-2026-116175: vLLM audio processing path vulnerable to decompression bomb memory exhaustion",
+    "summary": "An input validation flaw in the vLLM AudioMediaIO multimodal path lacks a decoded-duration limit on audio inputs. Authenticated attackers can exploit this to exhaust server memory and cause a denial of service.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116175",
+        "publisher": "NVD",
+        "title": "CVE-2026-116175: vLLM from 0.19.0 before 0.24.0 contains a decompression bomb vulnerability because the AudioMediaIO multimodal path calls…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116175",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1501",
+    "slug": "cve-2026-116177-vllm-uncontrolled-resource-consumption-via-d",
+    "title": "CVE-2026-116177: vLLM uncontrolled resource consumption via decompression bomb",
+    "summary": "An uncontrolled resource consumption vulnerability in vLLM allows unauthenticated attackers to exhaust memory and cause denial of service. The flaw stems from disabled image pixel limits in Nemotron-VL processors across versions 0.10.2 to 0.25.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116177",
+        "publisher": "NVD",
+        "title": "CVE-2026-116177: vLLM from 0.10.2 before 0.25.0 contains an uncontrolled resource consumption vulnerability that allows unauthenticated attackers…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116177",
+      "resource-exhaustion",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1500",
+    "slug": "cve-2026-116174-vllm-improper-input-validation-in-rust-grpc",
+    "title": "CVE-2026-116174: vLLM improper input validation in Rust gRPC service",
+    "summary": "An improper input validation vulnerability in vLLM allows attackers to submit out-of-vocabulary prompt tokens and crash the engine core. The flaw affects versions 0.22.0 through 0.24.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116174",
+        "publisher": "NVD",
+        "title": "CVE-2026-116174: vLLM from 0.22.0 before 0.24.0 contains an improper input validation vulnerability in the Rust gRPC Generate and GenerateStream…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116174",
+      "input-validation",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1499",
+    "slug": "cve-2026-116173-vllm-denial-of-service-via-logprob-token-lim",
+    "title": "CVE-2026-116173: vLLM denial of service via logprob token limits bypass",
+    "summary": "A denial of service flaw in the vLLM Rust gRPC frontend allows attackers to terminate the engine core by bypassing token limits. The vulnerability impacts framework versions 0.22.0 to 0.24.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116173",
+        "publisher": "NVD",
+        "title": "CVE-2026-116173: vLLM from 0.22.0 before 0.24.0 contains a denial of service vulnerability that allows remote attackers to terminate EngineCore by…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116173",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1498",
+    "slug": "cve-2026-116178-vllm-denial-of-service-via-inconsistent-mult",
+    "title": "CVE-2026-116178: vLLM denial of service via inconsistent multimodal metadata",
+    "summary": "An input validation flaw in vLLM allows remote attackers to crash the inference engine using inconsistent multimodal metadata. The issue affects versions 0.20.0 through 0.30.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116178",
+        "publisher": "NVD",
+        "title": "CVE-2026-116178: vLLM from 0.20.0 before 0.30.0 contains a denial of service vulnerability that allows remote attackers to crash the engine by…",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116178",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
+    "id": "AIR-2026-1497",
+    "slug": "cve-2026-116180-vllm-denial-of-service-vulnerability-in-tens",
+    "title": "CVE-2026-116180: vLLM denial of service vulnerability in tensor allocation",
+    "summary": "A vulnerability in vLLM allows remote clients to trigger an overflow error that crashes the engine core and drops co-tenant requests. The issue affects versions 0.8.5 up to 0.31.0 via uninitialized tensor allocation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116180",
+        "publisher": "NVD",
+        "title": "CVE-2026-116180: vLLM from 0.8.5 before 0.31.0 has a denial of service flaw.",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116180",
+      "denial-of-service",
+      "vllm"
+    ],
+    "created_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-25T16:18:52.591Z"
+  },
+  {
     "id": "AIR-2026-1496",
     "slug": "litellm-master-key-leak-leads-to-malicious-package-release",
     "title": "LiteLLM Master Key Leak Leads to Malicious Package Release",
