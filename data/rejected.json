@@ -1,5 +1,15 @@
 [
   {
+    "key": "641fd2b9b2b7e462",
+    "title": "Prompt Injection Techniques Every Red Teamer Should Test",
+    "url": "https://fdzdev.medium.com/20-prompt-injection-techniques-every-red-teamer-should-test-b22359bfd57d",
+    "publisher": "fdzdev.medium.com",
+    "source_id": "hn",
+    "reason": "out of scope: This is an opinion or explainer piece discussing prompt injection techniques without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-25T11:52:03.147Z"
+  },
+  {
     "key": "6ce029212ed8c171",
     "title": "Students Allegedly Used AI to Create and Share Fake Nude Images of Classmates in Puente Alto, Chile",
     "url": "https://incidentdatabase.ai/cite/1757",
