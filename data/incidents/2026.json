@@ -1,5 +1,45 @@
 [
   {
+    "id": "AIR-2026-1508",
+    "slug": "threat-actors-use-agentic-ai-in-post-exploitation-campaign-t",
+    "title": "Threat Actors Use Agentic AI in Post-Exploitation Campaign Targeting European Government",
+    "summary": "Attackers exploited vulnerabilities to compromise a European government entity and utilized agentic AI platforms for post-exploitation operations. The breach resulted in unauthorized access to credentials and sensitive authentication data.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "PHP2Shell"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+        "publisher": "The Hacker News",
+        "title": "PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-109618",
+      "CVE-2026-109619",
+      "ai-assisted-intrusion",
+      "post-exploitation"
+    ],
+    "created_at": "2026-10-25T20:55:01.683Z",
+    "updated_at": "2026-10-25T20:55:01.683Z"
+  },
+  {
     "id": "AIR-2026-1507",
     "slug": "ai-coding-agents-hijacked-using-malicious-agents-md-instruct",
     "title": "AI coding agents hijacked using malicious AGENTS.md instruction file",
