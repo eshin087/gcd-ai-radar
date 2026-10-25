@@ -1,13 +1,29 @@
 # GCD AI RADAR
 
-A public, zero-cost observatory of AI cybersecurity incidents. It records,
-counts, categorizes and charts two kinds of incident, deduplicated and linked
-to original reporting:
+**A public observatory of AI cybersecurity incidents: collected from open sources, deduplicated, classified and charted over time.**
+
+Live at [gcd-ai-radar.vercel.app](https://gcd-ai-radar.vercel.app).
+
+<a href="https://gcd-ai-radar.vercel.app"><img src="docs/media/dashboard.webp" alt="The GCD AI RADAR dashboard: a headline count of incidents in the last 24 months, a live threat feed panel, and an ASCII rendering of a data center behind it" width="100%"></a>
+
+## Why I built this
+
+I work in security and could not find one honest, source-linked count of how often AI systems are being attacked, or used to attack others. Vendor reports count articles and mix vulnerabilities with incidents, so I built a dataset that counts each event once and lets anyone check the source.
+
+## What it tracks
+
+Two kinds of incident, each deduplicated and linked to original reporting:
 
 - **attack_on_ai**: an AI model, agent or AI-powered product was the thing exploited, abused or leaked.
 - **ai_enabled_attack**: attackers used AI as a meaningful part of a cyberattack against someone else.
 
-Part of the gcd family ([gcdatlas.com](https://gcdatlas.com)). Live site: see the repository description.
+Counts are per incident, not per article: one event covered by fifteen outlets is one incident with fifteen sources. Disclosed CVEs are tracked apart and never counted as incidents.
+
+Product watch pages gather everything that names one AI product or framework, newest first, with confirmed exploitation and CISA KEV flags up top:
+
+<a href="https://gcd-ai-radar.vercel.app/products"><img src="docs/media/product-watch.webp" alt="A product watch page for Langflow showing 210 records, 203 disclosed CVEs, 6 exploited, 3 CISA KEV flagged, and a patch-now list of exploited vulnerabilities with source links" width="100%"></a>
+
+Part of the gcd family ([gcdatlas.com](https://gcdatlas.com)).
 
 ## How it works
 
@@ -16,44 +32,25 @@ feeds + APIs ──▶ collector (GitHub Actions, every 6 h) ──▶ /data/*.j
                  fetch → pre-filter → dedupe → LLM classify → publish/review/reject → commit
 ```
 
-- All data lives as JSON in [`/data`](data), the published records sharded by year of first
-  report (`data/incidents/<year>.json`), so a collector run rewrites one small file. Every
-  commit to `main` redeploys the site.
-- The collector (`/collector`, TypeScript) classifies candidates with free-tier LLMs
-  (Gemini first, Groq as fallback). Anything that cannot be classified waits in
-  `data/pending.json`; nothing is dropped and nothing is published unclassified.
-- Counts are per incident, not per article: one event covered by fifteen outlets is one
-  incident with fifteen sources.
+- All data lives as JSON in [`/data`](data), sharded by year of first report. Every commit to `main` redeploys the site.
+- The collector (`/collector`, TypeScript) classifies candidates with free-tier LLMs (Gemini first, Groq as fallback). Anything it cannot classify waits in a pending file; nothing is dropped and nothing is published unclassified.
 - Only titles, links, dates and our own two-sentence summaries are stored. No article text.
-- Product watch pages (`/products`, built by `buildProductIndex` in `lib/products.ts`) list each
-  product family's disclosed CVEs, confirmed exploitation and CISA KEV flags, newest first.
+- The site is static files with no server code, cookies, accounts or analytics. The [security model](docs/security.md) describes what runs where and what protects it.
 
-## Status
-
-Live at https://gcd-ai-radar.vercel.app. The collector runs every 6 hours on GitHub
-Actions (it needs `GEMINI_API_KEY`, see below) and commits new data to `main`, which
-redeploys the site. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD,
-GitHub Advisories) are backfilled from 2016.
+**Tech:** Next.js, TypeScript, Zod, GitHub Actions, Vercel. Classification by Gemini and Groq free tiers.
 
 ## Reuse: API and embed
 
-Everything the site counts is published as static files with open CORS, documented field by
-field at [`/api`](https://gcd-ai-radar.vercel.app/api) (`app/(site)/api/page.tsx`, field notes in
-`lib/api-docs.ts`).
+Everything the site counts is published as static files with open CORS, documented field by field at [`/api`](https://gcd-ai-radar.vercel.app/api).
 
-- `/data/summary.json` holds the headline numbers (totals, real-world, trailing 12 and 24 months
-  with the prior window and delta, this month, year to date) and the last 24 months, built by
-  `lib/summary.ts` from the same functions as the dashboard and checked by `tests/summary.test.ts`.
-- `/embed` is a card for other sites' iframes: `?theme=dark|light`, `?window=12m|24m`, `?compact=1`.
-  `vercel.json` lets only that path be framed (`tests/headers.test.ts` checks it).
+- `/data/summary.json` holds the headline numbers (totals, real-world, trailing 12 and 24 months with the prior window and delta, this month, year to date) and the last 24 months.
+- `/embed` is a card for other sites to put in an iframe: `?theme=dark|light`, `?window=12m|24m`, `?compact=1`.
 
 ```html
 <iframe src="https://gcd-ai-radar.vercel.app/embed?theme=dark&amp;window=12m" title="AI cybersecurity incidents, last 12 months" width="360" height="260" loading="lazy" style="border:0;max-width:100%"></iframe>
 ```
 
-Counts carried elsewhere must keep the counting rules on the API page: disclosed vulnerabilities are
-never incidents, and the latest months are provisional. Data is CC BY-SA 4.0: cite the site with a
-link and the date you accessed it.
+Counts carried elsewhere must keep the counting rules on the API page. Data is CC BY-SA 4.0: cite the site with a link and the date you accessed it.
 
 ## Development
 
@@ -62,52 +59,10 @@ npm install
 npm run dev          # http://localhost:3000
 npm test             # unit tests (dedupe, schema, stats)
 npm run typecheck && npm run lint
-npm run build        # static export to ./out (runs scripts/prebuild.ts first)
+npm run build        # static export to ./out
 ```
 
-Collector commands (keys in `.env`, see `.env.example`):
-
-```bash
-npm run collect -- --dry-run   # whole pipeline, no writes, no commit
-npm run collect                # fetch, classify, publish, commit
-npm run backfill -- aiid       # one-time seeds: aiid | atlas | avid | nvd | ghsa
-npm run review                 # walk through data/review-queue.json
-npm run validate               # Zod-validate every file under /data
-npm run briefing               # weekly briefing for the ISO week that ended last Sunday (Mondays on Actions)
-npm run briefing -- --week=2026-W42 --weeks=8 --force --no-commit   # backfill or rewrite weeks locally
-npx tsx scripts/shard-incidents.ts   # rebuild data/incidents/<year>.json from a pre-shard data/incidents.json
-```
-
-## Secrets and variables (GitHub Actions)
-
-| Name | Required | Purpose |
-|---|---|---|
-| `GEMINI_API_KEY` | yes | Primary classifier (Gemini free tier, Google AI Studio) |
-| `GROQ_API_KEY` | no | Fallback classifier (Groq free tier) |
-| `NVD_API_KEY` | no | Raises the NVD API limit from 5 to 50 requests per 30 s |
-| `CLOUDFLARE_RADAR_TOKEN` | no | Cloudflare API token with Account › Radar › Read; powers the sidebar panel |
-| `VERCEL_DEPLOY_HOOK` | no | Deploy hook URL pinged after each data commit |
-| `COLLECTOR_GIT_NAME` / `COLLECTOR_GIT_EMAIL` (variables) | no | Commit identity for data commits (defaults to the GitHub Actions bot) |
-
-Set secrets from your own terminal, never by pasting keys into a chat or issue:
-
-```bash
-gh secret set GEMINI_API_KEY
-```
-
-## If a free tier disappears
-
-Every dependency has a documented way out, and the site keeps working with degraded
-features rather than errors:
-
-| If this goes away | What happens | What to do |
-|---|---|---|
-| Gemini free tier | The router falls through to Groq; if that is gone too, candidates wait in `data/pending.json` and the run exits cleanly | Add any OpenAI-compatible endpoint (OpenRouter, Cloudflare Workers AI, a local Ollama) as a provider in `collector/config/settings.json` (`kind: "openai_compatible"`, see the `_comment` there) and set its env var |
-| Groq free tier | Nothing visible; Gemini carries the load | Remove or replace the provider entry |
-| Cloudflare Radar | The sidebar panel hides; the last good `data/radar.json` is kept | None required |
-| A feed or API | Its errors show on the Sources page; every other source proceeds | Fix or disable the entry in `collector/config/sources.json` |
-| GitHub Actions schedules | Nothing runs | `keepalive.yml` re-enables the cron weekly; or run `npm run collect` from any machine with the keys in `.env` |
-| Vercel | The site stops deploying | Run the `pages-fallback` workflow (GitHub Pages, manual trigger) or deploy `./out` from `npm run build` to any static host |
+Collector commands, the GitHub Actions secrets, and what happens if a free tier disappears are in [docs/operations.md](docs/operations.md). Source list and audits: [docs/sources.md](docs/sources.md), [docs/audit-2026-10.md](docs/audit-2026-10.md).
 
 ## Licences
 
