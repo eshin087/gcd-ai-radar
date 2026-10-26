@@ -137,15 +137,17 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   log.info(`prefilter: kept ${pf.kept.length} of ${all.length}`, { dropped: pf.dropped.length });
   for (const d of pf.dropped.slice(0, 20)) log.debug("dropped", { reason: d.reason, title: d.candidate.title });
 
-  // 3. Hints
-  if (opts.enrich && pf.kept.length) {
-    const n = await enrichHints(pf.kept, settings);
-    log.info(`enriched ${n} hints from page metadata`);
-  }
-
-  // 4. Deterministic dedupe
+  // 3. Deterministic dedupe
   const dd = dedupe(pf.kept, state, settings);
   log.info(`dedupe: ${dd.merges.length} merges, ${dd.llmChecks.length} LLM checks, ${dd.fresh.length} fresh, ${dd.skipped.length} skipped`);
+
+  // 4. Hints: only for candidates that still need the LLM (fresh + same-incident checks).
+  // Runs after dedupe so already-seen or deterministically merged links are not re-fetched every run.
+  const toEnrich = [...dd.fresh, ...dd.llmChecks.map((c) => c.candidate)];
+  if (opts.enrich && toEnrich.length) {
+    const n = await enrichHints(toEnrich, settings);
+    log.info(`enriched ${n} hints from page metadata`);
+  }
 
   // 5. LLM router
   const router = new LlmRouter(settings.providers, callsToday(state.runs, settings.providers, now));
