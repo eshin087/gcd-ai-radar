@@ -23,6 +23,7 @@ import type { MetaFile, YearIndexFile } from "../lib/api-docs";
 import { briefingSummaryLine } from "../lib/briefing";
 import { lastUpdated, loadBriefings, loadIncidents, siteUrl } from "../lib/data";
 import { lastActivity, type FullIncident } from "../lib/lifecycle";
+import { boardsWithAll, buildLive } from "../lib/live";
 import type { Briefing, Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
@@ -202,6 +203,22 @@ async function main() {
   await fs.writeFile(path.join(dataDir, "summary.json"), JSON.stringify(summary, null, 2) + "\n");
   // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
   await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
+  // live.json: the home page's counters and per-lane counts, what scripts/check-live.mjs compares the page against
+  const live = buildLive(sorted, new Date(), updated);
+  await fs.writeFile(
+    path.join(PUBLIC, "live.json"),
+    JSON.stringify(
+      {
+        generated_at: live.now,
+        site: base,
+        counters: live.counters,
+        boards: boardsWithAll(live.boards, live.now.slice(0, 10)).map((b) => ({ key: b.key, label: b.label, count: b.count, ai: b.ai, groups: b.groups.map((g) => ({ key: g.key, rows: g.rows.length })) })),
+        top_tags: live.topTags.map((t) => ({ slug: t.slug, live: t.live, total: t.total })),
+      },
+      null,
+      2,
+    ) + "\n",
+  );
 
   // Weekly briefings: copied as validated, plus an index, and their own feed.
   const briefings = await loadBriefings();

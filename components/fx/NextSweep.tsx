@@ -42,23 +42,5 @@ export function NextSweep({ className }: { className?: string }) {
   );
 }
 
-/** "3h ago" style relative time, written client-side. */
-export function Ago({ iso, className }: { iso: string | null; className?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || !iso) return;
-    const tick = () => {
-      const mins = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000));
-      el.textContent = mins < 60 ? `${mins}m ago` : mins < 48 * 60 ? `${Math.round(mins / 60)}h ago` : `${Math.round(mins / 1440)}d ago`;
-    };
-    tick();
-    const id = window.setInterval(tick, 30000);
-    return () => window.clearInterval(id);
-  }, [iso]);
-  return (
-    <span ref={ref} className={className} suppressHydrationWarning>
-      {iso ? iso.slice(0, 16).replace("T", " ") + "Z" : "never"}
-    </span>
-  );
-}
+/** The relative time lives in components/ui/Ago.tsx now; re-exported for the lab's terminal demos. */
+export { Ago } from "@/components/ui/Ago";

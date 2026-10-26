@@ -1,6 +1,6 @@
 import { shardManifest, shardsFor, type ShardInfo } from "./aggregates";
 import { isDisclosedIncident } from "./counting";
-import type { FullIncident } from "./lifecycle";
+import { isActionLane, type FullIncident } from "./lifecycle";
 import { productFamily } from "./products";
 import { compactRow } from "./rows";
 import type { SlimIncident } from "./slim";
@@ -182,7 +182,8 @@ export function parseFilters(search: string): ExplorerFilters {
     // only ids the mapping can produce: anything else would select nothing while the select showed "all"
     owasp: isOwaspInUse(owasp) ? owasp : "",
     atlas: isAtlasInUse(atlas) ? atlas : "",
-    lane: (LANES as readonly string[]).includes(get("lane")) ? get("lane") : "",
+    // "action" is the three action lanes together, what the live counters link to
+    lane: (LANES as readonly string[]).includes(get("lane")) || get("lane") === "action" ? get("lane") : "",
     state: (RECORD_STATES as readonly string[]).includes(get("state")) ? get("state") : "",
     tag: normalizeTag(get("tag")) ?? "",
     day: DAY.test(get("day")) ? get("day") : "",
@@ -212,7 +213,7 @@ export function matchesRecord(i: SlimIncident, f: ExplorerFilters): boolean {
   if (f.severity && String(i.severity) !== f.severity) return false;
   if (f.real === "1" && i.severity < 3) return false;
   if (f.target && !(i.targets as readonly string[]).includes(f.target)) return false;
-  if (f.lane && i.lane !== f.lane) return false;
+  if (f.lane === "action" ? !isActionLane(i.lane) : f.lane && i.lane !== f.lane) return false;
   if (f.state && i.state !== f.state) return false;
   if (f.patch && !f.patch.split(",").includes(i.patch_status)) return false;
   if (f.tag && !i.tags.includes(f.tag)) return false;

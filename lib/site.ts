@@ -18,14 +18,12 @@ export const SITE = {
 } as const;
 
 export const NAV = [
-  { href: "/", label: "Dashboard" },
-  { href: "/incidents", label: "Incidents" },
+  { href: "/", label: "Live" },
+  { href: "/incidents", label: "Archive" },
+  { href: "/trends", label: "Trends" },
+  { href: "/tags", label: "Tags" },
   { href: "/briefing", label: "Briefing" },
-  { href: "/products", label: "Products" },
-  { href: "/methodology", label: "Methodology" },
-  { href: "/sources", label: "Sources" },
-  { href: "/data", label: "Data" },
-  { href: "/api", label: "API" },
+  { href: "/data", label: "Data & API" },
   { href: "/about", label: "About" },
 ] as const;
 

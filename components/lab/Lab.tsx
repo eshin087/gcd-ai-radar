@@ -10,7 +10,7 @@ import { swarmHive } from "@/components/fx/glyph/scenes/swarmHive";
 import { swarmMurmuration } from "@/components/fx/glyph/scenes/swarmMurmuration";
 import { swarmWar } from "@/components/fx/glyph/scenes/swarmWar";
 import { transformerFlight } from "@/components/fx/glyph/scenes/transformerFlight";
-import type { DashboardData } from "@/lib/dashboard";
+import type { LabData } from "@/lib/dashboard";
 import type { ThreatIntel } from "@/lib/threatIntel";
 import { CHALLENGERS_A } from "./challengersA";
 import { CHALLENGERS_B } from "./challengersB";
@@ -136,7 +136,7 @@ function SceneDemo({ intel, make, label, cell }: { intel: ThreatIntel; make: Mak
   );
 }
 
-export function Lab({ data }: { data: DashboardData }) {
+export function Lab({ data }: { data: LabData }) {
   const m = useDashboardModel(data);
   const term: TermData = {
     command: `radar status --set ${m.basis} --by incident-date --window ${m.win}`,

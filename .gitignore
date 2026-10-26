@@ -28,3 +28,4 @@ collector/.cache/
 .DS_Store
 Thumbs.db
 
+public/live.json

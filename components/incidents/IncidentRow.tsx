@@ -37,7 +37,7 @@ export function IncidentRow({ row, variant = "compact", showLane = true, showSta
         <span title={`Severity ${row.severity}: ${SEVERITY_META[row.severity].label}`} className="num text-dim">
           {row.severity}
         </span>
-        {row.lane !== "breach" && row.lane !== "research" && <PatchBadge status={row.patch_status} glyphOnly />}
+        {row.lane !== "breach" && row.lane !== "research" && row.patch_status !== "unknown" && <PatchBadge status={row.patch_status} glyphOnly />}
       </div>
       <div className="min-w-0">
         <Link href={href} className="text-[15px] font-medium leading-snug text-ink hover:text-accent">
