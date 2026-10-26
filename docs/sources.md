@@ -1,6 +1,6 @@
 # Sources
 
-Every feed, API and dataset the collector reads, verified live on 2026-10-17 and 2026-10-18. For each source: how it is accessed, its licence or terms, what attribution it requires, which fields it provides and any caveats. The collector's configuration is `collector/config/sources.json`; this page is kept in step with it.
+Every feed, API and dataset the collector reads, verified live on 2026-10-17 and 2026-10-18 (the general advisory and press feeds and Have I Been Pwned on 2026-10-25). For each source: how it is accessed, its licence or terms, what attribution it requires, which fields it provides and any caveats. The collector's configuration is `collector/config/sources.json`; this page is kept in step with it.
 
 Policy: a source is used only if its feed or API is offered for machine reading, its path is not disallowed in robots.txt, and its terms do not forbid what the collector does (store title, link and date; write an original two-sentence summary; link back). Nothing is fetched behind paywalls or logins, and article text is never stored.
 
@@ -24,6 +24,9 @@ Not used after verification: Google News RSS search (robots.txt disallows `/rss`
 | Krebs on Security | `krebsonsecurity.com/feed/` | robots fine, no terms page | title, link, date, excerpt | in use |
 | BleepingComputer | `bleepingcomputer.com/feed/` | Terms: content may be stored only for "personal and non-commercial use"; no clause about the feed | title, link, author, date, teaser | in use: title, link and our own summary only |
 | Dark Reading | `darkreading.com/rss.xml` | Informa TechTarget terms forbid "data mining, robots or similar"; the feed itself is open and reading it is its intended purpose | title, link, author, date, dek | in use |
+| The Record | `therecord.media/feed` | feed advertised in the site footer; no terms page; `/robots.txt` is not served (404) | title, link, author, date, teaser | in use; the feed holds only the latest 5 items, so it is read every run |
+| CyberScoop | `cyberscoop.com/feed/` | robots allow-all except `GPTBot` (disallowed site-wide); no terms page | title, link, author, date, categories, teaser | in use |
+| Help Net Security | `helpnetsecurity.com/feed/` | robots allow-all; no terms page | title, link, author, date, categories, teaser | in use; "Week in review" round-ups skipped |
 | Wired, Ars Technica | not polled | Condé Nast user agreement forbids automated or periodic access and storage except by search engines | — | cited only when found through other sources |
 | The Register | not polled | robots.txt is default-deny (`User-agent: * Disallow: /` on both hosts) with an AI-licensing notice; terms are personal, non-commercial | — | cited only when found through other sources; licensing contact: content-licensing@sitpub.com |
 
@@ -51,6 +54,19 @@ Not used after verification: Google News RSS search (robots.txt disallows `/rss`
 | Checkmarx Zero | `checkmarx.com/feed/?post_type=zero-post` | — | in use |
 | Lakera, huntr, Project Zero, Meta AI | not polled | no feed or no dated sitemap (Lakera, huntr, Meta AI); Project Zero's feed is 11 MB with no AI content | — |
 
+## Advisory feeds (patch lane)
+
+Official advisory feeds read for the general lanes. They are machine-readable by design and sit on the same footing as the MSRC feed above: a vendor's or agency's syndication of its own advisories.
+
+| Source | Feed | Licence / terms | Attribution | Status |
+|---|---|---|---|---|
+| CISA Cybersecurity Alerts | `cisa.gov/cybersecurity-advisories/alerts.xml` | US government work (17 U.S.C. § 105), public domain; robots.txt disallows only Drupal system paths | none required | in use; "CISA Adds … to Known Exploited Vulnerabilities Catalog" items skipped because the KEV source carries them |
+| CERT-EU Security Advisories | `cert.europa.eu/publications/security-advisories-rss` | robots.txt blacklists a few named crawlers and allows everything else; EU institutions' reuse policy (Decision 2011/833/EU, reuse with source acknowledgement) | link to cert.europa.eu | in use, daily |
+| NCSC (UK) | `ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml` | Crown copyright under the Open Government Licence v3.0. Terms page (2026-10-25): "you may use or reuse the content published on the Websites without prior permission but must adhere to and accept the terms of the Open Government Licence (OGL) v3.0. You must acknowledge the source of the content and include a link to the Open Government Licence wherever possible." The site's WAF answers `/robots.txt` with an "unavailable" page to non-browser agents while the feed itself is served | "Contains public sector information licensed under the Open Government Licence v3.0" with link, on the Sources page | in use, daily; only items mentioning an exploit, vulnerability, breach or incident pass |
+| Cisco Security Advisories | `sec.cloudapps.cisco.com/security/center/psirtrss20/CiscoSecurityAdvisory.xml` | public PSIRT feed offered for syndication on the Cisco Security Center | link | in use; only critical or exploited advisories pass |
+| Palo Alto Networks Security Advisories | `security.paloaltonetworks.com/rss.xml` | public PSIRT feed offered for syndication | link | in use; same filter |
+| Fortinet PSIRT Advisories | `fortiguard.com/rss/ir.xml` (302-redirects to a fortinet.com host) | public PSIRT feed offered for syndication | link | in use; same filter, plus advisories with a CVSSv3 score of 9.0 or above, since Fortinet states severity as a score |
+
 ## Research
 
 | Source | Access | Licence / terms | Attribution | Status |
@@ -66,6 +82,7 @@ Not used after verification: Google News RSS search (robots.txt disallows `/rss`
 | AVID (AI Vulnerability Database) | `github.com/avidml/avid-db` vulnerability and curated report JSON files | MIT | link | id, description, references, affected artifacts, dates | one-time backfill seed (upstream dormant since 2026-03) |
 | NVD CVE API 2.0 | `services.nvd.nist.gov/rest/json/cves/2.0` with `keywordSearch` + `keywordExactMatch` for the allow-listed products, incremental by last-modified date in windows of at most 120 days; 5 requests per 30 s without a key, 50 with a free key | US government work, public domain | "This product uses the NVD API but is not endorsed or certified by the NVD." (footer and record pages) | cve id, published, description, CVSS, references, KEV flag | in use |
 | GitHub Advisory Database | `api.github.com/advisories?ecosystem=…&affects=…&modified=>=…` for the allow-listed packages | CC BY 4.0 | link to github.com/advisories | ghsa id, cve id, summary, description, severity, affected packages and ranges, dates | in use |
+| Have I Been Pwned breaches | `haveibeenpwned.com/api/v3/breaches` (no API key needed for this endpoint; an identifying User-Agent is required on every request), daily | breach API is CC BY 4.0: "you must identify Have I Been Pwned as the source of the data. Clear and visible attribution with a link to haveibeenpwned.com should be present anywhere data from the service is used" | "Breach data from Have I Been Pwned" with link (footer and Sources page) | name, title, domain, breach date, added date, account count, description, data classes, verified / spam-list / stealer-log / malware / fabricated / retired flags | in use; verified breaches of 100,000+ accounts added in the last 30 days; the description is read as a classifier hint only and never stored |
 
 ## Reference frameworks
 
