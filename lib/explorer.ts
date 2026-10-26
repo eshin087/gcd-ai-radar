@@ -1,8 +1,25 @@
 import { shardManifest, shardsFor, type ShardInfo } from "./aggregates";
+import { isDisclosedIncident } from "./counting";
+import type { FullIncident } from "./lifecycle";
+import { productFamily } from "./products";
 import { compactRow } from "./rows";
-import type { Incident } from "./schema";
+import type { SlimIncident } from "./slim";
 import type { DateField } from "./stats";
-import { atlasFor, owaspFor, type Category, type IncidentType } from "./taxonomy";
+import { normalizeTag } from "./tags";
+import {
+  INCIDENT_TYPES,
+  LANES,
+  PATCH_STATUSES,
+  RECORD_STATES,
+  atlasFor,
+  isAiType,
+  isAtlasInUse,
+  isOwaspInUse,
+  owaspFor,
+  type Category,
+  type IncidentType,
+  type Lane,
+} from "./taxonomy";
 
 /**
  * What the incidents explorer knows before it has downloaded any record: the
@@ -16,14 +33,25 @@ export interface YearFacet extends ShardInfo {
   disclosed: number;
 }
 
+export interface LaneFacet {
+  records: number;
+  incidents: number;
+  disclosed: number;
+  live: number;
+}
+
 export interface ExplorerFacets {
   /** Newest year first. */
   years: YearFacet[];
   /** Publisher name and record count, most frequent first (top 60). */
   publishers: [string, number][];
+  /** Records per lane, for the lane tabs. */
+  lanes: Record<Lane, LaneFacet>;
+  /** Live records across the lanes. */
+  live: number;
 }
 
-export function explorerFacets(incidents: readonly Incident[]): ExplorerFacets {
+export function explorerFacets(incidents: readonly FullIncident[]): ExplorerFacets {
   const rows = incidents.map(compactRow);
   const kinds = new Map<number, { incidents: number; disclosed: number }>();
   for (const r of rows) {
@@ -39,7 +67,24 @@ export function explorerFacets(incidents: readonly Incident[]): ExplorerFacets {
   const counts = new Map<string, number>();
   for (const i of incidents) for (const p of new Set(i.sources.map((s) => s.publisher))) counts.set(p, (counts.get(p) ?? 0) + 1);
   const publishers = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 60);
-  return { years, publishers };
+  const lanes = Object.fromEntries(LANES.map((l) => [l, { records: 0, incidents: 0, disclosed: 0, live: 0 }])) as Record<Lane, LaneFacet>;
+  let live = 0;
+  for (const i of incidents) {
+    const l = lanes[i.lane];
+    l.records += 1;
+    if (isDisclosedIncident(i)) l.disclosed += 1;
+    else l.incidents += 1;
+    if (i.state === "live") {
+      l.live += 1;
+      live += 1;
+    }
+  }
+  return { years, publishers, lanes, live };
+}
+
+/** The lane facet's count for a records kind ("" incidents, "disclosed", "all"). */
+export function laneCount(facet: LaneFacet, kind: string): number {
+  return kind === "all" ? facet.records : kind === "disclosed" ? facet.disclosed : facet.incidents;
 }
 
 export interface ExplorerFilters {
@@ -68,10 +113,23 @@ export interface ExplorerFilters {
   owasp: string;
   /** MITRE ATLAS technique id (AML.T0051…), derived the same way (lib/taxonomy.ts atlasFor). */
   atlas: string;
+  /** A lane (lib/taxonomy.ts LANES). */
+  lane: string;
+  /** "live" or "closed". */
+  state: string;
+  /** A tag slug (lib/tags.ts). */
+  tag: string;
+  /** One day, YYYY-MM-DD, on the date field `by` selects; set by the heatmaps. */
+  day: string;
+  /** Patch statuses, comma-separated ("unpatched,partial" is "not fully patched"). */
+  patch: string;
   sort: "reported" | "incident" | "severity";
 }
 
-export const EMPTY_FILTERS: ExplorerFilters = { q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", owasp: "", atlas: "", sort: "reported" };
+export const EMPTY_FILTERS: ExplorerFilters = {
+  q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", owasp: "", atlas: "",
+  lane: "", state: "", tag: "", day: "", patch: "", sort: "reported",
+};
 
 export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
   return f.by === "reported" ? "first_reported" : "incident_date";
@@ -79,7 +137,102 @@ export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
 
 /** Filters that can match a record in any year, so every shard is needed to answer them. */
 export function hasCategoricalFilter(f: ExplorerFilters): boolean {
-  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product || f.owasp || f.atlas);
+  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product || f.owasp || f.atlas || f.lane || f.state || f.tag || f.patch);
+}
+
+const DAY = /^\d{4}-\d{2}-\d{2}$/;
+const MONTH = /^\d{4}-\d{2}$/;
+const YEAR = /^\d{4}$/;
+
+/**
+ * The URL query string is the explorer's state: every filter is read from it
+ * and written back, so a view is a link. Values are checked against the
+ * vocabularies so an unknown value selects nothing while the control shows
+ * "all".
+ */
+export function parseFilters(search: string): ExplorerFilters {
+  const p = new URLSearchParams(search);
+  const get = (k: string) => p.get(k) ?? "";
+  const sort = get("sort");
+  const type = get("type");
+  const owasp = get("owasp");
+  const atlas = get("atlas");
+  const kind = get("kind");
+  const patch = get("patch")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => (PATCH_STATUSES as readonly string[]).includes(s));
+  return {
+    ...EMPTY_FILTERS,
+    q: get("q"),
+    type: type === "ai" || (INCIDENT_TYPES as readonly string[]).includes(type) ? type : "",
+    category: get("category"),
+    severity: /^[1-4]$/.test(get("severity")) ? get("severity") : "",
+    target: get("target"),
+    year: YEAR.test(get("year")) ? get("year") : "",
+    month: MONTH.test(get("month")) ? get("month") : "",
+    from: MONTH.test(get("from")) ? get("from") : "",
+    to: MONTH.test(get("to")) ? get("to") : "",
+    publisher: get("publisher"),
+    origin: get("origin"),
+    real: get("real") === "1" ? "1" : "",
+    by: get("by") === "reported" ? "reported" : "",
+    product: get("product"),
+    kind: kind === "disclosed" || kind === "all" ? kind : "",
+    // only ids the mapping can produce: anything else would select nothing while the select showed "all"
+    owasp: isOwaspInUse(owasp) ? owasp : "",
+    atlas: isAtlasInUse(atlas) ? atlas : "",
+    lane: (LANES as readonly string[]).includes(get("lane")) ? get("lane") : "",
+    state: (RECORD_STATES as readonly string[]).includes(get("state")) ? get("state") : "",
+    tag: normalizeTag(get("tag")) ?? "",
+    day: DAY.test(get("day")) ? get("day") : "",
+    patch: patch.join(","),
+    sort: sort === "incident" || sort === "severity" ? sort : "reported",
+  };
+}
+
+/** The query string for a set of filters: every non-empty key, the default sort left out. */
+export function filtersQuery(f: ExplorerFilters): string {
+  const p = new URLSearchParams();
+  for (const [k, v] of Object.entries(f)) if (v && !(k === "sort" && v === "reported")) p.set(k, v);
+  return p.toString();
+}
+
+/** The date a record is placed by: first report, or the incident date with a year-only date at mid-year. */
+export function recordDate(i: Pick<SlimIncident, "first_reported" | "incident_date">, f: Pick<ExplorerFilters, "by">): string {
+  return f.by === "reported" ? i.first_reported : i.incident_date.length === 4 ? `${i.incident_date}-07` : i.incident_date;
+}
+
+/** Every filter but the search terms, which the component answers from its index. */
+export function matchesRecord(i: SlimIncident, f: ExplorerFilters): boolean {
+  if (f.kind === "" && i.disclosed) return false;
+  if (f.kind === "disclosed" && !i.disclosed) return false;
+  if (f.type === "ai" ? !isAiType(i.type) : f.type && i.type !== f.type) return false;
+  if (f.category && !f.category.split(",").some((c) => i.categories.includes(c as Category))) return false;
+  if (f.severity && String(i.severity) !== f.severity) return false;
+  if (f.real === "1" && i.severity < 3) return false;
+  if (f.target && !(i.targets as readonly string[]).includes(f.target)) return false;
+  if (f.lane && i.lane !== f.lane) return false;
+  if (f.state && i.state !== f.state) return false;
+  if (f.patch && !f.patch.split(",").includes(i.patch_status)) return false;
+  if (f.tag && !i.tags.includes(f.tag)) return false;
+  const date = recordDate(i, f);
+  if (f.day && date !== f.day) return false;
+  if (f.month && !date.startsWith(f.month)) return false;
+  if (f.from && date.slice(0, 7) < f.from) return false;
+  if (f.to && date.slice(0, 7) > f.to) return false;
+  if (f.year && !f.month && !f.day && !i.first_reported.startsWith(f.year) && !i.incident_date.startsWith(f.year)) return false;
+  if (f.publisher && !i.publishers.includes(f.publisher)) return false;
+  if (f.origin && i.origin !== f.origin) return false;
+  if (f.product && productFamily(i.products[0] ?? "") !== f.product) return false;
+  return matchesStandards(i, f);
+}
+
+/** The records' order for a sort. */
+export function compareRecords(a: SlimIncident, b: SlimIncident, sort: ExplorerFilters["sort"]): number {
+  if (sort === "severity") return b.severity - a.severity || b.first_reported.localeCompare(a.first_reported);
+  if (sort === "incident") return b.incident_date.localeCompare(a.incident_date) || b.first_reported.localeCompare(a.first_reported);
+  return b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id);
 }
 
 /** The OWASP and ATLAS filters: computed from the record's type and categories, so the data files need no extra fields. */
@@ -114,7 +267,8 @@ export function yearsNeeded(f: ExplorerFilters, facets: ExplorerFacets, searchYe
   const all = facets.years.map((y) => y.year);
   const field = dateFieldOf(f);
   let dateYears: number[] | null = null;
-  if (f.month) dateYears = shardsFor(facets.years, field, f.month, f.month);
+  if (f.day) dateYears = shardsFor(facets.years, field, f.day.slice(0, 7), f.day.slice(0, 7));
+  else if (f.month) dateYears = shardsFor(facets.years, field, f.month, f.month);
   else if (f.from || f.to) dateYears = shardsFor(facets.years, field, f.from || "0000-00", f.to || "9999-99");
   else if (f.year) {
     // The year filter matches either date, so a shard counts when its first-report year is the one asked or its incident dates reach into it.

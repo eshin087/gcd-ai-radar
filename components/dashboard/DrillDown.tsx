@@ -1,15 +1,42 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
+import { IncidentRow } from "@/components/incidents/IncidentRow";
 import type { CompactRow } from "@/lib/dashboard";
-import { approxDateLabel, monthLabel } from "@/lib/format";
+import { monthLabel } from "@/lib/format";
+import { rowOfSlim, type LiveRow } from "@/lib/live";
+import { productFamily } from "@/lib/products";
 import { isDisclosedSelection, selectionLabel, selectionQuery, type Selection } from "@/lib/selection";
 import { shardYear } from "@/lib/shard-year";
 import type { SlimIncident } from "@/lib/slim";
 import type { DateField } from "@/lib/stats";
-import { TARGET_META } from "@/lib/taxonomy";
+import { isAiType } from "@/lib/taxonomy";
+
+/** A row from the compact record alone, until its slim record (summary, tags) has loaded. */
+function rowOfCompact(r: CompactRow): LiveRow {
+  return {
+    id: r.id,
+    slug: r.slug,
+    title: r.title,
+    summary: "",
+    lane: r.lane ?? "patch",
+    type: r.type,
+    ai: isAiType(r.type),
+    severity: r.severity,
+    state: r.state ?? "closed",
+    patch_status: r.patch_status ?? "unknown",
+    products: (r.products ?? []).map(productFamily).slice(0, 3),
+    cve_ids: [],
+    cve_more: 0,
+    action: "",
+    since: r.incident_date,
+    since_precision: r.incident_date_precision,
+    first_reported: r.first_reported,
+    last_update: r.first_reported,
+    tags: [],
+    disclosed: r.disclosed,
+  };
+}
 
 export { isDisclosedSelection, selectionLabel, selectionQuery, type Selection };
 
@@ -101,45 +128,10 @@ export function ReportBody({ selection, rows, error, windowLabel, field, titleId
         </p>
       </header>
 
-      <ol className="divide-y divide-line-soft border-y border-line-soft">
+      <ol className="border-b border-line-soft">
         {visible.map((r) => {
           const d = details.get(r.id);
-          return (
-            <li key={r.id} className="py-3.5 grid gap-2 sm:grid-cols-[7rem_1fr_auto] sm:gap-4">
-              <div className="num text-[12px] text-dim">
-                <div>{r.first_reported}</div>
-                <div className="text-faint text-[11px]">{r.id}</div>
-              </div>
-              <div className="min-w-0">
-                <Link href={`/incidents/${r.slug}`} className="text-[15px] leading-snug text-ink hover:text-accent">
-                  {r.title}
-                </Link>
-                {d ? (
-                  <p className="mt-1 text-[13px] text-dim leading-relaxed">{d.summary}</p>
-                ) : (
-                  <p className="mt-1 text-[13px] text-faint">loading summary…</p>
-                )}
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  <SeverityBadge severity={r.severity} />
-                  <TypeBadge type={r.type} short />
-                  {r.categories.map((c) => (
-                    <CategoryBadge key={c} category={c} />
-                  ))}
-                  <span className="num self-center text-[11.5px] text-faint">
-                    {r.targets.map((t) => TARGET_META[t].label).join(", ")}
-                    {d?.products.length ? ` · ${d.products.slice(0, 3).join(", ")}` : ""}
-                  </span>
-                </div>
-              </div>
-              <div className="num text-[12px] text-dim sm:text-right whitespace-nowrap">
-                <div>
-                  {r.source_count} source{r.source_count === 1 ? "" : "s"}
-                </div>
-                <div className="text-faint text-[11px]">{approxDateLabel(r.incident_date, r.incident_date_precision)}</div>
-                {d?.publishers.length ? <div className="text-faint text-[11px] max-w-[12rem] truncate">{d.publishers.slice(0, 2).join(", ")}</div> : null}
-              </div>
-            </li>
-          );
+          return <IncidentRow key={r.id} row={d ? rowOfSlim(d) : rowOfCompact(r)} variant={d ? "full" : "compact"} />;
         })}
       </ol>
       {sorted.length > shown && (

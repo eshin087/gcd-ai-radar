@@ -198,6 +198,7 @@ export function slimFields(): FieldDoc[] {
 /** Compact rows (rows/<year>.json) are internal to the dashboard: listed, not promised. */
 export const ROW_FIELDS: readonly (keyof CompactRow)[] = [
   "id", "slug", "title", "incident_date", "incident_date_precision", "first_reported", "type", "categories", "severity", "targets", "source_count", "disclosed", "product", "products",
+  "lane", "state", "patch_status",
 ];
 
 export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }> = {

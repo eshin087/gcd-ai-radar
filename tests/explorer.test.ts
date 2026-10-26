@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { EMPTY_FILTERS, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
+import { EMPTY_FILTERS, explorerFacets, filtersQuery, laneCount, matchesRecord, parseFilters, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
+import { slim } from "@/lib/slim";
+import { disclosedCve, incident } from "./fixtures";
 
+const lane = { records: 0, incidents: 0, disclosed: 0, live: 0 };
 const facets: ExplorerFacets = {
   years: [
     { year: 2026, records: 1143, incidents: 150, disclosed: 993, min: { incident_date: "2019-06", first_reported: "2026-01" }, max: { incident_date: "2026-10", first_reported: "2026-10" } },
@@ -9,9 +12,73 @@ const facets: ExplorerFacets = {
     { year: 2023, records: 63, incidents: 12, disclosed: 51, min: { incident_date: "2018-04", first_reported: "2023-01" }, max: { incident_date: "2023-12", first_reported: "2023-12" } },
   ],
   publishers: [["NVD", 1200], ["GitHub Advisory Database", 900]],
+  lanes: { patch: lane, breach: lane, supply_chain: lane, research: lane },
+  live: 0,
 };
 
 const f = (patch: Partial<ExplorerFilters>): ExplorerFilters => ({ ...EMPTY_FILTERS, ...patch });
+
+describe("parseFilters and filtersQuery", () => {
+  it("round-trip every filter and drop the default sort", () => {
+    const filters = f({ q: "vllm", lane: "breach", state: "live", tag: "rce", day: "2026-10-20", patch: "unpatched,partial", type: "ai", severity: "4", year: "2026", by: "reported", kind: "all", sort: "severity" });
+    const qs = filtersQuery(filters);
+    expect(parseFilters(`?${qs}`)).toEqual(filters);
+    expect(filtersQuery(f({}))).toBe("");
+    expect(filtersQuery(f({ sort: "reported", lane: "patch" }))).toBe("lane=patch");
+  });
+
+  it("ignore values outside the vocabularies and normalise tags", () => {
+    const p = parseFilters("?lane=nope&state=open&tag=Path_Traversal&day=2026-13&patch=patched,bogus&type=robot&severity=9&owasp=LLM99&kind=some");
+    expect(p).toEqual(f({ tag: "path-traversal", patch: "patched" }));
+    expect(parseFilters("?type=not_ai").type).toBe("not_ai");
+    expect(parseFilters("?tag=CVE-2026-1").tag).toBe("");
+  });
+});
+
+describe("matchesRecord", () => {
+  const live = slim(incident({ lane: "breach", state: "live", tags: ["rce", "cisa-kev"], first_reported: "2026-10-20", incident_date: "2026-10-18", severity: 4, patch_status: "no_fix_needed" }));
+  const closed = slim(incident({ lane: "patch", state: "closed", closed_at: "2026-09-20", tags: ["ssrf"], first_reported: "2026-09-01", incident_date: "2026-09-01", patch_status: "patched" }));
+  const general = slim(incident({ type: "not_ai", categories: ["general"], lane: "patch", state: "live", patch_status: "unpatched", first_reported: "2026-10-21", incident_date: "2026-10-21" }));
+  const cve = slim(disclosedCve({ first_reported: "2026-10-05" }));
+
+  it("filters by lane, state, tag, fix status and the AI lens", () => {
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ lane: "breach" }))).map((i) => i.id)).toEqual([live.id]);
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ state: "live" }))).map((i) => i.id)).toEqual([live.id, general.id]);
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ tag: "ssrf" }))).map((i) => i.id)).toEqual([closed.id]);
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ patch: "unpatched,partial" }))).map((i) => i.id)).toEqual([general.id]);
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ type: "ai" }))).map((i) => i.id)).toEqual([live.id, closed.id]);
+    expect([live, closed, general].filter((i) => matchesRecord(i, f({ type: "not_ai" }))).map((i) => i.id)).toEqual([general.id]);
+  });
+
+  it("matches a day on the chosen date field and keeps disclosed CVEs behind the records kind", () => {
+    expect(matchesRecord(live, f({ day: "2026-10-18" }))).toBe(true);
+    expect(matchesRecord(live, f({ day: "2026-10-20" }))).toBe(false);
+    expect(matchesRecord(live, f({ day: "2026-10-20", by: "reported" }))).toBe(true);
+    expect(matchesRecord(cve, f({}))).toBe(false);
+    expect(matchesRecord(cve, f({ kind: "disclosed" }))).toBe(true);
+    expect(matchesRecord(cve, f({ kind: "all" }))).toBe(true);
+    expect(matchesRecord(live, f({ kind: "disclosed" }))).toBe(false);
+  });
+});
+
+describe("explorerFacets", () => {
+  it("counts records, incidents, disclosed CVEs and live records per lane", () => {
+    const records = [
+      incident({ lane: "breach", state: "live" }),
+      incident({ lane: "patch", state: "closed", closed_at: "2026-10-01" }),
+      disclosedCve({ lane: "patch" }),
+      incident({ lane: "research", state: "live", severity: 1 }),
+    ];
+    const facets = explorerFacets(records);
+    expect(facets.lanes.breach).toEqual({ records: 1, incidents: 1, disclosed: 0, live: 1 });
+    expect(facets.lanes.patch).toEqual({ records: 2, incidents: 1, disclosed: 1, live: 0 });
+    expect(facets.lanes.research).toEqual({ records: 1, incidents: 1, disclosed: 0, live: 1 });
+    expect(facets.live).toBe(2);
+    expect(laneCount(facets.lanes.patch, "")).toBe(1);
+    expect(laneCount(facets.lanes.patch, "disclosed")).toBe(1);
+    expect(laneCount(facets.lanes.patch, "all")).toBe(2);
+  });
+});
 
 describe("yearsNeeded", () => {
   it("fills the default list from the newest years only", () => {
@@ -24,6 +91,8 @@ describe("yearsNeeded", () => {
 
   it("picks the shards whose dates reach a month, a range or a year", () => {
     expect(yearsNeeded(f({ month: "2025-06" }), facets, null, 50)).toEqual({ years: [2026, 2025], reason: "dates" });
+    expect(yearsNeeded(f({ day: "2025-06-15" }), facets, null, 50)).toEqual({ years: [2026, 2025], reason: "dates" });
+    expect(yearsNeeded(f({ day: "2025-06-15", by: "reported" }), facets, null, 50)).toEqual({ years: [2025], reason: "dates" });
     expect(yearsNeeded(f({ month: "2025-06", by: "reported" }), facets, null, 50)).toEqual({ years: [2025], reason: "dates" });
     expect(yearsNeeded(f({ from: "2024-11", to: "2024-12", by: "reported" }), facets, null, 50)).toEqual({ years: [2024], reason: "dates" });
     expect(yearsNeeded(f({ from: "2026-02" }), facets, null, 50)).toEqual({ years: [2026], reason: "dates" });

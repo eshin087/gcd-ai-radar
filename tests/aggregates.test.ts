@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { BASES, DATE_FIELDS, WINDOW_KEYS, buildAggregates, deriveView, shardsFor, type Aggregates, type WindowKey } from "@/lib/aggregates";
 import { aiLens } from "@/lib/counting";
 import { FAMILIES, familyOf, type Family } from "@/lib/families";
+import { withLifecycle } from "@/lib/lifecycle";
 import { compactRow, inBasis, type Basis, type CompactRow } from "@/lib/rows";
 import { headlinePicks, selectRows, selectionMonths, type Selection } from "@/lib/selection";
 import { shardYear } from "@/lib/shard-year";
@@ -80,7 +81,7 @@ const FIXTURES: CompactRow[] = [
 async function liveRows(): Promise<CompactRow[]> {
   const { incidents } = await readIncidents(path.join(process.cwd(), "data"));
   // the dashboard counts AI records only, so the parity check runs on the same lens (lib/dashboard.ts, scripts/prebuild.ts rows)
-  return aiLens(incidents.filter((i) => i.status === "published")).map(compactRow);
+  return aiLens(incidents.filter((i) => i.status === "published")).map((i) => compactRow(withLifecycle(i, NOW.toISOString().slice(0, 10))));
 }
 
 function spanOf(rows: CompactRow[]) {

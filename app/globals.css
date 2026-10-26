@@ -22,6 +22,11 @@
   --color-sev-2: #7b9dff;
   --color-sev-3: #ff9b6b;
   --color-sev-4: #ff6b6b;
+  /* record state and patch status (lib/taxonomy.ts PATCH_META tones) */
+  --color-live: #ff5c5c;
+  --color-partial: #f2a83b;
+  --color-patched: #4cc38a;
+  --color-closed: #6b7389;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;

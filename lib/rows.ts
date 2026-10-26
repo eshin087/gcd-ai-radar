@@ -1,4 +1,5 @@
 import { isDisclosedIncident } from "./counting";
+import type { FullIncident } from "./lifecycle";
 import { productFamily } from "./products";
 import type { Incident } from "./schema";
 
@@ -33,9 +34,13 @@ export interface CompactRow {
    * so rows built elsewhere (test fixtures) need not spell it out.
    */
   products?: string[];
+  /** The lifecycle, for the drawer's rows (lib/lifecycle.ts); optional so fixtures need not spell it out. */
+  lane?: Incident["lane"];
+  state?: Incident["state"];
+  patch_status?: Incident["patch_status"];
 }
 
-export function compactRow(i: Incident): CompactRow {
+export function compactRow(i: FullIncident): CompactRow {
   const disclosed = isDisclosedIncident(i);
   return {
     id: i.id,
@@ -52,6 +57,9 @@ export function compactRow(i: Incident): CompactRow {
     disclosed,
     product: disclosed ? productFamily(i.products[0] ?? "") : "",
     products: disclosed ? [] : [...new Set(i.products.map(productFamily).filter(Boolean))],
+    lane: i.lane,
+    state: i.state,
+    patch_status: i.patch_status,
   };
 }
 
