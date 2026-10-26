@@ -13,6 +13,16 @@ describe("isPublicAddress", () => {
     expect(isPublicAddress("172.32.0.1")).toBe(true);
   });
 
+  it("blocks only the /24 documentation and protocol-assignment ranges, not their whole /16", () => {
+    // 192.0.0.0/24 (IETF protocol assignments), 192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24 (TEST-NET-1..3)
+    for (const ip of ["192.0.0.1", "192.0.2.1", "198.51.100.1", "203.0.113.5"]) expect(isPublicAddress(ip), ip).toBe(false);
+    // Neighbours in the same /16 are ordinary public space (engineering.fb.com and genai.owasp.org live in 192.0.64.0/18)
+    for (const ip of ["192.0.3.1", "192.0.66.236", "192.0.78.252", "198.51.0.1", "203.0.1.1"]) expect(isPublicAddress(ip), ip).toBe(true);
+    // 198.18.0.0/15 (benchmarking) is still a full block
+    expect(isPublicAddress("198.19.255.1")).toBe(false);
+    expect(isPublicAddress("198.20.0.1")).toBe(true);
+  });
+
   it("rejects IPv6 loopback, unspecified, unique-local, link-local, multicast, documentation and mapped private addresses", () => {
     for (const ip of ["::1", "::", "0:0:0:0:0:0:0:1", "fc00::1", "fd12:3456::1", "fe80::1", "ff02::1", "2001:db8::1", "::ffff:127.0.0.1", "::ffff:10.0.0.1", "::ffff:7f00:1", "64:ff9b::a00:1"]) {
       expect(isPublicAddress(ip), ip).toBe(false);
