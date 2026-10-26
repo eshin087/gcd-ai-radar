@@ -6,8 +6,7 @@ import { AsciiForm } from "@/components/fx/AsciiForm";
 import { CountUp } from "@/components/fx/CountUp";
 import { Ago, NextSweep } from "@/components/fx/NextSweep";
 import { Reveal } from "@/components/fx/Reveal";
-import { FeedTerminal } from "@/components/fx/glyph/FeedTerminal";
-import { GlyphField } from "@/components/fx/glyph/GlyphField";
+import { ThreatScope } from "@/components/hero/ThreatScope";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { BarRows } from "@/components/charts/BarRows";
@@ -125,9 +124,9 @@ function useHeroFade(ref: RefObject<HTMLDivElement | null>) {
 }
 
 /**
- * The dashboard: a hero (the circuit-world banner, an armoured chip of the
- * company's AI systems under attack, with the threat-feed terminal) that
- * fades as the content slides over it, then the trend, families,
+ * The dashboard: a compact hero (the headline numbers beside the radar scope
+ * of the last 120 days' incidents) that fades as the content slides over it,
+ * then the trend, families,
  * targets/types/severity, the standards and agentic panels and the latest log.
  * Every count and bar opens its incidents in a side drawer.
  */
@@ -199,49 +198,35 @@ export function Dashboard({ data }: { data: DashboardData }) {
           </nav>
         </header>
         <div className="relative mx-auto max-w-7xl px-4">
-          {/* the banner: a band above the text on phones, behind it on wide screens */}
-          <div aria-hidden className="hero-field relative h-72 lg:absolute lg:inset-y-0 lg:left-4 lg:right-4 lg:h-auto">
-            <GlyphField
-              // the scene's code loads on demand, after the page; the poster shows until its first frame
-              scene={() => import("@/components/fx/glyph/scenes/circuitWorld").then((s) => s.circuitWorld({ intel: data.intel }))}
-              poster="/hero/circuit-poster.webp"
-              posterAt="72% 50%"
-              running={!heroGone}
-              label="A camera journey over a chip package whose districts are AI systems, where defender agents catch red fault packets from the last 90 days of attacks and scrub infected blocks clean"
-              className="h-full w-full"
-            />
-          </div>
-          <div className="relative z-10 flex items-center pb-20 pt-2 lg:min-h-[min(640px,calc(100svh-4rem))]">
-            <div className="min-w-0 max-w-xl space-y-5">
-              <AsciiForm as="h1" text="Threat intelligence for the AI era." duration={2600} className="text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-[54px]" />
-              <p className="max-w-xl text-[15px] leading-relaxed text-soft">
-                The live, source-verified record of attacks on and with AI, from prompt injection and agent hijacking to model theft and deepfake fraud. Every incident counted once, so security teams can see what is hitting now and what is rising next.
+          {/* the hero band (300 px wide-screen): the radar scope beside the headline, or a band above it on phones */}
+          <div className="grid gap-5 pb-10 pt-1 lg:h-[300px] lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10">
+            <div className="order-2 min-w-0 space-y-3 self-center lg:order-1">
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-dim">
+                <span aria-hidden className="live-dot" />
+                <span className="uppercase tracking-[0.1em]">Live</span> · last sweep <Ago iso={data.lastUpdated} className="text-soft" /> · next in <NextSweep className="text-soft" />
               </p>
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group" aria-label={`${m.count} incidents in the ${m.windowLabel}, open the list`}>
-                  <CountUp value={m.count} className="text-6xl font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current sm:text-7xl" />
+              <h1 className="text-[30px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-4xl lg:text-[34px]">Threat intelligence for the AI era.</h1>
+              <div className="flex items-center gap-3.5">
+                <button type="button" onClick={() => m.setSelection({ kind: "window" })} className="group shrink-0" aria-label={`${m.count} incidents in the ${m.windowLabel}, open the list`}>
+                  <CountUp value={m.count} className="text-[46px] font-semibold leading-none tracking-tight text-accent underline decoration-transparent decoration-dotted underline-offset-8 group-hover:decoration-current" />
                 </button>
-                <span className="text-[15px] text-soft">
-                  incidents in the {m.windowLabel}
-                  {delta !== undefined && (
-                    <>
-                      , <span className={`num ${delta === null || delta > 0 ? "text-sev-3" : "text-type-by"}`}>{formatPct(delta)}</span> on the period before
-                    </>
-                  )}
-                </span>
+                <div className="min-w-0 space-y-1 text-[14px] leading-[1.45] text-soft">
+                  <p>
+                    incidents in the {m.windowLabel}
+                    {delta !== undefined && (
+                      <>
+                        , <span className={`num ${delta === null || delta > 0 ? "text-sev-3" : "text-type-by"}`}>{formatPct(delta)}</span> on the period before
+                      </>
+                    )}
+                  </p>
+                  {/* the counts behind the headline number, each opening its incidents */}
+                  <p>
+                    <HeroCount value={m.realInWindow} onOpen={() => m.setSelection({ kind: "real" })} ariaLabel={`${m.realInWindow} real-world incidents`} /> real-world (severity 3–4) ·{" "}
+                    <HeroCount value={m.disclosedCount} onOpen={() => m.setSelection({ kind: "disclosed" })} ariaLabel={`${m.disclosedCount} disclosed vulnerabilities`} /> disclosed CVEs, tracked apart
+                  </p>
+                </div>
               </div>
-              {/* the counts behind the headline number, each opening its incidents */}
-              <div className="space-y-1">
-                <p className="text-[14px] leading-relaxed text-soft">
-                  <HeroCount value={m.realInWindow} onOpen={() => m.setSelection({ kind: "real" })} ariaLabel={`${m.realInWindow} real-world incidents`} /> real-world (severity 3–4) ·{" "}
-                  <HeroCount value={m.disclosedCount} onOpen={() => m.setSelection({ kind: "disclosed" })} ariaLabel={`${m.disclosedCount} disclosed vulnerabilities`} /> disclosed CVEs, tracked apart
-                </p>
-                <p className="font-mono text-[12px] text-dim">
-                  last sweep <Ago iso={data.lastUpdated} className="text-soft" /> · next in <NextSweep className="text-soft" />
-                </p>
-              </div>
-              <FeedTerminal intel={data.intel} className="w-full max-w-[480px]" />
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 <Link href="/incidents" className="glass px-4 py-2 text-[13px] text-ink hover:border-accent">
                   Explore incidents →
                 </Link>
@@ -250,12 +235,13 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 </Link>
               </div>
             </div>
+            <ThreatScope scope={data.scope} running={!heroGone} className="order-1 h-[200px] lg:order-2 lg:h-full" />
           </div>
         </div>
       </div>
 
       {/* content slides up over the hero */}
-      <div className="hero-cover relative z-10 bg-ground lg:-mt-14">
+      <div className="hero-cover relative z-10 bg-ground">
         <div className="z-30 border-y border-line-soft bg-ground sm:sticky sm:top-0 lg:bg-[color-mix(in_oklab,var(--color-ground)_94%,transparent)]">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3">
             <Segmented
