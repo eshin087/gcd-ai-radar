@@ -24,20 +24,20 @@
     "validate": "tsx collector/cli.ts validate"
   },
   "dependencies": {
-    "next": "^16.4.2",
+    "next": "^16.4.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@google/genai": "^2.30.0",
+    "@google/genai": "^2.31.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^10.13.0",
-    "eslint-config-next": "^16.4.2",
+    "eslint-config-next": "^16.4.3",
     "exceljs": "^4.4.0",
     "fast-xml-parser": "^5.11.2",
     "fastest-levenshtein": "^1.0.16",
@@ -45,7 +45,7 @@
     "marked": "^18.1.1",
     "p-limit": "^7.3.3",
     "p-retry": "^8.0.1",
-    "satori": "^0.62.0",
+    "satori": "^0.63.2",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
