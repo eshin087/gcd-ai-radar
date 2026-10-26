@@ -47,7 +47,8 @@ export const hnAdapter: SourceAdapter = {
     const out = new Map<string, Candidate>();
     const { user_agent, timeout_ms, hint_max_chars } = ctx.settings.fetch;
 
-    for (const q of ctx.config.queries) {
+    // The AI phrases every query source reads, then the whole-web list only HN reads (config/queries.json).
+    for (const q of [...ctx.config.queries, ...ctx.config.generalQueries]) {
       for (let page = 0; page < maxPages; page++) {
         const url =
           `${base}?query=${encodeURIComponent(`"${q}"`)}&tags=story` +

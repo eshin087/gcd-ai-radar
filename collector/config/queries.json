@@ -1,5 +1,5 @@
 {
-  "_comment": "Query strings for query-driven discovery sources (HN Algolia, GDELT, Bluesky). Edit freely; phrases are quoted per source automatically. Keep each query specific enough to avoid general AI product news.",
+  "_comment": "Query strings for query-driven discovery sources. `queries` are the AI phrases every query source reads (HN Algolia, GDELT, Bluesky). `general` is the whole-web list: only Hacker News reads it, because GDELT returns hundreds of long-tail articles for terms this broad. Phrases are quoted per source automatically; keep each specific enough to avoid general product news.",
   "queries": [
     "prompt injection",
     "indirect prompt injection",
@@ -26,5 +26,13 @@
     "Gemini vulnerability",
     "AI-assisted intrusion",
     "autonomous AI attack"
+  ],
+  "general": [
+    "zero-day",
+    "actively exploited",
+    "ransomware attack",
+    "data breach",
+    "supply chain attack",
+    "malicious package"
   ]
 }

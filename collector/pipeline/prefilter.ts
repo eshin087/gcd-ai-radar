@@ -4,8 +4,11 @@ import type { Candidate } from "../sources/types";
 
 /**
  * Cheap keyword gate before any LLM call. Press, vendor and social sources
- * must mention both an AI term and a security term; specialist AI-security
+ * must mention a security term or carry a CVE id; specialist AI-security
  * blogs and structured seeds bypass the gate. Negative terms drop anything.
+ * Whether an AI term matched is recorded on every kept candidate as
+ * `extra.ai_hint` for the classifier, which decides the AI role itself:
+ * the general lanes carry incidents with no AI role.
  */
 
 export interface PrefilterDrop {
@@ -31,14 +34,13 @@ export function prefilter(candidates: Candidate[], config: Config, sourcesById: 
       dropped.push({ candidate: c, reason: "negative term" });
       continue;
     }
+    const withHint: Candidate = { ...c, extra: { ...c.extra, ai_hint: ai.test(text) } };
     if (tier === "specialist" || tier === "seed") {
-      kept.push(c);
+      kept.push(withHint);
       continue;
     }
-    const hasAi = ai.test(text);
-    const hasSec = sec.test(text) || c.cve_ids.length > 0;
-    if (hasAi && hasSec) kept.push(c);
-    else dropped.push({ candidate: c, reason: !hasAi && !hasSec ? "no AI or security term" : !hasAi ? "no AI term" : "no security term" });
+    if (sec.test(text) || c.cve_ids.length > 0) kept.push(withHint);
+    else dropped.push({ candidate: c, reason: "no security term" });
   }
   return { kept, dropped };
 }

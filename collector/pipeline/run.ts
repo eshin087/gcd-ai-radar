@@ -35,7 +35,8 @@ export interface RunSummary {
   pendingCount: number;
 }
 
-const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
+/** Hours since the last success before a scheduled source is read again (a little under the nominal period so an hourly cron hits it). */
+export const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, six_hourly: 5.5, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
 
 function lastSuccessBySource(state: State): Map<string, string> {
   const out = new Map<string, string>();
@@ -209,7 +210,11 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     owner[i] = t;
     log.info(`same-run merge into "${strict[t]!.primary.title}"`, { title: cl.primary.title });
   });
-  const clusters = strict.filter((_, i) => owner[i] === i && !held.has(i));
+  const settled = strict.filter((_, i) => owner[i] === i && !held.has(i));
+  // The fuse: at most classify.max_per_run clusters per run (oldest first, so pending items never starve); the rest wait.
+  const clusters = settled.slice(0, settings.classify.max_per_run);
+  if (settled.length > clusters.length) log.warn(`classification fuse: ${settled.length - clusters.length} cluster(s) wait for the next run (max_per_run ${settings.classify.max_per_run})`);
+  heldForNextRun.push(...settled.slice(clusters.length));
   const cls = await classifyClusters(clusters, router);
   cls.pending.push(...heldForNextRun);
   record.errors.push(...cls.errors);

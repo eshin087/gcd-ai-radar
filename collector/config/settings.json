@@ -2,11 +2,30 @@
   "_comment": "Collector behaviour. Thresholds and budgets are deliberately conservative until free-tier limits are confirmed in Google AI Studio. Providers run in order; to add any OpenAI-compatible endpoint (OpenRouter, Cloudflare Workers AI, Ollama, vLLM) append { \"id\": \"openrouter\", \"kind\": \"openai_compatible\", \"base_url\": \"https://openrouter.ai/api/v1\", \"model\": \"<model>:free\", \"env\": \"OPENROUTER_API_KEY\", \"json_mode\": \"json_object\", \"rpm\": 10, \"daily_calls\": 40, \"batch_size\": 3 } and set that env var as a repo secret (also add it to collect.yml).",
   "confidence_threshold": 0.8,
   "review_severity_4": false,
+  "_review_not_ai_comment": "Severity-4 claims with no AI role (confirmed real-world loss: HIBP breaches, say) go to the review queue first while the general lanes are new.",
+  "review_not_ai_severity_4": true,
   "dedupe": {
+    "_comment": "Headlines about one event from different outlets score 0.16-0.52 on title similarity, so llm_check_similarity sits at 0.40 and two more triggers ask the model: a shared rare title token (entity_max_df, entity_window_days) and, after classification, a shared product with incident dates within product_window_days. A false trigger costs one LLM call, never a merge: merges need the model's answer at confidence 0.6 or more.",
     "lookback_days": 90,
     "merge_similarity": 0.85,
-    "llm_check_similarity": 0.55,
-    "date_window_days": 14
+    "llm_check_similarity": 0.4,
+    "date_window_days": 14,
+    "entity_max_df": 5,
+    "entity_window_days": 14,
+    "product_window_days": 7
+  },
+  "classify": {
+    "_comment": "The fuse: at most this many clusters are classified per run; the rest wait for the next hourly run.",
+    "max_per_run": 40
+  },
+  "update": {
+    "_comment": "Timeline updates (a known record gets a new report) asked of the model per call.",
+    "batch_size": 5
+  },
+  "ghsa_lookup": {
+    "_comment": "GitHub Advisory Database lookups by CVE id for live patch and supply-chain records that lack version data; negatives are asked again after recheck_days.",
+    "per_run": 20,
+    "recheck_days": 7
   },
   "fetch": {
     "timeout_ms": 20000,
@@ -57,12 +76,13 @@
     }
   ],
   "alerts": {
-    "_comment": "The job fails (so GitHub emails the owner) after stalled_runs consecutive scheduled runs that classified nothing while candidates waited, e.g. every LLM provider down or out of quota. pending_warn only warns in the job summary.",
-    "stalled_runs": 3,
+    "_comment": "The job fails (so GitHub emails the owner) after stalled_runs consecutive scheduled runs that classified nothing while candidates waited, e.g. every LLM provider down or out of quota. With hourly runs 12 is half a day. pending_warn only warns in the job summary.",
+    "stalled_runs": 12,
     "pending_warn": 300
   },
   "retention": {
+    "_comment": "runs_keep is the quota ledger and the schedule memory: 240 hourly runs is ten days, longer than any schedule except monthly, which collector-state.json remembers.",
     "rejected_days": 90,
-    "runs_keep": 400
+    "runs_keep": 240
   }
 }
