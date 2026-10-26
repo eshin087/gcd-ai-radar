@@ -56,6 +56,16 @@ export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
 
 const cveId = z.string().regex(/^CVE-\d{4}-\d{4,}$/, "CVE-YYYY-NNNN");
 
+/**
+ * The day the collector started writing the lifecycle itself. A record
+ * created from this day on carries lane, state and patch_status on disk;
+ * older records may omit them and get them derived at load until the
+ * migration (scripts/migrate-lanes.ts) fills them in. The day after the
+ * migration: the old collector's last run (2026-10-26 04:41Z) still wrote
+ * records without the keys, which the migration then filled.
+ */
+export const STAGE_B_CUTOFF = "2026-10-27";
+
 export const IncidentSchema = z
   .object({
     id: z.string().regex(/^AIR-\d{4}-\d{4}$/, "AIR-YYYY-NNNN"),
@@ -114,6 +124,10 @@ export const IncidentSchema = z
     message: "closed_at is a date exactly when state is closed",
     path: ["closed_at"],
   })
+  .refine((i) => i.created_at.slice(0, 10) < STAGE_B_CUTOFF || (i.lane !== undefined && i.state !== undefined && i.patch_status !== undefined), {
+    message: `a record created on or after ${STAGE_B_CUTOFF} carries lane, state and patch_status`,
+    path: ["lane"],
+  })
   .refine(
     (i) =>
       (i.incident_date_precision === "day" && i.incident_date.length === 10) ||
@@ -150,6 +164,10 @@ export const RunRecordSchema = z.object({
     review: z.number().int().min(0),
     rejected: z.number().int().min(0),
     pending: z.number().int().min(0),
+    /** Records changed by the update pass, closed by the closer and reopened by a new report (runs before the lifecycle lack them). */
+    updated: z.number().int().min(0).optional(),
+    closed: z.number().int().min(0).optional(),
+    reopened: z.number().int().min(0).optional(),
   }),
   llm: z.object({
     calls: z.number().int().min(0),

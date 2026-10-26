@@ -38,9 +38,17 @@ describe("classificationStalled", () => {
 describe("runSummaryMarkdown", () => {
   it("renders the counts and flags a stall and a backlog", () => {
     const md = runSummaryMarkdown(run("scheduled", 0, 350), { stalled: true, stalledRuns: 3, pendingWarn: 300 });
-    expect(md).toContain("| 10 | 5 | 0 | 0 | 0 | 0 | 0 | 350 |");
+    expect(md).toContain("| 10 | 5 | 0 | 0 | 0 | 0 | 0 | 350 | 0 | 0 | 0 |");
     expect(md).toContain("350 candidates are waiting");
     expect(md).toContain("Classification has stalled");
+  });
+
+  it("prints the lifecycle counts when a run carries them", () => {
+    const r = run("scheduled", 2, 0);
+    r.counts.updated = 3;
+    r.counts.closed = 1;
+    r.counts.reopened = 1;
+    expect(runSummaryMarkdown(r, { stalled: false, stalledRuns: 3, pendingWarn: 300 })).toContain("| 10 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 3 | 1 | 1 |");
   });
 
   it("stays plain for a healthy run", () => {

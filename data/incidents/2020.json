@@ -48,7 +48,37 @@
       "botnet"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-12-29",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-12-15",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-15",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "source_url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-15",
+        "title": "Degas source code",
+        "source_url": "https://github.com/matthoffman/degas",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0032",
@@ -93,7 +123,31 @@
       "cnc-traffic"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-12-29",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-12-15",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-15",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "source_url": "https://arxiv.org/abs/1802.03162",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0031",
@@ -145,7 +199,37 @@
       "cylance"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-12-17",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-12-03",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-03",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "source_url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-03",
+        "title": "Statements from Skylight Cyber CEO",
+        "source_url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0030",
@@ -190,7 +274,31 @@
       "fraud"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2020-12-17",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-12-03",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-12-03",
+        "title": "Faces are the next target for fraudsters",
+        "source_url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0029",
@@ -251,7 +359,43 @@
       "translation-api"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-12-02",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-11-18",
+        "title": "Attack on Machine Translation Services",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-11-18",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "source_url": "https://arxiv.org/abs/2004.15015",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-11-18",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "source_url": "https://ericswallace.com/imitation",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-11-18",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "source_url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0028",
@@ -291,7 +435,25 @@
       "adversarial-evasion"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "Microsoft Edge AI Evasion",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0027",
@@ -331,7 +493,25 @@
       "azure"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "Microsoft Azure Service Disruption",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0026",
@@ -370,7 +550,25 @@
       "evasion"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0025",
@@ -440,7 +638,57 @@
       "CVE-2019-20634"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T18:20:34.882Z"
+    "updated_at": "2026-10-18T18:20:34.882Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2019-20634"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "ProofPoint Evasion",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0008",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "National Vulnerability Database entry for CVE-2019-20634",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20634",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "2019 DerbyCon presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "source_url": "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "Proof Pudding (CVE-2019-20634) Implementation on GitHub",
+        "source_url": "https://github.com/moohax/Proof-Pudding",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "2019 DerbyCon video presentation \"42: The answer to life, the universe, and everything offensive security\"",
+        "source_url": "https://youtube.com/watch?ab-channel=AdrianCrenshaw&v=CsvkYoxtexQ",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V009: Proof Pudding (CVE-2019-20634) is a code repository that describes how ML researchers evaded ProofPoint's email protection system by first building a copy-cat email protection ML model, and using the insights to bypass the …",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V009.json",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0024",
@@ -492,7 +740,37 @@
       "gpt-2"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "GPT-2 Model Replication",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0007",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "Wired Article, \"OpenAI Said Its Code Was Risky. Two Grads Re-Created It Anyway\"",
+        "source_url": "https://wired.com/story/dangerous-ai-open-source",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "Medium BlogPost, \"OpenGPT-2: We Replicated GPT-2 Because You Can Too\"",
+        "source_url": "https://blog.usejournal.com/opengpt-2-we-replicated-gpt-2-because-you-can-too-45e34e6d36dc",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0023",
@@ -549,7 +827,43 @@
       "facial-recognition"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "ClearviewAI Misconfiguration",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "source_url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "source_url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "source_url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0022",
@@ -612,7 +926,49 @@
       "twitter"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "supply_chain",
+    "state": "closed",
+    "closed_at": "2020-11-06",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-10-23",
+        "title": "Tay Poisoning",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0009",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "AIID - Incident 6: TayBot",
+        "source_url": "https://incidentdatabase.ai/cite/6",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "AVID - Vulnerability: AVID-2022-v013",
+        "source_url": "https://avidml.org/database/avid-2022-v013",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "Microsoft BlogPost, \"Learning from Tay's introduction\"",
+        "source_url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2020-10-23",
+        "title": "IEEE Article, \"In 2016, Microsoft's Racist Chatbot Revealed the Dangers of Online Conversation\"",
+        "source_url": "https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/in-2016-microsofts-racist-chatbot-revealed-the-dangers-of-online-conversation",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0034",
@@ -651,7 +1007,25 @@
       "tiktok"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2020-10-04",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-09-20",
+        "title": "Suicide Clips Evaded TikTok's Automated Moderation in Coordinated Attack",
+        "source_url": "https://incidentdatabase.ai/cite/366",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0005",
@@ -697,7 +1071,31 @@
       "whatsapp"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2020-07-08",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-06-24",
+        "title": "BJP Used Deepfake Videos of Manoj Tiwari to Target Haryanvi Voters in 2020 Delhi Election",
+        "source_url": "https://incidentdatabase.ai/cite/1336",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2020-06-24",
+        "title": "Wrongfully Accused by an Algorithm",
+        "source_url": "https://nytimes.com/2020/06/24/technology/facial-recognition-arrest.html",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0001",
@@ -738,7 +1136,25 @@
       "social-engineering"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2020-01-29",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-01-15",
+        "title": "Reported AI-Cloned Voice Used to Deceive Hong Kong Bank Manager in Purported $35 Million Fraud Scheme",
+        "source_url": "https://incidentdatabase.ai/cite/147",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2020-0035",
@@ -777,6 +1193,24 @@
       "fraud"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2020-01-15",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2020-01-01",
+        "title": "Quantum AI and Related AI-Themed Investment Scams Reportedly Used Deepfake Endorsements and Spoofed Media Sites to Solicit Investments",
+        "source_url": "https://incidentdatabase.ai/cite/1236",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   }
 ]

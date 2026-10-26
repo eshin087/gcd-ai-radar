@@ -3,12 +3,13 @@ name: briefing
 # Writes "This week in AI security", data/briefings/<ISO week>.json, every
 # Monday morning for the week that ended on Sunday: the numbers computed from
 # the published records, and a short narrative asked of the classifier LLM
-# from those records only. Shares the collector's concurrency group so the two
-# never commit at the same time; the site rebuilds from the data commit.
+# from those records only. Has its own concurrency group: the collector runs
+# hourly now, and sharing its group would queue the briefing behind it;
+# both push with a rebase-and-retry loop, so they never clobber each other.
 
 on:
   schedule:
-    - cron: "17 6 * * 1"
+    - cron: "47 6 * * 1"
   workflow_dispatch:
     inputs:
       week:
@@ -29,7 +30,7 @@ on:
         default: false
 
 concurrency:
-  group: collect
+  group: briefing
   cancel-in-progress: false
 
 permissions:

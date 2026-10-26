@@ -1,7 +1,26 @@
 import { createInterface } from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 import { IncidentSchema, type Incident } from "../../lib/schema";
-import { CATEGORIES, CATEGORY_META, INCIDENT_TYPES, SEVERITY_META, TARGETS, TYPE_META, type Category, type Severity, type Target } from "../../lib/taxonomy";
+import { withLifecycle } from "../../lib/lifecycle";
+import {
+  CATEGORIES,
+  CATEGORY_META,
+  INCIDENT_TYPES,
+  LANES,
+  LANE_META,
+  PATCH_META,
+  PATCH_STATUSES,
+  RECORD_STATES,
+  SEVERITY_META,
+  TARGETS,
+  TYPE_META,
+  type Category,
+  type Lane,
+  type PatchStatus,
+  type RecordState,
+  type Severity,
+  type Target,
+} from "../../lib/taxonomy";
 import { commitAndPush } from "../git";
 import { urlKey } from "../lib/canonical";
 import { nowIso } from "../lib/ids";
@@ -23,6 +42,7 @@ const C = {
 };
 
 function card(i: Incident, index: number, total: number): string {
+  const life = withLifecycle(i, new Date().toISOString().slice(0, 10));
   const lines = [
     "",
     `${C.dim(`${index + 1}/${total}`)}  ${C.bold(i.id)}  ${C.dim(`confidence ${i.confidence}`)}`,
@@ -30,6 +50,9 @@ function card(i: Incident, index: number, total: number): string {
     i.summary,
     "",
     `  type       ${C.cyan(TYPE_META[i.type].label)}`,
+    `  lane       ${LANE_META[life.lane].label} · ${life.state}${life.closed_at ? ` (closed ${life.closed_at})` : ""} · ${PATCH_META[life.patch_status].label}${i.lane === undefined ? C.dim("  (derived; set with e)") : ""}`,
+    life.action ? `  action     ${life.action}` : "",
+    life.affected.length || life.fixed_in.length ? `  versions   affected: ${life.affected.join(", ") || "—"} · fixed in: ${life.fixed_in.join(", ") || "—"}` : "",
     `  categories ${i.categories.map((c) => CATEGORY_META[c].label).join(", ")}`,
     `  severity   ${i.severity} ${SEVERITY_META[i.severity].label}`,
     `  targets    ${i.targets.join(", ")}${i.products.length ? `  ·  products: ${i.products.join(", ")}` : ""}`,
@@ -37,10 +60,10 @@ function card(i: Incident, index: number, total: number): string {
     `  origin     ${i.origin}${i.tags.length ? `  ·  tags: ${i.tags.join(", ")}` : ""}`,
     `  sources    ${i.sources.map((s) => `${s.publisher} ${s.published_at}`).join(" · ")}`,
   ];
-  return lines.join("\n");
+  return lines.filter(Boolean).join("\n");
 }
 
-const EDITABLE = ["title", "summary", "type", "categories", "severity", "targets", "products", "incident_date", "incident_date_precision", "tags"] as const;
+const EDITABLE = ["title", "summary", "type", "categories", "severity", "targets", "products", "incident_date", "incident_date_precision", "tags", "lane", "state", "patch_status", "action", "affected", "fixed_in"] as const;
 type Editable = (typeof EDITABLE)[number];
 
 function applyEdit(i: Incident, field: Editable, value: string): string | null {
@@ -84,6 +107,28 @@ function applyEdit(i: Incident, field: Editable, value: string): string | null {
     case "incident_date_precision":
       if (!["day", "month", "year"].includes(value.trim())) return "precision must be day, month or year";
       draft.incident_date_precision = value.trim() as Incident["incident_date_precision"];
+      break;
+    case "lane":
+      if (!(LANES as readonly string[]).includes(value.trim())) return `lane must be one of ${LANES.join(", ")}`;
+      draft.lane = value.trim() as Lane;
+      break;
+    case "state": {
+      const v = value.trim();
+      if (!(RECORD_STATES as readonly string[]).includes(v)) return `state must be one of ${RECORD_STATES.join(", ")}`;
+      draft.state = v as RecordState;
+      draft.closed_at = v === "closed" ? (draft.closed_at ?? new Date().toISOString().slice(0, 10)) : null;
+      break;
+    }
+    case "patch_status":
+      if (!(PATCH_STATUSES as readonly string[]).includes(value.trim())) return `patch_status must be one of ${PATCH_STATUSES.join(", ")}`;
+      draft.patch_status = value.trim() as PatchStatus;
+      break;
+    case "action":
+      draft.action = value.trim();
+      break;
+    case "affected":
+    case "fixed_in":
+      draft[field] = list();
       break;
   }
   const check = IncidentSchema.safeParse(draft);
@@ -189,7 +234,7 @@ export async function runReview(): Promise<void> {
               break;
             }
             const current = item[field];
-            console.log(`  current: ${Array.isArray(current) ? current.join(", ") : String(current)}`);
+            console.log(`  current: ${Array.isArray(current) ? current.join(", ") : current === undefined ? C.dim("(derived; not stored)") : String(current)}`);
             const value = await ask("  new value (comma-separated for lists):");
             const err = applyEdit(item, field, value);
             if (err) console.log(C.red(`  ${err}`));

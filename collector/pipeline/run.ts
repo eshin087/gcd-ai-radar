@@ -4,16 +4,29 @@ import { loadConfig, type SourceConfig } from "../lib/config";
 import { HttpError } from "../lib/http";
 import { addDays, makeIdAllocator, nowIso, uniqueSlug } from "../lib/ids";
 import { errorMessage, log } from "../lib/log";
-import { allIds, allSlugs, loadState, saveState, type RejectedRecord, type State } from "../lib/state";
+import { allIds, allSlugs, loadState, pruneCollectorState, saveState, type RejectedRecord, type State } from "../lib/state";
 import { callsToday, LlmRouter } from "../llm/router";
 import { ADAPTERS } from "../sources/index";
 import type { Candidate, SourceContext } from "../sources/types";
-import { classifyClusters, resolveSameIncident } from "./classify";
-import { clusterCandidates, dedupe, pairwiseClusterChecks, type Cluster, type Merge } from "./dedupe";
+import { classifyClusters, resolveSameIncident, type ClassifiedCluster } from "./classify";
+import {
+  buildEntityIndex,
+  clusterCandidates,
+  dedupe,
+  pairwiseClusterChecks,
+  productPairChecks,
+  productRecordChecks,
+  type Cluster,
+  type Merge,
+  type ProductSubject,
+} from "./dedupe";
 import { decide } from "./decide";
 import { enrichHints } from "./enrich";
+import { enrichVersions } from "./ghsa-lookup";
 import { prefilter } from "./prefilter";
+import { closeRecords } from "./close";
 import { buildIncident, mergeSource } from "./publish";
+import { applyUpdates } from "./update";
 
 export interface RunOptions {
   mode: RunRecord["mode"];
@@ -35,18 +48,25 @@ export interface RunSummary {
   pendingCount: number;
 }
 
-const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
+/** Hours since the last success before a scheduled source is read again (a little under the nominal period so an hourly cron hits it). */
+export const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, six_hourly: 5.5, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
 
-function lastSuccessBySource(state: State): Map<string, string> {
+/**
+ * When each source last succeeded: collector-state.json, which outlives the
+ * run ledger; a source the file does not know yet (the file is new, or the
+ * source is) falls back to scanning the kept runs, once.
+ */
+export function lastSuccessBySource(state: Pick<State, "runs" | "collector">): Map<string, string> {
   const out = new Map<string, string>();
   for (const run of state.runs) {
     if (run.mode === "dry-run") continue;
     for (const s of run.sources) if (s.ok && (!out.has(s.id) || out.get(s.id)! < run.finished_at)) out.set(s.id, run.finished_at);
   }
+  for (const [id, v] of Object.entries(state.collector.sources)) if (!out.has(id) || out.get(id)! < v.last_success_at) out.set(id, v.last_success_at);
   return out;
 }
 
-function isDue(src: SourceConfig, last: string | undefined, now: Date): boolean {
+export function isDue(src: Pick<SourceConfig, "schedule">, last: string | undefined, now: Date): boolean {
   const hours = DUE_HOURS[src.schedule];
   if (!hours || !last) return true;
   return now.getTime() - Date.parse(last) >= hours * 3600 * 1000;
@@ -60,6 +80,11 @@ function uniqueByKey(cands: Candidate[]): Candidate[] {
     if (!prev || c.hint.length > prev.hint.length) map.set(c.key, prev ? { ...c, discovered_at: prev.discovered_at } : c);
   }
   return [...map.values()];
+}
+
+function subjectOf(c: ClassifiedCluster): ProductSubject {
+  const r = c.result;
+  return { cluster: c.cluster, title: r.title, summary: r.summary, products: r.products, lane: r.lane, incident_date: r.incident_date };
 }
 
 export async function runCollector(opts: RunOptions): Promise<RunSummary> {
@@ -77,7 +102,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     finished_at: startedAt,
     mode: opts.mode,
     sources: [],
-    counts: { fetched: 0, prefiltered: 0, merged: 0, classified: 0, published: 0, review: 0, rejected: 0, pending: 0 },
+    counts: { fetched: 0, prefiltered: 0, merged: 0, classified: 0, published: 0, review: 0, rejected: 0, pending: 0, updated: 0, closed: 0, reopened: 0 },
     llm: { calls: 0, prompt_tokens: 0, completion_tokens: 0, by_model: {} },
     errors: [],
   };
@@ -112,6 +137,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
           const items = await adapter.fetch(src, ctx);
           fetched.push(...items);
           record.sources.push({ id: src.id, ok: true, items: items.length, duration_ms: Date.now() - t0 });
+          if (opts.mode !== "dry-run") state.collector.sources[src.id] = { last_success_at: new Date().toISOString() };
           log.info(`${src.id}: ${items.length} candidates`);
         } catch (err) {
           record.sources.push({
@@ -137,9 +163,12 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   log.info(`prefilter: kept ${pf.kept.length} of ${all.length}`, { dropped: pf.dropped.length });
   for (const d of pf.dropped.slice(0, 20)) log.debug("dropped", { reason: d.reason, title: d.candidate.title });
 
-  // 3. Deterministic dedupe
-  const dd = dedupe(pf.kept, state, settings);
-  log.info(`dedupe: ${dd.merges.length} merges, ${dd.llmChecks.length} LLM checks, ${dd.fresh.length} fresh, ${dd.skipped.length} skipped`);
+  // 3. Deterministic dedupe, with the shared-entity trigger (rarity over records and this run's candidates)
+  const entityIndex = buildEntityIndex([...state.incidents, ...state.review], pf.kept);
+  const dd = dedupe(pf.kept, state, settings, entityIndex);
+  const viaEntity = dd.llmChecks.filter((c) => c.matches.every((m) => m.via === "entity")).length;
+  log.info(`dedupe: ${dd.merges.length} merges, ${dd.llmChecks.length} LLM checks (${viaEntity} by shared entity), ${dd.fresh.length} fresh, ${dd.skipped.length} skipped`);
+  for (const c of dd.llmChecks) log.debug("same-incident check", { title: c.candidate.title, matches: c.matches.map((m) => `${m.ref.id} ${m.via} ${m.similarity.toFixed(2)}`) });
 
   // 4. Hints: only for candidates that still need the LLM (fresh + same-incident checks).
   // Runs after dedupe so already-seen or deterministically merged links are not re-fetched every run.
@@ -163,24 +192,28 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     if (decision === undefined) continue; // unresolved → pending below
     const m = decision ? check.matches.find((x) => x.ref.id === decision) : undefined;
     if (m?.incident && m.pool) {
-      merges.push({ candidate: check.candidate, target: m.incident, pool: m.pool, how: "llm", similarity: m.similarity });
+      merges.push({ candidate: check.candidate, target: m.incident, pool: m.pool, how: m.via === "entity" ? "entity" : "llm", similarity: m.similarity });
     } else {
       fresh.push(check.candidate);
     }
   }
 
-  // 7. Apply merges
+  // 7. Apply merges. The ones that added a source (not a re-seen link) feed the update pass.
   const stamp = nowIso();
-  for (const m of merges) {
+  const addedMerges: Merge[] = [];
+  const applyMerge = (m: Merge) => {
     const added = mergeSource(m.target, m.candidate, stamp);
     state.seen[m.candidate.key] = { status: "merged", id: m.target.id, at: stamp };
-    if (added) log.info(`merged into ${m.target.id} (${m.how})`, { title: m.candidate.title, publisher: m.candidate.publisher });
-  }
-  record.counts.merged = merges.length;
+    if (added) {
+      if (m.how !== "seen") addedMerges.push(m);
+      log.info(`merged into ${m.target.id} (${m.how})`, { title: m.candidate.title, publisher: m.candidate.publisher });
+    }
+  };
+  for (const m of merges) applyMerge(m);
 
-  // 8. Cluster (strict), then let the LLM settle same-run near-duplicates
+  // 8. Cluster (strict), then let the LLM settle same-run near-duplicates and shared entities
   const strict = clusterCandidates(fresh, settings);
-  const pairChecks = pairwiseClusterChecks(strict, settings);
+  const pairChecks = pairwiseClusterChecks(strict, settings, entityIndex);
   const pairDecisions = await resolveSameIncident([...pairChecks.values()], router);
   record.errors.push(...pairDecisions.errors);
   const unresolvedKeys = new Set(pairDecisions.unresolved.map((c) => c.candidate.key));
@@ -207,13 +240,92 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     }
     strict[t]!.members.push(...cl.members);
     owner[i] = t;
-    log.info(`same-run merge into "${strict[t]!.primary.title}"`, { title: cl.primary.title });
+    log.info(`same-run merge into "${strict[t]!.primary.title}" (${match.via})`, { title: cl.primary.title });
   });
-  const clusters = strict.filter((_, i) => owner[i] === i && !held.has(i));
+  const settled = strict.filter((_, i) => owner[i] === i && !held.has(i));
+  // The fuse: at most classify.max_per_run clusters per run (oldest first, so pending items never starve); the rest wait.
+  const clusters = settled.slice(0, settings.classify.max_per_run);
+  if (settled.length > clusters.length) log.warn(`classification fuse: ${settled.length - clusters.length} cluster(s) wait for the next run (max_per_run ${settings.classify.max_per_run})`);
+  heldForNextRun.push(...settled.slice(clusters.length));
   const cls = await classifyClusters(clusters, router);
   cls.pending.push(...heldForNextRun);
   record.errors.push(...cls.errors);
   record.counts.classified = cls.classified.length;
+  for (const { cluster, result } of cls.classified) {
+    log.debug("classified", { title: result.title, type: result.type, lane: result.lane, severity: result.severity, newsworthy: result.newsworthy, why: result.newsworthy_reason, conf: result.confidence, sources: cluster.members.length });
+  }
+
+  // 8b. Product pass: now that the model has named products, clusters of this run that name the same product
+  // (Cairn's three outlets) are checked against each other, then every cluster against recent records (LiteLLM's follow-ups).
+  const subjects = cls.classified.map(subjectOf);
+  const productPairs = productPairChecks(subjects, settings);
+  const productPairDecisions = await resolveSameIncident([...productPairs.values()], router);
+  record.errors.push(...productPairDecisions.errors);
+  const productUnresolved = new Set(productPairDecisions.unresolved.map((c) => c.candidate.key));
+  const pOwner = subjects.map((_, i) => i);
+  const pHeld = new Set<number>();
+  subjects.forEach((s, i) => {
+    const check = productPairs.get(i);
+    if (!check) return;
+    if (productUnresolved.has(check.candidate.key)) {
+      pHeld.add(i);
+      return;
+    }
+    const decision = productPairDecisions.decisions.get(check.candidate.key);
+    const match = decision ? check.matches.find((m) => m.ref.id === decision) : undefined;
+    if (match?.clusterIndex === undefined) return;
+    let t = match.clusterIndex;
+    while (pOwner[t] !== t) t = pOwner[t]!;
+    if (pHeld.has(t)) {
+      pHeld.add(i);
+      return;
+    }
+    subjects[t]!.cluster.members.push(...s.cluster.members);
+    pOwner[i] = t;
+    log.info(`product merge into "${subjects[t]!.title}"`, { title: s.title, products: s.products });
+  });
+  let classified = cls.classified.filter((_, i) => pOwner[i] === i && !pHeld.has(i));
+  for (const [i, c] of cls.classified.entries()) if (pHeld.has(i)) cls.pending.push(c.cluster);
+
+  const recordChecks = productRecordChecks(classified.map(subjectOf), state, settings);
+  const recordDecisions = await resolveSameIncident(
+    recordChecks.map((c) => c.check),
+    router,
+  );
+  record.errors.push(...recordDecisions.errors);
+  const recordUnresolved = new Set(recordDecisions.unresolved.map((c) => c.candidate.key));
+  const settledByProduct = new Set<Cluster>();
+  for (const { subject, check } of recordChecks) {
+    const key = check.candidate.key;
+    if (recordUnresolved.has(key)) {
+      cls.pending.push(subject.cluster);
+      settledByProduct.add(subject.cluster);
+      continue;
+    }
+    const decision = recordDecisions.decisions.get(key);
+    const m = decision ? check.matches.find((x) => x.ref.id === decision) : undefined;
+    if (!m?.incident || !m.pool) continue;
+    for (const member of subject.cluster.members) {
+      const merge: Merge = { candidate: member, target: m.incident, pool: m.pool, how: "product", similarity: m.similarity };
+      merges.push(merge);
+      applyMerge(merge);
+    }
+    settledByProduct.add(subject.cluster);
+  }
+  classified = classified.filter((c) => !settledByProduct.has(c.cluster));
+  record.counts.merged = merges.length;
+  if (productPairs.size || recordChecks.length) {
+    log.info(`product pass: ${productPairs.size} same-run check(s), ${recordChecks.length} record check(s), ${settledByProduct.size - [...recordUnresolved].length} merged into records`);
+  }
+
+  // 8c. Update pass: every merge that added a source becomes a timeline entry and may change the fix status, reopen the record, or both.
+  const upd = await applyUpdates(addedMerges, router, settings, stamp);
+  record.errors.push(...upd.errors);
+  record.counts.updated = upd.updated;
+  record.counts.reopened = upd.reopened;
+  if (addedMerges.length) {
+    log.info(`update pass: ${upd.updated} record(s) updated (${upd.entries} entries: ${upd.structured} structured, ${upd.byModel} by the model, ${upd.fallback} fallback), ${upd.reopened} reopened`);
+  }
 
   // 9. Decide + build
   const allocate = makeIdAllocator(allIds(state));
@@ -221,7 +333,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   const published: Incident[] = [];
   const review: Incident[] = [];
   const rejected: RejectedRecord[] = [];
-  for (const { cluster, result } of cls.classified) {
+  for (const { cluster, result } of classified) {
     const { status, reason } = decide(result, settings);
     if (status === "rejected") {
       for (const m of cluster.members) {
@@ -253,7 +365,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     }
     (status === "published" ? published : review).push(valid.data);
     for (const m of cluster.members) state.seen[m.key] = { status, id, at: stamp };
-    log.info(`${status}: ${incident.title}`, { id, severity: incident.severity, sources: incident.source_count, conf: incident.confidence });
+    log.info(`${status}: ${incident.title}`, { id, lane: incident.lane, type: incident.type, severity: incident.severity, sources: incident.source_count, conf: incident.confidence });
   }
   state.incidents.push(...published);
   state.review.push(...review);
@@ -261,6 +373,13 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   record.counts.published = published.length;
   record.counts.review = review.length;
   record.counts.rejected = rejected.length;
+
+  // 9b. Version data for live patch and supply-chain records that carry a CVE and no fixed version yet (GitHub Advisory Database, by CVE id)
+  if (!opts.sourceIds || opts.sourceIds.includes("ghsa")) {
+    const lookups = await enrichVersions(state.incidents, state.collector, settings, stamp);
+    record.errors.push(...lookups.errors);
+    if (lookups.looked_up) log.info(`ghsa lookups: ${lookups.looked_up} CVE(s) asked, ${lookups.enriched.length} record(s) given version data`, { ids: lookups.enriched.slice(0, 10) });
+  }
 
   // 10. Pending: unresolved same-incident checks + unclassified clusters
   const pending = uniqueByKey([...same.unresolved.map((c) => c.candidate), ...cls.pending.flatMap((cl) => cl.members)]);
@@ -271,6 +390,12 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   // 11. Retention
   const cutoff = addDays(stamp.slice(0, 10), -settings.retention.rejected_days);
   state.rejected = state.rejected.filter((r) => r.rejected_at.slice(0, 10) >= cutoff);
+  state.collector = pruneCollectorState(state.collector, stamp);
+
+  // 11b. Closer: live records whose window has passed are closed on disk.
+  const closed = closeRecords(state.incidents, stamp);
+  record.counts.closed = closed.closed;
+  if (closed.closed) log.info(`closed ${closed.closed} record(s)`, { ids: closed.ids.slice(0, 10) });
 
   // 12. Run record
   record.finished_at = nowIso();

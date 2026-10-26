@@ -1,5 +1,5 @@
 {
-  "_comment": "Cheap pre-filter applied to title + feed description before any LLM call. A candidate from a non-specialist source must match at least one ai_term AND one security_term, and no negative_term. Matching is case-insensitive, on word boundaries.",
+  "_comment": "Cheap pre-filter applied to title + feed description before any LLM call. A candidate from a press, vendor or social source must match at least one security_term (or carry a CVE id) and no negative_term; specialist and seed sources skip the gate. An ai_term match is recorded as extra.ai_hint for the classifier, never required: the general lanes carry incidents with no AI role. Matching is case-insensitive, on word boundaries.",
   "ai_terms": [
     "ai", "a.i.", "artificial intelligence", "llm", "llms", "large language model", "language model",
     "machine learning", "ml model", "neural network", "deep learning", "generative ai", "genai",
@@ -30,6 +30,6 @@
     "webinar", "sponsored", "whitepaper", "white paper", "stock price", "shares fell", "shares rose",
     "earnings", "quarterly results", "ipo", "funding round", "raises $", "series a", "series b",
     "job posting", "hiring", "we're hiring", "coupon", "discount", "black friday", "review: the best",
-    "horoscope", "recipe"
+    "horoscope", "recipe", "week in review", "roundup", "round-up", "podcast", "newsletter"
   ]
 }

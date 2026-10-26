@@ -9,6 +9,7 @@ import { ClassificationBatchSchema, extractJson, type ClassificationItem } from 
 import { parseRobots, robotsAllows } from "@/collector/pipeline/enrich";
 import type { Incident } from "@/lib/schema";
 import settingsJson from "@/collector/config/settings.json";
+import { classification } from "./helpers";
 
 const settings: Settings = SettingsSchema.parse(settingsJson);
 
@@ -51,7 +52,7 @@ function incident(partial: Partial<Incident> & { id: string; title: string }): I
 }
 
 function state(partial: Partial<State> = {}): State {
-  return { incidents: [], review: [], rejected: [], pending: [], seen: {}, runs: [], ...partial };
+  return { incidents: [], review: [], rejected: [], pending: [], seen: {}, runs: [], collector: { sources: {}, cve_lookups: {} }, ...partial };
 }
 
 describe("dedupe", () => {
@@ -118,7 +119,7 @@ describe("dedupe", () => {
 });
 
 describe("decide", () => {
-  const base: ClassificationItem = {
+  const base: ClassificationItem = classification({
     index: 0,
     in_scope: true,
     scope_reason: "attack on an AI product",
@@ -133,7 +134,7 @@ describe("decide", () => {
     summary: "A prompt injection exfiltrated files through a connector. OpenAI patched it.",
     tags: ["prompt-injection"],
     confidence: 0.9,
-  };
+  });
   it("follows the threshold matrix", () => {
     expect(decide(base, settings).status).toBe("published");
     expect(decide({ ...base, confidence: 0.7 }, settings).status).toBe("review");
@@ -159,7 +160,7 @@ describe("decide", () => {
 
 describe("llm output parsing", () => {
   it("accepts fenced json and validates the batch schema", () => {
-    const text = '```json\n{"results":[{"index":0,"in_scope":false,"scope_reason":"product launch","type":"attack_on_ai","categories":["other"],"severity":1,"targets":["n/a"],"products":[],"incident_date":"2026","incident_date_precision":"year","title":"Vendor launches AI product","summary":"A vendor launched a product. It is not an incident.","tags":[],"confidence":0.9}]}\n```';
+    const text = '```json\n{"results":[{"index":0,"in_scope":false,"scope_reason":"product launch","type":"attack_on_ai","categories":["other"],"severity":1,"targets":["n/a"],"products":[],"incident_date":"2026","incident_date_precision":"year","title":"Vendor launches AI product","summary":"A vendor launched a product. It is not an incident.","tags":[],"confidence":0.9,"lane":"patch","newsworthy":false,"newsworthy_reason":"a launch","patch_status":"unknown","affected":[],"fixed_in":[],"action":"","severity_note":"","cvss":0}]}\n```';
     const parsed = ClassificationBatchSchema.parse(extractJson(text));
     expect(parsed.results[0]!.in_scope).toBe(false);
   });

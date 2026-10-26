@@ -15,9 +15,16 @@ npm run validate               # Zod-validate every file under /data
 npm run briefing               # weekly briefing for the ISO week that ended last Sunday (Mondays on Actions)
 npm run briefing -- --week=2026-W42 --weeks=8 --force --no-commit   # backfill or rewrite weeks locally
 npx tsx scripts/shard-incidents.ts   # rebuild data/incidents/<year>.json from a pre-shard data/incidents.json
+npx tsx scripts/migrate-lanes.ts --dry-run   # count what the lifecycle migration would write; drop the flag to write it
 ```
 
-The collector runs every 6 hours on GitHub Actions and commits new data to `main`, which redeploys the site. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD, GitHub Advisories) are backfilled from 2016.
+Each run: fetch, pre-filter (security term or CVE id; an AI term only sets a hint), dedupe (seen, CVE, title, shared rare entity), same-incident checks, merges, clustering, classification (lane, AI role, curation bar), the product pass, the update pass (every merged report becomes a timeline entry and may change the fix status or reopen the record), decide and build, GitHub advisory lookups for version data, then the closer (live records whose window has passed are closed on disk) and the run record. The run's log lists every same-incident check with its trigger and every classification with its lane and `newsworthy` decision under `--verbose`.
+
+### The lifecycle migration (one-off)
+
+Records that predate lanes carry no lifecycle keys and get them derived at load. `scripts/migrate-lanes.ts` writes those derived values into every record (exactly what `withLifecycle` renders, so a missed record looks identical), touching only `data/incidents/<year>.json`. Procedure: `gh workflow disable collect.yml`, `npx tsx scripts/migrate-lanes.ts --dry-run`, then without the flag, `npm run validate`, commit the shards, merge, `gh workflow enable collect.yml` the same day (`keepalive.yml` re-enables it every Monday anyway). The script is idempotent; a second run writes nothing.
+
+The collector runs hourly on GitHub Actions and commits new data to `main`, which redeploys the site; a run that changed only bookkeeping files (the run ledger, the seen and pending lists, `collector-state.json`) commits with `[no site change]` in the subject and Vercel skips that build (`ignoreCommand` in `vercel.json`). Sources keep their own cadence (every run, every six hours, daily, weekly, monthly); `data/collector-state.json` remembers when each last succeeded, so a monthly source stays due on time however short the run ledger is kept. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD, GitHub Advisories) are backfilled from 2016.
 
 ## Secrets and variables (GitHub Actions)
 
