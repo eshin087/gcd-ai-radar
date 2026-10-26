@@ -5,6 +5,7 @@ import { atlasAdapter } from "./atlas";
 import { avidAdapter } from "./avid";
 import { gdeltAdapter } from "./gdelt";
 import { ghsaAdapter } from "./ghsa";
+import { hibpAdapter } from "./hibp";
 import { hnAdapter } from "./hn";
 import { kevAdapter } from "./kev";
 import { msrcAdapter } from "./msrc";
@@ -19,6 +20,7 @@ export const ADAPTERS: Partial<Record<SourceKind, SourceAdapter>> = {
   rss: rssAdapter,
   arxiv: arxivAdapter,
   msrc: msrcAdapter,
+  hibp: hibpAdapter,
   sitemap: sitemapAdapter,
   gdelt: gdeltAdapter,
   nvd: nvdAdapter,

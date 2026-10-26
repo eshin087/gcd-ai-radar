@@ -10,8 +10,8 @@ import type { SourceConfig } from "../lib/config";
 
 /**
  * Generic RSS/Atom adapter for press, vendor and research feeds. Keeps items
- * newer than the lookback window, applies the source's optional title filter
- * and stores only title, link, date and a hint for the classifier.
+ * newer than the lookback window, applies the source's optional title and
+ * text filters and stores only title, link, date and a hint for the classifier.
  */
 
 const FIRST_RUN_DAYS = 7;
@@ -61,16 +61,38 @@ export function itemToCandidate(
   };
 }
 
+export interface FeedFilters {
+  /** Must match the title. */
+  title: RegExp | null;
+  /** Must match the title and summary joined by a newline. */
+  text: RegExp | null;
+}
+
+/** Compiles a source's optional `title_filter` and `text_filter` (both case-insensitive). */
+export function feedFilters(source: Pick<SourceConfig, "title_filter" | "text_filter">): FeedFilters {
+  return {
+    title: source.title_filter ? new RegExp(source.title_filter, "i") : null,
+    text: source.text_filter ? new RegExp(source.text_filter, "i") : null,
+  };
+}
+
+/** True when the item passes every configured filter. */
+export function passesFilters(item: Pick<FeedItem, "title" | "summary">, filters: FeedFilters): boolean {
+  if (filters.title && !filters.title.test(item.title)) return false;
+  if (filters.text && !filters.text.test(`${item.title}\n${item.summary ?? ""}`)) return false;
+  return true;
+}
+
 export const rssAdapter: SourceAdapter = {
   kind: "rss",
   async fetch(source, ctx) {
     const items = await fetchFeedItems(source, ctx);
     const since = lookbackStart(ctx);
-    const titleFilter = source.title_filter ? new RegExp(source.title_filter, "i") : null;
+    const filters = feedFilters(source);
     const out: Candidate[] = [];
     for (const item of items) {
       if (item.date && item.date < since) continue;
-      if (titleFilter && !titleFilter.test(item.title)) continue;
+      if (!passesFilters(item, filters)) continue;
       const c = itemToCandidate(item, source, ctx);
       if (c) out.push(c);
       if (ctx.limit && out.length >= ctx.limit) break;

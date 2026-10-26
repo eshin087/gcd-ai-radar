@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { parseFeed, stripBoilerplate, stripDoctype, toIsoDate } from "@/collector/lib/feed";
 import { cleanGdeltTitle } from "@/collector/sources/gdelt";
+import { feedFilters, passesFilters } from "@/collector/sources/rss";
 
 const RSS = `<?xml version="1.0"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -86,5 +87,36 @@ describe("stripDoctype", () => {
   it("leaves documents without a DOCTYPE alone", () => {
     expect(stripDoctype(RSS)).toBe(RSS);
     expect(stripDoctype(`<!DOCTYPE html><rss/>`)).toBe(`<rss/>`);
+  });
+});
+
+describe("feedFilters / passesFilters", () => {
+  const item = (title: string, summary = "") => ({ title, summary });
+
+  it("passes everything when no filter is configured", () => {
+    expect(passesFilters(item("Anything"), feedFilters({}))).toBe(true);
+  });
+
+  it("applies title_filter to the title only", () => {
+    const f = feedFilters({ title_filter: "^(?!CISA Adds .*Known Exploited)" });
+    expect(passesFilters(item("CISA Adds Two Known Exploited Vulnerabilities to Catalog"), f)).toBe(false);
+    expect(passesFilters(item("CISA Releases Guidance on Something"), f)).toBe(true);
+    // The summary never rescues a title that fails the title filter.
+    expect(passesFilters(item("CISA Adds One Known Exploited Vulnerability", "unrelated"), f)).toBe(false);
+  });
+
+  it("applies text_filter over title and summary, case-insensitively", () => {
+    const f = feedFilters({ text_filter: "critical|exploit|zero-day|emergency" });
+    expect(passesFilters(item("Cisco IOS XE Software Web UI Privilege Escalation", "A vulnerability ... CRITICAL ... has been exploited in the wild."), f)).toBe(true);
+    expect(passesFilters(item("Zero-Day in Router Firmware"), f)).toBe(true);
+    expect(passesFilters(item("Cisco Webex Cross-Site Scripting", "A medium-severity issue."), f)).toBe(false);
+    expect(passesFilters({ title: "No summary at all", summary: undefined as unknown as string }, f)).toBe(false);
+  });
+
+  it("requires both filters when both are set", () => {
+    const f = feedFilters({ title_filter: "^(?!.*week in review)", text_filter: "breach|incident" });
+    expect(passesFilters(item("Week in review: breaches galore"), f)).toBe(false);
+    expect(passesFilters(item("Retailer confirms incident", "customer data taken"), f)).toBe(true);
+    expect(passesFilters(item("New product launch", "nothing to see"), f)).toBe(false);
   });
 });
