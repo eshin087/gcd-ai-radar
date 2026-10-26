@@ -1,5 +1,15 @@
 [
   {
+    "key": "3576934612fc89d7",
+    "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
+    "url": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundup newsletter and weekly recap article without a single specific incident report.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T19:34:40.193Z"
+  },
+  {
     "key": "ff383fbf9caa4485",
     "title": "Show HN: SecuBuzz – Factual 60-word cybersecurity briefs and CISA zero-day radar",
     "url": "https://secubuzz.com/",
