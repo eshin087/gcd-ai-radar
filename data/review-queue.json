@@ -82,9 +82,21 @@
         "publisher": "BleepingComputer",
         "title": "Chinese man extradited for role in $36 million cryptocurrency scam",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://therecord.media/dutch-police-extradite-chinese-national-money-laundering-scams",
+        "publisher": "The Record",
+        "title": "Dutch police extradite Chinese national accused of laundering Cambodian investment scam funds",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://cyberscoop.com/chinese-national-extradited-investment-scam",
+        "publisher": "CyberScoop",
+        "title": "Authorities extradite Chinese national for alleged $37M investment scam",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "review",
     "origin": "news",
@@ -94,7 +106,7 @@
       "extradition"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -108,6 +120,12 @@
         "title": "Chinese man extradited for role in $36 million cryptocurrency scam",
         "source_url": "https://bleepingcomputer.com/news/security/chinese-man-extradited-for-role-in-36-million-cryptocurrency-scam",
         "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Reports specify the suspect operated as a key money launderer linked to a Cambodian scam network",
+        "source_url": "https://therecord.media/dutch-police-extradite-chinese-national-money-laundering-scams",
+        "added_at": "2026-10-26T19:34:40.193Z"
       }
     ],
     "action": "",

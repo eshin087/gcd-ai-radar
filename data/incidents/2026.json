@@ -1,5 +1,855 @@
 [
   {
+    "id": "AIR-2026-1550",
+    "slug": "genesys-hack-exposes-customer-data-from-internal-systems",
+    "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+    "summary": "An unauthorized intrusion into Genesys internal systems resulted in the exposure of customer data. Main cloud platforms such as Genesys Cloud and Genesys Engage remained unaffected.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Genesys internal systems"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/genesys-hack-exposes-customer-data-from-internal-systems",
+        "publisher": "SecurityWeek",
+        "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "genesys",
+      "data-breach",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+        "source_url": "https://securityweek.com/genesys-hack-exposes-customer-data-from-internal-systems",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed intrusion and data exposure at a named organization.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1549",
+    "slug": "industrial-vendors-check-products-for-php2shell-vulnerabilit",
+    "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+    "summary": "Multiple industrial automation vendors confirmed that several of their products are vulnerable to PHP2Shell flaws. Organizations should review vendor advisories and apply available updates.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Siemens products",
+      "Schneider Electric products",
+      "ABB products"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities",
+        "publisher": "SecurityWeek",
+        "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "siemens",
+      "schneider-electric",
+      "abb",
+      "vulnerability"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+        "source_url": "https://securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Check vendor advisories and apply patches as they become available.",
+    "severity_note": "Critical vulnerabilities affecting multiple industrial product lines.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1548",
+    "slug": "flaw-in-openai-compaction-process-enables-reasoning-extracti",
+    "title": "Flaw in OpenAI Compaction Process Enables Reasoning Extraction",
+    "summary": "Researchers discovered a flaw in OpenAI's compaction process that allows reasoning traces to be moved between models. This technique could potentially facilitate model distillation and lower the cost of building rival AI systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "OpenAI API"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals",
+        "publisher": "SecurityWeek",
+        "title": "Stolen AI Reasoning Could Help China Build Cheaper Rivals",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "model-extraction",
+      "reasoning-traces",
+      "compaction"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "OpenAI compaction process"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Stolen AI Reasoning Could Help China Build Cheaper Rivals",
+        "source_url": "https://securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research finding with no reported real-world exploitation losses.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1547",
+    "slug": "cert-ua-warns-hackers-exploiting-dahua-surveillance-cameras",
+    "title": "CERT-UA Warns Hackers Exploiting Dahua Surveillance Cameras",
+    "summary": "Ukrainian cyber authorities report that attackers are compromising internet-connected Dahua cameras and video recorders. The intruders modify device settings and create unauthorized user accounts.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Dahua surveillance cameras"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://therecord.media/ukraine-cert-ua-warning-chinese-dahua-cameras-hacked",
+        "publisher": "The Record",
+        "title": "Ukraine warns hackers are exploiting Chinese-made Dahua surveillance cameras",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cert-ua",
+      "iot",
+      "surveillance-cameras",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Ukraine warns hackers are exploiting Chinese-made Dahua surveillance cameras",
+        "source_url": "https://therecord.media/ukraine-cert-ua-warning-chinese-dahua-cameras-hacked",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Review access controls and update firmware on internet-exposed surveillance devices.",
+    "severity_note": "Confirmed exploitation in the wild against physical surveillance devices.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1546",
+    "slug": "microsoft-teams-it-support-scams-deploy-malware-and-ransomwa",
+    "title": "Microsoft Teams IT Support Scams Deploy Malware and Ransomware",
+    "summary": "Threat actors are using Microsoft Teams' external chat features and throwaway tenants to impersonate IT support and deploy malware and ransomware. Researchers highlight a recurring social engineering pattern spanning hundreds of confirmed cases.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Teams"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "social-engineering",
+      "ransomware",
+      "malware",
+      "microsoft-teams"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
+        "source_url": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Monitor and restrict external tenant chat access in Microsoft Teams where appropriate.",
+    "severity_note": "Confirmed real-world attack campaign using social engineering and malware deployment.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1545",
+    "slug": "cve-2026-116467-llama-cpp-mirostat-sampler-assertion-vulnera",
+    "title": "CVE-2026-116467: llama.cpp Mirostat Sampler assertion vulnerability",
+    "summary": "A flaw in the Mirostat Sampler component of llama.cpp allows remote attackers to trigger assertions and crash the service. The vendor has not yet responded to the reported pull request.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116467",
+        "publisher": "NVD",
+        "title": "CVE-2026-116467: A security flaw has been discovered in ggml-org llama.cpp up to 0.7.0.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116467",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "unpatched",
+    "cve_ids": [
+      "CVE-2026-116467"
+    ],
+    "affected": [
+      "llama.cpp <= 0.7.0"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-116467: A security flaw has been discovered in ggml-org llama.cpp up to 0.7.0.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116467",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability without a fix or exploitation reported; CVSS 6.9.",
+    "cvss": 6.9
+  },
+  {
+    "id": "AIR-2026-1544",
+    "slug": "cve-2026-115912-vllm-shared-memory-multimodal-remote-code-ex",
+    "title": "CVE-2026-115912: vLLM shared-memory multimodal remote code execution",
+    "summary": "Improper trust handling of shared-memory multimodal features in vLLM scale-out deployments allows authenticated callers to trigger arbitrary Python execution via insecure deserialization. Version 0.32.0 addresses this vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
+        "publisher": "NVD",
+        "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115912",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115912"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed high-severity vulnerability with a fix and no exploitation reported; CVSS 7.5.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1543",
+    "slug": "cve-2026-115916-vllm-tokenizer-off-by-one-engine-termination",
+    "title": "CVE-2026-115916: vLLM tokenizer off-by-one engine termination",
+    "summary": "An off-by-one bound validation error in vLLM tokenizer handling allows pre-tokenized prompt IDs to trigger device-side assertions and terminate the engine. The issue is fixed in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
+        "publisher": "NVD",
+        "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115916",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115916"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1542",
+    "slug": "cve-2026-115918-vllm-chat-template-parsing-resource-exhausti",
+    "title": "CVE-2026-115918: vLLM chat template parsing resource exhaustion",
+    "summary": "A trust policy bypass in vLLM allows authenticated callers to supply custom chat templates that cause CPU or memory exhaustion during rendering. A patch has been released in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
+        "publisher": "NVD",
+        "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115918",
+      "resource-exhaustion"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115918"
+    ],
+    "affected": [
+      "vLLM 0.16.0 to 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1541",
+    "slug": "cve-2026-115914-vllm-multimodal-ocr-path-denial-of-service",
+    "title": "CVE-2026-115914: vLLM multimodal OCR path denial of service",
+    "summary": "An input validation flaw in vLLM allows remote clients to submit specially crafted images that cause a fatal assertion and crash the inference engine. The vulnerability is resolved in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
+        "publisher": "NVD",
+        "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115914",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115914"
+    ],
+    "affected": [
+      "vLLM 0.11.1 to 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1540",
+    "slug": "cve-2026-115915-vllm-insecure-image-parsing-command-executio",
+    "title": "CVE-2026-115915: vLLM insecure image parsing command execution vulnerability",
+    "summary": "Improper restriction of decoder selection during image parsing allows attackers to dispatch EPS payloads. This can lead to arbitrary command execution if vulnerable underlying components like Ghostscript or Pillow are present.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
+        "publisher": "NVD",
+        "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115915",
+      "rce"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115915"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1539",
+    "slug": "cve-2026-115917-vllm-permissive-cors-configuration-vulnerabi",
+    "title": "CVE-2026-115917: vLLM permissive CORS configuration vulnerability",
+    "summary": "The OpenAI-compatible server in vLLM configures Starlette CORSMiddleware with a wildcard origin by default. Malicious web pages can reach unauthenticated local servers and consume resources.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
+        "publisher": "NVD",
+        "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115917",
+      "cors"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115917"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 3.4
+  },
+  {
+    "id": "AIR-2026-1538",
+    "slug": "cve-2026-115913-vllm-phi-4-multimodal-audio-attention-out-of",
+    "title": "CVE-2026-115913: vLLM Phi-4 multimodal audio attention out-of-memory flaw",
+    "summary": "A remote client can submit a long audio clip that causes quadratic GPU memory usage and crashes the vLLM EngineCore. The flaw affects vLLM versions prior to 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
+        "publisher": "NVD",
+        "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115913",
+      "out-of-memory"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115913"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1537",
+    "slug": "cve-2026-115911-vllm-chat-template-denial-of-service-vulnera",
+    "title": "CVE-2026-115911: vLLM chat template denial of service vulnerability",
+    "summary": "An unauthenticated remote user can supply a crafted chat template that causes resource exhaustion and blocks responses in vLLM. The vulnerability affects versions from 0.19.0 until 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
+        "publisher": "NVD",
+        "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115911",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115911"
+    ],
+    "affected": [
+      "vLLM >= 0.19.0, < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
     "id": "AIR-2026-1536",
     "slug": "malware-campaign-infects-953-online-stores",
     "title": "Malware Campaign Infects 953 Online Stores",
@@ -24,9 +874,15 @@
         "publisher": "SecurityWeek",
         "title": "953 Online Stores Infected in Long-Lasting Malware Campaign",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -37,7 +893,7 @@
       "loader"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T20:02:47.996Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -143,35 +999,107 @@
         "publisher": "SecurityWeek",
         "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-187",
+        "publisher": "Fortinet",
+        "title": "Multiple Node.js CVEs",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
+        "publisher": "The Hacker News",
+        "title": "PHP Issues Second Windows Security Update in Five Days to Fix Brotli Code Execution Flaw",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://security.paloaltonetworks.com/CVE-2026-111497",
+        "publisher": "Palo Alto Networks",
+        "title": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability (CVE-2026-111497) on Palo Alto Networks Products (Severity: CRITICAL)",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/critical-http2shell-brotli-vulnerability-triggers-emergency-patches",
+        "publisher": "BleepingComputer",
+        "title": "Critical 'HTTP2Shell' Brotli vulnerability triggers emergency patches",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
+        "publisher": "BleepingComputer",
+        "title": "Microsoft releases emergency .NET patches for critical Brotli flaw",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 6,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
     "tags": [
       "brotli",
       "out-of-bounds-write",
-      "code-execution"
+      "code-execution",
+      "CVE-2026-105482",
+      "CVE-2026-105483",
+      "CVE-2026-106069",
+      "CVE-2026-111497",
+      "CVE-2026-105481",
+      "CVE-2026-106072"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "partial",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-111497",
+      "CVE-2026-106072",
+      "CVE-2026-106069",
+      "CVE-2026-105483",
+      "CVE-2026-105482",
+      "CVE-2026-105481"
+    ],
     "affected": [],
-    "fixed_in": [],
+    "fixed_in": [
+      "PHP 8.2",
+      "PHP 8.3",
+      "PHP 8.4",
+      "PHP 8.5"
+    ],
     "timeline": [
       {
         "date": "2026-10-26",
         "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
         "source_url": "https://securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages",
         "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Vendor bulletins detail specific CVE identifiers associated with the Brotli decoder vulnerabilities",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-187",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "PHP releases updated Windows packages for versions 8.2 through 8.5 addressing the Brotli vulnerability",
+        "source_url": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Palo Alto Networks reports impact on products from the Brotli decoder vulnerability CVE-2026-111497",
+        "source_url": "https://security.paloaltonetworks.com/CVE-2026-111497",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Microsoft releases emergency .NET security updates for the Brotli vulnerability",
+        "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
+        "added_at": "2026-10-26T19:34:40.193Z"
       }
     ],
-    "action": "Update affected Node.js, .NET, PowerShell, and Python packages as vendor patches become available.",
+    "action": "Update PHP Windows packages to the latest patched releases.",
     "severity_note": "Disclosed vulnerability with potential for code execution across multiple ecosystems.",
     "cvss": null
   },
@@ -289,9 +1217,15 @@
         "publisher": "The Hacker News",
         "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/gheist-stolen-github-tokens-cloud-secrets",
+        "publisher": "Dark Reading",
+        "title": "'Gheist' Weaponizes GitHub Tokens to Steal Cloud Secrets",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -303,7 +1237,7 @@
       "supply-chain"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
