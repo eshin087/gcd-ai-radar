@@ -254,10 +254,27 @@ body {
   content: "";
   position: absolute;
   inset-inline: 0;
-  top: -96px;
-  height: 96px;
+  top: -32px;
+  height: 32px;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--color-ground));
+}
+/* The hero's live marker: a red dot with a slow ring */
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--color-sev-4);
+  animation: hero-live-ring 2.2s ease-out infinite;
+}
+@keyframes hero-live-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-sev-4) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
 }
 /* Phones and tablets: the hero scrolls away like any block (no sticky, blur or scale) and ends in a short fade */
 @media (max-width: 1023px) {
@@ -391,6 +408,9 @@ body {
   .hero-fade {
     filter: none;
     transform: none;
+  }
+  .live-dot {
+    animation: none;
   }
   .reveal[data-armed="1"]:not([data-in]) .grow-x {
     transform: none;
