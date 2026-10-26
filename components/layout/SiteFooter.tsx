@@ -74,7 +74,10 @@ export function SiteFooter() {
             <a className="link" href="https://www.gdeltproject.org/">
               GDELT
             </a>{" "}
-            · Thank you to arXiv for use of its open access interoperability.
+            · Thank you to arXiv for use of its open access interoperability. · Breach data from{" "}
+            <a className="link" href="https://haveibeenpwned.com">
+              Have I Been Pwned
+            </a>
           </Line>
           <Line label="Notice">This product uses the NVD API but is not endorsed or certified by the NVD.</Line>
         </div>

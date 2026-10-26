@@ -20,6 +20,10 @@
     "timespan": "24h",
     "max_records": 75
   },
+  "hibp": {
+    "_comment": "Have I Been Pwned breach API: only verified breaches of at least this many accounts become candidates; smaller ones reach us through the press feeds if at all.",
+    "min_pwn_count": 100000
+  },
   "_providers_comment": "Free-tier limits read from Google AI Studio on 2026-10-18: gemini-3.5-flash-lite 15 RPM / 250K TPM / 500 RPD; gemini-3.8-flash 5 RPM / 250K TPM / 20 RPD. Budgets stay just under those; daily quotas reset at midnight Pacific.",
   "providers": [
     {

@@ -20,6 +20,7 @@ export const SOURCE_KINDS = [
   "atlas",
   "avid",
   "msrc",
+  "hibp",
 ] as const;
 export type SourceKind = (typeof SOURCE_KINDS)[number];
 
@@ -35,6 +36,8 @@ export const SourceConfigSchema = z.object({
   enabled: z.boolean().default(true),
   /** Regex (case-insensitive) a title must match to be considered. */
   title_filter: z.string().optional(),
+  /** Regex (case-insensitive) matched over the title and summary together (rss sources); items that miss are dropped. */
+  text_filter: z.string().optional(),
   /** Regex (case-insensitive) a URL must match (sitemap sources). */
   url_filter: z.string().optional(),
   max_bytes: z.number().int().positive().optional(),
@@ -81,6 +84,12 @@ export const SettingsSchema = z.object({
     timespan: z.string(),
     max_records: z.number().int().positive(),
   }),
+  /** Have I Been Pwned breach API: breaches below this account count are left to the press feeds. */
+  hibp: z
+    .object({
+      min_pwn_count: z.number().int().min(0),
+    })
+    .default({ min_pwn_count: 100000 }),
   providers: z.array(ProviderSchema).min(1),
   retention: z.object({
     rejected_days: z.number().int().positive(),
