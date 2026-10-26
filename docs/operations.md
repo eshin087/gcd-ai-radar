@@ -24,6 +24,10 @@ Each run: fetch, pre-filter (security term or CVE id; an AI term only sets a hin
 
 Records that predate lanes carry no lifecycle keys and get them derived at load. `scripts/migrate-lanes.ts` writes those derived values into every record (exactly what `withLifecycle` renders, so a missed record looks identical), touching only `data/incidents/<year>.json`. Procedure: `gh workflow disable collect.yml`, `npx tsx scripts/migrate-lanes.ts --dry-run`, then without the flag, `npm run validate`, commit the shards, merge, `gh workflow enable collect.yml` the same day (`keepalive.yml` re-enables it every Monday anyway). The script is idempotent; a second run writes nothing.
 
+### The CVSS backfill (one-off)
+
+`scripts/backfill-cvss.ts` fills `cvss` on every published record that has CVE ids and no score: the highest CVSS 3.1 or 4.0 base score among its CVEs, from the GitHub Advisory Database by `cve_id` first (`GITHUB_TOKEN`, else the gh CLI's token) and the NVD CVE API for the ids GitHub has no score for (6.5 s apart without `NVD_API_KEY`). It writes `cvss` only, never `updated_at`, and caches every answer in `collector/.cache/cvss-lookups.json`, so the real run after a dry run makes no new call. Same procedure as the migration: pause the cron, `--dry-run`, run, `npm run validate`, commit the shards, merge, re-enable the cron. A second run finds no candidate and writes nothing.
+
 The collector runs hourly on GitHub Actions and commits new data to `main`, which redeploys the site; a run that changed only bookkeeping files (the run ledger, the seen and pending lists, `collector-state.json`) commits with `[no site change]` in the subject and Vercel skips that build (`ignoreCommand` in `vercel.json`). Sources keep their own cadence (every run, every six hours, daily, weekly, monthly); `data/collector-state.json` remembers when each last succeeded, so a monthly source stays due on time however short the run ledger is kept. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD, GitHub Advisories) are backfilled from 2016.
 
 ## Secrets and variables (GitHub Actions)
