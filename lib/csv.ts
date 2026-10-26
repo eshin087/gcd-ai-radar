@@ -16,4 +16,6 @@ export const CSV_COLUMNS = [
   "id", "slug", "title", "type", "categories", "severity", "targets", "products", "incident_date",
   "incident_date_precision", "first_reported", "source_count", "confidence", "origin", "record_kind", "owasp_llm", "atlas", "tags", "summary",
   "first_source_url", "url",
+  // the lifecycle (lib/lifecycle.ts); the timeline itself is in the JSON files, the CSV carries its size and newest date
+  "lane", "state", "closed_at", "patch_status", "cve_ids", "affected", "fixed_in", "cvss", "action", "severity_note", "timeline_entries", "last_update",
 ] as const;

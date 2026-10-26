@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { CompactRow } from "./rows";
-import { IncidentSchema, type Incident } from "./schema";
+import { IncidentSchema, type Incident, type TimelineEntry } from "./schema";
 import type { SlimIncident } from "./slim";
 import type { Summary } from "./summary";
 
@@ -78,6 +78,17 @@ const INCIDENT_NOTES: Record<keyof Incident, string> = {
   tags: "Free-text tags.",
   created_at: "When the record was created.",
   updated_at: "When the record last changed.",
+  lane: "The live lane: patch, breach, supply_chain or research. Always present in the public files (derived by the rules on /methodology#lanes for records that predate lanes).",
+  state: "live or closed, by the rules on /methodology#lanes. Judged at every build; a closed record stays closed.",
+  closed_at: "The day a closed record closed; null while live.",
+  patch_status: "unpatched, partial, patched, no_fix_needed or unknown.",
+  cve_ids: "The CVE ids the record is about, highest first.",
+  affected: "Affected versions or products as a source states them, e.g. \"PHP < 8.4.9\".",
+  fixed_in: "Fixed versions as a source states them.",
+  timeline: "Dated updates, oldest first: the first reports, then what changed. The newest 500 across all records are in /changes.json.",
+  action: "What to do, in the site's own words; empty when no source says.",
+  severity_note: "Why this severity; empty when the record predates the field.",
+  cvss: "A CVSS base score when a source states one, else null.",
 };
 
 const SOURCE_NOTES: Record<keyof Incident["sources"][number], string> = {
@@ -85,6 +96,13 @@ const SOURCE_NOTES: Record<keyof Incident["sources"][number], string> = {
   publisher: "Publisher name.",
   title: "The article's own title.",
   published_at: "Publication date.",
+};
+
+const TIMELINE_NOTES: Record<keyof TimelineEntry, string> = {
+  date: "The day the update is about.",
+  title: "One line on what happened or changed.",
+  source_url: "The report behind the entry, when there is one.",
+  added_at: "When the site learned of the entry; /changes.json orders by it.",
 };
 
 function constraint(s: JsonSchema): string {
@@ -127,6 +145,12 @@ export function incidentFields(): FieldDoc[] {
       const item = s.items?.properties ?? {};
       for (const sub of Object.keys(SOURCE_NOTES) as (keyof typeof SOURCE_NOTES)[]) {
         out.push({ name: `sources[].${sub}`, type: typeLabel(item[sub] ?? {}), note: SOURCE_NOTES[sub] });
+      }
+    }
+    if (name === "timeline") {
+      const item = s.items?.properties ?? {};
+      for (const sub of Object.keys(TIMELINE_NOTES) as (keyof typeof TIMELINE_NOTES)[]) {
+        out.push({ name: `timeline[].${sub}`, type: typeLabel(item[sub] ?? {}), note: TIMELINE_NOTES[sub] });
       }
     }
   }

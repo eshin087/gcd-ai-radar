@@ -5,7 +5,10 @@ import {
   CATEGORIES,
   DATE_PRECISIONS,
   INCIDENT_TYPES,
+  LANES,
   ORIGINS,
+  PATCH_STATUSES,
+  RECORD_STATES,
   STATUSES,
   TARGETS,
 } from "./taxonomy";
@@ -41,6 +44,18 @@ export const SeveritySchema = z.union([
   z.literal(4),
 ]);
 
+/** One dated update on a record's timeline: the first reports, then what changed. */
+export const TimelineEntrySchema = z.object({
+  date: isoDate,
+  title: z.string().min(1).max(240),
+  source_url: webUrl.optional(),
+  /** When the site learned of the entry; what changes.json orders by. */
+  added_at: isoDateTime,
+});
+export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
+
+const cveId = z.string().regex(/^CVE-\d{4}-\d{4,}$/, "CVE-YYYY-NNNN");
+
 export const IncidentSchema = z
   .object({
     id: z.string().regex(/^AIR-\d{4}-\d{4}$/, "AIR-YYYY-NNNN"),
@@ -66,10 +81,38 @@ export const IncidentSchema = z
     tags: z.array(z.string().min(1).max(40)).max(20),
     created_at: isoDateTime,
     updated_at: isoDateTime,
+    /*
+     * The lifecycle (lib/lifecycle.ts). Optional on disk: records that predate
+     * lanes carry none of these and get them derived from their other fields
+     * at load; a record the collector classified carries them all. The public
+     * files always hold the complete form.
+     */
+    lane: z.enum(LANES).optional(),
+    state: z.enum(RECORD_STATES).optional(),
+    closed_at: isoDate.nullable().optional(),
+    patch_status: z.enum(PATCH_STATUSES).optional(),
+    /** The CVE ids the record is about, highest first. */
+    cve_ids: z.array(cveId).max(50).optional(),
+    affected: z.array(z.string().min(1).max(120)).max(30).optional(),
+    fixed_in: z.array(z.string().min(1).max(120)).max(30).optional(),
+    timeline: z.array(TimelineEntrySchema).max(200).optional(),
+    /** What to do, in our own words; empty when no source says. */
+    action: z.string().max(300).optional(),
+    /** Why this severity. */
+    severity_note: z.string().max(200).optional(),
+    cvss: z.number().min(0).max(10).nullable().optional(),
   })
   .refine((i) => i.source_count === i.sources.length, {
     message: "source_count must equal sources.length",
     path: ["source_count"],
+  })
+  .refine((i) => (i.type === "not_ai" ? i.categories.length === 1 && i.categories[0] === "general" : !i.categories.includes("general")), {
+    message: "a record with no AI role carries exactly the category general, and no other record carries it",
+    path: ["categories"],
+  })
+  .refine((i) => (i.state === undefined ? true : i.state === "closed" ? typeof i.closed_at === "string" : (i.closed_at ?? null) === null), {
+    message: "closed_at is a date exactly when state is closed",
+    path: ["closed_at"],
   })
   .refine(
     (i) =>

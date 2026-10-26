@@ -2,8 +2,12 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { cache } from "react";
 import type { ZodType } from "zod";
+import { withLifecycle, type FullIncident } from "./lifecycle";
 import { BriefingSchema, RadarSchema, RunsFileSchema, type Briefing, type Incident, type Radar, type RunRecord } from "./schema";
 import { incidentFiles, incidentFilesSignature, readIncidents } from "./shards";
+
+/** The build's UTC day: the `now` every lifecycle decision in this build uses, so pages, feeds and prebuild agree. */
+export const BUILD_DAY = new Date().toISOString().slice(0, 10);
 
 /**
  * Build-time data access. Everything the site renders comes from /data in
@@ -30,7 +34,8 @@ async function readJson<T>(file: string, schema: ZodType<T>): Promise<T | null> 
 }
 
 export interface IncidentData {
-  incidents: Incident[];
+  /** Published records in their complete form: every lifecycle key present (lib/lifecycle.ts withLifecycle). */
+  incidents: FullIncident[];
 }
 
 let memo: { signature: string; data: IncidentData } | null = null;
@@ -41,7 +46,7 @@ async function loadIncidentsFresh(): Promise<IncidentData> {
   const signature = await incidentFilesSignature(DATA_DIR, files.files);
   if (memo && memo.signature === signature) return memo.data;
   const { incidents } = await readIncidents(DATA_DIR, files);
-  const data: IncidentData = { incidents: incidents.filter((i) => i.status === "published") };
+  const data: IncidentData = { incidents: incidents.filter((i) => i.status === "published").map((i) => withLifecycle(i, BUILD_DAY)) };
   memo = { signature, data };
   return data;
 }
@@ -102,13 +107,13 @@ export function siteUrl(): string {
 }
 
 /** Slug lookup in constant time: the map is built once per dataset array (every incident page asks). */
-const slugMaps = new WeakMap<Incident[], Map<string, Incident>>();
+const slugMaps = new WeakMap<readonly Incident[], Map<string, Incident>>();
 
-export function incidentBySlug(incidents: Incident[], slug: string): Incident | undefined {
+export function incidentBySlug<T extends Incident>(incidents: readonly T[], slug: string): T | undefined {
   let map = slugMaps.get(incidents);
   if (!map) {
     map = new Map(incidents.map((i) => [i.slug, i]));
     slugMaps.set(incidents, map);
   }
-  return map.get(slug);
+  return map.get(slug) as T | undefined;
 }

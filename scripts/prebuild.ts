@@ -22,6 +22,7 @@ import path from "node:path";
 import type { MetaFile, YearIndexFile } from "../lib/api-docs";
 import { briefingSummaryLine } from "../lib/briefing";
 import { lastUpdated, loadBriefings, loadIncidents, siteUrl } from "../lib/data";
+import { lastActivity, type FullIncident } from "../lib/lifecycle";
 import type { Briefing, Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
@@ -40,7 +41,7 @@ function escapeXml(s: string): string {
   return s.replace(/[<>&'"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" })[c]!);
 }
 
-function toCsv(incidents: Incident[]): string {
+function toCsv(incidents: FullIncident[]): string {
   const cols: readonly string[] = CSV_COLUMNS;
   const lines = [cols.join(",")];
   const base = siteUrl();
@@ -53,6 +54,8 @@ function toCsv(incidents: Incident[]): string {
       atlas: atlasFor(i),
       first_source_url: i.sources[0]?.url ?? "",
       url: `${base}/incidents/${i.slug}`,
+      timeline_entries: i.timeline.length,
+      last_update: lastActivity(i),
     };
     lines.push(cols.map((c) => csvCell(row[c])).join(","));
   }

@@ -253,6 +253,70 @@ export const TARGET_META: Record<Target, { label: string; definition: string }> 
 export const STATUSES = ["published", "review", "rejected"] as const;
 export type Status = (typeof STATUSES)[number];
 
+/*
+ * Lanes, states and patch statuses: the lifecycle vocabulary. The rules that
+ * place a record in a lane and decide when it is live are data in
+ * lib/lifecycle.ts, rendered by the Methodology page and read by the collector.
+ */
+
+export const LANES = ["patch", "breach", "supply_chain", "research"] as const;
+export type Lane = (typeof LANES)[number];
+
+/** The lanes behind the live counters; research has its own tab and count. */
+export const ACTION_LANES = ["patch", "breach", "supply_chain"] as const;
+
+export const LANE_META: Record<Lane, { label: string; short: string; lede: string; definition: string; order: number; href: string }> = {
+  patch: {
+    label: "Patch now",
+    short: "Patch",
+    lede: "Flaws in software people run, and whether a fix exists yet.",
+    definition:
+      "A bug in software people run: exploited in the wild, rated critical with a fix or without, or a researcher's finding that ships without a fix.",
+    order: 0,
+    href: "/incidents?lane=patch",
+  },
+  breach: {
+    label: "Breaches & attacks",
+    short: "Breach",
+    lede: "Something happened to a named organisation or service. Nothing to patch; customers may need to rotate secrets.",
+    definition:
+      "An intrusion, breach, ransomware incident with confirmed impact, account takeover or fraud campaign against a named organisation, service or group of victims.",
+    order: 1,
+    href: "/incidents?lane=breach",
+  },
+  supply_chain: {
+    label: "Supply chain",
+    short: "Supply",
+    lede: "Malicious packages, hijacked releases, and compromised build systems, certificates or extensions.",
+    definition:
+      "A malicious package with reach, a hijacked release, or a compromised build system, signing certificate or extension.",
+    order: 2,
+    href: "/incidents?lane=supply_chain",
+  },
+  research: {
+    label: "Research",
+    short: "Research",
+    lede: "Proofs of concept and papers with no real-world exploitation.",
+    definition: "A demonstrated attack or vulnerability with no known real-world exploitation (severity 1), including papers.",
+    order: 3,
+    href: "/incidents?lane=research",
+  },
+};
+
+export const RECORD_STATES = ["live", "closed"] as const;
+export type RecordState = (typeof RECORD_STATES)[number];
+
+export const PATCH_STATUSES = ["unpatched", "partial", "patched", "no_fix_needed", "unknown"] as const;
+export type PatchStatus = (typeof PATCH_STATUSES)[number];
+
+export const PATCH_META: Record<PatchStatus, { label: string; glyph: string; tone: "live" | "partial" | "patched" | "dim"; order: number; definition: string }> = {
+  unpatched: { label: "No patch yet", glyph: "○", tone: "live", order: 0, definition: "No fixed release exists; mitigate or disable the affected feature." },
+  partial: { label: "Partly patched", glyph: "◐", tone: "partial", order: 1, definition: "Some versions or products have a fix, others are still waiting." },
+  patched: { label: "Patched", glyph: "●", tone: "patched", order: 2, definition: "A fixed release exists for everything affected; update and you are done." },
+  no_fix_needed: { label: "No fix needed", glyph: "—", tone: "dim", order: 3, definition: "Nothing to patch: a breach, an attack or a campaign rather than a flaw." },
+  unknown: { label: "Fix status unknown", glyph: "?", tone: "dim", order: 4, definition: "No source states whether a fix exists; check the linked advisory." },
+};
+
 export const ORIGINS = [
   "seed_aiid",
   "seed_atlas",
