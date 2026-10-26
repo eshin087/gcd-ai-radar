@@ -1,4 +1,5 @@
-import { CATEGORY_COLORS, SEVERITY_COLORS, TYPE_COLORS } from "@/lib/palette";
+import { CVSS_BAND_META, cvssBand, cvssLabel, type CvssBand } from "@/lib/cvss";
+import { CATEGORY_COLORS, CVSS_COLORS, LANE_COLORS, SEVERITY_COLORS, TYPE_COLORS } from "@/lib/palette";
 import {
   ATLAS_TECHNIQUES,
   CATEGORY_META,
@@ -23,11 +24,26 @@ import {
  * Chips carry identity in a colored swatch; the text stays in ink tokens so it
  * is always legible (dataviz rule: text never wears the data color). Colors
  * come from CSS variables when a theme defines them (--sev-N, --cat-<key>,
- * --type-<key>), otherwise from lib/palette.ts.
+ * --type-<key>), otherwise from lib/palette.ts. The filled variant is the one
+ * exception, reserved for a number (the CVSS score): the colour is the whole
+ * chip and the number sits on it in the ground tone.
  */
-function Chip({ color, children, title }: { color: string; children: React.ReactNode; title?: string }) {
+function Chip({ color, children, title, filled = false, ...rest }: { color: string; children: React.ReactNode; title?: string; filled?: boolean } & Record<`data-${string}`, string | undefined>) {
+  if (filled) {
+    return (
+      <span
+        {...rest}
+        title={title}
+        className="num inline-flex items-center rounded-[3px] px-1.5 py-[3px] text-[12px] font-semibold leading-none whitespace-nowrap text-ground"
+        style={{ background: color }}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <span
+      {...rest}
       title={title}
       className="inline-flex items-center gap-1.5 rounded-[3px] border px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em] whitespace-nowrap text-soft"
       style={{ borderColor: `color-mix(in oklab, ${color} 38%, transparent)`, background: `color-mix(in oklab, ${color} 9%, transparent)` }}
@@ -57,6 +73,47 @@ export function SeverityBadge({ severity, short = true }: { severity: Severity; 
 }
 
 /**
+ * Our severity as a word in its colour on a row's meta line ("Research",
+ * "Disclosed", "Exploited", "Real loss"), never a digit: the digit is a
+ * database value, the word is what it means. The definition is the tooltip.
+ */
+const SEVERITY_TEXT: Record<Severity, string> = { 1: "text-sev-1", 2: "text-sev-2", 3: "text-sev-3", 4: "text-sev-4" };
+
+export function SeverityWord({ severity, title }: { severity: Severity; title?: string }) {
+  const meta = SEVERITY_META[severity];
+  return (
+    <span title={title ?? meta.definition} className={`whitespace-nowrap ${SEVERITY_TEXT[severity]}`}>
+      {meta.short}
+    </span>
+  );
+}
+
+/**
+ * The CVSS base score on a filled chip coloured by band: red 9.0 and up,
+ * orange 7.0 to 8.9, blue 4.0 to 6.9, grey below (lib/cvss.ts). Nothing when
+ * the record has no score: an absent number is never drawn as a zero. The
+ * version goes in the tooltip when a caller knows it; `label` lets a legend
+ * print a band name on the chip instead of a score.
+ */
+const SEVERITY_OF_BAND: Record<CvssBand, Severity> = { critical: 4, high: 3, medium: 2, low: 1 };
+
+export function CvssChip({ score, version, label }: { score: number | null | undefined; version?: string | null; label?: string }) {
+  if (score === null || score === undefined || Number.isNaN(score)) return null;
+  const band = cvssBand(score);
+  const meta = CVSS_BAND_META[band];
+  return (
+    <Chip
+      filled
+      color={`var(--color-sev-${SEVERITY_OF_BAND[band]}, ${CVSS_COLORS[band]})`}
+      title={`CVSS ${version ? `${version} ` : ""}base score ${cvssLabel(score)}: ${meta.label.toLowerCase()} (${meta.range})`}
+      data-cvss-band={band}
+    >
+      {label ?? cvssLabel(score)}
+    </Chip>
+  );
+}
+
+/**
  * OWASP LLM Top 10 and MITRE ATLAS ids: neutral chips with no swatch, since
  * they restate the categories in another vocabulary rather than add a new
  * dimension to colour. The full name is in the tooltip.
@@ -79,11 +136,31 @@ export function TypeBadge({ type, short = false }: { type: IncidentType; short?:
   );
 }
 
-/** The lane, as a plain text chip: a lane is a place, not a data colour. */
-export function LaneBadge({ lane, short = false }: { lane: Lane; short?: boolean }) {
+/**
+ * The lane in its colour (lib/palette.ts LANE_COLORS, --color-lane-<lane> in
+ * globals.css): a chip on page headers, plain coloured text on a row's meta
+ * line (`text`). A lane is a place, so the colour names it and the word is
+ * always there beside it.
+ */
+/** Written out so Tailwind sees each class and emits the --color-lane-<lane> token (lib/palette.ts LANE_COLORS is the fallback where no stylesheet is loaded, as in OG images). */
+const LANE_TEXT: Record<Lane, string> = { patch: "text-lane-patch", breach: "text-lane-breach", supply_chain: "text-lane-supply_chain", research: "text-lane-research" };
+
+export function LaneBadge({ lane, short = false, text = false }: { lane: Lane; short?: boolean; text?: boolean }) {
   const meta = LANE_META[lane];
+  const fallback = { color: LANE_COLORS[lane] };
+  if (text) {
+    return (
+      <span title={meta.definition} className={`whitespace-nowrap ${LANE_TEXT[lane]}`} style={fallback}>
+        {short ? meta.short : meta.label}
+      </span>
+    );
+  }
   return (
-    <span title={meta.definition} className="inline-flex items-center rounded-[2px] border border-line px-1.5 py-0.5 font-mono text-[12px] uppercase tracking-[0.06em] whitespace-nowrap text-dim">
+    <span
+      title={meta.definition}
+      className={`inline-flex items-center rounded-[2px] border px-1.5 py-0.5 font-mono text-[12px] uppercase tracking-[0.06em] whitespace-nowrap ${LANE_TEXT[lane]}`}
+      style={{ ...fallback, borderColor: "color-mix(in oklab, currentColor 45%, transparent)" }}
+    >
       {short ? meta.short : meta.label}
     </span>
   );

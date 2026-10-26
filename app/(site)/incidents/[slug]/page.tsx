@@ -3,13 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyBrief } from "@/components/incidents/CopyBrief";
 import { IncidentRow } from "@/components/incidents/IncidentRow";
-import { AiChip, CategoryBadge, LaneBadge, PatchBadge, SeverityBadge, StateDot } from "@/components/ui/Badge";
+import { AiChip, CategoryBadge, CvssChip, LaneBadge, PatchBadge, SeverityBadge, StateDot } from "@/components/ui/Badge";
 import { buildBrief } from "@/lib/brief";
 import { ADVISORY_PUBLISHERS, VULN_DB_PUBLISHERS, isDisclosedIncident } from "@/lib/counting";
 import { incidentBySlug, loadIncidents, siteUrl } from "@/lib/data";
 import { approxDateLabel, dateLabel, timestampLabel } from "@/lib/format";
-import { timelineOf } from "@/lib/lifecycle";
+import { lastActivity, timelineOf } from "@/lib/lifecycle";
 import { rowOf } from "@/lib/live";
+import { isKevMarked } from "@/lib/products";
 import { SITE } from "@/lib/site";
 import { relatedIncidents } from "@/lib/slim";
 import { normalizeTag, tagHref } from "@/lib/tags";
@@ -58,14 +59,24 @@ function sourceKind(publisher: string): "advisories" | "research" | "news" {
 
 const KIND_LABEL = { advisories: "Advisories and databases", research: "Research and catalogues", news: "News and write-ups" } as const;
 
-function Box({ label, children }: { label: string; children: React.ReactNode }) {
+/**
+ * One cell of the facts grid: a dim kicker over a mono value in ink. Each
+ * cell draws its own right and bottom hairline, pulled one pixel out so the
+ * outer ones overlap the grid's frame; a last row that is not full still
+ * ends on the frame, like a ledger.
+ */
+function Fact({ label, title, wide = false, children }: { label: string; title?: string; wide?: boolean; children: React.ReactNode }) {
   return (
-    <div className="rounded-[2px] border border-line px-3 py-2.5">
-      <div className="label mb-1.5">{label}</div>
-      <div className="font-mono text-[13px] leading-relaxed text-ink">{children}</div>
+    <div data-fact={label} className={`-mr-px -mb-px min-w-0 border-r border-b border-line-soft px-3 py-2.5 ${wide ? "col-span-2" : ""}`}>
+      <dt className="label mb-1" title={title}>
+        {label}
+      </dt>
+      <dd className="font-mono text-[13px] leading-relaxed text-ink">{children}</dd>
     </div>
   );
 }
+
+const KEV_CATALOG_URL = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog";
 
 function Row({ label, title, children }: { label: string; title?: string; children: React.ReactNode }) {
   return (
@@ -97,6 +108,9 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
     .filter((g) => g.items.length > 0);
   const tags = [...new Set(incident.tags.map((t) => [t, normalizeTag(t)] as const).filter(([, s]) => s).map(([t, s]) => `${t}\u0000${s}`))].map((x) => x.split("\u0000") as [string, string]);
   const cves = incident.cve_ids;
+  const kev = isKevMarked(incident);
+  const lastUpdate = lastActivity(incident);
+  const scored = incident.cvss !== null || cves.length > 0;
 
   return (
     <article className="max-w-4xl space-y-8">
@@ -119,11 +133,15 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
           </span>
           <LaneBadge lane={incident.lane} />
           <SeverityBadge severity={incident.severity} short={false} />
-          {showPatch && <PatchBadge status={incident.patch_status} />}
           <AiChip type={incident.type} />
         </div>
         <h1 className="text-[26px] font-semibold leading-tight tracking-tight sm:text-[32px]">{incident.title}</h1>
-        {incident.products.length > 0 && <p className="font-mono text-[13px] text-dim">{incident.products.join(", ")}</p>}
+        {incident.products.length > 0 && (
+          <p className="font-mono text-[13px] text-dim">
+            <span className="text-accent">{incident.products[0]}</span>
+            {incident.products.length > 1 && `, ${incident.products.slice(1).join(", ")}`}
+          </p>
+        )}
         <p className="text-[16px] leading-relaxed text-soft">{incident.summary}</p>
         {incident.severity_note && (
           <p className="text-[13.5px] text-dim">
@@ -143,31 +161,55 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
         )}
       </header>
 
-      {incident.action && (
-        <section className="border-l-2 border-accent pl-4">
-          <h2 className="label mb-1">What to do</h2>
-          <p className="text-[15px] leading-relaxed text-ink">{incident.action}</p>
-        </section>
-      )}
-
-      {(incident.affected.length > 0 || incident.fixed_in.length > 0 || cves.length > 0) && (
-        <section className="grid gap-3 sm:grid-cols-3">
+      {/* The facts: every number and date the record states, at a glance, in a hairline grid. */}
+      <section aria-label="Facts">
+        <dl data-facts="" className="grid grid-cols-2 overflow-hidden border border-line-soft sm:grid-cols-4">
+          {scored && (
+            <Fact label="CVSS" title="The CVSS base score a source states; the chip's colour is the band (red 9.0 and up, orange 7.0 to 8.9, blue 4.0 to 6.9, grey below)">
+              {incident.cvss !== null ? <CvssChip score={incident.cvss} /> : <span className="text-faint">not scored</span>}
+            </Fact>
+          )}
+          {/*
+            EPSS slot: a later step fills it from data/stats/epss.json with the
+            score, the percentile and the model date for the record's CVE ids
+            ("EPSS 0.94 · top 1% · 2026-10-26", "EPSS scores by FIRST"). Until
+            then nothing renders here, so no row shows a number it does not have.
+          */}
+          {kev && (
+            <Fact label="KEV" title="Listed in CISA's Known Exploited Vulnerabilities catalog">
+              <span className="text-live">listed</span>{" "}
+              <a href={cves[0] ? `${KEV_CATALOG_URL}?search_api_fulltext=${cves[0]}` : KEV_CATALOG_URL} rel="noopener noreferrer" target="_blank" className="link">
+                CISA KEV
+              </a>
+            </Fact>
+          )}
+          {showPatch && (
+            <Fact label="fix status">
+              <PatchBadge status={incident.patch_status} />
+            </Fact>
+          )}
           {incident.affected.length > 0 && (
-            <Box label="affected">
+            <Fact label="affected" wide={incident.affected.length > 2}>
               {incident.affected.map((a) => (
                 <div key={a}>{a}</div>
               ))}
-            </Box>
+            </Fact>
           )}
           {incident.fixed_in.length > 0 && (
-            <Box label="fixed in">
+            <Fact label="fixed in" wide={incident.fixed_in.length > 2}>
               {incident.fixed_in.map((f) => (
                 <div key={f}>{f}</div>
               ))}
-            </Box>
+            </Fact>
           )}
+          <Fact label="first report" title="The earliest source date">
+            <span className="num">{dateLabel(incident.first_reported)}</span>
+          </Fact>
+          <Fact label="last update" title="The newest dated activity: a timeline entry, a source or the first report">
+            <span className="num">{dateLabel(lastUpdate)}</span>
+          </Fact>
           {cves.length > 0 && (
-            <Box label="cve ids">
+            <Fact label="CVE ids" wide={cves.length > 1}>
               {cves.map((id) => (
                 <div key={id} className="flex flex-wrap gap-x-2">
                   <a href={`https://nvd.nist.gov/vuln/detail/${id}`} rel="noopener noreferrer" target="_blank" className="link">
@@ -178,14 +220,20 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
                   </Link>
                 </div>
               ))}
-              {incident.cvss !== null && <div className="mt-1 text-dim">CVSS {incident.cvss}</div>}
-            </Box>
+            </Fact>
           )}
+        </dl>
+      </section>
+
+      {incident.action && (
+        <section className="border-l-2 border-accent pl-4">
+          <h2 className="label mb-1 text-accent">What to do</h2>
+          <p className="text-[15px] leading-relaxed text-ink">{incident.action}</p>
         </section>
       )}
 
       <section>
-        <h2 className="label mb-2">
+        <h2 className="label mb-2 text-ink">
           Timeline · <span className="num">{timeline.length}</span>
         </h2>
         <ol className="border-l border-line pl-4">
