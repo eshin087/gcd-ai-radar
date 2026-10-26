@@ -150,6 +150,10 @@ export const RunRecordSchema = z.object({
     review: z.number().int().min(0),
     rejected: z.number().int().min(0),
     pending: z.number().int().min(0),
+    /** Records changed by the update pass, closed by the closer and reopened by a new report (runs before the lifecycle lack them). */
+    updated: z.number().int().min(0).optional(),
+    closed: z.number().int().min(0).optional(),
+    reopened: z.number().int().min(0).optional(),
   }),
   llm: z.object({
     calls: z.number().int().min(0),

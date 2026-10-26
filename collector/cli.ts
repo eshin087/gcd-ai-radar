@@ -9,6 +9,7 @@ import { loadState } from "./lib/state";
 import { cveClashes } from "./pipeline/dedupe";
 import { classificationStalled, runSummaryMarkdown } from "./pipeline/health";
 import { runCollector, type RunOptions } from "./pipeline/run";
+import type { RunRecord } from "../lib/schema";
 import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
 
@@ -58,10 +59,16 @@ function parseArgs(argv: string[]): Args {
   return { command: positional.shift() ?? "run", positional, flags };
 }
 
+/** The data commit's subject: what the run changed. */
+export function runCommitMessage(record: RunRecord): string {
+  const c = record.counts;
+  return `data: run ${record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged, ${c.updated ?? 0} updated, ${c.closed ?? 0} closed)`;
+}
+
 function summarize(summary: Awaited<ReturnType<typeof runCollector>>) {
   const c = summary.record.counts;
   log.info(
-    `run ${summary.record.id}: fetched ${c.fetched} · prefiltered ${c.prefiltered} · merged ${c.merged} · classified ${c.classified} · published ${c.published} · review ${c.review} · rejected ${c.rejected} · pending ${c.pending}`,
+    `run ${summary.record.id}: fetched ${c.fetched} · prefiltered ${c.prefiltered} · merged ${c.merged} · classified ${c.classified} · published ${c.published} · review ${c.review} · rejected ${c.rejected} · pending ${c.pending} · updated ${c.updated ?? 0} · closed ${c.closed ?? 0} · reopened ${c.reopened ?? 0}`,
   );
   const l = summary.record.llm;
   log.info(`llm: ${l.calls} calls, ${l.prompt_tokens} prompt + ${l.completion_tokens} completion tokens`, l.by_model);
@@ -95,8 +102,7 @@ async function main() {
       const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
       let unpushed = false;
       if (commit && (summary.changedFiles.length || radarChanged)) {
-        const c = summary.record.counts;
-        const result = await commitAndPush(`data: run ${summary.record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged)`);
+        const result = await commitAndPush(runCommitMessage(summary.record));
         unpushed = result.committed && !result.pushed;
       }
       // Health: a job summary on Actions, and a failed job (owner gets an email) when classification

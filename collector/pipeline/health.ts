@@ -24,9 +24,9 @@ export function runSummaryMarkdown(record: RunRecord, opts: { stalled: boolean; 
   const lines = [
     `### collect ${record.id} (${record.mode})`,
     "",
-    "| fetched | prefiltered | merged | classified | published | review | rejected | pending |",
-    "|---:|---:|---:|---:|---:|---:|---:|---:|",
-    `| ${c.fetched} | ${c.prefiltered} | ${c.merged} | ${c.classified} | ${c.published} | ${c.review} | ${c.rejected} | ${c.pending} |`,
+    "| fetched | prefiltered | merged | classified | published | review | rejected | pending | updated | closed | reopened |",
+    "|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+    `| ${c.fetched} | ${c.prefiltered} | ${c.merged} | ${c.classified} | ${c.published} | ${c.review} | ${c.rejected} | ${c.pending} | ${c.updated ?? 0} | ${c.closed ?? 0} | ${c.reopened ?? 0} |`,
     "",
     `LLM: ${l.calls} call${l.calls === 1 ? "" : "s"}, ${l.prompt_tokens.toLocaleString("en-US")} prompt + ${l.completion_tokens.toLocaleString("en-US")} completion tokens` +
       (Object.keys(l.by_model).length ? ` (${Object.entries(l.by_model).map(([k, v]) => `${k}: ${v.calls}`).join(", ")})` : ""),

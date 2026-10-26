@@ -23,7 +23,9 @@ import {
 import { decide } from "./decide";
 import { enrichHints } from "./enrich";
 import { prefilter } from "./prefilter";
+import { closeRecords } from "./close";
 import { buildIncident, mergeSource } from "./publish";
+import { applyUpdates } from "./update";
 
 export interface RunOptions {
   mode: RunRecord["mode"];
@@ -93,7 +95,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     finished_at: startedAt,
     mode: opts.mode,
     sources: [],
-    counts: { fetched: 0, prefiltered: 0, merged: 0, classified: 0, published: 0, review: 0, rejected: 0, pending: 0 },
+    counts: { fetched: 0, prefiltered: 0, merged: 0, classified: 0, published: 0, review: 0, rejected: 0, pending: 0, updated: 0, closed: 0, reopened: 0 },
     llm: { calls: 0, prompt_tokens: 0, completion_tokens: 0, by_model: {} },
     errors: [],
   };
@@ -308,6 +310,15 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     log.info(`product pass: ${productPairs.size} same-run check(s), ${recordChecks.length} record check(s), ${settledByProduct.size - [...recordUnresolved].length} merged into records`);
   }
 
+  // 8c. Update pass: every merge that added a source becomes a timeline entry and may change the fix status, reopen the record, or both.
+  const upd = await applyUpdates(addedMerges, router, settings, stamp);
+  record.errors.push(...upd.errors);
+  record.counts.updated = upd.updated;
+  record.counts.reopened = upd.reopened;
+  if (addedMerges.length) {
+    log.info(`update pass: ${upd.updated} record(s) updated (${upd.entries} entries: ${upd.structured} structured, ${upd.byModel} by the model, ${upd.fallback} fallback), ${upd.reopened} reopened`);
+  }
+
   // 9. Decide + build
   const allocate = makeIdAllocator(allIds(state));
   const slugs = allSlugs(state);
@@ -365,6 +376,11 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   const cutoff = addDays(stamp.slice(0, 10), -settings.retention.rejected_days);
   state.rejected = state.rejected.filter((r) => r.rejected_at.slice(0, 10) >= cutoff);
 
+  // 11b. Closer: live records whose window has passed are closed on disk.
+  const closed = closeRecords(state.incidents, stamp);
+  record.counts.closed = closed.closed;
+  if (closed.closed) log.info(`closed ${closed.closed} record(s)`, { ids: closed.ids.slice(0, 10) });
+
   // 12. Run record
   record.finished_at = nowIso();
   record.llm.by_model = router.usage;
@@ -383,6 +399,5 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   } else {
     log.info("dry run: nothing written");
   }
-  void addedMerges; // consumed by the update pass (B4)
   return { record, changedFiles, published, review, rejected, merged: merges, pendingCount: pending.length };
 }
