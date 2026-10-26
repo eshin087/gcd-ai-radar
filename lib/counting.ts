@@ -20,6 +20,9 @@ const VULN_DB_ORIGINS: ReadonlySet<Origin> = new Set<Origin>(["seed_nvd", "seed_
 /** Publishers that are vulnerability databases rather than reporting. */
 export const VULN_DB_PUBLISHERS: ReadonlySet<string> = new Set(["NVD", "GitHub Advisory Database", "MSRC"]);
 
+/** Publishers of advisories and alerts (not databases, not news): an incident page groups them with the databases. */
+export const ADVISORY_PUBLISHERS: ReadonlySet<string> = new Set(["CISA", "CERT-EU", "NCSC", "Cisco", "Palo Alto Networks", "Fortinet", "Microsoft Security"]);
+
 export type RecordKind = "incident" | "disclosed_vulnerability";
 
 export function isDisclosedVuln(r: { origin: Origin; severity: Severity; publishers: readonly string[] }): boolean {

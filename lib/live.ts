@@ -133,7 +133,8 @@ export interface LiveData {
   counters: LiveCounters;
   heatmap: { from: string; to: string; cells: Record<string, HeatCell>; max: number };
   aiLens: { live: number; month: string; topFamily: { family: Family; count: number } | null };
-  topTags: TagEntry[];
+  /** The tags with the most live records (lib/tags.ts topLiveTags), without their record lists. */
+  topTags: Pick<TagEntry, "slug" | "label" | "group" | "live" | "total">[];
   /** The hero's radar scope over every lane (lib/scope.ts). */
   scope: Scope;
 }
@@ -264,7 +265,7 @@ export function buildLive(incidents: readonly FullIncident[], now: Date, lastUpd
     counters,
     heatmap: { from, to: today, cells, max },
     aiLens: { live: counters.ai, month, topFamily },
-    topTags: topLiveTags(buildTagIndex(incidents, now), 12),
+    topTags: topLiveTags(buildTagIndex(incidents, now), 12).map(({ slug, label, group, live, total }) => ({ slug, label, group, live, total })),
     scope: buildScope(incidents.map(compactRow), now),
   };
 }

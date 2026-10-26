@@ -69,11 +69,12 @@ const relatedIndexes = new WeakMap<readonly Incident[], RelatedIndex>();
  * close in time (lib/related.ts). The bucket index is built once per dataset
  * array and kept for every page rendered from it.
  */
-export function relatedIncidents(all: readonly Incident[], incident: Incident, limit = 6): Incident[] {
+export function relatedIncidents<T extends Incident>(all: readonly T[], incident: T, limit = 6): T[] {
   let index = relatedIndexes.get(all);
   if (!index) {
     index = buildRelatedIndex(all);
     relatedIndexes.set(all, index);
   }
-  return relatedFromIndex(index, incident, limit);
+  // the index holds references into `all`, so what comes back is `all`'s own record type
+  return relatedFromIndex(index, incident, limit) as T[];
 }
