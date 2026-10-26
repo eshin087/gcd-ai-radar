@@ -3,7 +3,7 @@ import { SettingsSchema, type Settings } from "@/collector/lib/config";
 import { classificationPrompt, sameIncidentPrompt } from "@/collector/llm/prompts";
 import { CLASSIFICATION_JSON_SCHEMA, ClassificationBatchSchema, ClassificationItemSchema } from "@/collector/llm/schemas";
 import { decide } from "@/collector/pipeline/decide";
-import { buildIncident, cleanLlmText, normalizeCategories } from "@/collector/pipeline/publish";
+import { buildIncident, cleanLlmText, decodePercentEscapes, normalizeCategories } from "@/collector/pipeline/publish";
 import { CURATION_RULES } from "@/lib/curation-rules";
 import { IncidentSchema } from "@/lib/schema";
 import { LANE_META, TYPE_META } from "@/lib/taxonomy";
@@ -175,6 +175,14 @@ describe("buildIncident lifecycle form", () => {
     expect(inc.fixed_in).toEqual(["vllm 0.9.1"]);
     const plain = buildIncident({ primary: a, members: [a] }, classification({ cvss: 0 }), "published", "AIR-2026-9006", "s", now);
     expect(plain.cvss).toBeNull();
+  });
+
+  it("decodes percent-escapes a model put into a title and leaves plain text and bad escapes alone", () => {
+    expect(decodePercentEscapes("G%C3%Aetes de France data breach exposes 117,574 accounts")).toBe("Gîtes de France data breach exposes 117,574 accounts");
+    expect(decodePercentEscapes("100% of users affected")).toBe("100% of users affected");
+    expect(decodePercentEscapes("bad %E9 escape")).toBe("bad %E9 escape");
+    const inc = buildIncident({ primary: a, members: [a] }, classification({ title: "G%C3%Aetes de France data breach exposes 117,574 accounts" }), "published", "AIR-2026-9010", "s", now);
+    expect(inc.title).toBe("Gîtes de France data breach exposes 117,574 accounts");
   });
 
   it("takes cve_ids from the cluster, never from the model", () => {

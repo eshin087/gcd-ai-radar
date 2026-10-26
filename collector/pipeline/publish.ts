@@ -80,6 +80,20 @@ export function cleanVersionList(items: readonly string[], max = 30): string[] {
   return out;
 }
 
+/**
+ * A model has returned "G%C3%Aetes de France" for "Gîtes de France" (seen in
+ * a dry run): percent-escapes in a title or summary are decoded when the
+ * whole text decodes; anything else is left as it is.
+ */
+export function decodePercentEscapes(text: string): string {
+  if (!/%[0-9a-f]{2}/i.test(text)) return text;
+  try {
+    return decodeURIComponent(text);
+  } catch {
+    return text;
+  }
+}
+
 /** not_ai carries exactly ["general"]; AI records never carry it, and never end up with no category. */
 export function normalizeCategories(type: Incident["type"], categories: readonly Category[]): Category[] {
   if (type === "not_ai") return ["general"];
@@ -185,8 +199,8 @@ export function buildIncident(
   const base: Incident = {
     id,
     slug,
-    title: truncate(fixLeadingCve(item.title.trim().replace(/[.\s]+$/, ""), cves), 160),
-    summary: truncate(item.summary.trim(), 700),
+    title: truncate(fixLeadingCve(decodePercentEscapes(item.title.trim()).replace(/[.\s]+$/, ""), cves), 160),
+    summary: truncate(decodePercentEscapes(item.summary.trim()), 700),
     type,
     categories,
     severity: item.severity,

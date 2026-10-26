@@ -42,7 +42,7 @@ Mentioning AI is not an AI role: a breach at a company that sells AI, or an atta
 ${LANES.map((l) => `- ${l} "${LANE_META[l].label}": ${LANE_META[l].definition}`).join("\n")}
 Severity 1 is always lane research. The curation bar, every rule must hold for newsworthy = true:
 ${CURATION_RULES.map((r) => `- ${r}`).join("\n")}
-For AI items newsworthy is advisory (the AI role decides their inclusion); for not_ai items it decides publication: a not_ai item that does not clear the bar is dropped. newsworthy_reason: one clause naming the rule that holds or fails.
+Read the third rule strictly: a vulnerability clears the bar only when exploitation in the wild is reported or the rating is critical (CVSS 9 or above, or the vendor's own "critical"); a medium or high advisory with a fix and no exploitation does not, however well it is documented. A court case, sentencing or indictment about an old campaign is a follow-up, not a new incident. For AI items newsworthy is advisory (the AI role decides their inclusion); for not_ai items it decides publication: a not_ai item that does not clear the bar is dropped. newsworthy_reason: one clause naming the rule that holds or fails.
 
 CATEGORIES (AI items: 1 to 4, most relevant first, categories[0] is the primary; not_ai items: exactly ["general"]):
 ${AI_CATEGORIES.map((c) => `- ${c}: ${CATEGORY_META[c].definition}`).join("\n")}
