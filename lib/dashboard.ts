@@ -2,6 +2,7 @@ import { buildAggregates, type Aggregates } from "./aggregates";
 import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import { compactRow, type Basis, type CompactRow } from "./rows";
 import type { Radar } from "./schema";
+import { buildScope, type Scope } from "./scope";
 import { toMonthKey, yearRange } from "./stats";
 import { buildThreatIntel, type ThreatIntel } from "./threatIntel";
 
@@ -24,6 +25,8 @@ export interface DashboardData {
   radar: Radar | null;
   /** The last 90 days by first report, for the hero's threat feed. */
   intel: ThreatIntel;
+  /** The last 120 days by first report as radar blips, for the hero's scope (lib/scope.ts). */
+  scope: Scope;
 }
 
 export async function getDashboardData(): Promise<DashboardData> {
@@ -40,5 +43,6 @@ export async function getDashboardData(): Promise<DashboardData> {
     agg: buildAggregates(rows, { now, span }),
     radar,
     intel: buildThreatIntel(rows, now),
+    scope: buildScope(rows, now),
   };
 }
