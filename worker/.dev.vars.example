@@ -1,0 +1,2 @@
+# Copy to .dev.vars for `wrangler dev`. A Cloudflare API token with Account > Radar > Read.
+CLOUDFLARE_RADAR_TOKEN=

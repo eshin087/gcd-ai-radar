@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // The GCD RADAR internet band: GET /v1/internet, assembled from Cloudflare Radar
+  // and cached for five minutes. The Radar token lives in the secret
+  // CLOUDFLARE_RADAR_TOKEN (wrangler secret put), never in this file.
+  "name": "gcd-ai-radar-internet",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-20",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  "kv_namespaces": [
+    // Created on first deploy when no id is given (Wrangler provisions it).
+    { "binding": "CACHE" }
+  ]
+}
