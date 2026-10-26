@@ -1,5 +1,198 @@
 [
   {
+    "id": "AIR-2026-1516",
+    "slug": "asymmetric-deference-of-llm-vulnerability-auditors-to-static",
+    "title": "Asymmetric Deference of LLM Vulnerability Auditors to Static Analysis",
+    "summary": "Researchers investigate how LLM-based vulnerability auditors process static-analysis evidence, revealing that models can be swayed by fabricated assurances. The findings highlight vulnerabilities in automated analysis pipelines where models uncritically trust tool outputs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.32876",
+        "publisher": "arXiv",
+        "title": "Trusting the Tool: Asymmetric Deference of LLM Vulnerability Auditors to Static-Analysis Evidence",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "static_analysis",
+      "vulnerability_auditing",
+      "trust_issues"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "id": "AIR-2026-1515",
+    "slug": "trace-data-free-text-reconstruction-attacks-against-llm-unle",
+    "title": "TRACE: Data-Free Text Reconstruction Attacks against LLM Unlearning",
+    "summary": "Researchers demonstrate a data-free text reconstruction attack that recovers residual traces left by approximate unlearning in large language model snapshots. The technique exposes potential privacy vulnerabilities when pre- and post-unlearning model snapshots are maintained for auditing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.31995",
+        "publisher": "arXiv",
+        "title": "TRACE: Data-Free Text Reconstruction Attacks against Approximate Unlearning in LLMs",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "machine_unlearning",
+      "data_leakage",
+      "model_inversion"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "id": "AIR-2026-1514",
+    "slug": "cross-modal-steganographic-prompt-injection-targeting-model",
+    "title": "Cross-modal steganographic prompt injection targeting Model Context Protocol agents",
+    "summary": "Researchers demonstrated that steganographic instructions concealed in images can bypass text scanners and compromise multi-agent workflows using the Model Context Protocol. To counter this, they proposed a decode-time provenance binding mechanism.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.31974",
+        "publisher": "arXiv",
+        "title": "Agentic AI Defense: Decode-Time Provenance Binding for MCP",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "steganography",
+      "model-context-protocol"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "id": "AIR-2026-1513",
+    "slug": "ulysses-multi-agent-security-harness-for-synthesizing-verifi",
+    "title": "Ulysses: Multi-Agent security harness for synthesizing verifiable web exploits",
+    "summary": "Researchers proposed a multi-agent framework called Ulysses that utilizes LLMs to synthesize and verify web application vulnerabilities. The approach converts candidate findings into verified proofs of exploitability through iterative exploration.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ulysses"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.31831",
+        "publisher": "arXiv",
+        "title": "Ulysses: A Security Harness For Synthesizing Verifiable Web Exploits",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "automated-exploitation",
+      "multi-agent",
+      "web-security"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "id": "AIR-2026-1512",
+    "slug": "cve-2026-116096-heap-out-of-bounds-write-in-llama-cpp-pocket",
+    "title": "CVE-2026-116096: Heap out-of-bounds write in llama.cpp Pocket-TTS component",
+    "summary": "A heap out-of-bounds write vulnerability was identified in the Pocket-TTS component of llama.cpp due to improper argument manipulation in list_pockettts_state_slots. An attacker with local access could exploit the flaw using a publicly available exploit, and an upgrade resolves the issue.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116096",
+        "publisher": "NVD",
+        "title": "CVE-2026-116096: A weakness has been identified in ggml-org llama.cpp.",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116096",
+      "heap-overflow",
+      "llama.cpp"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
     "id": "AIR-2026-1508",
     "slug": "threat-actors-use-agentic-ai-in-post-exploitation-campaign-t",
     "title": "Threat Actors Use Agentic AI in Post-Exploitation Campaign Targeting European Government",
@@ -512,6 +705,45 @@
     ],
     "created_at": "2026-10-24T16:11:16.609Z",
     "updated_at": "2026-10-24T16:11:16.609Z"
+  },
+  {
+    "id": "AIR-2026-1511",
+    "slug": "hackers-hijack-exposed-ai-models-for-unauthorized-computing",
+    "title": "Hackers hijack exposed AI models for unauthorized computing",
+    "summary": "Malicious actors utilized automated tooling to locate internet-accessible AI models and repurposed them for attack planning. Researchers captured instruction sets where hackers leveraged unsecured endpoints while owners incurred compute costs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "other"
+    ],
+    "severity": 3,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-10-23",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-23",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/23/llmjacking-agent-hijacks-exposed-ai-models",
+        "publisher": "Help Net Security",
+        "title": "Hackers hijack exposed AI models to launch cyberattacks at victims’ expense",
+        "published_at": "2026-10-23"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "symantec",
+      "honeypot",
+      "compute-hijack"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
   },
   {
     "id": "AIR-2026-1493",
@@ -1714,6 +1946,45 @@
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
     "updated_at": "2026-10-22T04:45:27.696Z"
+  },
+  {
+    "id": "AIR-2026-1510",
+    "slug": "storm-0940-uses-agentic-ai-framework-in-connectwise-attack",
+    "title": "Storm-0940 uses agentic AI framework in ConnectWise attack",
+    "summary": "Microsoft linked a state-sponsored threat group to a supply chain attack that leveraged an agentic AI penetration testing framework. The tooling automated intrusions to target thousands of tenant accounts rapidly.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ConnectWise"
+    ],
+    "incident_date": "2026-10-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-21",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/microsoft-attributes-connectwise-supply-chain-attack-china-storm-0940",
+        "publisher": "CyberScoop",
+        "title": "Microsoft pins ConnectWise supply-chain attack to China-state aligned threat group",
+        "published_at": "2026-10-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "storm-0940",
+      "connectwise",
+      "automated-attacks"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
   },
   {
     "id": "AIR-2026-1486",
@@ -29459,6 +29730,45 @@
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
     "updated_at": "2026-10-18T06:59:35.797Z"
+  },
+  {
+    "id": "AIR-2026-1509",
+    "slug": "cve-2026-45499-server-side-request-forgery-in-azure-openai",
+    "title": "CVE-2026-45499: Server-side request forgery in Azure OpenAI",
+    "summary": "A server-side request forgery vulnerability in Azure OpenAI permits authorized attackers to achieve privilege escalation over a network. Microsoft released advisory details and a CVE rating it critical.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure OpenAI"
+    ],
+    "incident_date": "2026-07-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-07-02",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45499",
+        "publisher": "NVD",
+        "title": "CVE-2026-45499: Server-side request forgery (ssrf) in Azure OpenAI allows an authorized attacker to elevate privileges over a network.",
+        "published_at": "2026-07-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-45499",
+      "ssrf",
+      "privilege-escalation"
+    ],
+    "created_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T05:15:00.657Z"
   },
   {
     "id": "AIR-2026-1150",
