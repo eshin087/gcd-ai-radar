@@ -176,6 +176,12 @@ export const SLIM_NOTES: Record<keyof SlimIncident, { type: string; note: string
   publishers: { type: "string[]", note: "Distinct publishers of the sources, in source order. Replaces the sources array." },
   origin: null,
   disclosed: { type: "boolean", note: "True for a disclosed vulnerability (a CVE or advisory with no confirmed exploitation). Count only records where this is false." },
+  lane: null,
+  state: null,
+  patch_status: null,
+  cve_ids: null,
+  tags: { type: "string[]", note: "Tag slugs as the tag pages use them (/tags/<slug>), at most five; the full record carries the tags as written." },
+  last_update: { type: "string (YYYY-MM-DD)", note: "The newest dated activity: a timeline entry, a source or the first report." },
 };
 
 export function slimFields(): FieldDoc[] {
