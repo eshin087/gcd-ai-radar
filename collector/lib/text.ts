@@ -81,6 +81,58 @@ export function titleSimilarity(a: string, b: string): number {
   return 0.6 * dice(tokens(a), tokens(b)) + 0.4 * levRatio(na, nb);
 }
 
+/**
+ * Stemmed words that name what happened rather than to whom: they recur in
+ * every security headline and never identify an event. Rarity (document
+ * frequency, see pipeline/dedupe.ts buildEntityIndex) does most of the work;
+ * this list covers the words that can look rare in a small window.
+ */
+const ENTITY_STOPLIST = new Set([
+  // what happened
+  "attack", "breach", "compromi", "vulnerability", "vulnerabl", "exploit", "critical", "security", "malwar", "ransomwar",
+  "hijack", "expo", "exposur", "steal", "backdoor", "hack", "abus", "inject", "bypa", "traversal", "forgery", "denial",
+  "phish", "fraud", "scam", "deepfak", "extort", "espionag", "cyberattack", "cyber", "spying", "impersonat", "infect",
+  "infosteal", "leak", "distribut", "deliv", "execut", "remot", "arbitrary", "unauthenticat", "authentic", "authenticat",
+  "authoriz", "acce", "control", "command", "request", "endpoint", "improp", "valid", "disclo", "confirm", "warn", "alleg",
+  "purport", "report", "allow", "enabl", "affect", "impact", "defend", "detect", "discov", "found", "target", "campaign",
+  // who and what, generically
+  "threat", "actor", "research", "hacker", "group", "gang", "oper", "custom", "account", "user", "develop", "company",
+  "government", "federal", "agency", "polic", "arrest", "nation", "china", "chin", "russia", "russian", "korea", "korean",
+  "iran", "iranian", "link", "serv", "websit", "system", "platform", "softwar", "servic", "cloud", "deployment", "devic",
+  "rout", "applianc", "firmwar", "interfac", "engin", "featur", "protocol", "context", "build", "design", "generat",
+  "inferenc", "offlin", "entir", "customiz", "video", "consol", "token", "credential", "sensitiv", "personal", "data",
+  "inform", "record", "packag", "maliciou", "relea", "pipelin", "supp", "chain", "patch", "updat", "vers", "advisory",
+  // AI, generically
+  "agent", "model", "artificial", "intelligenc", "machin", "learn", "languag", "assistant", "automat", "autonomou", "prompt",
+  // size, time, tone
+  "mill", "hundr", "thousand", "massiv", "major", "emergency", "urgent", "activ", "under", "ongo", "widespread", "global",
+  "organiz", "organi", "spre", "wave", "surg", "trend", "through", "contain", "befor", "week", "month", "flaw",
+]);
+
+const YEAR_RE = /^(19|20)\d{2}$/;
+
+/**
+ * The tokens of a headline that might name an entity (a product, an
+ * organisation, an actor, an identifier): stemmed words of five or more
+ * letters outside the stoplist, and digit tokens of four or more characters
+ * that are not years. "Hackers Abuse AI Pen-Test Tool Cairn to Automate
+ * Massive Attack Spree" yields ["cairn"]; "Microsoft Links Storm-0940 to
+ * ConnectWise Supply Chain Attack" yields ["microsoft", "storm", "0940",
+ * "connectwis"], of which rarity keeps the last two.
+ */
+export function entityTokens(title: string): string[] {
+  const out = new Set<string>();
+  for (const t of tokens(title)) {
+    if (ENTITY_STOPLIST.has(t)) continue;
+    if (/^\d+$/.test(t)) {
+      if (t.length >= 4 && !YEAR_RE.test(t)) out.add(t);
+      continue;
+    }
+    if (/^[a-z]+$/.test(t) && t.length >= 5) out.add(t);
+  }
+  return [...out];
+}
+
 export function sharedTokens(a: string[], b: string[]): number {
   const sb = new Set(b);
   let n = 0;

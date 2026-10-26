@@ -1,5 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { buildMatcher, dice, extractCves, normalizeTitle, stripHtml, titleSimilarity, tokens, truncate } from "@/collector/lib/text";
+import { buildMatcher, dice, entityTokens, extractCves, normalizeTitle, stripHtml, titleSimilarity, tokens, truncate } from "@/collector/lib/text";
+
+describe("entityTokens", () => {
+  it("keeps names and identifiers, drops generic security words and short tokens", () => {
+    expect(entityTokens("Hackers Abuse AI Pen-Test Tool Cairn to Automate Massive Attack Spree")).toEqual(["cairn"]);
+    expect(entityTokens("OpenCode hack exposes API keys amid AI distillation attacks")).toEqual(["opencod", "distill"]);
+    expect(entityTokens("Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack")).toEqual(["microsoft", "storm", "0940", "connectwi"]);
+  });
+  it("drops years and short numbers but keeps other digit tokens", () => {
+    expect(entityTokens("2026 breach hits 1,200 sites and 45000 users")).toEqual(["45000"]);
+    expect(entityTokens("CVE-2026-61882 exploited")).toEqual(["61882"]);
+  });
+  it("is empty for a headline made only of generic words", () => {
+    expect(entityTokens("Critical vulnerability exploited in the wild, patch now")).toEqual([]);
+  });
+});
 
 describe("title normalization and similarity", () => {
   it("strips publisher suffixes and punctuation", () => {
