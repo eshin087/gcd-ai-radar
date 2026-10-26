@@ -1,0 +1,161 @@
+{
+  "week": "2026-W43",
+  "start": "2026-10-19",
+  "end": "2026-10-25",
+  "counts": {
+    "records": 116,
+    "incidents": 73,
+    "real_world": 25,
+    "disclosed_vulnerabilities": 43,
+    "by_type": {
+      "attack_on_ai": 54,
+      "ai_enabled_attack": 19
+    },
+    "by_family": {
+      "injection": 12,
+      "infra": 2,
+      "exposure": 9,
+      "agent": 12,
+      "supply": 20,
+      "social": 3,
+      "offense": 15,
+      "other": 0
+    },
+    "by_severity": {
+      "1": 47,
+      "2": 1,
+      "3": 25,
+      "4": 0
+    }
+  },
+  "previous": {
+    "week": "2026-W42",
+    "incidents": 12,
+    "real_world": 6,
+    "disclosed_vulnerabilities": 35
+  },
+  "deltas": {
+    "incidents": {
+      "now": 73,
+      "before": 12,
+      "change": 61,
+      "pct": 508.3333333333333
+    },
+    "real_world": {
+      "now": 25,
+      "before": 6,
+      "change": 19,
+      "pct": 316.66666666666663
+    },
+    "disclosed_vulnerabilities": {
+      "now": 43,
+      "before": 35,
+      "change": 8,
+      "pct": 22.857142857142858
+    }
+  },
+  "busiest_family": {
+    "family": "supply",
+    "count": 20
+  },
+  "top_targets": [
+    {
+      "target": "enterprise_deployment",
+      "count": 29
+    },
+    {
+      "target": "open_weight_model",
+      "count": 28
+    },
+    {
+      "target": "framework_or_tooling",
+      "count": 20
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-1467",
+      "slug": "storm-0940-uses-artex-ai-agents-in-connectwise-supply-chain",
+      "title": "Storm-0940 Uses ARTEX AI Agents in ConnectWise Supply Chain Attack",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-10-22",
+      "source_count": 2
+    },
+    {
+      "id": "AIR-2026-1458",
+      "slug": "litellm-compromised-in-supply-chain-attack-delivering-creden",
+      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer",
+      "type": "attack_on_ai",
+      "category": "supply_chain",
+      "family": "supply",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-10-21",
+      "source_count": 2
+    },
+    {
+      "id": "AIR-2026-1508",
+      "slug": "threat-actors-use-agentic-ai-in-post-exploitation-campaign-t",
+      "title": "Threat Actors Use Agentic AI in Post-Exploitation Campaign Targeting European Government",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "individual_victims"
+      ],
+      "first_reported": "2026-10-25",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1512",
+      "slug": "cve-2026-116096-heap-out-of-bounds-write-in-llama-cpp-pocket",
+      "title": "CVE-2026-116096: Heap out-of-bounds write in llama.cpp Pocket-TTS component",
+      "type": "attack_on_ai",
+      "category": "infra_vuln",
+      "family": "infra",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-10-25",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1496",
+      "slug": "litellm-master-key-leak-leads-to-malicious-package-release",
+      "title": "LiteLLM Master Key Leak Leads to Malicious Package Release",
+      "type": "attack_on_ai",
+      "category": "supply_chain",
+      "family": "supply",
+      "severity": 3,
+      "targets": [
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-10-24",
+      "source_count": 1
+    }
+  ],
+  "generated_at": "2026-10-26T13:38:38.775Z",
+  "narrative": {
+    "headline": "Threat actors extensively abuse agentic AI frameworks and compromise software release pipelines",
+    "text": "The week had 73 incidents, up 61 from 12, including 25 real-world incidents, up 19 from 6. Threat actors utilized agentic AI penetration testing frameworks and autonomous ecosystems like ARTEX, Cairn, and Phantom in supply chain attacks, cyber espionage campaigns, and intrusions targeting organizations, government entities, and websites. State-sponsored and criminal groups abused these tools to accelerate operations and conduct automated attacks. Concurrently, attackers compromised the LiteLLM Python package release pipeline via PyPI and Docker Hub to distribute credential stealers and backdoors using malicious startup hooks and leaked master keys. Other notable events included unauthorized AI agent behavior accessing digital wallets, security breaches exposing user API keys at OpenCode, and fake AI tools used in ClickFix malware campaigns. The week also had 43 disclosed vulnerabilities, up 8 from 35.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-10-26T13:38:38.775Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 2034,
+    "incidents": 481,
+    "last_collector_run": "2026-10-26T05:15:11.236Z"
+  }
+}

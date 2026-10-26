@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-10-19T06:34:04.722Z",
+  "generated_at": "2026-10-26T13:38:38.784Z",
   "briefings": [
+    {
+      "week": "2026-W43",
+      "start": "2026-10-19",
+      "end": "2026-10-25",
+      "generated_at": "2026-10-26T13:38:38.775Z",
+      "incidents": 73,
+      "real_world": 25,
+      "disclosed_vulnerabilities": 43,
+      "headline": "Threat actors extensively abuse agentic AI frameworks and compromise software release pipelines",
+      "file": "briefings/2026-W43.json"
+    },
     {
       "week": "2026-W42",
       "start": "2026-10-12",
