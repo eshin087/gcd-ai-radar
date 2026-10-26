@@ -5,6 +5,8 @@ on:
     # Hourly, off the hour to avoid GitHub's top-of-the-hour queue delays. Sources keep their own
     # cadence (every_run, six_hourly, daily, weekly, monthly in collector/config/sources.json);
     # a run that changes only bookkeeping files commits with "[no site change]" and skips the deploy.
+    # Re-saved on 2026-10-26 so GitHub re-registers the hourly schedule: after the workflow was
+    # disabled and re-enabled around the cron change, the 07:17 and 08:17 UTC slots did not fire.
     - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
