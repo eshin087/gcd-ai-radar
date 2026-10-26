@@ -60,9 +60,11 @@ const cveId = z.string().regex(/^CVE-\d{4}-\d{4,}$/, "CVE-YYYY-NNNN");
  * The day the collector started writing the lifecycle itself. A record
  * created from this day on carries lane, state and patch_status on disk;
  * older records may omit them and get them derived at load until the
- * migration (scripts/migrate-lanes.ts) fills them in.
+ * migration (scripts/migrate-lanes.ts) fills them in. The day after the
+ * migration: the old collector's last run (2026-10-26 04:41Z) still wrote
+ * records without the keys, which the migration then filled.
  */
-export const STAGE_B_CUTOFF = "2026-10-26";
+export const STAGE_B_CUTOFF = "2026-10-27";
 
 export const IncidentSchema = z
   .object({
