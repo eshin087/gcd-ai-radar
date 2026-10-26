@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FocusEvent, type MouseEvent } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FocusEvent, type MouseEvent, type ReactNode } from "react";
 import { dateLabel } from "@/lib/format";
 import type { ChartTheme } from "@/lib/theme";
 import { heat } from "./hooks";
 
 interface Props {
-  /** Incidents per full-dated day, YYYY-MM-DD; zero days left out. */
+  /** The value shaded per full-dated day, YYYY-MM-DD; zero days left out. Incidents by default, any weight with `describe`. */
   dayCounts: Record<string, number>;
   /** First month shown, YYYY-MM. */
   from: string;
@@ -16,6 +16,12 @@ interface Props {
   onDay?: (day: string) => void;
   activeDay?: string | null;
   label: string;
+  /** What a day's tooltip and aria-label say; by default "N incidents". */
+  describe?: (day: string, value: number) => string;
+  /** Whether a shaded day opens anything; by default any day with a value. */
+  canOpen?: (day: string) => boolean;
+  /** The line under the calendar; by default the count of incidents with a known day. */
+  footnote?: ReactNode;
 }
 
 const CELL = 12;
@@ -36,7 +42,9 @@ function iso(d: Date): string {
  * scroller (so it can never widen it and flash a scrollbar), placed from the
  * hovered cell's box and clamped inside the panel.
  */
-export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay = null, label }: Props) {
+export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay = null, label, describe, canOpen, footnote }: Props) {
+  const text = (day: string) => (describe ? describe(day, dayCounts[day] ?? 0) : `${dayCounts[day] ?? 0} incidents`);
+  const opens = (day: string, count: number) => count > 0 && Boolean(onDay) && (canOpen ? canOpen(day) : true);
   const wrap = useRef<HTMLDivElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const tipRef = useRef<HTMLDivElement>(null);
@@ -103,8 +111,8 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
       {/* first child, so the space-y margins between the scroller and the legend stay as they were */}
       {hover && (
         <div ref={tipRef} className="pointer-events-none absolute left-0 top-0 z-10 whitespace-nowrap rounded-[4px] border border-line bg-panel/95 px-2 py-1 text-[11.5px] shadow-xl backdrop-blur" style={{ visibility: "hidden" }}>
-          <span className="text-soft">{dateLabel(hover.day)}</span> <span className="num text-ink">{dayCounts[hover.day] ?? 0}</span>
-          {(dayCounts[hover.day] ?? 0) > 0 && <span className="ml-1.5 text-faint">click to open</span>}
+          <span className="text-soft">{dateLabel(hover.day)}</span> <span className="num text-ink">{text(hover.day)}</span>
+          {opens(hover.day, dayCounts[hover.day] ?? 0) && <span className="ml-1.5 text-faint">click to open</span>}
         </div>
       )}
       <div ref={scroller} className="overflow-x-auto pb-1" onMouseLeave={() => setHover(null)} onScroll={() => setHover(null)}>
@@ -126,6 +134,7 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
             const x = LEFT + c.col * STEP;
             const y = TOP + c.row * STEP;
             const on = activeDay === c.day;
+            const open = opens(c.day, c.count);
             return (
               <rect
                 key={c.day}
@@ -137,16 +146,16 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
                 style={{ fill: style.background }}
                 stroke={on ? theme.accent : hover?.day === c.day ? theme.ink : "none"}
                 strokeWidth={on ? 2 : 1}
-                role={c.count > 0 && onDay ? "button" : undefined}
-                tabIndex={c.count > 0 && onDay ? 0 : -1}
-                aria-label={`${dateLabel(c.day)}: ${c.count} incidents`}
-                className={c.count > 0 && onDay ? "cursor-pointer outline-none" : undefined}
+                role={open ? "button" : undefined}
+                tabIndex={open ? 0 : -1}
+                aria-label={`${dateLabel(c.day)}: ${text(c.day)}`}
+                className={open ? "cursor-pointer outline-none" : undefined}
                 onMouseEnter={point(c.day)}
                 onFocus={point(c.day)}
                 onBlur={() => setHover((h) => (h?.day === c.day ? null : h))}
-                onClick={() => c.count > 0 && onDay?.(c.day)}
+                onClick={() => open && onDay?.(c.day)}
                 onKeyDown={(e) => {
-                  if ((e.key === "Enter" || e.key === " ") && c.count > 0) {
+                  if ((e.key === "Enter" || e.key === " ") && open) {
                     e.preventDefault();
                     onDay?.(c.day);
                   }
@@ -156,9 +165,13 @@ export function CalendarHeatmap({ dayCounts, from, to, theme, onDay, activeDay =
           })}
         </svg>
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[11px] text-dim">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[12px] text-dim">
         <span>
-          <span className="num text-ink">{total.toLocaleString("en-US")}</span> incidents with a known day, {dateLabel(`${from}-01`)} to {dateLabel(to)}. Incidents dated only to a month or a year are not on the calendar.
+          {footnote ?? (
+            <>
+              <span className="num text-ink">{total.toLocaleString("en-US")}</span> incidents with a known day, {dateLabel(`${from}-01`)} to {dateLabel(to)}. Incidents dated only to a month or a year are not on the calendar.
+            </>
+          )}
         </span>
         <span className="flex items-center gap-1" aria-hidden>
           less

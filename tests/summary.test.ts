@@ -143,8 +143,20 @@ describe("buildSummary", () => {
     expect(none.monthly).toHaveLength(SUMMARY_MONTHS);
   });
 
+  it("keeps records with no AI role out of every number", () => {
+    const general = inc({ incident_date: "2026-10-03", type: "not_ai", categories: ["general"], severity: 4 });
+    const lensed = buildSummary([...RECORDS, general, general], OPTS);
+    expect(lensed.totals).toEqual(s.totals);
+    expect(lensed.this_month).toEqual(s.this_month);
+    expect(lensed.trailing_12).toEqual(s.trailing_12);
+    expect(lensed.monthly).toEqual(s.monthly);
+    expect(lensed.scope).toBe("ai");
+    expect(lensed.scope_note).toMatch(/no AI role/);
+  });
+
   it("carries provenance, licence and the counting rule", () => {
     expect(s.version).toBe(1);
+    expect(s.scope).toBe("ai");
     expect(s.date_basis).toBe("incident_date");
     expect(s.site).toBe(OPTS.site);
     expect(s.last_collector_run).toBe(OPTS.lastUpdated);

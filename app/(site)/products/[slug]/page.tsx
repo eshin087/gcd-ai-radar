@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blockSpark } from "@/components/fx/text";
-import { SeverityBadge } from "@/components/ui/Badge";
+import { IncidentRow } from "@/components/incidents/IncidentRow";
 import { isDisclosedIncident } from "@/lib/counting";
 import { loadIncidents } from "@/lib/data";
 import { monthLabel } from "@/lib/format";
-import { cveIds, explorerHref, isKevMarked, KEV_TAG, monthlyDisclosures, productBySlug, productIndex } from "@/lib/products";
-import type { Incident } from "@/lib/schema";
+import type { FullIncident } from "@/lib/lifecycle";
+import { rowOf } from "@/lib/live";
+import { explorerHref, isKevMarked, KEV_TAG, monthlyDisclosures, productBySlug, productIndex } from "@/lib/products";
 import { toMonthKey } from "@/lib/stats";
 import { REAL_WORLD_MIN_SEVERITY } from "@/lib/taxonomy";
 
@@ -39,49 +40,9 @@ function Stat({ label, value, tone = "" }: { label: string; value: number; tone?
   );
 }
 
-function KevChip() {
-  return (
-    <span
-      className="inline-flex items-center rounded-[3px] border border-sev-3/50 bg-sev-3/10 px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em] text-sev-3"
-      title="Flagged as listed in the CISA Known Exploited Vulnerabilities catalog"
-    >
-      cisa kev
-    </span>
-  );
-}
-
-/** One record: date, CVE ids, title, severity, tags, and links to the record page and its first source. */
-function RecordRow({ i }: { i: Incident }) {
-  const cves = cveIds(i);
-  const cveSet = new Set(cves);
-  const tags = i.tags.filter((t) => !cveSet.has(t.toUpperCase()) && t.toLowerCase() !== KEV_TAG).slice(0, 5);
-  const source = i.sources[0];
-  return (
-    <li className="grid gap-1 py-3 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-4">
-      <span className="num pt-0.5 text-[12px] text-dim">{i.first_reported}</span>
-      <div className="min-w-0 space-y-1.5">
-        {cves.length > 0 && <div className="num text-[12.5px] text-ink break-words">{cves.join(" · ")}</div>}
-        <Link href={`/incidents/${i.slug}`} className="block text-[14px] leading-snug text-soft hover:text-accent break-words">
-          {i.title}
-        </Link>
-        <div className="flex flex-wrap items-center gap-1.5">
-          <SeverityBadge severity={i.severity} />
-          {isKevMarked(i) && <KevChip />}
-          {tags.length > 0 && <span className="num text-[11px] text-faint">{tags.join(" · ")}</span>}
-        </div>
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] text-dim">
-          <Link href={`/incidents/${i.slug}`} className="link">
-            record {i.id}
-          </Link>
-          {source && (
-            <a href={source.url} rel="noopener noreferrer" target="_blank" className="link break-all">
-              {source.publisher} ↗
-            </a>
-          )}
-        </div>
-      </div>
-    </li>
-  );
+/** One record as the shared row (components/incidents/IncidentRow.tsx); the lane column is left out, the page is about one product. */
+function RecordRow({ i }: { i: FullIncident }) {
+  return <IncidentRow row={rowOf(i)} variant="compact" showLane={false} />;
 }
 
 function Section({ id, title, count, children }: { id: string; title: string; count: number; children: React.ReactNode }) {
@@ -144,7 +105,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </p>
       </header>
 
-      <Section id="patch-now" title="Patch now: confirmed exploitation or KEV" count={patchNow.length}>
+      <Section id="exploited" title="Exploited or KEV-listed" count={patchNow.length}>
         <p className="text-[12.5px] text-dim">
           Records at severity 3–4 (exploitation confirmed by CISA, the vendor or reporting) and records flagged as listed in{" "}
           <a href={KEV_CATALOG_URL} rel="noopener noreferrer" target="_blank" className="link">
@@ -154,7 +115,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           collector sees the listing, so a missing flag does not mean a CVE is absent from the catalog.
         </p>
         {patchNow.length > 0 ? (
-          <ol className="divide-y divide-line-soft border-y border-line-soft">
+          <ol className="border-b border-line-soft">
             {patchNow.map((i) => (
               <RecordRow key={i.id} i={i} />
             ))}
@@ -187,7 +148,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       <Section id="disclosed" title="Disclosed CVEs, no confirmed exploitation" count={disclosed.length}>
         {disclosed.length > 0 ? (
-          <ol className="divide-y divide-line-soft border-y border-line-soft">
+          <ol className="border-b border-line-soft">
             {disclosed.map((i) => (
               <RecordRow key={i.id} i={i} />
             ))}
@@ -199,7 +160,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {other.length > 0 && (
         <Section id="other" title="Other incidents: research and unexploited reports" count={other.length}>
-          <ol className="divide-y divide-line-soft border-y border-line-soft">
+          <ol className="border-b border-line-soft">
             {other.map((i) => (
               <RecordRow key={i.id} i={i} />
             ))}
@@ -208,8 +169,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       )}
 
       <p className="text-[12px] text-faint">
-        This page lists what has been reported, not what to do about it. Versions and fixes are in each linked advisory; check the vendor&rsquo;s own advisory
-        before acting.
+        Fix status and fixed versions are recorded when a source states them (each record&rsquo;s page shows what is known); check the vendor&rsquo;s own
+        advisory before acting.
       </p>
     </article>
   );

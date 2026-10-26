@@ -424,7 +424,7 @@ export function MonthlyColumns({
             )}
             {lineDone && lineEnd && (
               <g transform={`translate(${lineEnd[0].toFixed(1)},${lineEnd[1].toFixed(1)})`}>
-                <circle r={6} fill={colors.accent} fillOpacity={0.35} className={reduced ? undefined : "chart-pulse"} />
+                <circle r={6} fill={colors.accent} fillOpacity={0.35} />
                 <circle r={3.2} fill="#ffe6c4" stroke={colors.accent} strokeWidth={1.5} filter={`url(#glow-${uid})`} />
               </g>
             )}
@@ -434,7 +434,7 @@ export function MonthlyColumns({
         {/* peak marker */}
         {peak && totals[peakIdx]! > 0 && (
           <g pointerEvents="none" style={{ opacity: on ? 1 : 0, transition: reduced ? "none" : "opacity 500ms 900ms" }}>
-            <circle cx={cx(peakIdx)} cy={y(totals[peakIdx]!) - 8} r={4.5} fill="none" stroke={colors.ink} strokeOpacity={0.6} className={reduced ? undefined : "chart-pulse chart-pulse-slow"} />
+            <circle cx={cx(peakIdx)} cy={y(totals[peakIdx]!) - 8} r={4.5} fill="none" stroke={colors.ink} strokeOpacity={0.6} />
             <circle cx={cx(peakIdx)} cy={y(totals[peakIdx]!) - 8} r={2} fill={colors.ink} />
             <text x={Math.min(Math.max(cx(peakIdx), PAD.l + 24), PAD.l + plotW - 24)} y={y(totals[peakIdx]!) - 17} textAnchor="middle" fontSize={11} fill={colors.ink} className="num">
               peak {totals[peakIdx]}

@@ -49,6 +49,39 @@ describe("IncidentSchema", () => {
     expect(IncidentSchema.safeParse({ ...valid, targets: [] }).success).toBe(false);
     expect(IncidentSchema.safeParse({ ...valid, sources: [], source_count: 0 }).success).toBe(false);
   });
+
+  it("ties the general category to records with no AI role", () => {
+    expect(IncidentSchema.safeParse({ ...valid, type: "not_ai", categories: ["general"] }).success).toBe(true);
+    expect(IncidentSchema.safeParse({ ...valid, type: "not_ai", categories: ["prompt_injection"] }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, type: "not_ai", categories: ["general", "data_leak"] }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, categories: ["general"] }).success).toBe(false);
+  });
+
+  it("accepts the lifecycle keys when present and keeps state and closed_at in step", () => {
+    const lifecycle = {
+      lane: "patch",
+      state: "live",
+      closed_at: null,
+      patch_status: "partial",
+      cve_ids: ["CVE-2026-12345"],
+      affected: ["Example Assistant < 2.1"],
+      fixed_in: ["Example Assistant 2.1"],
+      timeline: [{ date: "2026-03-05", title: "Report", source_url: "https://example.org/report", added_at: "2026-03-05T06:17:00.000Z" }],
+      action: "Update to 2.1.",
+      severity_note: "Exploited in the wild per the vendor.",
+      cvss: 8.8,
+    };
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle }).success).toBe(true);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, state: "closed", closed_at: "2026-04-01" }).success).toBe(true);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, state: "closed" }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, closed_at: "2026-04-01" }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, cve_ids: ["GHSA-xxxx"] }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, cvss: 11 }).success).toBe(false);
+    expect(IncidentSchema.safeParse({ ...valid, ...lifecycle, timeline: [{ date: "2026-03-05", title: "", added_at: "2026-03-05T06:17:00.000Z" }] }).success).toBe(false);
+    // the keys stay optional: a record that predates lanes parses unchanged
+    const parsed = IncidentSchema.parse(valid);
+    expect("lane" in parsed).toBe(false);
+  });
 });
 
 describe("data files", () => {

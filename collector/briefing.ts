@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { briefingNumbers, briefingSummaryLine, isoWeekLabel, parseIsoWeek, previousIsoWeek, rankNotable, shiftIsoWeek, splitWeek, weekRecords } from "../lib/briefing";
+import { briefingNumbers, briefingRecords, briefingSummaryLine, isoWeekLabel, parseIsoWeek, previousIsoWeek, rankNotable, shiftIsoWeek, splitWeek } from "../lib/briefing";
+import { aiLens } from "../lib/counting";
 import { FAMILY_META } from "../lib/families";
 import { BriefingIndexSchema, BriefingSchema, type Briefing, type BriefingIndex, type BriefingNumbers, type Incident } from "../lib/schema";
 import { TARGET_META } from "../lib/taxonomy";
@@ -195,7 +196,9 @@ export async function runBriefing(opts: BriefingRunOptions): Promise<BriefingRun
   const summary: BriefingRunSummary = { written: [], skipped: [], withoutNarrative: [], llm: {} };
   const router = new LlmRouter(settings.providers, callsToday(state.runs, settings.providers, now));
   for (const line of router.describe()) log.info(`llm: ${line}`);
-  const dataset = { records: published.length, incidents: splitWeek(published).incidents.length, last_collector_run: lastRun(state) };
+  // the briefing is the AI week: its dataset line counts the AI records it was computed from
+  const ai = aiLens(published);
+  const dataset = { records: ai.length, incidents: splitWeek(ai).incidents.length, last_collector_run: lastRun(state) };
 
   for (const week of weeks) {
     const file = briefingFile(week);
@@ -205,7 +208,7 @@ export async function runBriefing(opts: BriefingRunOptions): Promise<BriefingRun
       continue;
     }
     const numbers = briefingNumbers(published, week);
-    const { incidents, disclosed } = splitWeek(weekRecords(published, week));
+    const { incidents, disclosed } = splitWeek(briefingRecords(published, week));
     log.info(`briefing ${week} (${numbers.start} to ${numbers.end}): ${briefingSummaryLine(numbers)}`);
     const { narrative, note } = await writeNarrative(numbers, incidents, disclosed, router);
     const briefing: Briefing = BriefingSchema.parse({

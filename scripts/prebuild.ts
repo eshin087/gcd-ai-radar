@@ -22,25 +22,28 @@ import path from "node:path";
 import type { MetaFile, YearIndexFile } from "../lib/api-docs";
 import { briefingSummaryLine } from "../lib/briefing";
 import { lastUpdated, loadBriefings, loadIncidents, siteUrl } from "../lib/data";
-import type { Briefing, Incident } from "../lib/schema";
+import { lastActivity, type FullIncident } from "../lib/lifecycle";
+import { buildBrief } from "../lib/brief";
+import { buildChanges, feedLinks } from "../lib/changes";
+import { escapeXml, jsonFeed, rssXml } from "../lib/feeds";
+import { boardsWithAll, buildLive } from "../lib/live";
+import { buildLlmsTxt } from "../lib/llms";
+import { buildTagIndex, tagSlugsOf } from "../lib/tags";
+import type { Briefing } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
-import { ATLAS_RELEASE, CATEGORY_META, OWASP_LLM_EDITION, SEVERITY_META, TYPE_META, atlasFor, owaspFor } from "../lib/taxonomy";
-import { isDisclosedIncident, recordKind } from "../lib/counting";
+import { ATLAS_RELEASE, INCIDENT_TYPES, LANES, LANE_META, OWASP_LLM_EDITION, atlasFor, owaspFor, type Lane } from "../lib/taxonomy";
+import { aiLens, isDisclosedIncident, recordKind } from "../lib/counting";
 import { CSV_COLUMNS, csvCell } from "../lib/csv";
 import { compactRow } from "../lib/rows";
 import { buildSearchIndex } from "../lib/search";
 import { groupByShard } from "../lib/shards";
-import { COUNTING_RULE_NOTE, buildSummary } from "../lib/summary";
+import { AI_LENS_NOTE, COUNTING_RULE_NOTE, buildSummary } from "../lib/summary";
 import { renderOgImages } from "./og";
 
 const PUBLIC = path.join(process.cwd(), "public");
 
-function escapeXml(s: string): string {
-  return s.replace(/[<>&'"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" })[c]!);
-}
-
-function toCsv(incidents: Incident[]): string {
+function toCsv(incidents: FullIncident[]): string {
   const cols: readonly string[] = CSV_COLUMNS;
   const lines = [cols.join(",")];
   const base = siteUrl();
@@ -53,44 +56,12 @@ function toCsv(incidents: Incident[]): string {
       atlas: atlasFor(i),
       first_source_url: i.sources[0]?.url ?? "",
       url: `${base}/incidents/${i.slug}`,
+      timeline_entries: i.timeline.length,
+      last_update: lastActivity(i),
     };
     lines.push(cols.map((c) => csvCell(row[c])).join(","));
   }
   return lines.join("\n") + "\n";
-}
-
-function rss(incidents: Incident[], base: string, updated: string | null): string {
-  const items = incidents
-    .slice(0, 50)
-    .map((i) => {
-      const url = `${base}/incidents/${i.slug}`;
-      const cats = i.categories.map((c) => `<category>${escapeXml(CATEGORY_META[c].label)}</category>`).join("");
-      const desc = `${i.summary} Severity ${i.severity} (${SEVERITY_META[i.severity].label}). ${TYPE_META[i.type].label}. ${i.source_count} source${i.source_count === 1 ? "" : "s"}.`;
-      return `    <item>
-      <title>${escapeXml(i.title)}</title>
-      <link>${escapeXml(url)}</link>
-      <guid isPermaLink="false">${escapeXml(i.id)}</guid>
-      <pubDate>${new Date(`${i.first_reported}T12:00:00Z`).toUTCString()}</pubDate>
-      <description>${escapeXml(desc)}</description>
-      ${cats}
-    </item>`;
-    })
-    .join("\n");
-  const lastBuild = updated ? new Date(updated).toUTCString() : new Date().toUTCString();
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>${escapeXml(SITE.name)} — new incidents</title>
-    <link>${escapeXml(base)}</link>
-    <atom:link href="${escapeXml(base)}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>${escapeXml(SITE.description)}</description>
-    <language>en</language>
-    <lastBuildDate>${lastBuild}</lastBuildDate>
-    <copyright>Data CC BY-SA 4.0 · ${escapeXml(SITE.author)}</copyright>
-${items}
-  </channel>
-</rss>
-`;
 }
 
 function briefingRss(briefings: Briefing[], base: string): string {
@@ -123,7 +94,7 @@ function briefingRss(briefings: Briefing[], base: string): string {
     <title>${escapeXml(SITE.name)} — this week in AI security</title>
     <link>${escapeXml(base)}/briefing</link>
     <atom:link href="${escapeXml(base)}/briefing.xml" rel="self" type="application/rss+xml" />
-    <description>A weekly briefing on AI cybersecurity incidents: counts from the data, the most notable incidents and a short narrative.</description>
+    <description>A weekly briefing on AI security incidents (the AI lens): counts from the data, the most notable incidents and a short narrative.</description>
     <language>en</language>
     <lastBuildDate>${lastBuild}</lastBuildDate>
     <copyright>Data CC BY-SA 4.0 · ${escapeXml(SITE.author)}</copyright>
@@ -156,7 +127,7 @@ async function main() {
   // The download carries the derived standards ids; the explorer's slim shards stay lean and derive them in the browser.
   await fs.writeFile(path.join(dataDir, "incidents.min.json"), JSON.stringify(sorted.map((i) => ({ ...slim(i), owasp_llm: owaspFor(i), atlas: atlasFor(i) }))) + "\n");
   await fs.writeFile(path.join(dataDir, "incidents.csv"), toCsv(sorted));
-  await Promise.all(sorted.map((i) => fs.writeFile(path.join(perIncident, `${i.slug}.json`), JSON.stringify(i, null, 1) + "\n")));
+  await Promise.all(sorted.map((i) => fs.writeFile(path.join(perIncident, `${i.slug}.json`), JSON.stringify({ ...i, brief: buildBrief(i, base) }, null, 1) + "\n")));
 
   // Year shards: the full records for download, compact rows for the dashboard's drawers, slim records for the explorer.
   const shards = groupByShard(sorted);
@@ -166,7 +137,8 @@ async function main() {
     yearIndex.unshift({ year, records: records.length, incidents: records.length - disclosed, disclosed, file: `/data/years/${year}.json` });
     await Promise.all([
       fs.writeFile(path.join(yearsDir, `${year}.json`), JSON.stringify(records, null, 1) + "\n"),
-      fs.writeFile(path.join(rowsDir, `${year}.json`), JSON.stringify(records.map(compactRow)) + "\n"),
+      // the dashboard's drawers list AI records only (lib/counting.ts aiLens), like the aggregates they open from
+      fs.writeFile(path.join(rowsDir, `${year}.json`), JSON.stringify(aiLens(records).map(compactRow)) + "\n"),
       fs.writeFile(path.join(slimDir, `${year}.json`), JSON.stringify(records.map(slim)) + "\n"),
     ]);
   }
@@ -190,6 +162,13 @@ async function main() {
       mitre_atlas_release: ATLAS_RELEASE,
       rule: "derived from type and categories, not classified per record; see /methodology#standards",
     },
+    types: Object.fromEntries(INCIDENT_TYPES.map((t) => [t, sorted.filter((i) => i.type === t).length])) as MetaFile["types"],
+    lanes: Object.fromEntries(
+      LANES.map((l) => [l, { records: sorted.filter((i) => i.lane === l).length, incidents: counted.filter((i) => i.lane === l).length, live: sorted.filter((i) => i.lane === l && i.state === "live").length }]),
+    ) as MetaFile["lanes"],
+    states: { live: sorted.filter((i) => i.state === "live").length, closed: sorted.filter((i) => i.state !== "live").length },
+    ai: { records: aiLens(sorted).length, incidents: aiLens(counted).length, disclosed_vulnerabilities: aiLens(sorted).length - aiLens(counted).length },
+    scope_note: AI_LENS_NOTE,
     license: SITE.dataLicense.name,
     license_url: SITE.dataLicense.url,
   };
@@ -197,7 +176,73 @@ async function main() {
   const summary = buildSummary(sorted, { now: new Date(), site: base, lastUpdated: updated });
   await fs.writeFile(path.join(dataDir, "summary.json"), JSON.stringify(summary, null, 2) + "\n");
   // the feed carries incidents; disclosed vulnerabilities arrive in vendor batches and would drown it
-  await fs.writeFile(path.join(PUBLIC, "feed.xml"), rss(counted, base, updated));
+  const siteChannel = (title: string, description: string, homeUrl: string, feedUrl: string) => ({ title, description, homeUrl, feedUrl, updated });
+  const feedTitle = `${SITE.name} — new incidents, all lanes`;
+  await fs.writeFile(path.join(PUBLIC, "feed.xml"), rssXml(counted, base, siteChannel(feedTitle, SITE.description, base, `${base}/feed.xml`)));
+  await fs.writeFile(path.join(PUBLIC, "feed.json"), JSON.stringify(jsonFeed(counted, base, siteChannel(feedTitle, SITE.description, base, `${base}/feed.json`)), null, 1) + "\n");
+  const now = new Date();
+  await fs.writeFile(path.join(PUBLIC, "changes.json"), JSON.stringify(buildChanges(sorted, { site: base, now }), null, 1) + "\n");
+  const tagIndex = buildTagIndex(sorted, now);
+  await fs.writeFile(path.join(PUBLIC, "llms.txt"), buildLlmsTxt({ site: base, incidents: sorted, tags: tagIndex.directory, scope: { kind: "site" }, now }));
+  // per lane: the same four files under /lanes/<lane>/
+  const lanesDir = path.join(PUBLIC, "lanes");
+  await resetDir(lanesDir);
+  for (const lane of LANES as readonly Lane[]) {
+    const dir = path.join(lanesDir, lane);
+    await fs.mkdir(dir, { recursive: true });
+    const inLane = counted.filter((i) => i.lane === lane);
+    const links = feedLinks(base, lane);
+    const title = `${SITE.name} — ${LANE_META[lane].label}`;
+    const home = `${base}${LANE_META[lane].href}`;
+    await Promise.all([
+      fs.writeFile(path.join(dir, "feed.xml"), rssXml(inLane, base, siteChannel(title, LANE_META[lane].definition, home, links.rss))),
+      fs.writeFile(path.join(dir, "feed.json"), JSON.stringify(jsonFeed(inLane, base, siteChannel(title, LANE_META[lane].definition, home, links.json)), null, 1) + "\n"),
+      fs.writeFile(path.join(dir, "changes.json"), JSON.stringify(buildChanges(sorted, { site: base, now, lane }), null, 1) + "\n"),
+      fs.writeFile(path.join(dir, "llms.txt"), buildLlmsTxt({ site: base, incidents: sorted, tags: tagIndex.directory, scope: { kind: "lane", lane }, now })),
+    ]);
+  }
+  // per tag: RSS, JSON and llms.txt for every tag with a page
+  const tagsDir = path.join(PUBLIC, "tags");
+  await resetDir(tagsDir);
+  const byId = new Map(sorted.map((i) => [i.id, i]));
+  for (const t of tagIndex.directory) {
+    const dir = path.join(tagsDir, t.slug);
+    await fs.mkdir(dir, { recursive: true });
+    const tagged = t.ids.map((id) => byId.get(id)!);
+    const title = `${SITE.name} — tag: ${t.label}`;
+    const tagFile = {
+      slug: t.slug,
+      label: t.label,
+      group: t.group,
+      total: t.total,
+      live: t.live,
+      latest: t.latest,
+      months: tagIndex.months.map((month, n) => ({ month, records: t.months[n] ?? 0 })),
+      records: tagged.map((i) => ({ id: i.id, slug: i.slug, title: i.title, lane: i.lane, state: i.state, severity: i.severity, first_reported: i.first_reported, url: `${base}/incidents/${i.slug}`, tags: tagSlugsOf(i) })),
+      feeds: { rss: `${base}/tags/${t.slug}/feed.xml`, llms: `${base}/tags/${t.slug}/llms.txt` },
+    };
+    await Promise.all([
+      fs.writeFile(path.join(dir, "feed.xml"), rssXml(tagged.filter((i) => !isDisclosedIncident(i)), base, siteChannel(title, `Records tagged ${t.label}`, `${base}/tags/${t.slug}`, tagFile.feeds.rss))),
+      fs.writeFile(path.join(tagsDir, `${t.slug}.json`), JSON.stringify(tagFile, null, 1) + "\n"),
+      fs.writeFile(path.join(dir, "llms.txt"), buildLlmsTxt({ site: base, incidents: sorted, tags: tagIndex.directory, scope: { kind: "tag", tag: t }, now })),
+    ]);
+  }
+  // live.json: the home page's counters and per-lane counts, what scripts/check-live.mjs compares the page against
+  const live = buildLive(sorted, new Date(), updated);
+  await fs.writeFile(
+    path.join(PUBLIC, "live.json"),
+    JSON.stringify(
+      {
+        generated_at: live.now,
+        site: base,
+        counters: live.counters,
+        boards: boardsWithAll(live.boards, live.now.slice(0, 10)).map((b) => ({ key: b.key, label: b.label, count: b.count, ai: b.ai, groups: b.groups.map((g) => ({ key: g.key, rows: g.rows.length })) })),
+        top_tags: live.topTags.map((t) => ({ slug: t.slug, live: t.live, total: t.total })),
+      },
+      null,
+      2,
+    ) + "\n",
+  );
 
   // Weekly briefings: copied as validated, plus an index, and their own feed.
   const briefings = await loadBriefings();
@@ -227,12 +272,14 @@ async function main() {
   await fs.writeFile(path.join(PUBLIC, "briefing.xml"), briefingRss(briefings, base));
 
   const t0 = Date.now();
+  // the chart images draw the AI series (lib/counting.ts aiLens)
+  const aiCounted = aiLens(counted);
   const written = await renderOgImages(
-    { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
+    { incidents: aiCounted, disclosed: aiLens(sorted).length - aiCounted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
     path.join(PUBLIC, "og"),
   );
   console.log(
-    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/data/summary.json, public/feed.xml, ${briefings.length} briefings + public/briefing.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
+    `prebuild: ${sorted.length} records (${counted.length} incidents, ${sorted.length - counted.length} disclosed vulnerabilities) → public/data (${shards.size} year shards × 3, ${Object.keys(index.tokens).length} search tokens, +${sorted.length} per-incident files), public/data/summary.json, public/feed.xml + feed.json + changes.json + llms.txt, ${LANES.length} lanes, ${tagIndex.directory.length} tag feeds, ${briefings.length} briefings + public/briefing.xml, ${written.length} OG images in ${Date.now() - t0} ms (site ${base})`,
   );
 }
 

@@ -149,9 +149,9 @@ export interface ProductStats {
   cves: string[];
 }
 
-export interface ProductGroup extends ProductStats {
+export interface ProductGroup<T extends Incident = Incident> extends ProductStats {
   /** The records, newest first by first report, then id. */
-  items: Incident[];
+  items: T[];
 }
 
 function newestFirst(a: Incident, b: Incident): number {
@@ -187,8 +187,8 @@ function statsOf(label: string, slug: string, names: string[], items: Incident[]
  * "agno") share a slug and a page, labelled by the most frequent spelling.
  * Sorted by most records, then most recent, then label.
  */
-export function buildProductIndex(incidents: readonly Incident[]): ProductGroup[] {
-  const groups = new Map<string, { labels: Map<string, number>; names: Map<string, number>; items: Incident[]; seen: Set<string> }>();
+export function buildProductIndex<T extends Incident>(incidents: readonly T[]): ProductGroup<T>[] {
+  const groups = new Map<string, { labels: Map<string, number>; names: Map<string, number>; items: T[]; seen: Set<string> }>();
   for (const i of incidents) {
     for (const raw of i.products) {
       const label = productFamily(raw);
@@ -207,7 +207,7 @@ export function buildProductIndex(incidents: readonly Incident[]): ProductGroup[
       g.items.push(i);
     }
   }
-  const out: ProductGroup[] = [];
+  const out: ProductGroup<T>[] = [];
   for (const [slug, g] of groups) {
     const items = g.items.sort(newestFirst);
     const label = mostFrequent(g.labels)[0] ?? slug;
@@ -258,10 +258,10 @@ export function productHref(name: string): string | null {
 }
 
 /** The index, built once per dataset array (every product page and its metadata ask for it). */
-const indexes = new WeakMap<readonly Incident[], ProductGroup[]>();
+const indexes = new WeakMap<readonly Incident[], ProductGroup<Incident>[]>();
 
-export function productIndex(incidents: readonly Incident[]): ProductGroup[] {
-  let index = indexes.get(incidents);
+export function productIndex<T extends Incident>(incidents: readonly T[]): ProductGroup<T>[] {
+  let index = indexes.get(incidents) as ProductGroup<T>[] | undefined;
   if (!index) {
     index = buildProductIndex(incidents);
     indexes.set(incidents, index);
@@ -269,6 +269,6 @@ export function productIndex(incidents: readonly Incident[]): ProductGroup[] {
   return index;
 }
 
-export function productBySlug(incidents: readonly Incident[], slug: string): ProductGroup | undefined {
+export function productBySlug<T extends Incident>(incidents: readonly T[], slug: string): ProductGroup<T> | undefined {
   return productIndex(incidents).find((p) => p.slug === slug);
 }

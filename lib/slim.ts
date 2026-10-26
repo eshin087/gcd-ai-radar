@@ -1,7 +1,9 @@
 import { isDisclosedIncident } from "./counting";
+import { lastActivity, type FullIncident } from "./lifecycle";
 import { buildRelatedIndex, relatedFromIndex, type RelatedIndex } from "./related";
 import type { Incident } from "./schema";
-import type { Category, DatePrecision, IncidentType, Origin, Severity, Target } from "./taxonomy";
+import { tagSlugsOf } from "./tags";
+import type { Category, DatePrecision, IncidentType, Lane, Origin, PatchStatus, RecordState, Severity, Target } from "./taxonomy";
 
 /** The compact record shipped to the client for the incidents explorer (no sources array). */
 export interface SlimIncident {
@@ -22,9 +24,18 @@ export interface SlimIncident {
   origin: Origin;
   /** A CVE or advisory with no confirmed exploitation, tracked apart from incidents (lib/counting.ts). */
   disclosed: boolean;
+  lane: Lane;
+  state: RecordState;
+  patch_status: PatchStatus;
+  /** The CVE ids the record is about, highest first. */
+  cve_ids: string[];
+  /** Tag slugs (lib/tags.ts), at most five. */
+  tags: string[];
+  /** The newest dated activity: a timeline entry, a source or the first report. */
+  last_update: string;
 }
 
-export function slim(i: Incident): SlimIncident {
+export function slim(i: FullIncident): SlimIncident {
   return {
     id: i.id,
     slug: i.slug,
@@ -42,6 +53,12 @@ export function slim(i: Incident): SlimIncident {
     publishers: [...new Set(i.sources.map((s) => s.publisher))],
     origin: i.origin,
     disclosed: isDisclosedIncident(i),
+    lane: i.lane,
+    state: i.state,
+    patch_status: i.patch_status,
+    cve_ids: i.cve_ids,
+    tags: tagSlugsOf(i),
+    last_update: lastActivity(i),
   };
 }
 
@@ -52,11 +69,12 @@ const relatedIndexes = new WeakMap<readonly Incident[], RelatedIndex>();
  * close in time (lib/related.ts). The bucket index is built once per dataset
  * array and kept for every page rendered from it.
  */
-export function relatedIncidents(all: readonly Incident[], incident: Incident, limit = 6): Incident[] {
+export function relatedIncidents<T extends Incident>(all: readonly T[], incident: T, limit = 6): T[] {
   let index = relatedIndexes.get(all);
   if (!index) {
     index = buildRelatedIndex(all);
     relatedIndexes.set(all, index);
   }
-  return relatedFromIndex(index, incident, limit);
+  // the index holds references into `all`, so what comes back is `all`'s own record type
+  return relatedFromIndex(index, incident, limit) as T[];
 }

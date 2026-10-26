@@ -1,5 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { isDisclosedVuln } from "../lib/counting";
+import { aiLens, isAiRecord, isDisclosedVuln } from "../lib/counting";
+
+describe("the AI lens", () => {
+  it("keeps the two AI types and drops records with no AI role", () => {
+    expect(isAiRecord({ type: "attack_on_ai" })).toBe(true);
+    expect(isAiRecord({ type: "ai_enabled_attack" })).toBe(true);
+    expect(isAiRecord({ type: "not_ai" })).toBe(false);
+    const records = [{ type: "not_ai" as const, id: 1 }, { type: "attack_on_ai" as const, id: 2 }, { type: "ai_enabled_attack" as const, id: 3 }];
+    expect(aiLens(records).map((r) => r.id)).toEqual([2, 3]);
+    expect(aiLens([])).toEqual([]);
+  });
+});
 
 describe("isDisclosedVuln", () => {
   it("treats an unexploited NVD or GHSA record as a disclosed vulnerability", () => {

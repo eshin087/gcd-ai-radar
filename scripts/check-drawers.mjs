@@ -22,6 +22,8 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 
 const args = parseArgs(process.argv.slice(2));
+/** The page that holds the chart dashboard (its drawers); the home page is the live feed. */
+const pagePath = typeof args.path === "string" && args.path.startsWith("/") ? args.path : "/trends";
 const verbose = Boolean(args.verbose);
 
 const TYPES = { ".html": "text/html; charset=utf-8", ".txt": "text/plain; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".xml": "application/xml", ".woff2": "font/woff2", ".ttf": "font/ttf", ".ico": "image/x-icon", ".csv": "text/csv" };
@@ -314,7 +316,7 @@ async function runChecks(client, base) {
   ];
 
   for (const view of views) {
-    await navigate(client, `${base}/`);
+    await navigate(client, `${base}${pagePath}`);
     await view.setup();
     const columns = await evaluate(client, COLUMN_PROBES);
     // the calendar view of the trend panel: the first day with a count (only days with a count are buttons)

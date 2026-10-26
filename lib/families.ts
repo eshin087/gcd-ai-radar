@@ -19,7 +19,8 @@ export const FAMILY_META: Record<Family, { label: string; short: string; categor
   supply: { label: "Supply chain & poisoning", short: "Supply chain", categories: ["supply_chain", "data_poisoning", "adversarial_evasion"] },
   social: { label: "Deepfakes & social engineering", short: "Deepfake/social", categories: ["deepfake_fraud", "ai_phishing_social_engineering"] },
   offense: { label: "AI-powered offense", short: "AI offense", categories: ["ai_generated_malware", "ai_assisted_intrusion"] },
-  other: { label: "Other", short: "Other", categories: ["other"] },
+  // `general` (no AI role) files here too: the family charts only ever see AI records (lib/counting.ts aiLens).
+  other: { label: "Other", short: "Other", categories: ["other", "general"] },
 };
 
 const BY_CATEGORY = new Map<Category, Family>();

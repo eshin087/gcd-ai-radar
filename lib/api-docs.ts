@@ -1,8 +1,9 @@
 import { z } from "zod";
 import type { CompactRow } from "./rows";
-import { IncidentSchema, type Incident } from "./schema";
+import { IncidentSchema, type Incident, type TimelineEntry } from "./schema";
 import type { SlimIncident } from "./slim";
 import type { Summary } from "./summary";
+import type { IncidentType, Lane } from "./taxonomy";
 
 /**
  * What the API page (app/(site)/api/page.tsx) says about each public file.
@@ -23,6 +24,14 @@ export interface MetaFile {
   years: { year: number; records: number; incidents: number; disclosed_vulnerabilities: number; file: string }[];
   last_collector_run: string | null;
   standards_mapping: { owasp_llm_top_10: string; mitre_atlas_release: string; rule: string };
+  /** Records per AI role. */
+  types: Record<IncidentType, number>;
+  /** Records and live records per lane. */
+  lanes: Record<Lane, { records: number; incidents: number; live: number }>;
+  states: { live: number; closed: number };
+  /** The AI records alone: what /trends, summary.json and the briefing count. */
+  ai: { records: number; incidents: number; disclosed_vulnerabilities: number };
+  scope_note: string;
   license: string;
   license_url: string;
 }
@@ -62,7 +71,7 @@ const INCIDENT_NOTES: Record<keyof Incident, string> = {
   slug: "URL slug; the record's page is /incidents/<slug>.",
   title: "Headline written for the record.",
   summary: "Two sentences in the site's own words, never quoted article text.",
-  type: "Attack on AI, or AI-enabled attack.",
+  type: "attack_on_ai, ai_enabled_attack, or not_ai (no meaningful AI role; such records are never in the AI counts).",
   categories: "Ordered by relevance; the first is the primary category, which monthly counts use.",
   severity: "1 research, 2 disclosed vulnerability, 3 confirmed exploitation, 4 confirmed real-world loss. 3 and 4 are real-world.",
   targets: "Controlled list of who or what was hit.",
@@ -78,6 +87,17 @@ const INCIDENT_NOTES: Record<keyof Incident, string> = {
   tags: "Free-text tags.",
   created_at: "When the record was created.",
   updated_at: "When the record last changed.",
+  lane: "The live lane: patch, breach, supply_chain or research. Always present in the public files (derived by the rules on /methodology#lanes for records that predate lanes).",
+  state: "live or closed, by the rules on /methodology#lanes. Judged at every build; a closed record stays closed.",
+  closed_at: "The day a closed record closed; null while live.",
+  patch_status: "unpatched, partial, patched, no_fix_needed or unknown.",
+  cve_ids: "The CVE ids the record is about, highest first.",
+  affected: "Affected versions or products as a source states them, e.g. \"PHP < 8.4.9\".",
+  fixed_in: "Fixed versions as a source states them.",
+  timeline: "Dated updates, oldest first: the first reports, then what changed. The newest 500 across all records are in /changes.json.",
+  action: "What to do, in the site's own words; empty when no source says.",
+  severity_note: "Why this severity; empty when the record predates the field.",
+  cvss: "A CVSS base score when a source states one, else null.",
 };
 
 const SOURCE_NOTES: Record<keyof Incident["sources"][number], string> = {
@@ -85,6 +105,13 @@ const SOURCE_NOTES: Record<keyof Incident["sources"][number], string> = {
   publisher: "Publisher name.",
   title: "The article's own title.",
   published_at: "Publication date.",
+};
+
+const TIMELINE_NOTES: Record<keyof TimelineEntry, string> = {
+  date: "The day the update is about.",
+  title: "One line on what happened or changed.",
+  source_url: "The report behind the entry, when there is one.",
+  added_at: "When the site learned of the entry; /changes.json orders by it.",
 };
 
 function constraint(s: JsonSchema): string {
@@ -129,6 +156,12 @@ export function incidentFields(): FieldDoc[] {
         out.push({ name: `sources[].${sub}`, type: typeLabel(item[sub] ?? {}), note: SOURCE_NOTES[sub] });
       }
     }
+    if (name === "timeline") {
+      const item = s.items?.properties ?? {};
+      for (const sub of Object.keys(TIMELINE_NOTES) as (keyof typeof TIMELINE_NOTES)[]) {
+        out.push({ name: `timeline[].${sub}`, type: typeLabel(item[sub] ?? {}), note: TIMELINE_NOTES[sub] });
+      }
+    }
   }
   for (const name of Object.keys(props)) if (!(name in INCIDENT_NOTES)) throw new Error(`api-docs: IncidentSchema field ${name} is not documented`);
   return out;
@@ -152,6 +185,12 @@ export const SLIM_NOTES: Record<keyof SlimIncident, { type: string; note: string
   publishers: { type: "string[]", note: "Distinct publishers of the sources, in source order. Replaces the sources array." },
   origin: null,
   disclosed: { type: "boolean", note: "True for a disclosed vulnerability (a CVE or advisory with no confirmed exploitation). Count only records where this is false." },
+  lane: null,
+  state: null,
+  patch_status: null,
+  cve_ids: null,
+  tags: { type: "string[]", note: "Tag slugs as the tag pages use them (/tags/<slug>), at most five; the full record carries the tags as written." },
+  last_update: { type: "string (YYYY-MM-DD)", note: "The newest dated activity: a timeline entry, a source or the first report." },
 };
 
 export function slimFields(): FieldDoc[] {
@@ -168,6 +207,7 @@ export function slimFields(): FieldDoc[] {
 /** Compact rows (rows/<year>.json) are internal to the dashboard: listed, not promised. */
 export const ROW_FIELDS: readonly (keyof CompactRow)[] = [
   "id", "slug", "title", "incident_date", "incident_date_precision", "first_reported", "type", "categories", "severity", "targets", "source_count", "disclosed", "product", "products",
+  "lane", "state", "patch_status",
 ];
 
 export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }> = {
@@ -180,6 +220,11 @@ export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }>
   years: { type: "object[]", note: "Per year of first report: year, records, incidents, disclosed_vulnerabilities, file (the years/<year>.json path)." },
   last_collector_run: { type: "string (RFC 3339) | null", note: "When the collector last finished a run; null before the first run." },
   standards_mapping: { type: "{ owasp_llm_top_10, mitre_atlas_release, rule }", note: "The OWASP LLM Top 10 edition and MITRE ATLAS release the CSV's owasp_llm and atlas columns refer to. Those columns are derived from type and categories, not classified per record." },
+  types: { type: "{ attack_on_ai, ai_enabled_attack, not_ai }", note: "Records per AI role." },
+  lanes: { type: "{ patch, breach, supply_chain, research: { records, incidents, live } }", note: "Records, incidents and live records per lane." },
+  states: { type: "{ live, closed }", note: "Records live and closed by the lane rules at generation time." },
+  ai: { type: "{ records, incidents, disclosed_vulnerabilities }", note: "The AI records alone: what /trends, summary.json, the briefing and the chart images count." },
+  scope_note: { type: "string", note: "The AI-lens rule in one sentence." },
   license: { type: "string", note: "\"CC BY-SA 4.0\"." },
   license_url: { type: "string (URL)", note: "The licence text." },
 };
@@ -198,7 +243,9 @@ export const SUMMARY_FIELDS: Record<keyof Summary, { type: string; note: string 
   last_collector_run: { type: "string (RFC 3339) | null", note: "When the collector last finished a run." },
   date_basis: { type: "\"incident_date\"", note: "Months are placed by incident date, the site's default axis." },
   counting_rule: { type: "string", note: "The disclosed-vulnerability rule in one sentence." },
-  totals: { type: "{ records, incidents, real_world, disclosed_vulnerabilities }", note: "All-time counts. real_world is incidents of severity 3 or 4. records = incidents + disclosed_vulnerabilities." },
+  scope: { type: "\"ai\"", note: "Every number in the file counts AI records only (type attack_on_ai or ai_enabled_attack)." },
+  scope_note: { type: "string", note: "The AI-lens rule in one sentence." },
+  totals: { type: "{ records, incidents, real_world, disclosed_vulnerabilities }", note: "All-time counts of AI records. real_world is incidents of severity 3 or 4. records = incidents + disclosed_vulnerabilities." },
   this_month: { type: "{ month, incidents, last_month, delta_pct }", note: "The current month so far against the whole of last month." },
   year_to_date: { type: "{ year, incidents, last_year_same_period, delta_pct }", note: "This calendar year to date against the same span of last year." },
   trailing_12: { type: WINDOW_TYPE, note: "The last 12 months including the current one; prior is the 12 before. Months are YYYY-MM, inclusive." },

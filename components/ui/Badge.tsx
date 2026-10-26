@@ -2,14 +2,20 @@ import { CATEGORY_COLORS, SEVERITY_COLORS, TYPE_COLORS } from "@/lib/palette";
 import {
   ATLAS_TECHNIQUES,
   CATEGORY_META,
+  LANE_META,
   OWASP_LLM_META,
+  PATCH_META,
   SEVERITY_META,
   TYPE_META,
+  isAiType,
   owaspLabel,
   type AtlasTechniqueId,
   type Category,
   type IncidentType,
+  type Lane,
   type OwaspLlmId,
+  type PatchStatus,
+  type RecordState,
   type Severity,
 } from "@/lib/taxonomy";
 
@@ -70,5 +76,60 @@ export function TypeBadge({ type, short = false }: { type: IncidentType; short?:
     <Chip color={`var(--type-${type}, ${TYPE_COLORS[type]})`} title={meta.definition}>
       {short ? meta.short : meta.label}
     </Chip>
+  );
+}
+
+/** The lane, as a plain text chip: a lane is a place, not a data colour. */
+export function LaneBadge({ lane, short = false }: { lane: Lane; short?: boolean }) {
+  const meta = LANE_META[lane];
+  return (
+    <span title={meta.definition} className="inline-flex items-center rounded-[2px] border border-line px-1.5 py-0.5 font-mono text-[12px] uppercase tracking-[0.06em] whitespace-nowrap text-dim">
+      {short ? meta.short : meta.label}
+    </span>
+  );
+}
+
+const TONE: Record<PatchStatus, string> = {
+  unpatched: "text-live",
+  partial: "text-partial",
+  patched: "text-patched",
+  no_fix_needed: "text-dim",
+  unknown: "text-dim",
+};
+
+/** The patch status: its glyph in the status colour, its label in text, never colour alone. */
+export function PatchBadge({ status, glyphOnly = false }: { status: PatchStatus; glyphOnly?: boolean }) {
+  const meta = PATCH_META[status];
+  return (
+    <span title={meta.definition} className={`inline-flex items-center gap-1.5 font-mono text-[12px] whitespace-nowrap ${TONE[status]}`}>
+      <span aria-hidden className="w-3 text-center leading-none">
+        {meta.glyph}
+      </span>
+      <span className={glyphOnly ? "sr-only" : undefined}>{meta.label}</span>
+    </span>
+  );
+}
+
+/** Live or closed: a dot in the live colour (pulsing while live, still under reduced motion) with the word for screen readers and tooltips. */
+export function StateDot({ state, className = "" }: { state: RecordState; className?: string }) {
+  const live = state === "live";
+  return (
+    <span title={live ? "Live: updated or unpatched within the lane's window" : "Closed: no activity within the lane's window"} className={`inline-flex items-center ${className}`}>
+      <span aria-hidden className={`inline-block size-2 rounded-full ${live ? "bg-live live-dot" : "bg-closed"}`} />
+      <span className="sr-only">{live ? "live" : "closed"}</span>
+    </span>
+  );
+}
+
+/** The AI lens on a row: shown only for AI records, with the type in the tooltip. */
+export function AiChip({ type }: { type: IncidentType }) {
+  if (!isAiType(type)) return null;
+  return (
+    <span
+      title={`${TYPE_META[type].label}: ${TYPE_META[type].definition}`}
+      className="inline-flex items-center rounded-[2px] border border-accent/40 bg-accent-tint px-1.5 py-0.5 font-mono text-[12px] uppercase tracking-[0.06em] text-accent"
+    >
+      AI
+    </span>
   );
 }

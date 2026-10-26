@@ -1,4 +1,5 @@
 import { buildAggregates, type Aggregates } from "./aggregates";
+import { aiLens } from "./counting";
 import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import { compactRow, type Basis, type CompactRow } from "./rows";
 import type { Radar } from "./schema";
@@ -23,14 +24,20 @@ export interface DashboardData {
   span: { from: string; to: string };
   agg: Aggregates;
   radar: Radar | null;
-  /** The last 90 days by first report, for the hero's threat feed. */
+}
+
+/** What the unlisted /lab review page needs on top: the threat feed and the radar scope its scenes draw. */
+export interface LabData extends DashboardData {
+  /** The last 90 days by first report, for the terminal demos. */
   intel: ThreatIntel;
-  /** The last 120 days by first report as radar blips, for the hero's scope (lib/scope.ts). */
+  /** The last 120 days by first report as radar blips (lib/scope.ts). */
   scope: Scope;
 }
 
 export async function getDashboardData(): Promise<DashboardData> {
-  const [{ incidents }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
+  const [{ incidents: all }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
+  // The dashboard counts AI records only (lib/counting.ts aiLens): records with no AI role never reach its aggregates or drawers.
+  const incidents = aiLens(all);
   const now = new Date();
   const range = yearRange(incidents);
   const earliest = Math.max(range?.min ?? now.getUTCFullYear(), 2016);
@@ -42,7 +49,12 @@ export async function getDashboardData(): Promise<DashboardData> {
     span,
     agg: buildAggregates(rows, { now, span }),
     radar,
-    intel: buildThreatIntel(rows, now),
-    scope: buildScope(rows, now),
   };
+}
+
+export async function getLabData(): Promise<LabData> {
+  const [data, { incidents: all }] = await Promise.all([getDashboardData(), loadIncidents()]);
+  const now = new Date(data.now);
+  const rows = aiLens(all).map(compactRow);
+  return { ...data, intel: buildThreatIntel(rows, now), scope: buildScope(rows, now) };
 }

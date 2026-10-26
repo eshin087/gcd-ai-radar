@@ -28,3 +28,9 @@ collector/.cache/
 .DS_Store
 Thumbs.db
 
+public/live.json
+public/tags/
+public/lanes/
+public/changes.json
+public/llms.txt
+public/feed.json

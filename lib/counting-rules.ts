@@ -22,6 +22,11 @@ export const COUNTING_RULES: readonly CountingRule[] = [
     forConsumers: true,
   },
   {
+    id: "ai-lens",
+    text: "Every AI count (the trends charts and their drawers, the weekly briefing, summary.json, the embed card and the chart images) counts records whose type is *attack on AI* or *AI-enabled attack*. Records with no AI role appear in the live lanes, the archive, the feeds and the tag pages, never in those counts.",
+    forConsumers: true,
+  },
+  {
     id: "primary-category",
     text: "Monthly charts count each incident once, under its primary category.",
     forConsumers: true,

@@ -189,10 +189,10 @@ export function selectionQuery(sel: Selection, basis: Basis, field: DateField): 
       break;
     case "disclosed-day":
       p.set("kind", "disclosed");
-      p.set("month", sel.day.slice(0, 7));
+      p.set("day", sel.day);
       break;
     case "day":
-      p.set("month", sel.day.slice(0, 7));
+      p.set("day", sel.day);
       break;
     case "family-severity":
       p.set("category", FAMILY_META[sel.family].categories.join(","));

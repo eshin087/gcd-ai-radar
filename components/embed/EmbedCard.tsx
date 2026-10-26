@@ -114,7 +114,7 @@ export function EmbedCard({ initial }: { initial: Summary }) {
 
   const updated = summary.last_collector_run;
   return (
-    <article className="embed-card" aria-label={`${SITE.name}: AI cybersecurity incidents`}>
+    <article className="embed-card" aria-label={`${SITE.name}: AI security incidents`}>
       <header className="flex items-center justify-between gap-3">
         <a href="/" target="_blank" rel="noopener" className="embed-brand">
           <RadarGlyph size={15} className="text-accent shrink-0" />
@@ -136,7 +136,7 @@ export function EmbedCard({ initial }: { initial: Summary }) {
         return (
           <section key={w.key} data-w={w.key} className="embed-body">
             <div className="embed-figures">
-              <div className="embed-label">AI cybersecurity incidents, last {w.months} months</div>
+              <div className="embed-label">AI security incidents, last {w.months} months</div>
               <div className="embed-headline">
                 <span className="embed-value num">{formatInt(win.incidents)}</span>
                 <span className={`num text-[13px] ${tone(win.delta_pct)}`}>{formatPct(win.delta_pct)}</span>

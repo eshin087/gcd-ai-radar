@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Lab } from "@/components/lab/Lab";
-import { getDashboardData } from "@/lib/dashboard";
+import { getLabData } from "@/lib/dashboard";
 
 export const metadata: Metadata = {
   title: "Design review",
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 
 /** Unlisted review page: hero scenes, terminal styles and logos to choose from. Not linked anywhere. */
 export default async function LabPage() {
-  const data = await getDashboardData();
+  const data = await getLabData();
   return <Lab data={data} />;
 }

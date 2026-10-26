@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Ago } from "@/components/ui/Ago";
 import { NAV } from "@/lib/site";
 import { Wordmark } from "./Wordmark";
 
@@ -14,14 +15,8 @@ export function SiteHeader({ lastUpdated }: { lastUpdated?: string | null }) {
             </Link>
           ))}
         </nav>
-        <div className="num text-[11px] text-dim hidden xl:block whitespace-nowrap">
-          {lastUpdated ? (
-            <>
-              updated <time dateTime={lastUpdated}>{lastUpdated.slice(0, 16).replace("T", " ")}Z</time>
-            </>
-          ) : (
-            <span className="text-faint">collector not yet run</span>
-          )}
+        <div className="num hidden whitespace-nowrap text-[12px] text-dim md:block">
+          {lastUpdated ? <Ago iso={lastUpdated} prefix="updated" /> : <span className="text-faint">collector not yet run</span>}
         </div>
       </div>
       <nav aria-label="Primary mobile" className="lg:hidden border-t border-line-soft overflow-x-auto">

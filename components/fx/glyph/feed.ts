@@ -17,6 +17,7 @@ export const KIND_LABEL: Record<Category, string> = {
   ai_generated_malware: "AI MALWARE",
   ai_assisted_intrusion: "AI INTRUSION",
   other: "UNKNOWN",
+  general: "GENERAL",
 };
 
 /** The system in a company's AI estate that stands for each target the dataset tracks. */
@@ -60,6 +61,7 @@ export const TECHNIQUES: Record<Category, string[]> = {
   ai_generated_malware: ["LLM-written loader", "polymorphic payload", "AI-tuned ransomware"],
   ai_assisted_intrusion: ["AI-driven recon of the estate", "automated credential stuffing", "agentic lateral movement"],
   other: ["unclassified technique"],
+  general: ["unclassified technique"],
 };
 
 /** What stopped an attack, or what the response to a breach was, for the simulated lines. */

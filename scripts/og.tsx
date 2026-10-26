@@ -22,7 +22,7 @@ import {
   toMonthKey,
   type MonthlyPoint,
 } from "../lib/stats";
-import { CATEGORY_META, INCIDENT_TYPES, SEVERITY_META, TARGET_META, TYPE_META } from "../lib/taxonomy";
+import { AI_TYPES, CATEGORY_META, SEVERITY_META, TARGET_META, TYPE_META } from "../lib/taxonomy";
 import { monthLabel } from "../lib/format";
 
 const W = 1200;
@@ -90,7 +90,7 @@ function Bars({ series, width, height, stacked, trend }: { series: MonthlyPoint[
         const x = i * (bw + gap);
         if (!stacked) return <rect key={p.month} x={x} y={y(p.total)} width={bw} height={height - y(p.total)} fill={BAR_COLOR} rx={2} />;
         let acc = 0;
-        return INCIDENT_TYPES.map((type) => {
+        return AI_TYPES.map((type) => {
           const v = p.byType[type];
           const top = y(acc + v);
           const h = y(acc) - top;
@@ -201,7 +201,7 @@ export async function renderOgImages(ctx: Ctx, outDir: string): Promise<string[]
         <div style={{ ...base, flexDirection: "column", width: chartW }}>
           <Bars series={series} width={chartW} height={280} stacked />
           <AxisLabels series={series} width={chartW} />
-          <Legend items={INCIDENT_TYPES.map((t) => ({ label: TYPE_META[t].label, color: TYPE_COLORS[t] }))} />
+          <Legend items={AI_TYPES.map((t) => ({ label: TYPE_META[t].label, color: TYPE_COLORS[t] }))} />
         </div>
       </Frame>
     ),

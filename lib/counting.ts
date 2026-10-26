@@ -1,5 +1,5 @@
 import type { Incident } from "./schema";
-import type { Origin, Severity } from "./taxonomy";
+import { isAiType, type IncidentType, type Origin, type Severity } from "./taxonomy";
 
 /**
  * What the headline counts. A CVE or advisory with no confirmed exploitation
@@ -20,6 +20,9 @@ const VULN_DB_ORIGINS: ReadonlySet<Origin> = new Set<Origin>(["seed_nvd", "seed_
 /** Publishers that are vulnerability databases rather than reporting. */
 export const VULN_DB_PUBLISHERS: ReadonlySet<string> = new Set(["NVD", "GitHub Advisory Database", "MSRC"]);
 
+/** Publishers of advisories and alerts (not databases, not news): an incident page groups them with the databases. */
+export const ADVISORY_PUBLISHERS: ReadonlySet<string> = new Set(["CISA", "CERT-EU", "NCSC", "Cisco", "Palo Alto Networks", "Fortinet", "Microsoft Security"]);
+
 export type RecordKind = "incident" | "disclosed_vulnerability";
 
 export function isDisclosedVuln(r: { origin: Origin; severity: Severity; publishers: readonly string[] }): boolean {
@@ -34,4 +37,21 @@ export function isDisclosedIncident(i: Pick<Incident, "origin" | "severity" | "s
 
 export function recordKind(i: Pick<Incident, "origin" | "severity" | "sources">): RecordKind {
   return isDisclosedIncident(i) ? "disclosed_vulnerability" : "incident";
+}
+
+/**
+ * The AI lens. A record is an AI record when its type is attack_on_ai or
+ * ai_enabled_attack. Everything that counts AI incidents (the /trends charts
+ * and their drawers, the weekly briefing, summary.json, the embed card, the
+ * OG images) counts through this lens, so those numbers mean today what they
+ * meant when the site tracked AI incidents alone. Records with no AI role
+ * (`not_ai`) are in the live lanes, the archive, the feeds and the tag pages
+ * only.
+ */
+export function isAiRecord(r: { type: IncidentType }): boolean {
+  return isAiType(r.type);
+}
+
+export function aiLens<T extends { type: IncidentType }>(records: readonly T[]): T[] {
+  return records.filter(isAiRecord);
 }

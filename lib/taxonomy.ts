@@ -7,8 +7,23 @@
  * labels) and the Methodology page (definitions rendered verbatim).
  */
 
-export const INCIDENT_TYPES = ["attack_on_ai", "ai_enabled_attack"] as const;
+export const INCIDENT_TYPES = ["attack_on_ai", "ai_enabled_attack", "not_ai"] as const;
 export type IncidentType = (typeof INCIDENT_TYPES)[number];
+
+/**
+ * The AI lens: the two types every AI count is made of. Every chart on
+ * /trends, the weekly briefing, summary.json, the embed card and the OG
+ * images count these records only (lib/counting.ts aiLens), so each number
+ * keeps the meaning it had when the site tracked AI incidents alone. A
+ * `not_ai` record lives in the live lanes, the archive, the feeds and the tag
+ * pages, never in those counts.
+ */
+export const AI_TYPES = ["attack_on_ai", "ai_enabled_attack"] as const;
+export type AiType = (typeof AI_TYPES)[number];
+
+export function isAiType(type: IncidentType): type is AiType {
+  return (AI_TYPES as readonly string[]).includes(type);
+}
 
 export const TYPE_META: Record<
   IncidentType,
@@ -25,6 +40,12 @@ export const TYPE_META: Record<
     short: "by AI",
     definition:
       "Attackers used AI as a meaningful part of a cyberattack against someone else.",
+  },
+  not_ai: {
+    label: "No AI role",
+    short: "general",
+    definition:
+      "AI plays no meaningful role: a general security incident or flaw, carried in the live lanes and the archive and never in the AI counts.",
   },
 };
 
@@ -43,8 +64,12 @@ export const CATEGORIES = [
   "ai_phishing_social_engineering",
   "ai_assisted_intrusion",
   "other",
+  "general",
 ] as const;
 export type Category = (typeof CATEGORIES)[number];
+
+/** The categories an AI record may carry: every one but `general`, which is reserved for `not_ai` records. */
+export const AI_CATEGORIES = CATEGORIES.filter((c) => c !== "general") as [Category, ...Category[]];
 
 export const CATEGORY_META: Record<
   Category,
@@ -134,6 +159,12 @@ export const CATEGORY_META: Record<
     definition:
       "In scope, but none of the categories above fits. Reviewed periodically for new categories.",
   },
+  general: {
+    label: "General security",
+    short: "General",
+    definition:
+      "No AI component: a general security incident or flaw, placed by its lane. The only category a record with no AI role carries.",
+  },
 };
 
 export const SEVERITIES = [1, 2, 3, 4] as const;
@@ -221,6 +252,70 @@ export const TARGET_META: Record<Target, { label: string; definition: string }> 
 
 export const STATUSES = ["published", "review", "rejected"] as const;
 export type Status = (typeof STATUSES)[number];
+
+/*
+ * Lanes, states and patch statuses: the lifecycle vocabulary. The rules that
+ * place a record in a lane and decide when it is live are data in
+ * lib/lifecycle.ts, rendered by the Methodology page and read by the collector.
+ */
+
+export const LANES = ["patch", "breach", "supply_chain", "research"] as const;
+export type Lane = (typeof LANES)[number];
+
+/** The lanes behind the live counters; research has its own tab and count. */
+export const ACTION_LANES = ["patch", "breach", "supply_chain"] as const;
+
+export const LANE_META: Record<Lane, { label: string; short: string; lede: string; definition: string; order: number; href: string }> = {
+  patch: {
+    label: "Patch now",
+    short: "Patch",
+    lede: "Flaws in software people run, and whether a fix exists yet.",
+    definition:
+      "A bug in software people run: exploited in the wild, rated critical with a fix or without, or a researcher's finding that ships without a fix.",
+    order: 0,
+    href: "/incidents?lane=patch",
+  },
+  breach: {
+    label: "Breaches & attacks",
+    short: "Breach",
+    lede: "Something happened to a named organisation or service. Nothing to patch; customers may need to rotate secrets.",
+    definition:
+      "An intrusion, breach, ransomware incident with confirmed impact, account takeover or fraud campaign against a named organisation, service or group of victims.",
+    order: 1,
+    href: "/incidents?lane=breach",
+  },
+  supply_chain: {
+    label: "Supply chain",
+    short: "Supply",
+    lede: "Malicious packages, hijacked releases, and compromised build systems, certificates or extensions.",
+    definition:
+      "A malicious package with reach, a hijacked release, or a compromised build system, signing certificate or extension.",
+    order: 2,
+    href: "/incidents?lane=supply_chain",
+  },
+  research: {
+    label: "Research",
+    short: "Research",
+    lede: "Proofs of concept and papers with no real-world exploitation.",
+    definition: "A demonstrated attack or vulnerability with no known real-world exploitation (severity 1), including papers.",
+    order: 3,
+    href: "/incidents?lane=research",
+  },
+};
+
+export const RECORD_STATES = ["live", "closed"] as const;
+export type RecordState = (typeof RECORD_STATES)[number];
+
+export const PATCH_STATUSES = ["unpatched", "partial", "patched", "no_fix_needed", "unknown"] as const;
+export type PatchStatus = (typeof PATCH_STATUSES)[number];
+
+export const PATCH_META: Record<PatchStatus, { label: string; glyph: string; tone: "live" | "partial" | "patched" | "dim"; order: number; definition: string }> = {
+  unpatched: { label: "No patch yet", glyph: "○", tone: "live", order: 0, definition: "No fixed release exists; mitigate or disable the affected feature." },
+  partial: { label: "Partly patched", glyph: "◐", tone: "partial", order: 1, definition: "Some versions or products have a fix, others are still waiting." },
+  patched: { label: "Patched", glyph: "●", tone: "patched", order: 2, definition: "A fixed release exists for everything affected; update and you are done." },
+  no_fix_needed: { label: "No fix needed", glyph: "—", tone: "dim", order: 3, definition: "Nothing to patch: a breach, an attack or a campaign rather than a flaw." },
+  unknown: { label: "Fix status unknown", glyph: "?", tone: "dim", order: 4, definition: "No source states whether a fix exists; check the linked advisory." },
+};
 
 export const ORIGINS = [
   "seed_aiid",
@@ -391,6 +486,11 @@ export const STANDARDS_BY_CATEGORY: Record<Category, StandardsRow> = {
     owasp: [],
     atlas: [],
     why: "No defined scope, so nothing to map.",
+  },
+  general: {
+    owasp: [],
+    atlas: [],
+    why: "No AI component, so neither AI framework applies.",
   },
 };
 

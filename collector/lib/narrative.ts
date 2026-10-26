@@ -54,7 +54,7 @@ export function allowedNumbers(numbers: BriefingNumbers, records: readonly Pick<
 
 const SAME_AS_BEFORE = /\b(unchanged|matching|steady|flat|same (as|number|count|level))\b/i;
 /** The site names itself in its own chrome; a narrative that does goes stale when the brand changes. */
-const SELF_NAME = /\bgcd\s*ai\s*radar\b|\bobservatory\b/i;
+const SELF_NAME = /\bgcd\s*(ai\s*)?radar\b|\bobservatory\b/i;
 const WRONG_PLURAL = /(?<![\d,.])\b1 (incidents|attacks|occurrences|listings|mentions|entries|vulnerabilities|sources|events|records|CVEs)\b/i;
 
 /**

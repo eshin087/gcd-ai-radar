@@ -102,7 +102,7 @@ export default async function SourcesPage() {
       </section>
 
       {/* the full attribution text, moved here from the footer, which links to this anchor */}
-      <section id="licences" className="glass scroll-mt-24 space-y-3 p-5 text-[13.5px] leading-relaxed text-soft">
+      <section id="licences" className="panel scroll-mt-24 space-y-3 p-5 text-[13.5px] leading-relaxed text-soft">
         <h2 className="text-[1.05rem] font-semibold tracking-tight text-ink">Licences and credits</h2>
         <p>
           {SITE.name} is a non-commercial reference site. It stores titles, links and its own two-sentence summaries, never article text, and links to original reporting.

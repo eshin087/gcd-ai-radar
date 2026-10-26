@@ -2,33 +2,39 @@
 
 /*
  * Design tokens. Mirrored in lib/palette.ts for charts and OG images.
- * gcd lineage: near-black ground, one amber accent, mono for data.
+ * gcd lineage: near-black ground, one amber accent, mono for data. Status
+ * colours (live, partial, patched, closed) are semantic and never the only
+ * carrier of a meaning: every status also has a glyph or a word.
  */
 @theme {
-  --color-ground: #05070d;
-  --color-panel: #0a0e19;
-  --color-panel-2: #0e1322;
-  --color-line: rgba(140, 160, 210, 0.22);
-  --color-line-soft: rgba(140, 160, 210, 0.1);
-  --color-ink: #e2e8f5;
-  --color-soft: #c3cbe0;
-  --color-dim: #8491ae;
-  --color-faint: #4b556e;
+  --color-ground: #07090e;
+  --color-panel: #0c0f16;
+  --color-panel-2: #11151f;
+  --color-line: rgba(160, 170, 195, 0.18);
+  --color-line-soft: rgba(160, 170, 195, 0.09);
+  --color-ink: #e8ebf2;
+  --color-soft: #c0c6d4;
+  --color-dim: #8a93a6;
+  --color-faint: #596278;
   --color-accent: #ffb35c;
   --color-accent-tint: rgba(255, 179, 92, 0.13);
   --color-type-on: #ffb35c;
   --color-type-by: #7fdcff;
-  --color-sev-1: #4b556e;
+  --color-sev-1: #6b7389;
   --color-sev-2: #7b9dff;
-  --color-sev-3: #ff9b6b;
-  --color-sev-4: #ff6b6b;
+  --color-sev-3: #ff9b3d;
+  --color-sev-4: #ff5c5c;
+  /* record state and patch status (lib/taxonomy.ts PATCH_META tones) */
+  --color-live: #ff5c5c;
+  --color-partial: #f2a83b;
+  --color-patched: #4cc38a;
+  --color-closed: #6b7389;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --font-display: var(--font-major-mono), var(--font-plex-mono), ui-monospace, monospace;
 
-  --tracking-label: 0.14em;
-  --radius-panel: 4px;
+  --tracking-label: 0.12em;
+  --radius-panel: 2px;
 }
 
 :root {
@@ -55,7 +61,7 @@ body {
     @apply border border-line bg-panel/70 rounded-[var(--radius-panel)];
   }
   .label {
-    @apply font-mono text-[11.5px] uppercase tracking-[var(--tracking-label)] text-dim;
+    @apply font-mono text-[12px] uppercase tracking-[var(--tracking-label)] text-dim;
   }
   .num {
     @apply font-mono tabular-nums;
@@ -115,101 +121,34 @@ body {
     transform: scale(3.2);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .brand-sweep,
-  .brand-blip,
-  .brand-ping {
-    animation: none;
+
+/* The live dot: a slow ring, the one other motion on the site besides the radar mark. */
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--color-live);
+  animation: live-ring 2.2s ease-out infinite;
+}
+@keyframes live-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-live) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px color-mix(in oklab, var(--color-live) 0%, transparent);
   }
 }
 
-/* The trend's large stat tiles (StatTile size="lg"): the whole tile is the
-   value's button, so it lights up on hover and shows the focus ring; the
-   trend's glow brightens with it, and its end dot pulses. */
-.glow-tile {
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-.glow-tile:hover {
-  border-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
-  box-shadow: 0 14px 40px -22px color-mix(in oklab, var(--color-accent) 55%, transparent);
-}
-.glow-tile:has(button:focus-visible) {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.glow-tile .glow-halo {
-  transition: stroke-opacity 0.25s ease;
-}
-.glow-tile:hover .glow-halo {
-  stroke-opacity: 0.95;
-}
-.glow-pulse {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: glow-pulse 2.4s ease-out infinite;
-}
-@keyframes glow-pulse {
-  from {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(3.4);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .glow-pulse {
-    animation: none;
-    opacity: 0;
-  }
-}
-
-/* ---------- Dashboard: motion, hero, drawer, ASCII text ---------- */
-.reveal {
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
-    filter 0.8s ease;
-}
-.reveal[data-armed="1"]:not([data-in]) {
-  opacity: 0;
-  transform: translateY(18px);
-  filter: blur(4px);
-}
-.grow-in {
-  transform-origin: left;
-  animation: grow-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-@keyframes grow-in {
-  from {
-    transform: scaleX(0);
-  }
-}
-.glass {
-  background: color-mix(in oklab, var(--color-panel) 72%, transparent);
-  border: 1px solid var(--color-line);
-  border-radius: 6px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.bracket::before {
-  content: "[ ";
-  color: var(--color-faint);
-}
-.bracket::after {
-  content: " ]";
-  color: var(--color-faint);
-}
+/* Section kickers on /trends ("01  THE TREND ———") */
 .divider {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-family: var(--font-plex-mono), monospace;
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-dim);
 }
@@ -218,100 +157,8 @@ body {
   flex: 1;
   border-top: 1px solid var(--color-line-soft);
 }
-.stars {
-  background-image:
-    radial-gradient(1px 1px at 12% 18%, rgba(226, 232, 245, 0.35), transparent 60%),
-    radial-gradient(1px 1px at 72% 34%, rgba(226, 232, 245, 0.25), transparent 60%),
-    radial-gradient(1px 1px at 38% 76%, rgba(226, 232, 245, 0.2), transparent 60%),
-    radial-gradient(1px 1px at 88% 82%, rgba(226, 232, 245, 0.25), transparent 60%),
-    radial-gradient(1px 1px at 56% 8%, rgba(226, 232, 245, 0.3), transparent 60%);
-}
 
-/* Hero: sticky, fades as the content covers it */
-.hero-fade {
-  --p: 0;
-  opacity: calc(1 - var(--p) * 1.1);
-  transform: translateY(calc(var(--p) * -56px)) scale(calc(1 - var(--p) * 0.045));
-  transform-origin: 50% 0;
-  /* no blur: a filter over the animated banner is redrawn every frame, too costly on slower machines */
-  will-change: opacity, transform;
-}
-.hero-field {
-  -webkit-mask-image: linear-gradient(90deg, transparent 28%, #000 58%), radial-gradient(ellipse 66% 100% at 72% 50%, #000 58%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(90deg, transparent 28%, #000 58%), radial-gradient(ellipse 66% 100% at 72% 50%, #000 58%, transparent 100%);
-  mask-composite: intersect;
-}
-@media (max-width: 1023px) {
-  .hero-field {
-    -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 50%, transparent 100%);
-    -webkit-mask-composite: source-over;
-    mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 50%, transparent 100%);
-    mask-composite: add;
-  }
-}
-.hero-cover::before {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: -32px;
-  height: 32px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--color-ground));
-}
-/* The hero's live marker: a red dot with a slow ring */
-.live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 9999px;
-  background: var(--color-sev-4);
-  animation: hero-live-ring 2.2s ease-out infinite;
-}
-@keyframes hero-live-ring {
-  0% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-sev-4) 55%, transparent);
-  }
-  70%,
-  100% {
-    box-shadow: 0 0 0 8px transparent;
-  }
-}
-/* Phones and tablets: the hero scrolls away like any block (no sticky, blur or scale) and ends in a short fade */
-@media (max-width: 1023px) {
-  .hero-fade {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    will-change: auto;
-  }
-  .hero-cover::before {
-    top: -40px;
-    height: 40px;
-  }
-}
-
-/* Chart markers that breathe: the average line's head and the peak (off under reduced motion) */
-.chart-pulse {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: chart-pulse 2.6s ease-in-out infinite;
-}
-.chart-pulse-slow {
-  animation-duration: 3.4s;
-}
-@keyframes chart-pulse {
-  0%,
-  100% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-
-/* The radar chart's one-turn sweep on arrival */
+/* The radar chart's one-turn sweep on arrival (components/charts/FamilyRadar.tsx) */
 @keyframes radar-sweep {
   from {
     transform: rotate(0deg);
@@ -329,12 +176,10 @@ body {
 /* Report drawer */
 .drawer-scrim {
   background: rgba(2, 4, 9, 0.58);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   animation: fade-in 0.2s ease both;
 }
 .drawer-panel {
-  animation: drawer-in 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: drawer-in 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @keyframes fade-in {
   from {
@@ -348,82 +193,13 @@ body {
   }
 }
 
-/* ASCII text forming (AsciiForm): each letter is a raster of tiny mono glyphs until it lands */
-.ascii-form [data-c] {
-  position: relative;
-}
-.ascii-form[data-forming] [data-c]:not([data-done]) {
-  color: transparent;
-}
-.ascii-form[data-forming] [data-c][data-g]::after {
-  content: attr(data-g);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: pre;
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-weight: 500;
-  font-size: var(--ascii-mf, 0.2em);
-  line-height: 1;
-  letter-spacing: 0;
-  color: var(--color-accent);
-  text-shadow: 0 0 6px color-mix(in oklab, var(--color-accent) 55%, transparent);
-}
-.ascii-form [data-c][data-done] {
-  animation: ascii-land 0.38s ease-out both;
-}
-@keyframes ascii-land {
-  from {
-    color: var(--color-accent);
-    text-shadow: 0 0 14px color-mix(in oklab, var(--color-accent) 75%, transparent);
-  }
-}
-
-/* Bars that grow when their Reveal arrives */
-.grow-x {
-  transform-origin: left;
-}
-.reveal[data-in] .grow-x {
-  animation: grow-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.reveal[data-armed="1"]:not([data-in]) .grow-x {
-  transform: scaleX(0);
-}
-
-/* Forming headings start hidden from first paint (app/page.tsx shows them without JS). */
-.ascii-form[data-pending] [data-c] {
-  color: transparent;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal[data-armed="1"]:not([data-in]) {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-  .hero-fade {
-    filter: none;
-    transform: none;
-  }
-  .live-dot {
-    animation: none;
-  }
-  .reveal[data-armed="1"]:not([data-in]) .grow-x {
-    transform: none;
-  }
-  .ascii-form[data-pending] [data-c] {
-    color: inherit;
-  }
-  .grow-in,
-  .grow-x,
-  .chart-pulse,
+  .brand-sweep,
+  .brand-blip,
+  .brand-ping,
+  .live-dot,
   .drawer-scrim,
-  .drawer-panel,
-  .ascii-form [data-c][data-done] {
+  .drawer-panel {
     animation: none !important;
   }
 }
@@ -470,9 +246,9 @@ body {
 .prose-sources th {
   text-align: left;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: var(--color-dim);
   font-weight: 400;
   padding: 0.5rem 0.75rem 0.5rem 0;
