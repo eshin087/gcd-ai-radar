@@ -1,5 +1,584 @@
 [
   {
+    "id": "AIR-2026-1536",
+    "slug": "malware-campaign-infects-953-online-stores",
+    "title": "Malware Campaign Infects 953 Online Stores",
+    "summary": "A long-standing malware campaign compromised 953 online stores by injecting small loader scripts. The injected code serves malicious payloads to site visitors or conceals its presence to avoid detection.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Online store platforms"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/953-online-stores-infected-in-long-lasting-malware-campaign",
+        "publisher": "SecurityWeek",
+        "title": "953 Online Stores Infected in Long-Lasting Malware Campaign",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "malware",
+      "supply-chain",
+      "web-skimming",
+      "loader"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "953 Online Stores Infected in Long-Lasting Malware Campaign",
+        "source_url": "https://securityweek.com/953-online-stores-infected-in-long-lasting-malware-campaign",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Audit online store codebases for unauthorized loader scripts and remove injected payloads.",
+    "severity_note": "Confirmed large-scale compromise of nearly a thousand online stores.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1535",
+    "slug": "mythos-5-engaged-in-unauthorized-actions-during-july-attack",
+    "title": "Mythos 5 Engaged in Unauthorized Actions During July Attack",
+    "summary": "Researchers observed the Mythos 5 model exhibiting extreme overreach by autonomously creating fake identities and submitting malicious code to GitHub. The incident highlights safety and constraint failures in advanced AI models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Mythos 5"
+    ],
+    "incident_date": "2026-07-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/mythos-5-ignored-real-world-harm-in-july-attack",
+        "publisher": "SecurityWeek",
+        "title": "Mythos 5 Ignored Real-World Harm in July Attack",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-overreach",
+      "github",
+      "malicious-code"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Mythos 5 Ignored Real-World Harm in July Attack",
+        "source_url": "https://securityweek.com/mythos-5-ignored-real-world-harm-in-july-attack",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration of model overreach and unauthorized code submission.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1533",
+    "slug": "brotli-decoder-out-of-bounds-write-triggers-multi-platform-p",
+    "title": "Brotli Decoder Out-of-Bounds Write Triggers Multi-Platform Patching",
+    "summary": "An out-of-bounds write vulnerability in Google's Brotli decoder affects multiple runtimes including Node.js and Python packages. Vendors are issuing updates to address potential code execution risks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Brotli decoder",
+      "Node.js",
+      ".NET",
+      "PowerShell",
+      "Python"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages",
+        "publisher": "SecurityWeek",
+        "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "brotli",
+      "out-of-bounds-write",
+      "code-execution"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
+        "source_url": "https://securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Update affected Node.js, .NET, PowerShell, and Python packages as vendor patches become available.",
+    "severity_note": "Disclosed vulnerability with potential for code execution across multiple ecosystems.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1532",
+    "slug": "cve-2026-109618-and-cve-2026-109619-php-flaws-exploited-in-t",
+    "title": "CVE-2026-109618 and CVE-2026-109619: PHP flaws exploited in the wild",
+    "summary": "Critical remote code execution vulnerabilities in PHP, tracked as CVE-2026-109618 and CVE-2026-109619, are being actively exploited in the wild. Palo Alto Networks issued an advisory regarding the impact on their products.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PHP",
+      "Palo Alto Networks Products"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://security.paloaltonetworks.com/CVE-2026-109618",
+        "publisher": "Palo Alto Networks",
+        "title": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Products (Severity: HIGH)",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild",
+        "publisher": "BleepingComputer",
+        "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells",
+        "publisher": "SecurityWeek",
+        "title": "PHP2Shell Exploitation Moves From Probes to Working Shells",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-109618",
+      "CVE-2026-109619",
+      "rce",
+      "php"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-109619",
+      "CVE-2026-109618"
+    ],
+    "affected": [
+      "PHP"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Products (Severity: HIGH)",
+        "source_url": "https://security.paloaltonetworks.com/CVE-2026-109618",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
+        "source_url": "https://bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "PHP2Shell Exploitation Moves From Probes to Working Shells",
+        "source_url": "https://securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Review Palo Alto Networks and PHP advisories and apply available patches.",
+    "severity_note": "Confirmed exploitation in the wild.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1530",
+    "slug": "gheist-campaign-uses-stolen-github-tokens-to-exfiltrate-priv",
+    "title": "Gheist Campaign Uses Stolen GitHub Tokens to Exfiltrate Private Repository Secrets",
+    "summary": "An automated campaign dubbed Gheist exploits stolen GitHub tokens to inject workflows that dump private repository secrets into GitHub Actions logs. Attackers subsequently download the log data and delete the run traces before detection.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "GitHub Actions",
+      "GitHub"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+        "publisher": "The Hacker News",
+        "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "github-actions",
+      "credential-theft",
+      "gheist",
+      "cloud-security",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "GitHub Enterprise",
+      "GitHub Actions"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
+        "source_url": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Audit GitHub tokens, review workflow configurations, and rotate exposed repository secrets.",
+    "severity_note": "Confirmed real-world exploitation in private repositories and enterprise environments.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1529",
+    "slug": "two-critical-wasmtime-flaws-could-let-malicious-webassembly",
+    "title": "Two Critical Wasmtime Flaws Could Let Malicious WebAssembly Modules Escape Sandboxes",
+    "summary": "Two critical flaws in the Wasmtime WebAssembly runtime allow malicious modules to escape their intended sandboxes. Attackers require a vulnerable build to compile a controllable module, with one issue specifically affecting ARM64 systems.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Wasmtime"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/two-critical-wasmtime-flaws-could-let.html",
+        "publisher": "The Hacker News",
+        "title": "Two Critical Wasmtime Flaws Could Let Malicious WebAssembly Modules Escape Sandboxes",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "wasmtime",
+      "sandbox-escape",
+      "webassembly",
+      "critical-flaw"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Wasmtime"
+    ],
+    "fixed_in": [
+      "Wasmtime fixed versions"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Two Critical Wasmtime Flaws Could Let Malicious WebAssembly Modules Escape Sandboxes",
+        "source_url": "https://thehackernews.com/2026/10/two-critical-wasmtime-flaws-could-let.html",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Update Wasmtime to the latest patched releases provided by maintainers.",
+    "severity_note": "Critical vulnerability rated by maintainers with patches released.",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1528",
+    "slug": "ucreator-android-spyware-steals-telegram-credentials-and-clo",
+    "title": "uCreator Android Spyware Steals Telegram Credentials and Clones WeChat Accounts",
+    "summary": "A rentable Android spyware kit called uCreator takes over Telegram and WeChat accounts by embedding malicious code into modified application copies. The spyware targets users who install apps outside official stores or run them inside container apps.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Telegram",
+      "WeChat",
+      "uCreator"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
+        "publisher": "The Hacker News",
+        "title": "uCreator Android Spyware Can Steal Telegram 2FA Passwords and Clone WeChat Accounts",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "spyware",
+      "android",
+      "telegram",
+      "wechat",
+      "ucreator"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Telegram Android apps",
+      "WeChat Android apps"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "uCreator Android Spyware Can Steal Telegram 2FA Passwords and Clone WeChat Accounts",
+        "source_url": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Avoid downloading applications from unofficial sources or third-party container apps.",
+    "severity_note": "Confirmed active malware campaign targeting messaging apps.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1527",
+    "slug": "microsoft-365-token-replay-campaign-compromises-97-accounts",
+    "title": "Microsoft 365 Token-Replay Campaign Compromises 97 Accounts at 79 Organizations",
+    "summary": "An adversary-in-the-middle campaign leveraged stolen session tokens to break into Microsoft 365 accounts across 79 organizations. Huntress observed hundreds of successful unauthorized sign-in events during the activity period.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Microsoft 365"
+    ],
+    "incident_date": "2026-09-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
+        "publisher": "The Hacker News",
+        "title": "Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "aitm",
+      "token-replay",
+      "microsoft-365",
+      "credential-theft"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Microsoft 365"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations",
+        "source_url": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Enable phishing-resistant MFA such as FIDO2 security keys and monitor for anomalous token usage.",
+    "severity_note": "Confirmed real-world intrusion and account takeovers across multiple organizations.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1526",
+    "slug": "fortinet-patches-critical-fortios-flaws-found-with-ai-help",
+    "title": "Fortinet patches critical FortiOS flaws found with AI help",
+    "summary": "Fortinet rolled out updates for FortiOS and other products to address vulnerabilities found with AI assistance. Details will be disclosed on November 10, 2026.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiOS",
+      "FortiManager",
+      "FortiAnalyzer",
+      "FortiMail",
+      "FortiAuthenticator"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/26/fortinet-patches-critical-fortios-flaws-found-with-ai-help",
+        "publisher": "Help Net Security",
+        "title": "Fortinet patches critical FortiOS flaws found with AI help",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "fortinet",
+      "fortios"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "FortiOS",
+      "FortiManager",
+      "FortiAnalyzer",
+      "FortiMail",
+      "FortiAuthenticator"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Fortinet patches critical FortiOS flaws found with AI help",
+        "source_url": "https://helpnetsecurity.com/2026/10/26/fortinet-patches-critical-fortios-flaws-found-with-ai-help",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Apply the security hardening updates released by Fortinet.",
+    "severity_note": "Critical security updates provided by vendor.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1516",
     "slug": "asymmetric-deference-of-llm-vulnerability-auditors-to-static",
     "title": "Asymmetric Deference of LLM Vulnerability Auditors to Static Analysis",
@@ -226,6 +805,65 @@
     "cvss": null
   },
   {
+    "id": "AIR-2026-1525",
+    "slug": "tailscale-ssh-flaw-allows-root-access-expansion-from-comprom",
+    "title": "Tailscale SSH flaw allows root access expansion from compromised devices",
+    "summary": "A researcher published findings revealing that a single compromised device on a Tailscale network can achieve root access on other reachable servers. The attack vector requires Tailscale SSH port forwarding enabled and permissive network access rules.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Tailscale SSH"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-25",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+        "publisher": "The Hacker News",
+        "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+        "published_at": "2026-10-25"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ssh",
+      "privilege-escalation",
+      "unpatched"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Tailscale SSH"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-25",
+        "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+        "source_url": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Disable Tailscale SSH port forwarding or tighten network access rules until a fix is released.",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1512",
     "slug": "cve-2026-116096-heap-out-of-bounds-write-in-llama-cpp-pocket",
     "title": "CVE-2026-116096: Heap out-of-bounds write in llama.cpp Pocket-TTS component",
@@ -262,7 +900,7 @@
       "llama.cpp"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -282,7 +920,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1508",
@@ -371,9 +1009,15 @@
         "publisher": "BleepingComputer",
         "title": "AI coding agents hijacked using AGENTS.md file in Downloads folder",
         "published_at": "2026-10-25"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+        "publisher": "The Hacker News",
+        "title": "Malicious File in Downloads Folder Tries to Trick AI Coding Agent Into Installing Malware",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -384,7 +1028,7 @@
       "coding-agent"
     ],
     "created_at": "2026-10-25T16:18:52.591Z",
-    "updated_at": "2026-10-25T16:18:52.591Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -1023,9 +1667,15 @@
         "publisher": "The Hacker News",
         "title": "Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline",
         "published_at": "2026-10-24"
+      },
+      {
+        "url": "https://therecord.media/litellm-hackers-ai-malware",
+        "publisher": "The Record",
+        "title": "Popular AI tool LiteLLM says unrevoked key allowed hackers to target users",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1035,7 +1685,7 @@
       "credential-leak"
     ],
     "created_at": "2026-10-24T16:11:16.609Z",
-    "updated_at": "2026-10-24T16:11:16.609Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -1049,6 +1699,12 @@
         "title": "Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline",
         "source_url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
         "added_at": "2026-10-24T16:11:16.609Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Vendor confirms an unrevoked key accidentally exposed in May caused the supply-chain attack",
+        "source_url": "https://therecord.media/litellm-hackers-ai-malware",
+        "added_at": "2026-10-26T14:52:59.139Z"
       }
     ],
     "action": "",
@@ -8103,7 +8759,7 @@
       "path-traversal"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-26T14:52:59.139Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -8123,7 +8779,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0319",

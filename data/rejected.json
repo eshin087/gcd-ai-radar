@@ -1,5 +1,85 @@
 [
   {
+    "key": "ff383fbf9caa4485",
+    "title": "Show HN: SecuBuzz – Factual 60-word cybersecurity briefs and CISA zero-day radar",
+    "url": "https://secubuzz.com/",
+    "publisher": "secubuzz.com",
+    "source_id": "hn",
+    "reason": "out of scope: Product launch and vendor feature announcement.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "af3d943f5e66fc66",
+    "title": "Synthetic identities leave US lenders with $2.4 billion in fraud exposure",
+    "url": "https://helpnetsecurity.com/2026/10/26/transunion-synthetic-identity-fraud-risks-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "c475b6f7b5f7b04d",
+    "title": "Anthropic details what stops Claude Duet from going rogue",
+    "url": "https://helpnetsecurity.com/2026/10/26/anthropic-claude-duet-security-safeguards",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launches and vendor feature announcements are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "185a06fbdafec4f5",
+    "title": "Forgotten AI agents may still access sensitive company data",
+    "url": "https://helpnetsecurity.com/2026/10/26/arrakis-dormant-ai-agent-risks-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "ecec92b3ad6f7b1e",
+    "title": "Security pros reckon the biggest AI risk comes with an employee badge",
+    "url": "https://helpnetsecurity.com/2026/10/26/ai-tools-security-worry-survey",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "49aedb62ce7d37a0",
+    "title": "Between alerts: What Attackers Do in the Spaces Ordinary Detection Misses",
+    "url": "https://thehackernews.com/2026/10/between-alerts-what-attackers-do-in.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: General opinion piece and SOC advice without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "88def4d53d9aa848",
+    "title": "10 Software Security Practices Built for the Next 250 Years",
+    "url": "https://darkreading.com/cyberattacks-data-breaches/10-software-security-practices-built-250-years",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: It is a general best practices article and opinion piece without a specific incident.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
+    "key": "20da7cee171a7ec3",
+    "title": "Kali Linux 2026.3 released with 6 new tools, desktop updates",
+    "url": "https://bleepingcomputer.com/news/linux/kali-linux-20263-released-with-6-new-tools-desktop-updates",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: It is a product release announcement for an operating system.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-26T14:52:59.139Z"
+  },
+  {
     "key": "330dedec80bd1be5",
     "title": "Cisco Advance Notification for Publication of October 21, 2026, Security Advisories",
     "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-notice-QGwHnJ6k?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Advance+Notification+for+Publication+of+October+21%2C+2026%2C+Security+Advisories%26vs_k%3D1",
