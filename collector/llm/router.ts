@@ -61,19 +61,29 @@ interface Slot {
   recent: number[];
 }
 
+/** Builds the client for a provider; tests inject a fake through the router's last constructor argument. */
+export type ClientFactory = (cfg: ProviderConfig, apiKey: string) => LlmClient;
+
+export const defaultClientFactory: ClientFactory = (cfg, apiKey) =>
+  cfg.kind === "gemini" ? geminiClient(cfg, apiKey) : cfg.kind === "groq" ? groqClient(cfg, apiKey) : openaiCompatibleClient(cfg, apiKey);
+
 export class LlmRouter {
   private slots: Slot[] = [];
   readonly usage: UsageByModel = {};
 
-  constructor(providers: ProviderConfig[], usedToday: Record<string, number>, env: NodeJS.ProcessEnv = process.env) {
+  constructor(
+    providers: ProviderConfig[],
+    usedToday: Record<string, number>,
+    env: NodeJS.ProcessEnv = process.env,
+    makeClient: ClientFactory = defaultClientFactory,
+  ) {
     for (const cfg of providers) {
       const apiKey = env[cfg.env];
       if (!apiKey) {
         log.warn(`provider ${cfg.id}: ${cfg.env} is not set, skipping`);
         continue;
       }
-      const client =
-        cfg.kind === "gemini" ? geminiClient(cfg, apiKey) : cfg.kind === "groq" ? groqClient(cfg, apiKey) : openaiCompatibleClient(cfg, apiKey);
+      const client = makeClient(cfg, apiKey);
       this.slots.push({ cfg, client, usedToday: usedToday[usageKey(cfg)] ?? 0, dead: false, failures: 0, recent: [] });
     }
   }
@@ -131,12 +141,11 @@ export class LlmRouter {
       if (!this.canUse(s)) continue;
       await this.throttle(s);
       s.usedToday += 1;
+      let res;
       try {
-        const res = await s.client.completeJson(req);
-        this.record(s, res.usage);
-        s.failures = 0;
-        return { parsed: extractJson(res.text), provider: s.cfg.id, model: res.model };
+        res = await s.client.completeJson(req);
       } catch (err) {
+        // A failed call still counts against the daily quota (zero tokens).
         this.record(s, { prompt_tokens: 0, completion_tokens: 0 });
         if (err instanceof LlmUnavailable) {
           s.failures += 1;
@@ -150,6 +159,10 @@ export class LlmRouter {
         }
         throw err;
       }
+      // One call, one tally: the parse runs outside the try so a non-JSON reply is not counted a second time.
+      this.record(s, res.usage);
+      s.failures = 0;
+      return { parsed: extractJson(res.text), provider: s.cfg.id, model: res.model };
     }
     throw new NoProviderAvailable(errors.length ? errors.join(" | ") : "no LLM provider configured");
   }

@@ -31,14 +31,16 @@ function v4Octets(ip: string): [number, number, number, number] | null {
 function isPublicV4(ip: string): boolean {
   const o = v4Octets(ip);
   if (!o) return false;
-  const [a, b] = o;
+  const [a, b, c] = o;
   if (a === 0 || a === 10 || a === 127) return false; // this network, private, loopback
   if (a === 100 && b >= 64 && b <= 127) return false; // carrier-grade NAT
   if (a === 169 && b === 254) return false; // link-local, cloud metadata
   if (a === 172 && b >= 16 && b <= 31) return false; // private
-  if (a === 192 && (b === 0 || b === 168)) return false; // IETF protocol assignments, TEST-NET-1, private
-  if (a === 198 && (b === 18 || b === 19 || b === 51)) return false; // benchmarking, TEST-NET-2
-  if (a === 203 && b === 0) return false; // TEST-NET-3
+  if (a === 192 && b === 0 && (c === 0 || c === 2)) return false; // 192.0.0.0/24 IETF protocol assignments, 192.0.2.0/24 TEST-NET-1
+  if (a === 192 && b === 168) return false; // private
+  if (a === 198 && (b === 18 || b === 19)) return false; // 198.18.0.0/15 benchmarking
+  if (a === 198 && b === 51 && c === 100) return false; // 198.51.100.0/24 TEST-NET-2
+  if (a === 203 && b === 0 && c === 113) return false; // 203.0.113.0/24 TEST-NET-3
   if (a >= 224) return false; // multicast and reserved
   return true;
 }
