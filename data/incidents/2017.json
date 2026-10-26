@@ -36,6 +36,24 @@
       "adversarial-evasion"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2017-09-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2017-09-13",
+        "title": "Hackers Break Apple Face ID",
+        "source_url": "https://incidentdatabase.ai/cite/26",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   }
 ]

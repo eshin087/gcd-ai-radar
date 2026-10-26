@@ -34,7 +34,25 @@
       "voice_cloning"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2024-01-12",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-29",
+        "title": "Alleged Deepfake of Singapore Prime Minister Lee Hsien Loong Promotes Cryptocurrency Scam in Fake Interview",
+        "source_url": "https://incidentdatabase.ai/cite/985",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0082",
@@ -79,7 +97,33 @@
       "ssrf"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-12-21",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-51449"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-21",
+        "title": "CVE-2023-51449: Gradio makes the `/file` secure against file traversal and server-side request forgery attacks",
+        "source_url": "https://github.com/advisories/GHSA-6qm2-wpxq-7qh2",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-12-22",
+        "title": "CVE-2023-51449: Gradio is an open-source Python package that allows you to quickly build a demo or web application for your machine learning…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-51449",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0080",
@@ -117,7 +161,27 @@
       "deserialization"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-12-20",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-7018"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-20",
+        "title": "CVE-2023-7018: transformers has a Deserialization of Untrusted Data vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-v68g-wm8c-6x7j",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0078",
@@ -156,7 +220,27 @@
       "deserialization"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-12-19",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-6730"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-19",
+        "title": "CVE-2023-6730: transformers has a Deserialization of Untrusted Data vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-3863-2447-669p",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0076",
@@ -200,7 +284,33 @@
       "information-disclosure"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-12-14",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-6572"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-14",
+        "title": "CVE-2023-6572: Gradio Exposure of Sensitive Information to an Unauthorized Actor vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-gqvf-3hgp-5hxv",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-12-14",
+        "title": "CVE-2023-6572: Command Injection in GitHub repository gradio-app/gradio prior to main.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6572",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0031",
@@ -238,7 +348,25 @@
       "impersonation"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-12-25",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-11",
+        "title": "Alleged Deepfake of Singapore Deputy Prime Minister Lawrence Wong Falsely Shows Him Endorsing Commercial Products",
+        "source_url": "https://incidentdatabase.ai/cite/987",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0026",
@@ -283,7 +411,25 @@
       "phishing"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-12-15",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-01",
+        "title": "Underground Market for LLMs Powers Malware and Phishing Scams",
+        "source_url": "https://incidentdatabase.ai/cite/736",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0025",
@@ -322,7 +468,25 @@
       "supply_chain"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-12-15",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-12-01",
+        "title": "Purportedly Hallucinated Software Packages with Potential Malware Reportedly Downloaded Thousands of Times by Developers",
+        "source_url": "https://incidentdatabase.ai/cite/731",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2025-0049",
@@ -393,7 +557,57 @@
       "CVE-2023-48022"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2025-03-28",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-48022"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-11-28",
+        "title": "CVE-2023-48022: Ray has arbitrary code execution via jobs submission API",
+        "source_url": "https://github.com/advisories/GHSA-6wgj-66m2-xxp2",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2025-03-14",
+        "title": "ShadowRay: Hijacking Exposed Ray Clusters",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0023",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2025-03-14",
+        "title": "Anyscale Update on CVEs",
+        "source_url": "https://anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2025-03-14",
+        "title": "CVE-2023-48022",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2025-03-14",
+        "title": "ShadowRay: First Known Attack Campaign Targeting AI Workloads Actively Exploited In The Wild",
+        "source_url": "https://oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2025-03-14",
+        "title": "ShadowRay: AI Infrastructure Is Being Exploited In the Wild",
+        "source_url": "https://protectai.com/threat-research/shadowray-ai-infrastructure-is-being-exploited-in-the-wild",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0004",
@@ -441,7 +655,31 @@
       "huggingface"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-11-13",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-30",
+        "title": "PoisonGPT",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0019",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-10-30",
+        "title": "PoisonGPT: How we hid a lobotomized LLM on Hugging Face to spread fake news",
+        "source_url": "https://blog.mithrilsecurity.io/poisongpt-how-we-hid-a-lobotomized-llm-on-hugging-face-to-spread-fake-news",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0003",
@@ -487,7 +725,31 @@
       "chatgpt"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-11-13",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-30",
+        "title": "ChatGPT Conversation Exfiltration",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0021",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-10-30",
+        "title": "ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery",
+        "source_url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0002",
@@ -533,7 +795,31 @@
       "data_exfiltration"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-11-13",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-30",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0020",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-10-30",
+        "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+        "source_url": "https://greshake.github.io/",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0088",
@@ -572,7 +858,27 @@
       "local-file-read"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-10-22",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-46315"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-22",
+        "title": "CVE-2023-46315: The zanllp sd-webui-infinite-image-browsing (aka Infinite Image Browsing) extension before 977815a for stable-diffusion-webui…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46315",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0065",
@@ -612,7 +918,27 @@
       "sql-injection"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-10-21",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-32785"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-21",
+        "title": "CVE-2023-32785: Langchain SQL Injection vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-8h5w-f6q9-wg35",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0087",
@@ -651,7 +977,27 @@
       "ssrf"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-10-20",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-32786"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-20",
+        "title": "CVE-2023-32786: In Langchain through 0.0.155, prompt injection allows an attacker to force the service to retrieve data from an arbitrary URL,…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32786",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0033",
@@ -691,7 +1037,25 @@
       "fraud"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-11-03",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-20",
+        "title": "Reported Use of AI Voice and Identity Manipulation in the Ongoing 'Phantom Hacker' Fraud Scheme",
+        "source_url": "https://incidentdatabase.ai/cite/1280",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0064",
@@ -736,7 +1100,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-10-19",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-46229"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-19",
+        "title": "CVE-2023-46229: LangChain Server Side Request Forgery vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-655w-fm8m-m478",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-10-19",
+        "title": "CVE-2023-46229: LangChain before 0.0.317 allows SSRF via document_loaders/recursive_url_loader.py because crawling can proceed from an external…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46229",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0063",
@@ -781,7 +1171,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-10-09",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-44467"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-09",
+        "title": "CVE-2023-44467: langchain_experimental vulnerable to arbitrary code execution via PALChain in the python exec method",
+        "source_url": "https://github.com/advisories/GHSA-gjjr-63x4-v8cq",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-10-09",
+        "title": "CVE-2023-44467: langchain_experimental (aka LangChain Experimental) in LangChain before 0.0.306 allows an attacker to bypass the CVE-2023-36258…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44467",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0034",
@@ -821,7 +1237,25 @@
       "elon-musk"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-10-15",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-10-01",
+        "title": "Ottawa Couple Reportedly Loses CA$177,023 After Purported Deepfake Elon Musk Investment Scam",
+        "source_url": "https://incidentdatabase.ai/cite/1276",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0086",
@@ -859,7 +1293,27 @@
       "arbitrary-file-upload"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-09-15",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-41626"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-09-15",
+        "title": "CVE-2023-41626: Gradio v3.27.0 was discovered to contain an arbitrary file upload vulnerability via the /upload interface.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41626",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0062",
@@ -906,7 +1360,33 @@
       "numexpr"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-09-01",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-39631"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-09-01",
+        "title": "CVE-2023-39631: Langchain vulnerable to arbitrary code execution via the evaluate function in the numexpr library",
+        "source_url": "https://github.com/advisories/GHSA-f73w-4m7g-ch9x",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-09-01",
+        "title": "CVE-2023-39631: An issue in LanChain-ai Langchain v.0.0.245 allows a remote attacker to execute arbitrary code via the evaluate function in the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-39631",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0023",
@@ -947,7 +1427,25 @@
       "banking-scam"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-09-13",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-30",
+        "title": "Voice deepfake targets bank in failed transfer scam",
+        "source_url": "https://incidentdatabase.ai/cite/564",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0085",
@@ -986,7 +1484,27 @@
       "buffer-overflow"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-38975"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-29",
+        "title": "CVE-2023-38975: * Buffer Overflow vulnerability in qdrant v.1.3.2 allows a remote attacker cause a denial of service via the chucnked_vectors.rs…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38975",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0024",
@@ -1029,7 +1547,25 @@
       "cloud-breach"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-09-10",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-27",
+        "title": "Deepfake Voice Exploit Compromises Retool's Cloud Services",
+        "source_url": "https://incidentdatabase.ai/cite/567",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0061",
@@ -1074,7 +1610,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-22",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-36281"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-22",
+        "title": "CVE-2023-36281: langchain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-7gfq-f96f-g85j",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-08-22",
+        "title": "CVE-2023-36281: An issue in langchain v.0.0.171 allows a remote attacker to execute arbitrary code via a JSON file to load_prompt.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36281",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0084",
@@ -1113,7 +1675,27 @@
       "dos"
     ],
     "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-21",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-38976"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-21",
+        "title": "CVE-2023-38976: An issue in weaviate v.1.20.0 allows a remote attacker to cause a denial of service via the handleUnbatchedGraphQLRequest…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38976",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0027",
@@ -1152,7 +1734,25 @@
       "voice-cloning"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-09-03",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-20",
+        "title": "Campaign Featuring Purported AI-Generated Audio Attributed to Omar al-Bashir Spreads During Sudanese Conflict",
+        "source_url": "https://incidentdatabase.ai/cite/1087",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0060",
@@ -1197,7 +1797,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-15",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-38860"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-38860: LangChain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-fj32-q626-pjjc",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-38860: An issue in LangChain v.0.0.231 allows a remote attacker to execute arbitrary code via the prompt parameter.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38860",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0059",
@@ -1235,7 +1861,27 @@
       "rce"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-15",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-39662"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-39662: llama-index vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-2xxc-73fv-36f7",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0058",
@@ -1279,7 +1925,33 @@
       "rce"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-15",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-39659"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-39659: LangChain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-prgp-w7vf-ch62",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-39659: An issue in langchain langchain-ai v.0.0.232 and before allows a remote attacker to execute arbitrary code via a crafted script…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-39659",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0057",
@@ -1323,7 +1995,33 @@
       "rce"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-15",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-38896"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-38896: LangChain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-92j5-3459-qgp4",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-08-15",
+        "title": "CVE-2023-38896: An issue in Harrison Chase langchain v.0.0.194 and before allows a remote attacker to execute arbitrary code via the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38896",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0056",
@@ -1367,7 +2065,33 @@
       "code-injection"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-08-05",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-36095"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-08-05",
+        "title": "CVE-2023-36095: langchain Code Injection vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-gwqq-6vq7-5j86",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-08-05",
+        "title": "CVE-2023-36095: An issue in Harrison Chase langchain v.0.0.194 allows an attacker to execute arbitrary code via the python exec calls in the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36095",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0053",
@@ -1412,7 +2136,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-07-06",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-36188"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-07-06",
+        "title": "CVE-2023-36188: langchain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-57fc-8q82-gfp3",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-07-06",
+        "title": "CVE-2023-36188: An issue in langchain v.0.0.64 allows a remote attacker to execute arbitrary code via the PALChain parameter in the Python exec…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36188",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0052",
@@ -1457,7 +2207,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-07-06",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-36189"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-07-06",
+        "title": "CVE-2023-36189: langchain SQL Injection vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-7q94-qpjr-xpgm",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-07-06",
+        "title": "CVE-2023-36189: SQL injection vulnerability in langchain before v0.0.247 allows a remote attacker to obtain sensitive information via the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36189",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0051",
@@ -1502,7 +2278,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-07-03",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-36258"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-07-03",
+        "title": "CVE-2023-36258: langchain arbitrary code execution vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-2qmj-7962-cjq8",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-07-03",
+        "title": "CVE-2023-36258: An issue in LangChain before 0.0.236 allows an attacker to execute arbitrary code because Python code with os.system, exec, or…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36258",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0019",
@@ -1542,7 +2344,25 @@
       "credentials-exposure"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-07-06",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-06-22",
+        "title": "Reported Accidental Exposure of 38TB of Data by Microsoft's AI Research Team",
+        "source_url": "https://incidentdatabase.ai/cite/571",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0050",
@@ -1587,7 +2407,33 @@
       "langchain"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-06-20",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-34541"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-06-20",
+        "title": "CVE-2023-34541: Langchain vulnerable to arbitrary code execution",
+        "source_url": "https://github.com/advisories/GHSA-6643-h7h5-x9wh",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-06-20",
+        "title": "CVE-2023-34541: Langchain 0.0.171 is vulnerable to Arbitrary code execution in load_prompt.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34541",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0049",
@@ -1631,7 +2477,33 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-06-14",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-34540"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-06-14",
+        "title": "CVE-2023-34540: Langchain OS Command Injection vulnerability",
+        "source_url": "https://github.com/advisories/GHSA-x32c-59v5-h7fg",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-06-14",
+        "title": "CVE-2023-34540: Langchain before v0.0.225 was discovered to contain a remote code execution (RCE) vulnerability in the component JiraAPIWrapper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34540",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0048",
@@ -1675,7 +2547,33 @@
       "arbitrary-file-read"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-06-08",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-34239"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-06-08",
+        "title": "CVE-2023-34239: Gradio is an open-source Python library that is used to build machine learning and data science.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34239",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-06-09",
+        "title": "CVE-2023-34239: Gradio vulnerable to arbitrary file read and proxying of arbitrary URLs",
+        "source_url": "https://github.com/advisories/GHSA-3qqg-pgqq-3695",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0047",
@@ -1713,7 +2611,27 @@
       "insecure-temporary-file"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z"
+    "updated_at": "2026-10-18T07:00:14.101Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-05-18",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-2800"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-05-18",
+        "title": "CVE-2023-2800: transformers has Insecure Temporary File",
+        "source_url": "https://github.com/advisories/GHSA-282v-666c-3fvg",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0032",
@@ -1751,7 +2669,25 @@
       "voice-cloning"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-29",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-04-15",
+        "title": "Chinese Businessman Reportedly Defrauded of 4.3 Million Yuan by AI-Generated Deepfake Impersonating Friend",
+        "source_url": "https://incidentdatabase.ai/cite/992",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0020",
@@ -1790,7 +2726,25 @@
       "criminal_activity"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-28",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-04-14",
+        "title": "Quebec Man Sentenced for Having Used Deepfake Technology to Create Synthetic Child Pornography",
+        "source_url": "https://incidentdatabase.ai/cite/604",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0041",
@@ -1836,7 +2790,33 @@
       "code-injection"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-04-05",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-29374"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-04-05",
+        "title": "CVE-2023-29374: LangChain vulnerable to code injection",
+        "source_url": "https://github.com/advisories/GHSA-fprp-p869-w6q2",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-04-05",
+        "title": "CVE-2023-29374: In LangChain through 0.0.131, the LLMMathChain chain allows prompt injection attacks that can execute arbitrary code via the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-29374",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0022",
@@ -1875,7 +2855,25 @@
       "extortion"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-15",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-04-01",
+        "title": "FBI Reported Surge of Extortion Cases of AI Media Featuring Sexual Explicit Activities",
+        "source_url": "https://incidentdatabase.ai/cite/551",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0018",
@@ -1933,7 +2931,43 @@
       "bypass"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V004: Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V004.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Bypassing Cylance's AI Malware Detection",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0003",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+        "source_url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Statement's from Skylight Cyber CEO",
+        "source_url": "https://security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0017",
@@ -1978,7 +3012,31 @@
       "edge-ai"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V011: The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V011.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Microsoft Edge AI Evasion",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0011",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0016",
@@ -2024,7 +3082,31 @@
       "avid"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V010: The Microsoft AI Red Team performed a red team exercise on an internal Azure service with the intention of disrupting its service.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V010.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Microsoft Azure Service Disruption",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0010",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0015",
@@ -2070,7 +3152,31 @@
       "avid"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V012: MITRE's AI Red Team demonstrated a physical-domain evasion attack on a commercial face identification service with the intention of inducing a targeted misclassification.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V012.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Face Identification System Evasion via Physical Countermeasures",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0012",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0014",
@@ -2123,7 +3229,37 @@
       "avid"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V005: This type of camera hijack attack can evade the traditional live facial recognition authentication model and enable access to privileged systems and victim impersonation.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V005.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Camera Hijack Attack on Facial Recognition System",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0004",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Faces are the next target for fraudsters",
+        "source_url": "https://wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0013",
@@ -2180,7 +3316,43 @@
       "botnet"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V002: The Palo Alto Networks Security AI research team was able to bypass a Convolutional Neural Network based botnet Domain Generation Algorithm (DGA) detector using a generic domain name mutation technique.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V002.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0001",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+        "source_url": "https://faculty.washington.edu/mdecock/papers/byu2018a.pdf",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Degas source code",
+        "source_url": "https://github.com/matthoffman/degas",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0012",
@@ -2233,7 +3405,37 @@
       "mobile_apps"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V013: Deep learning models are increasingly used in mobile applications as critical components.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V013.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Backdoor Attack on Deep Learning Models in Mobile Apps",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0013",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "DeepPayload: Black-box Backdoor Attack on Deep Learning Models through Neural Payload Injection",
+        "source_url": "https://arxiv.org/abs/2101.06896",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0011",
@@ -2284,7 +3486,37 @@
       "research"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V014: Cloud storage and computations have become popular platforms for deploying ML malware detectors.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V014.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Confusing Antimalware Neural Networks",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0014",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Article, \"How to confuse antimalware neural networks. Adversarial attacks and protection\"",
+        "source_url": "https://securelist.com/how-to-confuse-antimalware-neural-networks-adversarial-attacks-and-protection/102949",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0010",
@@ -2341,7 +3573,43 @@
       "pypi"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "supply_chain",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V015: Linux packages for PyTorch's pre-release version, called Pytorch-nightly, were compromised from December 25 to 30, 2022 by a malicious binary uploaded to the Python Package Index (PyPI) code repository.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V015.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Compromised PyTorch Dependency Chain",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0015",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "PyTorch statement on compromised dependency",
+        "source_url": "https://pytorch.org/blog/compromised-nightly-dependency",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Analysis by BleepingComputer",
+        "source_url": "https://bleepingcomputer.com/news/security/pytorch-discloses-malicious-dependency-chain-compromise-over-holidays",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0009",
@@ -2404,7 +3672,49 @@
       "misconfiguration"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V007: Clearview AI makes a facial recognition tool that searches publicly available photos for matches.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V007.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "ClearviewAI Misconfiguration",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0006",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
+        "source_url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
+        "source_url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
+        "source_url": "https://nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0008",
@@ -2471,7 +3781,49 @@
       "translation"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V006: Machine translation services (such as Google Translate, Bing Translator, and Systran Translate) provide public-facing UIs and APIs.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V006.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0005",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
+        "source_url": "https://arxiv.org/abs/2004.15015",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
+        "source_url": "https://ericswallace.com/imitation",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Google under fire for mistranslating Chinese amid Hong Kong protests",
+        "source_url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0007",
@@ -2521,7 +3873,37 @@
       "malware-detection"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-14",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V001: The Palo Alto Networks Security AI research team tested a deep learning model for malware command and control (C&C) traffic detection in HTTP traffic.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V001.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Evasion of Deep Learning Detector for Malware C&C Traffic",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0000",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
+        "source_url": "https://arxiv.org/abs/1802.03162",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0005",
@@ -2582,7 +3964,43 @@
       "langchain"
     ],
     "created_at": "2026-10-18T06:56:23.100Z",
-    "updated_at": "2026-10-18T06:56:23.100Z"
+    "updated_at": "2026-10-18T06:56:23.100Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-04-09",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-26",
+        "title": "AVID-2023-R0003: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/reports/2023/AVID-2023-R0003.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-26",
+        "title": "InjectGPT: the most polite exploit ever",
+        "source_url": "https://blog.luitjes.it/posts/injectgpt-most-polite-exploit-ever",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-26",
+        "title": "Reddit thread on InjectGPT",
+        "source_url": "https://reddit.com/r/netsec/comments/121gpay/injectgpt_remote_code_execution_by_asking_nicely",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      },
+      {
+        "date": "2023-03-31",
+        "title": "AVID-2023-V028: Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature.",
+        "source_url": "https://github.com/avidml/avid-db/blob/main/vulnerabilities/2023/AVID-2023-V028.json",
+        "added_at": "2026-10-18T06:56:23.100Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0030",
@@ -2621,7 +4039,25 @@
       "privacy"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-04-03",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-20",
+        "title": "ChatGPT Reportedly Exposed Users' Private Data Reportedly Due to Bug",
+        "source_url": "https://incidentdatabase.ai/cite/516",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0035",
@@ -2662,7 +4098,25 @@
       "source-code"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-03-25",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-11",
+        "title": "ChatGPT Reportedly Implicated in Samsung Data Leak of Source Code and Meeting Notes",
+        "source_url": "https://incidentdatabase.ai/cite/768",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0001",
@@ -2727,7 +4181,49 @@
       "code_execution"
     ],
     "created_at": "2026-10-18T06:55:08.239Z",
-    "updated_at": "2026-10-18T06:55:08.239Z"
+    "updated_at": "2026-10-18T06:55:08.239Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-03-15",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-03-01",
+        "title": "Achieving Code Execution in MathGPT via Prompt Injection",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0016",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-03-01",
+        "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+        "source_url": "https://arxiv.org/abs/2103.03874",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-03-01",
+        "title": "Training Verifiers to Solve Math Word Problems",
+        "source_url": "https://arxiv.org/abs/2110.14168",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-03-01",
+        "title": "Reverse Prompt Engineering for Fun and (no) Profit",
+        "source_url": "https://lspace.swyx.io/p/reverse-prompt-eng",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      },
+      {
+        "date": "2023-03-01",
+        "title": "Exploring prompt-based attacks",
+        "source_url": "https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks",
+        "added_at": "2026-10-18T06:55:08.239Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0037",
@@ -2772,7 +4268,33 @@
       "information-disclosure"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T10:04:21.885Z"
+    "updated_at": "2026-10-18T10:04:21.885Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2023-02-23",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2023-25823"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-02-23",
+        "title": "CVE-2023-25823: Update share links to use FRP instead of SSH tunneling",
+        "source_url": "https://github.com/advisories/GHSA-3x5j-9vwr-8rr5",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2023-02-23",
+        "title": "CVE-2023-25823: Gradio is an open-source Python library to build machine learning and data science demos and web applications.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25823",
+        "added_at": "2026-10-18T07:00:14.101Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0028",
@@ -2812,7 +4334,25 @@
       "authentication-bypass"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2023-03-08",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-02-22",
+        "title": "UK Bank's Voice ID Successfully Bypassed Using AI-Produced Audio",
+        "source_url": "https://incidentdatabase.ai/cite/485",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2023-0021",
@@ -2853,6 +4393,24 @@
       "bing_chat"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z"
+    "updated_at": "2026-10-18T06:59:35.797Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2023-02-22",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2023-02-08",
+        "title": "Bing Chat's Initial Prompts Revealed by Early Testers Through Prompt Injection",
+        "source_url": "https://incidentdatabase.ai/cite/473",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   }
 ]
