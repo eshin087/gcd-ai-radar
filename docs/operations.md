@@ -17,7 +17,7 @@ npm run briefing -- --week=2026-W42 --weeks=8 --force --no-commit   # backfill o
 npx tsx scripts/shard-incidents.ts   # rebuild data/incidents/<year>.json from a pre-shard data/incidents.json
 ```
 
-The collector runs every 6 hours on GitHub Actions and commits new data to `main`, which redeploys the site. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD, GitHub Advisories) are backfilled from 2016.
+The collector runs hourly on GitHub Actions and commits new data to `main`, which redeploys the site; a run that changed only bookkeeping files (the run ledger, the seen and pending lists, `collector-state.json`) commits with `[no site change]` in the subject and Vercel skips that build (`ignoreCommand` in `vercel.json`). Sources keep their own cadence (every run, every six hours, daily, weekly, monthly); `data/collector-state.json` remembers when each last succeeded, so a monthly source stays due on time however short the run ledger is kept. The historical seeds (AI Incident Database, MITRE ATLAS, AVID, NVD, GitHub Advisories) are backfilled from 2016.
 
 ## Secrets and variables (GitHub Actions)
 

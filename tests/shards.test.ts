@@ -33,7 +33,7 @@ function incident(id: string, first_reported: string, extra: Partial<Incident> =
 }
 
 function state(incidents: Incident[]): State {
-  return { incidents, review: [], rejected: [], pending: [], seen: {}, runs: [] };
+  return { incidents, review: [], rejected: [], pending: [], seen: {}, runs: [], collector: { sources: {}, cve_lookups: {} } };
 }
 
 const FIXTURE = [
@@ -82,7 +82,7 @@ describe("state shards", () => {
 
   it("writes one file per year and reads them back in order", async () => {
     const changed = await saveState(state(FIXTURE), dir);
-    expect(changed).toEqual(["incidents/2024.json", "incidents/2025.json", "incidents/2026.json", "review-queue.json", "rejected.json", "pending.json", "seen.json", "runs.json"]);
+    expect(changed).toEqual(["incidents/2024.json", "incidents/2025.json", "incidents/2026.json", "review-queue.json", "rejected.json", "pending.json", "seen.json", "runs.json", "collector-state.json"]);
     const loaded = await loadState(dir);
     expect(loaded.incidents.map((i) => i.id)).toEqual(["AIR-2026-0002", "AIR-2026-0001", "AIR-2025-0002", "AIR-2025-0001", "AIR-2024-0001"]);
     expect(await incidentFiles(dir)).toEqual({ layout: "shards", files: ["incidents/2024.json", "incidents/2025.json", "incidents/2026.json"] });

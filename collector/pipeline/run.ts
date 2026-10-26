@@ -4,7 +4,7 @@ import { loadConfig, type SourceConfig } from "../lib/config";
 import { HttpError } from "../lib/http";
 import { addDays, makeIdAllocator, nowIso, uniqueSlug } from "../lib/ids";
 import { errorMessage, log } from "../lib/log";
-import { allIds, allSlugs, loadState, saveState, type RejectedRecord, type State } from "../lib/state";
+import { allIds, allSlugs, loadState, pruneCollectorState, saveState, type RejectedRecord, type State } from "../lib/state";
 import { callsToday, LlmRouter } from "../llm/router";
 import { ADAPTERS } from "../sources/index";
 import type { Candidate, SourceContext } from "../sources/types";
@@ -22,6 +22,7 @@ import {
 } from "./dedupe";
 import { decide } from "./decide";
 import { enrichHints } from "./enrich";
+import { enrichVersions } from "./ghsa-lookup";
 import { prefilter } from "./prefilter";
 import { closeRecords } from "./close";
 import { buildIncident, mergeSource } from "./publish";
@@ -50,12 +51,18 @@ export interface RunSummary {
 /** Hours since the last success before a scheduled source is read again (a little under the nominal period so an hourly cron hits it). */
 export const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, six_hourly: 5.5, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
 
-function lastSuccessBySource(state: State): Map<string, string> {
+/**
+ * When each source last succeeded: collector-state.json, which outlives the
+ * run ledger; a source the file does not know yet (the file is new, or the
+ * source is) falls back to scanning the kept runs, once.
+ */
+export function lastSuccessBySource(state: Pick<State, "runs" | "collector">): Map<string, string> {
   const out = new Map<string, string>();
   for (const run of state.runs) {
     if (run.mode === "dry-run") continue;
     for (const s of run.sources) if (s.ok && (!out.has(s.id) || out.get(s.id)! < run.finished_at)) out.set(s.id, run.finished_at);
   }
+  for (const [id, v] of Object.entries(state.collector.sources)) if (!out.has(id) || out.get(id)! < v.last_success_at) out.set(id, v.last_success_at);
   return out;
 }
 
@@ -130,6 +137,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
           const items = await adapter.fetch(src, ctx);
           fetched.push(...items);
           record.sources.push({ id: src.id, ok: true, items: items.length, duration_ms: Date.now() - t0 });
+          if (opts.mode !== "dry-run") state.collector.sources[src.id] = { last_success_at: new Date().toISOString() };
           log.info(`${src.id}: ${items.length} candidates`);
         } catch (err) {
           record.sources.push({
@@ -366,6 +374,13 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   record.counts.review = review.length;
   record.counts.rejected = rejected.length;
 
+  // 9b. Version data for live patch and supply-chain records that carry a CVE and no fixed version yet (GitHub Advisory Database, by CVE id)
+  if (!opts.sourceIds || opts.sourceIds.includes("ghsa")) {
+    const lookups = await enrichVersions(state.incidents, state.collector, settings, stamp);
+    record.errors.push(...lookups.errors);
+    if (lookups.looked_up) log.info(`ghsa lookups: ${lookups.looked_up} CVE(s) asked, ${lookups.enriched.length} record(s) given version data`, { ids: lookups.enriched.slice(0, 10) });
+  }
+
   // 10. Pending: unresolved same-incident checks + unclassified clusters
   const pending = uniqueByKey([...same.unresolved.map((c) => c.candidate), ...cls.pending.flatMap((cl) => cl.members)]);
   state.pending = pending;
@@ -375,6 +390,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   // 11. Retention
   const cutoff = addDays(stamp.slice(0, 10), -settings.retention.rejected_days);
   state.rejected = state.rejected.filter((r) => r.rejected_at.slice(0, 10) >= cutoff);
+  state.collector = pruneCollectorState(state.collector, stamp);
 
   // 11b. Closer: live records whose window has passed are closed on disk.
   const closed = closeRecords(state.incidents, stamp);

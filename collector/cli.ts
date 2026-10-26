@@ -2,14 +2,14 @@ import { existsSync, readFileSync } from "node:fs";
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
 import { briefingCommitMessage, briefingMarkdown, readBriefings, runBriefing } from "./briefing";
-import { commitAndPush } from "./git";
+import { commitAndPush, NO_SITE_CHANGE } from "./git";
 import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
-import { loadState } from "./lib/state";
+import { BOOKKEEPING_FILES, loadState } from "./lib/state";
 import { cveClashes } from "./pipeline/dedupe";
 import { classificationStalled, runSummaryMarkdown } from "./pipeline/health";
 import { runCollector, type RunOptions } from "./pipeline/run";
-import type { RunRecord } from "../lib/schema";
+import type { Incident, RunRecord } from "../lib/schema";
 import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
 
@@ -59,10 +59,41 @@ function parseArgs(argv: string[]): Args {
   return { command: positional.shift() ?? "run", positional, flags };
 }
 
-/** The data commit's subject: what the run changed. */
-export function runCommitMessage(record: RunRecord): string {
+/**
+ * The data commit's subject: what the run changed. When only bookkeeping
+ * files changed (the run ledger, seen and pending lists, collector state) the
+ * site is the same and the subject ends with the marker vercel.json's
+ * ignoreCommand looks for, so no build is spent on it.
+ */
+export function runCommitMessage(record: RunRecord, changedFiles: string[] = [], radarChanged = false): string {
   const c = record.counts;
-  return `data: run ${record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged, ${c.updated ?? 0} updated, ${c.closed ?? 0} closed)`;
+  const base = `data: run ${record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged, ${c.updated ?? 0} updated, ${c.closed ?? 0} closed)`;
+  return siteUnchanged(changedFiles, radarChanged) ? `${base} ${NO_SITE_CHANGE}` : base;
+}
+
+/** True when every changed file is bookkeeping (and the radar sidebar data did not change). */
+export function siteUnchanged(changedFiles: string[], radarChanged: boolean): boolean {
+  return !radarChanged && changedFiles.length > 0 && changedFiles.every((f) => BOOKKEEPING_FILES.has(f));
+}
+
+/** `npm run validate`: the checks beyond the schemas, as messages. */
+export function validateLifecycle(incidents: Incident[]): string[] {
+  const problems: string[] = [];
+  for (const i of incidents) {
+    if (i.timeline) {
+      for (let k = 1; k < i.timeline.length; k++) {
+        const a = i.timeline[k - 1]!;
+        const b = i.timeline[k]!;
+        if (a.date > b.date || (a.date === b.date && a.added_at > b.added_at)) {
+          problems.push(`${i.id}: timeline is not sorted at entry ${k}`);
+          break;
+        }
+      }
+    }
+    if (i.state === "closed" && !i.closed_at) problems.push(`${i.id}: closed without closed_at`);
+    if (i.state === "live" && i.closed_at) problems.push(`${i.id}: live with closed_at`);
+  }
+  return problems;
 }
 
 function summarize(summary: Awaited<ReturnType<typeof runCollector>>) {
@@ -102,7 +133,8 @@ async function main() {
       const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
       let unpushed = false;
       if (commit && (summary.changedFiles.length || radarChanged)) {
-        const result = await commitAndPush(runCommitMessage(summary.record));
+        const quiet = siteUnchanged(summary.changedFiles, radarChanged);
+        const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, radarChanged), { deploy: !quiet });
         unpushed = result.committed && !result.pushed;
       }
       // Health: a job summary on Actions, and a failed job (owner gets an email) when classification
@@ -143,6 +175,14 @@ async function main() {
         process.exitCode = 1;
         return;
       }
+      const lifecycle = validateLifecycle([...state.incidents, ...state.review]);
+      if (lifecycle.length) {
+        log.error(`${lifecycle.length} lifecycle problem(s)`, { problems: lifecycle.slice(0, 20) });
+        process.exitCode = 1;
+        return;
+      }
+      const withLane = state.incidents.filter((i) => i.lane !== undefined).length;
+      const live = state.incidents.filter((i) => i.state === "live").length;
       const briefings = await readBriefings();
       log.info("config and data files are valid", {
         incidents: state.incidents.length,
@@ -152,6 +192,9 @@ async function main() {
         seen: Object.keys(state.seen).length,
         runs: state.runs.length,
         briefings: briefings.length,
+        with_lane: withLane,
+        live,
+        sources_remembered: Object.keys(state.collector.sources).length,
       });
       return;
     }

@@ -2,8 +2,10 @@ name: collect
 
 on:
   schedule:
-    # Every 6 hours, off the hour to avoid GitHub's top-of-the-hour queue delays.
-    - cron: "17 */6 * * *"
+    # Hourly, off the hour to avoid GitHub's top-of-the-hour queue delays. Sources keep their own
+    # cadence (every_run, six_hourly, daily, weekly, monthly in collector/config/sources.json);
+    # a run that changes only bookkeeping files commits with "[no site change]" and skips the deploy.
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

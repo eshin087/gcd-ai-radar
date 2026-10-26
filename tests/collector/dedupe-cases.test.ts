@@ -55,7 +55,7 @@ function record(partial: Partial<Incident> & { id: string; title: string; source
 }
 
 function state(incidents: Incident[]): State {
-  return { incidents, review: [], rejected: [], pending: [], seen: {}, runs: [] };
+  return { incidents, review: [], rejected: [], pending: [], seen: {}, runs: [], collector: { sources: {}, cve_lookups: {} } };
 }
 
 function subject(c: ReturnType<typeof candidate>, products: string[], lane: ProductSubject["lane"], incident_date: string): ProductSubject {

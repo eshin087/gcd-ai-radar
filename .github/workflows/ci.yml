@@ -3,6 +3,8 @@ name: ci
 on:
   push:
     branches: [main]
+    # the collector's hourly commits touch data/ only, which saveState validates before writing; no build to re-check
+    paths-ignore: ["data/**"]
   pull_request:
 
 concurrency:

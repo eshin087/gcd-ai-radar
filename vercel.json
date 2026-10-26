@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "node -e \"process.exit(/\\[no site change\\]/.test(process.env.VERCEL_GIT_COMMIT_MESSAGE || '') ? 0 : 1)\"",
   "headers": [
     {
       "source": "/((?!embed$).*)",

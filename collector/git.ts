@@ -16,12 +16,16 @@ export interface CommitResult {
   sha?: string;
 }
 
+/** Appended to the commit subject when only bookkeeping files changed; vercel.json's ignoreCommand skips the build on it. */
+export const NO_SITE_CHANGE = "[no site change]";
+
 /**
  * Stages the data directory, commits as the configured identity (the repo
  * owner's, so Vercel's Hobby plan deploys the push) and pushes with a
- * rebase-and-retry loop. Never force-pushes. Pings the deploy hook if set.
+ * rebase-and-retry loop. Never force-pushes. Pings the deploy hook if set,
+ * unless `deploy: false` (a bookkeeping-only commit the site need not rebuild for).
  */
-export async function commitAndPush(message: string, opts: { push?: boolean } = {}): Promise<CommitResult> {
+export async function commitAndPush(message: string, opts: { push?: boolean; deploy?: boolean } = {}): Promise<CommitResult> {
   await git(["add", "--", "data"]);
   try {
     await git(["diff", "--cached", "--quiet"]);
@@ -52,7 +56,8 @@ export async function commitAndPush(message: string, opts: { push?: boolean } = 
     try {
       await git(["push", "origin", `HEAD:${branch}`]);
       log.info("git: pushed", { branch, attempt });
-      await pingDeployHook();
+      if (opts.deploy !== false) await pingDeployHook();
+      else log.info("git: bookkeeping-only commit, deploy hook not pinged");
       return { committed: true, pushed: true, sha };
     } catch (err) {
       log.warn(`git: push failed (attempt ${attempt})`, { error: errorMessage(err).slice(0, 200) });

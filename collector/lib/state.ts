@@ -14,7 +14,10 @@ import { PendingFileSchema, type Candidate } from "../sources/types";
  * Published incidents are sharded by year of first_reported
  * (data/incidents/<year>.json, lib/shards.ts); a run that publishes into the
  * current year rewrites that one shard. The review queue and the other
- * bookkeeping files stay single files.
+ * bookkeeping files stay single files. collector-state.json remembers what
+ * the run ledger (runs.json, trimmed to retention.runs_keep) cannot: when
+ * each source last succeeded, so a monthly source is still due on time, and
+ * which CVE ids were already looked up in the GitHub Advisory Database.
  */
 
 export const DATA_DIR = path.join(process.cwd(), "data");
@@ -38,6 +41,21 @@ export const SeenEntrySchema = z.object({
 });
 export type SeenEntry = z.infer<typeof SeenEntrySchema>;
 
+export const CollectorStateSchema = z.object({
+  /** Last successful fetch per source id. */
+  sources: z.record(z.string(), z.object({ last_success_at: z.iso.datetime() })),
+  /** GitHub Advisory Database lookups by CVE id: when, and whether an advisory existed. */
+  cve_lookups: z.record(z.string(), z.object({ at: z.iso.datetime(), found: z.boolean() })),
+});
+export type CollectorState = z.infer<typeof CollectorStateSchema>;
+
+/** Lookups older than this are forgotten; a CVE is asked again if it still matters. */
+export const CVE_LOOKUP_KEEP_DAYS = 60;
+
+export function emptyCollectorState(): CollectorState {
+  return { sources: {}, cve_lookups: {} };
+}
+
 const RejectedFileSchema = z.array(RejectedRecordSchema);
 const SeenFileSchema = z.record(z.string(), SeenEntrySchema);
 
@@ -48,16 +66,21 @@ export interface State {
   pending: Candidate[];
   seen: Record<string, SeenEntry>;
   runs: RunRecord[];
+  collector: CollectorState;
 }
 
 /** The single-file parts of the state (incidents are sharded, see lib/shards.ts). */
-const FILES = {
+export const FILES = {
   review: "review-queue.json",
   rejected: "rejected.json",
   pending: "pending.json",
   seen: "seen.json",
   runs: "runs.json",
+  collector: "collector-state.json",
 } as const;
+
+/** Files whose change alone does not change the site: a commit touching only these carries the [no site change] marker. */
+export const BOOKKEEPING_FILES: ReadonlySet<string> = new Set([FILES.runs, FILES.seen, FILES.pending, FILES.rejected, FILES.collector]);
 
 async function readJsonFile<T>(dataDir: string, file: string, schema: ZodType<T>, fallback: T): Promise<T> {
   let raw: string;
@@ -72,19 +95,32 @@ async function readJsonFile<T>(dataDir: string, file: string, schema: ZodType<T>
 }
 
 export async function loadState(dataDir = DATA_DIR): Promise<State> {
-  const [{ incidents }, review, rejected, pending, seen, runs] = await Promise.all([
+  const [{ incidents }, review, rejected, pending, seen, runs, collector] = await Promise.all([
     readIncidents(dataDir),
     readJsonFile(dataDir, FILES.review, IncidentsFileSchema, []),
     readJsonFile(dataDir, FILES.rejected, RejectedFileSchema, []),
     readJsonFile(dataDir, FILES.pending, PendingFileSchema, []),
     readJsonFile(dataDir, FILES.seen, SeenFileSchema, {}),
     readJsonFile(dataDir, FILES.runs, RunsFileSchema, []),
+    readJsonFile(dataDir, FILES.collector, CollectorStateSchema, emptyCollectorState()),
   ]);
-  return { incidents, review, rejected, pending, seen, runs };
+  return { incidents, review, rejected, pending, seen, runs, collector };
 }
 
 function byReportedDesc(a: Incident, b: Incident): number {
   return b.first_reported.localeCompare(a.first_reported) || b.id.localeCompare(a.id);
+}
+
+function sortedRecord<T>(rec: Record<string, T>): Record<string, T> {
+  return Object.fromEntries(Object.entries(rec).sort(([a], [b]) => a.localeCompare(b)));
+}
+
+/** Drops CVE lookups older than CVE_LOOKUP_KEEP_DAYS. */
+export function pruneCollectorState(c: CollectorState, now: string): CollectorState {
+  const cutoff = Date.parse(now) - CVE_LOOKUP_KEEP_DAYS * 86_400_000;
+  const cve_lookups: CollectorState["cve_lookups"] = {};
+  for (const [cve, v] of Object.entries(c.cve_lookups)) if (Date.parse(v.at) >= cutoff) cve_lookups[cve] = v;
+  return { sources: c.sources, cve_lookups };
 }
 
 /**
@@ -93,13 +129,14 @@ function byReportedDesc(a: Incident, b: Incident): number {
  * year first.
  */
 export function serialize(state: State): Map<string, string> {
-  const sortedSeen = Object.fromEntries(Object.entries(state.seen).sort(([a], [b]) => a.localeCompare(b)));
+  const sortedSeen = sortedRecord(state.seen);
   const out = serializeShards(state.incidents);
   out.set(FILES.review, JSON.stringify([...state.review].sort(byReportedDesc), null, 2) + "\n");
   out.set(FILES.rejected, JSON.stringify([...state.rejected].sort((a, b) => b.rejected_at.localeCompare(a.rejected_at)), null, 2) + "\n");
   out.set(FILES.pending, JSON.stringify([...state.pending].sort((a, b) => a.discovered_at.localeCompare(b.discovered_at)), null, 2) + "\n");
   out.set(FILES.seen, JSON.stringify(sortedSeen, null, 1) + "\n");
   out.set(FILES.runs, JSON.stringify([...state.runs].sort((a, b) => a.started_at.localeCompare(b.started_at)), null, 2) + "\n");
+  out.set(FILES.collector, JSON.stringify({ sources: sortedRecord(state.collector.sources), cve_lookups: sortedRecord(state.collector.cve_lookups) }, null, 1) + "\n");
   return out;
 }
 
@@ -132,6 +169,7 @@ export async function saveState(state: State, dataDir = DATA_DIR): Promise<strin
   PendingFileSchema.parse(state.pending);
   SeenFileSchema.parse(state.seen);
   RunsFileSchema.parse(state.runs);
+  CollectorStateSchema.parse(state.collector);
 
   const out = serialize(state);
   const changed: string[] = [];

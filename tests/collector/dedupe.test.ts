@@ -52,7 +52,7 @@ function incident(partial: Partial<Incident> & { id: string; title: string }): I
 }
 
 function state(partial: Partial<State> = {}): State {
-  return { incidents: [], review: [], rejected: [], pending: [], seen: {}, runs: [], ...partial };
+  return { incidents: [], review: [], rejected: [], pending: [], seen: {}, runs: [], collector: { sources: {}, cve_lookups: {} }, ...partial };
 }
 
 describe("dedupe", () => {
