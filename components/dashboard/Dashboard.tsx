@@ -748,7 +748,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 <div className="glass min-w-0 space-y-4 p-4 sm:p-5">
                   <PanelHead title="The flow" note="Ribbon width is the count. The right column counts target mentions, so an incident naming two targets is in both." />
                   <FlowSankey
-                    types={m.types}
+                    types={m.types.filter((t) => t.count > 0)}
                     families={famShown.map((f) => ({ key: f, count: famTotals[f] }))}
                     targets={m.targets.filter((t) => t.count > 0)}
                     typeFam={m.typeFam}

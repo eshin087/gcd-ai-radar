@@ -24,6 +24,8 @@ export const UI = {
 export const TYPE_COLORS: Record<IncidentType, string> = {
   attack_on_ai: "#c48225",
   ai_enabled_attack: "#32a0c5",
+  // No AI role: a neutral slate; it never appears in a chart (the AI lens keeps it out), only on badges.
+  not_ai: "#6b7389",
 };
 
 /** One-hue amber ramp, darker to brighter with severity (ordinal checks pass). */

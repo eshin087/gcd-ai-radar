@@ -26,7 +26,7 @@ import type { Briefing, Incident } from "../lib/schema";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { ATLAS_RELEASE, CATEGORY_META, OWASP_LLM_EDITION, SEVERITY_META, TYPE_META, atlasFor, owaspFor } from "../lib/taxonomy";
-import { isDisclosedIncident, recordKind } from "../lib/counting";
+import { aiLens, isDisclosedIncident, recordKind } from "../lib/counting";
 import { CSV_COLUMNS, csvCell } from "../lib/csv";
 import { compactRow } from "../lib/rows";
 import { buildSearchIndex } from "../lib/search";
@@ -166,7 +166,8 @@ async function main() {
     yearIndex.unshift({ year, records: records.length, incidents: records.length - disclosed, disclosed, file: `/data/years/${year}.json` });
     await Promise.all([
       fs.writeFile(path.join(yearsDir, `${year}.json`), JSON.stringify(records, null, 1) + "\n"),
-      fs.writeFile(path.join(rowsDir, `${year}.json`), JSON.stringify(records.map(compactRow)) + "\n"),
+      // the dashboard's drawers list AI records only (lib/counting.ts aiLens), like the aggregates they open from
+      fs.writeFile(path.join(rowsDir, `${year}.json`), JSON.stringify(aiLens(records).map(compactRow)) + "\n"),
       fs.writeFile(path.join(slimDir, `${year}.json`), JSON.stringify(records.map(slim)) + "\n"),
     ]);
   }
@@ -227,8 +228,10 @@ async function main() {
   await fs.writeFile(path.join(PUBLIC, "briefing.xml"), briefingRss(briefings, base));
 
   const t0 = Date.now();
+  // the chart images draw the AI series (lib/counting.ts aiLens)
+  const aiCounted = aiLens(counted);
   const written = await renderOgImages(
-    { incidents: counted, disclosed: sorted.length - counted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
+    { incidents: aiCounted, disclosed: aiLens(sorted).length - aiCounted.length, now: new Date(), siteHost: base.replace(/^https?:\/\//, "") },
     path.join(PUBLIC, "og"),
   );
   console.log(

@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { FAMILIES } from "./families";
 import {
+  AI_TYPES,
   CATEGORIES,
   DATE_PRECISIONS,
   INCIDENT_TYPES,
@@ -182,7 +183,8 @@ export const BriefingNumbersSchema = z.object({
     incidents: count,
     real_world: count,
     disclosed_vulnerabilities: count,
-    by_type: z.record(z.enum(INCIDENT_TYPES), count),
+    /** The briefing is the AI week: counts by the two AI types only (lib/counting.ts aiLens). */
+    by_type: z.record(z.enum(AI_TYPES), count),
     by_family: z.record(z.enum(FAMILIES), count),
     by_severity: z.record(z.enum(["1", "2", "3", "4"]), count),
   }),

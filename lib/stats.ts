@@ -87,11 +87,16 @@ export interface MonthlyPoint {
   bySeverity: Record<Severity, number>;
 }
 
+/** A zero count for every type, in taxonomy order. */
+export function emptyByType(): Record<IncidentType, number> {
+  return Object.fromEntries(INCIDENT_TYPES.map((t) => [t, 0])) as Record<IncidentType, number>;
+}
+
 function emptyPoint(month: string): MonthlyPoint {
   return {
     month,
     total: 0,
-    byType: Object.fromEntries(INCIDENT_TYPES.map((t) => [t, 0])) as Record<IncidentType, number>,
+    byType: emptyByType(),
     byCategory: Object.fromEntries(CATEGORIES.map((c) => [c, 0])) as Record<Category, number>,
     bySeverity: Object.fromEntries(SEVERITIES.map((s) => [s, 0])) as Record<Severity, number>,
   };

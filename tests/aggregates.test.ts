@@ -1,6 +1,7 @@
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { BASES, DATE_FIELDS, WINDOW_KEYS, buildAggregates, deriveView, shardsFor, type Aggregates, type WindowKey } from "@/lib/aggregates";
+import { aiLens } from "@/lib/counting";
 import { FAMILIES, familyOf, type Family } from "@/lib/families";
 import { compactRow, inBasis, type Basis, type CompactRow } from "@/lib/rows";
 import { headlinePicks, selectRows, selectionMonths, type Selection } from "@/lib/selection";
@@ -78,7 +79,8 @@ const FIXTURES: CompactRow[] = [
 
 async function liveRows(): Promise<CompactRow[]> {
   const { incidents } = await readIncidents(path.join(process.cwd(), "data"));
-  return incidents.filter((i) => i.status === "published").map(compactRow);
+  // the dashboard counts AI records only, so the parity check runs on the same lens (lib/dashboard.ts, scripts/prebuild.ts rows)
+  return aiLens(incidents.filter((i) => i.status === "published")).map(compactRow);
 }
 
 function spanOf(rows: CompactRow[]) {

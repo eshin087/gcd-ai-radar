@@ -1,4 +1,5 @@
 import { buildAggregates, type Aggregates } from "./aggregates";
+import { aiLens } from "./counting";
 import { lastUpdated, loadIncidents, loadRadar } from "./data";
 import { compactRow, type Basis, type CompactRow } from "./rows";
 import type { Radar } from "./schema";
@@ -27,7 +28,9 @@ export interface DashboardData {
 }
 
 export async function getDashboardData(): Promise<DashboardData> {
-  const [{ incidents }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
+  const [{ incidents: all }, radar, updated] = await Promise.all([loadIncidents(), loadRadar(), lastUpdated()]);
+  // The dashboard counts AI records only (lib/counting.ts aiLens): records with no AI role never reach its aggregates or drawers.
+  const incidents = aiLens(all);
   const now = new Date();
   const range = yearRange(incidents);
   const earliest = Math.max(range?.min ?? now.getUTCFullYear(), 2016);

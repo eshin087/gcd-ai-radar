@@ -1,4 +1,4 @@
-import { isDisclosedIncident } from "./counting";
+import { aiLens, isDisclosedIncident } from "./counting";
 import type { Incident } from "./schema";
 import { SITE } from "./site";
 import { headline, isRealWorld, monthlySeries, shiftMonth, toMonthKey, type StatRecord } from "./stats";
@@ -51,6 +51,9 @@ export interface Summary {
   last_collector_run: string | null;
   date_basis: "incident_date";
   counting_rule: string;
+  /** Every number here counts AI records only (lib/counting.ts aiLens). */
+  scope: "ai";
+  scope_note: string;
   totals: {
     records: number;
     incidents: number;
@@ -73,6 +76,9 @@ export interface Summary {
 export const COUNTING_RULE_NOTE =
   "CVEs and advisories with no confirmed exploitation are disclosed vulnerabilities, not incidents; see /methodology#cves";
 
+export const AI_LENS_NOTE =
+  "Counts AI records only (type attack_on_ai or ai_enabled_attack); records with no AI role are in the live lanes and the archive, never here; see /methodology#counting";
+
 export interface SummaryOptions {
   now: Date;
   site: string;
@@ -86,9 +92,11 @@ function sum(values: number[]): number {
 export function buildSummary(records: readonly SummaryRecord[], opts: SummaryOptions): Summary {
   const now = opts.now;
   const month = toMonthKey(now);
-  const counted = records.filter((r) => !isDisclosedIncident(r));
+  // The AI lens: records with no AI role never enter summary.json, so its numbers keep their meaning.
+  const ai = aiLens(records);
+  const counted = ai.filter((r) => !isDisclosedIncident(r));
   const real = counted.filter(isRealWorld);
-  const disclosed = records.filter((r) => isDisclosedIncident(r));
+  const disclosed = ai.filter((r) => isDisclosedIncident(r));
 
   const h = headline(counted, { now });
 
@@ -131,8 +139,10 @@ export function buildSummary(records: readonly SummaryRecord[], opts: SummaryOpt
     last_collector_run: opts.lastUpdated,
     date_basis: "incident_date",
     counting_rule: COUNTING_RULE_NOTE,
+    scope: "ai",
+    scope_note: AI_LENS_NOTE,
     totals: {
-      records: records.length,
+      records: ai.length,
       incidents: counted.length,
       real_world: h.realWorld,
       disclosed_vulnerabilities: disclosed.length,

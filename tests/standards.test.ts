@@ -92,6 +92,7 @@ describe("the mapping table", () => {
     expect(STANDARDS_BY_CATEGORY.deepfake_fraud.owasp).toEqual([]);
     expect(STANDARDS_BY_CATEGORY.ai_assisted_intrusion).toMatchObject({ owasp: [], atlas: [] });
     expect(STANDARDS_BY_CATEGORY.other).toMatchObject({ owasp: [], atlas: [] });
+    expect(STANDARDS_BY_CATEGORY.general).toMatchObject({ owasp: [], atlas: [] });
     expect(STANDARDS_BY_CATEGORY.infra_vuln.atlas).toEqual([]);
     expect(STANDARDS_BY_CATEGORY.data_poisoning.atlas).toEqual([]);
   });

@@ -2,7 +2,8 @@ import { isDisclosedIncident } from "./counting";
 import { FAMILIES, familyOf, type Family } from "./families";
 import type { Briefing, BriefingIncident, BriefingNumbers, Incident } from "./schema";
 import { isRealWorld, pctChange, primaryCategory } from "./stats";
-import { INCIDENT_TYPES, SEVERITIES, TARGETS, type IncidentType, type Severity, type Target } from "./taxonomy";
+import { aiLens } from "./counting";
+import { AI_TYPES, SEVERITIES, TARGETS, type AiType, type Severity, type Target } from "./taxonomy";
 
 /**
  * The weekly briefing's arithmetic: ISO weeks, which records belong to a
@@ -194,10 +195,12 @@ export const NOTABLE_COUNT = 5;
 export function briefingNumbers(all: readonly Incident[], week: string): BriefingNumbers {
   const { start, end } = isoWeekRange(week);
   const previousWeek = shiftIsoWeek(week, -1);
-  const thisWeek = weekRecords(all, week);
+  // The briefing is the AI week: records with no AI role never enter its counts (lib/counting.ts aiLens).
+  const ai = aiLens(all);
+  const thisWeek = weekRecords(ai, week);
   const { incidents, disclosed } = splitWeek(thisWeek);
   const now = countWeek(thisWeek);
-  const before = countWeek(weekRecords(all, previousWeek));
+  const before = countWeek(weekRecords(ai, previousWeek));
   return {
     week,
     start,
@@ -207,7 +210,7 @@ export function briefingNumbers(all: readonly Incident[], week: string): Briefin
       incidents: now.incidents,
       real_world: now.real_world,
       disclosed_vulnerabilities: disclosed.length,
-      by_type: Object.fromEntries(INCIDENT_TYPES.map((t) => [t, incidents.filter((i) => i.type === t).length])) as Record<IncidentType, number>,
+      by_type: Object.fromEntries(AI_TYPES.map((t) => [t, incidents.filter((i) => i.type === t).length])) as Record<AiType, number>,
       by_family: familyCounts(incidents),
       by_severity: Object.fromEntries(SEVERITIES.map((s) => [String(s), incidents.filter((i) => i.severity === s).length])) as Record<`${Severity}`, number>,
     },
@@ -221,6 +224,11 @@ export function briefingNumbers(all: readonly Incident[], week: string): Briefin
     top_targets: topTargets(incidents),
     notable: rankNotable(incidents).slice(0, NOTABLE_COUNT).map(briefingIncident),
   };
+}
+
+/** The records a briefing describes: the AI records first reported in the week, the same set briefingNumbers counts. */
+export function briefingRecords(all: readonly Incident[], week: string): Incident[] {
+  return weekRecords(aiLens(all), week);
 }
 
 /** One line of numbers, the same everywhere the briefing is summarised (list page, RSS, job summary). */

@@ -3,6 +3,7 @@ import type { Incident } from "@/lib/schema";
 import {
   addTrend,
   categoryDistribution,
+  emptyByType,
   headline,
   monthRange,
   monthlySeries,
@@ -71,7 +72,7 @@ describe("addTrend", () => {
     const series = monthRange("2026-01", "2026-05").map((month, i) => ({
       month,
       total: i + 1,
-      byType: { attack_on_ai: 0, ai_enabled_attack: 0 },
+      byType: emptyByType(),
       byCategory: {} as never,
       bySeverity: {} as never,
     }));

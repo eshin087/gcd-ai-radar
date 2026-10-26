@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CATEGORIES, DATE_PRECISIONS, INCIDENT_TYPES, TARGETS } from "../../lib/taxonomy";
+import { AI_CATEGORIES, AI_TYPES, DATE_PRECISIONS, TARGETS } from "../../lib/taxonomy";
 
 /**
  * Strict output contracts for the two LLM tasks. Each has a JSON Schema (sent
@@ -12,8 +12,9 @@ export const ClassificationItemSchema = z.object({
   index: z.number().int().min(0),
   in_scope: z.boolean(),
   scope_reason: z.string().max(300),
-  type: z.enum(INCIDENT_TYPES),
-  categories: z.array(z.enum(CATEGORIES)).min(1).max(4),
+  // The classifier still answers for AI records only; the general lanes (type not_ai, category general) arrive with the lane contract.
+  type: z.enum(AI_TYPES),
+  categories: z.array(z.enum(AI_CATEGORIES)).min(1).max(4),
   severity: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
   targets: z.array(z.enum(TARGETS)).min(1).max(6),
   products: z.array(z.string().max(80)).max(10),
@@ -52,8 +53,8 @@ export const CLASSIFICATION_JSON_SCHEMA = strictObject({
       index: { type: "integer" },
       in_scope: { type: "boolean" },
       scope_reason: { type: "string" },
-      type: { type: "string", enum: [...INCIDENT_TYPES] },
-      categories: { type: "array", items: { type: "string", enum: [...CATEGORIES] } },
+      type: { type: "string", enum: [...AI_TYPES] },
+      categories: { type: "array", items: { type: "string", enum: [...AI_CATEGORIES] } },
       severity: { type: "integer", enum: [1, 2, 3, 4] },
       targets: { type: "array", items: { type: "string", enum: [...TARGETS] } },
       products: { type: "array", items: { type: "string" } },

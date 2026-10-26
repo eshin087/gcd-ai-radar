@@ -7,8 +7,23 @@
  * labels) and the Methodology page (definitions rendered verbatim).
  */
 
-export const INCIDENT_TYPES = ["attack_on_ai", "ai_enabled_attack"] as const;
+export const INCIDENT_TYPES = ["attack_on_ai", "ai_enabled_attack", "not_ai"] as const;
 export type IncidentType = (typeof INCIDENT_TYPES)[number];
+
+/**
+ * The AI lens: the two types every AI count is made of. Every chart on
+ * /trends, the weekly briefing, summary.json, the embed card and the OG
+ * images count these records only (lib/counting.ts aiLens), so each number
+ * keeps the meaning it had when the site tracked AI incidents alone. A
+ * `not_ai` record lives in the live lanes, the archive, the feeds and the tag
+ * pages, never in those counts.
+ */
+export const AI_TYPES = ["attack_on_ai", "ai_enabled_attack"] as const;
+export type AiType = (typeof AI_TYPES)[number];
+
+export function isAiType(type: IncidentType): type is AiType {
+  return (AI_TYPES as readonly string[]).includes(type);
+}
 
 export const TYPE_META: Record<
   IncidentType,
@@ -25,6 +40,12 @@ export const TYPE_META: Record<
     short: "by AI",
     definition:
       "Attackers used AI as a meaningful part of a cyberattack against someone else.",
+  },
+  not_ai: {
+    label: "No AI role",
+    short: "general",
+    definition:
+      "AI plays no meaningful role: a general security incident or flaw, carried in the live lanes and the archive and never in the AI counts.",
   },
 };
 
@@ -43,8 +64,12 @@ export const CATEGORIES = [
   "ai_phishing_social_engineering",
   "ai_assisted_intrusion",
   "other",
+  "general",
 ] as const;
 export type Category = (typeof CATEGORIES)[number];
+
+/** The categories an AI record may carry: every one but `general`, which is reserved for `not_ai` records. */
+export const AI_CATEGORIES = CATEGORIES.filter((c) => c !== "general") as [Category, ...Category[]];
 
 export const CATEGORY_META: Record<
   Category,
@@ -133,6 +158,12 @@ export const CATEGORY_META: Record<
     short: "Other",
     definition:
       "In scope, but none of the categories above fits. Reviewed periodically for new categories.",
+  },
+  general: {
+    label: "General security",
+    short: "General",
+    definition:
+      "No AI component: a general security incident or flaw, placed by its lane. The only category a record with no AI role carries.",
   },
 };
 
@@ -391,6 +422,11 @@ export const STANDARDS_BY_CATEGORY: Record<Category, StandardsRow> = {
     owasp: [],
     atlas: [],
     why: "No defined scope, so nothing to map.",
+  },
+  general: {
+    owasp: [],
+    atlas: [],
+    why: "No AI component, so neither AI framework applies.",
   },
 };
 

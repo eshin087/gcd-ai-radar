@@ -173,6 +173,15 @@ describe("briefingNumbers", () => {
     expect(n.notable.some((i) => i.category === "infra_vuln")).toBe(false);
   });
 
+  it("keeps records with no AI role out of the week entirely", () => {
+    const general = inc({ first_reported: "2026-10-14", type: "not_ai", categories: ["general"], severity: 4, title: "General breach" });
+    const lensed = briefingNumbers([...records, general], "2026-W42");
+    expect(lensed.counts).toEqual(n.counts);
+    expect(lensed.notable).toEqual(n.notable);
+    expect(lensed.deltas).toEqual(n.deltas);
+    expect(() => BriefingNumbersSchema.parse(lensed)).not.toThrow();
+  });
+
   it("compares with the week before, counted from the same records", () => {
     expect(n.previous).toEqual({ week: "2026-W41", incidents: 2, real_world: 1, disclosed_vulnerabilities: 1 });
     expect(n.deltas.incidents).toEqual({ now: 4, before: 2, change: 2, pct: 100 });
