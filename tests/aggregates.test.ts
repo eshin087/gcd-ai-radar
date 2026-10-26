@@ -246,7 +246,8 @@ function checkAgainstStats(rows: CompactRow[]) {
   }
 }
 
-describe("aggregates: every number opens exactly its rows", () => {
+// The live-dataset checks load and complete every record; with stored timelines that takes about 5 s on a CI runner.
+describe("aggregates: every number opens exactly its rows", { timeout: 30_000 }, () => {
   it("holds on the fixtures with year-only, month-only and disclosed dates", () => {
     const { checks, problems } = checkEveryNumber(FIXTURES);
     expect(problems).toEqual([]);
@@ -268,7 +269,7 @@ describe("aggregates: every number opens exactly its rows", () => {
   });
 });
 
-describe("aggregates reproduce the row-based statistics", () => {
+describe("aggregates reproduce the row-based statistics", { timeout: 30_000 }, () => {
   it("on the fixtures", () => {
     checkAgainstStats(FIXTURES);
   });
