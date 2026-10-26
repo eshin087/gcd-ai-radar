@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "This week in AI security",
-  description: `A weekly briefing on AI cybersecurity incidents from ${SITE.name}: the week's counts from the data, the five most notable incidents and a short narrative.`,
+  description: `A weekly briefing on AI security incidents (the AI lens) from ${SITE.name}: the week's counts from the data, the five most notable incidents and a short narrative.`,
 };
 
 export default async function BriefingIndexPage() {
@@ -17,8 +17,9 @@ export default async function BriefingIndexPage() {
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">This week in AI security</h1>
         <p className="text-[14px] text-soft leading-relaxed">
-          One briefing per ISO week, written every Monday for the week that ended on Sunday. The numbers come from the dataset; the narrative is written by a
-          language model from that week&rsquo;s records only. <Link href="/methodology#briefing" className="link">How it is made</Link>.
+          One briefing per ISO week, written every Monday for the week that ended on Sunday, over the AI records only (attacks on AI and AI-enabled attacks; the
+          general lanes are not in it). The numbers come from the dataset; the narrative is written by a language model from that week&rsquo;s records only.{" "}
+          <Link href="/methodology#briefing" className="link">How it is made</Link>.
         </p>
         <p className="num text-[11.5px] text-dim">
           <a href="/briefing.xml" className="hover:text-ink">rss →</a>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ProductTable, type ProductRow } from "@/components/products/ProductTable";
 import { loadIncidents } from "@/lib/data";
 import { productIndex } from "@/lib/products";
-import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -31,11 +30,11 @@ export default async function ProductsPage() {
       <header className="space-y-3">
         <h1 className="text-2xl font-semibold tracking-tight">Products</h1>
         <p className="max-w-3xl text-[14.5px] leading-relaxed text-soft">
-          A product page gathers every record that names one AI product or framework: CVEs disclosed against it, incidents in which it was exploited, and
+          A product page gathers every record that names one product or framework: CVEs disclosed against it, incidents in which it was exploited, and
           anything flagged as listed in CISA&rsquo;s Known Exploited Vulnerabilities catalog, newest first. It is a watch list for deciding what to look at,
-          not patch advice: {SITE.name} does not track versions or fixes, and every record links to the advisory or report it came from, so check the
-          vendor&rsquo;s advisory for what to upgrade. Names are grouped into families (&ldquo;Langflow OSS&rdquo; is Langflow); a record that names two
-          products appears on both pages.
+          not patch advice: a record&rsquo;s fix status and fixed versions are shown when a source states them, and every record links to the advisory or
+          report it came from, so check the vendor&rsquo;s advisory for what to upgrade. Names are grouped into families (&ldquo;Langflow OSS&rdquo; is
+          Langflow); a record that names two products appears on both pages.
         </p>
         <p className="text-[12.5px] text-dim">
           {index.length.toLocaleString("en-US")} product families, {exploited.toLocaleString("en-US")} with confirmed exploitation (severity 3–4).{" "}

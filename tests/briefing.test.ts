@@ -260,6 +260,7 @@ describe("narrative checks", () => {
 
   it("rejects a narrative that names the site", () => {
     expect(narrativeProblems(`During the week, gcd AI Radar recorded 1 incident. ${filler}`, allowed, numbers).join()).toMatch(/names the site/);
+    expect(narrativeProblems(`During the week, GCD RADAR recorded 1 incident. ${filler}`, allowed, numbers).join()).toMatch(/names the site/);
     expect(narrativeProblems(`The observatory recorded 1 incident. ${filler}`, allowed, numbers).join()).toMatch(/names the site/);
   });
 

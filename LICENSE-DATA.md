@@ -1,12 +1,12 @@
 # Data licence
 
-The gcd AI Radar dataset (everything under `/data`, and the copies served at
+The GCD RADAR dataset (everything under `/data`, and the copies served at
 `/data/*.json` and `/data/*.csv` on the site) is licensed under the
 **Creative Commons Attribution-ShareAlike 4.0 International** licence
 (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
 
 You may copy, redistribute and adapt the data, including commercially, as long
-as you credit "gcd AI Radar" with a link to the site, indicate changes, and
+as you credit "GCD RADAR" with a link to the site, indicate changes, and
 release derivative datasets under the same licence.
 
 ## Why share-alike
@@ -26,7 +26,7 @@ When you redistribute the data, keep these notices:
   Case studies, and the technique ids and names in the `atlas` export column.
 - **OWASP Top 10 for LLM Applications 2025** (genai.owasp.org), CC BY-SA 4.0. © OWASP Foundation.
   Entry ids and names in the `owasp_llm` export column. The mapping from categories to OWASP
-  entries and ATLAS techniques is gcd AI Radar's own and is not endorsed by OWASP or MITRE.
+  entries and ATLAS techniques is GCD RADAR's own and is not endorsed by OWASP or MITRE.
 - **AVID, the AI Vulnerability Database** (avidml.org), MIT.
 - **NVD**: "This product uses the NVD API but is not endorsed or certified by the NVD."
 - **GitHub Advisory Database** (github.com/advisories), CC BY 4.0.
@@ -38,4 +38,4 @@ When you redistribute the data, keep these notices:
 
 Every incident record also lists its `sources`: titles, publishers, dates and
 links to the original reporting, which remain the property of their publishers.
-Summaries are written by gcd AI Radar in its own words.
+Summaries are written by GCD RADAR in its own words.

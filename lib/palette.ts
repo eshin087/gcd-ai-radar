@@ -28,12 +28,12 @@ export const TYPE_COLORS: Record<IncidentType, string> = {
   not_ai: "#6b7389",
 };
 
-/** One-hue amber ramp, darker to brighter with severity (ordinal checks pass). */
+/** Severity as a status: research and disclosed records in quiet tones, exploitation and real-world loss in the live reds (mirrors --color-sev-* in globals.css). */
 export const SEVERITY_COLORS: Record<Severity, string> = {
-  1: "#5f482e",
-  2: "#a06f30",
-  3: "#e29936",
-  4: "#ffc858",
+  1: "#6b7389",
+  2: "#7b9dff",
+  3: "#ff9b3d",
+  4: "#ff5c5c",
 };
 
 /** Each category wears its family's colour (lib/families.ts): 7 validated hues instead of 14 that failed CVD checks. */

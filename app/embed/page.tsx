@@ -13,7 +13,7 @@ import "./embed.css";
 
 export const metadata: Metadata = {
   title: "Embed",
-  description: `AI cybersecurity incidents in the last 12 months, from ${SITE.name}. A card for other sites to embed.`,
+  description: `AI security incidents (the AI lens) in the last 12 months, from ${SITE.name}. A card for other sites to embed.`,
   robots: { index: false, follow: true },
 };
 

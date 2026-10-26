@@ -14,7 +14,6 @@ import { MonthlyColumns, type ColumnColors } from "@/components/charts/MonthlyCo
 import { RankRows } from "@/components/charts/RankRows";
 import { TargetBars } from "@/components/charts/TargetBars";
 import { RadarPanel } from "@/components/panels/RadarPanel";
-import { CategoryBadge, SeverityBadge } from "@/components/ui/Badge";
 import { Segmented } from "@/components/ui/Segmented";
 import { StatTile } from "@/components/ui/StatTile";
 import type { Basis, CompactRow, DashboardData } from "@/lib/dashboard";
@@ -309,29 +308,9 @@ export function Dashboard({ data }: { data: DashboardData }) {
             </div>
           </Section>
 
-          <Section n="02" kicker="Latest" title="Just reported" lede="The six newest incidents. Each opens with every source, its classification and related incidents.">
-            <ol className="panel divide-y divide-line-soft">
-              {m.latestRows.slice(0, 6).map((r) => (
-                <li key={r.id}>
-                  <Link href={`/incidents/${r.slug}`} className="group grid items-center gap-x-4 gap-y-1.5 px-4 py-2.5 transition-colors hover:bg-panel-2 sm:grid-cols-[6.5rem_minmax(0,1fr)_auto]">
-                    <span className="num text-[12px] text-dim">{r.first_reported}</span>
-                    <span className="truncate text-[14px] text-ink group-hover:text-accent">{r.title}</span>
-                    <span className="flex flex-wrap items-center gap-1.5">
-                      <SeverityBadge severity={r.severity} />
-                      {r.categories[0] && <CategoryBadge category={r.categories[0]} />}
-                      <span className="num text-[11px] text-faint">{r.source_count} src</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-            <Link href="/incidents" className="label inline-block hover:text-ink">
-              all incidents →
-            </Link>
-          </Section>
 
           <Section
-            n="03"
+            n="02"
             kicker="What kind"
             title="Seven families of incident"
             lede="Each family's share, month-by-month shape and change against the window before. Every count and month opens its incidents."
@@ -375,7 +354,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
           </Section>
 
           <Section
-            n="04"
+            n="03"
             kicker="Who and how bad"
             title="Shape, severity, targets"
             lede="Which families dominate, how much harm each has done and who they hit. Every count and bar opens its incidents."
@@ -443,7 +422,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
           </Section>
 
           <Section
-            n="05"
+            n="04"
             kicker="Your stack"
             title="Products, agents and the standards"
             lede="The AI products attacks named, the incidents involving AI agents, and the window in OWASP and MITRE ATLAS terms."
@@ -580,7 +559,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
 
           <Section
             id="disclosed"
-            n="06"
+            n="05"
             kicker="Disclosed, not exploited"
             title="Vulnerabilities, tracked separately"
             lede="CVEs for AI tools with no confirmed exploitation: attack surface, not attacks. None counts above until it is exploited."
@@ -638,7 +617,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
               </span>
             </summary>
             <div className="mt-12 space-y-16">
-              <Section n="07" kicker="Flow" title="On AI or by AI, into a family, onto its targets" lede="Every incident in the window from its type through its family onto the targets it names.">
+              <Section n="06" kicker="Flow" title="On AI or by AI, into a family, onto its targets" lede="Every incident in the window from its type through its family onto the targets it names.">
                 <div className="panel min-w-0 space-y-4 p-4 sm:p-5">
                   <PanelHead title="The flow" note="Ribbon width is the count. The right column counts target mentions, so an incident naming two targets is in both." />
                   <FlowSankey
@@ -658,7 +637,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
                 </div>
               </Section>
               {data.radar && (
-                <Section n="08" kicker="Context" title="The bots on the wire" lede="Not incidents: Cloudflare Radar's weekly reading of automated web traffic and the AI crawlers behind it, as background for the counts above.">
+                <Section n="07" kicker="Context" title="The bots on the wire" lede="Not incidents: Cloudflare Radar's weekly reading of automated web traffic and the AI crawlers behind it, as background for the counts above.">
                   <RadarPanel radar={data.radar} variant="bare" className="panel" />
                 </Section>
               )}

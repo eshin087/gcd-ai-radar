@@ -1,6 +1,6 @@
-# GCD AI RADAR
+# GCD RADAR
 
-**A public observatory of AI cybersecurity incidents: collected from open sources, deduplicated, classified and charted over time.**
+**Live security incidents across the web, with an AI lens: what happened, whether there is a fix, and what to do. Every record counted once, linked to its reporting, charted over time.**
 
 Live at [gcd-ai-radar.vercel.app](https://gcd-ai-radar.vercel.app).
 

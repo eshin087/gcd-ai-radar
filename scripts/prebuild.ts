@@ -94,7 +94,7 @@ function briefingRss(briefings: Briefing[], base: string): string {
     <title>${escapeXml(SITE.name)} — this week in AI security</title>
     <link>${escapeXml(base)}/briefing</link>
     <atom:link href="${escapeXml(base)}/briefing.xml" rel="self" type="application/rss+xml" />
-    <description>A weekly briefing on AI cybersecurity incidents: counts from the data, the most notable incidents and a short narrative.</description>
+    <description>A weekly briefing on AI security incidents (the AI lens): counts from the data, the most notable incidents and a short narrative.</description>
     <language>en</language>
     <lastBuildDate>${lastBuild}</lastBuildDate>
     <copyright>Data CC BY-SA 4.0 · ${escapeXml(SITE.author)}</copyright>

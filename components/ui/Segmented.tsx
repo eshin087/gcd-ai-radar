@@ -20,7 +20,7 @@ export function Segmented<K extends string>({ label, value, options, onChange, s
     <div
       role="radiogroup"
       aria-label={label}
-      className={`inline-flex rounded-[3px] border border-line p-0.5 font-mono uppercase tracking-[0.1em] ${size === "sm" ? "text-[10px]" : "text-[10.5px]"}`}
+      className={`inline-flex rounded-[2px] border border-line p-0.5 font-mono uppercase tracking-[0.08em] ${size === "sm" ? "text-[12px]" : "text-[12px]"}`}
     >
       {options.map((o) => (
         <button

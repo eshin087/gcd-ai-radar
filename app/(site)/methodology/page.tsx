@@ -6,13 +6,21 @@ import queries from "@/collector/config/queries.json";
 import settings from "@/collector/config/settings.json";
 import { RuleText } from "@/components/ui/RuleText";
 import { COUNTING_RULES, DISCLOSED_RULE } from "@/lib/counting-rules";
+import { CURATION_RULES } from "@/lib/curation-rules";
+import { LANE_RULES, LIFECYCLE_RULES } from "@/lib/lifecycle";
 import { SITE } from "@/lib/site";
+import { ALIASES, DROPPED, TAG_GROUPS, TAG_GROUP_META } from "@/lib/tags";
 import {
   ATLAS_RELEASE,
   ATLAS_TECHNIQUES,
   CATEGORIES,
   CATEGORY_META,
+  INCIDENT_TYPES,
+  LANES,
+  LANE_META,
   OWASP_LLM_EDITION,
+  PATCH_META,
+  PATCH_STATUSES,
   OWASP_LLM_META,
   OWASP_NOT_DERIVED,
   REAL_WORLD_MIN_SEVERITY,
@@ -32,7 +40,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Methodology",
-  description: "What counts as an AI cybersecurity incident, what does not, how incidents are found, deduplicated and classified, and the known limits of the numbers.",
+  description: "What counts as an incident, the lanes and their live windows, the AI lens, how records are found, deduplicated and classified, and the known limits of the numbers.",
 };
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
@@ -90,11 +98,13 @@ const TYPE_CATEGORY_ROWS = Object.entries(STANDARDS_BY_TYPE_CATEGORY).map(([key,
 const SECTIONS = [
   ["scope", "What counts"],
   ["out-of-scope", "What does not count"],
+  ["lanes", "Lanes and lifecycle"],
+  ["tags", "Tags"],
   ["taxonomy", "Taxonomy"],
   ["standards", "Standards mapping"],
   ["pipeline", "How incidents are found and classified"],
   ["counting", "Counting rules"],
-  ["cves", "Vulnerability records"],
+  ["cves", "AI vulnerability records"],
   ["briefing", "The weekly briefing"],
   ["sources", "Sources we read, and sources we deliberately do not"],
   ["limits", "Limitations and biases"],
@@ -108,9 +118,9 @@ export default function MethodologyPage() {
       <header className="space-y-3">
         <h1 className="text-2xl font-semibold tracking-tight text-ink">Methodology</h1>
         <p>
-          {SITE.name} is an observatory, not a security product. It records, counts, categorizes and charts AI cybersecurity incidents and links to
-          the original reporting. This page is what makes the numbers citable: it says exactly what is counted, how, and where the counts are
-          weak.
+          {SITE.name} is an observatory, not a security product. It records live security incidents across the web in four lanes, keeps an AI lens on
+          them, counts each once and links to the original reporting. This page is what makes the numbers citable: it says exactly what is counted, how,
+          and where the counts are weak.
         </p>
         <nav aria-label="Sections" className="flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
           {SECTIONS.map(([id, label]) => (
@@ -122,18 +132,40 @@ export default function MethodologyPage() {
       </header>
 
       <H2 id="scope">What counts</H2>
-      <p>An incident is in scope when it is one of two things, and the charts always keep them distinguishable:</p>
+      <p>
+        A record is one real-world event or flaw: a bug in software people run, something that happened to a named organisation or service, a malicious
+        artefact with reach, or a research finding. It lands in one of four lanes:
+      </p>
       <ul className="list-disc pl-5 space-y-1">
-        <li>
-          <strong className="text-ink">{TYPE_META.attack_on_ai.label}</strong>: {TYPE_META.attack_on_ai.definition}
-        </li>
-        <li>
-          <strong className="text-ink">{TYPE_META.ai_enabled_attack.label}</strong>: {TYPE_META.ai_enabled_attack.definition}
-        </li>
+        {LANES.map((l) => (
+          <li key={l}>
+            <strong className="text-ink">{LANE_META[l].label}</strong>: {LANE_META[l].definition}
+          </li>
+        ))}
       </ul>
       <p>
-        Research papers and lab write-ups that demonstrate a working attack count (severity 1). CVEs and advisories for AI frameworks, model servers,
-        agent tooling and AI products count once exploitation is confirmed (severity 3 or 4). Until then they are{" "}
+        Every record also carries an <strong className="text-ink">AI role</strong>, and the AI counts on the site (the Trends charts, the weekly briefing,
+        summary.json, the embed card and the chart images) cover the first two roles only:
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        {INCIDENT_TYPES.map((t) => (
+          <li key={t}>
+            <strong className="text-ink">{TYPE_META[t].label}</strong>: {TYPE_META[t].definition}
+          </li>
+        ))}
+      </ul>
+      <p>
+        A record with no AI role is published only when it clears the curation bar, so the live lanes stay readable: it names what was affected, says what
+        happened, and is one of the kinds below. AI records keep the inclusion rule above and use the bar as guidance.
+      </p>
+      <ol className="list-decimal pl-5 space-y-1">
+        {CURATION_RULES.map((r) => (
+          <li key={r}>{r}</li>
+        ))}
+      </ol>
+      <p>
+        Research papers and lab write-ups that demonstrate a working attack count (severity 1, the Research lane). CVEs and advisories for AI frameworks,
+        model servers, agent tooling and AI products count once exploitation is confirmed (severity 3 or 4). Until then they are{" "}
         <a href="#cves" className="link">
           disclosed vulnerabilities
         </a>
@@ -143,11 +175,69 @@ export default function MethodologyPage() {
       <H2 id="out-of-scope">What does not count</H2>
       <ul className="list-disc pl-5 space-y-1">
         <li>AI harms with no security angle: bias and discrimination, hallucination lawsuits, autonomous-vehicle crashes, job displacement, copyright suits.</li>
-        <li>Product launches and vendor feature announcements, including launches of AI security products.</li>
-        <li>Policy, regulation and standards news, surveys and &ldquo;report finds&rdquo; pieces, opinion and explainers, unless they describe a specific incident.</li>
+        <li>Product launches and vendor feature announcements, including launches of security products.</li>
+        <li>Policy, regulation and standards news, surveys and &ldquo;report finds&rdquo; pieces, opinion, explainers and weekly roundups, unless they describe a specific incident.</li>
         <li>Papers that only propose defences or benchmarks.</li>
-        <li>Cybersecurity incidents in which AI plays no meaningful role.</li>
+        <li>A follow-up report on an event already on record: it becomes a timeline entry on that record, never a new one.</li>
       </ul>
+
+      <H2 id="lanes">Lanes and lifecycle</H2>
+      <p>
+        A record is <strong className="text-ink">live</strong> or <strong className="text-ink">closed</strong>, judged at every build from the record&rsquo;s latest
+        dated activity (a timeline entry, a source, or the first report; never an edit). The windows, in days:
+      </p>
+      <dl className="divide-y divide-line-soft">
+        {LANES.map((l) => {
+          const r = LIFECYCLE_RULES[l];
+          const text =
+            "from_first_report_days" in r
+              ? `live for ${r.from_first_report_days} days after the first report; updates do not extend it.`
+              : "unpatched_days" in r
+                ? `live for ${r.any_update_days} days after the latest activity, or ${r.unpatched_days} days while the fix status is "no patch yet" or "partly patched" ("fix status unknown" does not extend it).`
+                : `live for ${r.any_update_days} days after the latest activity; a new report reopens it.`;
+          return (
+            <div key={l} className="grid gap-2 py-2.5 sm:grid-cols-[11rem_1fr] sm:gap-4">
+              <dt className="text-[13px] text-ink">{LANE_META[l].label}</dt>
+              <dd className="text-[13px]">{text}</dd>
+            </div>
+          );
+        })}
+      </dl>
+      <p>
+        A disclosed vulnerability is always closed. A record the collector closed stays closed; a new report about it reopens it with a timeline entry. The fix
+        status of a patch or supply-chain record is one of:
+      </p>
+      <dl className="divide-y divide-line-soft">
+        {PATCH_STATUSES.map((s) => (
+          <div key={s} className="grid gap-2 py-2.5 sm:grid-cols-[11rem_1fr] sm:gap-4">
+            <dt className="num text-[13px] text-ink">
+              {PATCH_META[s].glyph} {PATCH_META[s].label}
+            </dt>
+            <dd className="text-[13px]">{PATCH_META[s].definition}</dd>
+          </div>
+        ))}
+      </dl>
+      <p>
+        Records that predate the lanes were placed by fixed rules, in order; a record classified since then carries the lane the classifier gave it:
+      </p>
+      <ol className="list-decimal pl-5 space-y-1 text-[13px]">
+        {LANE_RULES.map((r) => (
+          <li key={r.id}>{r.text}</li>
+        ))}
+      </ol>
+      <p className="text-[13px]">
+        Every record&rsquo;s timeline starts with its reports, one entry per source; the collector appends an entry when a later report changes something.
+        The newest entries across the site are in <span className="num text-[12px]">/changes.json</span>.
+      </p>
+
+      <H2 id="tags">Tags</H2>
+      <p>
+        The classifier writes short free-text tags; the site folds them into one spelling each (underscores, spaces and dots become dashes, {Object.keys(ALIASES).length}{" "}
+        aliases such as &ldquo;denial-of-service&rdquo; → &ldquo;dos&rdquo; are merged, CVE ids and tags that only echo a category are left out) and files each
+        under a group: {TAG_GROUPS.map((g) => TAG_GROUP_META[g].label.toLowerCase()).join(", ")}. A tag with two records, or one live record, gets a page, an
+        RSS feed and an llms.txt. {DROPPED.size} tags are dropped as echoes or outcomes; the lists live in the repository at{" "}
+        <span className="num text-[12px]">lib/tags.ts</span>.
+      </p>
 
       <H2 id="taxonomy">Taxonomy</H2>
       <p>An incident has exactly one type, one to four categories (the first is primary), exactly one severity, and one or more targets.</p>
@@ -265,13 +355,13 @@ export default function MethodologyPage() {
       <H2 id="pipeline">How incidents are found and classified</H2>
       <ol className="list-decimal pl-5 space-y-2">
         <li>
-          <strong className="text-ink">Fetch.</strong> Every six hours a collector reads RSS and Atom feeds, official APIs and public data exports: security press,
+          <strong className="text-ink">Fetch.</strong> On its schedule (the Sources page lists it per source) a collector reads RSS and Atom feeds, official APIs and public data exports: security press,
           vendor and research blogs, Hacker News (via Algolia), GDELT, arXiv cs.CR, NVD, the GitHub Advisory Database, CISA KEV, MITRE ATLAS and the AI
           Incident Database. Query-driven sources run a maintained list of {queries.queries.length} search phrases.
         </li>
         <li>
-          <strong className="text-ink">Pre-filter.</strong> Press and vendor items must mention both an AI term and a security term before any model sees them;
-          specialist AI-security blogs and structured databases skip this gate.
+          <strong className="text-ink">Pre-filter.</strong> Press and vendor items must mention a security term (or carry a CVE id) before any model sees them; an
+          AI term only marks the item for the AI role. Specialist AI-security blogs and structured databases skip this gate.
         </li>
         <li>
           <strong className="text-ink">Deduplicate.</strong> Links are canonicalised (tracking parameters, AMP variants and the like removed). A link already seen is
@@ -303,7 +393,7 @@ export default function MethodologyPage() {
         ))}
       </ul>
 
-      <H2 id="cves">Vulnerability records</H2>
+      <H2 id="cves">AI vulnerability records</H2>
       <p>
         The collector reads CVEs and advisories for an allow-list of LLM and agent-era tooling from NVD, the GitHub Advisory Database and Microsoft&rsquo;s
         Security Update Guide: inference servers such as vLLM and Ollama, app builders such as Open WebUI, Langflow and Flowise, frameworks such as LangChain,
@@ -311,7 +401,7 @@ export default function MethodologyPage() {
       </p>
       <p>
         A record with no confirmed exploitation is a <strong className="text-ink">disclosed vulnerability</strong>. It keeps severity 2 and its own page, appears
-        on the dashboard as a separate monthly series and in the incidents explorer under &ldquo;records&rdquo;, but it is not counted as an incident. Vendors
+        on Trends as a separate monthly series and in the Archive under &ldquo;records&rdquo;, but it is not counted as an incident. Vendors
         and CVE numbering authorities file advisories in batches, as many as 30 for one product on one day, and more than 99% of these records never see a
         confirmed attack: counting them made the incident trend a measure of CVE issuance. A CVE becomes an incident, at severity 3, when CISA lists it as
         exploited or the vendor confirms exploitation.
@@ -333,7 +423,7 @@ export default function MethodologyPage() {
       <H2 id="briefing">The weekly briefing</H2>
       <p>
         <Link href="/briefing" className="link">This week in AI security</Link> is written every Monday at 06:17 UTC for the ISO week (Monday to Sunday,
-        UTC) that has just ended. It has two parts, made differently:
+        UTC) that has just ended, over the AI records only (attacks on AI and AI-enabled attacks; the general lanes are not in it). It has two parts, made differently:
       </p>
       <ul className="list-disc pl-5 space-y-1">
         <li>
@@ -352,7 +442,7 @@ export default function MethodologyPage() {
       </ul>
       <p>
         Limits: the checks catch wrong numbers, not every wrong word, so a narrative can still misstate what a record says; the incident pages and their sources
-        are the reference. A briefing is a snapshot taken on Monday. Records first reported in that week but collected later are not added, so the dashboard,
+        are the reference. A briefing is a snapshot taken on Monday. Records first reported in that week but collected later are not added, so the Trends page,
         which recounts on every build, can show more for the same week. A week with few incidents is described from few records, and its comparison with the
         week before can swing widely.
       </p>
@@ -391,6 +481,12 @@ export default function MethodologyPage() {
         </li>
         <li>2026-10-18 · product watch pages: every product family with records gets a page listing its disclosed CVEs, confirmed exploitation and CISA KEV flags (the classifier&rsquo;s cisa-kev tag). No counting rule changed.</li>
         <li>2026-10-19 · weekly briefing added, &ldquo;This week in AI security&rdquo;: numbers from the data, narrative by a language model; backfilled for 2026-W35 to 2026-W42.</li>
+        <li>
+          2026-10-26 · site renamed GCD RADAR and widened to live security incidents across the web: four lanes (patch now, breaches & attacks, supply chain,
+          research) with a live or closed state, a fix status and a timeline per record; a third AI role, &ldquo;no AI role&rdquo;; the live feed as the home page;
+          the chart dashboard at /trends; a tag directory; feed.json, changes.json, llms.txt, per-lane and per-tag feeds and a Markdown brief per record. Every AI
+          count (Trends, summary.json, the embed card, the briefing, the chart images) counts AI records only, so no existing number changed meaning.
+        </li>
       </ul>
     </div>
   );

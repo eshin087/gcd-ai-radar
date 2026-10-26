@@ -145,15 +145,15 @@ export default async function ApiPage() {
   );
   const embedSrc = `${base}/embed?theme=dark&amp;window=12m`;
   const snippet = `<iframe src="${embedSrc}"
-  title="${SITE.name}: AI cybersecurity incidents, last 12 months"
+  title="${SITE.name}: AI security incidents (the AI lens), last 12 months"
   width="360" height="260" loading="lazy"
   style="border:0;max-width:100%"></iframe>
-<noscript><a href="${base}">${SITE.name}: AI cybersecurity incidents</a></noscript>`;
+<noscript><a href="${base}">${SITE.name}: AI security incidents</a></noscript>`;
   const compactSnippet = `<iframe src="${base}/embed?theme=light&amp;compact=1"
-  title="${SITE.name}: AI cybersecurity incidents, last 12 months"
+  title="${SITE.name}: AI security incidents (the AI lens), last 12 months"
   width="360" height="150" loading="lazy"
   style="border:0;max-width:100%"></iframe>
-<noscript><a href="${base}">${SITE.name}: AI cybersecurity incidents</a></noscript>`;
+<noscript><a href="${base}">${SITE.name}: AI security incidents</a></noscript>`;
   const citation = `${SITE.name}, ${base} (accessed YYYY-MM-DD). Data licensed ${SITE.dataLicense.name}.`;
   const citationHtml = `Source: <a href="${base}">${SITE.name}</a>, accessed YYYY-MM-DD.
 Data licensed <a href="${SITE.dataLicense.url}">${SITE.dataLicense.name}</a>.`;
@@ -192,7 +192,7 @@ curl -sO ${base}/data/incidents.csv`}</Code>
       <Code label="fetch (browser or Node 18+)">{`const res = await fetch("${base}/data/summary.json");
 const s = await res.json();
 const t = s.trailing_12;
-console.log(\`\${t.incidents} AI cybersecurity incidents from \${t.from} to \${t.to}\`
+console.log(\`\${t.incidents} AI security incidents (the AI lens) from \${t.from} to \${t.to}\`
   + \` (\${t.real_world} real-world), source: ${SITE.name}, ${base}\`);`}</Code>
 
       <H2 id="files">Files</H2>
@@ -222,7 +222,7 @@ console.log(\`\${t.incidents} AI cybersecurity incidents from \${t.from} to \${t
       <H2 id="cadence">Updates and caching</H2>
       <ul className="list-disc pl-5 space-y-1">
         <li>
-          The collector runs every six hours, at 17 minutes past 00, 06, 12 and 18 UTC. A run that finds something commits to the repository, and every
+          The collector runs on a fixed schedule (the Sources page lists it per source). A run that finds something commits to the repository, and every
           commit redeploys the site, which regenerates every file on this page.
         </li>
         <li>
