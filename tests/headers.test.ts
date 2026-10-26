@@ -32,7 +32,8 @@ function headersFor(path: string): { headers: Map<string, string>; conflicts: st
 
 const GLOBAL_CSP = vercel.headers[0]!.headers.find((h) => h.key === "Content-Security-Policy")!.value;
 
-const OTHER_PATHS = ["/", "/api", "/data", "/incidents", "/incidents/some-slug", "/methodology", "/embed/", "/embed.html", "/embed.txt", "/EMBED", "/embedx", "/embed/x", "/x/embed", "/data/meta.json", "/feed.xml", "/og/default.png"];
+const OTHER_PATHS = ["/", "/api", "/data", "/incidents", "/incidents/some-slug", "/methodology", "/embed/", "/embed.html", "/embed.txt", "/EMBED", "/embedx", "/embed/x", "/x/embed", "/data/meta.json", "/feed.xml", "/og/default.png", "/trends", "/tags", "/tags/rce", "/lanes", "/changes.json", "/llms.txt"];
+const MACHINE_PATHS = ["/changes.json", "/llms.txt", "/feed.json", "/live.json", "/lanes/patch/feed.xml", "/lanes/breach/changes.json", "/lanes/research/llms.txt", "/tags/rce/feed.xml", "/tags/rce/llms.txt", "/tags/rce.json"];
 
 describe("vercel.json headers", () => {
   it("refuses framing everywhere except /embed", () => {
@@ -62,7 +63,20 @@ describe("vercel.json headers", () => {
     }
   });
 
+  it("serves the machine files with open CORS and a five-minute cache, and nothing else under /tags", () => {
+    for (const path of MACHINE_PATHS) {
+      const { headers } = headersFor(path);
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBe("*");
+      expect(headers.get("Cache-Control"), path).toBe("public, max-age=300, stale-while-revalidate=3600");
+    }
+    for (const path of ["/tags", "/tags/rce", "/trends", "/lanes"]) {
+      const { headers } = headersFor(path);
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("Cache-Control"), path).toBeUndefined();
+    }
+  });
+
   it("never sets one header twice on a path, so rule order cannot decide a value", () => {
-    for (const path of [...OTHER_PATHS, "/embed"]) expect(headersFor(path).conflicts).toEqual([]);
+    for (const path of [...OTHER_PATHS, "/embed", ...MACHINE_PATHS]) expect(headersFor(path).conflicts).toEqual([]);
   });
 });

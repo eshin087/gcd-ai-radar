@@ -34,8 +34,14 @@ export default async function DataPage() {
     { href: "/data/years/index.json", label: "years/<year>.json", blurb: "The full records of one year of first report, one file per year; index.json lists the years and their counts." },
     { href: "/data/summary.json", label: "summary.json", blurb: "The headline numbers and the last 24 months in one small file, for widgets and newsletters." },
     { href: "/data/meta.json", label: "meta.json", blurb: "Counts, last collector run, generation time, licence and the standards versions mapped to." },
-    { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents." },
-    { href: "/briefing.xml", label: "briefing.xml", blurb: "RSS feed of the weekly briefing, This week in AI security." },
+    { href: "/feed.xml", label: "feed.xml", blurb: "RSS feed of the 50 most recently reported incidents, every lane." },
+    { href: "/feed.json", label: "feed.json", blurb: "The same feed as JSON Feed 1.1, with the lifecycle fields under _radar." },
+    { href: "/changes.json", label: "changes.json", blurb: "The newest 500 timeline updates across every record, newest first. Poll this to see what changed." },
+    { href: "/llms.txt", label: "llms.txt", blurb: "The site for an AI agent: rules, endpoints, lanes, top tags and one line per live record." },
+    { href: "/live.json", label: "live.json", blurb: "The home page's counters and per-lane counts." },
+    { href: "/lanes/patch/feed.xml", label: "lanes/<lane>/…", blurb: "feed.xml, feed.json, changes.json and llms.txt per lane: patch, breach, supply_chain, research." },
+    { href: "/tags/rce/feed.xml", label: "tags/<tag>/…", blurb: "feed.xml and llms.txt per tag, plus tags/<tag>.json with the tag's counts, months and records." },
+    { href: "/briefing.xml", label: "briefing.xml", blurb: "RSS feed of the weekly briefing, This week in AI security (the AI records only)." },
     { href: "/data/briefings/index.json", label: "briefings/<week>.json", blurb: "Every weekly briefing: its counts, deltas, notable incidents and narrative; index.json lists the weeks." },
   ];
   const sized = await Promise.all(files.map(async (f) => ({ ...f, size: f.label.includes("<") ? null : await sizeOf(f.href) })));
@@ -82,6 +88,24 @@ export default async function DataPage() {
           record&rsquo;s type and categories by a fixed table, not classified per record, and either may be empty; the table and its limits are under{" "}
           <Link href="/methodology#standards" className="link">standards mapping</Link>. The full JSON files keep the stored record only; the same table in{" "}
           <span className="num">lib/taxonomy.ts</span> reproduces the two lists from it.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="label">Use with your AI</h2>
+        <p className="text-[13.5px]">
+          Point an agent at <span className="num">{base}/llms.txt</span> for the live picture, and have it poll <span className="num">{base}/changes.json</span>{" "}
+          at most hourly with <span className="num">If-None-Match</span> (every file sends an ETag and open CORS). To check your own stack, compare the
+          updates&rsquo; products and CVE ids against your lockfiles and services and alert only on matches. Every record&rsquo;s page has a &ldquo;Copy brief&rdquo;
+          button, and <span className="num">/data/incidents/&lt;slug&gt;.json</span> carries the same Markdown as its <span className="num">brief</span> field.
+        </p>
+        <pre className="overflow-x-auto rounded-[2px] border border-line bg-panel p-3 font-mono text-[12px] leading-relaxed text-soft">{`Read ${base}/llms.txt once, then poll ${base}/changes.json at most once an hour with If-None-Match.
+For each change whose products or cve_ids match something we run, open its url and summarise:
+what happened, the fix status, the affected and fixed versions, and the action. Ignore the rest.
+Verify against the vendor advisory before changing anything in production.`}</pre>
+        <p className="text-[12px] text-dim">
+          A generic MCP fetch server (for example <span className="num">uvx mcp-server-fetch</span> in Claude Desktop or Cursor) is enough: there is no key and no
+          rate limit beyond the five-minute cache.
         </p>
       </section>
 

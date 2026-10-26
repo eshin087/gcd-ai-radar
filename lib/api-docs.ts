@@ -3,6 +3,7 @@ import type { CompactRow } from "./rows";
 import { IncidentSchema, type Incident, type TimelineEntry } from "./schema";
 import type { SlimIncident } from "./slim";
 import type { Summary } from "./summary";
+import type { IncidentType, Lane } from "./taxonomy";
 
 /**
  * What the API page (app/(site)/api/page.tsx) says about each public file.
@@ -23,6 +24,14 @@ export interface MetaFile {
   years: { year: number; records: number; incidents: number; disclosed_vulnerabilities: number; file: string }[];
   last_collector_run: string | null;
   standards_mapping: { owasp_llm_top_10: string; mitre_atlas_release: string; rule: string };
+  /** Records per AI role. */
+  types: Record<IncidentType, number>;
+  /** Records and live records per lane. */
+  lanes: Record<Lane, { records: number; incidents: number; live: number }>;
+  states: { live: number; closed: number };
+  /** The AI records alone: what /trends, summary.json and the briefing count. */
+  ai: { records: number; incidents: number; disclosed_vulnerabilities: number };
+  scope_note: string;
   license: string;
   license_url: string;
 }
@@ -211,6 +220,11 @@ export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }>
   years: { type: "object[]", note: "Per year of first report: year, records, incidents, disclosed_vulnerabilities, file (the years/<year>.json path)." },
   last_collector_run: { type: "string (RFC 3339) | null", note: "When the collector last finished a run; null before the first run." },
   standards_mapping: { type: "{ owasp_llm_top_10, mitre_atlas_release, rule }", note: "The OWASP LLM Top 10 edition and MITRE ATLAS release the CSV's owasp_llm and atlas columns refer to. Those columns are derived from type and categories, not classified per record." },
+  types: { type: "{ attack_on_ai, ai_enabled_attack, not_ai }", note: "Records per AI role." },
+  lanes: { type: "{ patch, breach, supply_chain, research: { records, incidents, live } }", note: "Records, incidents and live records per lane." },
+  states: { type: "{ live, closed }", note: "Records live and closed by the lane rules at generation time." },
+  ai: { type: "{ records, incidents, disclosed_vulnerabilities }", note: "The AI records alone: what /trends, summary.json, the briefing and the chart images count." },
+  scope_note: { type: "string", note: "The AI-lens rule in one sentence." },
   license: { type: "string", note: "\"CC BY-SA 4.0\"." },
   license_url: { type: "string (URL)", note: "The licence text." },
 };

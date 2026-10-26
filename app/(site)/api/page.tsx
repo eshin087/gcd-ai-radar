@@ -120,8 +120,14 @@ export default async function ApiPage() {
     { href: "/data/incidents.csv", label: "incidents.csv", stable: true, blurb: "One row per record, with a record_kind column; list fields joined with \"; \"." },
     { href: "/data/years/index.json", label: "years/index.json", stable: true, blurb: "The years of first report that have records, with counts and file paths." },
     { href: "/data/years/<year>.json", label: "years/<year>.json", stable: true, blurb: "The full records first reported in one year." },
-    { href: "/data/incidents/<slug>.json", label: "incidents/<slug>.json", stable: true, blurb: "One full record; the slug is the one in /incidents/<slug>." },
-    { href: "/feed.xml", label: "feed.xml", stable: true, blurb: "RSS 2.0: the 50 most recently reported incidents (no disclosed vulnerabilities)." },
+    { href: "/data/incidents/<slug>.json", label: "incidents/<slug>.json", stable: true, blurb: "One full record plus a brief field: the record as a Markdown note for an agent or a ticket. The slug is the one in /incidents/<slug>." },
+    { href: "/feed.xml", label: "feed.xml", stable: true, blurb: "RSS 2.0: the 50 most recently reported incidents, every lane (no disclosed vulnerabilities)." },
+    { href: "/feed.json", label: "feed.json", stable: true, blurb: "The same as JSON Feed 1.1, with lane, type, severity, state, fix status and CVE ids under _radar." },
+    { href: "/changes.json", label: "changes.json", stable: true, blurb: "The newest 500 timeline updates across every record, newest first by added_at. Poll it with If-None-Match." },
+    { href: "/llms.txt", label: "llms.txt", stable: true, blurb: "The site for an AI agent: the rules, the endpoints, the lanes, the top tags and one line per live record." },
+    { href: "/live.json", label: "live.json", stable: true, blurb: "The home page's counters and per-lane counts." },
+    { href: "/lanes/patch/feed.xml", label: "lanes/<lane>/{feed.xml, feed.json, changes.json, llms.txt}", stable: true, blurb: "The four files above per lane: patch, breach, supply_chain, research." },
+    { href: "/tags/rce/feed.xml", label: "tags/<tag>/{feed.xml, llms.txt}, tags/<tag>.json", stable: true, blurb: "Per tag: an RSS feed, an llms.txt, and a JSON file with the tag's counts, months and records." },
     { href: "/og/default.png", label: "og/<name>.png", stable: true, blurb: `1200×630 chart images: ${OG_IMAGES.map((i) => i.file).join(", ")}.` },
     { href: "/data/slim/<year>.json", label: "slim/<year>.json", stable: false, blurb: "Slim records per year, what the incidents explorer loads. Internal." },
     { href: "/data/rows/<year>.json", label: "rows/<year>.json", stable: false, blurb: "Compact rows per year, what the dashboard's lists load. Internal." },
@@ -300,10 +306,25 @@ console.log(\`\${t.incidents} AI cybersecurity incidents from \${t.from} to \${t
       <h3 className="text-[14px] font-medium text-ink pt-2">years/index.json</h3>
       <FieldTable fields={asFields(YEAR_INDEX_FIELDS)} />
 
-      <h3 className="text-[14px] font-medium text-ink pt-2">feed.xml</h3>
+      <h3 className="text-[14px] font-medium text-ink pt-2">feed.xml and feed.json</h3>
       <p className="text-[13.5px]">
         RSS 2.0. Each item has the title, a link to the record&rsquo;s page, the record id as a non-permalink guid, the first-report date as pubDate, a
-        description (summary, severity, type, source count) and one category per incident category.
+        description (summary, the action when there is one, severity, lane, fix status, AI role, source count), and categories: the lane, the incident
+        categories and the tag slugs. feed.json is the same list as JSON Feed 1.1; each item carries the lifecycle under <span className="num">_radar</span>{" "}
+        (lane, type, severity, state, patch_status, cve_ids). The lane feeds under /lanes/&lt;lane&gt;/ and the tag feeds under /tags/&lt;tag&gt;/ have the same shape.
+      </p>
+
+      <h3 className="text-[14px] font-medium text-ink pt-2">changes.json</h3>
+      <p className="text-[13.5px]">
+        The newest 500 timeline entries across every record, newest first by <span className="num">added_at</span> (when the site learned of the entry), each
+        with the record&rsquo;s id, slug, title, lane, type, severity, state and fix status, the entry&rsquo;s date, text and source URL, and the record&rsquo;s
+        page. Poll it with <span className="num">If-None-Match</span>; it changes only when a deploy adds entries. Per lane under /lanes/&lt;lane&gt;/changes.json.
+      </p>
+
+      <h3 className="text-[14px] font-medium text-ink pt-2">llms.txt</h3>
+      <p className="text-[13.5px]">
+        Plain Markdown for an agent: what the site is, the counting and curation rules, the endpoints, the lanes with their counts, the top tags, and one line
+        per live record with its lane, severity, fix status, first-report date and CVE ids. The same file per lane and per tag.
       </p>
 
       <h3 className="text-[14px] font-medium text-ink pt-2">Internal files</h3>
