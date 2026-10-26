@@ -874,9 +874,15 @@
         "publisher": "SecurityWeek",
         "title": "953 Online Stores Infected in Long-Lasting Malware Campaign",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -887,7 +893,7 @@
       "loader"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T20:02:47.996Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
