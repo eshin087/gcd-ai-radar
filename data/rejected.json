@@ -1,5 +1,75 @@
 [
   {
+    "key": "330dedec80bd1be5",
+    "title": "Cisco Advance Notification for Publication of October 21, 2026, Security Advisories",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-notice-QGwHnJ6k?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Advance+Notification+for+Publication+of+October+21%2C+2026%2C+Security+Advisories%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Routine Cisco security advisory notification with no specific AI system compromise or AI-enabled attack incident.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "51eb458e2e294c5d",
+    "title": "Exclusive: Bipartisan bill would develop federal guidance for distillation attacks, convene industry on defensive cyber",
+    "url": "https://cyberscoop.com/bipartisan-bill-combat-ai-distillation-attacks-nist",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Legislative proposal and policy discussion about distillation attacks without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "637e00706c65d789",
+    "title": "Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation",
+    "url": "https://arxiv.org/abs/2610.32453",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only and benchmark-focused research paper addressing smart contract security task construction.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "0b20b20ba74d827b",
+    "title": "On Task, Off Track: Benchmarking LLM and Agent Robustness to Near-Target Prompt Injection",
+    "url": "https://arxiv.org/abs/2610.32531",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark and robustness evaluation paper focusing on near-target prompt injection without reporting a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "1e8efa589c865efb",
+    "title": "Omni-UBench: Benchmarking Omni-Modal LLM-based Guardrails Across Safety, Utility, and Reliability",
+    "url": "https://arxiv.org/abs/2610.31713",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This is a benchmark and evaluation paper for omni-modal guardrails, which falls under out-of-scope defense and benchmark proposals.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "1e6988a9c114b377",
+    "title": "SEMPRE: Semantic-Aware Protocol Reverse Engineering via Consistency-Driven Joint Optimization",
+    "url": "https://arxiv.org/abs/2610.31844",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper proposes a legitimate tool and framework for protocol reverse engineering using LLMs, which is a defensive or general utility application, not an attack on AI or an AI-enabled attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
+    "key": "5a180c5125b7bed7",
+    "title": "DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair",
+    "url": "https://arxiv.org/abs/2610.32345",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: This paper presents an automated vulnerability repair method and defense tool rather than describing an AI attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-26T05:15:00.657Z"
+  },
+  {
     "key": "641fd2b9b2b7e462",
     "title": "Prompt Injection Techniques Every Red Teamer Should Test",
     "url": "https://fdzdev.medium.com/20-prompt-injection-techniques-every-red-teamer-should-test-b22359bfd57d",
