@@ -21,7 +21,8 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { MetaFile, YearIndexFile } from "../lib/api-docs";
 import { briefingSummaryLine } from "../lib/briefing";
-import { lastUpdated, loadBriefings, loadIncidents, siteUrl } from "../lib/data";
+import { lastUpdated, loadBriefings, loadIncidents, loadStats, siteUrl } from "../lib/data";
+import { breachesMonthList, buildHome, dayCvesList, kevMonthList, weekCvesList } from "../lib/home";
 import { lastActivity, type FullIncident } from "../lib/lifecycle";
 import { buildBrief } from "../lib/brief";
 import { buildChanges, feedLinks } from "../lib/changes";
@@ -243,6 +244,25 @@ async function main() {
       2,
     ) + "\n",
   );
+
+  // public/stats: the home page's statistics (counters, series, the EPSS ten) and the lists its drawers open,
+  // derived from data/stats (the collector's daily stats stage) by lib/home.ts; what scripts/check-home.mjs compares the page against
+  const statsDir = path.join(PUBLIC, "stats");
+  await resetDir(statsDir);
+  const stats = await loadStats();
+  const home = buildHome(sorted, stats, now, updated, base);
+  // one list file per charted month, so every column opens its month
+  await Promise.all([
+    fs.writeFile(path.join(statsDir, "home.json"), JSON.stringify(home.stats, null, 1) + "\n"),
+    fs.writeFile(path.join(statsDir, "cves-day.json"), JSON.stringify({ generated_at: home.now, days: 1, source: stats.cvesRecent?.source ?? null, cves: dayCvesList(stats, now) }) + "\n"),
+    fs.writeFile(path.join(statsDir, "cves-week.json"), JSON.stringify({ generated_at: home.now, days: 7, source: stats.cvesRecent?.source ?? null, cves: weekCvesList(stats, now) }) + "\n"),
+    ...home.stats.series.kev_by_month.map(({ month }) =>
+      fs.writeFile(path.join(statsDir, `kev-${month}.json`), JSON.stringify({ generated_at: home.now, month, source: stats.kev?.source ?? null, entries: kevMonthList(stats, month) }) + "\n"),
+    ),
+    ...home.stats.series.breaches_by_month.map(({ month }) =>
+      fs.writeFile(path.join(statsDir, `breaches-${month}.json`), JSON.stringify({ generated_at: home.now, month, source: stats.hibp?.source ?? null, breaches: breachesMonthList(stats, month) }) + "\n"),
+    ),
+  ]);
 
   // Weekly briefings: copied as validated, plus an index, and their own feed.
   const briefings = await loadBriefings();

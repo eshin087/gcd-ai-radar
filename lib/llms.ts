@@ -57,6 +57,7 @@ export function buildLlmsTxt(input: LlmsInput): string {
   lines.push(`- ${base}/changes.json: the newest timeline updates, newest first by added_at; poll it with If-None-Match`);
   if (scope.kind === "site") {
     lines.push(`- ${site}/live.json: the live counters and per-lane counts`);
+    lines.push(`- ${site}/stats/home.json: the home page's statistics (new CVEs, KEV additions, breached accounts, EPSS top ten, series) with their sources and fetch times`);
     lines.push(`- ${site}/data/incidents/<slug>.json: one record, with a Markdown "brief" field`);
     lines.push(`- ${site}/data/incidents.json, ${site}/data/incidents.csv: the whole dataset (CC BY-SA 4.0)`);
     lines.push(`- ${site}/lanes/<lane>/llms.txt and ${site}/tags/<tag>/llms.txt: this file per lane and per tag`);

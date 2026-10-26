@@ -17,6 +17,8 @@ import { collectErrors, evaluate, launch, navigate, openSite, parseArgs, sleep }
 
 const args = parseArgs(process.argv.slice(2));
 const verbose = Boolean(args.verbose);
+/** The page with the live board: /live since the home page became the statistics desk. */
+const PATH = typeof args.path === "string" ? args.path : "/live";
 const LIVE_READY = `document.querySelector('[data-live-board][data-live-ready="1"]')`;
 const ARCHIVE_READY = `(() => { const s = document.querySelector('[data-archive-status]'); return s && /\\d/.test(s.textContent) && !/loading/.test(s.textContent); })()`;
 
@@ -45,7 +47,7 @@ async function run(client, base) {
   await client.send("Runtime.enable");
   await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   const live = await fetch(`${base}/live.json`).then((r) => r.json());
-  await navigate(client, `${base}/`, LIVE_READY);
+  await navigate(client, `${base}${PATH}`, LIVE_READY);
 
   // counters against live.json
   const counters = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-counter]')].map((e) => [e.dataset.counter, Number(e.dataset.value)]))`);
@@ -97,7 +99,7 @@ async function run(client, base) {
   }
 
   // the first calendar day with a report opens the records first reported that day
-  await navigate(client, `${base}/`, LIVE_READY);
+  await navigate(client, `${base}${PATH}`, LIVE_READY);
   const day = await evaluate(client, `(() => { const r = document.querySelector('rect[role="button"]'); if (!r) return null; const m = r.getAttribute("aria-label").match(/^(.*?): (\\d+) reported/); return m ? { label: m[1], reported: Number(m[2]) } : null; })()`);
   if (day) {
     await evaluate(client, `document.querySelector('rect[role="button"]').dispatchEvent(new MouseEvent("click", { bubbles: true }))`);
@@ -111,10 +113,10 @@ async function run(client, base) {
   await client.send("Emulation.setDeviceMetricsOverride", { width: 375, height: 812, deviceScaleFactor: 2, mobile: true });
   const firstTag = live.top_tags[0]?.slug ?? "rce";
   const firstRow = allRows.length ? await (async () => {
-    await navigate(client, `${base}/`, LIVE_READY);
+    await navigate(client, `${base}${PATH}`, LIVE_READY);
     return evaluate(client, `document.querySelector('[data-live-board] [data-row] a')?.getAttribute('href')`);
   })() : null;
-  for (const p of ["/", "/incidents", "/tags", `/tags/${firstTag}`, firstRow, "/trends", "/about"].filter(Boolean)) {
+  for (const p of ["/", PATH, "/incidents", "/tags", `/tags/${firstTag}`, firstRow, "/trends", "/about"].filter(Boolean)) {
     await navigate(client, `${base}${p}`);
     await sleep(400);
     const w = await evaluate(client, `({ scroll: document.documentElement.scrollWidth, inner: window.innerWidth })`);

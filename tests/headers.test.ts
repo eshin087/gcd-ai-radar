@@ -33,7 +33,7 @@ function headersFor(path: string): { headers: Map<string, string>; conflicts: st
 const GLOBAL_CSP = vercel.headers[0]!.headers.find((h) => h.key === "Content-Security-Policy")!.value;
 
 const OTHER_PATHS = ["/", "/api", "/data", "/incidents", "/incidents/some-slug", "/methodology", "/embed/", "/embed.html", "/embed.txt", "/EMBED", "/embedx", "/embed/x", "/x/embed", "/data/meta.json", "/feed.xml", "/og/default.png", "/trends", "/tags", "/tags/rce", "/lanes", "/changes.json", "/llms.txt"];
-const MACHINE_PATHS = ["/changes.json", "/llms.txt", "/feed.json", "/live.json", "/lanes/patch/feed.xml", "/lanes/breach/changes.json", "/lanes/research/llms.txt", "/tags/rce/feed.xml", "/tags/rce/llms.txt", "/tags/rce.json"];
+const MACHINE_PATHS = ["/changes.json", "/llms.txt", "/feed.json", "/live.json", "/stats/home.json", "/stats/kev-2026-10.json", "/lanes/patch/feed.xml", "/lanes/breach/changes.json", "/lanes/research/llms.txt", "/tags/rce/feed.xml", "/tags/rce/llms.txt", "/tags/rce.json"];
 
 describe("vercel.json headers", () => {
   it("refuses framing everywhere except /embed", () => {

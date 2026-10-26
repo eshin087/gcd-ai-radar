@@ -140,7 +140,8 @@ export function serialize(state: State): Map<string, string> {
   return out;
 }
 
-async function writeAtomic(dataDir: string, file: string, content: string) {
+/** Writes a file under the data directory through a temporary name, so a crash never leaves a half-written file. */
+export async function writeAtomic(dataDir: string, file: string, content: string) {
   const full = path.join(dataDir, file);
   await fs.mkdir(path.dirname(full), { recursive: true });
   const tmp = `${full}.tmp`;

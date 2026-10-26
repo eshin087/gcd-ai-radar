@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { LivePage } from "@/components/live/LivePage";
-import { getLiveData } from "@/lib/live-data";
+import { HomePage } from "@/components/home/HomePage";
+import { getHomeData } from "@/lib/home-data";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,6 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const data = await getLiveData();
-  return <LivePage data={data} />;
+  const data = await getHomeData();
+  return <HomePage data={data} />;
 }
