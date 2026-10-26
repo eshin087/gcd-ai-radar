@@ -35,8 +35,8 @@ const NVD_2024_3400: NvdResponse = {
         vulnStatus: "Analyzed",
         metrics: {
           cvssMetricV31: [
-            { source: "psirt@paloaltonetworks.com", type: "Secondary", cvssData: { version: "3.1", baseScore: 10, baseSeverity: "CRITICAL" } },
-            { source: "nvd@nist.gov", type: "Primary", cvssData: { version: "3.1", baseScore: 10, baseSeverity: "CRITICAL" } },
+            { source: "psirt@paloaltonetworks.com", type: "Secondary", cvssData: { version: "3.1", vectorString: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H", baseScore: 10, baseSeverity: "CRITICAL" } },
+            { source: "nvd@nist.gov", type: "Primary", cvssData: { version: "3.1", vectorString: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H", baseScore: 10, baseSeverity: "CRITICAL" } },
           ],
           ssvcV203: [{ source: "134c704f-9b21-4f2e-91b3-4a467353bcc0" }],
         },
@@ -48,7 +48,7 @@ const NVD_2024_3400: NvdResponse = {
 /** `cveId=CVE-2026-103572`, recorded the same day: one vendor (secondary) v3.1 metric, no NVD primary yet. */
 const NVD_2026_103572: NvdResponse = {
   totalResults: 1,
-  vulnerabilities: [{ cve: { id: "CVE-2026-103572", vulnStatus: "Awaiting Analysis", metrics: { cvssMetricV31: [{ source: "secure@microsoft.com", type: "Secondary", cvssData: { version: "3.1", baseScore: 8.8 } }] } } }],
+  vulnerabilities: [{ cve: { id: "CVE-2026-103572", vulnStatus: "Awaiting Analysis", metrics: { cvssMetricV31: [{ source: "secure@microsoft.com", type: "Secondary", cvssData: { version: "3.1", vectorString: "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H", baseScore: 8.8 } }] } } }],
 };
 
 describe("scoreFromAdvisory", () => {
@@ -77,10 +77,33 @@ describe("scoreFromAdvisory", () => {
   });
 });
 
+/** `cveId=CVE-2026-55611`, recorded the same day: the only metric is a genuine 0.0 (no impact at all), which is a score, not an absence. */
+const NVD_2026_55611: NvdResponse = {
+  totalResults: 1,
+  vulnerabilities: [
+    {
+      cve: {
+        id: "CVE-2026-55611",
+        vulnStatus: "Deferred",
+        metrics: {
+          cvssMetricV31: [{ source: "security-advisories@github.com", type: "Secondary", cvssData: { version: "3.1", vectorString: "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:N", baseScore: 0, baseSeverity: "NONE" } }],
+          ssvcV203: [{ source: "134c704f-9b21-4f2e-91b3-4a467353bcc0" }],
+        },
+      },
+    },
+  ],
+};
+
 describe("scoreFromNvd", () => {
   it("reads the CVSS 3.1 base score, across primary and secondary metrics", () => {
     expect(scoreFromNvd(NVD_2024_3400)).toBe(10);
     expect(scoreFromNvd(NVD_2026_103572)).toBe(8.8);
+  });
+
+  it("keeps a real 0.0 (vector present) and drops a score without a vector string", () => {
+    expect(scoreFromNvd(NVD_2026_55611)).toBe(0);
+    const placeholder: NvdResponse = { totalResults: 1, vulnerabilities: [{ cve: { id: "CVE-2026-3", metrics: { cvssMetricV31: [{ cvssData: { version: "3.1", baseScore: 0 } }] } } }] };
+    expect(scoreFromNvd(placeholder)).toBeNull();
   });
 
   it("prefers the higher of v4.0 and v3.1 when NVD carries both, and ignores v2 and SSVC", () => {
@@ -91,16 +114,16 @@ describe("scoreFromNvd", () => {
           cve: {
             id: "CVE-2026-1",
             metrics: {
-              cvssMetricV40: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "4.0", baseScore: 9.3 } }],
-              cvssMetricV31: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "3.1", baseScore: 9.8 } }],
-              cvssMetricV2: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "2.0", baseScore: 10 } }],
+              cvssMetricV40: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "4.0", vectorString: "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N", baseScore: 9.3 } }],
+              cvssMetricV31: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "3.1", vectorString: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H", baseScore: 9.8 } }],
+              cvssMetricV2: [{ source: "nvd@nist.gov", type: "Primary", cvssData: { version: "2.0", vectorString: "AV:N/AC:L/Au:N/C:C/I:C/A:C", baseScore: 10 } }],
             },
           },
         },
       ],
     };
     expect(scoreFromNvd(both)).toBe(9.8);
-    const v4Only: NvdResponse = { totalResults: 1, vulnerabilities: [{ cve: { id: "CVE-2026-2", metrics: { cvssMetricV40: [{ cvssData: { version: "4.0", baseScore: 8.7 } }] } } }] };
+    const v4Only: NvdResponse = { totalResults: 1, vulnerabilities: [{ cve: { id: "CVE-2026-2", metrics: { cvssMetricV40: [{ cvssData: { version: "4.0", vectorString: "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N", baseScore: 8.7 } }] } } }] };
     expect(scoreFromNvd(v4Only)).toBe(8.7);
   });
 
@@ -113,10 +136,11 @@ describe("scoreFromNvd", () => {
 });
 
 describe("pickScore", () => {
-  it("keeps the highest valid score with one decimal and drops zeros, nulls and out-of-range values", () => {
+  it("keeps the highest valid score with one decimal and drops nulls and out-of-range values", () => {
     expect(pickScore([7.5, null, undefined, 0, 9.8])).toBe(9.8);
     expect(pickScore([7.55])).toBe(7.6);
-    expect(pickScore([11, -1, 0, null])).toBeNull();
+    expect(pickScore([0, null])).toBe(0);
+    expect(pickScore([11, -1, null])).toBeNull();
     expect(pickScore([])).toBeNull();
     expect(roundScore(9.84)).toBe(9.8);
   });

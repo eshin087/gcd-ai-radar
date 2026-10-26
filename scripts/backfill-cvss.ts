@@ -49,7 +49,7 @@ export interface AdvisoryWithScores extends Advisory {
 export interface NvdMetric {
   source?: string;
   type?: string;
-  cvssData?: { version?: string; baseScore?: number; baseSeverity?: string };
+  cvssData?: { version?: string; vectorString?: string; baseScore?: number; baseSeverity?: string };
 }
 
 export interface NvdResponse {
@@ -62,8 +62,9 @@ export function roundScore(n: number): number {
   return Math.round(n * 10) / 10;
 }
 
+/** 0.0 is a real base score (no impact at all); only a score without a vector string is a placeholder, which the readers below drop. */
 function validScore(n: unknown): n is number {
-  return typeof n === "number" && Number.isFinite(n) && n > 0 && n <= 10;
+  return typeof n === "number" && Number.isFinite(n) && n >= 0 && n <= 10;
 }
 
 /** The highest valid score among the candidates, or null when none. */
@@ -90,7 +91,7 @@ export function scoreFromNvd(data: NvdResponse | null | undefined): number | nul
   if (!cve?.metrics) return null;
   const scores: (number | undefined)[] = [];
   for (const key of ["cvssMetricV40", "cvssMetricV31"]) {
-    for (const m of cve.metrics[key] ?? []) scores.push(m.cvssData?.baseScore);
+    for (const m of cve.metrics[key] ?? []) if (m.cvssData?.vectorString) scores.push(m.cvssData.baseScore);
   }
   return pickScore(scores);
 }
