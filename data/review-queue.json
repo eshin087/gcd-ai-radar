@@ -80,9 +80,15 @@
         "publisher": "BleepingComputer",
         "title": "University of Copenhagen data breach exposes data of 525,000 people",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/university-of-copenhagen-cyberattack-data-breach",
+        "publisher": "Help Net Security",
+        "title": "Cyberattack on University of Copenhagen exposes data of 525,000 people",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "review",
     "origin": "news",
@@ -91,7 +97,7 @@
       "university_of_copenhagen"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,

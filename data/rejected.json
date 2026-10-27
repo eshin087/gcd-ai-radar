@@ -1,5 +1,195 @@
 [
   {
+    "key": "954cf9f5d28d70c7",
+    "title": "Cisco Unified Communications Products Security Hardening Release: October 2026",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-hardening-twgbH9e3?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Unified+Communications+Products+Security+Hardening+Release%3A+October+2026%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Product security hardening advisory without specific CVE exploitation details or critical ratings meeting the bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "f2c54ba356b73e11",
+    "title": "Cisco Expressway Series Security Hardening Release: October 2026",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-exwy-hardening-FhcqBVcs?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Expressway+Series+Security+Hardening+Release%3A+October+2026%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Product security hardening advisory without specific CVE exploitation details",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "0f775fb76e0f59a1",
+    "title": "I-HITL: Inalienable Human-in-the-Loop",
+    "url": "https://arxiv.org/abs/2610.35835",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence-only research paper proposing a protocol, not demonstrating a working attack or vulnerability",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "130e8d98fd8b87d4",
+    "title": "Alignment of Autonomous Cyber Defense Agents via Adaptive Policy Shaping",
+    "url": "https://arxiv.org/abs/2610.33234",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "0187f71f74a30436",
+    "title": "Benchmarking Classical and Quantum Machine Learning for Intrusion Detection Across Multiple Datasets",
+    "url": "https://arxiv.org/abs/2610.33119",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "db351bb4a2548834",
+    "title": "A Certified Robustness Framework for Backdoor Poisoning Attacks using $f$-Divergences",
+    "url": "https://arxiv.org/abs/2610.34934",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence-only paper proposing a certified robustness framework against backdoor poisoning.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "93d48256f8220a4a",
+    "title": "Repairing Broken Access Control in Web Applications with LLMs: An Empirical Benchmark Study",
+    "url": "https://arxiv.org/abs/2610.34290",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence or repair proposal paper focusing on automated vulnerability remediation using LLMs.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "0e15a60c007a857f",
+    "title": "Socure links AI agents to verified people and businesses",
+    "url": "https://helpnetsecurity.com/2026/10/27/socure-agent-intelligence",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and vendor feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "b75cb7a2dd048b3a",
+    "title": "Several AI security market categories are headed for bigger platforms",
+    "url": "https://helpnetsecurity.com/2026/10/27/jonathan-care-kuppingercole-analysts-ai-security-market",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Analyst interview, market roundup and opinion piece without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "a8e13854d19a0092",
+    "title": "LLM agent security needs more than guardrails",
+    "url": "https://helpnetsecurity.com/2026/10/27/llm-agent-security-video",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion and explanatory commentary without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "079b5dce6a79e5e0",
+    "title": "CVE-2026-116829: llama.cpp b10398 before b11301 contains an integer overflow vulnerability in gguf_init_from_reader that allows attackers to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116829",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability with a fix and no reported exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "a2ba29321904f0b6",
+    "title": "CVE-2024-58400: llama.cpp before b3701 contains an out-of-bounds read vulnerability in llama_decode_internal and llama_encode_internal that…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-58400",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability with a fix and no reported exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "de3d6a8708a19eff",
+    "title": "CVE-2026-116816: llama.cpp b5899 before b10261 contains a heap out-of-bounds write vulnerability in llm_tokenizer_plamo2::build that allows…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116816",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability with a fix and no reported exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "1ce9ccf10a03fa0a",
+    "title": "AI-Generated Fake Login Pages Are Making Account Takeovers Easier",
+    "url": "https://thehackernews.com/2026/10/ai-generated-fake-login-pages-are.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: It is an explainer/opinion piece about trends in phishing techniques without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "7e3ea0d8dad94e98",
+    "title": "2026-019: Critical Vulnerability in GitLab Community and Enterprise Editions",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-019",
+    "publisher": "CERT-EU",
+    "source_id": "cert-eu",
+    "reason": "out of scope: Generic advisory roundup without specific CVE details or exploitation confirmed in the provided text snippet",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "ad1d1216ca39b76c",
+    "title": "CVE-2025-71439: llama.cpp before b5649 contains a heap out-of-bounds read vulnerability in llama_vocab::impl::print_info() that allows attackers…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71439",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 6.8) without exploitation in the wild, thus failing the newsworthiness bar for vulnerabilities",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "76565f7127686c7e",
+    "title": "CVE-2026-116840: llama.cpp b5854 before b11275 contains an integer overflow vulnerability in gguf_init_from_reader that bypasses the…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116840",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 6.9) without exploitation in the wild, thus failing the newsworthiness bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "73c85be883706d2a",
+    "title": "CVE-2026-65119: NVIDIA TensorRT-LLM for any platform contains a vulnerability in KvCacheAwareRouter tokenizer loading, where an attacker could…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65119",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability (CVSS 8.4) but under the critical threshold (CVSS 9+) and no exploitation in the wild reported",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
+    "key": "68921e7515a8bc62",
+    "title": "The Huntress Tragic Quadrant: Ranking Threats Hitting Businesses Hardest",
+    "url": "https://bleepingcomputer.com/news/security/the-huntress-tragic-quadrant-ranking-threats-hitting-businesses-hardest",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Roundups, newsletters, podcasts, opinion and explainers without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T15:31:15.081Z"
+  },
+  {
     "key": "5ab5d7f95395318a",
     "title": "What Is Agentic Security vs. Agentic AI in Cybersecurity?",
     "url": "https://straiker.ai/blog/agentic-security-vs-agentic-ai-cybersecurity",

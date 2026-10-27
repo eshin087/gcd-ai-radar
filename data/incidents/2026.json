@@ -1,5 +1,1219 @@
 [
   {
+    "id": "AIR-2026-1583",
+    "slug": "critical-vulnerability-in-f5-big-ip-apm-exploited-in-the-wil",
+    "title": "Critical Vulnerability in F5 BIG-IP APM Exploited in the Wild",
+    "summary": "F5 addressed a critical vulnerability in its BIG-IP APM product that has been confirmed as actively exploited in the wild. CERT-EU recommends applying security updates immediately.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "F5 BIG-IP APM"
+    ],
+    "incident_date": "2026-09-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-013",
+        "publisher": "CERT-EU",
+        "title": "2026-013: Critical Vulnerability in F5 BIG-IP APM",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "f5",
+      "big-ip",
+      "active-exploitation"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "F5 BIG-IP APM"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-013: Critical Vulnerability in F5 BIG-IP APM",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-013",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Apply the updates provided by F5 for BIG-IP APM as soon as possible.",
+    "severity_note": "Critical vulnerability confirmed exploited in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1582",
+    "slug": "cve-2026-24269-nvidia-tensorrt-llm-server-side-request-forge",
+    "title": "CVE-2026-24269: NVIDIA TensorRT-LLM server-side request forgery vulnerability",
+    "summary": "NVIDIA TensorRT-LLM contains a server-side request forgery vulnerability that can result in information disclosure and data tampering. The issue has been rated high by the vendor.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "NVIDIA TensorRT-LLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24269",
+        "publisher": "NVD",
+        "title": "CVE-2026-24269: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-24269",
+      "ssrf"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-24269"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-24269: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24269",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Consult NVIDIA advisories and update TensorRT-LLM installations.",
+    "severity_note": "High rating (7.1) with no exploitation in the wild.",
+    "cvss": 7.1
+  },
+  {
+    "id": "AIR-2026-1581",
+    "slug": "cve-2026-65151-nvidia-nemo-agent-toolkit-sql-injection-vulne",
+    "title": "CVE-2026-65151: NVIDIA NeMo Agent Toolkit SQL injection vulnerability",
+    "summary": "NVIDIA NeMo Agent Toolkit contains a SQL injection vulnerability that could allow attackers to cause data tampering, denial of service, and information disclosure. The issue carries a high CVSS rating.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "NVIDIA NeMo Agent Toolkit"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65151",
+        "publisher": "NVD",
+        "title": "CVE-2026-65151: NVIDIA NeMo Agent Toolkit contains vulnerability where an attacker could cause a SQL injection issue.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-65151",
+      "sql-injection"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-65151"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-65151: NVIDIA NeMo Agent Toolkit contains vulnerability where an attacker could cause a SQL injection issue.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65151",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Review NVIDIA advisories for updates addressing CVE-2026-65151.",
+    "severity_note": "High rating (8.4) with no reported exploitation in the wild.",
+    "cvss": 8.4
+  },
+  {
+    "id": "AIR-2026-1580",
+    "slug": "cve-2026-65145-nvidia-nemo-agent-toolkit-missing-authenticat",
+    "title": "CVE-2026-65145: NVIDIA NeMo Agent Toolkit missing authentication vulnerability",
+    "summary": "NVIDIA NeMo Agent Toolkit contains a missing authentication vulnerability that may lead to code execution, privilege escalation, and data tampering. The issue has been assigned a critical CVSS score.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "NVIDIA NeMo Agent Toolkit"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65145",
+        "publisher": "NVD",
+        "title": "CVE-2026-65145: NVIDIA NeMo Agent Toolkit contains a vulnerability where a attacker could cause a missing authentication issue.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-65145",
+      "authentication"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-65145"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-65145: NVIDIA NeMo Agent Toolkit contains a vulnerability where a attacker could cause a missing authentication issue.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65145",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Check the vendor advisory and apply available patches or mitigations for NVIDIA NeMo Agent Toolkit.",
+    "severity_note": "CVSS 10 critical rating with no exploitation confirmed yet.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1579",
+    "slug": "keystone-to-destroy-hardware-wallets-after-device-verificati",
+    "title": "Keystone to Destroy Hardware Wallets After Device Verification Key Theft",
+    "summary": "Attackers gained unauthorized access to Keystone's website and stole the private key used to verify genuine hardware wallets. The company announced it will destroy 18,835 affected devices to prevent counterfeit fraud.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Keystone hardware wallets"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
+        "publisher": "The Hacker News",
+        "title": "Keystone to Destroy 18,835 Hardware Wallets After Hackers Steal Device Verification Key",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "keystone",
+      "hardware-wallet",
+      "credential-theft",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Keystone to Destroy 18,835 Hardware Wallets After Hackers Steal Device Verification Key",
+        "source_url": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Check if your Keystone hardware wallet is affected by the replacement program.",
+    "severity_note": "Confirmed compromise of verification keys leading to device destruction.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1578",
+    "slug": "australian-signals-directorate-disrupts-amadey-malware-infra",
+    "title": "Australian Signals Directorate Disrupts Amadey Malware Infrastructure",
+    "summary": "The Australian Signals Directorate gained access to the backend infrastructure of the Amadey malware operation, cutting off attacker access to 180,000 infected computers worldwide. The intervention effectively neutralizes the current threat from these infected endpoints.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Amadey malware"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/australia-gets-into-amadey-malware.html",
+        "publisher": "The Hacker News",
+        "title": "Australia Gets Into Amadey Malware Backend, Cuts Off Access to 180,000 Infected Computers",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "amadey",
+      "botnet",
+      "takedown"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Australia Gets Into Amadey Malware Backend, Cuts Off Access to 180,000 Infected Computers",
+        "source_url": "https://thehackernews.com/2026/10/australia-gets-into-amadey-malware.html",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed disruption of a major malware backend affecting thousands of systems.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1577",
+    "slug": "lazarus-group-targets-south-korean-organizations-in-operatio",
+    "title": "Lazarus Group Targets South Korean Organizations in Operation FlashHole",
+    "summary": "The Lazarus Group is carrying out a cyber espionage campaign dubbed Operation FlashHole against South Korean organizations in the construction, software, and wire-communication sectors. The campaign uses compromised South Korean security software to deploy malware protected by post-quantum encryption.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "South Korean Security Software"
+    ],
+    "incident_date": "2025-07",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html",
+        "publisher": "The Hacker News",
+        "title": "Lazarus Abuses South Korean Security Software to Deploy Malware Using Post-Quantum Encryption",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "lazarus",
+      "flashhole",
+      "espionage"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Lazarus Abuses South Korean Security Software to Deploy Malware Using Post-Quantum Encryption",
+        "source_url": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world targeted intrusion campaign by a known threat group.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1576",
+    "slug": "cve-2024-58399-llama-cpp-out-of-bounds-read-vulnerability",
+    "title": "CVE-2024-58399: llama.cpp Out-of-Bounds Read Vulnerability",
+    "summary": "Llama.cpp contains an out-of-bounds read vulnerability in llama_model_loader that allows attackers to read memory outside the mapped model file via crafted GGUF tensor offsets. Attackers can supply a crafted GGUF model file to crash the process or load adjacent memory.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-58399",
+        "publisher": "NVD",
+        "title": "CVE-2024-58399: llama.cpp before b2731 contains an out-of-bounds read vulnerability in llama_model_loader that allows attackers to read memory…",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2024-58399",
+      "out-of-bounds-read"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2024-58399"
+    ],
+    "affected": [],
+    "fixed_in": [
+      "b2731"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2024-58399: llama.cpp before b2731 contains an out-of-bounds read vulnerability in llama_model_loader that allows attackers to read memory…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-58399",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Update to version b2731 or later.",
+    "severity_note": "Disclosed vulnerability with medium rating and no confirmed exploitation.",
+    "cvss": 6.9
+  },
+  {
+    "id": "AIR-2026-1575",
+    "slug": "cve-2026-117560-atxp-gemini-cli-extension-os-command-injecti",
+    "title": "CVE-2026-117560: ATXP Gemini CLI Extension OS Command Injection",
+    "summary": "The ATXP Gemini CLI extension contains an OS command injection vulnerability in runAtxp() allowing shell command execution via unsanitized tool parameters. Attackers can plant instructions in emails or SMS to trigger command execution as the user.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ATXP Gemini CLI extension"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117560",
+        "publisher": "NVD",
+        "title": "CVE-2026-117560: ATXP Gemini CLI extension through 1.0.0 contains an OS command injection vulnerability in runAtxp() that allows attackers to…",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-117560",
+      "command-injection"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-117560"
+    ],
+    "affected": [
+      "ATXP Gemini CLI extension <= 1.0.0"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-117560: ATXP Gemini CLI extension through 1.0.0 contains an OS command injection vulnerability in runAtxp() that allows attackers to…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117560",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation and a high rating.",
+    "cvss": 8.5
+  },
+  {
+    "id": "AIR-2026-1574",
+    "slug": "critical-rce-vulnerability-in-gitlab-ce-and-ee",
+    "title": "Critical RCE Vulnerability in GitLab CE and EE",
+    "summary": "GitLab released versions fixing a critical vulnerability that allows unauthenticated remote code execution on the server. Administrators should upgrade self-managed instances immediately.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GitLab Community Edition and Enterprise Edition"
+    ],
+    "incident_date": "2026-10-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-016",
+        "publisher": "CERT-EU",
+        "title": "2026-016: Critical Vulnerability in GitLab CE and EE",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "gitlab",
+      "rce"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "GitLab CE/EE prior to 19.4.2, 19.3.4, and 19.2.8"
+    ],
+    "fixed_in": [
+      "GitLab 19.4.2",
+      "19.3.4",
+      "19.2.8"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-016: Critical Vulnerability in GitLab CE and EE",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-016",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Upgrade self-managed GitLab CE and EE instances to 19.4.2, 19.3.4, 19.2.8 or later.",
+    "severity_note": "A critical rating with a fix supplied by the vendor.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1573",
+    "slug": "critical-rce-vulnerabilities-in-citrix-netscaler-adc-and-gat",
+    "title": "Critical RCE Vulnerabilities in Citrix NetScaler ADC and Gateway",
+    "summary": "Citrix NetScaler ADC and Gateway contain critical unauthenticated remote code execution vulnerabilities that are actively exploited in the wild. Administrators must update affected software and perform a compromise assessment.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "NetScaler ADC",
+      "NetScaler Gateway"
+    ],
+    "incident_date": "2026-09-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-014",
+        "publisher": "CERT-EU",
+        "title": "2026-014: Critical Vulnerabilities in Citrix NetScaler ADC and Gateway",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-010",
+        "publisher": "CERT-EU",
+        "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rce",
+      "netscaler",
+      "active-exploitation"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "Citrix NetScaler ADC",
+      "Citrix NetScaler Gateway"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-014: Critical Vulnerabilities in Citrix NetScaler ADC and Gateway",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-014",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-010",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Update affected Citrix NetScaler ADC and Gateway software and run a compromise assessment.",
+    "severity_note": "Active exploitation in the wild was confirmed by Citrix.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1572",
+    "slug": "cve-2026-80097-microsoft-authenticator-flaw-allowed-permissi",
+    "title": "CVE-2026-80097: Microsoft Authenticator flaw allowed permissionless Android apps to steal work tokens",
+    "summary": "Researchers discovered a vulnerability in Microsoft Authenticator for Android that allowed unauthorized applications on the device to quietly hijack work account tokens without requiring special permissions or user interaction. Microsoft has released an update to resolve the security issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Authenticator"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/microsoft-authenticator-vulnerability-patchedcve-2026-80097",
+        "publisher": "Help Net Security",
+        "title": "Microsoft Authenticator vulnerability let rogue Android apps steal work account access",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html",
+        "publisher": "The Hacker News",
+        "title": "Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work Account Tokens",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-80097",
+      "android",
+      "authentication",
+      "token-theft"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-80097"
+    ],
+    "affected": [
+      "Microsoft Authenticator for Android"
+    ],
+    "fixed_in": [
+      "Latest version"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Microsoft Authenticator vulnerability let rogue Android apps steal work account access",
+        "source_url": "https://helpnetsecurity.com/2026/10/27/microsoft-authenticator-vulnerability-patchedcve-2026-80097",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work Account Tokens",
+        "source_url": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Update Microsoft Authenticator on Android to the latest patched version.",
+    "severity_note": "Disclosed vulnerability with researcher finding and a fix available.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1571",
+    "slug": "cyberattack-disrupts-university-of-new-mexico-hospitals",
+    "title": "Cyberattack disrupts University of New Mexico hospitals",
+    "summary": "A cyberattack disrupted operations at the University of New Mexico Health Sciences Center hospitals, forcing ambulance diversions and appointment cancellations while an extortion group claimed responsibility. The incident may have also resulted in a substantial data breach.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "University of New Mexico hospitals systems"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/university-of-new-mexico-hospitals-cyberattack",
+        "publisher": "Help Net Security",
+        "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "extortion",
+      "healthcare",
+      "unm"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
+        "source_url": "https://helpnetsecurity.com/2026/10/27/university-of-new-mexico-hospitals-cyberattack",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world disruption and potential breach at a named hospital network.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1570",
+    "slug": "critical-vulnerability-in-multiple-atlassian-products",
+    "title": "Critical Vulnerability in Multiple Atlassian Products",
+    "summary": "Atlassian published a security advisory addressing a critical arbitrary file access vulnerability affecting multiple Data Center and server products. CERT-EU recommends upgrading all affected installations immediately.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Bitbucket Data Center",
+      "Confluence Data Center",
+      "Jira Service Management Data Center",
+      "Jira Software Data Center",
+      "Bamboo Data Center",
+      "Crowd Data Center",
+      "Crucible",
+      "Fisheye"
+    ],
+    "incident_date": "2026-10-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-015",
+        "publisher": "CERT-EU",
+        "title": "2026-015: Critical Vulnerability in Multiple Atlassian Products",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "arbitrary-file-access",
+      "atlassian",
+      "critical"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Atlassian Data Center and Server products"
+    ],
+    "fixed_in": [
+      "Latest patched versions"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-015: Critical Vulnerability in Multiple Atlassian Products",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-015",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "Upgrade all affected installations to a fixed version as soon as possible and check access logs for signs of exploitation.",
+    "severity_note": "Critical rating with a fix.",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1569",
+    "slug": "the-agent-in-the-middle-how-ai-mediated-access-reshapes-web",
+    "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+    "summary": "Researchers investigate how AI agents delegate tasks and interact with web backend interfaces, reshaping web vulnerability exploitation. The study evaluates commercial agents across a benchmark of 44 vulnerabilities.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "VELA benchmark"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.35541",
+        "publisher": "arXiv",
+        "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-agents",
+      "web-vulnerabilities",
+      "exploitation"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+        "source_url": "https://arxiv.org/abs/2610.35541",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1568",
+    "slug": "cosa-the-conflict-of-skills-attack-in-real-world-llm-agent-e",
+    "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+    "summary": "Researchers identify the Conflict of Skills attack mechanism where LLM agent skills reuse artifacts without preserving necessary authorizations. The study demonstrates how composed skills lead to unauthorized actions and policy violations.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM agent ecosystems"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.35082",
+        "publisher": "arXiv",
+        "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "llm-agents",
+      "skill-composition",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+        "source_url": "https://arxiv.org/abs/2610.35082",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1567",
+    "slug": "agent-to-agent-synthetic-social-engineering-on-the-web",
+    "title": "Agent-to-Agent Synthetic Social Engineering on the Web",
+    "summary": "Researchers defined and demonstrated synthetic social engineering, an attack where separately tasked sender agents generate deceptive influence to manipulate AI recipients. The technique redirects automated agents away from authorized objectives by exploiting credibility and authority cues.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "individual_victims"
+    ],
+    "products": [
+      "Web Services Agents"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.33411",
+        "publisher": "arXiv",
+        "title": "Agent-to-Agent Synthetic Social Engineering on the Web",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "synthetic-social-engineering",
+      "agent-to-agent",
+      "deception",
+      "autonomous-agents"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Agent-to-Agent Synthetic Social Engineering on the Web",
+        "source_url": "https://arxiv.org/abs/2610.33411",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1566",
+    "slug": "steering-for-safety-hijacking-for-profit-trojan-threats-in-l",
+    "title": "Steering for Safety, Hijacking for Profit: Trojan Threats in LLM Steering",
+    "summary": "Researchers demonstrated supply-chain risks in large language model activation steering vectors, showing how malicious plugins can covertly manipulate model outputs. The attack introduces trojans into customization components to compromise model behavior without degrading perceived performance.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Steering Vectors"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.35043",
+        "publisher": "arXiv",
+        "title": "Steering for Safety, Hijacking for Profit: Trojan Threats in the LLM Activation Steering Supply Chain",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "activation-steering",
+      "trojan",
+      "llm"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Steering for Safety, Hijacking for Profit: Trojan Threats in the LLM Activation Steering Supply Chain",
+        "source_url": "https://arxiv.org/abs/2610.35043",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1565",
+    "slug": "nametrap-steering-ai-coding-agents-via-variable-names",
+    "title": "NameTrap: Steering AI Coding Agents via Variable Names",
+    "summary": "Researchers introduced NameTrap, a source-code poisoning attack that renames identifiers in third-party Python files to steer AI coding agents toward specific Common Weakness Enumeration vulnerabilities. The technique demonstrates how web-borne context can be weaponized to compromise code generated by AI assistants.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [
+      "Python"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.34253",
+        "publisher": "arXiv",
+        "title": "NameTrap: Steering AI Coding Agents Toward Security Vulnerabilities via Variable Names",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "source-code-poisoning",
+      "coding-agents",
+      "cwe",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "NameTrap: Steering AI Coding Agents Toward Security Vulnerabilities via Variable Names",
+        "source_url": "https://arxiv.org/abs/2610.34253",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1564",
+    "slug": "stance-poisoning-and-evidence-balancing-in-rag-systems",
+    "title": "Stance Poisoning and Evidence Balancing in RAG Systems",
+    "summary": "Researchers demonstrate that injecting correct facts with a one-sided stance into retrieval sources can systematically alter the output stance of retrieval-augmented generation models. Tests across multiple vendor models revealed consistent stance shifts.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Retrieval-Augmented Generation Systems"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.34294",
+        "publisher": "arXiv",
+        "title": "Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rag",
+      "data-poisoning",
+      "stance-poisoning",
+      "research"
+    ],
+    "created_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation",
+        "source_url": "https://arxiv.org/abs/2610.34294",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel stance poisoning attack on RAG models.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1563",
     "slug": "scope-gap-injection-exploiting-evaluator-blind-spots-in-open",
     "title": "Scope-Gap Injection: Exploiting Evaluator Blind Spots in OpenClaw",
@@ -735,9 +1949,15 @@
         "publisher": "SecurityWeek",
         "title": "Stolen AI Reasoning Could Help China Build Cheaper Rivals",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/openai-compaction-flaw-let-researchers.html",
+        "publisher": "The Hacker News",
+        "title": "OpenAI Compaction Flaw Let Researchers Bypass Hidden Reasoning Protections",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -747,7 +1967,7 @@
       "compaction"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -2423,9 +3643,15 @@
         "publisher": "The Hacker News",
         "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
         "published_at": "2026-10-25"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation",
+        "publisher": "BleepingComputer",
+        "title": "Tailscale warns of SSH flaws allowing root privilege escalation",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2435,7 +3661,7 @@
       "unpatched"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -2451,6 +3677,12 @@
         "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
         "source_url": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
         "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "The vendor is working on patches for nearly a dozen security vulnerabilities involving Tailscale SSH.",
+        "source_url": "https://bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation",
+        "added_at": "2026-10-27T15:31:15.081Z"
       }
     ],
     "action": "Disable Tailscale SSH port forwarding or tighten network access rules until a fix is released.",
@@ -4563,9 +5795,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-114612: LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format.",
         "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-7hp6-4w63-5g45",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-114612: LiteLLM: Privilege Escalation to Proxy Admin via Cross-Domain Reuse of the Salt Key",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -4575,22 +5813,40 @@
       "privilege-escalation"
     ],
     "created_at": "2026-10-22T22:10:34.459Z",
-    "updated_at": "2026-10-22T22:10:34.459Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-22",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-114612"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "litellm >= 1.91.0, < 1.100.4",
+      "litellm >= 1.101.0, < 1.101.3",
+      "litellm >= 1.102.0, < 1.102.2",
+      "litellm >= 1.103.0, < 1.103.1",
+      "litellm >= 1.104.0rc1, < 1.104.0rc2"
+    ],
+    "fixed_in": [
+      "litellm 1.100.4",
+      "litellm 1.101.3",
+      "litellm 1.102.2",
+      "litellm 1.103.1",
+      "litellm 1.104.0rc2"
+    ],
     "timeline": [
       {
         "date": "2026-10-22",
         "title": "CVE-2026-114612: LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114612",
         "added_at": "2026-10-22T22:10:34.459Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-7hp6-4w63-5g45",
+        "added_at": "2026-10-27T15:31:15.081Z"
       }
     ],
     "action": "",
@@ -5466,9 +6722,15 @@
         "publisher": "SecurityWeek",
         "title": "LiteLLM Compromised in Fresh Supply Chain Attack",
         "published_at": "2026-10-23"
+      },
+      {
+        "url": "https://theregister.com/security/2026/10/26/litellm-supply-chain-attack-started-with-an-exposed-master-key/5305544",
+        "publisher": "The Register",
+        "title": "LiteLLM supply chain attack started with an exposed master key",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5479,7 +6741,7 @@
       "pypi"
     ],
     "created_at": "2026-10-21T21:54:09.300Z",
-    "updated_at": "2026-10-23T12:12:09.941Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -5499,6 +6761,12 @@
         "title": "LiteLLM Compromised in Fresh Supply Chain Attack",
         "source_url": "https://securityweek.com/litellm-compromised-in-fresh-supply-chain-attack",
         "added_at": "2026-10-21T21:54:09.300Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Investigation reveals the supply chain attack originated from an exposed master key.",
+        "source_url": "https://theregister.com/security/2026/10/26/litellm-supply-chain-attack-started-with-an-exposed-master-key/5305544",
+        "added_at": "2026-10-27T15:31:15.081Z"
       }
     ],
     "action": "",
@@ -19906,9 +21174,21 @@
         "publisher": "NVD",
         "title": "CVE-2026-94624: vLLM through 0.29.0 contains a denial of service vulnerability in P2P KV offloading when OffloadingConnector is configured with…",
         "published_at": "2026-09-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-8qpc-6rxx-4pxf",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-8qpc-6rxx-4pxf: Duplicate Advisory: vllm p2p never connected zmq_exhaustion",
+        "published_at": "2026-09-22"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-frvg-qw88-hww9",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-94624: vllm p2p never connected zmq_exhaustion",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -19918,22 +21198,38 @@
       "denial_of_service"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-09-21",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-94624"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "vllm < 0.32.0"
+    ],
+    "fixed_in": [
+      "vllm 0.32.0"
+    ],
     "timeline": [
       {
         "date": "2026-09-21",
         "title": "CVE-2026-94624: vLLM through 0.29.0 contains a denial of service vulnerability in P2P KV offloading when OffloadingConnector is configured with…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94624",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-09-22",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-8qpc-6rxx-4pxf",
+        "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-frvg-qw88-hww9",
+        "added_at": "2026-10-27T15:31:15.081Z"
       }
     ],
     "action": "",
@@ -71449,9 +72745,15 @@
         "publisher": "GitHub Advisory Database",
         "title": "CVE-2026-35002: Agno is vulnerable to Eval Injection",
         "published_at": "2026-04-02"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-m4w4-3r8h-jw98",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-35002: Agno: Arbitrary code execution via `eval()` on `field_type` in `FunctionCall`",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_ghsa",
@@ -71461,22 +72763,32 @@
       "rce"
     ],
     "created_at": "2026-10-18T07:00:14.101Z",
-    "updated_at": "2026-10-18T07:00:14.101Z",
+    "updated_at": "2026-10-27T15:31:15.081Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-04-02",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-35002"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "agno < 2.3.24"
+    ],
+    "fixed_in": [
+      "agno 2.3.24"
+    ],
     "timeline": [
       {
         "date": "2026-04-02",
         "title": "CVE-2026-35002: Agno is vulnerable to Eval Injection",
         "source_url": "https://github.com/advisories/GHSA-77rh-m34w-rv36",
         "added_at": "2026-10-18T07:00:14.101Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-m4w4-3r8h-jw98",
+        "added_at": "2026-10-27T15:31:15.081Z"
       }
     ],
     "action": "",
