@@ -13,5 +13,7 @@ export default defineConfig([
     "public/**",
     // other Claude Code sessions' worktrees (separate checkouts with their own builds)
     ".claude/**",
+    // the Cloudflare Worker has its own package, tsconfig and eslint config (worker/)
+    "worker/**",
   ]),
 ]);
