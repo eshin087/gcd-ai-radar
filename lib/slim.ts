@@ -29,6 +29,8 @@ export interface SlimIncident {
   patch_status: PatchStatus;
   /** The CVE ids the record is about, highest first. */
   cve_ids: string[];
+  /** The CVSS base score a source states, or null. */
+  cvss: number | null;
   /** Tag slugs (lib/tags.ts), at most five. */
   tags: string[];
   /** The newest dated activity: a timeline entry, a source or the first report. */
@@ -57,6 +59,7 @@ export function slim(i: FullIncident): SlimIncident {
     state: i.state,
     patch_status: i.patch_status,
     cve_ids: i.cve_ids,
+    cvss: i.cvss,
     tags: tagSlugsOf(i),
     last_update: lastActivity(i),
   };

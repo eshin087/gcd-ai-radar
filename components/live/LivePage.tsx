@@ -49,7 +49,7 @@ export function LivePage({ data }: { data: LiveData }) {
   const longest = c.quiet.longest;
   return (
     <div className="space-y-8">
-      <section className="grid gap-5 lg:min-h-[300px] lg:grid-cols-[minmax(0,460px)_minmax(0,1fr)] lg:gap-10">
+      <section className="grid gap-5 lg:min-h-[300px] lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10">
         <div className="order-2 min-w-0 space-y-3 self-center lg:order-1">
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-dim">
             <span aria-hidden className="live-dot" />

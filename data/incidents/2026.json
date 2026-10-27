@@ -1,5 +1,855 @@
 [
   {
+    "id": "AIR-2026-1550",
+    "slug": "genesys-hack-exposes-customer-data-from-internal-systems",
+    "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+    "summary": "An unauthorized intrusion into Genesys internal systems resulted in the exposure of customer data. Main cloud platforms such as Genesys Cloud and Genesys Engage remained unaffected.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Genesys internal systems"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/genesys-hack-exposes-customer-data-from-internal-systems",
+        "publisher": "SecurityWeek",
+        "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "genesys",
+      "data-breach",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Genesys Hack Exposes Customer Data From Internal Systems",
+        "source_url": "https://securityweek.com/genesys-hack-exposes-customer-data-from-internal-systems",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed intrusion and data exposure at a named organization.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1549",
+    "slug": "industrial-vendors-check-products-for-php2shell-vulnerabilit",
+    "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+    "summary": "Multiple industrial automation vendors confirmed that several of their products are vulnerable to PHP2Shell flaws. Organizations should review vendor advisories and apply available updates.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Siemens products",
+      "Schneider Electric products",
+      "ABB products"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities",
+        "publisher": "SecurityWeek",
+        "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "siemens",
+      "schneider-electric",
+      "abb",
+      "vulnerability"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Industrial Vendors Check Products for PHP2Shell Vulnerabilities",
+        "source_url": "https://securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Check vendor advisories and apply patches as they become available.",
+    "severity_note": "Critical vulnerabilities affecting multiple industrial product lines.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1548",
+    "slug": "flaw-in-openai-compaction-process-enables-reasoning-extracti",
+    "title": "Flaw in OpenAI Compaction Process Enables Reasoning Extraction",
+    "summary": "Researchers discovered a flaw in OpenAI's compaction process that allows reasoning traces to be moved between models. This technique could potentially facilitate model distillation and lower the cost of building rival AI systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "OpenAI API"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals",
+        "publisher": "SecurityWeek",
+        "title": "Stolen AI Reasoning Could Help China Build Cheaper Rivals",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "model-extraction",
+      "reasoning-traces",
+      "compaction"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "OpenAI compaction process"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Stolen AI Reasoning Could Help China Build Cheaper Rivals",
+        "source_url": "https://securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research finding with no reported real-world exploitation losses.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1547",
+    "slug": "cert-ua-warns-hackers-exploiting-dahua-surveillance-cameras",
+    "title": "CERT-UA Warns Hackers Exploiting Dahua Surveillance Cameras",
+    "summary": "Ukrainian cyber authorities report that attackers are compromising internet-connected Dahua cameras and video recorders. The intruders modify device settings and create unauthorized user accounts.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Dahua surveillance cameras"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://therecord.media/ukraine-cert-ua-warning-chinese-dahua-cameras-hacked",
+        "publisher": "The Record",
+        "title": "Ukraine warns hackers are exploiting Chinese-made Dahua surveillance cameras",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cert-ua",
+      "iot",
+      "surveillance-cameras",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Ukraine warns hackers are exploiting Chinese-made Dahua surveillance cameras",
+        "source_url": "https://therecord.media/ukraine-cert-ua-warning-chinese-dahua-cameras-hacked",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Review access controls and update firmware on internet-exposed surveillance devices.",
+    "severity_note": "Confirmed exploitation in the wild against physical surveillance devices.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1546",
+    "slug": "microsoft-teams-it-support-scams-deploy-malware-and-ransomwa",
+    "title": "Microsoft Teams IT Support Scams Deploy Malware and Ransomware",
+    "summary": "Threat actors are using Microsoft Teams' external chat features and throwaway tenants to impersonate IT support and deploy malware and ransomware. Researchers highlight a recurring social engineering pattern spanning hundreds of confirmed cases.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Teams"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "social-engineering",
+      "ransomware",
+      "malware",
+      "microsoft-teams"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
+        "source_url": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Monitor and restrict external tenant chat access in Microsoft Teams where appropriate.",
+    "severity_note": "Confirmed real-world attack campaign using social engineering and malware deployment.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1545",
+    "slug": "cve-2026-116467-llama-cpp-mirostat-sampler-assertion-vulnera",
+    "title": "CVE-2026-116467: llama.cpp Mirostat Sampler assertion vulnerability",
+    "summary": "A flaw in the Mirostat Sampler component of llama.cpp allows remote attackers to trigger assertions and crash the service. The vendor has not yet responded to the reported pull request.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116467",
+        "publisher": "NVD",
+        "title": "CVE-2026-116467: A security flaw has been discovered in ggml-org llama.cpp up to 0.7.0.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116467",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "unpatched",
+    "cve_ids": [
+      "CVE-2026-116467"
+    ],
+    "affected": [
+      "llama.cpp <= 0.7.0"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-116467: A security flaw has been discovered in ggml-org llama.cpp up to 0.7.0.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116467",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability without a fix or exploitation reported; CVSS 6.9.",
+    "cvss": 6.9
+  },
+  {
+    "id": "AIR-2026-1544",
+    "slug": "cve-2026-115912-vllm-shared-memory-multimodal-remote-code-ex",
+    "title": "CVE-2026-115912: vLLM shared-memory multimodal remote code execution",
+    "summary": "Improper trust handling of shared-memory multimodal features in vLLM scale-out deployments allows authenticated callers to trigger arbitrary Python execution via insecure deserialization. Version 0.32.0 addresses this vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
+        "publisher": "NVD",
+        "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115912",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115912"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed high-severity vulnerability with a fix and no exploitation reported; CVSS 7.5.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1543",
+    "slug": "cve-2026-115916-vllm-tokenizer-off-by-one-engine-termination",
+    "title": "CVE-2026-115916: vLLM tokenizer off-by-one engine termination",
+    "summary": "An off-by-one bound validation error in vLLM tokenizer handling allows pre-tokenized prompt IDs to trigger device-side assertions and terminate the engine. The issue is fixed in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
+        "publisher": "NVD",
+        "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115916",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115916"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1542",
+    "slug": "cve-2026-115918-vllm-chat-template-parsing-resource-exhausti",
+    "title": "CVE-2026-115918: vLLM chat template parsing resource exhaustion",
+    "summary": "A trust policy bypass in vLLM allows authenticated callers to supply custom chat templates that cause CPU or memory exhaustion during rendering. A patch has been released in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
+        "publisher": "NVD",
+        "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115918",
+      "resource-exhaustion"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115918"
+    ],
+    "affected": [
+      "vLLM 0.16.0 to 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1541",
+    "slug": "cve-2026-115914-vllm-multimodal-ocr-path-denial-of-service",
+    "title": "CVE-2026-115914: vLLM multimodal OCR path denial of service",
+    "summary": "An input validation flaw in vLLM allows remote clients to submit specially crafted images that cause a fatal assertion and crash the inference engine. The vulnerability is resolved in version 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
+        "publisher": "NVD",
+        "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115914",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115914"
+    ],
+    "affected": [
+      "vLLM 0.11.1 to 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM version 0.32.0.",
+    "severity_note": "Disclosed vulnerability with a fix and no exploitation reported; CVSS 6.5.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1540",
+    "slug": "cve-2026-115915-vllm-insecure-image-parsing-command-executio",
+    "title": "CVE-2026-115915: vLLM insecure image parsing command execution vulnerability",
+    "summary": "Improper restriction of decoder selection during image parsing allows attackers to dispatch EPS payloads. This can lead to arbitrary command execution if vulnerable underlying components like Ghostscript or Pillow are present.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
+        "publisher": "NVD",
+        "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115915",
+      "rce"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115915"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1539",
+    "slug": "cve-2026-115917-vllm-permissive-cors-configuration-vulnerabi",
+    "title": "CVE-2026-115917: vLLM permissive CORS configuration vulnerability",
+    "summary": "The OpenAI-compatible server in vLLM configures Starlette CORSMiddleware with a wildcard origin by default. Malicious web pages can reach unauthenticated local servers and consume resources.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
+        "publisher": "NVD",
+        "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115917",
+      "cors"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115917"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 3.4
+  },
+  {
+    "id": "AIR-2026-1538",
+    "slug": "cve-2026-115913-vllm-phi-4-multimodal-audio-attention-out-of",
+    "title": "CVE-2026-115913: vLLM Phi-4 multimodal audio attention out-of-memory flaw",
+    "summary": "A remote client can submit a long audio clip that causes quadratic GPU memory usage and crashes the vLLM EngineCore. The flaw affects vLLM versions prior to 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
+        "publisher": "NVD",
+        "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115913",
+      "out-of-memory"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115913"
+    ],
+    "affected": [
+      "vLLM < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1537",
+    "slug": "cve-2026-115911-vllm-chat-template-denial-of-service-vulnera",
+    "title": "CVE-2026-115911: vLLM chat template denial of service vulnerability",
+    "summary": "An unauthenticated remote user can supply a crafted chat template that causes resource exhaustion and blocks responses in vLLM. The vulnerability affects versions from 0.19.0 until 0.32.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
+        "publisher": "NVD",
+        "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-115911",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-26",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-115911"
+    ],
+    "affected": [
+      "vLLM >= 0.19.0, < 0.32.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.32.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      }
+    ],
+    "action": "Update to vLLM 0.32.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
     "id": "AIR-2026-1536",
     "slug": "malware-campaign-infects-953-online-stores",
     "title": "Malware Campaign Infects 953 Online Stores",
@@ -24,9 +874,15 @@
         "publisher": "SecurityWeek",
         "title": "953 Online Stores Infected in Long-Lasting Malware Campaign",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -37,7 +893,7 @@
       "loader"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T20:02:47.996Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -143,37 +999,109 @@
         "publisher": "SecurityWeek",
         "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-187",
+        "publisher": "Fortinet",
+        "title": "Multiple Node.js CVEs",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
+        "publisher": "The Hacker News",
+        "title": "PHP Issues Second Windows Security Update in Five Days to Fix Brotli Code Execution Flaw",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://security.paloaltonetworks.com/CVE-2026-111497",
+        "publisher": "Palo Alto Networks",
+        "title": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability (CVE-2026-111497) on Palo Alto Networks Products (Severity: CRITICAL)",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/critical-http2shell-brotli-vulnerability-triggers-emergency-patches",
+        "publisher": "BleepingComputer",
+        "title": "Critical 'HTTP2Shell' Brotli vulnerability triggers emergency patches",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
+        "publisher": "BleepingComputer",
+        "title": "Microsoft releases emergency .NET patches for critical Brotli flaw",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 6,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
     "tags": [
       "brotli",
       "out-of-bounds-write",
-      "code-execution"
+      "code-execution",
+      "CVE-2026-105482",
+      "CVE-2026-105483",
+      "CVE-2026-106069",
+      "CVE-2026-111497",
+      "CVE-2026-105481",
+      "CVE-2026-106072"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "partial",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-111497",
+      "CVE-2026-106072",
+      "CVE-2026-106069",
+      "CVE-2026-105483",
+      "CVE-2026-105482",
+      "CVE-2026-105481"
+    ],
     "affected": [],
-    "fixed_in": [],
+    "fixed_in": [
+      "PHP 8.2",
+      "PHP 8.3",
+      "PHP 8.4",
+      "PHP 8.5"
+    ],
     "timeline": [
       {
         "date": "2026-10-26",
         "title": "Node2Shell: Brotli Flaw Triggers Patching Across Microsoft, Node.js, Python Packages",
         "source_url": "https://securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages",
         "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Vendor bulletins detail specific CVE identifiers associated with the Brotli decoder vulnerabilities",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-187",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "PHP releases updated Windows packages for versions 8.2 through 8.5 addressing the Brotli vulnerability",
+        "source_url": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Palo Alto Networks reports impact on products from the Brotli decoder vulnerability CVE-2026-111497",
+        "source_url": "https://security.paloaltonetworks.com/CVE-2026-111497",
+        "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Microsoft releases emergency .NET security updates for the Brotli vulnerability",
+        "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
+        "added_at": "2026-10-26T19:34:40.193Z"
       }
     ],
-    "action": "Update affected Node.js, .NET, PowerShell, and Python packages as vendor patches become available.",
+    "action": "Update PHP Windows packages to the latest patched releases.",
     "severity_note": "Disclosed vulnerability with potential for code execution across multiple ecosystems.",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-1532",
@@ -289,9 +1217,15 @@
         "publisher": "The Hacker News",
         "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/gheist-stolen-github-tokens-cloud-secrets",
+        "publisher": "Dark Reading",
+        "title": "'Gheist' Weaponizes GitHub Tokens to Steal Cloud Secrets",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -303,7 +1237,7 @@
       "supply-chain"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-26T19:34:40.193Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -981,7 +1915,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1507",
@@ -1105,7 +2039,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1505",
@@ -1164,7 +2098,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1504",
@@ -1225,7 +2159,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1503",
@@ -1284,7 +2218,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1502",
@@ -1343,7 +2277,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1501",
@@ -1402,7 +2336,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1500",
@@ -1461,7 +2395,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1499",
@@ -1520,7 +2454,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1498",
@@ -1579,7 +2513,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1497",
@@ -1638,7 +2572,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-1496",
@@ -1825,7 +2759,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1492",
@@ -2174,7 +3108,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2026-1483",
@@ -2233,7 +3167,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1482",
@@ -2293,7 +3227,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1481",
@@ -2883,7 +3817,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1471",
@@ -3001,7 +3935,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1469",
@@ -3060,7 +3994,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1468",
@@ -3827,7 +4761,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-1458",
@@ -3957,7 +4891,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1456",
@@ -4199,7 +5133,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1452",
@@ -4259,7 +5193,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1451",
@@ -4318,7 +5252,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1450",
@@ -4377,7 +5311,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1449",
@@ -4448,7 +5382,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1448",
@@ -4507,7 +5441,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1447",
@@ -4566,7 +5500,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-1446",
@@ -5305,7 +6239,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1433",
@@ -5364,7 +6298,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-1432",
@@ -5424,7 +6358,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1431",
@@ -5495,7 +6429,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1430",
@@ -5728,7 +6662,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-1426",
@@ -5788,7 +6722,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1425",
@@ -6646,7 +7580,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1410",
@@ -6705,7 +7639,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1409",
@@ -6765,7 +7699,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1408",
@@ -6824,7 +7758,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1407",
@@ -6883,7 +7817,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1406",
@@ -7064,7 +7998,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1403",
@@ -7123,7 +8057,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-1402",
@@ -8064,7 +8998,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0331",
@@ -8472,7 +9406,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-0324",
@@ -8543,7 +9477,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0323",
@@ -8602,7 +9536,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0322",
@@ -8661,7 +9595,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0321",
@@ -8719,7 +9653,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0320",
@@ -8838,7 +9772,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0318",
@@ -8897,7 +9831,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.7
   },
   {
     "id": "AIR-2026-0317",
@@ -8970,7 +9904,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0316",
@@ -9029,7 +9963,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1392",
@@ -9088,7 +10022,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0315",
@@ -9147,7 +10081,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0314",
@@ -9206,7 +10140,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-0313",
@@ -9266,7 +10200,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0312",
@@ -9325,7 +10259,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0311",
@@ -9384,7 +10318,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0310",
@@ -9443,7 +10377,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0309",
@@ -9502,7 +10436,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-0308",
@@ -9561,7 +10495,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0307",
@@ -9620,7 +10554,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-0306",
@@ -9679,7 +10613,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0305",
@@ -9738,7 +10672,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0304",
@@ -9797,7 +10731,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0303",
@@ -9857,7 +10791,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0302",
@@ -9916,7 +10850,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0301",
@@ -9976,7 +10910,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0300",
@@ -10035,7 +10969,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0299",
@@ -10095,7 +11029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0298",
@@ -10154,7 +11088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.1
   },
   {
     "id": "AIR-2026-0297",
@@ -10213,7 +11147,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0296",
@@ -10272,7 +11206,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0295",
@@ -10331,7 +11265,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0294",
@@ -10390,7 +11324,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0293",
@@ -10449,7 +11383,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0292",
@@ -10508,7 +11442,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0291",
@@ -10567,7 +11501,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0290",
@@ -10626,7 +11560,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0289",
@@ -10685,7 +11619,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0288",
@@ -10744,7 +11678,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-0287",
@@ -10803,7 +11737,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0286",
@@ -10861,7 +11795,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0285",
@@ -10920,7 +11854,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0284",
@@ -10980,7 +11914,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0283",
@@ -11039,7 +11973,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0282",
@@ -11098,7 +12032,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0281",
@@ -11157,7 +12091,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0280",
@@ -11216,7 +12150,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0279",
@@ -11275,7 +12209,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0278",
@@ -11334,7 +12268,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0277",
@@ -11393,7 +12327,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0276",
@@ -11452,7 +12386,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0275",
@@ -11511,7 +12445,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0274",
@@ -11570,7 +12504,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0273",
@@ -11629,7 +12563,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0272",
@@ -11688,7 +12622,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0271",
@@ -11747,7 +12681,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0270",
@@ -11806,7 +12740,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0269",
@@ -11864,7 +12798,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0268",
@@ -11923,7 +12857,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0267",
@@ -11982,7 +12916,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0266",
@@ -12041,7 +12975,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0265",
@@ -12100,7 +13034,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0264",
@@ -12159,7 +13093,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0263",
@@ -12218,7 +13152,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0262",
@@ -12277,7 +13211,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0261",
@@ -12337,7 +13271,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0260",
@@ -12396,7 +13330,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0258",
@@ -12456,7 +13390,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0256",
@@ -12514,7 +13448,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0255",
@@ -12572,7 +13506,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0254",
@@ -12631,7 +13565,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0253",
@@ -12691,7 +13625,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.3
   },
   {
     "id": "AIR-2026-0252",
@@ -12751,7 +13685,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2026-0251",
@@ -12822,7 +13756,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0250",
@@ -12939,7 +13873,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0248",
@@ -12999,7 +13933,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6
   },
   {
     "id": "AIR-2026-0245",
@@ -13071,7 +14005,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0244",
@@ -13142,7 +14076,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0243",
@@ -13201,7 +14135,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0242",
@@ -13260,7 +14194,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0241",
@@ -13332,7 +14266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0240",
@@ -13403,7 +14337,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0239",
@@ -13474,7 +14408,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0238",
@@ -13545,7 +14479,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0237",
@@ -13616,7 +14550,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.2
   },
   {
     "id": "AIR-2026-0236",
@@ -13687,7 +14621,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0235",
@@ -13758,7 +14692,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0234",
@@ -13829,7 +14763,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0233",
@@ -13888,7 +14822,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0232",
@@ -13959,7 +14893,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0231",
@@ -14030,7 +14964,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0229",
@@ -14101,7 +15035,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0228",
@@ -14160,7 +15094,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-0225",
@@ -14219,7 +15153,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0224",
@@ -14278,7 +15212,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0223",
@@ -14337,7 +15271,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0222",
@@ -14420,7 +15354,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0221",
@@ -14479,7 +15413,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0220",
@@ -14538,7 +15472,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-0219",
@@ -14600,7 +15534,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2
   },
   {
     "id": "AIR-2026-0377",
@@ -14719,7 +15653,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0216",
@@ -14779,7 +15713,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-0215",
@@ -14839,7 +15773,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0214",
@@ -14898,7 +15832,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0213",
@@ -14957,7 +15891,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0212",
@@ -15016,7 +15950,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0211",
@@ -15075,7 +16009,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0210",
@@ -15134,7 +16068,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0209",
@@ -15193,7 +16127,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0208",
@@ -15254,7 +16188,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0207",
@@ -15313,7 +16247,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0206",
@@ -15373,7 +16307,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0205",
@@ -15432,7 +16366,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0204",
@@ -15491,7 +16425,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0203",
@@ -15550,7 +16484,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0202",
@@ -15609,7 +16543,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0201",
@@ -15668,7 +16602,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0200",
@@ -15727,7 +16661,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0378",
@@ -15845,7 +16779,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0198",
@@ -15905,7 +16839,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-0197",
@@ -15965,7 +16899,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0194",
@@ -16024,7 +16958,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0193",
@@ -16083,7 +17017,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0192",
@@ -16142,7 +17076,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0191",
@@ -16202,7 +17136,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0190",
@@ -16261,7 +17195,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0189",
@@ -16320,7 +17254,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0188",
@@ -16379,7 +17313,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0187",
@@ -16438,7 +17372,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0186",
@@ -16497,7 +17431,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0185",
@@ -16556,7 +17490,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0184",
@@ -16615,7 +17549,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0183",
@@ -16674,7 +17608,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0182",
@@ -16733,7 +17667,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0181",
@@ -16792,7 +17726,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0180",
@@ -16851,7 +17785,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0179",
@@ -16910,7 +17844,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0178",
@@ -16969,7 +17903,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0177",
@@ -17028,7 +17962,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0176",
@@ -17087,7 +18021,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0175",
@@ -17146,7 +18080,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0174",
@@ -17205,7 +18139,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0173",
@@ -17264,7 +18198,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0172",
@@ -17323,7 +18257,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0171",
@@ -17382,7 +18316,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0170",
@@ -17441,7 +18375,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0169",
@@ -17500,7 +18434,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0168",
@@ -17560,7 +18494,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0167",
@@ -17619,7 +18553,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0166",
@@ -17679,7 +18613,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0165",
@@ -17738,7 +18672,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0164",
@@ -17797,7 +18731,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0163",
@@ -17857,7 +18791,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2026-0162",
@@ -17916,7 +18850,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-0161",
@@ -17977,7 +18911,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0160",
@@ -18037,7 +18971,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0159",
@@ -18096,7 +19030,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0158",
@@ -18155,7 +19089,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0157",
@@ -18214,7 +19148,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0156",
@@ -18273,7 +19207,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0155",
@@ -18332,7 +19266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0154",
@@ -18391,7 +19325,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0152",
@@ -18450,7 +19384,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-1495",
@@ -18624,7 +19558,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0150",
@@ -18683,7 +19617,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0149",
@@ -18742,7 +19676,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0148",
@@ -18803,7 +19737,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0147",
@@ -18862,7 +19796,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0146",
@@ -18922,7 +19856,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0145",
@@ -18993,7 +19927,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0144",
@@ -19052,7 +19986,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0143",
@@ -19111,7 +20045,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1391",
@@ -19170,7 +20104,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0142",
@@ -19229,7 +20163,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0141",
@@ -19289,7 +20223,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0140",
@@ -19360,7 +20294,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0139",
@@ -19419,7 +20353,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0138",
@@ -19490,7 +20424,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0137",
@@ -19549,7 +20483,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0136",
@@ -19610,7 +20544,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0135",
@@ -19681,7 +20615,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1390",
@@ -19740,7 +20674,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-1389",
@@ -19800,7 +20734,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-1388",
@@ -19859,7 +20793,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1387",
@@ -19918,7 +20852,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-1386",
@@ -19977,7 +20911,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1385",
@@ -20036,7 +20970,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0134",
@@ -20095,7 +21029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0133",
@@ -20154,7 +21088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0132",
@@ -20213,7 +21147,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0131",
@@ -20273,7 +21207,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0130",
@@ -20332,7 +21266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0129",
@@ -20393,7 +21327,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0128",
@@ -20453,7 +21387,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0127",
@@ -20512,7 +21446,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0126",
@@ -20571,7 +21505,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0125",
@@ -20630,7 +21564,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0124",
@@ -20689,7 +21623,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0123",
@@ -20748,7 +21682,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0122",
@@ -20807,7 +21741,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0121",
@@ -20867,7 +21801,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0120",
@@ -20926,7 +21860,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0119",
@@ -20985,7 +21919,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0118",
@@ -21045,7 +21979,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0117",
@@ -21104,7 +22038,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0116",
@@ -21163,7 +22097,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0115",
@@ -21222,7 +22156,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.9
   },
   {
     "id": "AIR-2026-0114",
@@ -21281,7 +22215,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.7
   },
   {
     "id": "AIR-2026-0113",
@@ -21340,7 +22274,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0112",
@@ -21470,7 +22404,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1383",
@@ -21530,7 +22464,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.2
   },
   {
     "id": "AIR-2026-1382",
@@ -21589,7 +22523,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1381",
@@ -21648,7 +22582,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1380",
@@ -21707,7 +22641,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1379",
@@ -21766,7 +22700,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.3
   },
   {
     "id": "AIR-2026-1378",
@@ -21825,7 +22759,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0387",
@@ -21946,7 +22880,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0110",
@@ -22006,7 +22940,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0109",
@@ -22066,7 +23000,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0108",
@@ -22126,7 +23060,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1377",
@@ -22185,7 +23119,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1376",
@@ -22244,7 +23178,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1375",
@@ -22304,7 +23238,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1374",
@@ -22363,7 +23297,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1373",
@@ -22422,7 +23356,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1372",
@@ -22481,7 +23415,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0107",
@@ -22540,7 +23474,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1371",
@@ -22598,7 +23532,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1370",
@@ -22657,7 +23591,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1369",
@@ -22715,7 +23649,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1368",
@@ -22774,7 +23708,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1367",
@@ -22833,7 +23767,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1366",
@@ -22892,7 +23826,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1365",
@@ -22951,7 +23885,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1364",
@@ -23010,7 +23944,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-1363",
@@ -23069,7 +24003,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1362",
@@ -23128,7 +24062,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1361",
@@ -23187,7 +24121,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1360",
@@ -23246,7 +24180,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1359",
@@ -23305,7 +24239,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1358",
@@ -23364,7 +24298,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1357",
@@ -23422,7 +24356,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1356",
@@ -23481,7 +24415,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1355",
@@ -23540,7 +24474,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1354",
@@ -23598,7 +24532,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-1353",
@@ -23657,7 +24591,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1352",
@@ -23716,7 +24650,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0392",
@@ -23833,7 +24767,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0105",
@@ -23904,7 +24838,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0104",
@@ -23975,7 +24909,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1351",
@@ -24034,7 +24968,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-0932",
@@ -24105,7 +25039,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0929",
@@ -24177,7 +25111,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0928",
@@ -24248,7 +25182,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0927",
@@ -24320,7 +25254,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0925",
@@ -24391,7 +25325,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0924",
@@ -24461,7 +25395,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0923",
@@ -24531,7 +25465,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0922",
@@ -24601,7 +25535,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0919",
@@ -24671,7 +25605,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0916",
@@ -24743,7 +25677,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0915",
@@ -24814,7 +25748,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0909",
@@ -24886,7 +25820,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0908",
@@ -24957,7 +25891,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0907",
@@ -25027,7 +25961,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-0906",
@@ -25097,7 +26031,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0905",
@@ -25167,7 +26101,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0393",
@@ -25342,7 +26276,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0103",
@@ -25403,7 +26337,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1346",
@@ -25462,7 +26396,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1345",
@@ -25521,7 +26455,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0390",
@@ -25637,7 +26571,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-1343",
@@ -25695,7 +26629,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1342",
@@ -25753,7 +26687,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1341",
@@ -25811,7 +26745,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-1340",
@@ -25869,7 +26803,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1339",
@@ -25927,7 +26861,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1338",
@@ -25986,7 +26920,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1337",
@@ -26045,7 +26979,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-1336",
@@ -26104,7 +27038,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1335",
@@ -26163,7 +27097,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.9
   },
   {
     "id": "AIR-2026-1334",
@@ -26222,7 +27156,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1333",
@@ -26281,7 +27215,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1332",
@@ -26340,7 +27274,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1331",
@@ -26399,7 +27333,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1330",
@@ -26459,7 +27393,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1329",
@@ -26518,7 +27452,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0102",
@@ -26577,7 +27511,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1328",
@@ -26635,7 +27569,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-1326",
@@ -26693,7 +27627,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1325",
@@ -26751,7 +27685,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1324",
@@ -26809,7 +27743,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-0218",
@@ -26882,7 +27816,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1323",
@@ -26940,7 +27874,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1322",
@@ -26999,7 +27933,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1321",
@@ -27057,7 +27991,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1320",
@@ -27117,7 +28051,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1319",
@@ -27177,7 +28111,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0099",
@@ -27249,7 +28183,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0364",
@@ -27430,7 +28364,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0363",
@@ -27658,7 +28592,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1316",
@@ -27717,7 +28651,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1315",
@@ -27776,7 +28710,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-1314",
@@ -27835,7 +28769,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1313",
@@ -27893,7 +28827,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1312",
@@ -27951,7 +28885,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1311",
@@ -28009,7 +28943,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1310",
@@ -28068,7 +29002,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0098",
@@ -28127,7 +29061,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0097",
@@ -28187,7 +29121,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0096",
@@ -28247,7 +29181,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0095",
@@ -28306,7 +29240,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1309",
@@ -28365,7 +29299,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1308",
@@ -28429,7 +29363,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0902",
@@ -28500,7 +29434,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1306",
@@ -28558,7 +29492,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.6
   },
   {
     "id": "AIR-2026-1305",
@@ -28616,7 +29550,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-1304",
@@ -28674,7 +29608,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1303",
@@ -28732,7 +29666,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7
   },
   {
     "id": "AIR-2026-1302",
@@ -28790,7 +29724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1301",
@@ -28848,7 +29782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1300",
@@ -28906,7 +29840,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1299",
@@ -28964,7 +29898,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1298",
@@ -29023,7 +29957,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1297",
@@ -29082,7 +30016,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1296",
@@ -29141,7 +30075,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1295",
@@ -29200,7 +30134,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1294",
@@ -29259,7 +30193,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1293",
@@ -29318,7 +30252,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0094",
@@ -29377,7 +30311,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0093",
@@ -29437,7 +30371,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0090",
@@ -29498,7 +30432,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0385",
@@ -29614,7 +30548,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1292",
@@ -29673,7 +30607,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0384",
@@ -29901,7 +30835,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0086",
@@ -29973,7 +30907,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0083",
@@ -30044,7 +30978,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0082",
@@ -30104,7 +31038,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1286",
@@ -30163,7 +31097,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1285",
@@ -30222,7 +31156,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1284",
@@ -30282,7 +31216,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1283",
@@ -30344,7 +31278,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1282",
@@ -30403,7 +31337,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-1281",
@@ -30463,7 +31397,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1280",
@@ -30522,7 +31456,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1279",
@@ -30581,7 +31515,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1278",
@@ -30640,7 +31574,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-1277",
@@ -30700,7 +31634,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-1276",
@@ -30758,7 +31692,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0259",
@@ -30829,7 +31763,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0257",
@@ -30901,7 +31835,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0081",
@@ -30972,7 +31906,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0079",
@@ -31042,7 +31976,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0078",
@@ -31112,7 +32046,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0077",
@@ -31184,7 +32118,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0076",
@@ -31256,7 +32190,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0075",
@@ -31318,7 +32252,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1275",
@@ -31378,7 +32312,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1274",
@@ -31437,7 +32371,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1273",
@@ -31496,7 +32430,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0074",
@@ -31557,7 +32491,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0073",
@@ -31616,7 +32550,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-1272",
@@ -31676,7 +32610,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0072",
@@ -31735,7 +32669,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2026-1271",
@@ -31794,7 +32728,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1270",
@@ -31853,7 +32787,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1269",
@@ -31913,7 +32847,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1268",
@@ -31971,7 +32905,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1267",
@@ -32029,7 +32963,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-1266",
@@ -32089,7 +33023,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1265",
@@ -32147,7 +33081,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1264",
@@ -32207,7 +33141,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-0071",
@@ -32266,7 +33200,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0070",
@@ -32325,7 +33259,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0069",
@@ -32384,7 +33318,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0068",
@@ -32443,7 +33377,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0067",
@@ -32503,7 +33437,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0066",
@@ -32562,7 +33496,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0065",
@@ -32621,7 +33555,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0064",
@@ -32681,7 +33615,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0063",
@@ -32741,7 +33675,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-1263",
@@ -32800,7 +33734,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1262",
@@ -32859,7 +33793,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-1261",
@@ -32918,7 +33852,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1260",
@@ -32977,7 +33911,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1259",
@@ -33036,7 +33970,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1258",
@@ -33095,7 +34029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1257",
@@ -33154,7 +34088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1256",
@@ -33213,7 +34147,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1255",
@@ -33272,7 +34206,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1254",
@@ -33330,7 +34264,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1253",
@@ -33388,7 +34322,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1252",
@@ -33446,7 +34380,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1251",
@@ -33504,7 +34438,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-1250",
@@ -33563,7 +34497,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1249",
@@ -33621,7 +34555,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2026-1248",
@@ -33679,7 +34613,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1247",
@@ -33737,7 +34671,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1246",
@@ -33795,7 +34729,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1245",
@@ -33855,7 +34789,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-1244",
@@ -33915,7 +34849,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1243",
@@ -33975,7 +34909,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1242",
@@ -34036,7 +34970,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1241",
@@ -34095,7 +35029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0405",
@@ -34225,7 +35159,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0062",
@@ -34411,7 +35345,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0896",
@@ -34483,7 +35417,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0895",
@@ -34556,7 +35490,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0894",
@@ -34628,7 +35562,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0893",
@@ -34702,7 +35636,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0892",
@@ -34774,7 +35708,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0891",
@@ -34848,7 +35782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.5
   },
   {
     "id": "AIR-2026-0890",
@@ -34920,7 +35854,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0889",
@@ -34992,7 +35926,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0888",
@@ -35063,7 +35997,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-0887",
@@ -35136,7 +36070,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0886",
@@ -35208,7 +36142,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0885",
@@ -35279,7 +36213,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0884",
@@ -35350,7 +36284,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0883",
@@ -35476,7 +36410,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0881",
@@ -35547,7 +36481,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0880",
@@ -35617,7 +36551,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0879",
@@ -35744,7 +36678,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0877",
@@ -35815,7 +36749,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0876",
@@ -35944,7 +36878,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0874",
@@ -36016,7 +36950,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0873",
@@ -36089,7 +37023,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.5
   },
   {
     "id": "AIR-2026-0061",
@@ -36147,7 +37081,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0060",
@@ -36217,7 +37151,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0059",
@@ -36287,7 +37221,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0058",
@@ -36357,7 +37291,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-0057",
@@ -36428,7 +37362,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0056",
@@ -36500,7 +37434,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0055",
@@ -36571,7 +37505,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0054",
@@ -36642,7 +37576,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0053",
@@ -36713,7 +37647,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0052",
@@ -36784,7 +37718,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0051",
@@ -36855,7 +37789,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0050",
@@ -36926,7 +37860,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0049",
@@ -36997,7 +37931,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0048",
@@ -37069,7 +38003,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0047",
@@ -37139,7 +38073,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0046",
@@ -37209,7 +38143,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0045",
@@ -37279,7 +38213,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0044",
@@ -37350,7 +38284,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1239",
@@ -37410,7 +38344,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.3
   },
   {
     "id": "AIR-2026-1238",
@@ -37469,7 +38403,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0872",
@@ -37529,7 +38463,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1237",
@@ -37588,7 +38522,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1236",
@@ -37647,7 +38581,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-1235",
@@ -37706,7 +38640,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1234",
@@ -37765,7 +38699,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1233",
@@ -37825,7 +38759,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1232",
@@ -37883,7 +38817,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0361",
@@ -38310,7 +39244,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1231",
@@ -38368,7 +39302,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1230",
@@ -38426,7 +39360,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1229",
@@ -38485,7 +39419,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1228",
@@ -38544,7 +39478,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1227",
@@ -38604,7 +39538,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1226",
@@ -38664,7 +39598,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1225",
@@ -38723,7 +39657,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0417",
@@ -38959,7 +39893,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-1223",
@@ -39018,7 +39952,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1222",
@@ -39077,7 +40011,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1221",
@@ -39136,7 +40070,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-1220",
@@ -39195,7 +40129,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1219",
@@ -39253,7 +40187,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0419",
@@ -39370,7 +40304,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1217",
@@ -39428,7 +40362,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1216",
@@ -39486,7 +40420,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1215",
@@ -39544,7 +40478,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0410",
@@ -39730,7 +40664,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1213",
@@ -39790,7 +40724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.6
   },
   {
     "id": "AIR-2026-1212",
@@ -39848,7 +40782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1211",
@@ -39906,7 +40840,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1210",
@@ -39966,7 +40900,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1209",
@@ -40025,7 +40959,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1208",
@@ -40087,7 +41021,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1207",
@@ -40145,7 +41079,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1206",
@@ -40204,7 +41138,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1205",
@@ -40262,7 +41196,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1204",
@@ -40320,7 +41254,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1203",
@@ -40378,7 +41312,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1202",
@@ -40436,7 +41370,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1201",
@@ -40494,7 +41428,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1200",
@@ -40553,7 +41487,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1199",
@@ -40612,7 +41546,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1198",
@@ -40671,7 +41605,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1197",
@@ -40730,7 +41664,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1196",
@@ -40789,7 +41723,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1195",
@@ -40848,7 +41782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1194",
@@ -40907,7 +41841,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1193",
@@ -40966,7 +41900,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1192",
@@ -41027,7 +41961,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1191",
@@ -41086,7 +42020,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0415",
@@ -41214,7 +42148,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0041",
@@ -41330,7 +42264,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1189",
@@ -41390,7 +42324,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.5
   },
   {
     "id": "AIR-2026-1188",
@@ -41451,7 +42385,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2026-1187",
@@ -41512,7 +42446,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1186",
@@ -41572,7 +42506,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-1184",
@@ -41631,7 +42565,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1183",
@@ -41690,7 +42624,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0807",
@@ -41761,7 +42695,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0806",
@@ -41832,7 +42766,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0805",
@@ -41903,7 +42837,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0376",
@@ -42020,7 +42954,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1181",
@@ -42079,7 +43013,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1180",
@@ -42139,7 +43073,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1173",
@@ -42198,7 +43132,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-1172",
@@ -42258,7 +43192,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-1171",
@@ -42318,7 +43252,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-1170",
@@ -42377,7 +43311,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1169",
@@ -42436,7 +43370,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.2
   },
   {
     "id": "AIR-2026-1168",
@@ -42495,7 +43429,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-1167",
@@ -42554,7 +43488,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1166",
@@ -42613,7 +43547,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-1165",
@@ -42672,7 +43606,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1163",
@@ -42729,7 +43663,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1162",
@@ -42788,7 +43722,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-1161",
@@ -42848,7 +43782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0040",
@@ -42907,7 +43841,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-1160",
@@ -42965,7 +43899,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0039",
@@ -43025,7 +43959,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1159",
@@ -43084,7 +44018,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0383",
@@ -43199,7 +44133,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0038",
@@ -43258,7 +44192,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1157",
@@ -43319,7 +44253,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0870",
@@ -43391,7 +44325,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6
   },
   {
     "id": "AIR-2026-0869",
@@ -43463,7 +44397,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0867",
@@ -43534,7 +44468,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0866",
@@ -43605,7 +44539,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0865",
@@ -43675,7 +44609,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0864",
@@ -43745,7 +44679,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0863",
@@ -43816,7 +44750,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0862",
@@ -43888,7 +44822,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0861",
@@ -43959,7 +44893,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0859",
@@ -44030,7 +44964,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0858",
@@ -44102,7 +45036,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0857",
@@ -44174,7 +45108,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-0856",
@@ -44246,7 +45180,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0855",
@@ -44317,7 +45251,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0853",
@@ -44388,7 +45322,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0852",
@@ -44459,7 +45393,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0851",
@@ -44530,7 +45464,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0382",
@@ -44647,7 +45581,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1155",
@@ -44705,7 +45639,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0849",
@@ -44776,7 +45710,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.1
   },
   {
     "id": "AIR-2026-0848",
@@ -44848,7 +45782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.1
   },
   {
     "id": "AIR-2026-0833",
@@ -44919,7 +45853,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0828",
@@ -44989,7 +45923,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0379",
@@ -45106,7 +46040,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-1154",
@@ -45166,7 +46100,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-1153",
@@ -45225,7 +46159,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0813",
@@ -45296,7 +46230,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0811",
@@ -45367,7 +46301,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0809",
@@ -45438,7 +46372,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0808",
@@ -45509,7 +46443,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1152",
@@ -45568,7 +46502,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-1151",
@@ -45628,7 +46562,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0369",
@@ -45745,7 +46679,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1150",
@@ -45804,7 +46738,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0373",
@@ -45996,7 +46930,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1147",
@@ -46055,7 +46989,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1146",
@@ -46114,7 +47048,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1145",
@@ -46173,7 +47107,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1144",
@@ -46244,7 +47178,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-1143",
@@ -46304,7 +47238,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1142",
@@ -46363,7 +47297,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1141",
@@ -46422,7 +47356,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1140",
@@ -46482,7 +47416,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1139",
@@ -46542,7 +47476,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-1138",
@@ -46602,7 +47536,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-1137",
@@ -46662,7 +47596,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1136",
@@ -46722,7 +47656,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-1135",
@@ -46780,7 +47714,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1134",
@@ -46838,7 +47772,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1133",
@@ -46896,7 +47830,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0356",
@@ -47299,7 +48233,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0372",
@@ -47487,7 +48421,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-1131",
@@ -47545,7 +48479,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-1129",
@@ -47603,7 +48537,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0790",
@@ -47675,7 +48609,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.4
   },
   {
     "id": "AIR-2026-0374",
@@ -47790,7 +48724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-0034",
@@ -47849,7 +48783,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0033",
@@ -47908,7 +48842,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0032",
@@ -47966,7 +48900,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0031",
@@ -48024,7 +48958,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0030",
@@ -48083,7 +49017,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0029",
@@ -48142,7 +49076,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0028",
@@ -48201,7 +49135,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1128",
@@ -48259,7 +49193,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1127",
@@ -48317,7 +49251,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 0
   },
   {
     "id": "AIR-2026-1126",
@@ -48376,7 +49310,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0025",
@@ -48435,7 +49369,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1125",
@@ -48495,7 +49429,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1124",
@@ -48553,7 +49487,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1123",
@@ -48611,7 +49545,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1122",
@@ -48671,7 +49605,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0247",
@@ -48742,7 +49676,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0024",
@@ -48802,7 +49736,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1121",
@@ -48861,7 +49795,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0788",
@@ -48931,7 +49865,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0787",
@@ -49001,7 +49935,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0786",
@@ -49072,7 +50006,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0785",
@@ -49143,7 +50077,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0784",
@@ -49214,7 +50148,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0783",
@@ -49285,7 +50219,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0782",
@@ -49356,7 +50290,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0781",
@@ -49427,7 +50361,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-0780",
@@ -49498,7 +50432,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1120",
@@ -49556,7 +50490,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6
   },
   {
     "id": "AIR-2026-1119",
@@ -49615,7 +50549,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-1118",
@@ -49674,7 +50608,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0023",
@@ -49733,7 +50667,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1117",
@@ -49792,7 +50726,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1116",
@@ -49852,7 +50786,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0779",
@@ -49923,7 +50857,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0778",
@@ -49994,7 +50928,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0026",
@@ -50066,7 +51000,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-0022",
@@ -50137,7 +51071,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-1115",
@@ -50196,7 +51130,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0394",
@@ -50312,7 +51246,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2026-0777",
@@ -50383,7 +51317,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0776",
@@ -50454,7 +51388,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-0775",
@@ -50525,7 +51459,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0774",
@@ -50596,7 +51530,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0773",
@@ -50668,7 +51602,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0772",
@@ -50739,7 +51673,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0771",
@@ -50811,7 +51745,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0770",
@@ -50882,7 +51816,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0769",
@@ -50953,7 +51887,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0768",
@@ -51025,7 +51959,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0767",
@@ -51097,7 +52031,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0766",
@@ -51168,7 +52102,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0765",
@@ -51239,7 +52173,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0764",
@@ -51311,7 +52245,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0763",
@@ -51382,7 +52316,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0762",
@@ -51455,7 +52389,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0761",
@@ -51526,7 +52460,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0760",
@@ -51597,7 +52531,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0759",
@@ -51668,7 +52602,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0758",
@@ -51739,7 +52673,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-0757",
@@ -51812,7 +52746,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0756",
@@ -51885,7 +52819,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0396",
@@ -52000,7 +52934,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-1112",
@@ -52059,7 +52993,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0753",
@@ -52130,7 +53064,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0750",
@@ -52201,7 +53135,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0748",
@@ -52273,7 +53207,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.1
   },
   {
     "id": "AIR-2026-0744",
@@ -52344,7 +53278,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0740",
@@ -52415,7 +53349,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0736",
@@ -52488,7 +53422,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0732",
@@ -52559,7 +53493,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0731",
@@ -52630,7 +53564,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-1111",
@@ -52689,7 +53623,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-1110",
@@ -52748,7 +53682,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1109",
@@ -52807,7 +53741,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0730",
@@ -52878,7 +53812,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0729",
@@ -52949,7 +53883,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0728",
@@ -53020,7 +53954,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-1108",
@@ -53079,7 +54013,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1107",
@@ -53138,7 +54072,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1106",
@@ -53197,7 +54131,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1105",
@@ -53257,7 +54191,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0727",
@@ -53328,7 +54262,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0725",
@@ -53399,7 +54333,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1104",
@@ -53458,7 +54392,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-1103",
@@ -53516,7 +54450,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.2
   },
   {
     "id": "AIR-2026-1102",
@@ -53574,7 +54508,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-0399",
@@ -53701,7 +54635,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.5
   },
   {
     "id": "AIR-2026-0721",
@@ -53760,7 +54694,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-1101",
@@ -53820,7 +54754,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-1100",
@@ -53880,7 +54814,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1099",
@@ -53939,7 +54873,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0401",
@@ -54116,7 +55050,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-0719",
@@ -54174,7 +55108,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1097",
@@ -54234,7 +55168,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1096",
@@ -54295,7 +55229,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1095",
@@ -54354,7 +55288,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.5
   },
   {
     "id": "AIR-2026-1094",
@@ -54413,7 +55347,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0411",
@@ -54529,7 +55463,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1092",
@@ -54588,7 +55522,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1091",
@@ -54649,7 +55583,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0021",
@@ -54720,7 +55654,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0718",
@@ -54790,7 +55724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-0717",
@@ -54849,7 +55783,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0381",
@@ -54966,7 +55900,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0018",
@@ -55037,7 +55971,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0017",
@@ -55108,7 +56042,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0715",
@@ -55180,7 +56114,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0714",
@@ -55353,7 +56287,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0709",
@@ -55412,7 +56346,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0015",
@@ -55483,7 +56417,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0014",
@@ -55543,7 +56477,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0013",
@@ -55603,7 +56537,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2026-0012",
@@ -55664,7 +56598,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1081",
@@ -55723,7 +56657,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1080",
@@ -55781,7 +56715,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.1
   },
   {
     "id": "AIR-2026-1079",
@@ -55839,7 +56773,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1078",
@@ -55897,7 +56831,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1077",
@@ -55955,7 +56889,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-1076",
@@ -56013,7 +56947,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.6
   },
   {
     "id": "AIR-2026-1075",
@@ -56073,7 +57007,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0706",
@@ -56144,7 +57078,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0705",
@@ -56216,7 +57150,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0704",
@@ -56287,7 +57221,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0703",
@@ -56358,7 +57292,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0702",
@@ -56430,7 +57364,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7
   },
   {
     "id": "AIR-2026-0701",
@@ -56501,7 +57435,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0700",
@@ -56572,7 +57506,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0699",
@@ -56643,7 +57577,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0698",
@@ -56715,7 +57649,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0697",
@@ -56786,7 +57720,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0695",
@@ -56857,7 +57791,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0694",
@@ -56927,7 +57861,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0693",
@@ -56997,7 +57931,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0692",
@@ -57067,7 +58001,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0691",
@@ -57138,7 +58072,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0690",
@@ -57209,7 +58143,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0686",
@@ -57279,7 +58213,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0685",
@@ -57349,7 +58283,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-0684",
@@ -57419,7 +58353,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0683",
@@ -57489,7 +58423,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0682",
@@ -57617,7 +58551,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0680",
@@ -57688,7 +58622,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0679",
@@ -57816,7 +58750,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0677",
@@ -57887,7 +58821,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0676",
@@ -57957,7 +58891,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0675",
@@ -58027,7 +58961,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0674",
@@ -58097,7 +59031,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0673",
@@ -58167,7 +59101,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0672",
@@ -58237,7 +59171,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0671",
@@ -58308,7 +59242,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0670",
@@ -58379,7 +59313,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0669",
@@ -58450,7 +59384,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0667",
@@ -58521,7 +59455,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0666",
@@ -58592,7 +59526,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0665",
@@ -58664,7 +59598,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0664",
@@ -58736,7 +59670,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0663",
@@ -58808,7 +59742,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0662",
@@ -58879,7 +59813,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0661",
@@ -58950,7 +59884,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0660",
@@ -59021,7 +59955,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0659",
@@ -59092,7 +60026,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0657",
@@ -59163,7 +60097,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0656",
@@ -59233,7 +60167,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1074",
@@ -59294,7 +60228,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-1073",
@@ -59355,7 +60289,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-1072",
@@ -59415,7 +60349,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0655",
@@ -59485,7 +60419,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0397",
@@ -59601,7 +60535,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0654",
@@ -59661,7 +60595,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0651",
@@ -59732,7 +60666,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0650",
@@ -59803,7 +60737,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0647",
@@ -59874,7 +60808,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0646",
@@ -60002,7 +60936,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0395",
@@ -60121,7 +61055,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0643",
@@ -60192,7 +61126,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0642",
@@ -60263,7 +61197,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2026-0641",
@@ -60334,7 +61268,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0640",
@@ -60405,7 +61339,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0639",
@@ -60477,7 +61411,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0638",
@@ -60548,7 +61482,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0637",
@@ -60619,7 +61553,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0636",
@@ -60691,7 +61625,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0635",
@@ -60762,7 +61696,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0634",
@@ -60833,7 +61767,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0633",
@@ -60904,7 +61838,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0632",
@@ -60974,7 +61908,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0631",
@@ -61045,7 +61979,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0630",
@@ -61116,7 +62050,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0629",
@@ -61187,7 +62121,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2026-0628",
@@ -61258,7 +62192,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0627",
@@ -61328,7 +62262,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0626",
@@ -61399,7 +62333,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0625",
@@ -61470,7 +62404,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0624",
@@ -61540,7 +62474,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0623",
@@ -61610,7 +62544,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1069",
@@ -61669,7 +62603,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0622",
@@ -61730,7 +62664,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0621",
@@ -61791,7 +62725,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1068",
@@ -61849,7 +62783,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1067",
@@ -61908,7 +62842,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2026-0620",
@@ -61979,7 +62913,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0618",
@@ -62050,7 +62984,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1066",
@@ -62110,7 +63044,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1065",
@@ -62168,7 +63102,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2026-1064",
@@ -62226,7 +63160,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2026-1063",
@@ -62284,7 +63218,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1062",
@@ -62342,7 +63276,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2026-0617",
@@ -62413,7 +63347,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0616",
@@ -62484,7 +63418,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0400",
@@ -62600,7 +63534,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2026-0615",
@@ -62673,7 +63607,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1060",
@@ -62732,7 +63666,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0011",
@@ -62804,7 +63738,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0010",
@@ -63096,7 +64030,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1058",
@@ -63155,7 +64089,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1057",
@@ -63214,7 +64148,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1056",
@@ -63273,7 +64207,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1055",
@@ -63332,7 +64266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1054",
@@ -63391,7 +64325,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1053",
@@ -63450,7 +64384,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-0375",
@@ -63567,7 +64501,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1051",
@@ -63626,7 +64560,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0603",
@@ -63686,7 +64620,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2026-1050",
@@ -63745,7 +64679,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1049",
@@ -63805,7 +64739,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0420",
@@ -63935,7 +64869,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.6
   },
   {
     "id": "AIR-2026-0601",
@@ -64005,7 +64939,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.6
   },
   {
     "id": "AIR-2026-0600",
@@ -64076,7 +65010,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1048",
@@ -64137,7 +65071,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-1047",
@@ -64196,7 +65130,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-1046",
@@ -64256,7 +65190,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0598",
@@ -64327,7 +65261,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0597",
@@ -64397,7 +65331,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-0408",
@@ -64530,7 +65464,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0008",
@@ -64600,7 +65534,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1045",
@@ -64659,7 +65593,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-1044",
@@ -64719,7 +65653,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0596",
@@ -64790,7 +65724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0595",
@@ -64861,7 +65795,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1043",
@@ -64920,7 +65854,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-1042",
@@ -64979,7 +65913,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1041",
@@ -65038,7 +65972,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1040",
@@ -65096,7 +66030,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-1039",
@@ -65154,7 +66088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-1038",
@@ -65212,7 +66146,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1037",
@@ -65270,7 +66204,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-1036",
@@ -65328,7 +66262,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-1035",
@@ -65387,7 +66321,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1034",
@@ -65446,7 +66380,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1033",
@@ -65505,7 +66439,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2026-1032",
@@ -65564,7 +66498,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0594",
@@ -65635,7 +66569,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.7
   },
   {
     "id": "AIR-2026-0593",
@@ -65705,7 +66639,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0592",
@@ -65776,7 +66710,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0591",
@@ -65846,7 +66780,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0590",
@@ -65917,7 +66851,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0589",
@@ -65988,7 +66922,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0588",
@@ -66059,7 +66993,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0587",
@@ -66130,7 +67064,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1031",
@@ -66189,7 +67123,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0586",
@@ -66260,7 +67194,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0585",
@@ -66332,7 +67266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0584",
@@ -66403,7 +67337,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0583",
@@ -66476,7 +67410,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0582",
@@ -66603,7 +67537,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0580",
@@ -66729,7 +67663,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0578",
@@ -66801,7 +67735,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0577",
@@ -66872,7 +67806,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0576",
@@ -67000,7 +67934,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.6
   },
   {
     "id": "AIR-2026-0574",
@@ -67071,7 +68005,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0573",
@@ -67143,7 +68077,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0572",
@@ -67215,7 +68149,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0571",
@@ -67287,7 +68221,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0570",
@@ -67358,7 +68292,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0569",
@@ -67429,7 +68363,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0568",
@@ -67500,7 +68434,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0007",
@@ -67570,7 +68504,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-1030",
@@ -67630,7 +68564,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-1029",
@@ -67691,7 +68625,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2026-1028",
@@ -67752,7 +68686,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-1027",
@@ -67813,7 +68747,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2026-0798",
@@ -67883,7 +68817,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0567",
@@ -67955,7 +68889,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-1026",
@@ -68014,7 +68948,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-1025",
@@ -68074,7 +69008,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0653",
@@ -68145,7 +69079,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0565",
@@ -68260,7 +69194,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-1023",
@@ -68319,7 +69253,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-1022",
@@ -68379,7 +69313,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-1021",
@@ -68438,7 +69372,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0563",
@@ -68496,7 +69430,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-0562",
@@ -68566,7 +69500,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0561",
@@ -68742,7 +69676,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-1014",
@@ -68800,7 +69734,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0558",
@@ -68861,7 +69795,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0557",
@@ -68921,7 +69855,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0368",
@@ -69035,7 +69969,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-1012",
@@ -69093,7 +70027,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-1011",
@@ -69151,7 +70085,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-1010",
@@ -69210,7 +70144,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1009",
@@ -69269,7 +70203,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0555",
@@ -69340,7 +70274,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0553",
@@ -69410,7 +70344,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0551",
@@ -69481,7 +70415,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2026-0550",
@@ -69552,7 +70486,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0549",
@@ -69623,7 +70557,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1008",
@@ -69682,7 +70616,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2026-0810",
@@ -69755,7 +70689,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2026-0548",
@@ -69815,7 +70749,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-1007",
@@ -69874,7 +70808,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0547",
@@ -69934,7 +70868,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.8
   },
   {
     "id": "AIR-2026-0544",
@@ -69994,7 +70928,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0541",
@@ -70053,7 +70987,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2026-0540",
@@ -70123,7 +71057,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-1006",
@@ -70182,7 +71116,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0539",
@@ -70241,7 +71175,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2026-0538",
@@ -70299,7 +71233,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.7
   },
   {
     "id": "AIR-2026-0536",
@@ -70357,7 +71291,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0350",
@@ -70786,7 +71720,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.3
   },
   {
     "id": "AIR-2026-1004",
@@ -70845,7 +71779,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-1003",
@@ -70905,7 +71839,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2026-0532",
@@ -70976,7 +71910,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0531",
@@ -71047,7 +71981,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0530",
@@ -71118,7 +72052,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2026-0529",
@@ -71190,7 +72124,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0526",
@@ -71262,7 +72196,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0525",
@@ -71333,7 +72267,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0522",
@@ -71404,7 +72338,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0518",
@@ -71475,7 +72409,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2026-0516",
@@ -71590,7 +72524,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0998",
@@ -71648,7 +72582,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0997",
@@ -71706,7 +72640,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0996",
@@ -71765,7 +72699,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0995",
@@ -71825,7 +72759,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0404",
@@ -71952,7 +72886,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0507",
@@ -72023,7 +72957,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0506",
@@ -72095,7 +73029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0504",
@@ -72166,7 +73100,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0503",
@@ -72237,7 +73171,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0409",
@@ -72367,7 +73301,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0993",
@@ -72426,7 +73360,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-0992",
@@ -72484,7 +73418,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0991",
@@ -72542,7 +73476,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.8
   },
   {
     "id": "AIR-2026-0990",
@@ -72602,7 +73536,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.7
   },
   {
     "id": "AIR-2026-0989",
@@ -72663,7 +73597,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0988",
@@ -72723,7 +73657,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0501",
@@ -72783,7 +73717,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2026-0987",
@@ -72842,7 +73776,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0986",
@@ -72908,7 +73842,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-0985",
@@ -72971,7 +73905,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0984",
@@ -73034,7 +73968,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0983",
@@ -73093,7 +74027,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0982",
@@ -73152,7 +74086,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2026-0498",
@@ -73223,7 +74157,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0497",
@@ -73294,7 +74228,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0402",
@@ -73412,7 +74346,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0496",
@@ -73484,7 +74418,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0495",
@@ -73555,7 +74489,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0494",
@@ -73626,7 +74560,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0493",
@@ -73697,7 +74631,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0492",
@@ -73768,7 +74702,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0491",
@@ -73897,7 +74831,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.6
   },
   {
     "id": "AIR-2026-0489",
@@ -73956,7 +74890,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2026-0980",
@@ -74017,7 +74951,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0979",
@@ -74076,7 +75010,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2026-0403",
@@ -74194,7 +75128,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2026-0488",
@@ -74265,7 +75199,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-0487",
@@ -74336,7 +75270,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0486",
@@ -74408,7 +75342,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 0
   },
   {
     "id": "AIR-2026-0485",
@@ -74479,7 +75413,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0976",
@@ -74538,7 +75472,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-0484",
@@ -74612,7 +75546,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0476",
@@ -74684,7 +75618,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-1494",
@@ -74814,7 +75748,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0797",
@@ -74884,7 +75818,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2026-0352",
@@ -74983,7 +75917,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0973",
@@ -75042,7 +75976,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0972",
@@ -75101,7 +76035,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0971",
@@ -75160,7 +76094,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0970",
@@ -75218,7 +76152,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0969",
@@ -75276,7 +76210,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0968",
@@ -75334,7 +76268,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0967",
@@ -75392,7 +76326,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0966",
@@ -75450,7 +76384,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0965",
@@ -75508,7 +76442,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0964",
@@ -75566,7 +76500,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0407",
@@ -75684,7 +76618,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2026-0467",
@@ -75755,7 +76689,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2026-0962",
@@ -75815,7 +76749,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0961",
@@ -75874,7 +76808,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0960",
@@ -75934,7 +76868,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0959",
@@ -75994,7 +76928,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0958",
@@ -76054,7 +76988,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0468",
@@ -76125,7 +77059,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2026-0957",
@@ -76185,7 +77119,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0956",
@@ -76244,7 +77178,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2026-0955",
@@ -76303,7 +77237,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.3
   },
   {
     "id": "AIR-2026-0466",
@@ -76375,7 +77309,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0465",
@@ -76447,7 +77381,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0464",
@@ -76507,7 +77441,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2026-0463",
@@ -76579,7 +77513,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0462",
@@ -76651,7 +77585,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.3
   },
   {
     "id": "AIR-2026-0345",
@@ -76819,7 +77753,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0343",
@@ -77047,7 +77981,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2026-0454",
@@ -77119,7 +78053,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0449",
@@ -77190,7 +78124,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0448",
@@ -77261,7 +78195,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2026-0447",
@@ -77332,7 +78266,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0445",
@@ -77390,7 +78324,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0444",
@@ -77461,7 +78395,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0443",
@@ -77519,7 +78453,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2026-0442",
@@ -77578,7 +78512,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2026-0421",
@@ -78081,7 +79015,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2026-0952",
@@ -78143,7 +79077,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0441",
@@ -78213,7 +79147,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0951",
@@ -78272,7 +79206,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2026-0950",
@@ -78331,7 +79265,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0949",
@@ -78390,7 +79324,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0948",
@@ -78449,7 +79383,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0947",
@@ -78509,7 +79443,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0438",
@@ -78580,7 +79514,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.9
   },
   {
     "id": "AIR-2026-0946",
@@ -78639,7 +79573,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0945",
@@ -78698,7 +79632,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0944",
@@ -78757,7 +79691,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0943",
@@ -78816,7 +79750,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0942",
@@ -78876,7 +79810,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0437",
@@ -78947,7 +79881,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0436",
@@ -79020,7 +79954,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0435",
@@ -79078,7 +80012,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2026-0434",
@@ -79137,7 +80071,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2026-0406",
@@ -79253,7 +80187,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-0940",
@@ -79311,7 +80245,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0939",
@@ -79369,7 +80303,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0938",
@@ -79428,7 +80362,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0937",
@@ -79486,7 +80420,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0432",
@@ -79556,7 +80490,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-0936",
@@ -79615,7 +80549,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2026-0429",
@@ -79686,7 +80620,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2026-0414",
@@ -79801,7 +80735,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2026-0425",
@@ -79861,7 +80795,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2026-0422",
@@ -79978,7 +80912,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2026-0934",
@@ -80036,7 +80970,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2026-0001",
@@ -80165,6 +81099,6 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   }
 ]

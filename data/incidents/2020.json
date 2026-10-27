@@ -688,7 +688,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2020-0024",

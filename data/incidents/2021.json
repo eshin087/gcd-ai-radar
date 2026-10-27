@@ -68,7 +68,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2021-0009",

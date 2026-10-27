@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { IncidentRow } from "@/components/incidents/IncidentRow";
+import { RowLegend } from "@/components/incidents/RowLegend";
 import { Segmented } from "@/components/ui/Segmented";
 import { FULL_ROWS, boardsWithAll, type LaneBoard, type LiveRow } from "@/lib/live";
 import { LANE_META, type Lane } from "@/lib/taxonomy";
@@ -101,6 +102,7 @@ export function LiveBoard({ lanes, today }: { lanes: LaneBoard[]; today: string 
             options={boards.map((b) => ({ key: b.key, label: `${b.label} ${b.count}`, title: b.key === "all" ? "The three action lanes together" : LANE_META[b.key as Lane].definition }))}
           />
         </div>
+        <RowLegend />
         <div className="flex flex-wrap items-center gap-3">
           <button
             type="button"

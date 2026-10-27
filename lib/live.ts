@@ -1,6 +1,6 @@
 import { isDisclosedIncident, isAiRecord } from "./counting";
 import { familyOf, type Family } from "./families";
-import { daysBetween, isActionLane, lastActivity, type FullIncident, type PatchGroup } from "./lifecycle";
+import { cveIdsOf, daysBetween, isActionLane, lastActivity, type FullIncident, type PatchGroup } from "./lifecycle";
 import { productFamily } from "./products";
 import { compactRow } from "./rows";
 import { buildScope, type Scope } from "./scope";
@@ -27,6 +27,8 @@ export interface LiveRow {
   severity: Severity;
   state: RecordState;
   patch_status: PatchStatus;
+  /** The CVSS base score a source states, or null: the row draws a chip only for a number. */
+  cvss: number | null;
   /** Product families named, at most three. */
   products: string[];
   /** CVE ids, at most three, with how many more there are. */
@@ -66,6 +68,7 @@ export function rowOf(i: FullIncident): LiveRow {
     severity: i.severity,
     state: i.state,
     patch_status: i.patch_status,
+    cvss: i.cvss,
     products: families(i.products),
     cve_ids: i.cve_ids.slice(0, MAX_CVES),
     cve_more: Math.max(0, i.cve_ids.length - MAX_CVES),
@@ -266,7 +269,7 @@ export function buildLive(incidents: readonly FullIncident[], now: Date, lastUpd
     heatmap: { from, to: today, cells, max },
     aiLens: { live: counters.ai, month, topFamily },
     topTags: topLiveTags(buildTagIndex(incidents, now), 12).map(({ slug, label, group, live, total }) => ({ slug, label, group, live, total })),
-    scope: buildScope(incidents.map(compactRow), now),
+    scope: buildScope(incidents.map((i) => ({ ...compactRow(i), cve: cveIdsOf(i)[0] ?? null })), now),
   };
 }
 
@@ -288,6 +291,7 @@ export function rowOfSlim(s: SlimIncident): LiveRow {
     severity: s.severity,
     state: s.state,
     patch_status: s.patch_status,
+    cvss: s.cvss,
     products: families(s.products),
     cve_ids: s.cve_ids.slice(0, MAX_CVES),
     cve_more: Math.max(0, s.cve_ids.length - MAX_CVES),

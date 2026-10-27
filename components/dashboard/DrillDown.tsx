@@ -25,6 +25,7 @@ function rowOfCompact(r: CompactRow): LiveRow {
     severity: r.severity,
     state: r.state ?? "closed",
     patch_status: r.patch_status ?? "unknown",
+    cvss: r.cvss ?? null,
     products: (r.products ?? []).map(productFamily).slice(0, 3),
     cve_ids: [],
     cve_more: 0,
