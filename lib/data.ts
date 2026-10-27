@@ -5,6 +5,7 @@ import type { ZodType } from "zod";
 import { withLifecycle, type FullIncident } from "./lifecycle";
 import { BriefingSchema, RadarSchema, RunsFileSchema, type Briefing, type Incident, type Radar, type RunRecord } from "./schema";
 import { incidentFiles, incidentFilesSignature, readIncidents } from "./shards";
+import { STATS_FILES, STATS_SCHEMAS, type StatsFiles } from "./stats-schema";
 
 /** The build's UTC day: the `now` every lifecycle decision in this build uses, so pages, feeds and prebuild agree. */
 export const BUILD_DAY = new Date().toISOString().slice(0, 10);
@@ -71,6 +72,30 @@ export const loadRadar = cache(async (): Promise<Radar | null> => {
     // A radar.json that no longer matches the schema hides the panel instead of failing the build.
     return null;
   }
+});
+
+/**
+ * The statistics files the collector's daily stats stage writes
+ * (lib/stats-schema.ts): each one null when absent or invalid, so the home
+ * page hides a panel instead of failing the build.
+ */
+export const loadStats = cache(async (): Promise<StatsFiles> => {
+  const dir = path.join(DATA_DIR, "stats");
+  const read = async <T>(file: string, schema: ZodType<T>): Promise<T | null> => {
+    try {
+      return await readJson(path.join(dir, file), schema);
+    } catch {
+      return null;
+    }
+  };
+  const [nvdCounts, cvesRecent, kev, hibp, epss] = await Promise.all([
+    read(STATS_FILES.nvdCounts, STATS_SCHEMAS.nvdCounts),
+    read(STATS_FILES.cvesRecent, STATS_SCHEMAS.cvesRecent),
+    read(STATS_FILES.kev, STATS_SCHEMAS.kev),
+    read(STATS_FILES.hibp, STATS_SCHEMAS.hibp),
+    read(STATS_FILES.epss, STATS_SCHEMAS.epss),
+  ]);
+  return { nvdCounts, cvesRecent, kev, hibp, epss };
 });
 
 /** Weekly briefings from data/briefings/<week>.json, newest week first; empty until the first Monday run. */

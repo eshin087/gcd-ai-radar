@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { EMPTY_FILTERS, explorerFacets, filtersQuery, laneCount, matchesRecord, parseFilters, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
+import { EMPTY_FILTERS, explorerFacets, filtersQuery, laneCount, matchesRecord, parseFilters, quarterMonths, quarterOf, totalOfKind, yearsNeeded, type ExplorerFacets, type ExplorerFilters } from "@/lib/explorer";
 import { slim } from "@/lib/slim";
 import { disclosedCve, incident } from "./fixtures";
 
@@ -125,5 +125,22 @@ describe("yearsNeeded", () => {
     expect(totalOfKind(facets, "")).toBe(402);
     expect(totalOfKind(facets, "disclosed")).toBe(1474);
     expect(totalOfKind(facets, "all")).toBe(1876);
+  });
+});
+
+describe("quarter and has filters", () => {
+  it("parse, write back and name their months", () => {
+    const parsed = parseFilters("?quarter=2026-Q4&has=cve&by=reported");
+    expect(parsed.quarter).toBe("2026-Q4");
+    expect(parsed.has).toBe("cve");
+    expect(parseFilters("?quarter=2026-Q5&has=anything")).toMatchObject({ quarter: "", has: "" });
+    const qs = filtersQuery(parsed);
+    expect(qs).toContain("quarter=2026-Q4");
+    expect(qs).toContain("has=cve");
+    expect(parseFilters(`?${qs}`)).toEqual(parsed);
+    expect(quarterOf("2026-10-26")).toBe("2026-Q4");
+    expect(quarterOf("2026-03")).toBe("2026-Q1");
+    expect(quarterMonths("2026-Q4")).toEqual(["2026-10", "2026-12"]);
+    expect(quarterMonths("2025-Q1")).toEqual(["2025-01", "2025-03"]);
   });
 });

@@ -123,13 +123,33 @@ export interface ExplorerFilters {
   day: string;
   /** Patch statuses, comma-separated ("unpatched,partial" is "not fully patched"). */
   patch: string;
+  /** One quarter, YYYY-Qn, on the date field `by` selects; set by the home page's AI-CVE chart. */
+  quarter: string;
+  /** "cve": only records that name at least one CVE id. */
+  has: string;
   sort: "reported" | "incident" | "severity";
 }
 
 export const EMPTY_FILTERS: ExplorerFilters = {
   q: "", type: "", category: "", severity: "", target: "", year: "", month: "", from: "", to: "", publisher: "", origin: "", real: "", by: "", product: "", kind: "", owasp: "", atlas: "",
-  lane: "", state: "", tag: "", day: "", patch: "", sort: "reported",
+  lane: "", state: "", tag: "", day: "", patch: "", quarter: "", has: "", sort: "reported",
 };
+
+const QUARTER = /^\d{4}-Q[1-4]$/;
+
+/** The quarter a YYYY-MM… date falls in, as YYYY-Qn. */
+export function quarterOf(date: string): string {
+  const month = Number(date.slice(5, 7));
+  return `${date.slice(0, 4)}-Q${Math.floor((month - 1) / 3) + 1}`;
+}
+
+/** The first and last month of a quarter, YYYY-MM. */
+export function quarterMonths(quarter: string): [string, string] {
+  const year = quarter.slice(0, 4);
+  const q = Number(quarter.slice(6));
+  const first = (q - 1) * 3 + 1;
+  return [`${year}-${String(first).padStart(2, "0")}`, `${year}-${String(first + 2).padStart(2, "0")}`];
+}
 
 export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
   return f.by === "reported" ? "first_reported" : "incident_date";
@@ -137,7 +157,7 @@ export function dateFieldOf(f: Pick<ExplorerFilters, "by">): DateField {
 
 /** Filters that can match a record in any year, so every shard is needed to answer them. */
 export function hasCategoricalFilter(f: ExplorerFilters): boolean {
-  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product || f.owasp || f.atlas || f.lane || f.state || f.tag || f.patch);
+  return Boolean(f.type || f.category || f.severity || f.target || f.publisher || f.origin || f.real || f.product || f.owasp || f.atlas || f.lane || f.state || f.tag || f.patch || f.has);
 }
 
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
@@ -188,6 +208,8 @@ export function parseFilters(search: string): ExplorerFilters {
     tag: normalizeTag(get("tag")) ?? "",
     day: DAY.test(get("day")) ? get("day") : "",
     patch: patch.join(","),
+    quarter: QUARTER.test(get("quarter")) ? get("quarter") : "",
+    has: get("has") === "cve" ? "cve" : "",
     sort: sort === "incident" || sort === "severity" ? sort : "reported",
   };
 }
@@ -217,9 +239,11 @@ export function matchesRecord(i: SlimIncident, f: ExplorerFilters): boolean {
   if (f.state && i.state !== f.state) return false;
   if (f.patch && !f.patch.split(",").includes(i.patch_status)) return false;
   if (f.tag && !i.tags.includes(f.tag)) return false;
+  if (f.has === "cve" && i.cve_ids.length === 0) return false;
   const date = recordDate(i, f);
   if (f.day && date !== f.day) return false;
   if (f.month && !date.startsWith(f.month)) return false;
+  if (f.quarter && quarterOf(date) !== f.quarter) return false;
   if (f.from && date.slice(0, 7) < f.from) return false;
   if (f.to && date.slice(0, 7) > f.to) return false;
   if (f.year && !f.month && !f.day && !i.first_reported.startsWith(f.year) && !i.incident_date.startsWith(f.year)) return false;
@@ -270,6 +294,7 @@ export function yearsNeeded(f: ExplorerFilters, facets: ExplorerFacets, searchYe
   let dateYears: number[] | null = null;
   if (f.day) dateYears = shardsFor(facets.years, field, f.day.slice(0, 7), f.day.slice(0, 7));
   else if (f.month) dateYears = shardsFor(facets.years, field, f.month, f.month);
+  else if (f.quarter) dateYears = shardsFor(facets.years, field, ...quarterMonths(f.quarter));
   else if (f.from || f.to) dateYears = shardsFor(facets.years, field, f.from || "0000-00", f.to || "9999-99");
   else if (f.year) {
     // The year filter matches either date, so a shard counts when its first-report year is the one asked or its incident dates reach into it.

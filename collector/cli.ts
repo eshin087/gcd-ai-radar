@@ -12,6 +12,8 @@ import { runCollector, type RunOptions } from "./pipeline/run";
 import type { Incident, RunRecord } from "../lib/schema";
 import { maybeUpdateRadar } from "./radar";
 import { runReview, runReviewBatch } from "./review/index";
+import { readAllStats, runStats } from "./stats/index";
+import { STATS_FILES } from "../lib/stats-schema";
 
 /**
  * GCD AI RADAR collector.
@@ -24,6 +26,7 @@ import { runReview, runReviewBatch } from "./review/index";
  *   npm run review                      walk the review queue interactively
  *   npm run review -- --approve=AIR-2026-0001 --reject=AIR-2026-0002 --reason="…"   decide without the walkthrough
  *   npm run radar                       refresh data/radar.json now (--dry-run to only test the token)
+ *   npm run stats                       refresh the statistics files under data/stats (--force, --only=kev,epss, --dry-run)
  *   npm run briefing                    write data/briefings/<week>.json for the ISO week that ended on Sunday (skips if present)
  *   npm run briefing -- --week=2026-W41 --weeks=8 --force   a given week, the 8 weeks ending there, rewrite existing ones
  *
@@ -131,10 +134,13 @@ async function main() {
       summarize(summary);
       const settings = loadConfig().settings;
       const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
+      // the daily statistics files (data/stats): due once a day, skipped in dry runs so a pipeline rehearsal stays quick
+      const statsChanged = !sourceIds && !dryRun ? (await runStats(settings)).changed.length > 0 : false;
+      const sideChanged = radarChanged || statsChanged;
       let unpushed = false;
-      if (commit && (summary.changedFiles.length || radarChanged)) {
-        const quiet = siteUnchanged(summary.changedFiles, radarChanged);
-        const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, radarChanged), { deploy: !quiet });
+      if (commit && (summary.changedFiles.length || sideChanged)) {
+        const quiet = siteUnchanged(summary.changedFiles, sideChanged);
+        const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, sideChanged), { deploy: !quiet });
         unpushed = result.committed && !result.pushed;
       }
       // Health: a job summary on Actions, and a failed job (owner gets an email) when classification
@@ -166,8 +172,26 @@ async function main() {
       }
       return;
     }
+    case "stats": {
+      const settings = loadConfig().settings;
+      const only = typeof flags["only"] === "string" ? flags["only"].split(",").map((s) => s.trim()).filter(Boolean) : undefined;
+      const result = await runStats(settings, { dryRun, force: Boolean(flags["force"]), only });
+      if (commit && result.changed.length) {
+        await commitAndPush(`data: stats refresh (${result.changed.map((f) => path.basename(f, ".json")).join(", ")})`);
+      }
+      if (result.failed.length) process.exitCode = 2;
+      return;
+    }
     case "validate": {
       loadConfig();
+      const stats = await readAllStats();
+      for (const [key, file] of Object.entries(STATS_FILES) as [keyof typeof STATS_FILES, string][]) {
+        if (stats[key] === null && existsSync(path.join(process.cwd(), "data", "stats", file))) {
+          log.error(`data/stats/${file} does not match its schema`);
+          process.exitCode = 1;
+          return;
+        }
+      }
       const state = await loadState();
       const clashes = cveClashes([...state.incidents, ...state.review]);
       if (clashes.length) {

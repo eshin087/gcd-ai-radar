@@ -44,36 +44,54 @@ function RailHead({ title, note }: { title: string; note?: string }) {
   );
 }
 
-export function LivePage({ data }: { data: LiveData }) {
+export function LivePage({ data, variant = "home" }: { data: LiveData; variant?: "home" | "board" }) {
   const c = data.counters;
   const longest = c.quiet.longest;
   return (
     <div className="space-y-8">
-      <section className="grid gap-5 lg:min-h-[300px] lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10">
-        <div className="order-2 min-w-0 space-y-3 self-center lg:order-1">
+      {variant === "board" ? (
+        <header className="space-y-3">
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-dim">
             <span aria-hidden className="live-dot" />
             <span className="uppercase tracking-[0.1em]">Live</span> · <Ago iso={data.lastUpdated} prefix="last sweep" className="text-soft" />
           </p>
-          <h1 className="text-[30px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[34px]">What is being exploited right now.</h1>
-          <p className="text-[15px] leading-relaxed text-soft">
-            Live security incidents across the web, with an AI lens: what happened, whether there is a fix, and what to do. Every record is counted once and
-            linked to the reporting it came from.
+          <h1 className="text-2xl font-semibold tracking-tight">The live board</h1>
+          <p className="max-w-3xl text-[14.5px] leading-relaxed text-soft">
+            Every live record in the four lanes, grouped by fix status or by how recently it moved. A record stays live for its lane&rsquo;s window after its latest
+            activity, then closes into the <Link href="/incidents" className="link">archive</Link>.{" "}
+            <Link href="/methodology#lanes" className="link">
+              The windows
+            </Link>
+            .
           </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1 font-mono text-[12px] uppercase tracking-[0.08em]">
-            <Link href="/incidents" className="text-accent hover:underline">
-              Archive →
-            </Link>
-            <Link href="/trends" className="text-dim hover:text-ink">
-              AI trends
-            </Link>
-            <Link href="/methodology" className="text-dim hover:text-ink">
-              How we count
-            </Link>
+        </header>
+      ) : (
+        <section className="grid gap-5 lg:min-h-[300px] lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10">
+          <div className="order-2 min-w-0 space-y-3 self-center lg:order-1">
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-dim">
+              <span aria-hidden className="live-dot" />
+              <span className="uppercase tracking-[0.1em]">Live</span> · <Ago iso={data.lastUpdated} prefix="last sweep" className="text-soft" />
+            </p>
+            <h1 className="text-[30px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[34px]">What is being exploited right now.</h1>
+            <p className="text-[15px] leading-relaxed text-soft">
+              Live security incidents across the web, with an AI lens: what happened, whether there is a fix, and what to do. Every record is counted once and
+              linked to the reporting it came from.
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1 font-mono text-[12px] uppercase tracking-[0.08em]">
+              <Link href="/incidents" className="text-accent hover:underline">
+                Archive →
+              </Link>
+              <Link href="/trends" className="text-dim hover:text-ink">
+                AI trends
+              </Link>
+              <Link href="/methodology" className="text-dim hover:text-ink">
+                How we count
+              </Link>
+            </div>
           </div>
-        </div>
-        <ThreatScope scope={data.scope} running className="order-1 h-[200px] lg:order-2 lg:h-full" />
-      </section>
+          <ThreatScope scope={data.scope} running className="order-1 h-[200px] lg:order-2 lg:h-full" />
+        </section>
+      )}
 
       <section aria-label="Live counters" className="grid grid-cols-2 border-y border-line sm:grid-cols-5">
         <Counter id="live" label="Live" value={c.live} href="/incidents?state=live&lane=action" title="Live records in the three action lanes: patch now, breaches & attacks, supply chain" />
