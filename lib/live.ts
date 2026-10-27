@@ -1,6 +1,6 @@
 import { isDisclosedIncident, isAiRecord } from "./counting";
 import { familyOf, type Family } from "./families";
-import { cveIdsOf, daysBetween, isActionLane, lastActivity, type FullIncident, type PatchGroup } from "./lifecycle";
+import { daysBetween, isActionLane, lastActivity, type FullIncident, type PatchGroup } from "./lifecycle";
 import { productFamily } from "./products";
 import { compactRow } from "./rows";
 import { buildScope, type Scope } from "./scope";
@@ -269,7 +269,7 @@ export function buildLive(incidents: readonly FullIncident[], now: Date, lastUpd
     heatmap: { from, to: today, cells, max },
     aiLens: { live: counters.ai, month, topFamily },
     topTags: topLiveTags(buildTagIndex(incidents, now), 12).map(({ slug, label, group, live, total }) => ({ slug, label, group, live, total })),
-    scope: buildScope(incidents.map((i) => ({ ...compactRow(i), cve: cveIdsOf(i)[0] ?? null })), now),
+    scope: buildScope(incidents.map(compactRow), now),
   };
 }
 

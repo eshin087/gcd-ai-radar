@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { FAMILIES, FAMILY_COLORS, FAMILY_META, type Family } from "@/lib/families";
 import { SEVERITY_COLORS } from "@/lib/palette";
 import type { Scope, ScopeBlip } from "@/lib/scope";
 import { SEVERITY_META, type Severity } from "@/lib/taxonomy";
 import { THEME as T } from "@/lib/theme";
-import { AsciiGrid, LOCK_SECONDS, drawLock, type Lock } from "./targetLock";
 
 /** The palette's darkest severity step vanishes at blip size, so research blips take a muted tone of the same ramp. */
 const BLIP_COLORS: Record<Severity, string> = { ...SEVERITY_COLORS, 1: "#857158" };
@@ -17,32 +16,10 @@ const BLIP_R: Record<Severity, number> = { 1: 1.8, 2: 2.3, 3: 3.2, 4: 4.3 };
 const PASS = 4.6;
 /** Labelled rings inside the outer one (days since first report). */
 const RINGS = [1, 7, 30];
-/** Below this width the side column and the wedge labels give way to the scope alone. */
+/** Below this width the wedge labels give way to the scope alone. */
 const NARROW = 520;
 
 const ago = (a: number) => (a <= 0 ? "today" : a === 1 ? "1 day ago" : `${a} days ago`);
-/** What the target lock spells when a record names neither a product nor a target. */
-const FAMILY_LOCK: Record<Family, string> = {
-  injection: "INJECTION",
-  infra: "INFRA",
-  exposure: "DATA LEAK",
-  agent: "AI AGENT",
-  supply: "SUPPLY",
-  social: "DEEPFAKE",
-  offense: "AI OFFENSE",
-  other: "ALERT",
-};
-
-function lockOf(b: ScopeBlip): Lock {
-  return {
-    name: b.lock || FAMILY_LOCK[b.family],
-    sub: b.cve ?? FAMILY_META[b.family].label.toUpperCase(),
-    stamp: SEVERITY_META[b.severity].short.toUpperCase(),
-    meta: `${FAMILY_META[b.family].short.toLowerCase()} · ${b.age <= 0 ? "today" : `${b.age} d ago`}`,
-    color: FAMILY_COLORS[b.family],
-    tone: BLIP_COLORS[b.severity],
-  };
-}
 
 function hash01(s: string): number {
   let h = 2166136261;
@@ -93,19 +70,17 @@ function Chip({ label, color }: { label: string; color: string }) {
  * last 120 days (lib/scope.ts). A blip's wedge is its attack family, its
  * distance from the centre is its age on a square-root scale (where it sits
  * inside its wedge is spread for legibility and means nothing). The sweep
- * lights blips as it passes and hands the real-world incidents it crosses to
- * the middle column's target lock (./targetLock.ts), one lock at a time, with
- * a caption line naming the incident. Hover shows a blip, a click opens its
- * incident. Canvas 2D, paused off screen, when `running` is false, and still
- * under reduced motion.
+ * lights blips as it passes. Hover shows a blip, a click opens its incident.
+ * `side` fills a 280 px column on the left once the figure is 600 px wide
+ * (the home page puts the hero cluster there, ./RadarCluster.tsx); the scope
+ * takes the rest. Canvas 2D, paused off screen, when `running` is false, and
+ * still under reduced motion.
  */
-export function ThreatScope({ scope, running, className = "" }: { scope: Scope; running: boolean; className?: string }) {
+export function ThreatScope({ scope, running, side, className = "" }: { scope: Scope; running: boolean; side?: ReactNode; className?: string }) {
   const router = useRouter();
   const rootRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const lockRef = useRef<HTMLCanvasElement>(null);
-  const newestReal = useMemo(() => scope.blips.find((b) => b.severity >= 3) ?? scope.blips[0] ?? null, [scope]);
-  const [caption, setCaption] = useState<ScopeBlip | null>(newestReal);
+  const sideRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<Tip | null>(null);
   const tipRef = useRef<Tip | null>(null);
   const runningRef = useRef(running);
@@ -137,18 +112,6 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
     let blips: Placed[] = [];
     let prev: number | null = null;
     let hover: ScopeBlip | null = null;
-    // the middle column: one lock at a time, the newest real-world incident first
-    const lockCanvas = lockRef.current;
-    const grid = lockCanvas ? new AsciiGrid(lockCanvas, 11, mono) : null;
-    let lock: Lock | null = null;
-    let lockAt = -99, lockDrawn = -1;
-    const startLock = (b: ScopeBlip, time: number) => {
-      lock = lockOf(b);
-      lockAt = time;
-      setCaption(b);
-    };
-    if (newestReal) lock = lockOf(newestReal); // its caption is the initial state
-    lockAt = 0;
     let raf = 0, visible = false;
     const t0 = performance.now();
 
@@ -161,11 +124,10 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
       canvas.height = Math.max(1, Math.round(h * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       narrow = w < NARROW;
-      // wide: the middle column (the target lock and its caption) holds the left, the scope and its wedge labels the rest
-      const side = narrow ? 0 : Math.min(280, w * 0.38) + 18;
+      // the side column, when it shows (CSS decides), holds the left; the scope and its wedge labels the rest
+      const sideW = sideRef.current?.offsetWidth ?? 0;
+      const side = sideW ? sideW + 18 : 0;
       R = Math.max(40, Math.min(h - (narrow ? 30 : 52), (w - side - (narrow ? 24 : 150)) / 2));
-      grid?.resize();
-      lockDrawn = -1;
       cx = side + (w - side) / 2;
       cy = h - (narrow ? 20 : 26);
       blips = scope.blips
@@ -195,11 +157,7 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
       const dir = ang >= from ? 1 : -1;
       if (!still && Math.abs(ang - from) < 0.6) {
         const lo = Math.min(from, ang), hi = Math.max(from, ang);
-        for (const bl of blips) {
-          if (bl.ang < lo || bl.ang > hi) continue;
-          bl.lit = time;
-          if (bl.b.severity >= 3 && time - lockAt >= LOCK_SECONDS) startLock(bl.b, time);
-        }
+        for (const bl of blips) if (bl.ang >= lo && bl.ang <= hi) bl.lit = time;
       }
       prev = ang;
 
@@ -295,14 +253,6 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
       ctx.fillText("now", cx, cy + 7);
-
-      // the target lock, at 30 frames a second (a still, finished lock under reduced motion)
-      if (grid && (still || time - lockDrawn >= 1 / 30 || time < lockDrawn)) {
-        lockDrawn = time;
-        grid.clear();
-        drawLock(grid, lock, still ? 3.6 : time - lockAt, time);
-        grid.render();
-      }
     };
 
     const frame = (ms: number) => {
@@ -388,7 +338,7 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
       canvas.removeEventListener("click", onClick);
       kickRef.current = () => {};
     };
-  }, [scope, wedges, router, newestReal]);
+  }, [scope, wedges, router]);
 
   // a pinned tip (touch) closes on a tap anywhere else
   useEffect(() => {
@@ -406,23 +356,11 @@ export function ThreatScope({ scope, running, className = "" }: { scope: Scope; 
         Radar scope of the {scope.total} incidents first reported in the last {scope.days} days: each blip sits in the wedge of its attack family, closer to the centre the more recent it is.
       </figcaption>
       <canvas ref={canvasRef} aria-hidden className="absolute inset-0 block h-full w-full touch-manipulation" />
-      <div className="absolute inset-y-0 left-0 hidden w-[min(280px,38%)] flex-col gap-1.5 @min-[520px]:flex">
-        <canvas ref={lockRef} aria-hidden className="block min-h-0 w-full flex-1" />
-        <p className="truncate border-t border-line-soft pt-1.5 font-mono text-[12px] text-dim" aria-live="polite">
-          {caption ? (
-            <Link href={`/incidents/${caption.slug}`} title={caption.title} className="hover:text-ink">
-              <span aria-hidden style={{ color: BLIP_COLORS[caption.severity] }}>
-                ●
-              </span>
-              <span className="sr-only">{SEVERITY_META[caption.severity].label}: </span> {caption.age <= 0 ? "today" : `${caption.age} d`} ·{" "}
-              <span style={{ color: FAMILY_COLORS[caption.family] }}>{FAMILY_META[caption.family].short}</span>
-              {caption.hit && <span className="text-soft"> · {caption.hit}</span>}
-            </Link>
-          ) : (
-            `No incidents in the last ${scope.days} days.`
-          )}
-        </p>
-      </div>
+      {side && (
+        <div ref={sideRef} className="absolute inset-y-0 left-0 hidden w-[280px] @min-[600px]:block">
+          {side}
+        </div>
+      )}
       {tip && (
         <div
           role="tooltip"
