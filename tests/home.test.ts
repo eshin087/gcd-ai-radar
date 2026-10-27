@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BREACH_MONTHS, EPSS_TOP, HOME_ROWS, KEV_MONTHS, LAG_MIN_N, aiCvesByQuarter, breachesMonthList, buildHome, countableBreach, dayCvesList, kevLagByYear, median, quarterKey, quarterRange, weekCvesList } from "@/lib/home";
+import { BREACH_MONTHS, CLUSTER_DAYS, CLUSTER_ITEMS, EPSS_TOP, HOME_ROWS, KEV_MONTHS, LAG_MIN_N, aiCvesByQuarter, breachesMonthList, buildHome, countableBreach, dayCvesList, kevLagByYear, median, quarterKey, quarterRange, weekCvesList } from "@/lib/home";
 import { HomeStatsSchema, emptyStats, type BreachStat, type KevStatEntry, type StatsFiles } from "@/lib/stats-schema";
 import { disclosedCve, incident } from "./fixtures";
 
@@ -179,5 +179,59 @@ describe("buildHome", () => {
     expect(bare.stats.epss_top).toEqual([]);
     expect(bare.stats.fetched).toEqual({ nvd: null, kev: null, hibp: null, epss: null });
     expect(() => HomeStatsSchema.parse(bare.stats)).not.toThrow();
+  });
+});
+
+describe("the hero cluster", () => {
+  function clusterStats(): StatsFiles {
+    const s = stats();
+    s.kev!.entries = [
+      kevEntry({ cve: "CVE-2026-1001", vendor: "Plex", product: "Media Server", added: "2026-10-24", due: "2026-11-03", cvss: 7.0 }),
+      kevEntry({ cve: "CVE-2026-1002", vendor: "Plex", product: "Media Server", added: "2026-10-24", due: "2026-11-03", cvss: 9.1 }),
+      kevEntry({ cve: "CVE-2026-1003", vendor: "Arista", product: "VeloCloud", added: "2026-10-23", due: "2026-10-26", cvss: 8.0 }),
+      kevEntry({ cve: "CVE-2026-1004", vendor: "EG", product: "SiteGuard", added: "2026-10-22", due: "2026-10-25" }), // past its deadline
+      kevEntry({ cve: "CVE-2026-1005", vendor: "Older", product: "Thing", added: "2026-10-12", due: "2026-11-09", cvss: null }), // added two weeks ago, still open
+    ];
+    s.cvesRecent!.cves.push({ id: "CVE-2026-0004", published: hoursAgo(24), score: 9.0, severity: "CRITICAL", version: "3.1", description: "Exactly a day old." });
+    return s;
+  }
+  const home = buildHome(records(), clusterStats(), NOW, null, SITE);
+  const c = home.cluster;
+
+  it("lists every KEV deadline still ahead, folded and nearest first", () => {
+    expect(c.kev).toEqual([
+      { cve: "CVE-2026-1003", vendor: "Arista", product: "VeloCloud", added: "2026-10-23", due: "2026-10-26", cvss: 8.0, n: 1 },
+      { cve: "CVE-2026-1001", vendor: "Plex", product: "Media Server", added: "2026-10-24", due: "2026-11-03", cvss: 9.1, n: 2 },
+      { cve: "CVE-2026-1005", vendor: "Older", product: "Thing", added: "2026-10-12", due: "2026-11-09", cvss: null, n: 1 },
+    ]);
+    // the first deadline is the one the counters name
+    expect(c.kev![0]!.due).toBe(home.stats.counters.kev_next_due);
+  });
+
+  it("windows the CVEs so the sparkline adds up to the counters", () => {
+    const v = c.cves!;
+    expect(v.perDay).toHaveLength(CLUSTER_DAYS);
+    expect({ day: v.day, week: v.week, critical: v.critical }).toEqual({ day: home.stats.counters.cves_24h, week: home.stats.counters.cves_7d, critical: home.stats.counters.critical_7d });
+    expect(v.day).toBe(2); // the CVE exactly 24 hours old counts, as in the counter
+    expect(v.perDay[CLUSTER_DAYS - 1]).toBe(v.day);
+    expect(v.perDay.slice(-7).reduce((a, b) => a + b, 0)).toBe(v.week);
+    expect(v.criticalPerDay.slice(-7).reduce((a, b) => a + b, 0)).toBe(v.critical);
+  });
+
+  it("counts open severity 3+ records per action lane, newest first", () => {
+    expect(c.open.lanes).toEqual({ patch: 1, breach: 2, supply_chain: 0 });
+    expect(c.open.total).toBe(3);
+    expect(c.open.rows.map((r) => r.slug)).toEqual(["c", "b", "a"]);
+    expect(c.open.rows.length).toBeLessThanOrEqual(CLUSTER_ITEMS);
+  });
+
+  it("carries the month's countable breaches and the accounts counter", () => {
+    expect(c.breaches).toEqual({ month: "2026-10", accounts: home.stats.counters.breached_accounts_month, rows: [{ title: "Acme", accounts: 1000, added: "2026-10-05" }] });
+  });
+
+  it("leaves out what a missing file cannot back", () => {
+    const bare = buildHome(records(), emptyStats(), NOW, null, SITE).cluster;
+    expect(bare).toMatchObject({ kev: null, cves: null, breaches: null });
+    expect(bare.open.total).toBe(3);
   });
 });

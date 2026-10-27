@@ -2,7 +2,8 @@
 /**
  * Checks the home page in a real browser against the file it was built
  * from: every counter equals /stats/home.json, every counter and chart
- * column opens a list whose count line starts with the same number, the two
+ * column opens a list whose count line starts with the same number, the hero
+ * cluster beside the radar shows and draws the same numbers, the two
  * news columns show their rows, the HTML stays under its size budget, and
  * nothing scrolls sideways on a phone. Zero dependencies (scripts/lib/browser.mjs).
  *
@@ -80,6 +81,28 @@ async function run(client, base, dir) {
   }
   const day = await openAndRead(client, `button[data-counter="cves_24h"]`);
   check("the 24-hour list is complete", day.rows === home.counters.cves_24h, `${day.rows} rows, counter ${home.counters.cves_24h}`);
+
+  // the hero cluster: four tiles beside the radar, the counters' numbers, drawn, opening the counters' drawers
+  const tiles = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-tile]')].map((e) => [e.dataset.tile, { value: e.dataset.value === "" ? null : Number(e.dataset.value), w: e.getBoundingClientRect().width }]))`);
+  check("hero cluster shows four tiles", ["due", "open", "cves", "breached"].every((k) => tiles[k]?.w > 100), JSON.stringify(Object.fromEntries(Object.entries(tiles).map(([k, t]) => [k, Math.round(t.w)]))));
+  check("cluster New CVEs is the 24 h counter", tiles.cves?.value === home.counters.cves_24h, `tile ${tiles.cves?.value}, home.json ${home.counters.cves_24h}`);
+  check("cluster Breached is the accounts counter", tiles.breached?.value === home.counters.breached_accounts_month, `tile ${tiles.breached?.value}, home.json ${home.counters.breached_accounts_month}`);
+  await sleep(2500); // the build-in
+  const inked = await evaluate(client, `(() => {
+    const c = document.querySelector('[data-tile="due"]')?.parentElement?.parentElement?.querySelector("canvas");
+    if (!c || !c.width) return 0;
+    const px = c.getContext("2d").getImageData(0, 0, c.width, c.height).data;
+    let n = 0;
+    for (let i = 3; i < px.length; i += 4) if (px[i] > 40) n++;
+    return n;
+  })()`);
+  check("hero cluster draws", inked > 2000, `${inked} inked pixels`);
+  const due = await evaluate(client, `(() => { const a = document.querySelector('[data-tile="due"]'); return { href: a?.getAttribute("href"), n: Number(a?.dataset.value || 0) }; })()`);
+  check("cluster Due links its first deadline at NVD", home.counters.kev_next_due ? /^https:\/\/nvd\.nist\.gov\/vuln\/detail\/CVE-\d{4}-\d+$/.test(due.href ?? "") && due.n > 0 : due.n === 0, `${due.href}, ${due.n} open deadlines, next due ${home.counters.kev_next_due}`);
+  if (home.counters.breaches_month !== null) {
+    const r = await openAndRead(client, `[data-tile="breached"]`);
+    check("cluster Breached opens the month's breaches", r.count === home.counters.breaches_month && r.closed, `count line "${r.head?.slice(0, 50)}", expected ${home.counters.breaches_month}`);
+  }
 
   // chart columns open their month with the same count
   const kevLast = home.series.kev_by_month[home.series.kev_by_month.length - 1];

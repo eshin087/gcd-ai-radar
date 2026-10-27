@@ -3,7 +3,7 @@ import { addDays, daysBetween, type FullIncident } from "./lifecycle";
 import { buildLive, type LiveData, type LiveRow } from "./live";
 import { monthRange, shiftMonth, toMonthKey } from "./stats";
 import type { BreachStat, HomeStats, KevStatEntry, RecentCve, StatsFiles, StatsSource } from "./stats-schema";
-import type { Lane } from "./taxonomy";
+import type { Lane, PatchStatus } from "./taxonomy";
 
 /**
  * The home page model: the live columns from lib/live.ts plus the statistics
@@ -32,6 +32,57 @@ export const LAG_MAX_DAYS = 365;
 /** The day live news collection started; AI counts before it come from seeds and are sparse. */
 export const COLLECTION_SINCE = "2026-10-18";
 export const AI_CVE_FROM_QUARTER = "2016-Q1";
+/** Days of CVE volume the hero cluster's sparkline shows. */
+export const CLUSTER_DAYS = 14;
+/** Items each hero cluster tile cycles through. */
+export const CLUSTER_ITEMS = 6;
+export const CLUSTER_BREACHES = 8;
+
+export interface ClusterKev {
+  /** The group's first CVE. */
+  cve: string;
+  vendor: string;
+  product: string;
+  added: string;
+  due: string;
+  /** The group's highest CVSS, null when none is scored. */
+  cvss: number | null;
+  /** Entries folded into this one: the same vendor, product and deadline. */
+  n: number;
+}
+
+export type ClusterLane = "patch" | "breach" | "supply_chain";
+
+export interface ClusterOpen {
+  slug: string;
+  /** The first product family named, else the title. */
+  name: string;
+  lane: ClusterLane;
+  patch: PatchStatus;
+  reported: string;
+}
+
+/**
+ * The hero's middle column, four instruments in a 2x2 (components/hero/
+ * RadarCluster.tsx), from the same files and rules as the counters: every
+ * number it shows is a counter on the page or a count behind one. The browser
+ * only drops KEV entries whose deadline passed after the build and runs the
+ * clocks.
+ */
+export interface ClusterData {
+  /** KEV entries whose deadline is on or after the build day (the kev_next_due rule), nearest deadline first. Null without the KEV file. */
+  kev: ClusterKev[] | null;
+  /** Live severity 3+ records in the three action lanes, per lane, and the newest of them. */
+  open: { lanes: Record<ClusterLane, number>; total: number; rows: ClusterOpen[] };
+  /**
+   * The three CVE counters, and CVEs per rolling 24 hours over CLUSTER_DAYS,
+   * oldest first: the last window holds the 24 h count and the last seven add
+   * up to the 7 d one. Null without the recent-CVE file.
+   */
+  cves: { day: number; week: number; critical: number; perDay: number[]; criticalPerDay: number[] } | null;
+  /** The month's breached-accounts counter and its countable breaches, newest first. Null without the HIBP file. */
+  breaches: { month: string; accounts: number; rows: { title: string; accounts: number; added: string }[] } | null;
+}
 
 export interface HomeColumn {
   lane: Lane;
@@ -50,6 +101,7 @@ export interface HomeData {
   live: LiveData;
   columns: { patch: HomeColumn; breach: HomeColumn; supply_chain: number; research: number };
   stats: HomeStats;
+  cluster: ClusterData;
   aiLens: {
     live: number;
     month: string;
@@ -149,6 +201,85 @@ export function aiCvesByQuarter(incidents: readonly FullIncident[], toQuarter: s
     counts.set(q, (counts.get(q) ?? 0) + 1);
   }
   return quarterRange(AI_CVE_FROM_QUARTER, toQuarter).map((quarter) => ({ quarter, total: counts.get(quarter) ?? 0, provisional: quarter === toQuarter }));
+}
+
+/* ---------- the hero cluster ---------- */
+
+/** A CVE's 24-hour window counted back from `now`: 0 holds what the 24 h counter counts (published >= now - 24 h). */
+function windowFromEnd(published: string, nowMs: number): number {
+  return Math.max(0, Math.ceil((nowMs - Date.parse(published)) / 86_400_000) - 1);
+}
+
+export function buildCluster(live: LiveData, stats: StatsFiles, home: HomeStats, now: Date): ClusterData {
+  const today = now.toISOString().slice(0, 10);
+  const c = home.counters;
+
+  // KEV: every deadline still ahead, folded per product and deadline. Not only the week's additions: CISA sets some deadlines three days out, so the week's can all be past while older ones are still open.
+  let kev: ClusterKev[] | null = null;
+  if (stats.kev) {
+    const groups: ClusterKev[] = [];
+    for (const e of stats.kev.entries) {
+      if (!e.due || e.due < today) continue;
+      const g = groups.find((x) => x.vendor === e.vendor && x.product === e.product && x.due === e.due);
+      if (!g) groups.push({ cve: e.cve, vendor: e.vendor, product: e.product, added: e.added, due: e.due, cvss: e.cvss, n: 1 });
+      else {
+        g.n += 1;
+        if (e.cvss !== null && (g.cvss === null || e.cvss > g.cvss)) g.cvss = e.cvss;
+      }
+    }
+    kev = groups.sort((a, b) => a.due.localeCompare(b.due) || (b.cvss ?? -1) - (a.cvss ?? -1) || a.cve.localeCompare(b.cve)).slice(0, CLUSTER_ITEMS);
+  }
+
+  // open: our live records of severity 3 and up in the action lanes
+  const lanes: Record<ClusterLane, number> = { patch: 0, breach: 0, supply_chain: 0 };
+  const open: (ClusterOpen & { update: string })[] = [];
+  for (const b of live.boards) {
+    if (b.key !== "patch" && b.key !== "breach" && b.key !== "supply_chain") continue;
+    for (const r of b.groups.flatMap((g) => g.rows)) {
+      if (r.severity < 3) continue;
+      lanes[b.key] += 1;
+      open.push({ slug: r.slug, name: r.products[0] ?? r.title, lane: b.key, patch: r.patch_status, reported: r.first_reported, update: r.last_update });
+    }
+  }
+  open.sort((a, b) => b.reported.localeCompare(a.reported) || b.update.localeCompare(a.update) || a.slug.localeCompare(b.slug));
+
+  // CVEs: the counters, and the rolling windows behind them
+  let cves: ClusterData["cves"] = null;
+  const recent = stats.cvesRecent?.cves;
+  if (recent && c.cves_24h !== null && c.cves_7d !== null && c.critical_7d !== null) {
+    const perDay = new Array<number>(CLUSTER_DAYS).fill(0);
+    const criticalPerDay = new Array<number>(CLUSTER_DAYS).fill(0);
+    for (const v of recent) {
+      const k = windowFromEnd(v.published, now.getTime());
+      if (k >= CLUSTER_DAYS) continue;
+      perDay[CLUSTER_DAYS - 1 - k]! += 1;
+      if (v.score !== null && v.score >= 9) criticalPerDay[CLUSTER_DAYS - 1 - k]! += 1;
+    }
+    cves = { day: c.cves_24h, week: c.cves_7d, critical: c.critical_7d, perDay, criticalPerDay };
+  }
+
+  // breaches: the month's countable breaches, newest first
+  let breaches: ClusterData["breaches"] = null;
+  const month = home.lists.breaches_month.month;
+  if (stats.hibp && c.breached_accounts_month !== null) {
+    const rows = stats.hibp.breaches
+      .filter((b) => countableBreach(b) && b.added.startsWith(month))
+      .sort((a, b) => b.added.localeCompare(a.added) || b.accounts - a.accounts || a.name.localeCompare(b.name))
+      .slice(0, CLUSTER_BREACHES)
+      .map((b) => ({ title: b.title, accounts: b.accounts, added: b.added }));
+    breaches = { month, accounts: c.breached_accounts_month, rows };
+  }
+
+  return {
+    kev,
+    open: {
+      lanes,
+      total: lanes.patch + lanes.breach + lanes.supply_chain,
+      rows: open.slice(0, CLUSTER_ITEMS).map((r) => ({ slug: r.slug, name: r.name, lane: r.lane, patch: r.patch, reported: r.reported })),
+    },
+    cves,
+    breaches,
+  };
 }
 
 /* ---------- the model ---------- */
@@ -258,6 +389,7 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
       research: live.boards.find((b) => b.key === "research")?.count ?? 0,
     },
     stats: homeStats,
+    cluster: buildCluster(live, stats, homeStats, now),
     aiLens: {
       live: live.counters.ai,
       month,

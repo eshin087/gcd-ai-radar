@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RadarCluster } from "@/components/hero/RadarCluster";
 import { ThreatScope } from "@/components/hero/ThreatScope";
 import { HomeCharts } from "@/components/home/HomeCharts";
 import { HomeCounters } from "@/components/home/HomeCounters";
@@ -11,8 +12,8 @@ import type { HomePayload } from "@/lib/home-data";
 import { SITE } from "@/lib/site";
 
 /**
- * The home page, top to bottom: the headline and the radar scope (the live
- * internet band takes this slot when it lands), today's numbers, what to act
+ * The home page, top to bottom: the headline, the hero cluster and the radar
+ * scope (the live internet band takes this slot when it lands), today's numbers, what to act
  * on, the charts everyone should know, two numbers nobody else shows, the AI
  * lens, this week and the machine endpoints. Built at deploy time from
  * lib/home.ts; the drawers fetch /stats/*.json in the browser.
@@ -80,7 +81,13 @@ export function HomePage({ data }: { data: HomePayload }) {
             </Link>
           </div>
         </div>
-        <ThreatScope scope={data.live.scope} running className="order-1 h-[200px] lg:order-2 lg:h-full" />
+        {/* the cluster shows once the figure is 600 px wide (ThreatScope), so the figure is tall enough for it from 600 px of viewport up */}
+        <ThreatScope
+          scope={data.live.scope}
+          running
+          side={<RadarCluster data={data.cluster} />}
+          className="order-1 h-[200px] min-[600px]:h-[264px] lg:order-2 lg:h-full"
+        />
       </section>
 
       <HomeCounters stats={s} />
