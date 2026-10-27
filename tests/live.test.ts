@@ -7,13 +7,14 @@ const NOW = new Date("2026-10-25T12:00:00Z");
 
 describe("rows", () => {
   it("builds the same row from a full and a slim record, apart from the action line", () => {
-    const i = incident({ products: ["Langflow OSS", "IBM Langflow OSS", "vLLM", "Gradio"], cve_ids: ["CVE-2026-4", "CVE-2026-3", "CVE-2026-2", "CVE-2026-1"], action: "Update now.", tags: ["rce", "RCE", "mcp"] });
+    const i = incident({ products: ["Langflow OSS", "IBM Langflow OSS", "vLLM", "Gradio"], cve_ids: ["CVE-2026-4", "CVE-2026-3", "CVE-2026-2", "CVE-2026-1"], action: "Update now.", tags: ["rce", "RCE", "mcp"], cvss: 9.8 });
     const full = rowOf(i);
     expect(full.products).toEqual(["Langflow", "vLLM", "Gradio"]);
     expect(full.cve_ids).toEqual(["CVE-2026-4", "CVE-2026-3", "CVE-2026-2"]);
     expect(full.cve_more).toBe(1);
     expect(full.tags).toEqual(["rce", "mcp"]);
     expect(full.ai).toBe(true);
+    expect(full.cvss).toBe(9.8);
     const thin = rowOfSlim(slim(i));
     expect({ ...thin, action: full.action }).toEqual(full);
     expect(thin.action).toBe("");

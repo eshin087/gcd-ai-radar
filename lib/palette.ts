@@ -1,5 +1,6 @@
+import { type CvssBand } from "./cvss";
 import { FAMILY_COLORS, familyOf } from "./families";
-import { CATEGORIES, type Category, type IncidentType, type Severity } from "./taxonomy";
+import { CATEGORIES, type Category, type IncidentType, type Lane, type Severity } from "./taxonomy";
 
 /**
  * The one palette. Every chart, legend and badge imports from here so the
@@ -34,6 +35,27 @@ export const SEVERITY_COLORS: Record<Severity, string> = {
   2: "#7b9dff",
   3: "#ff9b3d",
   4: "#ff5c5c",
+};
+
+/**
+ * The lane as coloured text on rows (mirrors --color-lane-* in globals.css):
+ * amber for patch, red for breach, violet for supply chain, slate for
+ * research. A lane is a place, so the colour names it and never judges it;
+ * the word is always beside the colour.
+ */
+export const LANE_COLORS: Record<Lane, string> = {
+  patch: "#e6a23c",
+  breach: "#ff6b6b",
+  supply_chain: "#b08cff",
+  research: "#8a93a6",
+};
+
+/** CVSS bands on the filled chip: red 9.0 and up, orange 7.0 to 8.9, blue 4.0 to 6.9, grey below (the --color-sev-N hues, so the chip and the severity word share one scale of alarm). */
+export const CVSS_COLORS: Record<CvssBand, string> = {
+  critical: SEVERITY_COLORS[4],
+  high: SEVERITY_COLORS[3],
+  medium: SEVERITY_COLORS[2],
+  low: SEVERITY_COLORS[1],
 };
 
 /** Each category wears its family's colour (lib/families.ts): 7 validated hues instead of 14 that failed CVD checks. */
