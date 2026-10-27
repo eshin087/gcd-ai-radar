@@ -459,7 +459,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2024-0269",
@@ -518,7 +518,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2024-0268",
@@ -577,7 +577,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2024-0017",
@@ -749,7 +749,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2024-0206",
@@ -807,7 +807,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2024-0015",
@@ -933,7 +933,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0203",
@@ -1004,7 +1004,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0202",
@@ -1075,7 +1075,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0201",
@@ -1147,7 +1147,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0041",
@@ -1331,7 +1331,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0266",
@@ -1390,7 +1390,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0199",
@@ -1461,7 +1461,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0198",
@@ -1532,7 +1532,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0265",
@@ -1591,7 +1591,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0264",
@@ -1650,7 +1650,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0263",
@@ -1709,7 +1709,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0197",
@@ -1780,7 +1780,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0196",
@@ -1851,7 +1851,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0262",
@@ -1911,7 +1911,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.4
   },
   {
     "id": "AIR-2024-0195",
@@ -1982,7 +1982,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0194",
@@ -2052,7 +2052,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0193",
@@ -2124,7 +2124,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.9
   },
   {
     "id": "AIR-2024-0192",
@@ -2196,7 +2196,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.9
   },
   {
     "id": "AIR-2024-0042",
@@ -2424,7 +2424,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2024-0034",
@@ -2542,7 +2542,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2024-0191",
@@ -2600,7 +2600,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0190",
@@ -2658,7 +2658,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.4
   },
   {
     "id": "AIR-2024-0189",
@@ -2730,7 +2730,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0188",
@@ -2802,7 +2802,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0187",
@@ -2873,7 +2873,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2024-0186",
@@ -2944,7 +2944,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2024-0185",
@@ -3015,7 +3015,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0184",
@@ -3086,7 +3086,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0183",
@@ -3157,7 +3157,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2024-0182",
@@ -3228,7 +3228,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2024-0181",
@@ -3299,7 +3299,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2024-0180",
@@ -3427,7 +3427,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0178",
@@ -3498,7 +3498,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0177",
@@ -3569,7 +3569,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0259",
@@ -3628,7 +3628,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2024-0176",
@@ -3687,7 +3687,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0175",
@@ -3746,7 +3746,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0039",
@@ -4208,7 +4208,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0174",
@@ -4278,7 +4278,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.1
   },
   {
     "id": "AIR-2024-0173",
@@ -4349,7 +4349,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2024-0009",
@@ -4466,7 +4466,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2024-0036",
@@ -4593,7 +4593,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0043",
@@ -4710,7 +4710,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0168",
@@ -4781,7 +4781,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0167",
@@ -4853,7 +4853,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2024-0166",
@@ -4924,7 +4924,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2024-0165",
@@ -4984,7 +4984,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0021",
@@ -5161,7 +5161,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0255",
@@ -5221,7 +5221,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0066",
@@ -5524,7 +5524,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0163",
@@ -5595,7 +5595,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0162",
@@ -5666,7 +5666,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0047",
@@ -5781,7 +5781,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0019",
@@ -5898,7 +5898,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0252",
@@ -5957,7 +5957,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2024-0251",
@@ -6016,7 +6016,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0160",
@@ -6076,7 +6076,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0250",
@@ -6135,7 +6135,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2024-0249",
@@ -6194,7 +6194,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.4
   },
   {
     "id": "AIR-2024-0031",
@@ -6367,7 +6367,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2024-0248",
@@ -6426,7 +6426,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0247",
@@ -6485,7 +6485,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0151",
@@ -6544,7 +6544,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2024-0150",
@@ -6602,7 +6602,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2024-0058",
@@ -6733,7 +6733,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2024-0006",
@@ -6910,7 +6910,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.8
   },
   {
     "id": "AIR-2024-0049",
@@ -7029,7 +7029,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2024-0244",
@@ -7088,7 +7088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0159",
@@ -7159,7 +7159,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0158",
@@ -7230,7 +7230,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0157",
@@ -7301,7 +7301,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0156",
@@ -7372,7 +7372,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0155",
@@ -7443,7 +7443,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2024-0154",
@@ -7514,7 +7514,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2024-0051",
@@ -7745,7 +7745,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2024-0147",
@@ -7803,7 +7803,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2024-0146",
@@ -7861,7 +7861,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2024-0145",
@@ -7931,7 +7931,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0144",
@@ -7989,7 +7989,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0025",
@@ -8107,7 +8107,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2024-0242",
@@ -8166,7 +8166,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.4
   },
   {
     "id": "AIR-2024-0143",
@@ -8224,7 +8224,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2024-0142",
@@ -8294,7 +8294,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2024-0141",
@@ -8353,7 +8353,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0022",
@@ -8469,7 +8469,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2024-0139",
@@ -8540,7 +8540,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2024-0138",
@@ -8599,7 +8599,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2024-0137",
@@ -8670,7 +8670,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0239",
@@ -8728,7 +8728,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0238",
@@ -8787,7 +8787,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0237",
@@ -8846,7 +8846,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2024-0136",
@@ -8905,7 +8905,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.9
   },
   {
     "id": "AIR-2024-0134",
@@ -8976,7 +8976,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0133",
@@ -9047,7 +9047,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2024-0132",
@@ -9106,7 +9106,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0130",
@@ -9164,7 +9164,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2024-0129",
@@ -9234,7 +9234,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7
   },
   {
     "id": "AIR-2024-0128",
@@ -9292,7 +9292,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2024-0126",
@@ -9363,7 +9363,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0125",
@@ -9422,7 +9422,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.2
   },
   {
     "id": "AIR-2024-0236",
@@ -9480,7 +9480,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2024-0235",
@@ -9538,7 +9538,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0114",
@@ -9609,7 +9609,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0113",
@@ -9668,7 +9668,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4
   },
   {
     "id": "AIR-2024-0057",
@@ -9796,7 +9796,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0234",
@@ -9854,7 +9854,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0065",
@@ -9975,7 +9975,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.2
   },
   {
     "id": "AIR-2024-0233",
@@ -10034,7 +10034,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2024-0109",
@@ -10094,7 +10094,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0107",
@@ -10154,7 +10154,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0229",
@@ -10214,7 +10214,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2024-0105",
@@ -10288,7 +10288,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2024-0104",
@@ -10348,7 +10348,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2024-0056",
@@ -10473,7 +10473,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0103",
@@ -10544,7 +10544,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0102",
@@ -10603,7 +10603,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0101",
@@ -10673,7 +10673,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2024-0228",
@@ -10733,7 +10733,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0035",
@@ -10849,7 +10849,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2024-0097",
@@ -10919,7 +10919,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0094",
@@ -10978,7 +10978,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0091",
@@ -11048,7 +11048,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0087",
@@ -11118,7 +11118,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0023",
@@ -11233,7 +11233,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2024-0054",
@@ -11348,7 +11348,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0224",
@@ -11407,7 +11407,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 0
   },
   {
     "id": "AIR-2024-0172",
@@ -11477,7 +11477,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.2
   },
   {
     "id": "AIR-2024-0086",
@@ -11536,7 +11536,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0085",
@@ -11596,7 +11596,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0084",
@@ -11713,7 +11713,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.4
   },
   {
     "id": "AIR-2024-0004",
@@ -11843,7 +11843,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0222",
@@ -11901,7 +11901,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0003",
@@ -12015,7 +12015,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2024-0010",
@@ -12131,7 +12131,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0002",
@@ -12244,7 +12244,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2024-0218",
@@ -12302,7 +12302,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2024-0081",
@@ -12373,7 +12373,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2024-0080",
@@ -12444,7 +12444,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2024-0001",
@@ -12572,7 +12572,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2024-0024",
@@ -12698,7 +12698,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2024-0217",
@@ -12757,7 +12757,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2024-0216",
@@ -12816,7 +12816,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2024-0064",
@@ -12990,7 +12990,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2024-0214",
@@ -13050,7 +13050,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0213",
@@ -13110,7 +13110,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0212",
@@ -13170,7 +13170,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0211",
@@ -13230,7 +13230,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0210",
@@ -13290,7 +13290,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2024-0209",
@@ -13349,7 +13349,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2024-0078",
@@ -13419,7 +13419,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0077",
@@ -13477,7 +13477,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2024-0074",
@@ -13548,7 +13548,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2024-0062",
@@ -13678,7 +13678,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0027",
@@ -13794,7 +13794,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2024-0061",
@@ -13922,7 +13922,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2024-0208",
@@ -13981,7 +13981,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2024-0013",

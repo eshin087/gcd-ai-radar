@@ -66,9 +66,11 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
   const plotW = Math.max(40, width - LEFT - RIGHT);
   const plotH = Math.max(40, height - TOP - BOTTOM);
   const n = Math.max(1, periods.length);
+  /** One decimal is finer than a pixel and keeps the markup short: full-precision floats cost about a quarter of the chart's bytes. */
+  const r1 = (v: number) => Math.round(v * 10) / 10;
   const slot = plotW / n;
-  const barW = Math.max(2, Math.min(slot * 0.72, 48));
-  const y = (v: number) => (scale === "sqrt" ? Math.sqrt(v / max) : v / max) * plotH;
+  const barW = r1(Math.max(2, Math.min(slot * 0.72, 48)));
+  const y = (v: number) => r1((scale === "sqrt" ? Math.sqrt(v / max) : v / max) * plotH);
   const step = niceStep(max / 4);
   const ticks: number[] = [];
   for (let t = step; t <= max * 1.0001 && ticks.length < 8; t += step) ticks.push(t);
@@ -100,7 +102,7 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
         )}
         {/* columns */}
         {periods.map((p, i) => {
-          const x = LEFT + i * slot + (slot - barW) / 2;
+          const x = r1(LEFT + i * slot + (slot - barW) / 2);
           let acc = 0;
           const total = totals[i]!;
           const isActive = active === p.key;
@@ -112,7 +114,7 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
                 const h0 = y(acc);
                 acc += v;
                 const h1 = y(acc);
-                const hh = Math.max(0, h1 - h0);
+                const hh = r1(Math.max(0, h1 - h0));
                 if (hh === 0) return null;
                 return (
                   <g key={k}>
@@ -123,7 +125,7 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
               })}
               {total === 0 && <rect x={x} width={barW} y={TOP + plotH - 1} height={1} fill="var(--color-line)" />}
               {(p.short !== undefined ? p.short !== "" : i % every === 0) && (
-                <text x={x + barW / 2} y={TOP + plotH + 15} textAnchor="middle" className="num" fontSize="11" fill="var(--color-dim)">
+                <text x={r1(x + barW / 2)} y={TOP + plotH + 15} textAnchor="middle" className="num" fontSize="11" fill="var(--color-dim)">
                   {p.short ?? p.label}
                 </text>
               )}
@@ -133,8 +135,8 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
                   tabIndex={0}
                   aria-label={`${p.label}: ${total} ${unit}`}
                   aria-pressed={isActive}
-                  x={LEFT + i * slot}
-                  width={slot}
+                  x={r1(LEFT + i * slot)}
+                  width={r1(slot)}
                   y={TOP}
                   height={plotH + BOTTOM}
                   fill="transparent"
@@ -150,7 +152,7 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
                   <title>{tip}</title>
                 </rect>
               ) : (
-                <rect x={LEFT + i * slot} width={slot} y={TOP} height={plotH + BOTTOM} fill="transparent">
+                <rect x={r1(LEFT + i * slot)} width={r1(slot)} y={TOP} height={plotH + BOTTOM} fill="transparent">
                   <title>{tip}</title>
                 </rect>
               )}

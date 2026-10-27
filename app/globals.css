@@ -29,6 +29,11 @@
   --color-partial: #f2a83b;
   --color-patched: #4cc38a;
   --color-closed: #6b7389;
+  /* lanes (lib/palette.ts LANE_COLORS): a lane is a place; its colour names it on rows, the word is always beside it */
+  --color-lane-patch: #e6a23c;
+  --color-lane-breach: #ff6b6b;
+  --color-lane-supply_chain: #b08cff;
+  --color-lane-research: #8a93a6;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;

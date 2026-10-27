@@ -61,7 +61,7 @@ export function CveLi({ c }: { c: RecentCve }) {
   return (
     <li className="grid grid-cols-[3rem_minmax(0,1fr)] gap-3 border-t border-line-soft py-2.5 first:border-t-0">
       <div className="pt-0.5">
-        <ScoreChip score={c.score} title={c.score !== null ? `CVSS ${c.score.toFixed(1)} (v${c.version})` : undefined} />
+        <ScoreChip score={c.score} version={c.version} />
       </div>
       <div className="min-w-0">
         <a href={nvdUrl(c.id)} target="_blank" rel="noopener noreferrer" className="num text-[13.5px] text-ink hover:text-accent">

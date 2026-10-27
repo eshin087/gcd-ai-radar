@@ -38,6 +38,8 @@ export interface CompactRow {
   lane?: Incident["lane"];
   state?: Incident["state"];
   patch_status?: Incident["patch_status"];
+  /** The CVSS base score a source states, or null; optional like the lifecycle fields above. */
+  cvss?: number | null;
 }
 
 export function compactRow(i: FullIncident): CompactRow {
@@ -60,6 +62,7 @@ export function compactRow(i: FullIncident): CompactRow {
     lane: i.lane,
     state: i.state,
     patch_status: i.patch_status,
+    cvss: i.cvss,
   };
 }
 

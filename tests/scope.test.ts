@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { CompactRow } from "@/lib/rows";
-import { MAX_BLIPS, SCOPE_DAYS, buildScope } from "@/lib/scope";
+import { LOCK_CHARS, MAX_BLIPS, SCOPE_DAYS, buildScope, lockText } from "@/lib/scope";
 
 const NOW = new Date("2026-10-25T18:30:00Z");
 
@@ -42,6 +42,31 @@ describe("buildScope", () => {
       [0, "agent", 3],
       [119, "injection", 1],
     ]);
+  });
+
+  it("names what was hit: the first real product, else the target, with the record's CVE", () => {
+    const scope = buildScope(
+      [
+        { ...row({ first_reported: "2026-10-25", products: ["AI coding agents", "llama.cpp"], severity: 3 }), cve: "CVE-2026-116096" },
+        row({ first_reported: "2026-10-24", products: ["Claude Code + SDKs"] }),
+        row({ first_reported: "2026-10-23", products: ["open-weight models"], targets: ["n/a", "framework_or_tooling"] }),
+        row({ first_reported: "2026-10-22", targets: ["n/a"] }),
+      ],
+      NOW,
+    );
+    expect(scope.blips.map((b) => [b.hit, b.lock, b.cve])).toEqual([
+      ["llama.cpp", "LLAMA.CPP", "CVE-2026-116096"],
+      ["Claude Code + SDKs", "CLAUDE", null],
+      ["Framework / tooling", "AI TOOLING", null],
+      ["", "", null],
+    ]);
+  });
+
+  it("keeps lock text to what the pixel font can draw", () => {
+    expect(lockText("Hugging_Face")).toBe("HUGGINGFAC");
+    expect(lockText("Microsoft 365 Copilot")).toBe("MICROSOFT"); // cut at LOCK_CHARS, then trimmed
+    expect(lockText("ABCDEFGHIJKLMN")).toHaveLength(LOCK_CHARS);
+    expect(lockText("Öffi")).toBe("FFI");
   });
 
   it("caps the blips but always keeps the real-world incidents", () => {

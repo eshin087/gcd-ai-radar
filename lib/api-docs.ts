@@ -189,6 +189,7 @@ export const SLIM_NOTES: Record<keyof SlimIncident, { type: string; note: string
   state: null,
   patch_status: null,
   cve_ids: null,
+  cvss: null,
   tags: { type: "string[]", note: "Tag slugs as the tag pages use them (/tags/<slug>), at most five; the full record carries the tags as written." },
   last_update: { type: "string (YYYY-MM-DD)", note: "The newest dated activity: a timeline entry, a source or the first report." },
 };
@@ -207,7 +208,7 @@ export function slimFields(): FieldDoc[] {
 /** Compact rows (rows/<year>.json) are internal to the dashboard: listed, not promised. */
 export const ROW_FIELDS: readonly (keyof CompactRow)[] = [
   "id", "slug", "title", "incident_date", "incident_date_precision", "first_reported", "type", "categories", "severity", "targets", "source_count", "disclosed", "product", "products",
-  "lane", "state", "patch_status",
+  "lane", "state", "patch_status", "cvss",
 ];
 
 export const META_FIELDS: Record<keyof MetaFile, { type: string; note: string }> = {
