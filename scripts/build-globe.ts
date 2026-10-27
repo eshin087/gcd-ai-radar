@@ -8,14 +8,14 @@
  *           file's LABEL_X / LABEL_Y, plus a few places too small for the 110m
  *           file (Singapore, Hong Kong, ...) that attack routes name often
  *
- * The GeoJSON (about 840 KB) is downloaded into a scratch directory outside the
- * repository and reused on later runs; only the ~20 KB output is committed.
+ * The GeoJSON (about 840 KB) is read straight from the network on each run and
+ * never written to disk; only the ~20 KB output is committed. To work offline,
+ * point GLOBE_SOURCE at a copy you downloaded yourself.
  *
- *   npx tsx scripts/build-globe.ts            downloads to $TMPDIR/gcd-ai-radar-globe
- *   GLOBE_SCRATCH=/path npx tsx scripts/build-globe.ts
+ *   npx tsx scripts/build-globe.ts
+ *   GLOBE_SOURCE=/path/to/ne_110m_admin_0_countries.geojson npx tsx scripts/build-globe.ts
  */
 import { promises as fs } from "node:fs";
-import os from "node:os";
 import path from "node:path";
 
 const SOURCE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson";
@@ -89,20 +89,16 @@ interface Feature {
 }
 
 async function source(): Promise<Feature[]> {
-  const dir = process.env.GLOBE_SCRATCH ?? path.join(os.tmpdir(), "gcd-ai-radar-globe");
-  await fs.mkdir(dir, { recursive: true });
-  const file = path.join(dir, "ne_110m_admin_0_countries.geojson");
   let text: string;
-  try {
-    text = await fs.readFile(file, "utf8");
-    console.log(`using ${file}`);
-  } catch {
+  const local = process.env.GLOBE_SOURCE;
+  if (local) {
+    text = await fs.readFile(local, "utf8");
+    console.log(`using ${local}`);
+  } else {
     console.log(`downloading ${SOURCE}`);
     const res = await fetch(SOURCE);
     if (!res.ok) throw new Error(`download failed: ${res.status}`);
     text = await res.text();
-    await fs.writeFile(file, text);
-    console.log(`saved to ${file}`);
   }
   const parsed = JSON.parse(text) as { type: string; features: Feature[] };
   if (parsed.type !== "FeatureCollection" || !Array.isArray(parsed.features)) throw new Error("not a FeatureCollection");
@@ -182,7 +178,7 @@ async function main() {
   }
 
   const labels: Record<string, [number, number, string]> = {};
-  let skipped: string[] = [];
+  const skipped: string[] = [];
   for (const f of features) {
     const code = f.properties.ISO_A2_EH;
     const name = f.properties.NAME;
@@ -209,7 +205,6 @@ async function main() {
   const json = JSON.stringify(out);
   await fs.writeFile(OUT, json + "\n");
   console.log(`${dots} land dots in ${rows.length} rows, ${Object.keys(sorted).length} labels (${skipped.length} features skipped: ${skipped.join(", ") || "none"}), ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(process.cwd(), OUT)}`);
-  skipped = [];
 }
 
 main().catch((e) => {
