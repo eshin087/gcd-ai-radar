@@ -516,7 +516,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0519",
@@ -577,7 +577,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0518",
@@ -637,7 +637,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0517",
@@ -697,7 +697,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0516",
@@ -757,7 +757,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0515",
@@ -817,7 +817,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0514",
@@ -877,7 +877,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0513",
@@ -938,7 +938,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0512",
@@ -999,7 +999,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0389",
@@ -1070,7 +1070,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2025-0388",
@@ -1141,7 +1141,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0188",
@@ -1258,7 +1258,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0081",
@@ -1386,7 +1386,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0046",
@@ -1457,7 +1457,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0045",
@@ -1528,7 +1528,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0044",
@@ -1587,7 +1587,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0043",
@@ -1646,7 +1646,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2025-0042",
@@ -1704,7 +1704,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2025-0041",
@@ -1762,7 +1762,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0040",
@@ -1820,7 +1820,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0039",
@@ -1878,7 +1878,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0038",
@@ -1936,7 +1936,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0510",
@@ -1996,7 +1996,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0509",
@@ -2057,7 +2057,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0105",
@@ -2171,7 +2171,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0036",
@@ -2229,7 +2229,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0035",
@@ -2300,7 +2300,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2025-0508",
@@ -2359,7 +2359,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0387",
@@ -2417,7 +2417,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.1
   },
   {
     "id": "AIR-2025-0386",
@@ -2487,7 +2487,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2025-0506",
@@ -2546,7 +2546,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2025-0385",
@@ -2618,7 +2618,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0383",
@@ -2700,7 +2700,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0382",
@@ -2770,7 +2770,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0101",
@@ -2886,7 +2886,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0381",
@@ -2956,7 +2956,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0077",
@@ -3188,7 +3188,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0503",
@@ -3247,7 +3247,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0502",
@@ -3306,7 +3306,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0521",
@@ -3378,7 +3378,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0501",
@@ -3439,7 +3439,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.7
   },
   {
     "id": "AIR-2025-0377",
@@ -3511,7 +3511,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0376",
@@ -3582,7 +3582,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0375",
@@ -3653,7 +3653,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2025-0374",
@@ -3724,7 +3724,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2025-0079",
@@ -3852,7 +3852,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0186",
@@ -4201,7 +4201,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2025-0498",
@@ -4260,7 +4260,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0497",
@@ -4319,7 +4319,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0185",
@@ -4437,7 +4437,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2025-0369",
@@ -4507,7 +4507,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0368",
@@ -4577,7 +4577,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0067",
@@ -5301,7 +5301,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0496",
@@ -5360,7 +5360,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2025-0363",
@@ -5476,7 +5476,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2025-0360",
@@ -5535,7 +5535,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0160",
@@ -5652,7 +5652,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0080",
@@ -5769,7 +5769,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0493",
@@ -5827,7 +5827,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2025-0358",
@@ -5941,7 +5941,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3
   },
   {
     "id": "AIR-2025-0492",
@@ -5999,7 +5999,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.6
   },
   {
     "id": "AIR-2025-0034",
@@ -6070,7 +6070,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2025-0355",
@@ -6128,7 +6128,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0354",
@@ -6314,7 +6314,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.9
   },
   {
     "id": "AIR-2025-0353",
@@ -6373,7 +6373,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0352",
@@ -6444,7 +6444,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0351",
@@ -6515,7 +6515,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0491",
@@ -6573,7 +6573,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0350",
@@ -6632,7 +6632,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0030",
@@ -6704,7 +6704,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.3
   },
   {
     "id": "AIR-2025-0490",
@@ -6763,7 +6763,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0349",
@@ -6947,7 +6947,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0031",
@@ -7017,7 +7017,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0029",
@@ -7088,7 +7088,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.3
   },
   {
     "id": "AIR-2025-0028",
@@ -7159,7 +7159,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0128",
@@ -7392,7 +7392,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0487",
@@ -7456,7 +7456,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0058",
@@ -7596,7 +7596,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0027",
@@ -7656,7 +7656,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6
   },
   {
     "id": "AIR-2025-0347",
@@ -7715,7 +7715,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0346",
@@ -7787,7 +7787,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0345",
@@ -7846,7 +7846,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0025",
@@ -7906,7 +7906,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0024",
@@ -7978,7 +7978,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2025-0342",
@@ -8038,7 +8038,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2025-0078",
@@ -8153,7 +8153,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2025-0341",
@@ -8279,7 +8279,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2025-0339",
@@ -8463,7 +8463,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2025-0026",
@@ -8534,7 +8534,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0023",
@@ -8605,7 +8605,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0480",
@@ -8664,7 +8664,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0335",
@@ -8736,7 +8736,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0022",
@@ -8808,7 +8808,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0087",
@@ -8936,7 +8936,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0333",
@@ -9008,7 +9008,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.5
   },
   {
     "id": "AIR-2025-0332",
@@ -9067,7 +9067,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2025-0479",
@@ -9127,7 +9127,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2025-0073",
@@ -9244,7 +9244,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0477",
@@ -9303,7 +9303,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0331",
@@ -9374,7 +9374,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0330",
@@ -9550,7 +9550,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0475",
@@ -9609,7 +9609,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0474",
@@ -9668,7 +9668,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0473",
@@ -9727,7 +9727,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0472",
@@ -9786,7 +9786,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0329",
@@ -9845,7 +9845,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.6
   },
   {
     "id": "AIR-2025-0328",
@@ -9915,7 +9915,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0471",
@@ -9976,7 +9976,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2025-0327",
@@ -10046,7 +10046,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0326",
@@ -10106,7 +10106,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0121",
@@ -10358,7 +10358,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0088",
@@ -10489,7 +10489,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0470",
@@ -10549,7 +10549,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0469",
@@ -10608,7 +10608,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0468",
@@ -10669,7 +10669,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0467",
@@ -10729,7 +10729,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.8
   },
   {
     "id": "AIR-2025-0466",
@@ -10789,7 +10789,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2025-0465",
@@ -10849,7 +10849,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0322",
@@ -10920,7 +10920,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.6
   },
   {
     "id": "AIR-2025-0447",
@@ -10979,7 +10979,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2025-0321",
@@ -11050,7 +11050,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0320",
@@ -11123,7 +11123,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0319",
@@ -11196,7 +11196,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0127",
@@ -11313,7 +11313,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0161",
@@ -11493,7 +11493,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0189",
@@ -11609,7 +11609,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.1
   },
   {
     "id": "AIR-2025-0317",
@@ -11680,7 +11680,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2025-0442",
@@ -11740,7 +11740,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0020",
@@ -12087,7 +12087,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.9
   },
   {
     "id": "AIR-2025-0018",
@@ -12216,7 +12216,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0017",
@@ -12330,7 +12330,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.9
   },
   {
     "id": "AIR-2025-0315",
@@ -12388,7 +12388,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0125",
@@ -12508,7 +12508,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0122",
@@ -12625,7 +12625,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0438",
@@ -12684,7 +12684,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0313",
@@ -12754,7 +12754,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.5
   },
   {
     "id": "AIR-2025-0312",
@@ -12812,7 +12812,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0311",
@@ -12871,7 +12871,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5
   },
   {
     "id": "AIR-2025-0310",
@@ -12942,7 +12942,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0309",
@@ -13001,7 +13001,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0308",
@@ -13072,7 +13072,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0307",
@@ -13131,7 +13131,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0306",
@@ -13191,7 +13191,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0154",
@@ -13376,7 +13376,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0304",
@@ -13448,7 +13448,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.7
   },
   {
     "id": "AIR-2025-0124",
@@ -13621,7 +13621,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2025-0436",
@@ -13682,7 +13682,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0301",
@@ -13753,7 +13753,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0300",
@@ -13824,7 +13824,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0123",
@@ -14055,7 +14055,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.5
   },
   {
     "id": "AIR-2025-0434",
@@ -14114,7 +14114,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0433",
@@ -14173,7 +14173,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2025-0113",
@@ -14462,7 +14462,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6
   },
   {
     "id": "AIR-2025-0431",
@@ -14521,7 +14521,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0015",
@@ -14638,7 +14638,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0298",
@@ -14711,7 +14711,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0297",
@@ -14782,7 +14782,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2025-0119",
@@ -15246,7 +15246,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2025-0428",
@@ -15308,7 +15308,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0427",
@@ -15366,7 +15366,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.1
   },
   {
     "id": "AIR-2025-0426",
@@ -15425,7 +15425,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0296",
@@ -15484,7 +15484,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.4
   },
   {
     "id": "AIR-2025-0112",
@@ -15773,7 +15773,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0425",
@@ -15832,7 +15832,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0163",
@@ -16016,7 +16016,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 3.7
   },
   {
     "id": "AIR-2025-0293",
@@ -16087,7 +16087,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0292",
@@ -16158,7 +16158,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0291",
@@ -16229,7 +16229,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0290",
@@ -16300,7 +16300,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0289",
@@ -16428,7 +16428,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.2
   },
   {
     "id": "AIR-2025-0287",
@@ -16499,7 +16499,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2025-0286",
@@ -16570,7 +16570,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0145",
@@ -16699,7 +16699,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0083",
@@ -16815,7 +16815,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0283",
@@ -16886,7 +16886,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0142",
@@ -17065,7 +17065,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.6
   },
   {
     "id": "AIR-2025-0423",
@@ -17123,7 +17123,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.4
   },
   {
     "id": "AIR-2025-0139",
@@ -17237,7 +17237,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0108",
@@ -17424,7 +17424,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2026-0796",
@@ -17494,7 +17494,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.4
   },
   {
     "id": "AIR-2026-0794",
@@ -17565,7 +17565,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.4
   },
   {
     "id": "AIR-2025-0279",
@@ -17636,7 +17636,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0422",
@@ -17694,7 +17694,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0074",
@@ -17880,7 +17880,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0277",
@@ -17952,7 +17952,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 10
   },
   {
     "id": "AIR-2025-0276",
@@ -18024,7 +18024,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0275",
@@ -18083,7 +18083,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0132",
@@ -18256,7 +18256,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.1
   },
   {
     "id": "AIR-2025-0131",
@@ -18372,7 +18372,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0130",
@@ -18550,7 +18550,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0418",
@@ -18608,7 +18608,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0417",
@@ -18667,7 +18667,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0151",
@@ -19271,7 +19271,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.3
   },
   {
     "id": "AIR-2025-0415",
@@ -19329,7 +19329,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0414",
@@ -19387,7 +19387,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0009",
@@ -19678,7 +19678,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.8
   },
   {
     "id": "AIR-2025-0150",
@@ -19970,7 +19970,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2026-0027",
@@ -20041,7 +20041,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2025-0269",
@@ -20100,7 +20100,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0158",
@@ -20343,7 +20343,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.3
   },
   {
     "id": "AIR-2025-0159",
@@ -20692,7 +20692,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0411",
@@ -20751,7 +20751,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0410",
@@ -20810,7 +20810,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0409",
@@ -20869,7 +20869,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0408",
@@ -20927,7 +20927,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2025-0407",
@@ -20986,7 +20986,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0406",
@@ -21045,7 +21045,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0405",
@@ -21105,7 +21105,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0404",
@@ -21163,7 +21163,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.7
   },
   {
     "id": "AIR-2025-0403",
@@ -21221,7 +21221,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0402",
@@ -21279,7 +21279,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0261",
@@ -21351,7 +21351,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0259",
@@ -21422,7 +21422,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0258",
@@ -21494,7 +21494,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0257",
@@ -21565,7 +21565,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.4
   },
   {
     "id": "AIR-2025-0256",
@@ -21637,7 +21637,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0255",
@@ -21709,7 +21709,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0254",
@@ -21768,7 +21768,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0253",
@@ -21829,7 +21829,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0252",
@@ -21888,7 +21888,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0251",
@@ -21949,7 +21949,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0248",
@@ -22020,7 +22020,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0247",
@@ -22091,7 +22091,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0246",
@@ -22151,7 +22151,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0245",
@@ -22222,7 +22222,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0244",
@@ -22352,7 +22352,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0242",
@@ -22411,7 +22411,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.9
   },
   {
     "id": "AIR-2025-0239",
@@ -22482,7 +22482,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.2
   },
   {
     "id": "AIR-2025-0237",
@@ -22541,7 +22541,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.8
   },
   {
     "id": "AIR-2025-0236",
@@ -22612,7 +22612,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0235",
@@ -22671,7 +22671,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2025-0233",
@@ -22788,7 +22788,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8
   },
   {
     "id": "AIR-2025-0231",
@@ -22847,7 +22847,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0230",
@@ -22906,7 +22906,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0228",
@@ -22965,7 +22965,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2025-0227",
@@ -23024,7 +23024,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0224",
@@ -23084,7 +23084,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2025-0223",
@@ -23143,7 +23143,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2025-0222",
@@ -23214,7 +23214,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0221",
@@ -23273,7 +23273,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.4
   },
   {
     "id": "AIR-2025-0220",
@@ -23332,7 +23332,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.1
   },
   {
     "id": "AIR-2025-0219",
@@ -23391,7 +23391,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0218",
@@ -23450,7 +23450,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0217",
@@ -23509,7 +23509,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0216",
@@ -23567,7 +23567,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.6
   },
   {
     "id": "AIR-2025-0215",
@@ -23693,7 +23693,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0213",
@@ -23764,7 +23764,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 5.3
   },
   {
     "id": "AIR-2025-0212",
@@ -23823,7 +23823,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.8
   },
   {
     "id": "AIR-2025-0211",
@@ -23882,7 +23882,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0210",
@@ -23941,7 +23941,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.8
   },
   {
     "id": "AIR-2025-0209",
@@ -24012,7 +24012,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.5
   },
   {
     "id": "AIR-2025-0208",
@@ -24070,7 +24070,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2025-0207",
@@ -24142,7 +24142,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0206",
@@ -24213,7 +24213,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9
   },
   {
     "id": "AIR-2025-0164",
@@ -24844,7 +24844,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.5
   },
   {
     "id": "AIR-2025-0400",
@@ -24902,7 +24902,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.1
   },
   {
     "id": "AIR-2025-0399",
@@ -24960,7 +24960,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 7.3
   },
   {
     "id": "AIR-2025-0118",
@@ -25251,7 +25251,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2025-0175",
@@ -25383,7 +25383,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 8.9
   },
   {
     "id": "AIR-2025-0165",
@@ -26211,7 +26211,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 2.6
   },
   {
     "id": "AIR-2025-0180",
@@ -27198,7 +27198,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2025-0177",
@@ -27429,7 +27429,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 6.9
   },
   {
     "id": "AIR-2025-0181",

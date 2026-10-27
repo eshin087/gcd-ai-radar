@@ -785,7 +785,7 @@
     ],
     "action": "",
     "severity_note": "",
-    "cvss": null
+    "cvss": 4.4
   },
   {
     "id": "AIR-2022-0036",
