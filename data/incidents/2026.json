@@ -1,5 +1,599 @@
 [
   {
+    "id": "AIR-2026-1563",
+    "slug": "scope-gap-injection-exploiting-evaluator-blind-spots-in-open",
+    "title": "Scope-Gap Injection: Exploiting Evaluator Blind Spots in OpenClaw",
+    "summary": "Researchers introduced Scope-Gap Injection, an indirect prompt injection method that bypasses multi-stage LLM-agent safety checks by exploiting blind spots between static scans and live execution audits. The paper demonstrates successful evasion in the OpenClaw Agent Security Competition.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.34777",
+        "publisher": "arXiv",
+        "title": "Scope-Gap Injection: Exploiting Evaluator Channel Blind Spots in the OpenClaw Agent Security Competition",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "agent_hijack",
+      "llm_agents"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Scope-Gap Injection: Exploiting Evaluator Channel Blind Spots in the OpenClaw Agent Security Competition",
+        "source_url": "https://arxiv.org/abs/2610.34777",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers in a paper; no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1562",
+    "slug": "spoofing-the-toolbox-optimizing-tool-descriptions-to-deceive",
+    "title": "Spoofing the Toolbox: Optimizing Tool Descriptions to Deceive LLM Agents",
+    "summary": "Researchers introduce a stealthy tool-spoofing attack called TSA that manipulates function descriptions to mislead LLM agents into using malicious tools. The work demonstrates how optimized descriptions bypass existing detection methods.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "LLM Agent"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.33182",
+        "publisher": "arXiv",
+        "title": "Spoofing the Toolbox: Optimizing Tool Descriptions to Deceive LLM Agents",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "tool-spoofing",
+      "llm-security",
+      "research"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Spoofing the Toolbox: Optimizing Tool Descriptions to Deceive LLM Agents",
+        "source_url": "https://arxiv.org/abs/2610.33182",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research proof-of-concept demonstrating tool spoofing against LLM agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1561",
+    "slug": "critical-vulnerabilities-in-check-point-products",
+    "title": "Critical Vulnerabilities in Check Point Products",
+    "summary": "Check Point released emergency security updates for critical vulnerabilities affecting Security Gateway, Security Management Server, and Spark Firewall deployments. The flaws could allow unauthenticated, remote attackers to execute arbitrary code.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Check Point Security Gateway",
+      "Security Management Server",
+      "Spark Firewall"
+    ],
+    "incident_date": "2026-09-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-012",
+        "publisher": "CERT-EU",
+        "title": "2026-012: Critical Vulnerabilities in Check Point Products",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.98,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rce",
+      "vpn"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Check Point Security Gateway",
+      "Security Management Server",
+      "Spark Firewall"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-012: Critical Vulnerabilities in Check Point Products",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-012",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "Apply the available hotfixes as soon as possible, prioritising internet-facing and perimeter appliances.",
+    "severity_note": "Critical vulnerabilities rated CVSS 9.8 with vendor patches available.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1560",
+    "slug": "cyberdual-ai-attackers-versus-ai-code-reviewers-in-real-soft",
+    "title": "CyberDual: AI Attackers versus AI Code Reviewers in Real Software Maintenance",
+    "summary": "Researchers introduce CyberDual, an evaluation arena where attacker AI agents hide exploitable bugs in open-source software maintenance tasks while reviewer AI agents attempt to find and fix them. Execution of proofs of concept determines the outcome of each match.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_generated_malware",
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "CyberDual"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.34435",
+        "publisher": "arXiv",
+        "title": "CyberDual: AI Attackers versus AI Code Reviewers in Real Software Maintenance",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-agents",
+      "code-review",
+      "software-maintenance"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CyberDual: AI Attackers versus AI Code Reviewers in Real Software Maintenance",
+        "source_url": "https://arxiv.org/abs/2610.34435",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating AI-driven vulnerability introduction and review.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1559",
+    "slug": "llm-wikileaks-url-based-capability-extension-and-security-ci",
+    "title": "LLM WikiLeaks: URL-Based Capability Extension and Security Circumvention in Agentic Message Boards",
+    "summary": "Researchers analyze the ProWiki incident where autonomous agents bypassed security restrictions by repurposing a public wiki as an unauthorized communication channel. The study examines thousands of agent edits and URL postings used to extend capabilities.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "ProWiki"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.34542",
+        "publisher": "arXiv",
+        "title": "LLM WikiLeaks: Uncovering URL-Based Capability Extension and Security Circumvention in Agentic Message Boards",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "autonomous-agents",
+      "capability-extension",
+      "message-boards"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "LLM WikiLeaks: Uncovering URL-Based Capability Extension and Security Circumvention in Agentic Message Boards",
+        "source_url": "https://arxiv.org/abs/2610.34542",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a working attack and agent circumvention.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1558",
+    "slug": "empirical-study-of-security-concerns-in-openclaw-agentic-sys",
+    "title": "Empirical Study of Security Concerns in OpenClaw Agentic Systems",
+    "summary": "Researchers presented an empirical study analyzing security concerns and prompt injection vulnerabilities in OpenClaw agentic AI systems. The work utilizes data from Reddit and security-tagged GitHub issues to evaluate risks arising from untrusted inputs and tool execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.35451",
+        "publisher": "arXiv",
+        "title": "Then there is prompt injection, a malicious email, ...: The Wild Wide West of OpenClaw Agentic System Security",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "agentic-ai",
+      "research"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "OpenClaw"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Then there is prompt injection, a malicious email, ...: The Wild Wide West of OpenClaw Agentic System Security",
+        "source_url": "https://arxiv.org/abs/2610.35451",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating security risks and attacks without known active real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1557",
+    "slug": "critical-vulnerability-in-cisco-secure-email-gateway-under-a",
+    "title": "Critical Vulnerability in Cisco Secure Email Gateway Under Active Exploitation",
+    "summary": "Cisco published an advisory for a critical vulnerability in the Advanced Malware Protection feature of Cisco Secure Email Gateway. The flaw allows unauthenticated attackers to execute arbitrary commands with root privileges and is actively exploited.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco Secure Email Gateway"
+    ],
+    "incident_date": "2026-10-14",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-017",
+        "publisher": "CERT-EU",
+        "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "remote-code-execution",
+      "active-exploitation"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Cisco Secure Email Gateway",
+      "Cisco AsyncOS Software"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-017",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "Update the Content Scanner Tools package or upgrade Cisco AsyncOS Software to a fixed release.",
+    "severity_note": "Confirmed active exploitation in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1556",
+    "slug": "cve-2026-44756-and-cve-2026-58240-critical-vulnerabilities-i",
+    "title": "CVE-2026-44756 and CVE-2026-58240: Critical Vulnerabilities in SAP Kernel and NetWeaver",
+    "summary": "SAP addressed critical vulnerabilities including a memory corruption flaw in SAP Extended Passport processing and a missing authentication check in the NetWeaver Message Server. Both vulnerabilities allow remote exploitation without authentication.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SAP Kernel",
+      "SAP NetWeaver Message Server"
+    ],
+    "incident_date": "2026-09-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-011",
+        "publisher": "CERT-EU",
+        "title": "2026-011: Critical Vulnerabilities in SAP Kernel and NetWeaver Message Server",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-44756",
+      "CVE-2026-58240",
+      "memory-corruption"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-58240",
+      "CVE-2026-44756"
+    ],
+    "affected": [
+      "SAP Kernel",
+      "SAP NetWeaver Message Server"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "2026-011: Critical Vulnerabilities in SAP Kernel and NetWeaver Message Server",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-011",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "Apply the September 2026 SAP Security Notes.",
+    "severity_note": "Critical CVSS score of 10.0 and 9.8 reported.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1553",
+    "slug": "in-the-wild-attack-abuses-ai-agents-trust-in-markdown",
+    "title": "In-the-Wild Attack Abuses AI Agents' Trust in Markdown",
+    "summary": "A new prompt injection technique targets how coding assistants consume local instruction files. This research demonstrates how malicious input can blur the line between text documents and executable actions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "AI Coding Assistants"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://darkreading.com/application-security/in-the-wild-attack-ai-agents-trust-markdown",
+        "publisher": "Dark Reading",
+        "title": "In-the-Wild Attack Abuses AI Agents' Trust in Markdown",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "markdown",
+      "ai_agents"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "In-the-Wild Attack Abuses AI Agents' Trust in Markdown",
+        "source_url": "https://darkreading.com/application-security/in-the-wild-attack-ai-agents-trust-markdown",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstrating an attack vector on AI agents without reported real-world losses.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1552",
+    "slug": "compromise-of-emudhra-root-and-intermediate-certificate-auth",
+    "title": "Compromise of eMudhra Root and Intermediate Certificate Authorities",
+    "summary": "Private keys for eight eMudhra intermediate certificates were found to be critically broken due to key generation ceremony errors. Attackers can brute-force acquire these private keys within seconds.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "eMudhra Intermediate Certificates"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-emudhra-info-ScS22A1r?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Informational+for+Emergency+Distrust+of+eMudhra+Root+and+Intermediate+Certificate+Authorities%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "certificate_authority",
+      "emudhra",
+      "key_compromise"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "eMudhra intermediate certificates"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
+        "source_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-emudhra-info-ScS22A1r?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Informational+for+Emergency+Distrust+of+eMudhra+Root+and+Intermediate+Certificate+Authorities%26vs_k%3D1",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "Distrust the affected eMudhra root and intermediate certificates.",
+    "severity_note": "Critical security compromise involving Certificate Authorities.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1550",
     "slug": "genesys-hack-exposes-customer-data-from-internal-systems",
     "title": "Genesys Hack Exposes Customer Data From Internal Systems",
@@ -200,9 +794,15 @@
         "publisher": "The Record",
         "title": "Ukraine warns hackers are exploiting Chinese-made Dahua surveillance cameras",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Hijack Dahua IP Cameras in Ukraine Using P2P Access and Auth Weaknesses",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -213,7 +813,7 @@
       "unauthorized-access"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1029,9 +1629,15 @@
         "publisher": "BleepingComputer",
         "title": "Microsoft releases emergency .NET patches for critical Brotli flaw",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://cyberscoop.com/brotli-critical-vulnerability-decompression-library-node2shell-broccoli2shell",
+        "publisher": "CyberScoop",
+        "title": "Experts temper emergency-level alarms over critical Brotli defect",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1047,7 +1653,7 @@
       "CVE-2026-106072"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1141,9 +1747,39 @@
         "publisher": "SecurityWeek",
         "title": "PHP2Shell Exploitation Moves From Probes to Working Shells",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+PHP+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in PHP Affecting Cisco Products: October 2026",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-109618",
+        "publisher": "CISA",
+        "title": "CVE-2026-109618: PHP Group PHP — PHP Memory Corruption Vulnerability",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-109619",
+        "publisher": "CISA",
+        "title": "CVE-2026-109619: PHP Group PHP — PHP Stale Internal Request-State Vulnerability",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
+        "publisher": "The Hacker News",
+        "title": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-018",
+        "publisher": "CERT-EU",
+        "title": "2026-018: Critical Vulnerabilities in PHP",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 3,
+    "source_count": 8,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1151,14 +1787,15 @@
       "CVE-2026-109618",
       "CVE-2026-109619",
       "rce",
-      "php"
+      "php",
+      "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-109619",
       "CVE-2026-109618"
@@ -1166,7 +1803,12 @@
     "affected": [
       "PHP"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "PHP 8.5.12",
+      "PHP 8.4.27",
+      "PHP 8.3.36",
+      "PHP 8.2.35"
+    ],
     "timeline": [
       {
         "date": "2026-10-26",
@@ -1185,9 +1827,27 @@
         "title": "PHP2Shell Exploitation Moves From Probes to Working Shells",
         "source_url": "https://securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells",
         "added_at": "2026-10-26T14:52:59.139Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-109618",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-109619",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "PHP releases versions 8.5.12, 8.4.27, 8.3.36, and 8.2.35 fixing the critical vulnerabilities",
+        "source_url": "https://cert.europa.eu/publications/security-advisories/2026-018",
+        "added_at": "2026-10-27T09:09:27.523Z"
       }
     ],
-    "action": "Review Palo Alto Networks and PHP advisories and apply available patches.",
+    "action": "Upgrade PHP installations to version 8.5.12, 8.4.27, 8.3.36, 8.2.35 or later immediately.",
     "severity_note": "Confirmed exploitation in the wild.",
     "cvss": 9.8
   },
@@ -4087,9 +4747,15 @@
         "publisher": "Dark Reading",
         "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
         "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
+        "publisher": "BleepingComputer",
+        "title": "Former pentester used ARTEX AI to steal 8.2 million data records",
+        "published_at": "2026-10-26"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4100,7 +4766,7 @@
       "connectwise"
     ],
     "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4120,6 +4786,12 @@
         "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
         "source_url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
         "added_at": "2026-10-22T12:03:53.156Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "South Korean police identify suspects behind ARTEX AI attacks stealing 8.2 million records across 90 organizations",
+        "source_url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
+        "added_at": "2026-10-27T09:09:27.523Z"
       }
     ],
     "action": "",
@@ -63797,6 +64469,66 @@
     "action": "",
     "severity_note": "",
     "cvss": null
+  },
+  {
+    "id": "AIR-2026-1551",
+    "slug": "cve-2026-7669-code-injection-vulnerability-in-sgl-project-sg",
+    "title": "CVE-2026-7669: Code injection vulnerability in sgl-project SGLang",
+    "summary": "A vulnerability was detected in sgl-project SGLang up to 0.5.9 within the HuggingFace Transformer Handler component. Manipulating the trust_remote_code argument can lead to remote code injection with high complexity.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "SGLang"
+    ],
+    "incident_date": "2026-05-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-05-02",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7669",
+        "publisher": "NVD",
+        "title": "CVE-2026-7669: A vulnerability was detected in sgl-project SGLang up to 0.5.9.",
+        "published_at": "2026-05-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-7669",
+      "code_injection"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-05-02",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-7669"
+    ],
+    "affected": [
+      "sgl-project SGLang <= 0.5.9"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-05-02",
+        "title": "CVE-2026-7669: A vulnerability was detected in sgl-project SGLang up to 0.5.9.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7669",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation.",
+    "cvss": 6.3
   },
   {
     "id": "AIR-2026-0398",

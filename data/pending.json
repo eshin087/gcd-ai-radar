@@ -1,1 +1,505 @@
-[]
+[
+  {
+    "key": "adaa99bf4028a150",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/maritime-coalition-launches-free-vulnerability-database-for-ship-and-port-systems",
+    "title": "Maritime Coalition Launches Free Vulnerability Database for Ship and Port Systems",
+    "published_at": "2026-10-27",
+    "publisher": "SecurityWeek",
+    "hint": "Blue Initiative indexes nearly 30,000 IT and OT vulnerabilities relevant to ships and ports, 37 of them in maritime-specific products.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:02.550Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "5967c206ed0a51c9",
+    "source_id": "hn",
+    "origin": "news",
+    "url": "https://druhindhavala.com/ai-governance/stored-prompt-injection-api-gateway",
+    "title": "Who Governs the Governor? – Stored Prompt Injection Through the API Gateway",
+    "published_at": "2026-10-27",
+    "publisher": "druhindhavala.com",
+    "hint": "",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:02.680Z",
+    "extra": {
+      "hn_id": "50254197",
+      "points": 2,
+      "comments": 0,
+      "query": "prompt injection",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "cd2e47013b821af3",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks",
+    "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
+    "published_at": "2026-10-27",
+    "publisher": "BleepingComputer",
+    "hint": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the PHP2Shell vulnerabilities to its catalog of actively exploited security flaws and ordered federal agencies to patch their systems by Thursday.…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:02.777Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "b75cb7a2dd048b3a",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/10/27/jonathan-care-kuppingercole-analysts-ai-security-market",
+    "title": "Several AI security market categories are headed for bigger platforms",
+    "published_at": "2026-10-27",
+    "publisher": "Help Net Security",
+    "hint": "In this interview with Help Net Security, Jonathan Care, Lead Analyst and Practice Lead AI at KuppingerCole Analysts, compares AI security startups to the early fraud market he helped define at Gartner. He explains which categories will survive as products and which will become features inside bigger platforms. Care talks about Q3 funding going to fewer, larger rounds, Israel’s share of cyber venture investment, and the five controls an organization needs before an agent touches … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:03.276Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "a8e13854d19a0092",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/10/27/llm-agent-security-video",
+    "title": "LLM agent security needs more than guardrails",
+    "published_at": "2026-10-27",
+    "publisher": "Help Net Security",
+    "hint": "Madhu Shashanka, Chief Scientist at Concentric AI, explains why securing LLM tools and agents depends more on your data than on the model. Controls on model behavior, such as guardrails and injection detection, lower the rate of bad outcomes but never reach zero. Controls on what goes in are different, because you own the documents, systems, and credentials an agent can reach. He covers prompt injection, data leakage through connectors, overprivileged agents, and shadow AI. … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:03.276Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "2271051c7fee6354",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/10/27/microsoft-authenticator-vulnerability-patchedcve-2026-80097",
+    "title": "Microsoft Authenticator vulnerability let rogue Android apps steal work account access",
+    "published_at": "2026-10-27",
+    "publisher": "Help Net Security",
+    "hint": "If you use Microsoft Authenticator on Android, update it. Researchers at Enclave found a flaw that let any app on your phone quietly take over your work account. The app didn’t need permissions, and you didn’t need to tap anything. Here’s what happened Authenticator does more than show six-digit codes. On Android it also acts as a “broker.” When Teams, Outlook or another Microsoft app needs to sign you in, it asks Authenticator, and Authenticator … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:03.276Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "9e33612c482a2f82",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-015",
+    "title": "2026-015: Critical Vulnerability in Multiple Atlassian Products",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 5 October 2026, Atlassian published a security advisory addressing a critical arbitrary file access vulnerability. It affects Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye. CERT-EU strongly recommends upgrading all affected installations to a fixed version as soon as possible, starting with instances accessible from the internet. CERT-EU also recommends checking access logs for signs of exploitation.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "3a578a7bc26039eb",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-014",
+    "title": "2026-014: Critical Vulnerabilities in Citrix NetScaler ADC and Gateway",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 27 September 2026, Citrix published a security bulletin addressing 8 vulnerabilities affecting customer-managed Citrix NetScaler ADC and Citrix NetScaler Gateway, among which 2 critical unauthenticated Remote Code Execution (RCE) vulnerabilities. Citrix has confirmed active exploitation of these 2 critical vulnerabilities in the wild. CERT-EU recommends updating affected software and running a compromise assessment on those exposed on the internet.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "fa35b8904c75c034",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-010",
+    "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 19 August 2026, Citrix published a security advisory addressing multiple critical vulnerabilities in NetScaler ADC (formerly Citrix ADC) and NetScaler Gateway (formerly Citrix Gateway). CERT-EU recommends updating affected devices as soon as possible.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "f9dcd4685ede3a58",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-016",
+    "title": "2026-016: Critical Vulnerability in GitLab CE and EE",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 12 October 2026, GitLab released versions 19.4.2, 19.3.4 and 19.2.8 of GitLab Community Edition (CE) and Enterprise Edition (EE), fixing 24 security issues among which a critical vulnerability that could allow an unauthenticated attacker to execute arbitrary code on the server. CERT-EU strongly recommends upgrading self-managed GitLab CE/EE instances to a fixed version as soon as possible, starting with internet-facing instances.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "7e3ea0d8dad94e98",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-019",
+    "title": "2026-019: Critical Vulnerability in GitLab Community and Enterprise Editions",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 21 October 2026, GitLab published a security advisory addressing several vulnerabilities among which a critical flaw that could allow an unauthenticated user to execute arbitrary code on a GitLab server. CERT-EU recommends organisations to update affected assets as soon as possible, prioritising internet facing assets, and to run an assessment to identify compromised assets.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "a06e579e4539eb2a",
+    "source_id": "cert-eu",
+    "origin": "news",
+    "url": "https://cert.europa.eu/publications/security-advisories/2026-013",
+    "title": "2026-013: Critical Vulnerability in F5 BIG-IP APM",
+    "published_at": "2026-10-27",
+    "publisher": "CERT-EU",
+    "hint": "On 22 September 2026, F5 published an advisory addressing a critical vulnerability affecting its BIG-IP APM product. The vendor confirmed active exploitation in the wild. CERT-EU recommends taking appropriate actions as soon as possible.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:05.886Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "130e8d98fd8b87d4",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.33234",
+    "title": "Alignment of Autonomous Cyber Defense Agents via Adaptive Policy Shaping",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Cybersecurity operators increasingly encounter sophisticated and fast-paced attacks, making autonomous cyber defense (ACD) a critical approach for supporting timely and effective decision-making. Reinforcement learning (RL)-based ACD agents have the ability to autonomously observe network states and take actions to defend and recover system assets, making them well suited for ACD. However, these agents often face critical trade-offs, such as improving network security while inadvertently degrading service availability or violating other…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.439Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "0187f71f74a30436",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.33119",
+    "title": "Benchmarking Classical and Quantum Machine Learning for Intrusion Detection Across Multiple Datasets",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Intrusion detection is examined through a comparative benchmark of classical and quantum machine learning models on three datasets: NSL-KDD, UNSW-NB15, and MQTTEEB-D2025. The analysis focuses on how preprocessing decisions, feature selection strategies, and quantum encoding schemes shape model performance on data with differing levels of noise and complexity. A single unified pipeline is applied, covering normalization, class-imbalance handling, dimensionality reduction, and two feature selection methods: Random Forest importance and a…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.439Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "c27cc79ce223e26a",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.33411",
+    "title": "Agent-to-Agent Synthetic Social Engineering on the Web",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "An AI agent can prepare an accurate report and still request an action its user has not authorized. Cooperation across Web services therefore requires separate judgments about identity, evidentiary support, and permission. We define synthetic social engineering (SSE) as deliberately deceptive or misleading influence intended to exploit AI recipients' responses to credibility, authority, or obligation cues and redirect behavior away from authorized objectives. We focus on separately tasked sender agents that produce or adapt misleading…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.439Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "ba400121d4f4d36e",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.34253",
+    "title": "NameTrap: Steering AI Coding Agents Toward Security Vulnerabilities via Variable Names",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "AI coding agents routinely clone repositories, install packages, and read source code obtained from the Web, so publicly hosted code becomes part of the context that shapes the code they write. We show that this Web-borne context can be weaponized without any explicit instruction. We present NameTrap, a source-code poisoning attack that only renames identifiers in third-party Python files to steer AI coding agents toward attacker-targeted Common Weakness Enumeration (CWE) vulnerabilities. An attacker-side coding agent iteratively aligns…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.440Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "4a1db66775dde319",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.35043",
+    "title": "Steering for Safety, Hijacking for Profit: Trojan Threats in the LLM Activation Steering Supply Chain",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "As large language models (LLMs) are increasingly integrated into Web search, online recommendation, and intelligent decision-making, the third-party plugin ecosystem centered on model customization continues to grow. Among these, Steering Vectors guide model behavior by intervening in internal representations. However, the open plugin ecosystem also introduces new supply-chain security risks: malicious plugins can disguise themselves as having legitimate functionality and covertly manipulate outputs without significantly affecting model…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.440Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "93d48256f8220a4a",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.34290",
+    "title": "Repairing Broken Access Control in Web Applications with LLMs: An Empirical Benchmark Study",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Broken access control (BAC) ranks among the most severe web-application vulnerability classes, yet its automated repair remains largely unexplored. Unlike memory-safety vulnerabilities, BAC is a logic vulnerability whose repair demands a deep understanding of an application's access-control model and business semantics, which traditional automated vulnerability repair techniques handle poorly. Large language models (LLMs) open a promising avenue for this problem, but no standard benchmark exists for studying how well they repair BAC…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.440Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "0f775fb76e0f59a1",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.35835",
+    "title": "I-HITL: Inalienable Human-in-the-Loop",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Human oversight is a pillar of AI safety. It is often exercised by a human in the loop (HITL) who approves critical actions taken by an AI agent. AI agents' increasing ability to bypass guardrails, though, raises the question of how to enforce HITL robustly. We introduce the concept of inalienable human-in-the-loop (I-HITL). An I-HITL protocol ensures that an agent can initiate an action only with explicit human approval, even when the human interacts with a system (e.g., a local agentic harness) compromised by the agent. A strong I-HITL…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.441Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "6dd825b2b6aafe5b",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.34294",
+    "title": "Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "The stance expressed in responses from retrieval-augmented generation systems is significantly influenced by the stance distribution of the retrieved materials. Existing research on knowledge poisoning has primarily targeted factual errors. In contrast, this study focuses on injection attacks in which the facts are correct but the stance on a controversial issue is one-sided. At a mean topic-level poisoning share of 18.9% within the post-injection ProCon documents, all four generation models from different vendors exhibited stance shifts…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.441Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "cross",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "f884501033efa865",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.35082",
+    "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Agent Skills allow LLM agents to combine reusable capabilities, but checking each Skill in isolation cannot rule out policy violations when they are composed. We term such failures Conflict of Skills (CoS): artifacts or assessment signals produced for one purpose may be reused downstream without preserving the restrictions or authorization needed for their new use. Using controlled executions of publicly available Skills and matched single-Skill controls, we identify four recurring mechanisms behind CoS. Building on these findings, we…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.441Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "cross",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "51aba071cba56422",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.35541",
+    "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Web services increasingly expose backend interfaces that let users delegate tasks to AI agents, which invoke service operations directly without navigating websites. This shift changes how existing Web vulnerabilities can be exploited. We investigate these changes through VELA, an executable benchmark covering 44 vulnerabilities across twelve Web application families. The benchmark preserves vulnerable backends and derives agent-facing interfaces from legitimate workflows. We evaluate three commercial agents across multiple interface…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.441Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "db351bb4a2548834",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2610.34934",
+    "title": "A Certified Robustness Framework for Backdoor Poisoning Attacks using $f$-Divergences",
+    "published_at": "2026-10-27",
+    "publisher": "arXiv",
+    "hint": "Machine learning systems trained on untrusted data are vulnerable to data and backdoor poisoning attacks, in which an adversary corrupts training and test samples to manipulate predictions at inference time. Randomized smoothing yields provable defenses against such attacks, but existing applications to train-time robustness are limited to specific threat models and smoothing mechanisms. We propose a general framework that allows expressing complex adversary constraints on the number of corrupted training examples, feature and label…",
+    "cve_ids": [],
+    "discovered_at": "2026-10-27T09:03:09.441Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "cross",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "079b5dce6a79e5e0",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116829",
+    "title": "CVE-2026-116829: llama.cpp b10398 before b11301 contains an integer overflow vulnerability in gguf_init_from_reader that allows attackers to…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp b10398 before b11301 contains an integer overflow vulnerability in gguf_init_from_reader that allows attackers to bypass tensor element-count validation by supplying shapes whose product wraps to zero. Attackers can craft GGUF files with enormous tensor extents that overflow ggml_nbytes() and strides, causing out-of-bounds memory access when buffers are sized from wrapped byte counts. CVSS 6.9 MEDIUM. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2026-116829"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 6.9,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "a2ba29321904f0b6",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-58400",
+    "title": "CVE-2024-58400: llama.cpp before b3701 contains an out-of-bounds read vulnerability in llama_decode_internal and llama_encode_internal that…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp before b3701 contains an out-of-bounds read vulnerability in llama_decode_internal and llama_encode_internal that allows remote unauthenticated attackers to read memory by supplying unvalidated token IDs. Attackers can send integer-array prompts to the llama-server /completion endpoint with IDs outside 0 to n_vocab to read embedding memory out of bounds or crash the process. CVSS 8.8 HIGH. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2024-58400"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 8.8,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "de3d6a8708a19eff",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116816",
+    "title": "CVE-2026-116816: llama.cpp b5899 before b10261 contains a heap out-of-bounds write vulnerability in llm_tokenizer_plamo2::build that allows…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp b5899 before b10261 contains a heap out-of-bounds write vulnerability in llm_tokenizer_plamo2::build that allows attackers to corrupt heap memory via crafted GGUF models. Attackers can supply BYTE-typed token text like <0x-1> whose negative parsed value writes token ids before the bytes_ buffer during model loading, causing crashes or potential code execution. CVSS 8.5 HIGH. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2026-116816"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 8.5,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "1ca1a3385b67eaa4",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-58399",
+    "title": "CVE-2024-58399: llama.cpp before b2731 contains an out-of-bounds read vulnerability in llama_model_loader that allows attackers to read memory…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp before b2731 contains an out-of-bounds read vulnerability in llama_model_loader that allows attackers to read memory outside the mapped model file via crafted GGUF tensor offsets. Attackers can supply a crafted or truncated GGUF model file with arbitrary 64-bit tensor offsets to crash the process or load adjacent process memory as model weights. CVSS 6.9 MEDIUM. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2024-58399"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 6.9,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "ad1d1216ca39b76c",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71439",
+    "title": "CVE-2025-71439: llama.cpp before b5649 contains a heap out-of-bounds read vulnerability in llama_vocab::impl::print_info() that allows attackers…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp before b5649 contains a heap out-of-bounds read vulnerability in llama_vocab::impl::print_info() that allows attackers to crash model loading via oversized special token IDs. Attackers can supply a crafted GGUF model with a short tokenizer.ggml.tokens array, causing llama-cli or llama-server to read past id_to_token and crash. CVSS 6.8 MEDIUM. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2025-71439"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 6.8,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "76565f7127686c7e",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116840",
+    "title": "CVE-2026-116840: llama.cpp b5854 before b11275 contains an integer overflow vulnerability in gguf_init_from_reader that bypasses the…",
+    "published_at": "2026-10-27",
+    "publisher": "NVD",
+    "hint": "llama.cpp b5854 before b11275 contains an integer overflow vulnerability in gguf_init_from_reader that bypasses the CVE-2025-53630 size check when padding near-SIZE_MAX tensor sizes. Attackers can supply a crafted GGUF file whose tensor size pads to zero, causing an undersized data blob and out-of-bounds reads by consumers. CVSS 6.9 MEDIUM. Published 2026-10-27.",
+    "cve_ids": [
+      "CVE-2026-116840"
+    ],
+    "discovered_at": "2026-10-27T09:04:05.435Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 6.9,
+      "kev": false,
+      "matched_keyword": "llama.cpp",
+      "incident_date": "2026-10-27",
+      "ai_hint": true
+    }
+  }
+]

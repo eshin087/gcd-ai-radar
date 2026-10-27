@@ -1,5 +1,255 @@
 [
   {
+    "key": "5ab5d7f95395318a",
+    "title": "What Is Agentic Security vs. Agentic AI in Cybersecurity?",
+    "url": "https://straiker.ai/blog/agentic-security-vs-agentic-ai-cybersecurity",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Out of scope: opinion and explainers without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "5d56e95d5704edb4",
+    "title": "71% of vulnerability exploitation starts within a week of disclosure",
+    "url": "https://helpnetsecurity.com/2026/10/27/rapid7-vulnerability-exploitation-trends-q3-2026-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Out of scope: surveys, statistics and report finds pieces.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "611c3427a4d9e2e9",
+    "title": "Cybersecurity jobs available right now: October 27, 2026",
+    "url": "https://helpnetsecurity.com/2026/10/27/cybersecurity-jobs-available-right-now-october-27-2026",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: A job board listing round-up piece, which is out of scope.",
+    "confidence": 0.99,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "9e81bbc7d188c95b",
+    "title": "GuardRAG: A Post-Retrieval Defense against Poisoning Attacks in Retrieval-Augmented Generation",
+    "url": "https://arxiv.org/abs/2610.35071",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: A defence-only research paper proposing a post-retrieval mitigation method, which is out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "7f1e3bb45fab79fa",
+    "title": "TRACER: An RDC-Triggered Trajectory Recovery Framework for Cyberattack-Resilient Adaptive Cruise Control",
+    "url": "https://arxiv.org/abs/2610.33052",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: A control systems resilience and trajectory recovery paper without a specific exploited incident or direct cyberattack demonstration on named software.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "3cc0a26d0bfe9336",
+    "title": "Deletion, Substitution, Repair and Transplant: Component Attribution in BARBICAN, a Layered Prompt-Injection Gateway for MCP",
+    "url": "https://arxiv.org/abs/2610.33198",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "ccee264aec6df5d4",
+    "title": "Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses",
+    "url": "https://arxiv.org/abs/2610.33849",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "e5a70390a8fc6ba7",
+    "title": "CVE-to-ATT&CK Mapping via Evidence-Constrained Ranking",
+    "url": "https://arxiv.org/abs/2610.33924",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: surveys, statistics and report finds pieces are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "df46881bda665b5b",
+    "title": "Adversary Brains: Hypothesis-Based Logical Signatures for Threat Actor Detection with LLMs",
+    "url": "https://arxiv.org/abs/2610.35624",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a defense/detection mechanism using LLMs rather than demonstrating a working attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "c3b8addb06dd5f7f",
+    "title": "A Deterministic Security Runtime for LLM Agents on MPI and Batch-Scheduled HPC Systems: Consensus-Governed, Hardware-Rooted Supervision of Every Rank",
+    "url": "https://arxiv.org/abs/2610.33318",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a security runtime and defense mechanism for HPC systems and AI agents rather than demonstrating an attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "4534c7db9af0111a",
+    "title": "VulDec: Vulnerability Detection in Binaries via Neural Decompilation",
+    "url": "https://arxiv.org/abs/2610.33716",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a machine learning dataset and methodology for vulnerability detection rather than demonstrating an attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "d446484134894acc",
+    "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?",
+    "url": "https://arxiv.org/abs/2610.33509",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It introduces a benchmark for evaluating agentic security review tools rather than demonstrating a novel attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "bc7f3e5ab046b164",
+    "title": "False-Alarm Improvements and Detection Trade-Offs in QML Intrusion Detection: A Secondary Analysis of the Kaissar Corpus",
+    "url": "https://arxiv.org/abs/2610.35235",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper is about defense and intrusion detection evaluation (QML-IDS), not an attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "4db47130a6522e60",
+    "title": "From Representations to Computational Trajectories: Intrinsic Fingerprinting for Large Language Model Provenance Verification",
+    "url": "https://arxiv.org/abs/2610.34675",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper focuses on model fingerprinting and ownership verification, which is a defensive technique rather than an attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "cf50993fe0ad440d",
+    "title": "Enhancing LLM-Based Vulnerability Detection via Representation-Aware Logical Ensemble",
+    "url": "https://arxiv.org/abs/2610.33756",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a defense or improvement for automated vulnerability detection using LLMs, rather than demonstrating an attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "803c460e83c1e78a",
+    "title": "The Target Agent Is Its Own Best Critic but a Poor Proposer: Self-Improved Red Teaming",
+    "url": "https://arxiv.org/abs/2610.34965",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper studies and evaluates automated red teaming methodologies and prompt design, functioning as a benchmark or methodology study rather than a specific incident or novel attack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "fef876c571936477",
+    "title": "From Instructions to Exploits: Applying Program Analysis to Malicious Agent Skills Across Natural Language and Code",
+    "url": "https://arxiv.org/abs/2610.33489",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a defense/scanner framework rather than demonstrating an attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "136ab8d625a8106a",
+    "title": "Reva: Real-Time Vulnerability Detection through Contextual Probing of Large Language Models",
+    "url": "https://arxiv.org/abs/2610.35829",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a vulnerability detection defense tool rather than demonstrating an attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "ed1d188c2b22d1c8",
+    "title": "SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments",
+    "url": "https://arxiv.org/abs/2610.34535",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It introduces a benchmark for robustness rather than demonstrating a specific attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "b69f3fed2b38084b",
+    "title": "SymLift: Neural Semantic Lifting for Compile-Free Vulnerability Detection in Context-Incomplete Code Fragments",
+    "url": "https://arxiv.org/abs/2610.34431",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a vulnerability detection defense framework rather than an attack or exploit.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "0fe5bbdd43d97c6f",
+    "title": "Combinatorial Lock for Trojan-Resilient AI Engines via Hash-Assisted Spectral Filtering",
+    "url": "https://arxiv.org/abs/2610.33437",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "c10fd8008846c3a4",
+    "title": "Attack logics, not outputs: Concept-based Property Attacks for Shortcut Elimination in Neural Networks",
+    "url": "https://arxiv.org/abs/2610.34923",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "25327715486cf7b1",
+    "title": "Intellectual Property Protection of Hyperdimensional Computing Classifiers: Black-Box Ownership Verification via Model Watermarking",
+    "url": "https://arxiv.org/abs/2610.34942",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "bc7174aaf3516392",
+    "title": "Cheap AI-Assisted Reverse Engineering and What It Will Do",
+    "url": "https://arxiv.org/abs/2610.35633",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: surveys, statistics and report finds pieces are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
+    "key": "913eb07df4abb36e",
+    "title": "Secure and Functional Code Generation with Self-Evaluation",
+    "url": "https://arxiv.org/abs/2610.33450",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T09:09:27.523Z"
+  },
+  {
     "key": "3576934612fc89d7",
     "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
     "url": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",

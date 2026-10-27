@@ -1,5 +1,117 @@
 [
   {
+    "id": "AIR-2026-1555",
+    "slug": "alternative-fur-deutschland-data-breach-exposes-345-439-acco",
+    "title": "Alternative für Deutschland Data Breach Exposes 345,439 Accounts",
+    "summary": "The political party Alternative für Deutschland suffered a data breach exposing over 345,000 unique email addresses and sensitive correspondence. The compromised data was subsequently published online with searchable tools and downloadable files.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Alternative für Deutschland"
+    ],
+    "incident_date": "2026-09-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/AfD",
+        "publisher": "Have I Been Pwned",
+        "title": "AfD data breach exposes 345,439 accounts",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "credential-leak"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "AfD data breach exposes 345,439 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/AfD",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed personal data breach affecting hundreds of thousands of accounts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1554",
+    "slug": "university-of-copenhagen-data-breach-exposes-525-000-records",
+    "title": "University of Copenhagen data breach exposes 525,000 records",
+    "summary": "The University of Copenhagen in Denmark confirmed that unauthorised actors accessed a test environment. The incident exposed personal data belonging to 525,000 individuals.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "University of Copenhagen test environment"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/university-of-copenhagen-data-breach-exposes-data-of-525-000-people",
+        "publisher": "BleepingComputer",
+        "title": "University of Copenhagen data breach exposes data of 525,000 people",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "data_breach",
+      "university_of_copenhagen"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T09:09:27.523Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "University of Copenhagen data breach exposes data of 525,000 people",
+        "source_url": "https://bleepingcomputer.com/news/security/university-of-copenhagen-data-breach-exposes-data-of-525-000-people",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PII data breach affecting over 500,000 people.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1534",
     "slug": "dutch-police-arrest-two-over-nfc-relay-fraud-draining-400-00",
     "title": "Dutch Police Arrest Two Over NFC Relay Fraud Draining $400,000",
