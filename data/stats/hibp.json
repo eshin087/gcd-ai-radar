@@ -1,7 +1,8 @@
 {
- "fetched_at": "2026-10-26T19:57:30.320Z",
+ "fetched_at": "2026-10-27T20:48:44.212Z",
  "source": {"name":"Have I Been Pwned","url":"https://haveibeenpwned.com/","license":"CC BY 4.0"},
  "breaches": [
+  {"name":"AfD","title":"AfD","domain":"afd.de","breach_date":"2026-09-09","added":"2026-10-27","accounts":345439,"verified":true,"sensitive":true,"spam_list":false,"stealer_log":false,"malware":false,"fabricated":false,"retired":false},
   {"name":"AssuranceRetraite","title":"Assurance Retraite","domain":"lassuranceretraite.fr","breach_date":"2024-09-01","added":"2026-10-20","accounts":70372,"verified":true,"sensitive":false,"spam_list":false,"stealer_log":false,"malware":false,"fabricated":false,"retired":false},
   {"name":"GitesDeFrance","title":"Gîtes de France","domain":"gites-de-france.com","breach_date":"2026-05-16","added":"2026-10-18","accounts":117574,"verified":true,"sensitive":false,"spam_list":false,"stealer_log":false,"malware":false,"fabricated":false,"retired":false},
   {"name":"Crunchbase","title":"Crunchbase","domain":"crunchbase.com","breach_date":"2026-01-22","added":"2026-10-14","accounts":559908,"verified":true,"sensitive":false,"spam_list":false,"stealer_log":false,"malware":false,"fabricated":false,"retired":false},

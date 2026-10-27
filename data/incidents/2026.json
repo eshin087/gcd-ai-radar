@@ -1,5 +1,883 @@
 [
   {
+    "id": "AIR-2026-1599",
+    "slug": "stored-prompt-injection-vulnerability-through-api-gateway",
+    "title": "Stored Prompt Injection Vulnerability Through API Gateway",
+    "summary": "A security write-up demonstrates how stored prompt injection can be achieved through an API gateway to manipulate AI agent behavior. The technique highlights risks in handling untrusted inputs within AI-integrated architectures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "API Gateway"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://druhindhavala.com/ai-governance/stored-prompt-injection-api-gateway",
+        "publisher": "druhindhavala.com",
+        "title": "Who Governs the Governor? – Stored Prompt Injection Through the API Gateway",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "api_gateway",
+      "research",
+      "ai_security"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Who Governs the Governor? – Stored Prompt Injection Through the API Gateway",
+        "source_url": "https://druhindhavala.com/ai-governance/stored-prompt-injection-api-gateway",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Sanitize and validate inputs processed by API gateways and LLM integrations.",
+    "severity_note": "Research proof-of-concept demonstrating prompt injection via API gateway.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1598",
+    "slug": "hpe-patches-dozens-of-critical-flaws-in-networking-products",
+    "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+    "summary": "Hewlett Packard Enterprise released patches for dozens of security defects in its networking products, including eight maximum-severity vulnerabilities. These flaws could potentially lead to remote code execution and authentication bypass.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "HPE Networking Products"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://securityweek.com/hpe-patches-dozens-of-critical-flaws-in-networking-products",
+        "publisher": "SecurityWeek",
+        "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "hpe",
+      "rce",
+      "authentication_bypass",
+      "networking"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+        "source_url": "https://securityweek.com/hpe-patches-dozens-of-critical-flaws-in-networking-products",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Apply the latest security updates provided by HPE.",
+    "severity_note": "Critical rating with patches available.",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1596",
+    "slug": "warp-discloses-breach-exposing-ai-agent-logs-and-telemetry-d",
+    "title": "Warp discloses breach exposing AI agent logs and telemetry data",
+    "summary": "Warp disclosed a security breach affecting its third-party vendor infrastructure that exposed agent decision logs and user telemetry data. The incident resulted in the unauthorized exposure of internal development environment records.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Warp agentic development environment"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data",
+        "publisher": "BleepingComputer",
+        "title": "Warp discloses breach exposing AI agent logs, user telemetry data",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "telemetry",
+      "supply-chain-breach"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Warp discloses breach exposing AI agent logs, user telemetry data",
+        "source_url": "https://bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data leak via third-party breach",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1594",
+    "slug": "malicious-apps-prey-on-russians-anxiety-about-fuel-prices-an",
+    "title": "Malicious apps prey on Russians' anxiety about fuel prices and drone strikes",
+    "summary": "Cybercriminals are distributing infostealer malware through fraudulent mobile applications tracking gas prices and drone strikes in Russia. The campaign targets anxious citizens with deceptive utilities to harvest personal data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "infostealer apps"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://therecord.media/malicious-apps-russian-anxiety-gas-prices-drone-strikes",
+        "publisher": "The Record",
+        "title": "Malicious apps prey on Russians’ anxiety about fuel prices, drone strikes",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "infostealer",
+      "mobile-malware",
+      "fraud-campaign"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Malicious apps prey on Russians’ anxiety about fuel prices, drone strikes",
+        "source_url": "https://therecord.media/malicious-apps-russian-anxiety-gas-prices-drone-strikes",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world malware distribution campaign",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1593",
+    "slug": "aokigahara-stealer-malware-targets-developer-keyrings-and-ai",
+    "title": "Aokigahara Stealer Malware Targets Developer Keyrings and AI Assistants",
+    "summary": "A new infostealer malware named Aokigahara is targeting developer keyrings and local AI assistant sessions to harvest sensitive business data from compromised endpoints. The campaign expands traditional infostealer tactics to target LLM session histories.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Aokigahara Stealer"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
+        "publisher": "Dark Reading",
+        "title": "'Aokigahara' Stealer Targets 'Developer Keyrings' & AI Assistants",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "aokigahara",
+      "infostealer",
+      "developer-tools"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "'Aokigahara' Stealer Targets 'Developer Keyrings' & AI Assistants",
+        "source_url": "https://darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Scan endpoints for Aokigahara stealer indicators and isolate compromised developer machines.",
+    "severity_note": "Active malware campaign confirmed targeting developer and AI data.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1592",
+    "slug": "cve-2026-65120-nvidia-tensorrt-llm-server-side-request-forge",
+    "title": "CVE-2026-65120: NVIDIA TensorRT-LLM Server-Side Request Forgery Vulnerability",
+    "summary": "NVIDIA TensorRT-LLM contains a server-side request forgery vulnerability that can lead to information disclosure. The issue was published in an official CVE record.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "TensorRT-LLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65120",
+        "publisher": "NVD",
+        "title": "CVE-2026-65120: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-65120",
+      "tensorrt-llm",
+      "ssrf"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-65120"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-65120: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65120",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Apply available vendor updates for TensorRT-LLM.",
+    "severity_note": "Disclosed vulnerability with high CVSS score, no exploitation reported.",
+    "cvss": 7.1
+  },
+  {
+    "id": "AIR-2026-1591",
+    "slug": "cve-2026-86950-apple-backports-fix-for-exploited-coregraphic",
+    "title": "CVE-2026-86950: Apple Backports Fix for Exploited CoreGraphics Flaw",
+    "summary": "Apple backported patches for an out-of-bounds write vulnerability in CoreGraphics that was exploited in real-world attacks. The flaw could result in arbitrary code execution when processing a malicious file.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Apple"
+    ],
+    "products": [
+      "CoreGraphics",
+      "iOS",
+      "iPadOS"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
+        "publisher": "The Hacker News",
+        "title": "Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones",
+        "publisher": "BleepingComputer",
+        "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18",
+        "publisher": "SecurityWeek",
+        "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-86950",
+      "coregraphics",
+      "zero-day"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-86950"
+    ],
+    "affected": [
+      "iOS < 18"
+    ],
+    "fixed_in": [
+      "iOS 18 and newer backports"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads",
+        "source_url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+        "source_url": "https://bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
+        "source_url": "https://securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Update affected iPhones and iPads to the latest backported software versions.",
+    "severity_note": "Confirmed exploitation in the wild with vendor patch.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1590",
+    "slug": "cyberstrikeai-uses-ai-agents-to-automate-hacking-operations",
+    "title": "CyberStrikeAI Uses AI Agents to Automate Hacking Operations in Japan",
+    "summary": "Threat actors deployed an operation using numerous AI agents to automate attacks against organizations in Japan. Researchers analyzed exposed server environments to uncover the malicious campaigns.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "CyberStrikeAI"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+        "publisher": "The Hacker News",
+        "title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cyberstrikeai",
+      "ai-agents",
+      "japan"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets",
+        "source_url": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world attack campaign using AI agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1589",
+    "slug": "litellm-internal-user-viewer-arbitrary-local-file-read-via-v",
+    "title": "LiteLLM: internal_user_viewer arbitrary local file read via vertex_ai_credentials",
+    "summary": "An authenticated low-privilege user can read arbitrary local files on the proxy runtime by sending a crafted vertex_ai_credentials value. The value reaches the Vertex AI credential loader and triggers an unintended file read.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-g5ff-637f-6q2m",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-g5ff-637f-6q2m: LiteLLM: internal_user_viewer arbitrary local file read via `vertex_ai_credentials`",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "ghsa-g5ff-637f-6q2m",
+      "litellm",
+      "file-read"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "litellm < 1.95.0"
+    ],
+    "fixed_in": [
+      "litellm 1.95.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-g5ff-637f-6q2m: LiteLLM: internal_user_viewer arbitrary local file read via `vertex_ai_credentials`",
+        "source_url": "https://github.com/advisories/GHSA-g5ff-637f-6q2m",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Check the advisory for fixed versions and update LiteLLM.",
+    "severity_note": "Disclosed vulnerability with a security advisory; no exploitation confirmed.",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1588",
+    "slug": "cve-2026-116684-model-context-protocol-python-sdk-resource-c",
+    "title": "CVE-2026-116684: Model Context Protocol Python SDK resource-confusion authentication flaw",
+    "summary": "Server-side bearer authentication in the Model Context Protocol Python SDK fails to independently validate token audiences when multiple resources share an authorization server. This allows token holders to improperly authenticate and interact with incorrect MCP servers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116684",
+        "publisher": "NVD",
+        "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116684",
+      "authentication",
+      "mcp"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116684"
+    ],
+    "affected": [
+      "1.0.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116684",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches and no confirmed exploitation.",
+    "cvss": 6.8
+  },
+  {
+    "id": "AIR-2026-1587",
+    "slug": "cve-2026-116686-model-context-protocol-python-sdk-ssrf-and-l",
+    "title": "CVE-2026-116686: Model Context Protocol Python SDK SSRF and local file read via schema resolution",
+    "summary": "The Model Context Protocol Python SDK validates server output schemas using a resolver that triggers network requests or local file reads for unresolved references. Malicious servers can exploit this behavior to force blind requests, read local files, and stall client sessions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116686",
+        "publisher": "NVD",
+        "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116686",
+      "ssrf",
+      "mcp"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116686"
+    ],
+    "affected": [
+      "1.10.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116686",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1586",
+    "slug": "cve-2026-116685-model-context-protocol-python-sdk-credential",
+    "title": "CVE-2026-116685: Model Context Protocol Python SDK credential leakage via redirects",
+    "summary": "Certain client paths in the Model Context Protocol Python SDK improperly follow cross-origin redirects, forwarding custom credential headers and request bodies. Attackers able to manipulate redirect destinations can capture sensitive authentication material.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116685",
+        "publisher": "NVD",
+        "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116685",
+      "mcp",
+      "python"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116685"
+    ],
+    "affected": [
+      "1.8.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116685",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches available and no exploitation reported.",
+    "cvss": 5.9
+  },
+  {
+    "id": "AIR-2026-1585",
+    "slug": "mcp-typescript-sdk-lacks-request-body-size-and-batch-length",
+    "title": "MCP TypeScript SDK lacks request body size and batch length limits",
+    "summary": "HTTP server transports in the MCP TypeScript SDK fail to limit POST body sizes or JSON-RPC batch lengths. Unauthenticated clients can cause memory exhaustion and block server availability with large or lengthy requests.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-f897-62hf-6gxq",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-f897-62hf-6gxq: MCP TypeScript SDK: HTTP server transports and handlers did not limit request body size or JSON-RPC batch length",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "dos",
+      "mcp",
+      "typescript"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "@modelcontextprotocol/sdk >= 1.10.0, < 1.30.1",
+      "@modelcontextprotocol/server >= 2.0.0, < 2.1.0",
+      "@modelcontextprotocol/node >= 2.0.0, < 2.1.0",
+      "@modelcontextprotocol/hono >= 2.0.0, < 2.0.1"
+    ],
+    "fixed_in": [
+      "@modelcontextprotocol/sdk 1.30.1",
+      "@modelcontextprotocol/server 2.1.0",
+      "@modelcontextprotocol/node 2.1.0",
+      "@modelcontextprotocol/hono 2.0.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-f897-62hf-6gxq: MCP TypeScript SDK: HTTP server transports and handlers did not limit request body size or JSON-RPC batch length",
+        "source_url": "https://github.com/advisories/GHSA-f897-62hf-6gxq",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1584",
+    "slug": "litellm-reflected-xss-vulnerability-in-sso-debug-callback",
+    "title": "LiteLLM reflected XSS vulnerability in /sso/debug/callback",
+    "summary": "An unauthenticated reflected cross-site scripting flaw exists in LiteLLM due to improper escaping of identity-provider-controlled fields within an inline script block. Attackers can execute arbitrary JavaScript in the proxy origin when an IdP returns crafted strings.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-hhww-mrg2-969h",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-hhww-mrg2-969h: LiteLLM vulnerable to reflected XSS in /sso/debug/callback",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "xss",
+      "litellm",
+      "sso"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "litellm >= 1.65.5, < 1.85.0"
+    ],
+    "fixed_in": [
+      "litellm 1.85.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-hhww-mrg2-969h: LiteLLM vulnerable to reflected XSS in /sso/debug/callback",
+        "source_url": "https://github.com/advisories/GHSA-hhww-mrg2-969h",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation in the wild.",
+    "cvss": 6.8
+  },
+  {
     "id": "AIR-2026-1583",
     "slug": "critical-vulnerability-in-f5-big-ip-apm-exploited-in-the-wil",
     "title": "Critical Vulnerability in F5 BIG-IP APM Exploited in the Wild",
@@ -618,9 +1496,15 @@
         "publisher": "CERT-EU",
         "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal",
+        "publisher": "SecurityWeek",
+        "title": "This is Fine: What NetScaler Zero-Days Tell Us About the New Normal",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -630,7 +1514,7 @@
       "active-exploitation"
     ],
     "created_at": "2026-10-27T15:31:15.081Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1773,9 +2657,15 @@
         "publisher": "Cisco",
         "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates",
+        "publisher": "BleepingComputer",
+        "title": "Microsoft releases Windows OOB updates to distrust eMudhra certificates",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1785,11 +2675,11 @@
       "key_compromise"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unpatched",
+    "patch_status": "partial",
     "cve_ids": [],
     "affected": [
       "eMudhra intermediate certificates"
@@ -1801,9 +2691,15 @@
         "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
         "source_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-emudhra-info-ScS22A1r?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Informational+for+Emergency+Distrust+of+eMudhra+Root+and+Intermediate+Certificate+Authorities%26vs_k%3D1",
         "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Microsoft releases out-of-band Windows updates to distrust compromised eMudhra certificates",
+        "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates",
+        "added_at": "2026-10-27T20:48:16.236Z"
       }
     ],
-    "action": "Distrust the affected eMudhra root and intermediate certificates.",
+    "action": "Apply the out-of-band Windows updates to remove trust in affected eMudhra certificates.",
     "severity_note": "Critical security compromise involving Certificate Authorities.",
     "cvss": null
   },
@@ -2855,9 +3751,15 @@
         "publisher": "CyberScoop",
         "title": "Experts temper emergency-level alarms over critical Brotli defect",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497",
+        "publisher": "Help Net Security",
+        "title": "Brotli bug reaches far beyond Node.js (CVE-2026-111497)",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 7,
+    "source_count": 8,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2873,7 +3775,7 @@
       "CVE-2026-106072"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -2997,9 +3899,21 @@
         "publisher": "CERT-EU",
         "title": "2026-018: Critical Vulnerabilities in PHP",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://therecord.media/php-vulnerabilities-cisa-kev",
+        "publisher": "The Record",
+        "title": "CISA warns of PHP bug exploitation attempts, gives federal agencies days to patch",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 8,
+    "source_count": 10,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3011,7 +3925,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3649,9 +4563,15 @@
         "publisher": "BleepingComputer",
         "title": "Tailscale warns of SSH flaws allowing root privilege escalation",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/tailscale-rushes-patches-after-uncoordinated-disclosure-of-tailworm-flaws",
+        "publisher": "SecurityWeek",
+        "title": "Tailscale Rushes Patches After Uncoordinated Disclosure of ‘Tailworm’ Flaws",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -3661,7 +4581,7 @@
       "unpatched"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -7408,9 +8328,21 @@
         "publisher": "NVD",
         "title": "CVE-2026-114053: vLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers…",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-f623-hjm8-5wg5: Duplicate Advisory: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+        "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-h3rc-6mm3-gc2m",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-114053: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -7420,22 +8352,38 @@
       "vllm"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-21",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-114053"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "vllm >= 0.7.3, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vllm 0.31.0"
+    ],
     "timeline": [
       {
         "date": "2026-10-21",
         "title": "CVE-2026-114053: vLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114053",
         "added_at": "2026-10-21T05:04:24.513Z"
+      },
+      {
+        "date": "2026-10-21",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-h3rc-6mm3-gc2m",
+        "added_at": "2026-10-27T20:48:16.236Z"
       }
     ],
     "action": "",
