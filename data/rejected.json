@@ -1,5 +1,95 @@
 [
   {
+    "key": "d8c6f7f0da66c175",
+    "title": "What Victims Take Away: Attack Reuse and Defense Revision after Prompt-Injection Attacks",
+    "url": "https://arxiv.org/abs/2610.36422",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper studying target reuse of prompt injections rather than demonstrating a new working attack or vulnerability.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "58076d801c97c5a3",
+    "title": "The Envelope Layer: An Underestimated Surface of LLM Agent Defense",
+    "url": "https://arxiv.org/abs/2610.37415",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper focused primarily on defense mechanisms and evaluating defense effectiveness rather than demonstrating a new attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "3637503321111d51",
+    "title": "Pricing Cross-Bank Context in Federated Anti-Money Laundering",
+    "url": "https://arxiv.org/abs/2610.35996",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "1d1d392776a2ffa6",
+    "title": "PrivacyEvalClaw: A Tool-Augmented Deliberative Agent for Auditing Privacy Leakage in LLM Jailbreak Responses",
+    "url": "https://arxiv.org/abs/2610.36711",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose evaluation methods, benchmarks or defences are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "4f406c1503327647",
+    "title": "Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness",
+    "url": "https://arxiv.org/abs/2610.37657",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "afe1688bc19f7aa1",
+    "title": "PHP2Shell and the Future of AI-Discovered Vulnerability Disclosure: Evidence, Verification, and Human Authority",
+    "url": "https://arxiv.org/abs/2610.36334",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose policies, regulations, frameworks or standards are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "c81525e9fb84f92c",
+    "title": "Detecting and Mitigating Query-Based System Prompt Leakage Attacks",
+    "url": "https://arxiv.org/abs/2610.36295",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "6a64c430c2d7743a",
+    "title": "Breach victims discover their data was held by companies they’ve never heard of",
+    "url": "https://helpnetsecurity.com/2026/10/28/kroll-third-party-data-breaches-insurance-claims-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "19a8c396761b780e",
+    "title": "Bellini Capital CISO on AI security governance and the limits of patching faster",
+    "url": "https://helpnetsecurity.com/2026/10/28/brian-blakley-bellini-capital-ai-security-governance",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion, interviews and commentary pieces without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
     "key": "6655d337c4637473",
     "title": "SBOMs Alone Can't Reveal the Scope of a Supply Chain Attack",
     "url": "https://darkreading.com/cyber-risk/sboms-alone-scope-supply-chain-attack",

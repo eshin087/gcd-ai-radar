@@ -1,5 +1,241 @@
 [
   {
+    "id": "AIR-2026-1608",
+    "slug": "cve-2026-118375-llama-cpp-out-of-bounds-write-in-rdma-transp",
+    "title": "CVE-2026-118375: llama.cpp out-of-bounds write in RDMA transport",
+    "summary": "An out-of-bounds write vulnerability exists in the ggml-rpc RDMA transport rdma_recv function of llama.cpp versions b8841 before b11865. Unauthenticated peers can send crafted HELLO messages to overflow the stack, causing a server crash or potential code execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118375",
+        "publisher": "NVD",
+        "title": "CVE-2026-118375: llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function…",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.98,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-118375",
+      "out-of-bounds-write",
+      "rdma"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-28",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-118375"
+    ],
+    "affected": [
+      "llama.cpp b8841 to b11864"
+    ],
+    "fixed_in": [
+      "llama.cpp b11865"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-118375: llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118375",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "Update llama.cpp to version b11865 or later.",
+    "severity_note": "Critical vulnerability rated CVSS 9.2 with a patch available.",
+    "cvss": 9.2
+  },
+  {
+    "id": "AIR-2026-1607",
+    "slug": "revisiting-privacy-risks-and-membership-inference-attacks-in",
+    "title": "Revisiting privacy risks and membership inference attacks in quantized DNNs",
+    "summary": "Researchers present an empirical study evaluating privacy risks and membership inference attacks across quantized deep neural networks. The work demonstrates how model quantization impacts training data privacy.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Quantized Deep Neural Networks"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.37488",
+        "publisher": "arXiv",
+        "title": "Revisiting Privacy Risks in Quantized Deep Neural Networks",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "membership-inference",
+      "privacy",
+      "quantization"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Revisiting Privacy Risks in Quantized Deep Neural Networks",
+        "source_url": "https://arxiv.org/abs/2610.37488",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers as an empirical security evaluation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1606",
+    "slug": "log-to-leak-prompt-injection-attacks-on-tool-using-llm-agent",
+    "title": "Log-To-Leak: Prompt injection attacks on tool-using LLM agents via MCP",
+    "summary": "Researchers introduce Log-To-Leak, an additive post-hoc logging attack that exploits natural-language metadata in the Model Context Protocol. The attack induces unauthorized tool calls and targets user queries and agent responses.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.36108",
+        "publisher": "arXiv",
+        "title": "Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "mcp",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol",
+        "source_url": "https://arxiv.org/abs/2610.36108",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration of an attack vector against LLM agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1605",
+    "slug": "anthropic-demonstrates-ai-assisted-vulnerability-discovery-u",
+    "title": "Anthropic demonstrates AI-assisted vulnerability discovery using Claude",
+    "summary": "An unreleased internal research model from Anthropic was used to find critical software vulnerabilities in operating systems and browsers. The research demonstrated multiple attack chains leading to remote code execution.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "publisher": "Anthropic",
+        "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-assisted-intrusion",
+      "remote-code-execution",
+      "claude"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+        "source_url": "https://anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1603",
     "slug": "hackers-hijack-convertr-analytics-script-for-payment-card-sk",
     "title": "Hackers hijack Convertr analytics script for payment card skimming",

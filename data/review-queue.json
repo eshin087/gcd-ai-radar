@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1609",
+    "slug": "interpol-operation-serengeti-leads-to-over-1-400-arrests",
+    "title": "Interpol Operation Serengeti leads to over 1,400 arrests",
+    "summary": "Interpol's third iteration of Operation Serengeti resulted in 1,462 arrests across multiple countries and the recovery of $105 million in stolen funds. The international sweep targeted various financial fraud and cybercrime schemes.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cybersecurity-operations/third-serengeti-sweep-1400-arrests-investigations-mature",
+        "publisher": "Dark Reading",
+        "title": "Third Serengeti Sweep Tops 1,400 Arrests as Investigations Mature",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "interpol",
+      "law-enforcement",
+      "fraud",
+      "arrests"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Third Serengeti Sweep Tops 1,400 Arrests as Investigations Mature",
+        "source_url": "https://darkreading.com/cybersecurity-operations/third-serengeti-sweep-1400-arrests-investigations-mature",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed large-scale international law enforcement action with millions recovered.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1604",
     "slug": "unm-health-sciences-center-suffers-ransomware-attack-and-out",
     "title": "UNM Health Sciences Center suffers ransomware attack and outages",
