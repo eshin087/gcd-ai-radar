@@ -1,5 +1,85 @@
 [
   {
+    "key": "7693ae35048e0be2",
+    "title": "Digitate adds AI agents for patch planning, service desks, and SAP operations",
+    "url": "https://helpnetsecurity.com/2026/10/28/digitate-ignio-hummingbird",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch / vendor feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "de5450926ea86d1c",
+    "title": "Compromised camera management software gives attackers a way into corporate networks",
+    "url": "https://helpnetsecurity.com/2026/10/28/compromised-camera-management-software-initial-access",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: lacks named software or specific exploit details",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "f7243678e7377374",
+    "title": "GitHub’s npm package firewall can block brand-new versions before they install",
+    "url": "https://helpnetsecurity.com/2026/10/28/github-package-firewall-npm",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch / security feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "b057f3381d273763",
+    "title": "Google to Allow One-Tap Android App Installs From Approved Third-Party Stores Outside U.S.",
+    "url": "https://thehackernews.com/2026/10/google-to-allow-one-tap-android-app.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Product feature announcement and policy update by Google regarding third-party app stores.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "42279ffd24bfffbd",
+    "title": "Microsoft urges Entra ID admins to migrate users to passkeys",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Advisory notification about upcoming feature retirement and general authentication migration.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "c9692a8d0f482f78",
+    "title": "Unwrapping Retail Peak Season Cyber Threats",
+    "url": "https://unit42.paloaltonetworks.com/unwrapping-retail-cyber-threats",
+    "publisher": "Unit 42",
+    "source_id": "unit42",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "b967772398499b5e",
+    "title": "Belarusian hackers increasingly acting as proxies for Russia amid war in Ukraine",
+    "url": "https://therecord.media/belarus-russia-hackers-ukraine-war",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "97c244f464f9a7f4",
+    "title": "Ukrainian Hive and Nefilim Ransomware Affiliate Gets 70 Months in US Prison",
+    "url": "https://securityweek.com/ukrainian-hive-and-nefilim-ransomware-affiliate-gets-70-months-in-us-prison",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: A court case, sentencing or indictment about an old campaign is a follow-up, not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
     "key": "ca1945b2dbf7aa58",
     "title": "Ukrainian ransomware hacker sentenced, $11 million reward offered for co-conspirator",
     "url": "https://helpnetsecurity.com/2026/10/28/doj-ukrainian-ransomware-hacker-sentenced",

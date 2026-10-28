@@ -82,9 +82,15 @@
         "publisher": "Help Net Security",
         "title": "Data breach at Sony-owned internet provider compromises 2.6 million customer records",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/sony-isp-subsidiary-data-breach-exposes-25-million-customer-records",
+        "publisher": "BleepingComputer",
+        "title": "Sony ISP subsidiary data breach exposes 2.5 million customer records",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "review",
     "origin": "news",
@@ -93,7 +99,7 @@
       "sony"
     ],
     "created_at": "2026-10-28T14:26:12.130Z",
-    "updated_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -370,9 +376,15 @@
         "publisher": "Have I Been Pwned",
         "title": "AfD data breach exposes 345,439 accounts",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/28/afd-data-breach-email-leak",
+        "publisher": "Help Net Security",
+        "title": "345,000 email addresses stolen in cyberattack on Germany’s far-right party AfD",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "review",
     "origin": "news",
@@ -381,7 +393,7 @@
       "credential-leak"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,

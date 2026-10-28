@@ -1,5 +1,192 @@
 [
   {
+    "id": "AIR-2026-1622",
+    "slug": "attacker-scans-for-credentials-by-impersonating-ai-bots",
+    "title": "Attacker Scans for Credentials by Impersonating AI Bots",
+    "summary": "Threat actors conducted credential scanning campaigns by disguising their traffic as official bots from major artificial intelligence companies. The activity targeted exposed endpoints to harvest sensitive data.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Meta"
+    ],
+    "products": [
+      "OpenAI bots",
+      "Anthropic bots",
+      "Meta bots"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyber-risk/attacker-impersonates-ai-bots-scans-credentials",
+        "publisher": "Dark Reading",
+        "title": "Attacker Relentlessly Scans for Credentials by Impersonating AI Bots",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential-stuffing",
+      "bot-impersonation",
+      "reconnaissance"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Attacker Relentlessly Scans for Credentials by Impersonating AI Bots",
+        "source_url": "https://darkreading.com/cyber-risk/attacker-impersonates-ai-bots-scans-credentials",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      }
+    ],
+    "action": "Block suspicious scanning traffic and verify user-agent signatures against official AI bot IP ranges.",
+    "severity_note": "Confirmed active scanning campaign in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1621",
+    "slug": "china-nexus-attack-using-php2shell-breaches-u-s-government-a",
+    "title": "China-Nexus Attack Using PHP2Shell Breaches U.S. Government-Affiliated Network",
+    "summary": "Threat actors exploited PHP2Shell vulnerabilities and combined them with a kernel privilege escalation exploit to compromise 25 servers in a network with U.S. government affiliation. The activity was identified by cybersecurity researchers as part of an active campaign.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PHP2Shell"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+        "publisher": "The Hacker News",
+        "title": "PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "php2shell",
+      "privilege-escalation",
+      "china-nexus"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network",
+        "source_url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation and intrusion against a real target network.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1620",
+    "slug": "volt-typhoon-used-silent-train-network-in-zero-day-campaigns",
+    "title": "Volt Typhoon used Silent Train network in zero-day campaigns",
+    "summary": "The China-nexus espionage group Volt Typhoon was linked to a covert access network named Silent Train, utilized for zero-day exploitation. The infrastructure leverages rotating chains of compromised SOHO, IoT, and enterprise devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SOHO and IoT enterprise infrastructure"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+        "publisher": "The Hacker News",
+        "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs",
+        "publisher": "CyberScoop",
+        "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "volt-typhoon",
+      "zero-day",
+      "espionage"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+        "source_url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
+        "source_url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed zero-day exploitation campaigns by an advanced persistent threat group.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1619",
     "slug": "china-linked-hackers-exploit-php2shell-to-root-firewalls",
     "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
@@ -853,9 +1040,15 @@
         "publisher": "The Hacker News",
         "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://techradar.com/pro/security/japanese-internet-giant-gmo-tells-customers-to-shut-down-and-disconnect-pcs-from-the-internet-following-data-breach-and-ransomware-threat",
+        "publisher": "techradar.com",
+        "title": "Japanese internet giant GMO tells customers to unplug PCs after compromise",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -865,7 +1058,7 @@
       "gmo-group"
     ],
     "created_at": "2026-10-28T00:54:15.308Z",
-    "updated_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -5816,9 +6009,21 @@
         "publisher": "The Hacker News",
         "title": "PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking",
         "published_at": "2026-10-25"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score",
+        "publisher": "BleepingComputer",
+        "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure",
+        "publisher": "BleepingComputer",
+        "title": "InfraTrust report warns of exploited flaws in critical network infrastructure",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5829,7 +6034,7 @@
       "post-exploitation"
     ],
     "created_at": "2026-10-25T20:55:01.683Z",
-    "updated_at": "2026-10-25T20:55:01.683Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
