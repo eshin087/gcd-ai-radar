@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1604",
+    "slug": "unm-health-sciences-center-suffers-ransomware-attack-and-out",
+    "title": "UNM Health Sciences Center suffers ransomware attack and outages",
+    "summary": "The University of New Mexico Health Sciences Center disclosed a ransomware cyberattack that caused severe system outages. The incident disrupted patient care operations and academic activities.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "UNM Health Sciences Center systems"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/unm-health-ransomware-attack-disrupts-patient-care-surgeries",
+        "publisher": "BleepingComputer",
+        "title": "UNM Health ransomware attack disrupts patient care, surgeries",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "healthcare",
+      "patient-care-disruption"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "UNM Health Sciences Center systems"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "UNM Health ransomware attack disrupts patient care, surgeries",
+        "source_url": "https://bleepingcomputer.com/news/security/unm-health-ransomware-attack-disrupts-patient-care-surgeries",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world impact with patient care disruption.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1597",
     "slug": "vendor-key-leak-exposes-denver-health-plan-member-data",
     "title": "Vendor Key Leak Exposes Denver Health Plan Member Data",

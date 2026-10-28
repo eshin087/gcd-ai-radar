@@ -1,5 +1,250 @@
 [
   {
+    "id": "AIR-2026-1603",
+    "slug": "hackers-hijack-convertr-analytics-script-for-payment-card-sk",
+    "title": "Hackers hijack Convertr analytics script for payment card skimming",
+    "summary": "A credit card skimming group compromised a shared analytics script used by e-commerce platform Convertr. Attackers used the compromised script to steal shoppers' payment card data during checkout.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Convertr analytics script"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-hijack-convertr-analytics-script-to-steal-payment-card-data",
+        "publisher": "BleepingComputer",
+        "title": "Hackers hijack Convertr analytics script to steal payment card data",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "magecart",
+      "credit-card-skimming",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Convertr analytics script"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Hackers hijack Convertr analytics script to steal payment card data",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-hijack-convertr-analytics-script-to-steal-payment-card-data",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world malicious script injection affecting e-commerce checkouts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1602",
+    "slug": "gmo-group-urges-customer-system-shutdowns-following-onamae-b",
+    "title": "GMO Group urges customer system shutdowns following Onamae breach",
+    "summary": "Japan's GMO Group advised customers to disconnect systems and shut down computers after threat actors breached Onamae Desktop Cloud and threatened ransomware deployment. The incident caused precautionary operational disruptions.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Onamae Desktop Cloud"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat",
+        "publisher": "BleepingComputer",
+        "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "cloud-breach",
+      "gmo-group"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Onamae Desktop Cloud"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+        "source_url": "https://bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Disconnect affected systems from the internet and shut down computers as advised.",
+    "severity_note": "Confirmed breach with severe operational response.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1601",
+    "slug": "cve-2026-48356-adobe-commerce-and-magento-unrestricted-file",
+    "title": "CVE-2026-48356: Adobe Commerce and Magento unrestricted file upload exploited",
+    "summary": "Adobe Commerce and Magento contain an unrestricted file upload vulnerability that allows arbitrary code execution. CISA added the flaw to its Known Exploited Vulnerabilities catalog after confirming active exploitation in the wild.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Adobe Commerce",
+      "Magento"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48356",
+        "publisher": "CISA",
+        "title": "CVE-2026-48356: Adobe Commerce and Magento — Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-48356",
+      "arbitrary-code-execution",
+      "cisa-kev"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-48356"
+    ],
+    "affected": [
+      "Adobe Commerce",
+      "Magento"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-48356: Adobe Commerce and Magento — Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48356",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Apply mitigations and updates in accordance with vendor instructions.",
+    "severity_note": "Exploitation in the wild is confirmed via CISA KEV.",
+    "cvss": 9.6
+  },
+  {
+    "id": "AIR-2026-1600",
+    "slug": "cve-2026-59158-nuxt-ollama-exposes-cloud-api-keys-in-public",
+    "title": "CVE-2026-59158: Nuxt Ollama exposes cloud API keys in public configuration",
+    "summary": "Nuxt Ollama prior to version 1.3.1 unconditionally merges module options including cloud API keys into public runtime configuration. This serializes sensitive credentials into server-rendered HTML payloads, exposing them to unauthenticated clients.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Nuxt Ollama"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59158",
+        "publisher": "NVD",
+        "title": "CVE-2026-59158: Nuxt Ollama integrates the official Ollama JavaScript library into Nuxt applications.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-59158",
+      "api-key-exposure",
+      "nuxt-ollama"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-59158"
+    ],
+    "affected": [
+      "Nuxt Ollama < 1.3.1"
+    ],
+    "fixed_in": [
+      "Nuxt Ollama 1.3.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-59158: Nuxt Ollama integrates the official Ollama JavaScript library into Nuxt applications.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59158",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Update Nuxt Ollama to version 1.3.1 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available.",
+    "cvss": 7.5
+  },
+  {
     "id": "AIR-2026-1599",
     "slug": "stored-prompt-injection-vulnerability-through-api-gateway",
     "title": "Stored Prompt Injection Vulnerability Through API Gateway",
@@ -579,9 +824,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-w4fh-qvv9-3v23",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116684: Model Context Protocol Python SDK: Server bearer-token authentication accepts tokens issued for a different resource server",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -591,7 +842,7 @@
       "mcp"
     ],
     "created_at": "2026-10-27T20:48:16.236Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-27",
@@ -613,6 +864,12 @@
         "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116684",
         "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-w4fh-qvv9-3v23",
+        "added_at": "2026-10-28T00:54:15.308Z"
       }
     ],
     "action": "Update to version 1.30.0 or 2.2.0.",
@@ -644,9 +901,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-rwrf-2pqf-9j8j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116686: Model Context Protocol Python SDK: Client fetched server-chosen $ref URLs while validating tool results against output schemas",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -656,7 +919,7 @@
       "mcp"
     ],
     "created_at": "2026-10-27T20:48:16.236Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-27",
@@ -678,6 +941,12 @@
         "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116686",
         "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-rwrf-2pqf-9j8j",
+        "added_at": "2026-10-28T00:54:15.308Z"
       }
     ],
     "action": "Update to version 1.30.0 or 2.2.0.",
@@ -709,9 +978,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-5h93-6whr-6q8j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116685: Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -721,7 +996,7 @@
       "python"
     ],
     "created_at": "2026-10-27T20:48:16.236Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-27",
@@ -743,6 +1018,12 @@
         "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116685",
         "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-5h93-6whr-6q8j",
+        "added_at": "2026-10-28T00:54:15.308Z"
       }
     ],
     "action": "Update to version 1.30.0 or 2.2.0.",
@@ -2974,9 +3255,15 @@
         "publisher": "The Hacker News",
         "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/cloud-security/email-bombing-external-teams-chats-repeatable-access-path",
+        "publisher": "Dark Reading",
+        "title": "External Teams Chats Anchor 15-Minute Malware Delivery",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2987,7 +3274,7 @@
       "microsoft-teams"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -3695,7 +3982,7 @@
     "categories": [
       "general"
     ],
-    "severity": 2,
+    "severity": 3,
     "targets": [
       "n/a"
     ],
@@ -3757,9 +4044,21 @@
         "publisher": "Help Net Security",
         "title": "Brotli bug reaches far beyond Node.js (CVE-2026-111497)",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in node.js Affecting Cisco Products: October 2026",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111497",
+        "publisher": "CISA",
+        "title": "CVE-2026-111497: Google Brotli — Google Brotli Unchecked Return Value Vulnerability",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 8,
+    "source_count": 10,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -3772,10 +4071,11 @@
       "CVE-2026-106069",
       "CVE-2026-111497",
       "CVE-2026-105481",
-      "CVE-2026-106072"
+      "CVE-2026-106072",
+      "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3793,7 +4093,10 @@
       "PHP 8.2",
       "PHP 8.3",
       "PHP 8.4",
-      "PHP 8.5"
+      "PHP 8.5",
+      "Node.js 22.x",
+      "Node.js 24.x",
+      "Node.js 26.x"
     ],
     "timeline": [
       {
@@ -3825,6 +4128,18 @@
         "title": "Microsoft releases emergency .NET security updates for the Brotli vulnerability",
         "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111497",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Node.js releases updates for lines 22.x, 24.x, and 26.x addressing the Brotli decoder vulnerability",
+        "source_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "added_at": "2026-10-28T00:54:15.308Z"
       }
     ],
     "action": "Update PHP Windows packages to the latest patched releases.",
@@ -12581,10 +12896,10 @@
       "path-traversal"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-27",
     "patch_status": "unknown",
     "cve_ids": [
       "CVE-2026-103572"

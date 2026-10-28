@@ -1,5 +1,25 @@
 [
   {
+    "key": "6655d337c4637473",
+    "title": "SBOMs Alone Can't Reveal the Scope of a Supply Chain Attack",
+    "url": "https://darkreading.com/cyber-risk/sboms-alone-scope-supply-chain-attack",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Surveys, statistics, opinion and explainer pieces without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T00:54:15.308Z"
+  },
+  {
+    "key": "2f6663d0ce966b03",
+    "title": "Nefilim, Hive ransomware operator given five-year-plus sentence after guilty plea",
+    "url": "https://therecord.media/nefilim-hive-ransomware-operator-70-months-prison",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Court cases, sentencings or indictments about old campaigns are follow-ups rather than new incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T00:54:15.308Z"
+  },
+  {
     "key": "c030906e13ad9f86",
     "title": "Blazle – Block prompt injection and secret leaks before AI agents act",
     "url": "https://blazle.io/",
