@@ -1,5 +1,533 @@
 [
   {
+    "id": "AIR-2026-1619",
+    "slug": "china-linked-hackers-exploit-php2shell-to-root-firewalls",
+    "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+    "summary": "State-sponsored threat actors chained PHP2Shell and Fragnesia exploits to compromise two servers belonging to a US government-affiliated organization. The attacks resulted in unauthorized root access on the affected firewalls.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "firewalls"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls",
+        "publisher": "SecurityWeek",
+        "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "php2shell",
+      "fragnesia",
+      "china-linked",
+      "firewall"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+        "source_url": "https://securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in the wild against a real target.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1618",
+    "slug": "foxio-discloses-tls-flaws-in-goahead-web-server",
+    "title": "FoxIO Discloses TLS Flaws in GoAhead Web Server",
+    "summary": "FoxIO uncovered three TLS vulnerabilities in the GoAhead Web Server that bypass revoked certificate checks or expose encrypted sessions to eavesdropping. The affected server is deployed across hundreds of millions of embedded devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GoAhead Web Server"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices",
+        "publisher": "SecurityWeek",
+        "title": "TLS Flaws Found in GoAhead Web Server Used in Hundreds of Millions of Devices",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "tls",
+      "goahead",
+      "embedded-devices"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "TLS Flaws Found in GoAhead Web Server Used in Hundreds of Millions of Devices",
+        "source_url": "https://securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Check for vendor advisories and updates for GoAhead Web Server.",
+    "severity_note": "Disclosed research findings with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1617",
+    "slug": "cisa-warns-of-active-exploitation-of-critical-node2shell-vul",
+    "title": "CISA Warns of Active Exploitation of Critical Node2Shell Vulnerability",
+    "summary": "CISA confirmed that attackers are actively exploiting the critical Node2Shell vulnerability affecting Brotli implementations. Honeypots have logged multiple attack attempts targeting the flaw.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Node2Shell"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw",
+        "publisher": "BleepingComputer",
+        "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts",
+        "publisher": "SecurityWeek",
+        "title": "CISA Warns of Node2Shell Exploitation as Honeypots Log Attack Attempts",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisa",
+      "exploitation-in-the-wild",
+      "node2shell"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+        "source_url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "CISA Warns of Node2Shell Exploitation as Honeypots Log Attack Attempts",
+        "source_url": "https://securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Review CISA advisories and apply available patches or mitigations immediately.",
+    "severity_note": "Confirmed active exploitation in the wild.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1616",
+    "slug": "cve-2026-104351-adobe-fixes-critical-campaign-classic-code-i",
+    "title": "CVE-2026-104351: Adobe Fixes Critical Campaign Classic Code Injection Flaw",
+    "summary": "Adobe released security updates to fix eight critical vulnerabilities in Campaign Classic, including a code injection flaw tracked as CVE-2026-104351. Successful exploitation of these issues can lead to arbitrary code execution and privilege escalation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Campaign Classic"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+        "publisher": "The Hacker News",
+        "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-104351",
+      "adobe",
+      "campaign-classic",
+      "code-execution"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-104351"
+    ],
+    "affected": [
+      "Adobe Campaign Classic"
+    ],
+    "fixed_in": [
+      "Adobe Campaign Classic latest patch"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
+        "source_url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply the latest security patches provided by Adobe for Campaign Classic.",
+    "severity_note": "Critical rating with a vendor fix available.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1615",
+    "slug": "cve-2026-35273-oracle-peoplesoft-zero-day-chained-flaws-expl",
+    "title": "CVE-2026-35273: Oracle PeopleSoft Zero-Day Chained Flaws Exploited",
+    "summary": "Researchers revealed that a critical Oracle PeopleSoft zero-day exploited by ShinyHunters actually consists of three chained flaws patched under CVE-2026-35273. The vulnerability stems from an SSRF issue allowing unauthorized access to internal management interfaces.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PeopleSoft"
+    ],
+    "incident_date": "2026-06",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+        "publisher": "The Hacker News",
+        "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-35273",
+      "peoplesoft",
+      "shinyhunters",
+      "ssrf"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-35273"
+    ],
+    "affected": [
+      "Oracle PeopleSoft"
+    ],
+    "fixed_in": [
+      "Oracle PeopleSoft patch update"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+        "source_url": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Update Oracle PeopleSoft to the latest patched version addressing CVE-2026-35273.",
+    "severity_note": "Confirmed exploitation in the wild by threat actors.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1614",
+    "slug": "anthropic-ai-model-chains-flaws-into-working-exploits-in-lab",
+    "title": "Anthropic AI Model Chains Flaws Into Working Exploits in Lab Research",
+    "summary": "An unreleased Anthropic AI model discovered security flaws in major operating systems and browsers, chaining them into working proof-of-concept exploits. All discovered vulnerabilities were reported to vendors and patched before public disclosure.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "Google",
+      "Apple",
+      "Microsoft"
+    ],
+    "products": [
+      "Chrome",
+      "Safari",
+      "Windows",
+      "Linux",
+      "Android"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
+        "publisher": "The Hacker News",
+        "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "anthropic",
+      "ai-assisted-intrusion",
+      "chrome",
+      "safari",
+      "windows"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Chrome",
+      "Safari",
+      "Android",
+      "Windows",
+      "Linux"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+        "source_url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research proof-of-concept demonstrated in a lab setting with all underlying bugs already patched.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1612",
+    "slug": "critical-uefi-flaw-in-edk-ii-allows-pre-boot-code-execution",
+    "title": "Critical UEFI flaw in EDK II allows pre-boot code execution",
+    "summary": "A long-standing critical flaw in EDK II, an open-source UEFI firmware codebase, allows attackers to run code before the operating system loads during network booting. Hardware makers rely on this code to build device firmware.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "EDK II"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html",
+        "publisher": "The Hacker News",
+        "title": "Critical 16-Year-Old UEFI Flaw Can Run Code Before Secure Boot on Network-Booting Servers",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "uefi",
+      "edk-ii",
+      "secure-boot"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "EDK II UEFI firmware"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Critical 16-Year-Old UEFI Flaw Can Run Code Before Secure Boot on Network-Booting Servers",
+        "source_url": "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply firmware updates provided by your hardware vendor.",
+    "severity_note": "Critical rating with researcher disclosure.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1611",
+    "slug": "cve-2026-101767-threat-actors-probe-critical-oracle-e-busine",
+    "title": "CVE-2026-101767: Threat actors probe critical Oracle E-Business Suite RCE flaw",
+    "summary": "Threat actors are probing for a critical remote code execution vulnerability in the Oracle Application Object Library of Oracle E-Business Suite. Oracle patched the flaw as part of its Critical Patch Update shortly before active scanning began.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Oracle E-Business Suite"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Start Probing Fresh Oracle EBS Vulnerability",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw",
+        "publisher": "BleepingComputer",
+        "title": "Hackers now scanning systems for recently-patched Oracle flaw",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-101767",
+      "rce",
+      "oracle-ebs"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-101767"
+    ],
+    "affected": [
+      "Oracle Application Object Library"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+        "source_url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Hackers Start Probing Fresh Oracle EBS Vulnerability",
+        "source_url": "https://securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Hackers now scanning systems for recently-patched Oracle flaw",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply the latest Oracle Critical Patch Update immediately.",
+    "severity_note": "Critical vulnerability with active probing in the wild.",
+    "cvss": 9.8
+  },
+  {
     "id": "AIR-2026-1608",
     "slug": "cve-2026-118375-llama-cpp-out-of-bounds-write-in-rdma-transp",
     "title": "CVE-2026-118375: llama.cpp out-of-bounds write in RDMA transport",
@@ -319,9 +847,15 @@
         "publisher": "BleepingComputer",
         "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+        "publisher": "The Hacker News",
+        "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -331,7 +865,7 @@
       "gmo-group"
     ],
     "created_at": "2026-10-28T00:54:15.308Z",
-    "updated_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -347,6 +881,12 @@
         "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
         "source_url": "https://bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat",
         "added_at": "2026-10-28T00:54:15.308Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GMO announces up to $1 million bounty for information on the Onamae breach",
+        "source_url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
       }
     ],
     "action": "Disconnect affected systems from the internet and shut down computers as advised.",
@@ -4292,9 +4832,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-111497: Google Brotli — Google Brotli Unchecked Return Value Vulnerability",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html",
+        "publisher": "The Hacker News",
+        "title": "Adobe Commerce PolyShell Attacks Breach Hundreds of Stores as Brotli Exploit Traffic Emerges",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 10,
+    "source_count": 11,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -4311,7 +4857,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -5120,9 +5666,21 @@
         "publisher": "SecurityWeek",
         "title": "Tailscale Rushes Patches After Uncoordinated Disclosure of ‘Tailworm’ Flaws",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html",
+        "publisher": "The Hacker News",
+        "title": "Tailscale Patches SSH Flaws That Could Let Hacked Devices Gain Root Access on Other Servers",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/28/tailscale-fixes-tailworm-ssh-flaws",
+        "publisher": "Help Net Security",
+        "title": "Tailscale fixes SSH flaws allowing lateral movement within tailnets",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 3,
+    "source_count": 5,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -5132,7 +5690,7 @@
       "unpatched"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -5141,7 +5699,9 @@
     "affected": [
       "Tailscale SSH"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "1.104.4"
+    ],
     "timeline": [
       {
         "date": "2026-10-25",
@@ -5154,9 +5714,21 @@
         "title": "The vendor is working on patches for nearly a dozen security vulnerabilities involving Tailscale SSH.",
         "source_url": "https://bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation",
         "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Tailscale releases version 1.104.4 fixing the SSH flaws",
+        "source_url": "https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Tailscale ships fixes for SSH vulnerabilities",
+        "source_url": "https://helpnetsecurity.com/2026/10/28/tailscale-fixes-tailworm-ssh-flaws",
+        "added_at": "2026-10-28T14:26:12.130Z"
       }
     ],
-    "action": "Disable Tailscale SSH port forwarding or tighten network access rules until a fix is released.",
+    "action": "Apply the latest Tailscale updates that include the SSH fixes",
     "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
     "cvss": null
   },

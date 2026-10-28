@@ -1,5 +1,65 @@
 [
   {
+    "key": "ca1945b2dbf7aa58",
+    "title": "Ukrainian ransomware hacker sentenced, $11 million reward offered for co-conspirator",
+    "url": "https://helpnetsecurity.com/2026/10/28/doj-ukrainian-ransomware-hacker-sentenced",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Sentencing and court proceedings regarding past campaigns are follow-ups rather than new live incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "169a3a02ba4a388f",
+    "title": "American Organizations Under Attack: Skyw4lker Device Code Phishing Campaign Exposed",
+    "url": "https://thehackernews.com/2026/10/american-organizations-under-attack.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: A general analysis of phishing techniques and campaign tactics without a specific named breach or distinct newsworthy incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "ce5fe177d9dacc31",
+    "title": "Wazuh and AI for Enhanced SOC Workflows",
+    "url": "https://thehackernews.com/2026/10/wazuh-and-ai-for-enhanced-soc-workflows.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: General discussion and roundup about AI in cybersecurity workflows without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "d86da89b8e9385e6",
+    "title": "Nefilim and Hive ransomware affiliate gets 70 months in prison",
+    "url": "https://bleepingcomputer.com/news/security/nefilim-and-hive-ransomware-affiliate-gets-70-months-in-prison",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Sentencing for historical ransomware campaigns is a follow-up, not a new incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "5556a3357d1d4775",
+    "title": "Long-Hidden Flaws Patched in EPICS Research Facility Control Software",
+    "url": "https://securityweek.com/long-hidden-flaws-patched-in-epics-research-facility-control-software",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "below the curation bar: Disclosed vulnerabilities with a fix and no reported exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "03c86e7aa78bbd33",
+    "title": "Chrome and Firefox Updates Patch Over 200 Vulnerabilities",
+    "url": "https://securityweek.com/chrome-and-firefox-updates-patch-over-200-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Routine multi-vulnerability roundup without specific critical individual CVE focus or exploitation details.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
     "key": "d8c6f7f0da66c175",
     "title": "What Victims Take Away: Attack Reuse and Defense Revision after Prompt-Injection Attacks",
     "url": "https://arxiv.org/abs/2610.36422",
