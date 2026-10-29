@@ -1,5 +1,25 @@
 [
   {
+    "key": "2700988428bd6bbf",
+    "title": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa-EHchtZk?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Catalyst+SD-WAN+Controller+Authentication+Bypass+Vulnerability%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Medium or high advisory with a fix and no confirmed exploitation does not clear the curation bar.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-29T00:20:42.318Z"
+  },
+  {
+    "key": "bf65784fd277bccf",
+    "title": "Court strikes down West Virginia law barring disclosure of public officials’ personal data",
+    "url": "https://therecord.media/west-virginia-daniels-law-struck-down-appellate-court",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: policy, regulation and standards news; court ruling on legislation",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T00:20:42.318Z"
+  },
+  {
     "key": "7693ae35048e0be2",
     "title": "Digitate adds AI agents for patch planning, service desks, and SAP operations",
     "url": "https://helpnetsecurity.com/2026/10/28/digitate-ignio-hummingbird",

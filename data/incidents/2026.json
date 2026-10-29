@@ -1,5 +1,355 @@
 [
   {
+    "id": "AIR-2026-1628",
+    "slug": "ddossecrets-publishes-hacked-data-concerning-thousands-of-dh",
+    "title": "DDoSSecrets publishes hacked data concerning thousands of DHS employees",
+    "summary": "Hacktivists obtained and leaked sensitive data regarding more than 41,000 Department of Homeland Security employees. The leaked records were shared via DDoSecrets after being distributed by independent researchers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Department of Homeland Security systems"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets",
+        "publisher": "CyberScoop",
+        "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "dhs",
+      "leak-site"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
+        "source_url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "Monitor affected accounts and secure government internal portals.",
+    "severity_note": "Confirmed data leak of thousands of government employee records.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1627",
+    "slug": "japan-airlines-suffers-data-breach-exposing-customer-passpor",
+    "title": "Japan Airlines suffers data breach exposing customer passport and contact data",
+    "summary": "Hackers compromised Japan Airlines systems and stole personal data, including passport numbers and email addresses, belonging to about 2,000 customers. The incident highlights rising cyber threats targeting Japanese transportation infrastructure.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Japan Airlines booking system"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://therecord.media/japan-airlines-warns-of-breach-country-grapples-with-incidents",
+        "publisher": "The Record",
+        "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "japan-airlines",
+      "pii-leak"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
+        "source_url": "https://therecord.media/japan-airlines-warns-of-breach-country-grapples-with-incidents",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "Investigate affected systems and notify impacted customers.",
+    "severity_note": "Confirmed breach involving unauthorized access and data theft.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1626",
+    "slug": "uat-11473-exploits-cisco-sd-wan-authentication-bypass-to-dep",
+    "title": "UAT-11473 Exploits Cisco SD-WAN Authentication Bypass to Deploy KeyDrift",
+    "summary": "The APT group UAT-11473 exploited CVE-2026-20127, an authentication bypass vulnerability in Cisco SD-WAN Catalyst Controller instances, to gain unauthorized access and deploy the KeyDrift malware.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco SD-WAN Catalyst Controller"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://blog.talosintelligence.com/uat-11473-keydrift",
+        "publisher": "Cisco Talos",
+        "title": "Inside KeyDrift: Analyzing historical UAT-11473 activity on Cisco SD-WAN",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-20127",
+      "keydrift",
+      "cisco"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [
+      "CVE-2026-20127"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Inside KeyDrift: Analyzing historical UAT-11473 activity on Cisco SD-WAN",
+        "source_url": "https://blog.talosintelligence.com/uat-11473-keydrift",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in real-world attacks.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1625",
+    "slug": "cve-2026-46300-linux-kernel-missing-variable-initialization",
+    "title": "CVE-2026-46300: Linux Kernel Missing Variable Initialization Vulnerability",
+    "summary": "The Linux Kernel contains a variable initialization flaw that causes ESP input processing to decrypt shared fragments in place, allowing for unintended page-cache data modification. CISA added this vulnerability to its KEV catalog following confirmed exploitation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Linux Kernel"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-46300",
+        "publisher": "CISA",
+        "title": "CVE-2026-46300: Linux Kernel — Linux Kernel Missing Initialization of a Variable Vulnerability",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-46300",
+      "kev",
+      "linux"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-46300"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-46300: Linux Kernel — Linux Kernel Missing Initialization of a Variable Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-46300",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "Apply mitigations according to vendor instructions.",
+    "severity_note": "Exploitation in the wild is confirmed.",
+    "cvss": 7.8
+  },
+  {
+    "id": "AIR-2026-1624",
+    "slug": "cve-2026-118667-langgraph-sdk-unencoded-identifiers-request",
+    "title": "CVE-2026-118667: LangGraph SDK Unencoded Identifiers Request Redirection",
+    "summary": "The LangGraph Python SDK v3 streaming client fails to properly encode caller-supplied identifiers in request paths. This flaw can redirect authenticated GET requests to other paths on the server.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangGraph Python SDK"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-3fx2-cqw9-xr3c",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-118667: LangGraph: Unencoded identifiers in LangGraph SDK v3 streaming can redirect authenticated GET requests",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-118667",
+      "langgraph"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-28",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-118667"
+    ],
+    "affected": [
+      "LangGraph Python SDK v3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-118667: LangGraph: Unencoded identifiers in LangGraph SDK v3 streaming can redirect authenticated GET requests",
+        "source_url": "https://github.com/advisories/GHSA-3fx2-cqw9-xr3c",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation.",
+    "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1623",
+    "slug": "cve-2026-41709-broadcom-vmware-esx-insufficient-logging-vuln",
+    "title": "CVE-2026-41709: Broadcom VMware ESX Insufficient Logging Vulnerability",
+    "summary": "Broadcom VMware ESX contains an insufficient logging vulnerability allowing administrators to perform operations without logging. Exploitation in the wild is confirmed by CISA.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "VMware ESX"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-41709",
+        "publisher": "CISA",
+        "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-41709",
+      "kev"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-41709"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-41709",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
+    "severity_note": "Exploitation in the wild is confirmed.",
+    "cvss": 2.7
+  },
+  {
     "id": "AIR-2026-1622",
     "slug": "attacker-scans-for-credentials-by-impersonating-ai-bots",
     "title": "Attacker Scans for Credentials by Impersonating AI Bots",
@@ -4350,9 +4700,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-6757-hggm-hp2w",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115912: vLLM: Public multimodal SHM handle forgery reaches worker-side `pickle.loads()` with insecure serialization disabled",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -4361,7 +4717,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4381,6 +4737,12 @@
         "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-6757-hggm-hp2w",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -4412,9 +4774,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-q97c-p368-75c4",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115916: vLLM: Out-of-vocabulary prompt token id passes input validation and triggers a CUDA device-side assert (engine crash / DoS)",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -4423,7 +4791,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4443,6 +4811,12 @@
         "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-q97c-p368-75c4",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -4474,9 +4848,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-x567-49g5-p4cf",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115918: vLLM: Responses API bypasses trust_request_chat_template for chat_template_kwargs",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -4485,7 +4865,7 @@
       "resource-exhaustion"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4505,6 +4885,12 @@
         "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-x567-49g5-p4cf",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -4536,9 +4922,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-gq5q-89c7-vhvx",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115914: vLLM DeepSeek-OCR image processing vulnerable to denial of service",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -4547,7 +4939,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4567,6 +4959,12 @@
         "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-gq5q-89c7-vhvx",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -4598,9 +4996,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-h3rc-j82p-2c3h",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115915: vLLM: Untrusted EPS inputs can trigger denial of service or Ghostscript RCE",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -4609,7 +5013,7 @@
       "rce"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4629,6 +5033,12 @@
         "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-h3rc-j82p-2c3h",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -4660,9 +5070,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-vvpg-rrww-wpmh",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115917: vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -4671,7 +5087,7 @@
       "cors"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4691,6 +5107,12 @@
         "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-vvpg-rrww-wpmh",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -4722,9 +5144,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-8397-8qf6-f2gm",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115913: vLLM: Phi-4 multimodal audio encoder materializes and retains full attention matrices: a single max-length audio OOM-crashes the vLLM engine",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -4733,7 +5161,7 @@
       "out-of-memory"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4753,6 +5181,12 @@
         "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-8397-8qf6-f2gm",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -4784,9 +5218,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-542m-9234-8gvf",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115911: vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -4795,7 +5235,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -4815,6 +5255,12 @@
         "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-542m-9234-8gvf",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -5031,9 +5477,15 @@
         "publisher": "The Hacker News",
         "title": "Adobe Commerce PolyShell Attacks Breach Hundreds of Stores as Brotli Exploit Traffic Emerges",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+Node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in Node.js Affecting Cisco Products: October 2026",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 11,
+    "source_count": 12,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -5050,7 +5502,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -5307,9 +5759,15 @@
         "publisher": "Dark Reading",
         "title": "'Gheist' Weaponizes GitHub Tokens to Steal Cloud Secrets",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/application-security/ghostaction-hacking-wave-fizzles-attackers-github",
+        "publisher": "Dark Reading",
+        "title": "GhostAction Hacking Wave Fizzles, But Attackers Lurk on in GitHub",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5321,7 +5779,7 @@
       "supply-chain"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -13429,10 +13887,10 @@
       "zero-click"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -13486,10 +13944,10 @@
       "authentication"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -13545,10 +14003,10 @@
       "ai-assisted-intrusion"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
