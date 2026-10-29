@@ -1,5 +1,179 @@
 [
   {
+    "id": "AIR-2026-1637",
+    "slug": "hackers-identify-ice-employees-in-data-breach",
+    "title": "Hackers Identify ICE Employees in Data Breach",
+    "summary": "Attackers gained unauthorized access to data and identified ICE employees in a security breach. The incident exposes sensitive organizational personnel information.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ICE databases"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://washingtonpost.com/immigration/2026/10/28/ice-cbp-other-dhs-officer-identities-posted-online-data-breach",
+        "publisher": "The Washington Post",
+        "title": "Hackers identify ICE employees in data breach",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "government"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hackers identify ICE employees in data breach",
+        "source_url": "https://washingtonpost.com/immigration/2026/10/28/ice-cbp-other-dhs-officer-identities-posted-online-data-breach",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed breach involving personnel records.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1636",
+    "slug": "irhythm-discloses-data-breach-impacting-8-2-million-individu",
+    "title": "iRhythm Discloses Data Breach Impacting 8.2 Million Individuals",
+    "summary": "An intrusion into third-party-hosted business applications led to the theft of personal information as well as account and device data. The Department of Health and Human Services filing confirmed that 8.2 million individuals were affected.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "iRhythm systems"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://securityweek.com/hhs-filing-puts-irhythm-data-breach-toll-at-8-2-million",
+        "publisher": "SecurityWeek",
+        "title": "HHS Filing Puts iRhythm Data Breach Toll at 8.2 Million",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "pii-leak"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "HHS Filing Puts iRhythm Data Breach Toll at 8.2 Million",
+        "source_url": "https://securityweek.com/hhs-filing-puts-irhythm-data-breach-toll-at-8-2-million",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world PII breach impacting 8.2 million individuals.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1635",
+    "slug": "hackers-steal-2-6-million-records-from-sony-s-japanese-isp-s",
+    "title": "Hackers Steal 2.6 Million Records From Sony’s Japanese ISP So-net",
+    "summary": "Hackers stole 2.6 million customer records from Sony's Japanese ISP So-net, including email account passwords and bank account records. The breach affected customers of both So-net and Plala.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "So-net",
+      "Plala"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Steal 2.6 Million Records From Sony’s Japanese ISP So-net",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "sony",
+      "so-net",
+      "data-breach",
+      "stolen-records"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "So-net",
+      "Plala"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hackers Steal 2.6 Million Records From Sony’s Japanese ISP So-net",
+        "source_url": "https://securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with millions of records stolen.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1613",
     "slug": "fbi-seizes-virtualine-domain-over-criminal-hosting-and-money",
     "title": "FBI Seizes Virtualine Domain Over Criminal Hosting and Money Laundering",

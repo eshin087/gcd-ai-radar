@@ -1,5 +1,326 @@
 [
   {
+    "id": "AIR-2026-1634",
+    "slug": "cve-2026-97229-attacker-attempted-exploitation-of-gitlab-on",
+    "title": "CVE-2026-97229: Attacker Attempted Exploitation of GitLab on Alpine Linux",
+    "summary": "An attacker attempted to exploit a CVSS 10.0 remote code execution flaw in GitLab on Alpine Linux's server. Alpine reported no evidence of successful compromise following the attack.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GitLab"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+        "publisher": "The Hacker News",
+        "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-97229",
+      "gitlab",
+      "alpine-linux",
+      "rce"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-97229"
+    ],
+    "affected": [
+      "GitLab"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+        "source_url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Update GitLab to the latest patched version.",
+    "severity_note": "Exploitation attempt against a real server using a critical flaw.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1633",
+    "slug": "attackers-exploit-php2shell-flaws-in-palo-alto-networks-inte",
+    "title": "Attackers Exploit PHP2Shell Flaws in Palo Alto Networks Interfaces",
+    "summary": "Threat actors are actively exploiting recently patched vulnerabilities in internet-exposed Palo Alto Networks management interfaces. Palo Alto Networks updated its advisory to warn of the ongoing attacks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Palo Alto Networks Management Interface"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Exploit PHP2Shell Flaws in Internet-Exposed Palo Alto Networks Management Interfaces",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "palo-alto",
+      "exploitation",
+      "vulnerability"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Attackers Exploit PHP2Shell Flaws in Internet-Exposed Palo Alto Networks Management Interfaces",
+        "source_url": "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Ensure management interfaces are not exposed to the internet and apply available patches.",
+    "severity_note": "Active exploitation in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1632",
+    "slug": "26-400-cloud-and-ai-credentials-exposed-in-public-gitee-repo",
+    "title": "26,400 Cloud and AI Credentials Exposed in Public Gitee Repositories",
+    "summary": "Researcher Ben Zimmermann discovered 26,400 active cloud and AI service credentials leaked in public Gitee repositories. The exposed keys could be used by anyone to access the associated services.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Gitee"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+        "publisher": "The Hacker News",
+        "title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.94,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "gitee",
+      "credentials",
+      "cloud",
+      "ai",
+      "leak"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories",
+        "source_url": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Remove exposed credentials from public repositories and rotate them.",
+    "severity_note": "Massive credential leak with no known exploitation yet.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1631",
+    "slug": "cisco-sd-wan-flaw-exploited-to-deploy-keydrift-malware",
+    "title": "Cisco SD‑WAN Flaw Exploited to Deploy KeyDrift Malware",
+    "summary": "Hackers leveraged a critical Cisco Catalyst SD‑WAN vulnerability to install the KeyDrift malware that steals encryption keys. Although the flaw was patched in February, the attacks were observed historically.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco Catalyst SD‑WAN"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisco",
+      "sd-wan",
+      "malware",
+      "keydrift"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
+        "source_url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Search for KeyDrift malware on SD‑WAN devices and rotate compromised encryption keys.",
+    "severity_note": "Exploited SD‑WAN flaw to steal encryption keys.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1630",
+    "slug": "cve-2026-76418-cisco-asa-and-ftd-vpn-flaw-actively-exploited",
+    "title": "CVE-2026-76418: Cisco ASA and FTD VPN Flaw Actively Exploited",
+    "summary": "Cisco released patches for CVE‑2026‑76418, a remote code execution flaw in ASA and FTD software that is being exploited in the wild. The vulnerability scores 8.6 CVSS and could allow unauthenticated attackers to crash firewalls.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco ASA",
+      "Cisco FTD"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+        "publisher": "The Hacker News",
+        "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+        "publisher": "BleepingComputer",
+        "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august",
+        "publisher": "SecurityWeek",
+        "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.96,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-76418",
+      "cisco",
+      "vpn",
+      "remote_code_execution"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-76418"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+        "source_url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+        "source_url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
+        "source_url": "https://securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Apply the Cisco ASA and FTD patches released for CVE‑2026‑76418.",
+    "severity_note": "Exploited in the wild, CVSS 8.6.",
+    "cvss": 8.6
+  },
+  {
     "id": "AIR-2026-1629",
     "slug": "stolen-staff-logins-are-spreading-attacks-between-k-12-schoo",
     "title": "Stolen staff logins are spreading attacks between K-12 school districts",
@@ -82,9 +403,21 @@
         "publisher": "CyberScoop",
         "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/over-41000-dhs-employee-records-leaked-online",
+        "publisher": "SecurityWeek",
+        "title": "Over 41,000 DHS Employee Records Leaked Online",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/icepick-dhs-leak-ice-undercover-agents",
+        "publisher": "Help Net Security",
+        "title": "Hacktivists leak 41,000 DHS staff records, revealing undercover ICE agents",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -94,7 +427,7 @@
       "leak-site"
     ],
     "created_at": "2026-10-29T00:20:42.318Z",
-    "updated_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -108,6 +441,18 @@
         "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
         "source_url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets",
         "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Reports indicate the personal and work information was stolen from an Okta single sign-on system earlier this year.",
+        "source_url": "https://securityweek.com/over-41000-dhs-employee-records-leaked-online",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The leaked dataset is named Icepick and includes undercover ICE agents.",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/icepick-dhs-leak-ice-undercover-agents",
+        "added_at": "2026-10-29T13:22:31.658Z"
       }
     ],
     "action": "Monitor affected accounts and secure government internal portals.",
@@ -374,9 +719,21 @@
         "publisher": "CISA",
         "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day",
+        "publisher": "SecurityWeek",
+        "title": "Chinese Hackers Quietly Used Low-Severity ESXi Logging Flaw as Zero-Day",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+        "publisher": "The Hacker News",
+        "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -385,7 +742,7 @@
       "kev"
     ],
     "created_at": "2026-10-29T00:20:42.318Z",
-    "updated_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -401,6 +758,12 @@
         "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
         "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-41709",
         "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Threat actor Warp Panda is attributed to the zero-day attacks targeting the U.S. legal sector.",
+        "source_url": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
       }
     ],
     "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
@@ -556,9 +919,15 @@
         "publisher": "CyberScoop",
         "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network",
+        "publisher": "SecurityWeek",
+        "title": "Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -568,7 +937,7 @@
       "espionage"
     ],
     "created_at": "2026-10-28T19:40:57.881Z",
-    "updated_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -588,6 +957,12 @@
         "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
         "source_url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs",
         "added_at": "2026-10-28T19:40:57.881Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Cisco SD-WAN zero-day exploitation is tied to the Silent Train network and key-stealing malware.",
+        "source_url": "https://securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network",
+        "added_at": "2026-10-29T13:22:31.658Z"
       }
     ],
     "action": "",

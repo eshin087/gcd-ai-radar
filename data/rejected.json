@@ -1,5 +1,45 @@
 [
   {
+    "key": "33d84e217e1c12f0",
+    "title": "Qualys CISO on what security teams can do as exploit campaigns grow",
+    "url": "https://helpnetsecurity.com/2026/10/29/nathan-smolenski-qualys-ai-vulnerability-management",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Interview lacks a specific incident, flaw, breach, or campaign.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "dd1c518d70f0f107",
+    "title": "Telegram Android Flaw Lets Attackers Run Code When Users Answer Voice Calls",
+    "url": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "below the curation bar: No exploitation reported and CVSS not critical, so does not meet newsworthy criteria.",
+    "confidence": 0.94,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "0ea52adc29294154",
+    "title": "Why Healthcare AI Inventory Precedes Governance | Straiker",
+    "url": "https://straiker.ai/blog/healthcare-ai-agent-discovery",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Survey or report findings piece about healthcare shadow AI inventory without a specific security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "19168680e7384cb3",
+    "title": "Cyber Vulnerabilities Besiege Italy, Absent Clear Cause",
+    "url": "https://darkreading.com/cybersecurity-analytics/cyber-vulnerabilities-besiege-italy",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: General statistical discussion and research findings piece without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
     "key": "9a2691fd01905cd4",
     "title": "Shame and sleepless nights haunt scam victims long after the money is gone",
     "url": "https://helpnetsecurity.com/2026/10/29/itrc-identity-theft-recovery-report",
