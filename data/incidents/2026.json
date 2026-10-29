@@ -1,5 +1,304 @@
 [
   {
+    "id": "AIR-2026-1661",
+    "slug": "cve-2026-93680-ibm-langflow-oss-authentication-bypass-vulner",
+    "title": "CVE-2026-93680: IBM Langflow OSS Authentication Bypass Vulnerability",
+    "summary": "Improper authentication in IBM Langflow OSS versions 1.0.0 through 1.12.8 allows remote attackers to bypass security restrictions. The vulnerability has been rated critical with a CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
+        "publisher": "NVD",
+        "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-93680",
+      "auth-bypass",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-93680"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.8 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1660",
+    "slug": "cve-2026-110186-ibm-langflow-oss-code-generation-vulnerabili",
+    "title": "CVE-2026-110186: IBM Langflow OSS Code Generation Vulnerability",
+    "summary": "Improper control of code generation in IBM Langflow OSS versions 1.0.0 through 1.12.8 enables remote attackers to execute arbitrary code. The vulnerability carries a critical CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110186",
+        "publisher": "NVD",
+        "title": "CVE-2026-110186: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110186",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110186"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110186: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110186",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.8 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1659",
+    "slug": "cve-2026-107327-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107327: IBM Langflow OSS Remote Code Execution Vulnerability",
+    "summary": "A missing authorization vulnerability in IBM Langflow OSS versions 1.0.0 through 1.12.4 allows remote authenticated attackers to execute arbitrary code. The vulnerability has been assigned a critical CVSS score of 9.9.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107327",
+        "publisher": "NVD",
+        "title": "CVE-2026-107327: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107327",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107327"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107327: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107327",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.9 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1658",
+    "slug": "binance-investigates-potential-security-breach-involving-cry",
+    "title": "Binance investigates potential security breach involving crypto assets",
+    "summary": "Binance announced it is investigating a potential major security breach involving digital assets. The exchange is reviewing the incident to determine the scope and impact.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Binance"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack",
+        "publisher": "BleepingComputer",
+        "title": "Binance probes potential $5.8 billion crypto-theft hack",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "binance",
+      "investigation",
+      "crypto",
+      "breach"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Binance probes potential $5.8 billion crypto-theft hack",
+        "source_url": "https://bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed security incident investigation at a major cryptocurrency exchange.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1655",
+    "slug": "hugging-face-malware-campaign-returns-to-hijack-gpus",
+    "title": "Hugging Face malware campaign returns to hijack GPUs",
+    "summary": "A crypto-mining campaign returned to Hugging Face, hijacking GPU servers by distributing backdoored models downloaded over 28,000 times. Attackers also used a fake Solana starter kit on GitHub to target AI coding agents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Hugging Face"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hugging-face-malware-campaign-returns-to-hijack-gpus-for-crypto-mining",
+        "publisher": "BleepingComputer",
+        "title": "Hugging Face malware campaign returns to hijack GPUs for crypto mining",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cryptojacking",
+      "huggingface",
+      "supply-chain",
+      "gpu"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hugging Face malware campaign returns to hijack GPUs for crypto mining",
+        "source_url": "https://bleepingcomputer.com/news/security/hugging-face-malware-campaign-returns-to-hijack-gpus-for-crypto-mining",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Review downloaded models from untrusted authors and audit GPU server activity.",
+    "severity_note": "Confirmed real-world malicious campaign abusing hosted models for cryptojacking.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1654",
     "slug": "bae-systems-reports-no-data-stolen-in-federal-bankruptcy-cou",
     "title": "BAE Systems reports no data stolen in federal bankruptcy courts cyber incident",
@@ -1491,9 +1790,15 @@
         "publisher": "Help Net Security",
         "title": "Hacktivists leak 41,000 DHS staff records, revealing undercover ICE agents",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://cyberscoop.com/dhs-employee-breach-icepick-database-takedown",
+        "publisher": "CyberScoop",
+        "title": "Leaked DHS employee archive, Icepick, faces challenges to stay online",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1503,7 +1808,7 @@
       "leak-site"
     ],
     "created_at": "2026-10-29T00:20:42.318Z",
-    "updated_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1529,6 +1834,12 @@
         "title": "The leaked dataset is named Icepick and includes undercover ICE agents.",
         "source_url": "https://helpnetsecurity.com/2026/10/29/icepick-dhs-leak-ice-undercover-agents",
         "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The leaked DHS employee dataset experiences hosting challenges and takedown requests",
+        "source_url": "https://cyberscoop.com/dhs-employee-breach-icepick-database-takedown",
+        "added_at": "2026-10-29T23:23:38.250Z"
       }
     ],
     "action": "Monitor affected accounts and secure government internal portals.",
@@ -1560,9 +1871,15 @@
         "publisher": "The Record",
         "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info",
+        "publisher": "BleepingComputer",
+        "title": "Japan Airlines suffers third-party data breach exposing passenger info",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1572,7 +1889,7 @@
       "pii-leak"
     ],
     "created_at": "2026-10-29T00:20:42.318Z",
-    "updated_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1586,6 +1903,12 @@
         "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
         "source_url": "https://therecord.media/japan-airlines-warns-of-breach-country-grapples-with-incidents",
         "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Third-party breach at a passenger service system exposes data of 92,000 customers",
+        "source_url": "https://bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info",
+        "added_at": "2026-10-29T23:23:38.250Z"
       }
     ],
     "action": "Investigate affected systems and notify impacted customers.",
@@ -2789,9 +3112,15 @@
         "publisher": "Anthropic",
         "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
+        "publisher": "Dark Reading",
+        "title": "Claude Model Builds Exploits Across Major Browsers & OSes",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2801,7 +3130,7 @@
       "claude"
     ],
     "created_at": "2026-10-28T07:05:45.669Z",
-    "updated_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -7192,9 +7521,15 @@
         "publisher": "Unit 42",
         "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://therecord.media/php2shell-successful-exploitation-reports-emerge",
+        "publisher": "The Record",
+        "title": "Limited reports of PHP bug exploitation emerge",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 11,
+    "source_count": 12,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -7206,7 +7541,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -7260,6 +7595,12 @@
         "title": "PHP releases versions 8.5.12, 8.4.27, 8.3.36, and 8.2.35 fixing the critical vulnerabilities",
         "source_url": "https://cert.europa.eu/publications/security-advisories/2026-018",
         "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "New reports link PHP bug exploitation to a suspected Chinese campaign targeting government affiliated servers",
+        "source_url": "https://therecord.media/php2shell-successful-exploitation-reports-emerge",
+        "added_at": "2026-10-29T23:23:38.250Z"
       }
     ],
     "action": "Upgrade PHP installations to version 8.5.12, 8.4.27, 8.3.36, 8.2.35 or later immediately.",

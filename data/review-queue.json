@@ -1,5 +1,181 @@
 [
   {
+    "id": "AIR-2026-1662",
+    "slug": "two-unpatched-zero-day-vulnerabilities-in-nte-allow-for-full",
+    "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
+    "summary": "A researcher disclosed two unpatched zero-day vulnerabilities in NTE that allow for full account takeover. The flaws currently lack fixed releases.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "NTE"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://hunio.org/security/nte-account-takeover",
+        "publisher": "hunio.org",
+        "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.6,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "zero-day",
+      "account-takeover",
+      "nte"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
+        "source_url": "https://hunio.org/security/nte-account-takeover",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by a researcher with no known patch yet.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1657",
+    "slug": "fake-crypto-app-padre-terminal-on-apple-app-store-steals-23k",
+    "title": "Fake crypto app Padre Terminal on Apple App Store steals $23K",
+    "summary": "A malicious cryptocurrency trading application named Padre Terminal was hosted on the Apple App Store and resulted in $23,000 being stolen from 27 user wallets. Apple subsequently removed the rogue application.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Padre Terminal",
+      "Apple App Store"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/fake-crypto-app-on-apple-app-store-linked-to-23k-wallet-theft",
+        "publisher": "BleepingComputer",
+        "title": "Fake crypto app on Apple App Store linked to $23K wallet theft",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "app-store",
+      "wallet-theft",
+      "ios",
+      "fraud"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Padre Terminal on iOS"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Fake crypto app on Apple App Store linked to $23K wallet theft",
+        "source_url": "https://bleepingcomputer.com/news/security/fake-crypto-app-on-apple-app-store-linked-to-23k-wallet-theft",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Uninstall Padre Terminal and revoke access permissions for affected wallets.",
+    "severity_note": "Confirmed real-world financial loss affecting multiple users.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1656",
+    "slug": "polymarket-halts-trading-after-script-breach-and-2-5m-loss",
+    "title": "Polymarket halts trading after script breach and $2.5M loss",
+    "summary": "Polymarket suspended trading after attackers compromised a third-party service to inject cryptocurrency-draining scripts. Approximately $2.5 million in assets was traced to attacker wallets.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Polymarket"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced",
+        "publisher": "BleepingComputer",
+        "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "polymarket",
+      "supply-chain",
+      "crypto-drainer",
+      "breach"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
+        "source_url": "https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss of approximately $2.5 million.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1637",
     "slug": "hackers-identify-ice-employees-in-data-breach",
     "title": "Hackers Identify ICE Employees in Data Breach",

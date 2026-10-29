@@ -1,5 +1,75 @@
 [
   {
+    "key": "7325900e53d99905",
+    "title": "ThreatsDay: Critical Firewall Flaws, Banking Trojans Rented, Weaponized PDF, Token Theft + 26 More Stories",
+    "url": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundups, newsletters, podcasts, opinion and explainers without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "a869a38f35917b63",
+    "title": "CVE-2026-110245: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110245",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity advisory without critical rating or exploitation does not clear the curation bar.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "d28967fce9c692cd",
+    "title": "How we detect frontier model misalignment",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Vendor feature announcements and defensive monitoring overviews are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "a43db913e25cf3a4",
+    "title": "Anthropic-Themed Phishing Emails Bypass Top Security Tools",
+    "url": "https://darkreading.com/cyberattacks-data-breaches/anthropic-phishing-emails-bypass-security-tools",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Phishing campaigns using generic brand themes without a specific named victim organization breach or proven AI-generated custom attack scale are out of scope.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "adeab37eb59ae639",
+    "title": "Cisco Open Sources Quarry to Catch AI Agent Attacks Hidden in Harmless Steps",
+    "url": "https://securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Open-source tool releases and defensive frameworks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "199f33ac9dc4b795",
+    "title": "Adobe, Veeam, Juniper Networks Patch Critical Vulnerabilities",
+    "url": "https://securityweek.com/adobe-veeam-juniper-networks-patch-critical-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Roundups summarizing multiple vendor advisories without detailing specific exploitation in the wild are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "2fb5721b3549d5e7",
+    "title": "GitHub Supply Chain Attack: Command Injection and CI/CD Data Exfiltration",
+    "url": "https://radware.com/blog/inside-a-github-supply-chain-attack-campaign",
+    "publisher": "radware.com",
+    "source_id": "hn",
+    "reason": "out of scope: Insufficient details to verify a specific incident",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
     "key": "e51dfa0ce70e82af",
     "title": "Tracking AI adoption in North Korean threat actor tradecraft",
     "url": "https://microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft",
