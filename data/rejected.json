@@ -1,5 +1,225 @@
 [
   {
+    "key": "e51dfa0ce70e82af",
+    "title": "Tracking AI adoption in North Korean threat actor tradecraft",
+    "url": "https://microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft",
+    "publisher": "Microsoft Security",
+    "source_id": "ms-security",
+    "reason": "out of scope: It is a threat intelligence report tracking general threat actor trends and AI adoption without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "005f2528861a55a1",
+    "title": "Google's Gemini 4 Carbon Leads Benchmarks for Finding, Exploiting, and Patching Vulnerabilities",
+    "url": "https://thehackernews.com/2026/10/googles-gemini-4-carbon-leads.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Product launches and vendor feature announcements are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "e28c480889724bd3",
+    "title": "CVE-2026-18894: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to trigger pre-existing stored Python component code in a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18894",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability without exploitation in the wild does not clear the curation bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "b00fb711149ba77b",
+    "title": "CVE-2026-104312: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker to produce a server-generated ZIP archive containing…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104312",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Low severity vulnerability does not clear the newsworthiness bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "32ab3ab76238ee2a",
+    "title": "CVE-2026-104315: IBM Langflow OSS 1.0.0 through 1.12.3 is vulnerable to server-side request forgery (SSRF).",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104315",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 4.3) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "74e20ceca4d0c6de",
+    "title": "CVE-2026-104331: IBM Langflow OSS 1.0.0 through 1.12.3 is vulnerable to server-side request forgery (SSRF).",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104331",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 5.4) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "444bcbf04a2b41c8",
+    "title": "CVE-2026-104316: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker to cancel any victim's running background workflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104316",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 6.5) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "c0526dcdbf92fde3",
+    "title": "CVE-2026-104309: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104309",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "ac27addac01865ae",
+    "title": "CVE-2026-104328: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104328",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "4cd52464945d4d13",
+    "title": "CVE-2026-107326: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107326",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "92e6203594bb0ab4",
+    "title": "CVE-2026-110244: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110244",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "bf1414b8ff18f6a6",
+    "title": "CVE-2026-77819: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to overwrite arbitrary files due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77819",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "b498f6b6def02402",
+    "title": "CVE-2026-104310: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104310",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "405560dde2928f1d",
+    "title": "CVE-2026-90991: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to cause a denial of service due to allocation…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90991",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "14d5c09043900eb8",
+    "title": "CVE-2026-101288: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101288",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "1e185ade2932c5c3",
+    "title": "CVE-2026-110200: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110200",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "e5cd19f4c37e7756",
+    "title": "CVE-2026-102590: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102590",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "87bf0426d26e44e3",
+    "title": "CVE-2026-110192: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote authenticated attacker to obtain sensitive information due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110192",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "08252db330fbf362",
+    "title": "IR trends Q3 2026: Actors impersonate IT help desks in vishing attacks as ransomware activity increases",
+    "url": "https://blog.talosintelligence.com/ir-trends-q3-2026",
+    "publisher": "Cisco Talos",
+    "source_id": "talos",
+    "reason": "out of scope: surveys, statistics and report finds pieces are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "3c9c8a3651bc3536",
+    "title": "CVE-2026-110309: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary commands due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110309",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "7aa04de03f1c311a",
+    "title": "CVE-2026-104324: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104324",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "682b22510c5fa059",
+    "title": "CVE-2026-103092: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary SQL commands due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103092",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
     "key": "33d84e217e1c12f0",
     "title": "Qualys CISO on what security teams can do as exploit campaigns grow",
     "url": "https://helpnetsecurity.com/2026/10/29/nathan-smolenski-qualys-ai-vulnerability-management",

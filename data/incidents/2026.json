@@ -1,5 +1,1066 @@
 [
   {
+    "id": "AIR-2026-1654",
+    "slug": "bae-systems-reports-no-data-stolen-in-federal-bankruptcy-cou",
+    "title": "BAE Systems reports no data stolen in federal bankruptcy courts cyber incident",
+    "summary": "A federal contractor stated that no data was extracted during a recent cyberattack targeting systems for federal bankruptcy courts. An investigation into the intrusion is ongoing.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "BAE Systems federal bankruptcy courts systems"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://therecord.media/us-bankruptcy-courts-it-contractor-says-no-data-stolen-cyberattack",
+        "publisher": "The Record",
+        "title": "Federal bankruptcy courts contractor says no data stolen during cyber intrusion",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/bae-says-no-data-extracted-in-incident-hitting-bankruptcy-courts",
+        "publisher": "SecurityWeek",
+        "title": "BAE Says No Data Extracted in Incident Hitting Bankruptcy Courts",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "breach"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Federal bankruptcy courts contractor says no data stolen during cyber intrusion",
+        "source_url": "https://therecord.media/us-bankruptcy-courts-it-contractor-says-no-data-stolen-cyberattack",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "BAE Says No Data Extracted in Incident Hitting Bankruptcy Courts",
+        "source_url": "https://securityweek.com/bae-says-no-data-extracted-in-incident-hitting-bankruptcy-courts",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyber intrusion with no data extraction reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1653",
+    "slug": "cve-2026-107329-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107329: IBM Langflow OSS remote code execution vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a vulnerability that allows remote authenticated attackers to execute arbitrary code. The issue arises from improper control of code generation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107329",
+        "publisher": "NVD",
+        "title": "CVE-2026-107329: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107329",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107329"
+    ],
+    "affected": [
+      "1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107329: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107329",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor updates and apply fixes for IBM Langflow OSS.",
+    "severity_note": "Critical rating (CVSS 9.9) with no exploitation confirmed in the wild.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1652",
+    "slug": "cve-2026-107328-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107328: IBM Langflow OSS remote code execution vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 are vulnerable to improper neutralization of code in eval/exec, allowing remote authenticated attackers to execute arbitrary code. The vulnerability carries a critical CVSS score of 9.9.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107328",
+        "publisher": "NVD",
+        "title": "CVE-2026-107328: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107328",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107328"
+    ],
+    "affected": [
+      "1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107328: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107328",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor patches and update IBM Langflow OSS.",
+    "severity_note": "Critical vulnerability rated CVSS 9.9 with no exploitation in the wild confirmed.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1651",
+    "slug": "cve-2026-104339-ibm-langflow-oss-os-command-injection-vulner",
+    "title": "CVE-2026-104339: IBM Langflow OSS OS command injection vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 contain an OS command injection flaw allowing remote attackers to execute arbitrary code. The issue is rated critical with a CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104339",
+        "publisher": "NVD",
+        "title": "CVE-2026-104339: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker to execute arbitrary code due to improper neutralization of…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104339",
+      "command-injection",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104339"
+    ],
+    "affected": [
+      "1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104339: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker to execute arbitrary code due to improper neutralization of…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104339",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor patches and update Langflow OSS.",
+    "severity_note": "Disclosed vulnerability rated critical (CVSS 9.8) with no exploitation reported.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1650",
+    "slug": "cisa-warns-of-exploited-fragnesia-linux-privilege-escalation",
+    "title": "CISA warns of exploited Fragnesia Linux privilege escalation flaw",
+    "summary": "CISA issued a warning regarding a high-severity Linux kernel privilege escalation vulnerability being actively chained in the wild with PHP2Shell flaws. Federal agencies have been instructed to apply patches.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Fragnesia Linux"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisa",
+      "privilege-escalation",
+      "linux",
+      "exploitation-in-the-wild"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Patch the affected Linux kernel components as advised by CISA.",
+    "severity_note": "Confirmed exploitation in the wild reported by CISA.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1649",
+    "slug": "cve-2026-104308-ibm-langflow-oss-command-injection-vulnerabi",
+    "title": "CVE-2026-104308: IBM Langflow OSS Command Injection Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 allow remote authenticated attackers to cause a denial of service via improper neutralization of OS command special elements. The vulnerability has a medium CVSS base score of 4.3.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104308",
+        "publisher": "NVD",
+        "title": "CVE-2026-104308: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to cause a denial of service due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104308",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104308"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104308: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to cause a denial of service due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104308",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1648",
+    "slug": "cve-2026-77817-ibm-langflow-oss-information-disclosure-vulne",
+    "title": "CVE-2026-77817: IBM Langflow OSS Information Disclosure Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 expose sensitive information due to improper sanitization of secrets during project and flow exports. The vulnerability is assigned a medium CVSS score of 6.5.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77817",
+        "publisher": "NVD",
+        "title": "CVE-2026-77817: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-77817",
+      "information-disclosure"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-77817"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-77817: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77817",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1647",
+    "slug": "cve-2026-104317-ibm-langflow-oss-deserialization-vulnerabili",
+    "title": "CVE-2026-104317: IBM Langflow OSS Deserialization Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 are susceptible to arbitrary code execution through the deserialization of untrusted data reaching the message broker. The vulnerability is rated high with a CVSS score of 8.1.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104317",
+        "publisher": "NVD",
+        "title": "CVE-2026-104317: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104317",
+      "deserialization"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104317"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104317: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104317",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1646",
+    "slug": "cve-2026-110190-ibm-langflow-oss-directory-traversal-vulnera",
+    "title": "CVE-2026-110190: IBM Langflow OSS Directory Traversal Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a directory traversal vulnerability allowing authenticated users to view arbitrary files via crafted URLs. The issue has a medium severity rating with a CVSS score of 6.5.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110190",
+        "publisher": "NVD",
+        "title": "CVE-2026-110190: IBM Langflow OSS 1.0.0 through 1.12.4 could allow an authenticated user to traverse directories on the system.",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110190",
+      "directory-traversal"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110190"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110190: IBM Langflow OSS 1.0.0 through 1.12.4 could allow an authenticated user to traverse directories on the system.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110190",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1645",
+    "slug": "cve-2026-104314-ibm-langflow-oss-credential-disclosure-vulne",
+    "title": "CVE-2026-104314: IBM Langflow OSS Credential Disclosure Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 allow an authenticated attacker to retrieve stored third-party credentials from API responses. The vulnerability carries a medium CVSS score of 6.5 and requires a read or share grant on the target flow.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104314",
+        "publisher": "NVD",
+        "title": "CVE-2026-104314: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker with a read or share grant on a target flow to…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104314",
+      "credential-disclosure"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104314"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104314: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker with a read or share grant on a target flow to…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104314",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1644",
+    "slug": "cyberattack-disrupts-belgian-tax-services-before-filing-dead",
+    "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+    "summary": "A cyberattack disrupted the Federal Public Service Finance in Belgium, forcing authorities to temporarily suspend access to the MyMinfin tax platform. Officials are currently investigating the extent of the incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "MyMinfin"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://therecord.media/cyberattack-disrupts-belgian-tax-services-before-deadline",
+        "publisher": "The Record",
+        "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "belgium",
+      "tax",
+      "fps_finance",
+      "disruption"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+        "source_url": "https://therecord.media/cyberattack-disrupts-belgian-tax-services-before-deadline",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberattack causing disruption of a national tax platform.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1643",
+    "slug": "cve-2026-110196-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-110196: IBM Langflow OSS Remote Code Execution Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a vulnerability that allows authenticated low-privileged users to bypass administrator restrictions and execute arbitrary code. The issue is rated high with a CVSS score of 8.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110196",
+        "publisher": "NVD",
+        "title": "CVE-2026-110196: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker with a low-privileged authenticated account to bypass the…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110196",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110196"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110196: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker with a low-privileged authenticated account to bypass the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110196",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor updates or patches for Langflow OSS.",
+    "severity_note": "Disclosed vulnerability with CVSS 8.8 and no exploitation reported.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1642",
+    "slug": "cve-2026-110193-ibm-langflow-oss-agentic-assistant-command-e",
+    "title": "CVE-2026-110193: IBM Langflow OSS Agentic Assistant Command Execution Flaw",
+    "summary": "An issue in IBM Langflow OSS 1.0.0 through 1.12.8 lets low-privileged authenticated users force the Agentic Assistant to create or submit unblocked component code patterns. This results in arbitrary operating system command execution on the server host.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110193",
+        "publisher": "NVD",
+        "title": "CVE-2026-110193: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker with a low-privileged authenticated account to cause the…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110193",
+      "langflow",
+      "agentic-assistant",
+      "command-execution"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-110193"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [
+      "1.12.9"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110193: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker with a low-privileged authenticated account to cause the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110193",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Update IBM Langflow OSS to version 1.12.9 or later.",
+    "severity_note": "Disclosed vulnerability with a high CVSS score of 8.8 and a patch available.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1641",
+    "slug": "cve-2026-98432-linux-kernel-tcp-flaw-exploitable-via-ai-auth",
+    "title": "CVE-2026-98432: Linux Kernel TCP Flaw Exploitable via AI-Authored Code",
+    "summary": "A critical TCP vulnerability in the Linux kernel is rated 9.8 by the vendor. Anthropic disclosed that its AI model wrote a working exploit enabling unauthenticated remote code execution as root.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Linux Kernel"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+        "publisher": "The Hacker News",
+        "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-98432",
+      "linux",
+      "tcp",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-98432"
+    ],
+    "affected": [
+      "Linux Kernel TCP"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
+        "source_url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Apply the latest Linux kernel security updates when available from your distribution.",
+    "severity_note": "Demonstrated research exploit via AI with a critical CVSS score of 9.8.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1640",
+    "slug": "researchers-bypass-browser-security-in-ai-coding-assistants",
+    "title": "Researchers bypass browser security in AI coding assistants",
+    "summary": "Researchers discovered vulnerabilities in built-in browsers across five AI coding assistants, enabling code execution and local file access. The flaws affected tools from Cursor, GitHub Copilot, OpenAI, Microsoft, and Anthropic.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "OpenAI",
+      "Microsoft",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Cursor",
+      "GitHub Copilot",
+      "Codex",
+      "VS Code",
+      "Claude Desktop"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities",
+        "publisher": "Help Net Security",
+        "title": "Researchers broke the browsers built into VS Code, Cursor, Copilot, Codex and Claude Desktop",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "browser_escape",
+      "cursor",
+      "copilot",
+      "claude_desktop"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Cursor",
+      "GitHub Copilot",
+      "Codex",
+      "VS Code",
+      "Claude Desktop"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Researchers broke the browsers built into VS Code, Cursor, Copilot, Codex and Claude Desktop",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research finding demonstrating local file access and code execution without wild exploitation confirmation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1639",
+    "slug": "cve-2026-119052-llama-cpp-uncaught-exception-in-ggml-rpc-ser",
+    "title": "CVE-2026-119052: llama.cpp uncaught exception in ggml-rpc server",
+    "summary": "An uncaught exception vulnerability in the ggml-rpc server of llama.cpp allows unauthenticated remote attackers to crash the server via oversized messages. This triggers a denial of service for all clients.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119052",
+        "publisher": "NVD",
+        "title": "CVE-2026-119052: llama.cpp b2877 before b11935 contains an uncaught exception vulnerability in the ggml-rpc server that allows unauthenticated…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119052",
+      "llama.cpp",
+      "dos",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-119052"
+    ],
+    "affected": [
+      "llama.cpp b2877 before b11935"
+    ],
+    "fixed_in": [
+      "llama.cpp b11935"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-119052: llama.cpp b2877 before b11935 contains an uncaught exception vulnerability in the ggml-rpc server that allows unauthenticated…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119052",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Update llama.cpp to version b11935 or later.",
+    "severity_note": "High severity disclosed vulnerability with a CVSS score of 8.7.",
+    "cvss": 8.7
+  },
+  {
+    "id": "AIR-2026-1638",
+    "slug": "yoba-malware-spreads-via-fake-desktop-versions-of-chatgpt-an",
+    "title": "Yoba malware spreads via fake desktop versions of ChatGPT and Claude",
+    "summary": "Threat actors are distributing the Yoba malware chain disguised as desktop versions of ChatGPT and Claude on GitHub. The fake projects deliver cryptocurrency miners to victims.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "ChatGPT",
+      "Claude"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/fake-chatgpt-claude-apps-github-yoba-malware-cryptominer",
+        "publisher": "Help Net Security",
+        "title": "Yoba malware hides in fake desktop versions of ChatGPT and Claude",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+        "publisher": "The Hacker News",
+        "title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "yoba",
+      "cryptominer",
+      "malware",
+      "github"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Yoba malware hides in fake desktop versions of ChatGPT and Claude",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/fake-chatgpt-claude-apps-github-yoba-malware-cryptominer",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners",
+        "source_url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Do not download unofficial desktop clients for AI applications from GitHub repositories.",
+    "severity_note": "Confirmed real-world malicious campaign spreading cryptocurrency miners.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1634",
     "slug": "cve-2026-97229-attacker-attempted-exploitation-of-gitlab-on",
     "title": "CVE-2026-97229: Attacker Attempted Exploitation of GitLab on Alpine Linux",
@@ -202,9 +1263,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware",
+        "publisher": "BleepingComputer",
+        "title": "Hackers exploit Cisco SD-WAN flaw to deploy custom KeyDrift malware",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -212,15 +1279,18 @@
       "cisco",
       "sd-wan",
       "malware",
-      "keydrift"
+      "keydrift",
+      "CVE-2026-20127"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
     "patch_status": "no_fix_needed",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-20127"
+    ],
     "affected": [],
     "fixed_in": [],
     "timeline": [
@@ -229,6 +1299,12 @@
         "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
         "source_url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
         "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "APT group UAT-11473 observed exploiting the vulnerability to deploy KeyDrift malware",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware",
+        "added_at": "2026-10-29T19:37:17.247Z"
       }
     ],
     "action": "Search for KeyDrift malware on SD‑WAN devices and rotate compromised encryption keys.",
@@ -731,9 +1807,15 @@
         "publisher": "The Hacker News",
         "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/php2shell-fragnesia-vmware-esx-zero-day",
+        "publisher": "Help Net Security",
+        "title": "Chinese hackers used VMware ESX zero-day; PHP2Shell and Fragnesia chained to root firewalls",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -742,7 +1824,7 @@
       "kev"
     ],
     "created_at": "2026-10-29T00:20:42.318Z",
-    "updated_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1449,9 +2531,15 @@
         "publisher": "BleepingComputer",
         "title": "Hackers now scanning systems for recently-patched Oracle flaw",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/oracle-e-business-suite-cve-2026-101767-exploitation",
+        "publisher": "Help Net Security",
+        "title": "Exploitation attempts against recently patched Oracle EBS flaw have begun (CVE-2026-101767)",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1461,7 +2549,7 @@
       "oracle-ebs"
     ],
     "created_at": "2026-10-28T14:26:12.130Z",
-    "updated_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3677,9 +4765,15 @@
         "publisher": "Help Net Security",
         "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://therecord.media/new-mexico-cyberattack-hospital",
+        "publisher": "The Record",
+        "title": "University of New Mexico restores hospital systems, urges no contact with hackers",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3690,7 +4784,7 @@
       "unm"
     ],
     "created_at": "2026-10-27T15:31:15.081Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -3704,6 +4798,12 @@
         "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
         "source_url": "https://helpnetsecurity.com/2026/10/27/university-of-new-mexico-hospitals-cyberattack",
         "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The University of New Mexico restored hospital systems following the cyberattack",
+        "source_url": "https://therecord.media/new-mexico-cyberattack-hospital",
+        "added_at": "2026-10-29T19:37:17.247Z"
       }
     ],
     "action": "",
@@ -6086,9 +7186,15 @@
         "publisher": "The Record",
         "title": "CISA warns of PHP bug exploitation attempts, gives federal agencies days to patch",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619",
+        "publisher": "Unit 42",
+        "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 10,
+    "source_count": 11,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -6100,7 +7206,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,

@@ -1,1 +1,188 @@
-[]
+[
+  {
+    "key": "adeab37eb59ae639",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps",
+    "title": "Cisco Open Sources Quarry to Catch AI Agent Attacks Hidden in Harmless Steps",
+    "published_at": "2026-10-29",
+    "publisher": "SecurityWeek",
+    "hint": "Cisco open sourced Project Quarry, a rule language for detecting AI agent attacks that only emerge across sequences of benign actions.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:38.592Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "199f33ac9dc4b795",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/adobe-veeam-juniper-networks-patch-critical-vulnerabilities",
+    "title": "Adobe, Veeam, Juniper Networks Patch Critical Vulnerabilities",
+    "published_at": "2026-10-29",
+    "publisher": "SecurityWeek",
+    "hint": "The flaws could lead to arbitrary code execution, authorization bypasses, and privilege escalation.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:38.592Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "b0cc95ba0eeb4268",
+    "source_id": "darkreading",
+    "origin": "news",
+    "url": "https://darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
+    "title": "Claude Model Builds Exploits Across Major Browsers & OSes",
+    "published_at": "2026-10-29",
+    "publisher": "Dark Reading",
+    "hint": "An unreleased version of the AI model has found and chained multiple vulnerabilities in Chrome, Safari, Android, Windows, and Linux, Anthropic says.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:39.380Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "d28967fce9c692cd",
+    "source_id": "openai",
+    "origin": "news",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "title": "How we detect frontier model misalignment",
+    "published_at": "2026-10-29",
+    "publisher": "OpenAI",
+    "hint": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:39.482Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "4b13c4e2edcfd5a8",
+    "source_id": "hn",
+    "origin": "news",
+    "url": "https://hunio.org/security/nte-account-takeover",
+    "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
+    "published_at": "2026-10-29",
+    "publisher": "hunio.org",
+    "hint": "My first two zero-days!",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:44.275Z",
+    "extra": {
+      "hn_id": "50291929",
+      "points": 4,
+      "comments": 1,
+      "query": "zero-day",
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "2fb5721b3549d5e7",
+    "source_id": "hn",
+    "origin": "news",
+    "url": "https://radware.com/blog/inside-a-github-supply-chain-attack-campaign",
+    "title": "GitHub Supply Chain Attack: Command Injection and CI/CD Data Exfiltration",
+    "published_at": "2026-10-29",
+    "publisher": "radware.com",
+    "hint": "Loader page.",
+    "cve_ids": [],
+    "discovered_at": "2026-10-29T18:58:45.323Z",
+    "extra": {
+      "hn_id": "50292480",
+      "points": 4,
+      "comments": 0,
+      "query": "supply chain attack",
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "e786de070703222d",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107327",
+    "title": "CVE-2026-107327: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing…",
+    "published_at": "2026-10-29",
+    "publisher": "NVD",
+    "hint": "IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing authorization. CVSS 9.9 CRITICAL. Published 2026-10-29.",
+    "cve_ids": [
+      "CVE-2026-107327"
+    ],
+    "discovered_at": "2026-10-29T18:59:27.569Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 9.9,
+      "kev": false,
+      "matched_keyword": "Langflow",
+      "incident_date": "2026-10-29",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "23684469499513ea",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110186",
+    "title": "CVE-2026-110186: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code…",
+    "published_at": "2026-10-29",
+    "publisher": "NVD",
+    "hint": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code generation. CVSS 9.8 CRITICAL. Published 2026-10-29.",
+    "cve_ids": [
+      "CVE-2026-110186"
+    ],
+    "discovered_at": "2026-10-29T18:59:27.569Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 9.8,
+      "kev": false,
+      "matched_keyword": "Langflow",
+      "incident_date": "2026-10-29",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "16e473241917b61c",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
+    "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
+    "published_at": "2026-10-29",
+    "publisher": "NVD",
+    "hint": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper authentication. CVSS 9.8 CRITICAL. Published 2026-10-29.",
+    "cve_ids": [
+      "CVE-2026-93680"
+    ],
+    "discovered_at": "2026-10-29T18:59:27.569Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 9.8,
+      "kev": false,
+      "matched_keyword": "Langflow",
+      "incident_date": "2026-10-29",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "a869a38f35917b63",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110245",
+    "title": "CVE-2026-110245: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to obtain sensitive information due to improper…",
+    "published_at": "2026-10-29",
+    "publisher": "NVD",
+    "hint": "IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to obtain sensitive information due to improper authentication. CVSS 7.5 HIGH. Published 2026-10-29.",
+    "cve_ids": [
+      "CVE-2026-110245"
+    ],
+    "discovered_at": "2026-10-29T18:59:27.569Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 7.5,
+      "kev": false,
+      "matched_keyword": "Langflow",
+      "incident_date": "2026-10-29",
+      "ai_hint": true
+    }
+  }
+]
