@@ -1,5 +1,15 @@
 [
   {
+    "key": "9a2691fd01905cd4",
+    "title": "Shame and sleepless nights haunt scam victims long after the money is gone",
+    "url": "https://helpnetsecurity.com/2026/10/29/itrc-identity-theft-recovery-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: It is a survey and research report on consumer impacts rather than a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T06:01:57.225Z"
+  },
+  {
     "key": "2700988428bd6bbf",
     "title": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
     "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa-EHchtZk?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Catalyst+SD-WAN+Controller+Authentication+Bypass+Vulnerability%26vs_k%3D1",

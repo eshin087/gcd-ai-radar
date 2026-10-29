@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1629",
+    "slug": "stolen-staff-logins-are-spreading-attacks-between-k-12-schoo",
+    "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+    "summary": "Attackers are using stolen staff credentials circulating on dark web marketplaces to compromise K-12 school districts. The compromised accounts are subsequently leveraged to launch further phishing and access attempts across educational networks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "school district staff accounts"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/cis-k-12-cybersecurity",
+        "publisher": "Help Net Security",
+        "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential-theft",
+      "phishing",
+      "k-12",
+      "ms-isac"
+    ],
+    "created_at": "2026-10-29T06:01:57.225Z",
+    "updated_at": "2026-10-29T06:01:57.225Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/cis-k-12-cybersecurity",
+        "added_at": "2026-10-29T06:01:57.225Z"
+      }
+    ],
+    "action": "Reset compromised staff credentials and enforce multi-factor authentication across all district accounts.",
+    "severity_note": "Confirmed real-world access and attacks using stolen credentials across numerous school districts.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1628",
     "slug": "ddossecrets-publishes-hacked-data-concerning-thousands-of-dh",
     "title": "DDoSSecrets publishes hacked data concerning thousands of DHS employees",
