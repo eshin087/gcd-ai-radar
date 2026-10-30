@@ -3,7 +3,8 @@ import GLOBE from "@/lib/globe-data.json";
 /**
  * Sphere maths for the globe: Earth-fixed unit vectors (x towards 0° E,
  * y towards 90° E, z to the north pole), the camera basis of an orthographic
- * view, the land mask from scripts/build-globe.ts and the subsolar point.
+ * view, the land mask and country cells from scripts/build-globe.ts and the
+ * subsolar point.
  * Pure functions, no DOM, so tests/globe.test.ts covers them.
  */
 
@@ -19,6 +20,8 @@ interface GlobeFile {
   res: number;
   mask: number[][];
   labels: Record<string, [number, number, string]>;
+  /** Whose land each 1° cell is: per row, [start, end, index into codes] runs. */
+  countries: { res: number; codes: string[]; rows: number[][] };
 }
 // the JSON import types the tuples loosely; the build script guarantees the shape
 const FILE = GLOBE as unknown as GlobeFile;
@@ -105,6 +108,39 @@ export function landDots(step: number): Float32Array {
   return Float32Array.from(out);
 }
 
+const C_RES = FILE.countries.res;
+const C_COLS = Math.round(360 / C_RES);
+const C_ROWS = Math.round(180 / C_RES);
+let owners: Uint8Array | null = null;
+
+/** The country grid decoded once: one byte per cell, 0 at sea, else 1 + the code's index. */
+function ownerGrid(): Uint8Array {
+  if (owners) return owners;
+  const g = new Uint8Array(C_COLS * C_ROWS);
+  FILE.countries.rows.forEach((runs, r) => {
+    for (let i = 0; i + 2 < runs.length; i += 3) g.fill(runs[i + 2]! + 1, r * C_COLS + runs[i]!, r * C_COLS + runs[i + 1]!);
+  });
+  return (owners = g);
+}
+
+/**
+ * The alpha-2 code of the country a point lies in, or null at sea. The grid
+ * is 1° and the land dots are finer, so a coastal dot whose own cell is sea
+ * takes the country of the nearest coded cell around it.
+ */
+export function countryAt(lonDeg: number, latDeg: number): string | null {
+  const g = ownerGrid();
+  const c0 = Math.floor((lonDeg + 180) / C_RES), r0 = clamp(Math.floor((90 - latDeg) / C_RES), 0, C_ROWS - 1);
+  for (const [dr, dc] of [[0, 0], [0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [-1, 1], [1, -1], [1, 1]] as const) {
+    const r = r0 + dr;
+    if (r < 0 || r >= C_ROWS) continue;
+    const c = (((c0 + dc) % C_COLS) + C_COLS) % C_COLS;
+    const v = g[r * C_COLS + c]!;
+    if (v) return FILE.countries.codes[v - 1] ?? null;
+  }
+  return null;
+}
+
 /** True when both ends of a route have a place on the map, so the globe can draw it. */
 export const onMap = (r: { origin: string; target: string }) => !!FILE.labels[r.origin] && !!FILE.labels[r.target];
 
@@ -113,6 +149,9 @@ export function place(code: string): V3 | null {
   const l = FILE.labels[code];
   return l ? lonLat(l[0] / 10, l[1] / 10) : null;
 }
+
+/** The country's name as the globe file spells it (Natural Earth's short names), or the code itself. */
+export const countryName = (code: string) => FILE.labels[code]?.[2] ?? code;
 
 /**
  * The camera of an orthographic view centred on (lon, lat) in radians:
