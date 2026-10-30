@@ -1,5 +1,145 @@
 [
   {
+    "key": "38706b7097c83c87",
+    "title": "When Malware Borrows Your AI Coding Agent to Find Your Secrets",
+    "url": "https://checkmarx.com/zero-post/when-malware-borrows-your-ai-coding-agent-to-find-your-secrets",
+    "publisher": "Checkmarx",
+    "source_id": "checkmarx-zero",
+    "reason": "out of scope: Opinion piece or analysis without a specific confirmed new incident or named victim campaign.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "2a23fdb594e249da",
+    "title": "Assad regime hacker who caused $136 billion market drop sentenced to 42 months",
+    "url": "https://helpnetsecurity.com/2026/10/30/syrian-hacker-sentenced-42-months-prison",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: A court sentencing or legal follow-up regarding an old campaign is not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "fc595b8bcb0b59ce",
+    "title": "Syrian hacker who served Assad regime gets 42 months in US prison",
+    "url": "https://cyberscoop.com/syrian-hacker-ahmad-umar-agha-sentenced",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: A court sentencing or legal follow-up regarding an old campaign is not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "6473fc7702e557a9",
+    "title": "WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours",
+    "url": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: A vulnerability report with a high score (8.1) but below the critical threshold (9+) and no confirmed exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "bfec2004bdb16c89",
+    "title": "TeamViewer Flaw Lets Remote Computers Attack Users Who Connect to Control Them",
+    "url": "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: A high-severity vulnerability without a critical rating (CVSS 9+) and no confirmed exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "fb09ce6fb0633868",
+    "title": "TeamViewer Flaw Could Let Malicious Hosts Take Over Support Technicians’ Machines",
+    "url": "https://securityweek.com/teamviewer-flaw-could-let-malicious-hosts-take-over-support-technicians-machines",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: A high-severity vulnerability without a critical rating (CVSS 9+) and no confirmed exploitation in the wild.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "911a5f530485f76f",
+    "title": "SS7 and Diameter Attacks: How Signaling Flaws Expose Your Phone",
+    "url": "https://bleepingcomputer.com/news/security/ss7-and-diameter-attacks-how-signaling-flaws-expose-your-phone",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General explanatory piece about SS7 and Diameter signaling flaws without a specific new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "b44d4a56a6fc2ad8",
+    "title": "Syrian Electronic Army hacker gets prison time for attacks on Western targets",
+    "url": "https://therecord.media/syrian-electronic-army-hacker-sentenced-three-years",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Sentencing report for an old campaign, which is a follow-up rather than a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "8f99a240cec47fc4",
+    "title": "California officials confirm grand jury subpoenas as states, civil groups brace to protect elections from federal encroachment",
+    "url": "https://cyberscoop.com/california-election-subpoenas-doj-voter-rolls",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Political and legal news regarding grand jury subpoenas and election oversight, not a technical cyber incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "ccf7e77acb9e0a53",
+    "title": "Undead Software Projects Continue to Raise Security Risks",
+    "url": "https://darkreading.com/application-security/undead-software-projects-raise-security-risks",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Survey or general industry trend piece discussing abandoned software risks rather than a specific single incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "eee7fd3c21c98b19",
+    "title": "Passkeys Are Better Than Passwords. But They Are Not Enough.",
+    "url": "https://securityweek.com/passkeys-are-better-than-passwords-but-they-are-not-enough",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Opinion and editorial piece discussing authentication trends rather than reporting a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "ff8badb370616992",
+    "title": "From help desk impersonation to AD CS abuse: Investigating ESC1 and ESC8 intrusion paths",
+    "url": "https://microsoft.com/en-us/security/blog/2026/10/30/help-desk-impersonation-ad-cs-abuse-investigating-esc1-esc8-intrusion-paths",
+    "publisher": "Microsoft Security",
+    "source_id": "ms-security",
+    "reason": "out of scope: Technical report and investigation write-up describing general intrusion paths rather than a single specific named breach event.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "3175649da567ab91",
+    "title": "In Other News: Anthropic Breach Dispute, UEFI Flaw Hits Most Servers, Cloudflare AI Data Leak",
+    "url": "https://securityweek.com/in-other-news-anthropic-breach-dispute-uefi-flaw-hits-most-servers-cloudflare-ai-data-leak",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: A roundup and newsletter piece mentioning multiple different stories without detailing a single specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
+    "key": "48944dd9b7283870",
+    "title": "Bulletproof Host Virtualine Loses Its Domain to FBI Seizure",
+    "url": "https://securityweek.com/bulletproof-host-virtualine-loses-its-domain-to-fbi-seizure",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Domain or infrastructure seizures are follow-ups to old operations, not new incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T18:43:14.146Z"
+  },
+  {
     "key": "7c08440eddd7ddb0",
     "title": "OpenAI-Linked AI Agents May Have Contributed to a Partial Outage of the Wikimedia Foundation's Data Query Service",
     "url": "https://incidentdatabase.ai/cite/1779",

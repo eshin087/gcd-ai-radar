@@ -1,5 +1,306 @@
 [
   {
+    "id": "AIR-2026-1674",
+    "slug": "php2shell-attacks-target-palo-alto-firewalls",
+    "title": "PHP2Shell Attacks Target Palo Alto Firewalls",
+    "summary": "Threat actors are actively exploiting critical PHP vulnerabilities known as PHP2Shell to target Palo Alto firewalls. Millions of instances remain potentially exposed following more than a week of active attacks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Palo Alto Firewalls"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress",
+        "publisher": "SecurityWeek",
+        "title": "PHP2Shell Attacks Root Palo Alto Firewalls but Fail Against WordPress",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "php2shell",
+      "exploitation-in-the-wild",
+      "firewalls",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "Palo Alto Firewalls"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "PHP2Shell Attacks Root Palo Alto Firewalls but Fail Against WordPress",
+        "source_url": "https://securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress",
+        "added_at": "2026-10-30T18:43:14.146Z"
+      }
+    ],
+    "action": "Apply available security patches or mitigation measures immediately.",
+    "severity_note": "Confirmed exploitation in the wild against target devices.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1673",
+    "slug": "apple-alerts-users-in-99-countries-regarding-mercenary-spywa",
+    "title": "Apple Alerts Users in 99 Countries Regarding Mercenary Spyware",
+    "summary": "Apple issued threat notifications to targeted users across 99 countries warning them of sophisticated mercenary spyware infections. The alerts arrive as international discussions continue regarding commercial spyware regulations.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "Apple"
+    ],
+    "products": [
+      "iOS",
+      "Apple devices"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/apple-spyware-notifications-pall-mall-process",
+        "publisher": "CyberScoop",
+        "title": "Apple notifications alert victims in 99 countries about mercenary spyware infections",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "spyware",
+      "apple",
+      "mercenary-spyware",
+      "threat-notifications"
+    ],
+    "created_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Apple notifications alert victims in 99 countries about mercenary spyware infections",
+        "source_url": "https://cyberscoop.com/apple-spyware-notifications-pall-mall-process",
+        "added_at": "2026-10-30T18:43:14.146Z"
+      }
+    ],
+    "action": "Enable Lockdown Mode if you receive an Apple threat notification and follow official remediation steps.",
+    "severity_note": "Targeted mercenary spyware campaigns confirmed via direct Apple threat notifications.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1672",
+    "slug": "florida-student-financial-aid-site-breach-exposes-4-9m-ssns",
+    "title": "Florida Student Financial Aid site breach exposes 4.9M SSNs",
+    "summary": "The Florida Department of Education reported a data breach impacting the student financial aid platform. The incident compromised Social Security numbers belonging to nearly 4.9 million individuals.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Florida Student Financial Aid website"
+    ],
+    "incident_date": "2026-10-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://therecord.media/florida-warns-5-million-affected-financial-aid-site-breach",
+        "publisher": "The Record",
+        "title": "Florida warns that 4.9 million people had Social Security numbers leaked in financial aid site breach",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "pii",
+      "florida",
+      "social-security-numbers"
+    ],
+    "created_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Florida Student Financial Aid website"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Florida warns that 4.9 million people had Social Security numbers leaked in financial aid site breach",
+        "source_url": "https://therecord.media/florida-warns-5-million-affected-financial-aid-site-breach",
+        "added_at": "2026-10-30T18:43:14.146Z"
+      }
+    ],
+    "action": "Monitor personal credit reports and watch for identity theft communications.",
+    "severity_note": "Confirmed real-world PII breach affecting 4.9 million people.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1671",
+    "slug": "trezor-warns-of-suspected-hardware-crypto-theft-implant",
+    "title": "Trezor warns of suspected hardware crypto-theft implant",
+    "summary": "Hardware wallet maker Trezor received reports regarding a suspected physical crypto-theft implant found in a device sold by a regional reseller. Users are urged to inspect devices and source hardware directly.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Trezor Safe 5"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet",
+        "publisher": "BleepingComputer",
+        "title": "Trezor warns of suspected crypto-theft implant in hardware wallet",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "hardware-wallet",
+      "supply-chain",
+      "trezor",
+      "crypto"
+    ],
+    "created_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Trezor Safe 5"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Trezor warns of suspected crypto-theft implant in hardware wallet",
+        "source_url": "https://bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet",
+        "added_at": "2026-10-30T18:43:14.146Z"
+      }
+    ],
+    "action": "Inspect hardware devices and purchase directly from authorized distributors.",
+    "severity_note": "Confirmed hardware implant report in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1670",
+    "slug": "cve-2026-119978-flowise-sandbox-escape-leads-to-os-command-e",
+    "title": "CVE-2026-119978: Flowise Sandbox Escape Leads to OS Command Execution",
+    "summary": "Flowise through version 3.1.4 contains a sandbox escape vulnerability allowing authenticated users to execute operating system commands by abusing allowlisted langchain and mammoth modules. Attackers can submit malicious JavaScript to the custom function API endpoint.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Flowise"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119978",
+        "publisher": "NVD",
+        "title": "CVE-2026-119978: Flowise through 3.1.4 contains a sandbox escape vulnerability that allows authenticated users to execute OS commands by abusing…",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119978",
+      "sandbox-escape",
+      "rce",
+      "flowise"
+    ],
+    "created_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-30",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-119978"
+    ],
+    "affected": [
+      "Flowise <= 3.1.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-119978: Flowise through 3.1.4 contains a sandbox escape vulnerability that allows authenticated users to execute OS commands by abusing…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119978",
+        "added_at": "2026-10-30T18:43:14.146Z"
+      }
+    ],
+    "action": "Review Flowise configuration and restrict access or update when patches become available.",
+    "severity_note": "CVSS 9 critical vulnerability with no confirmed exploitation in the wild.",
+    "cvss": 9
+  },
+  {
     "id": "AIR-2026-1669",
     "slug": "frostyneighbor-apt-launches-destructive-cyber-attack-in-ukra",
     "title": "FrostyNeighbor APT Launches Destructive Cyber Attack in Ukraine",
@@ -363,9 +664,15 @@
         "publisher": "The Hacker News",
         "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors",
+        "publisher": "BleepingComputer",
+        "title": "Malicious Claude Code extension on Cursor planted SSH backdoors",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -376,7 +683,7 @@
       "vscode"
     ],
     "created_at": "2026-10-30T13:27:13.057Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -398,6 +705,12 @@
         "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
         "source_url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
         "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Report confirms exposure duration of 11 hours and up to 5,000 developers affected on the marketplace",
+        "source_url": "https://bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors",
+        "added_at": "2026-10-30T18:43:14.146Z"
       }
     ],
     "action": "Remove the malicious Claude Code extension version and check systems for unauthorized SSH keys.",
@@ -2157,9 +2470,15 @@
         "publisher": "The Hacker News",
         "title": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA says max severity GitLab flaw now exploited in the wild",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2171,7 +2490,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T18:43:14.146Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
