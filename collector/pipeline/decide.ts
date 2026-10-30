@@ -11,8 +11,8 @@ import type { ClassificationItem } from "../llm/schemas";
  *                                                    for AI items it is advice)
  *   in scope  & confidence < T → review
  *   in scope  & severity 4     → review when settings say so (every record,
- *                                or records with no AI role while the general
- *                                lanes are new)
+ *                                or records with no AI role; both off in
+ *                                settings.json)
  *   in scope  & confidence ≥ T → published
  */
 export function decide(item: ClassificationItem, settings: Settings): { status: Status; reason: string } {

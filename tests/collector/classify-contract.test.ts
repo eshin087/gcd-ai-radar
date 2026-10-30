@@ -85,9 +85,9 @@ describe("decide with the curation bar", () => {
     expect(decide(classification({ newsworthy: false }), settings).status).toBe("published");
   });
 
-  it("sends general severity-4 claims to review by the new setting and leaves AI ones to the old one", () => {
-    expect(decide(classification({ type: "not_ai", categories: ["general"], severity: 4 }), settings).status).toBe("review");
-    expect(decide(classification({ type: "not_ai", categories: ["general"], severity: 4 }), { ...settings, review_not_ai_severity_4: false }).status).toBe("published");
+  it("publishes general severity-4 claims unless the setting holds them, and leaves AI ones to the old one", () => {
+    expect(decide(classification({ type: "not_ai", categories: ["general"], severity: 4 }), settings).status).toBe("published");
+    expect(decide(classification({ type: "not_ai", categories: ["general"], severity: 4 }), { ...settings, review_not_ai_severity_4: true }).status).toBe("review");
     expect(decide(classification({ severity: 4 }), settings).status).toBe("published");
     expect(decide(classification({ severity: 4 }), { ...settings, review_severity_4: true }).status).toBe("review");
   });
