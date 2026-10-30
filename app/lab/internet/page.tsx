@@ -1,47 +1,41 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { InternetBand } from "@/components/internet/InternetBand";
+import { HomeHero } from "@/components/home/HomeHero";
+import { GLOBE_LOOKS } from "@/components/internet/globe/looks";
+import { getHomeData } from "@/lib/home-data";
 
 export const metadata: Metadata = {
-  title: "Internet band",
+  title: "Globe looks",
   robots: { index: false, follow: false },
 };
 
 /**
- * Unlisted preview of the home page's live internet band at the home page's
- * size (300 px at lg, globe 240 px on phones), before it is dropped into the
- * page. The Worker URL comes from NEXT_PUBLIC_INTERNET_API at build time; the
- * second band below is forced idle so both states can be judged side by side.
+ * Unlisted review page: the home page's first band once per globe look, each
+ * live from Cloudflare Radar through the Worker, so the looks can be judged
+ * in place beside the cluster. The home page uses the look the owner picks.
  * Not linked anywhere.
  */
-export default function InternetLabPage() {
-  const api = process.env.NEXT_PUBLIC_INTERNET_API;
-  const lead = (
-    <>
-      <p className="label flex items-center gap-2">
-        <span aria-hidden className="inline-block size-1.5 rounded-full bg-live" />
-        live · last sweep 09:17 UTC
-      </p>
-      <h1 className="mt-3 text-[28px] leading-[1.1] font-semibold tracking-tight text-ink lg:text-[32px]">What is being exploited right now.</h1>
-      <p className="mt-3 max-w-[40ch] text-[14px] leading-snug text-soft">Live security incidents counted once and linked to their reporting, beside the internet&rsquo;s last hour from Cloudflare Radar.</p>
-      <p className="mt-3 flex gap-4 text-[13px]">
-        <Link href="/live" className="link">
-          Live board →
-        </Link>
-        <Link href="/incidents" className="link">
-          Archive
-        </Link>
-      </p>
-    </>
-  );
+export default async function InternetLabPage() {
+  const data = await getHomeData();
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
-      <p className="label mb-6">
-        Lab · internet band · Worker: <span className="normal-case text-soft">{api ?? "not configured (NEXT_PUBLIC_INTERNET_API)"}</span>
-      </p>
-      <InternetBand apiUrl={api} lead={lead} />
-      <h2 className="label mt-12 mb-4 border-t border-line pt-4">Idle state (no Worker)</h2>
-      <InternetBand lead={lead} />
+    <main className="mx-auto w-full max-w-7xl space-y-14 px-4 py-8">
+      <header className="space-y-2">
+        <p className="label">Lab · globe looks · unlisted</p>
+        <p className="max-w-3xl text-[14px] leading-relaxed text-soft">
+          The home page&rsquo;s first band in {GLOBE_LOOKS.length} looks, each live from Cloudflare Radar. The globe turns to one attack route at a time and the
+          text beside it names the route on screen. Drag a globe to spin it, flick it to keep it turning; the dots under the caption jump between routes.
+        </p>
+      </header>
+      {GLOBE_LOOKS.map((l, i) => (
+        <section key={l.id} id={l.id} className="space-y-5 border-t border-line pt-6">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h2 className="font-mono text-[13px] uppercase tracking-[0.1em] text-accent">
+              {String.fromCharCode(65 + i)} · {l.name}
+            </h2>
+            <p className="text-[13px] text-dim">{l.note}</p>
+          </div>
+          <HomeHero data={data} look={l.id} />
+        </section>
+      ))}
     </main>
   );
 }
