@@ -217,12 +217,18 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
       render(secs());
     };
 
+    const key = (a: Arc | undefined) => (a ? `${a.route.origin}>${a.route.target}` : "");
     const setRoutes = () => {
+      const shown = key(arcs[focus]);
       arcs = routesRef.current.map(buildArc).filter((a): a is Arc => !!a);
-      if (focus >= tourN()) focus = -1;
-      if (fade >= arcs.length) fade = -1;
-      // a refresh keeps the route on screen; the caption re-reads it from the new data
-      if (focus >= 0) onFocusRef.current?.(focus);
+      fade = -1;
+      // a refresh keeps the route on screen when it is still toured (at its new place in the order);
+      // otherwise the tour starts again from the largest
+      const at = shown ? arcs.findIndex((a) => key(a) === shown) : -1;
+      if (at >= 0 && at < tourN()) {
+        focus = at;
+        onFocusRef.current?.(at);
+      } else focus = -1;
       kick();
     };
     const focusOn = (i: number) => {
