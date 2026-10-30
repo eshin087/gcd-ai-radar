@@ -1,7 +1,9 @@
 /**
- * GET /v1/internet: the home page's live internet band, assembled from six
- * Cloudflare Radar calls (the last hour's top layer 7 attack routes, the
- * 24-hour request series and its human/bot split, outages, route leaks and
+ * GET /v1/internet: the home page's live internet band, assembled from
+ * Cloudflare Radar (the last hour's top layer 7 attack routes, overall and
+ * for DDoS protection alone; the top origins of what the WAF stopped and
+ * their managed-rule mix; the 24-hour request series and its human/bot
+ * split; the week's outages; the day's route leaks and high-confidence
  * hijacks) and cached for five minutes in one KV key plus isolate memory.
  *
  * Radar is CC BY-NC 4.0; the payload carries the attribution and the site
@@ -13,11 +15,28 @@
  * The cron trigger (wrangler.jsonc) is the collector's clock: every 30
  * minutes it starts collect.yml on GitHub (./dispatch.ts).
  */
-import { assemble, lastHourWindow, parseRoutes, type InternetPayload, type RadarBotClassGroups, type RadarEvents, type RadarOutages, type RadarTimeseries, type RadarTopAttacks } from "./assemble";
+import {
+  assemble,
+  lastHourWindow,
+  parseOrigins,
+  parseRoutes,
+  type InternetPayload,
+  type RadarBotClassGroups,
+  type RadarEvents,
+  type RadarHijacks,
+  type RadarOutages,
+  type RadarParts,
+  type RadarSummary,
+  type RadarTimeseries,
+  type RadarTopAttacks,
+  type RadarTopLocations,
+  type Window,
+} from "./assemble";
 import { dispatchCollector } from "./dispatch";
 
 const RADAR = "https://api.cloudflare.com/client/v4/radar";
-const KEY = "internet:v1";
+/** Bumped with the payload's shape, so a deploy never serves a cached payload of the old one as fresh. */
+const KEY = "internet:v4";
 /** Seconds a payload is fresh; also the HTTP max-age. */
 const FRESH_S = 300;
 /** Seconds the last good payload stays in KV for stale service. */
@@ -67,24 +86,51 @@ async function radar<T>(path: string, params: Record<string, string>, token: str
   return body;
 }
 
-/** The six (at most seven) upstream calls, in parallel; any failure fails the refresh so stale data is served instead of a half-empty band. */
+const ROUTES = { limit: "12", limitPerLocation: "3", limitDirection: "ORIGIN" };
+const DDOS_ROUTES = { limit: "6", limitPerLocation: "2", limitDirection: "ORIGIN", mitigationProduct: "DDOS" };
+const WAF_ORIGINS = { limit: "5", mitigationProduct: "WAF" };
+/** WAF origins whose managed-rule mix is fetched. */
+const RULE_ORIGINS = 2;
+
+type Windowed<T> = { window: Window; payload: T };
+
+/** A Radar call for the last hour, or for one day when the hour comes back empty. */
+async function hourOrDay<T>(token: string, path: string, hour: Record<string, string>, params: Record<string, string>, empty: (t: T) => boolean): Promise<Windowed<T>> {
+  const hourly = await radar<T>(path, { ...hour, ...params }, token);
+  if (!empty(hourly)) return { window: "1h", payload: hourly };
+  return { window: "1d", payload: await radar<T>(path, { dateRange: "1d", ...params }, token) };
+}
+
+const noRoutes = (p: RadarTopAttacks) => parseRoutes(p).length === 0;
+
+/** The WAF's top origins, then the managed-rule mix of the first RULE_ORIGINS of them over the same window (a mix that fails or comes back empty is left out). */
+async function wafOrigins(token: string, hour: Record<string, string>): Promise<RadarParts["waf"]> {
+  const got = await hourOrDay<RadarTopLocations>(token, "/attacks/layer7/top/locations/origin", hour, WAF_ORIGINS, (p) => parseOrigins(p).length === 0);
+  const span = got.window === "1h" ? hour : { dateRange: "1d" };
+  const rules = await Promise.all(
+    parseOrigins(got.payload)
+      .slice(0, RULE_ORIGINS)
+      .map(async (o) => [o.country, await radar<RadarSummary>("/attacks/layer7/summary/MANAGED_RULES", { ...span, location: o.country }, token).catch(() => ({}))] as const),
+  );
+  return { window: got.window, origins: got.payload, rules: Object.fromEntries(rules) };
+}
+
+/** Nine upstream calls in parallel and two after (at most fourteen with the one-day fallbacks); any failure of the nine fails the refresh so stale data is served instead of a half-empty band. */
 async function fetchFresh(token: string, now: Date): Promise<InternetPayload> {
   const hour = lastHourWindow(now);
-  const [attacksHour, traffic, botClass, outages, leaks, hijacks] = await Promise.all([
-    radar<RadarTopAttacks>("/attacks/layer7/top/attacks", { ...hour, limit: "12", limitPerLocation: "3", limitDirection: "ORIGIN" }, token),
+  const [all, ddos, waf, traffic, botClass, outages, leaks, hijacks] = await Promise.all([
+    hourOrDay<RadarTopAttacks>(token, "/attacks/layer7/top/attacks", hour, ROUTES, noRoutes),
+    // Radar ranks origin-target pairs for DDoS protection only; the WAF gets its origins and their rule mix
+    hourOrDay<RadarTopAttacks>(token, "/attacks/layer7/top/attacks", hour, DDOS_ROUTES, noRoutes),
+    wafOrigins(token, hour),
     radar<RadarTimeseries>("/http/timeseries", { dateRange: "1d", aggInterval: "15m" }, token),
     radar<RadarBotClassGroups>("/http/timeseries_groups/BOT_CLASS", { dateRange: "1d", aggInterval: "15m" }, token),
-    radar<RadarOutages>("/annotations/outages", { dateRange: "1d", limit: "10" }, token),
+    // a week of outages: Radar annotates a few a week, so one day is often empty
+    radar<RadarOutages>("/annotations/outages", { dateRange: "7d", limit: "10" }, token),
     radar<RadarEvents>("/bgp/leaks/events", { dateRange: "1d", per_page: "5" }, token),
-    radar<RadarEvents>("/bgp/hijacks/events", { dateRange: "1d", minConfidence: "8", per_page: "5" }, token),
+    radar<RadarHijacks>("/bgp/hijacks/events", { dateRange: "1d", minConfidence: "8", sortBy: "CONFIDENCE", sortOrder: "DESC", per_page: "25" }, token),
   ]);
-  let attacks = attacksHour;
-  let window: "1h" | "1d" = "1h";
-  if (parseRoutes(attacksHour).length === 0) {
-    attacks = await radar<RadarTopAttacks>("/attacks/layer7/top/attacks", { dateRange: "1d", limit: "12", limitPerLocation: "3", limitDirection: "ORIGIN" }, token);
-    window = "1d";
-  }
-  return assemble({ attacks, window, traffic, botClass, outages, leaks, hijacks }, now);
+  return assemble({ attacks: all.payload, window: all.window, ddos, waf, traffic, botClass, outages, leaks, hijacks }, now);
 }
 
 async function readStored(env: Env): Promise<Stored | null> {

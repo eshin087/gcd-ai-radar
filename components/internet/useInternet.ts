@@ -24,6 +24,11 @@ export interface InternetPoint {
 
 export interface InternetOutage {
   location: string;
+  /** Alpha-2 codes of the places affected (empty from a Worker before 2026-10-30). */
+  codes: string[];
+  /** "nationwide", "regional", "network", "platform" or null. */
+  type: string | null;
+  region: string | null;
   since: string;
   until: string | null;
   cause: string | null;
@@ -31,14 +36,50 @@ export interface InternetOutage {
   url: string | null;
 }
 
+export type InternetWindow = "1h" | "1d";
+
+/** A country the requests Cloudflare's WAF stopped come from, with the managed-rule categories that matched them. */
+export interface InternetWafOrigin {
+  country: string;
+  name: string;
+  share: number;
+  rules: { name: string; share: number }[];
+}
+
+export interface InternetNetwork {
+  asn: number;
+  name: string | null;
+  country: string | null;
+}
+
+/** A high-confidence BGP hijack: the hijacker announced address blocks that belong to the victims. */
+export interface InternetHijack {
+  id: number;
+  url: string;
+  confidence: number;
+  start: string;
+  end: string | null;
+  hijacker: InternetNetwork;
+  victims: InternetNetwork[];
+  prefixes: string[];
+  prefix_count: number;
+}
+
 export interface InternetData {
   generated_at: string;
   radar_updated: string | null;
-  window: "1h" | "1d";
-  attacks: { routes: InternetRoute[]; top_targets: { country: string; name: string; share: number }[] };
+  window: InternetWindow;
+  attacks: {
+    routes: InternetRoute[];
+    top_targets: { country: string; name: string; share: number }[];
+    /** DDoS protection's own top routes, shares of what it stopped. */
+    ddos: { window: InternetWindow; routes: InternetRoute[] };
+    waf: { window: InternetWindow; origins: InternetWafOrigin[] };
+  };
   traffic: { points: InternetPoint[] };
   outages: InternetOutage[];
   bgp: { leaks: number; hijacks: number };
+  hijacks: InternetHijack[];
   attribution: { name: string; url: string; license: string; license_url: string };
   stale: boolean;
 }
@@ -59,28 +100,87 @@ function isArray(v: unknown): v is unknown[] {
   return Array.isArray(v);
 }
 
-/** The payload with every field the band reads present, or null when the shape is off. */
+const obj = (v: unknown) => (v && typeof v === "object" ? (v as Record<string, unknown>) : {});
+const str = (v: unknown) => (typeof v === "string" ? v : null);
+const win = (v: unknown): InternetWindow => (v === "1d" ? "1d" : "1h");
+
+function readRoutes(v: unknown): InternetRoute[] {
+  return (isArray(v) ? v : []).filter(
+    (x): x is InternetRoute => !!x && typeof x === "object" && typeof (x as InternetRoute).origin === "string" && typeof (x as InternetRoute).target === "string" && typeof (x as InternetRoute).share === "number",
+  );
+}
+
+function readNetwork(v: unknown): InternetNetwork | null {
+  const n = obj(v);
+  return typeof n.asn === "number" ? { asn: n.asn, name: str(n.name), country: str(n.country) } : null;
+}
+
+function readHijack(v: unknown): InternetHijack | null {
+  const h = obj(v);
+  const hijacker = readNetwork(h.hijacker);
+  if (typeof h.id !== "number" || typeof h.url !== "string" || !/^https:\/\//.test(h.url) || typeof h.confidence !== "number" || typeof h.start !== "string" || !hijacker) return null;
+  const prefixes = (isArray(h.prefixes) ? h.prefixes : []).filter((p): p is string => typeof p === "string");
+  return {
+    id: h.id,
+    url: h.url,
+    confidence: h.confidence,
+    start: h.start,
+    end: str(h.end),
+    hijacker,
+    victims: (isArray(h.victims) ? h.victims : []).map(readNetwork).filter((n): n is InternetNetwork => !!n),
+    prefixes,
+    prefix_count: typeof h.prefix_count === "number" ? h.prefix_count : prefixes.length,
+  };
+}
+
+function readOutage(v: unknown): InternetOutage | null {
+  const o = obj(v);
+  if (typeof o.location !== "string" || typeof o.since !== "string") return null;
+  return {
+    location: o.location,
+    codes: (isArray(o.codes) ? o.codes : []).filter((c): c is string => typeof c === "string"),
+    type: str(o.type),
+    region: str(o.region),
+    since: o.since,
+    until: str(o.until),
+    cause: str(o.cause),
+    description: str(o.description) ?? o.location,
+    url: typeof o.url === "string" && /^https?:\/\//.test(o.url) ? o.url : null,
+  };
+}
+
+function readWafOrigin(v: unknown): InternetWafOrigin | null {
+  const o = obj(v);
+  if (typeof o.country !== "string" || typeof o.share !== "number") return null;
+  const rules = (isArray(o.rules) ? o.rules : []).map(obj).filter((r) => typeof r.name === "string" && typeof r.share === "number") as unknown as InternetWafOrigin["rules"];
+  return { country: o.country, name: str(o.name) ?? o.country, share: o.share, rules };
+}
+
+/** The payload with every field the band reads present, or null when the shape is off. A payload from an older Worker reads with the newer parts empty. */
 export function readPayload(raw: unknown): InternetData | null {
   if (!raw || typeof raw !== "object") return null;
   const r = raw as Record<string, unknown>;
-  const attacks = (r.attacks ?? {}) as Record<string, unknown>;
-  const traffic = (r.traffic ?? {}) as Record<string, unknown>;
-  const bgp = (r.bgp ?? {}) as Record<string, unknown>;
-  const attribution = (r.attribution ?? {}) as Record<string, unknown>;
+  const attacks = obj(r.attacks);
+  const traffic = obj(r.traffic);
+  const bgp = obj(r.bgp);
+  const attribution = obj(r.attribution);
+  const ddos = obj(attacks.ddos), waf = obj(attacks.waf);
   if (typeof r.generated_at !== "string") return null;
-  const routes = (isArray(attacks.routes) ? attacks.routes : []).filter(
-    (x): x is InternetRoute => !!x && typeof x === "object" && typeof (x as InternetRoute).origin === "string" && typeof (x as InternetRoute).target === "string" && typeof (x as InternetRoute).share === "number",
-  );
   const points = (isArray(traffic.points) ? traffic.points : []).filter((x): x is InternetPoint => !!x && typeof x === "object" && typeof (x as InternetPoint).t === "string" && typeof (x as InternetPoint).value === "number");
-  const outages = (isArray(r.outages) ? r.outages : []).filter((x): x is InternetOutage => !!x && typeof x === "object" && typeof (x as InternetOutage).location === "string" && typeof (x as InternetOutage).since === "string");
   return {
     generated_at: r.generated_at,
     radar_updated: typeof r.radar_updated === "string" ? r.radar_updated : null,
-    window: r.window === "1d" ? "1d" : "1h",
-    attacks: { routes, top_targets: isArray(attacks.top_targets) ? (attacks.top_targets as InternetData["attacks"]["top_targets"]) : [] },
+    window: win(r.window),
+    attacks: {
+      routes: readRoutes(attacks.routes),
+      top_targets: isArray(attacks.top_targets) ? (attacks.top_targets as InternetData["attacks"]["top_targets"]) : [],
+      ddos: { window: win(ddos.window), routes: readRoutes(ddos.routes) },
+      waf: { window: win(waf.window), origins: (isArray(waf.origins) ? waf.origins : []).map(readWafOrigin).filter((o): o is InternetWafOrigin => !!o) },
+    },
     traffic: { points },
-    outages,
+    outages: (isArray(r.outages) ? r.outages : []).map(readOutage).filter((o): o is InternetOutage => !!o),
     bgp: { leaks: typeof bgp.leaks === "number" ? bgp.leaks : 0, hijacks: typeof bgp.hijacks === "number" ? bgp.hijacks : 0 },
+    hijacks: (isArray(r.hijacks) ? r.hijacks : []).map(readHijack).filter((h): h is InternetHijack => !!h),
     attribution: {
       name: typeof attribution.name === "string" ? attribution.name : "Cloudflare Radar",
       url: typeof attribution.url === "string" ? attribution.url : "https://radar.cloudflare.com/",
