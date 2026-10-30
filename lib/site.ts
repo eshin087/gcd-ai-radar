@@ -20,6 +20,8 @@ export const SITE = {
   codeLicense: { name: "MIT", url: "https://github.com/eshin087/gcd-ai-radar/blob/main/LICENSE" },
   /** The globe's data: INTERNET_API, or NEXT_PUBLIC_INTERNET_API for local work against `wrangler dev`. */
   internetApi: process.env.NEXT_PUBLIC_INTERNET_API || INTERNET_API,
+  /** The live NVD counts, beside the globe's data on the same Worker. */
+  pulseApi: (process.env.NEXT_PUBLIC_INTERNET_API || INTERNET_API).replace(/\/v1\/internet$/, "/v1/pulse"),
 } as const;
 
 export const NAV = [

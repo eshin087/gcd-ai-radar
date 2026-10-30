@@ -1,6 +1,8 @@
 import { isAiRecord, isDisclosedIncident } from "./counting";
 import { addDays, daysBetween, type FullIncident } from "./lifecycle";
 import { buildLive, type LiveData, type LiveRow } from "./live";
+import { buildPanel, type PanelData } from "./panel";
+import type { StackFile } from "./panel/stack";
 import { monthRange, shiftMonth, toMonthKey } from "./stats";
 import type { BreachStat, HomeStats, KevStatEntry, RecentCve, StatsFiles, StatsSource } from "./stats-schema";
 import type { Lane, PatchStatus } from "./taxonomy";
@@ -102,6 +104,12 @@ export interface HomeData {
   columns: { patch: HomeColumn; breach: HomeColumn; supply_chain: number; research: number };
   stats: HomeStats;
   cluster: ClusterData;
+  /** The instrument panel below the hero (lib/panel). */
+  panel: PanelData;
+  /** Every stack candidate, for public/stats/stack.json; the page never ships it inline. */
+  stackFile: StackFile;
+  /** CVEs CISA listed in the last 90 days with a known publish date, and how many were listed the day they were published or within a week (the lag chart on /trends). */
+  kevLagRecent: { n: number; sameDay: number; week: number };
   aiLens: {
     live: number;
     month: string;
@@ -153,16 +161,36 @@ function byScoreDesc(a: RecentCve, b: RecentCve): number {
 
 /* ---------- drawer lists ---------- */
 
-/** The CVEs published in the last seven days, highest CVSS first, capped. */
-export function weekCvesList(stats: StatsFiles, now: Date): RecentCve[] {
-  const since = new Date(now.getTime() - 7 * 86_400_000).toISOString();
-  return (stats.cvesRecent?.cves ?? []).filter((c) => c.published >= since).sort(byScoreDesc).slice(0, LIST_CAP);
+/**
+ * Where the CVE windows end: when NVD was fetched (or the newest CVE in the
+ * file, if later), never after `now`. The stats stage fetches NVD about once
+ * a day while the site rebuilds every hour, so windows counted back from the
+ * build time would hold only the hours the file covers; counted back from the
+ * fetch, "24 hours" is always a whole 24 hours. The page's live layer brings
+ * the counts up to the minute.
+ */
+export function cveEnd(stats: StatsFiles, now: Date): number {
+  const r = stats.cvesRecent;
+  if (!r) return now.getTime();
+  const newest = r.cves.reduce((m, c) => Math.max(m, Date.parse(c.published)), 0);
+  return Math.min(now.getTime(), Math.max(Date.parse(r.fetched_at), newest));
 }
 
-/** Every CVE published in the last 24 hours, highest CVSS first: a day's list is a few hundred, so it is not capped. */
+function cvesSince(stats: StatsFiles, now: Date, ms: number): RecentCve[] {
+  const end = cveEnd(stats, now);
+  const since = new Date(end - ms).toISOString();
+  const until = new Date(end).toISOString();
+  return (stats.cvesRecent?.cves ?? []).filter((c) => c.published >= since && c.published <= until);
+}
+
+/** The CVEs published in the seven days before the fetch, highest CVSS first, capped. */
+export function weekCvesList(stats: StatsFiles, now: Date): RecentCve[] {
+  return cvesSince(stats, now, 7 * 86_400_000).sort(byScoreDesc).slice(0, LIST_CAP);
+}
+
+/** Every CVE published in the 24 hours before the fetch, highest CVSS first: a day's list is a few hundred, so it is not capped. */
 export function dayCvesList(stats: StatsFiles, now: Date): RecentCve[] {
-  const since = new Date(now.getTime() - 86_400_000).toISOString();
-  return (stats.cvesRecent?.cves ?? []).filter((c) => c.published >= since).sort(byScoreDesc);
+  return cvesSince(stats, now, 86_400_000).sort(byScoreDesc);
 }
 
 export function kevMonthList(stats: StatsFiles, month: string): KevStatEntry[] {
@@ -247,10 +275,12 @@ export function buildCluster(live: LiveData, stats: StatsFiles, home: HomeStats,
   let cves: ClusterData["cves"] = null;
   const recent = stats.cvesRecent?.cves;
   if (recent && c.cves_24h !== null && c.cves_7d !== null && c.critical_7d !== null) {
+    const end = cveEnd(stats, now);
     const perDay = new Array<number>(CLUSTER_DAYS).fill(0);
     const criticalPerDay = new Array<number>(CLUSTER_DAYS).fill(0);
     for (const v of recent) {
-      const k = windowFromEnd(v.published, now.getTime());
+      if (Date.parse(v.published) > end) continue;
+      const k = windowFromEnd(v.published, end);
       if (k >= CLUSTER_DAYS) continue;
       perDay[CLUSTER_DAYS - 1 - k]! += 1;
       if (v.score !== null && v.score >= 9) criticalPerDay[CLUSTER_DAYS - 1 - k]! += 1;
@@ -304,9 +334,8 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
   const currentYear = Number(today.slice(0, 4));
 
   // counters
-  const cves = stats.cvesRecent?.cves ?? null;
-  const since24h = new Date(now.getTime() - 86_400_000).toISOString();
-  const since7d = new Date(now.getTime() - 7 * 86_400_000).toISOString();
+  const cves = stats.cvesRecent ? cvesSince(stats, now, 7 * 86_400_000) : null;
+  const since24h = new Date(cveEnd(stats, now) - 86_400_000).toISOString();
   const kev = stats.kev?.entries ?? null;
   const kevWeekFrom = addDays(today, -7);
   const breaches = stats.hibp?.breaches.filter(countableBreach) ?? null;
@@ -329,7 +358,8 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
   const slugByCve = new Map<string, string>();
   for (const i of incidents) for (const id of i.cve_ids) if (!slugByCve.has(id)) slugByCve.set(id, i.slug);
   const epss = stats.epss?.scores ?? {};
-  const epssTop = (cves ?? [])
+  // over the whole recent file (two weeks), not only the 7 days the counters use
+  const epssTop = (stats.cvesRecent?.cves ?? [])
     .filter((c) => epss[c.id])
     .map((c) => ({ cve: c.id, epss: epss[c.id]![0], percentile: epss[c.id]![1], score: c.score, severity: c.severity, published: c.published.slice(0, 10), description: c.description, slug: slugByCve.get(c.id) ?? null }))
     .sort((a, b) => b.epss - a.epss || (b.score ?? -1) - (a.score ?? -1) || a.cve.localeCompare(b.cve))
@@ -352,8 +382,8 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
     sources,
     counters: {
       cves_24h: cves ? cves.filter((c) => c.published >= since24h).length : null,
-      cves_7d: cves ? cves.filter((c) => c.published >= since7d).length : null,
-      critical_7d: cves ? cves.filter((c) => c.published >= since7d && c.score !== null && c.score >= 9).length : null,
+      cves_7d: cves ? cves.length : null,
+      critical_7d: cves ? cves.filter((c) => c.score !== null && c.score >= 9).length : null,
       kev_7d: kev ? kev.filter((e) => e.added > kevWeekFrom).length : null,
       kev_next_due: nextDue,
       breaches_month: breachesMonth ? breachesMonth.length : null,
@@ -377,6 +407,9 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
   };
 
   const aiMonth = counted.filter((i) => isAiRecord(i) && i.first_reported.startsWith(month));
+  const { panel, stackFile } = buildPanel(incidents, stats, homeStats, now);
+  const lagFrom = addDays(today, -90);
+  const lags = (kev ?? []).filter((e) => e.added > lagFrom && e.published).map((e) => Math.max(0, daysBetween(e.published!, e.added)));
   return {
     now: nowIso,
     today,
@@ -390,6 +423,9 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
     },
     stats: homeStats,
     cluster: buildCluster(live, stats, homeStats, now),
+    panel,
+    stackFile,
+    kevLagRecent: { n: lags.length, sameDay: lags.filter((d) => d === 0).length, week: lags.filter((d) => d <= 7).length },
     aiLens: {
       live: live.counters.ai,
       month,
