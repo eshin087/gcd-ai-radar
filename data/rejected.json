@@ -1,5 +1,15 @@
 [
   {
+    "key": "70dcd36fc5b40878",
+    "title": "Behind the Scenes of How Operation Blackout Went Down",
+    "url": "https://darkreading.com/cybersecurity-operations/behind-the-scenes-how-operation-blackout-went-down",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Law enforcement roundup and expert commentary on scam centers rather than a new security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T23:21:39.510Z"
+  },
+  {
     "key": "38706b7097c83c87",
     "title": "When Malware Borrows Your AI Coding Agent to Find Your Secrets",
     "url": "https://checkmarx.com/zero-post/when-malware-borrows-your-ai-coding-agent-to-find-your-secrets",

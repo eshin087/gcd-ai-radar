@@ -1,9 +1,9 @@
 {
- "fetched_at": "2026-10-30T18:43:35.746Z",
+ "fetched_at": "2026-10-30T23:21:51.188Z",
  "source": {"name":"CISA Known Exploited Vulnerabilities catalog","url":"https://www.cisa.gov/known-exploited-vulnerabilities-catalog","license":"CC0 1.0"},
  "catalog_version": "2026.10.30",
  "entries": [
-  {"cve":"CVE-2026-111357","added":"2026-10-30","due":"2026-11-02","vendor":"Ivanti","product":"Connect Secure","name":"Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability","ransomware":false,"published":null,"cvss":null},
+  {"cve":"CVE-2026-111357","added":"2026-10-30","due":"2026-11-02","vendor":"Ivanti","product":"Connect Secure","name":"Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability","ransomware":false,"published":"2026-10-15","cvss":7},
   {"cve":"CVE-2026-118527","added":"2026-10-30","due":"2026-11-13","vendor":"Ivanti","product":"Connect Secure","name":"Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability","ransomware":false,"published":null,"cvss":null},
   {"cve":"CVE-2026-76418","added":"2026-10-29","due":"2026-11-01","vendor":"Cisco","product":"Secure Firewall ASA Software and Cisco Secure FTD Software","name":"Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability","ransomware":false,"published":"2026-10-28","cvss":8.6},
   {"cve":"CVE-2026-97229","added":"2026-10-29","due":"2026-11-01","vendor":"GitLab","product":"Community Edition and Enterprise Edition","name":"GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability","ransomware":false,"published":"2026-10-13","cvss":10},

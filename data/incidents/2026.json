@@ -1,5 +1,428 @@
 [
   {
+    "id": "AIR-2026-1681",
+    "slug": "data-breach-impacts-multiple-bay-street-law-firms",
+    "title": "Data breach impacts multiple Bay Street law firms",
+    "summary": "Bay Street law firms McCarthy Tétrault and Davies Ward Phillips & Vineberg experienced data breaches. The security incidents resulted in thousands of compromised files.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Law firm IT systems"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://theglobeandmail.com/business/article-bennett-jones-hit-in-data-breach-targeting-bay-street-law-firms",
+        "publisher": "theglobeandmail.com",
+        "title": "Data breach targeting Bay Street law firms",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "law-firms",
+      "mccarthy-tetrault"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Data breach targeting Bay Street law firms",
+        "source_url": "https://theglobeandmail.com/business/article-bennett-jones-hit-in-data-breach-targeting-bay-street-law-firms",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world loss of sensitive legal files.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1680",
+    "slug": "fashion-retailer-resolve-suffers-payment-card-data-breach",
+    "title": "Fashion retailer Resolve suffers payment card data breach",
+    "summary": "Fashion retailer Resolve disclosed a security incident where hackers stole customer payment card information. The breach exposed sensitive financial data for consumers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Resolve payment systems"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://therecord.media/resolve-fashion-retailer-data-breach-payment-cards",
+        "publisher": "The Record",
+        "title": "Fashion retailer Resolve says hackers stole payment card information",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "payment-cards",
+      "resolve"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Fashion retailer Resolve says hackers stole payment card information",
+        "source_url": "https://therecord.media/resolve-fashion-retailer-data-breach-payment-cards",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world loss of customer payment card information.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1679",
+    "slug": "vapor-panda-uses-agentic-ai-pentesting-tool-in-multi-target",
+    "title": "Vapor Panda uses agentic AI pentesting tool in multi-target campaign",
+    "summary": "A China-backed threat group named Vapor Panda compromised over one hundred sensitive targets using an agentic AI pentesting tool. The rapid and successful campaign spanned multiple countries and organizations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "agentic AI pentesting tool"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
+        "publisher": "CyberScoop",
+        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "vapor-panda",
+      "ai-assisted-intrusion",
+      "pentesting-tool"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
+        "source_url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world exploitation across numerous targets.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1678",
+    "slug": "cve-2026-118527-ivanti-connect-secure-identifier-generation",
+    "title": "CVE-2026-118527: Ivanti Connect Secure Identifier Generation Flaw",
+    "summary": "Ivanti Connect Secure contains a predictable identifier vulnerability that enables remote authenticated users to upload arbitrary files to disk. CISA added the issue to its Known Exploited Vulnerabilities catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ivanti Connect Secure"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-118527",
+        "publisher": "CISA",
+        "title": "CVE-2026-118527: Ivanti Connect Secure — Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-118527",
+      "kev",
+      "file_upload",
+      "ivanti"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-118527"
+    ],
+    "affected": [
+      "Ivanti Connect Secure"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-118527: Ivanti Connect Secure — Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-118527",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions.",
+    "severity_note": "Confirmed exploitation in the wild via CISA KEV.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1677",
+    "slug": "cve-2026-62331-praktor-path-traversal-vulnerability",
+    "title": "CVE-2026-62331: praktor Path Traversal Vulnerability",
+    "summary": "The praktor multi-agent Claude Code orchestrator prior to version 0.9.1 allows unauthenticated remote Telegram users to write files outside the intended uploads directory via path traversal. This occurs due to unsanitized filename concatenation during Telegram file uploads.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "praktor"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62331",
+        "publisher": "NVD",
+        "title": "CVE-2026-62331: praktor is a multi-agent Claude Code orchestrator with Telegram input and output, Docker isolation, and a Mission Control UI.",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-62331",
+      "path_traversal",
+      "agent",
+      "claude_code"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-30",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-62331"
+    ],
+    "affected": [
+      "praktor < 0.9.1"
+    ],
+    "fixed_in": [
+      "praktor 0.9.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-62331: praktor is a multi-agent Claude Code orchestrator with Telegram input and output, Docker isolation, and a Mission Control UI.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62331",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "Update praktor to version 0.9.1 or later.",
+    "severity_note": "Disclosed vulnerability with a vendor fix and no active exploitation reported.",
+    "cvss": 8.2
+  },
+  {
+    "id": "AIR-2026-1676",
+    "slug": "cve-2026-62264-pdf-reader-mcp-authentication-bypass-flaw",
+    "title": "CVE-2026-62264: PDF Reader MCP Authentication Bypass Flaw",
+    "summary": "PDF Reader MCP versions 2.2.0 through 3.0.0 fail to validate the X-API-Key header when the HTTP server transport is enabled. Unauthenticated clients can invoke all PDF tools and read accessible files on the host.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "PDF Reader MCP"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62264",
+        "publisher": "NVD",
+        "title": "CVE-2026-62264: PDF Reader MCP is a Model Context Protocol server for reading PDF documents.",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-62264",
+      "mcp",
+      "authentication_bypass",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-30",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-62264"
+    ],
+    "affected": [
+      "@sylphx/pdf-reader-mcp >=2.2.0, <3.0.1"
+    ],
+    "fixed_in": [
+      "@sylphx/pdf-reader-mcp 3.0.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-62264: PDF Reader MCP is a Model Context Protocol server for reading PDF documents.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62264",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "Update PDF Reader MCP to version 3.0.1 or later.",
+    "severity_note": "Disclosed vulnerability with a security advisory and a fix available.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1675",
+    "slug": "cve-2026-111357-ivanti-connect-secure-authentication-bypass",
+    "title": "CVE-2026-111357: Ivanti Connect Secure Authentication Bypass",
+    "summary": "Ivanti Connect Secure contains a missing authentication vulnerability that allows local attackers to escalate privileges. CISA confirmed active exploitation in the wild.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ivanti Connect Secure"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111357",
+        "publisher": "CISA",
+        "title": "CVE-2026-111357: Ivanti Connect Secure — Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-111357",
+      "kev",
+      "authentication_bypass",
+      "ivanti"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-111357"
+    ],
+    "affected": [
+      "Ivanti Connect Secure"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-111357: Ivanti Connect Secure — Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111357",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions.",
+    "severity_note": "Confirmed exploitation in the wild via CISA KEV.",
+    "cvss": 7
+  },
+  {
     "id": "AIR-2026-1674",
     "slug": "php2shell-attacks-target-palo-alto-firewalls",
     "title": "PHP2Shell Attacks Target Palo Alto Firewalls",
@@ -2072,9 +2495,15 @@
         "publisher": "The Hacker News",
         "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/critical-linux-kernel-flaw-allows-remote-root-attacks-on-mptcp-servers",
+        "publisher": "BleepingComputer",
+        "title": "Critical Linux kernel flaw allows remote root attacks on MPTCP servers",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2085,7 +2514,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-29T19:37:17.247Z",
-    "updated_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-30T23:21:39.510Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
