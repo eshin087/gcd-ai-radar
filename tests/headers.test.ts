@@ -79,7 +79,7 @@ describe("vercel.json headers", () => {
 
   it("lets the page fetch the hero globe's Worker and nothing else off-site", () => {
     const origin = new URL(INTERNET_API).origin;
-    for (const path of ["/", "/embed", "/lab/internet"]) {
+    for (const path of ["/", "/embed", "/live"]) {
       const csp = headersFor(path).headers.get("Content-Security-Policy")!;
       const connect = csp.split(";").map((d) => d.trim()).find((d) => d.startsWith("connect-src"));
       expect(connect, path).toBe(`connect-src 'self' ${origin}`);

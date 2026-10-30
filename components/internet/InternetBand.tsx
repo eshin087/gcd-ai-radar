@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { Globe, TOUR, type GlobeControl, type GlobeLook } from "./Globe";
+import { Globe, TOUR, type GlobeControl } from "./Globe";
 import { inSentence, onMap, plainName } from "./globe/geo";
 import { useInternet, type InternetData, type InternetRoute, type InternetStatus } from "./useInternet";
 
@@ -24,7 +24,6 @@ import { useInternet, type InternetData, type InternetRoute, type InternetStatus
 export interface InternetBandProps {
   /** The Worker's /v1/internet URL; undefined renders the idle state. */
   apiUrl?: string;
-  look?: GlobeLook;
   className?: string;
 }
 
@@ -114,7 +113,7 @@ function Caption({ status, data, tour, focus, onPick }: { status: InternetStatus
   );
 }
 
-export function InternetBand({ apiUrl, look = "signal", className = "" }: InternetBandProps) {
+export function InternetBand({ apiUrl, className = "" }: InternetBandProps) {
   const { status, data } = useInternet(apiUrl);
   const live = status === "live" && !!data;
   const routes = useMemo(() => (live && data ? data.attacks.routes.filter(onMap) : []), [live, data]);
@@ -127,7 +126,7 @@ export function InternetBand({ apiUrl, look = "signal", className = "" }: Intern
       aria-label="Web attacks in the last hour"
       className={`grid gap-x-5 gap-y-3 lg:h-[300px] lg:grid-cols-[minmax(0,1fr)_164px] xl:grid-cols-[minmax(0,1fr)_180px] xl:gap-x-6 ${className}`}
     >
-      <Globe routes={routes} running={live} look={look} onFocus={setFocus} controlRef={control} className="h-[260px] w-full lg:h-full" />
+      <Globe routes={routes} running={live} onFocus={setFocus} controlRef={control} className="h-[260px] w-full lg:h-full" />
       <Caption status={status} data={data} tour={tour} focus={shown} onPick={(i) => control.current?.focus(i)} />
     </section>
   );

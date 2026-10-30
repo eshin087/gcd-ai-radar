@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { basis, DEG, dot3, inSentence, isLand, landDots, lonLat, onMap, place, plainName, subsolar, toLonLat, unproject, wrap } from "@/components/internet/globe/geo";
-import { GLOBE_LOOKS } from "@/components/internet/globe/looks";
 import { buildArc } from "@/components/internet/globe/render";
 
 const route = (origin: string, target: string, share = 5) => ({ origin, origin_name: origin, target, target_name: target, share });
@@ -109,10 +108,5 @@ describe("routes", () => {
     expect(inSentence("United States")).toBe("the United States");
     expect(inSentence("Netherlands")).toBe("the Netherlands");
     expect(inSentence("Viet Nam")).toBe("Vietnam");
-  });
-
-  it("offers four looks with distinct ids", () => {
-    expect(new Set(GLOBE_LOOKS.map((l) => l.id)).size).toBe(GLOBE_LOOKS.length);
-    expect(GLOBE_LOOKS.length).toBe(4);
   });
 });

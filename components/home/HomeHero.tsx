@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { RadarCluster } from "@/components/hero/RadarCluster";
-import type { GlobeLook } from "@/components/internet/Globe";
 import { InternetBand } from "@/components/internet/InternetBand";
 import { Ago } from "@/components/ui/Ago";
 import type { HomePayload } from "@/lib/home-data";
@@ -11,9 +10,9 @@ import { SITE } from "@/lib/site";
  * the middle (lg and up), the live globe with its caption on the right. The
  * gaps widen at xl so the globe keeps its distance from the cluster; the
  * caption column stays narrow (164 to 180 px). Phones stack headline, globe,
- * caption. `look` picks the globe's look (the lab page compares them).
+ * caption.
  */
-export function HomeHero({ data, look }: { data: HomePayload; look?: GlobeLook }) {
+export function HomeHero({ data }: { data: HomePayload }) {
   return (
     <section className="grid gap-6 lg:min-h-[300px] lg:grid-cols-[minmax(0,236px)_280px_minmax(0,1fr)] lg:gap-x-8 xl:grid-cols-[minmax(0,272px)_280px_minmax(0,1fr)] xl:gap-x-12">
       <div className="min-w-0 space-y-2.5 self-center">
@@ -40,7 +39,7 @@ export function HomeHero({ data, look }: { data: HomePayload; look?: GlobeLook }
       <div className="hidden h-[300px] lg:block">
         <RadarCluster data={data.cluster} />
       </div>
-      <InternetBand apiUrl={SITE.internetApi} look={look} />
+      <InternetBand apiUrl={SITE.internetApi} />
     </section>
   );
 }

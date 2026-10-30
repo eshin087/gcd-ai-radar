@@ -2,15 +2,13 @@
 
 import { useEffect, useImperativeHandle, useRef, type Ref } from "react";
 import { clamp, DEG, wrap } from "./globe/geo";
-import type { GlobeLook } from "./globe/looks";
 import { buildArc, GlobeRenderer, type Arc, type Palette } from "./globe/render";
 import type { InternetRoute } from "./useInternet";
 
-export type { GlobeLook } from "./globe/looks";
-
 /**
- * The band's globe: the last hour's top web attack routes from Cloudflare
- * Radar on an orthographic sphere (canvas 2D, ./globe/render.ts draws it).
+ * The band's globe: the top web attack routes from Cloudflare Radar on an
+ * orthographic sphere whose land is lit by the real Sun (canvas 2D,
+ * ./globe/render.ts draws it).
  *
  * A tour visits the TOUR largest routes in turn: the camera glides to the
  * route, the route draws in from the attacking country, rings where it lands,
@@ -48,7 +46,6 @@ export interface GlobeProps {
   routes: InternetRoute[];
   /** False keeps the globe still: no data, an error, or loading. */
   running: boolean;
-  look?: GlobeLook;
   /** The index of the route the tour turns to, when it starts turning. */
   onFocus?: (i: number) => void;
   controlRef?: Ref<GlobeControl>;
@@ -57,7 +54,7 @@ export interface GlobeProps {
 
 const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-export function Globe({ routes, running, look = "signal", onFocus, controlRef, className = "" }: GlobeProps) {
+export function Globe({ routes, running, onFocus, controlRef, className = "" }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const runningRef = useRef(running);
   const routesRef = useRef(routes);
@@ -93,13 +90,11 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
       accent: v("--color-accent", "#ffb35c"),
       ink: v("--color-ink", "#e8ebf2"),
       soft: v("--color-soft", "#c0c6d4"),
-      dim: v("--color-dim", "#8a93a6"),
-      faint: v("--color-faint", "#596278"),
       hit: v("--color-live", "#ff5c5c"),
       ground: v("--color-ground", "#07090e"),
       mono: `${v("--font-plex-mono", "ui-monospace")}, monospace`,
     };
-    const r = new GlobeRenderer(canvas, look, pal);
+    const r = new GlobeRenderer(canvas, pal);
 
     let arcs: Arc[] = [];
     let lon = START[0], lat = START[1];
@@ -111,7 +106,7 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
     let glide: { fl: number; fp: number; tl: number; tp: number; t0: number; dur: number } | null = null;
     let focus = -1, eventT = 0, drawnLatch = 0, pulseT = -1;
     let fade = -1, fadeT0 = -Infinity;
-    let raf = 0, visible = false, lastMs = 0, clock = 0;
+    let raf = 0, visible = false, lastMs = 0;
 
     const secs = () => performance.now() / 1000;
     const tourN = () => (runningRef.current ? Math.min(TOUR, arcs.length) : 0);
@@ -142,7 +137,6 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
     };
 
     const tick = (t: number, dt: number) => {
-      clock += dt;
       if (drag) {
         // the pointer sets the camera
       } else if (coasting) {
@@ -178,7 +172,6 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
       r.draw({
         lon,
         lat,
-        time: clock,
         now: Date.now(),
         arcs: on ? arcs : [],
         focus: on ? focus : -1,
@@ -186,7 +179,6 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
         pulse: on && !still ? pulseT : -1,
         fade: on ? fade : -1,
         fadeAlpha: clamp(1 - (t - fadeT0) / FADE_S, 0, 1),
-        context: true,
       });
     };
 
@@ -319,7 +311,7 @@ export function Globe({ routes, running, look = "signal", onFocus, controlRef, c
       canvas.removeEventListener("pointercancel", onCancel);
       apiRef.current = null;
     };
-  }, [look]);
+  }, []);
 
   return (
     <figure className={`relative m-0 ${className}`}>
