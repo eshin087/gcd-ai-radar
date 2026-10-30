@@ -241,6 +241,125 @@
     "cvss": null
   },
   {
+    "id": "AIR-2026-1657",
+    "slug": "fake-crypto-app-padre-terminal-on-apple-app-store-steals-23k",
+    "title": "Fake crypto app Padre Terminal on Apple App Store steals $23K",
+    "summary": "A malicious cryptocurrency trading application named Padre Terminal was hosted on the Apple App Store and resulted in $23,000 being stolen from 27 user wallets. Apple subsequently removed the rogue application.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Padre Terminal",
+      "Apple App Store"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/fake-crypto-app-on-apple-app-store-linked-to-23k-wallet-theft",
+        "publisher": "BleepingComputer",
+        "title": "Fake crypto app on Apple App Store linked to $23K wallet theft",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "app-store",
+      "wallet-theft",
+      "ios",
+      "fraud"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-30T03:33:43.782Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Padre Terminal on iOS"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Fake crypto app on Apple App Store linked to $23K wallet theft",
+        "source_url": "https://bleepingcomputer.com/news/security/fake-crypto-app-on-apple-app-store-linked-to-23k-wallet-theft",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Uninstall Padre Terminal and revoke access permissions for affected wallets.",
+    "severity_note": "Confirmed real-world financial loss affecting multiple users.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1656",
+    "slug": "polymarket-halts-trading-after-script-breach-and-2-5m-loss",
+    "title": "Polymarket halts trading after script breach and $2.5M loss",
+    "summary": "Polymarket suspended trading after attackers compromised a third-party service to inject cryptocurrency-draining scripts. Approximately $2.5 million in assets was traced to attacker wallets.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Polymarket"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced",
+        "publisher": "BleepingComputer",
+        "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "polymarket",
+      "supply-chain",
+      "crypto-drainer",
+      "breach"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
+        "source_url": "https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss of approximately $2.5 million.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1655",
     "slug": "hugging-face-malware-campaign-returns-to-hijack-gpus",
     "title": "Hugging Face malware campaign returns to hijack GPUs",
@@ -1357,6 +1476,118 @@
     ],
     "action": "Do not download unofficial desktop clients for AI applications from GitHub repositories.",
     "severity_note": "Confirmed real-world malicious campaign spreading cryptocurrency miners.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1637",
+    "slug": "hackers-identify-ice-employees-in-data-breach",
+    "title": "Hackers Identify ICE Employees in Data Breach",
+    "summary": "Attackers gained unauthorized access to data and identified ICE employees in a security breach. The incident exposes sensitive organizational personnel information.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ICE databases"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://washingtonpost.com/immigration/2026/10/28/ice-cbp-other-dhs-officer-identities-posted-online-data-breach",
+        "publisher": "The Washington Post",
+        "title": "Hackers identify ICE employees in data breach",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "government"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hackers identify ICE employees in data breach",
+        "source_url": "https://washingtonpost.com/immigration/2026/10/28/ice-cbp-other-dhs-officer-identities-posted-online-data-breach",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed breach involving personnel records.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1636",
+    "slug": "irhythm-discloses-data-breach-impacting-8-2-million-individu",
+    "title": "iRhythm Discloses Data Breach Impacting 8.2 Million Individuals",
+    "summary": "An intrusion into third-party-hosted business applications led to the theft of personal information as well as account and device data. The Department of Health and Human Services filing confirmed that 8.2 million individuals were affected.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "iRhythm systems"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://securityweek.com/hhs-filing-puts-irhythm-data-breach-toll-at-8-2-million",
+        "publisher": "SecurityWeek",
+        "title": "HHS Filing Puts iRhythm Data Breach Toll at 8.2 Million",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "pii-leak"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "HHS Filing Puts iRhythm Data Breach Toll at 8.2 Million",
+        "source_url": "https://securityweek.com/hhs-filing-puts-irhythm-data-breach-toll-at-8-2-million",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world PII breach impacting 8.2 million individuals.",
     "cvss": null
   },
   {
@@ -2909,6 +3140,76 @@
     "cvss": 9.8
   },
   {
+    "id": "AIR-2026-1610",
+    "slug": "data-breach-at-sony-owned-internet-provider-compromises-2-6",
+    "title": "Data breach at Sony-owned internet provider compromises 2.6 million records",
+    "summary": "Attackers broke into the So-net member database operated by Sony Network Communications, exposing personal information of over 2.58 million customers and email passwords for 54,401 users. The company disclosed the unauthorized access after confirming the information leak.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "So-net member database"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/28/sony-network-communications-data-breach-so-net",
+        "publisher": "Help Net Security",
+        "title": "Data breach at Sony-owned internet provider compromises 2.6 million customer records",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/sony-isp-subsidiary-data-breach-exposes-25-million-customer-records",
+        "publisher": "BleepingComputer",
+        "title": "Sony ISP subsidiary data breach exposes 2.5 million customer records",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Steal 2.6 Million Records From Sony’s Japanese ISP So-net",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "sony"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "So-net member database"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Data breach at Sony-owned internet provider compromises 2.6 million customer records",
+        "source_url": "https://helpnetsecurity.com/2026/10/28/sony-network-communications-data-breach-so-net",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world PII breach affecting millions of users.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1608",
     "slug": "cve-2026-118375-llama-cpp-out-of-bounds-write-in-rdma-transp",
     "title": "CVE-2026-118375: llama.cpp out-of-bounds write in RDMA transport",
@@ -3532,6 +3833,64 @@
     "cvss": 9
   },
   {
+    "id": "AIR-2026-1597",
+    "slug": "vendor-key-leak-exposes-denver-health-plan-member-data",
+    "title": "Vendor Key Leak Exposes Denver Health Plan Member Data",
+    "summary": "A leaked access key for SquareML exposed a database containing personal and health information of 238,000 Denver Health plan members. The incident highlights risks associated with improperly secured third-party credentials.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "SquareML"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://securityweek.com/vendor-key-leak-puts-data-of-238000-denver-health-plan-members-at-risk",
+        "publisher": "SecurityWeek",
+        "title": "Vendor Key Leak Puts Data of 238,000 Denver Health Plan Members at Risk",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential_leak",
+      "data_breach",
+      "healthcare",
+      "exposure"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Vendor Key Leak Puts Data of 238,000 Denver Health Plan Members at Risk",
+        "source_url": "https://securityweek.com/vendor-key-leak-puts-data-of-238000-denver-health-plan-members-at-risk",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Revoke compromised vendor keys and audit access logs.",
+    "severity_note": "Confirmed exposure of sensitive health and personal records for 238,000 individuals.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1596",
     "slug": "warp-discloses-breach-exposing-ai-agent-logs-and-telemetry-d",
     "title": "Warp discloses breach exposing AI agent logs and telemetry data",
@@ -3586,6 +3945,63 @@
     ],
     "action": "",
     "severity_note": "Confirmed real-world data leak via third-party breach",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1595",
+    "slug": "energy-giant-engie-discloses-data-breach-affecting-customers",
+    "title": "Energy giant ENGIE discloses data breach affecting customers",
+    "summary": "French energy provider ENGIE confirmed that attackers breached a partner marketing platform and stole customer data. The incident resulted in an unauthorized exposure of customer information.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ENGIE marketing platform"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/energy-giant-engie-discloses-data-breach-affecting-customers",
+        "publisher": "BleepingComputer",
+        "title": "Energy giant ENGIE discloses data breach affecting customers",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "customer-data",
+      "third-party-breach"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Energy giant ENGIE discloses data breach affecting customers",
+        "source_url": "https://bleepingcomputer.com/news/security/energy-giant-engie-discloses-data-breach-affecting-customers",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PHI/PII breach at a named enterprise",
     "cvss": null
   },
   {
@@ -5100,9 +5516,15 @@
         "publisher": "The Record",
         "title": "University of New Mexico restores hospital systems, urges no contact with hackers",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/unm-health-ransomware-attack-disrupts-patient-care-surgeries",
+        "publisher": "BleepingComputer",
+        "title": "UNM Health ransomware attack disrupts patient care, surgeries",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5113,7 +5535,7 @@
       "unm"
     ],
     "created_at": "2026-10-27T15:31:15.081Z",
-    "updated_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-30T03:33:28.470Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -5127,6 +5549,12 @@
         "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
         "source_url": "https://helpnetsecurity.com/2026/10/27/university-of-new-mexico-hospitals-cyberattack",
         "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "The attack was confirmed as ransomware, disrupting patient care and surgeries",
+        "source_url": "https://bleepingcomputer.com/news/security/unm-health-ransomware-attack-disrupts-patient-care-surgeries",
+        "added_at": "2026-10-30T03:33:28.470Z"
       },
       {
         "date": "2026-10-29",
@@ -6035,6 +6463,130 @@
     "action": "Apply the September 2026 SAP Security Notes.",
     "severity_note": "Critical CVSS score of 10.0 and 9.8 reported.",
     "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1555",
+    "slug": "alternative-fur-deutschland-data-breach-exposes-345-439-acco",
+    "title": "Alternative für Deutschland Data Breach Exposes 345,439 Accounts",
+    "summary": "The political party Alternative für Deutschland suffered a data breach exposing over 345,000 unique email addresses and sensitive correspondence. The compromised data was subsequently published online with searchable tools and downloadable files.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Alternative für Deutschland"
+    ],
+    "incident_date": "2026-09-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/AfD",
+        "publisher": "Have I Been Pwned",
+        "title": "AfD data breach exposes 345,439 accounts",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/28/afd-data-breach-email-leak",
+        "publisher": "Help Net Security",
+        "title": "345,000 email addresses stolen in cyberattack on Germany’s far-right party AfD",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "credential-leak"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "AfD data breach exposes 345,439 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/AfD",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed personal data breach affecting hundreds of thousands of accounts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1554",
+    "slug": "university-of-copenhagen-data-breach-exposes-525-000-records",
+    "title": "University of Copenhagen data breach exposes 525,000 records",
+    "summary": "The University of Copenhagen in Denmark confirmed that unauthorised actors accessed a test environment. The incident exposed personal data belonging to 525,000 individuals.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "University of Copenhagen test environment"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/university-of-copenhagen-data-breach-exposes-data-of-525-000-people",
+        "publisher": "BleepingComputer",
+        "title": "University of Copenhagen data breach exposes data of 525,000 people",
+        "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/university-of-copenhagen-cyberattack-data-breach",
+        "publisher": "Help Net Security",
+        "title": "Cyberattack on University of Copenhagen exposes data of 525,000 people",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_breach",
+      "university_of_copenhagen"
+    ],
+    "created_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "University of Copenhagen data breach exposes data of 525,000 people",
+        "source_url": "https://bleepingcomputer.com/news/security/university-of-copenhagen-data-breach-exposes-data-of-525-000-people",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PII data breach affecting over 500,000 people.",
+    "cvss": null
   },
   {
     "id": "AIR-2026-1553",
@@ -15201,6 +15753,62 @@
     "cvss": null
   },
   {
+    "id": "AIR-2026-1524",
+    "slug": "gites-de-france-data-breach-exposes-117-574-accounts",
+    "title": "Gîtes de France data breach exposes 117,574 accounts",
+    "summary": "French holiday rental network Gîtes de France suffered a data breach across departmental branches in May 2026. The incident exposed nearly 118,000 customer records, including contact information and booking details.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Gîtes de France"
+    ],
+    "incident_date": "2026-05-16",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-18",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/GitesDeFrance",
+        "publisher": "Have I Been Pwned",
+        "title": "Gîtes de France data breach exposes 117,574 accounts",
+        "published_at": "2026-10-18"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "customer-data"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-18",
+        "title": "Gîtes de France data breach exposes 117,574 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/GitesDeFrance",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed breach exposing 117,574 accounts and booking details.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-0338",
     "slug": "ai-agent-hacked-into-crypto-wallet-and-stole-funds",
     "title": "AI Agent Hacked into Crypto Wallet and Stole Funds",
@@ -15727,6 +16335,63 @@
     ],
     "action": "",
     "severity_note": "",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1523",
+    "slug": "crunchbase-data-breach-exposes-559-908-accounts",
+    "title": "Crunchbase data breach exposes 559,908 accounts",
+    "summary": "Crunchbase was targeted in a January 2026 extortion attempt by ShinyHunters resulting in exfiltrated corporate documents. The incident exposed approximately 560,000 accounts containing contact details and business profiles.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Crunchbase"
+    ],
+    "incident_date": "2026-01-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-14",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/Crunchbase",
+        "publisher": "Have I Been Pwned",
+        "title": "Crunchbase data breach exposes 559,908 accounts",
+        "published_at": "2026-10-14"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "shinyhunters",
+      "extortion",
+      "data-breach"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-14",
+        "title": "Crunchbase data breach exposes 559,908 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/Crunchbase",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed breach exposing 559,908 user and lead accounts.",
     "cvss": null
   },
   {
@@ -16518,6 +17183,63 @@
     "action": "",
     "severity_note": "",
     "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1522",
+    "slug": "sharecare-data-breach-exposes-318-185-accounts",
+    "title": "Sharecare data breach exposes 318,185 accounts",
+    "summary": "Digital health company Sharecare suffered a data breach in August 2026 during a ShinyHunters extortion campaign. The incident exposed over 318,000 unique email addresses, corporate records, and select sensitive personal data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Sharecare"
+    ],
+    "incident_date": "2026-08-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-12",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/Sharecare",
+        "publisher": "Have I Been Pwned",
+        "title": "Sharecare data breach exposes 318,185 accounts",
+        "published_at": "2026-10-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "shinyhunters",
+      "extortion",
+      "data-breach"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-12",
+        "title": "Sharecare data breach exposes 318,185 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/Sharecare",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PHI/PII breach affecting 318,185 accounts.",
+    "cvss": null
   },
   {
     "id": "AIR-2026-1392",
@@ -18176,6 +18898,65 @@
     "cvss": 4.3
   },
   {
+    "id": "AIR-2026-1521",
+    "slug": "neogen-data-breach-exposes-435-963-accounts",
+    "title": "Neogen data breach exposes 435,963 accounts",
+    "summary": "Food safety firm Neogen was breached on August 29, 2026, resulting in the public release of about 436,000 email addresses and related corporate contact data. The leaked information comprised employee records, mailing list contacts and personal phone numbers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Neogen"
+    ],
+    "incident_date": "2026-08-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-09",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/Neogen",
+        "publisher": "Have I Been Pwned",
+        "title": "Neogen data breach exposes 435,963 accounts",
+        "published_at": "2026-10-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "personal-data",
+      "neogen",
+      "shinyhunters",
+      "food-safety"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-23",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-09",
+        "title": "Neogen data breach exposes 435,963 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/Neogen",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users, and improve security controls",
+    "severity_note": "Confirmed breach exposing personal data of over 430k accounts",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-0288",
     "slug": "x64dbg-mcp-server-exposes-unauthenticated-debugging-tools-ov",
     "title": "x64dbg-MCP Server exposes unauthenticated debugging tools over HTTP",
@@ -18409,6 +19190,183 @@
     "action": "",
     "severity_note": "",
     "cvss": 9.4
+  },
+  {
+    "id": "AIR-2026-1520",
+    "slug": "angel-one-data-breach-exposes-6-765-054-accounts",
+    "title": "Angel One data breach exposes 6,765,054 accounts",
+    "summary": "Indian brokerage Angel One confirmed a breach that occurred in April 2023, leaking over 6.8 million unique email addresses and detailed personal and financial information. The data release included bank account numbers, PAN IDs and portfolio holdings, though the firm said client funds were unaffected.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Angel One"
+    ],
+    "incident_date": "2023-04-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-07",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/AngelOne",
+        "publisher": "Have I Been Pwned",
+        "title": "Angel One data breach exposes 6,765,054 accounts",
+        "published_at": "2026-10-07"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "personal-data",
+      "angelone",
+      "financial",
+      "india"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-21",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-07",
+        "title": "Angel One data breach exposes 6,765,054 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/AngelOne",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users, and improve security controls",
+    "severity_note": "Confirmed breach exposing personal and financial data of over 6.7 million accounts",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1519",
+    "slug": "cyrusone-data-breach-exposes-373-460-accounts",
+    "title": "CyrusOne data breach exposes 373,460 accounts",
+    "summary": "Data centre operator CyrusOne experienced a breach on August 5, 2026, with attackers publishing roughly 373,000 email addresses and associated corporate contact details. The exposed data included names, phone numbers, physical addresses and support tickets.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "CyrusOne"
+    ],
+    "incident_date": "2026-08-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-07",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/CyrusOne",
+        "publisher": "Have I Been Pwned",
+        "title": "CyrusOne data breach exposes 373,460 accounts",
+        "published_at": "2026-10-07"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "personal-data",
+      "cyrusone",
+      "shinyhunters",
+      "datacenter"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-21",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-07",
+        "title": "CyrusOne data breach exposes 373,460 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/CyrusOne",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users, and improve security controls",
+    "severity_note": "Confirmed breach exposing personal data of over 370k accounts",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1518",
+    "slug": "double-counter-data-breach-exposes-274-922-accounts",
+    "title": "Double Counter data breach exposes 274,922 accounts",
+    "summary": "Discord server protection service Double Counter was breached on October 4, 2026, after a vulnerability in Metabase was exploited, leading to the public release of about 275,000 email addresses and Discord usernames. Some records also included names, countries and postcodes of paying subscribers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Double Counter"
+    ],
+    "incident_date": "2026-10-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-07",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/DoubleCounter",
+        "publisher": "Have I Been Pwned",
+        "title": "Double Counter data breach exposes 274,922 accounts",
+        "published_at": "2026-10-07"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "personal-data",
+      "doublecounter",
+      "metabase",
+      "discord"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-21",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-07",
+        "title": "Double Counter data breach exposes 274,922 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/DoubleCounter",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users, and improve security controls",
+    "severity_note": "Confirmed breach exposing personal data of over 270k accounts",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0284",
@@ -21968,6 +22926,65 @@
     "action": "",
     "severity_note": "",
     "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1517",
+    "slug": "medela-data-breach-exposes-423-947-accounts",
+    "title": "Medela data breach exposes 423,947 accounts",
+    "summary": "Swiss medical device maker Medela suffered a breach on September 7, 2026, where attackers accessed and published over 423,000 records containing email addresses, names, phone numbers and support tickets. The leak exposed personal and corporate contact information of healthcare professionals and staff.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Medela"
+    ],
+    "incident_date": "2026-09-07",
+    "incident_date_precision": "day",
+    "first_reported": "2026-09-30",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/Medela",
+        "publisher": "Have I Been Pwned",
+        "title": "Medela data breach exposes 423,947 accounts",
+        "published_at": "2026-09-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "personal-data",
+      "shinyhunters",
+      "medela",
+      "healthcare"
+    ],
+    "created_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-30T03:33:43.783Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-14",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-09-30",
+        "title": "Medela data breach exposes 423,947 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/Medela",
+        "added_at": "2026-10-26T14:52:59.139Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users, and improve security controls",
+    "severity_note": "Confirmed breach exposing personal data of over 400k accounts",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0220",

@@ -1,5 +1,85 @@
 [
   {
+    "key": "4b13c4e2edcfd5a8",
+    "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
+    "url": "https://hunio.org/security/nte-account-takeover",
+    "publisher": "hunio.org",
+    "source_id": "review",
+    "reason": "single unverified source at confidence 0.6 (manual review)",
+    "confidence": 0.6,
+    "rejected_at": "2026-10-30T03:33:48.416Z"
+  },
+  {
+    "key": "648d2b9552c7ec83",
+    "title": "Trust Is Not What It Seems — And Fraudsters Are Counting on It",
+    "url": "https://darkreading.com/cyber-risk/trust-is-not-what-it-seems-and-fraudsters-are-counting-on-it",
+    "publisher": "Dark Reading",
+    "source_id": "review",
+    "reason": "trend article, no specific incident (manual review)",
+    "confidence": 0.75,
+    "rejected_at": "2026-10-30T03:33:46.868Z"
+  },
+  {
+    "key": "1d6c379fd138eef1",
+    "title": "Third Serengeti Sweep Tops 1,400 Arrests as Investigations Mature",
+    "url": "https://darkreading.com/cybersecurity-operations/third-serengeti-sweep-1400-arrests-investigations-mature",
+    "publisher": "Dark Reading",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T03:33:45.319Z"
+  },
+  {
+    "key": "6d79373ebb8ef342",
+    "title": "Dutch Police Arrest Two Over NFC Relay Attacks That Drained $400,000+ From Bank Accounts",
+    "url": "https://securityweek.com/dutch-police-arrest-two-over-nfc-relay-attacks-that-drained-400000",
+    "publisher": "SecurityWeek",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T03:33:45.319Z"
+  },
+  {
+    "key": "8228afc460bcaad8",
+    "title": "Chinese man extradited for role in $36 million cryptocurrency scam",
+    "url": "https://bleepingcomputer.com/news/security/chinese-man-extradited-for-role-in-36-million-cryptocurrency-scam",
+    "publisher": "BleepingComputer",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T03:33:45.319Z"
+  },
+  {
+    "key": "3e53d355cefd8b95",
+    "title": "Dutch police extradite Chinese national accused of laundering Cambodian investment scam funds",
+    "url": "https://therecord.media/dutch-police-extradite-chinese-national-money-laundering-scams",
+    "publisher": "The Record",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T03:33:45.319Z"
+  },
+  {
+    "key": "3ca9737618f1a147",
+    "title": "Authorities extradite Chinese national for alleged $37M investment scam",
+    "url": "https://cyberscoop.com/chinese-national-extradited-investment-scam",
+    "publisher": "CyberScoop",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T03:33:45.319Z"
+  },
+  {
+    "key": "6fcf621f852d0783",
+    "title": "FBI Seizes Virtualine Domain Over Alleged Criminal Hosting and Bitcoin Money Laundering",
+    "url": "https://thehackernews.com/2026/10/fbi-seizes-virtualine-domain-over.html",
+    "publisher": "The Hacker News",
+    "source_id": "review",
+    "reason": "law-enforcement action (arrest, extradition, seizure or sweep), not a new incident (manual review)",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T03:33:45.318Z"
+  },
+  {
     "key": "7325900e53d99905",
     "title": "ThreatsDay: Critical Firewall Flaws, Banking Trojans Rented, Weaponized PDF, Token Theft + 26 More Stories",
     "url": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
