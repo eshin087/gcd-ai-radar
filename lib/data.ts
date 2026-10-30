@@ -75,7 +75,7 @@ export const loadRadar = cache(async (): Promise<Radar | null> => {
 });
 
 /**
- * The statistics files the collector's daily stats stage writes
+ * The statistics files the collector's stats stage writes
  * (lib/stats-schema.ts): each one null when absent or invalid, so the home
  * page hides a panel instead of failing the build.
  */
@@ -88,14 +88,15 @@ export const loadStats = cache(async (): Promise<StatsFiles> => {
       return null;
     }
   };
-  const [nvdCounts, cvesRecent, kev, hibp, epss] = await Promise.all([
+  const [nvdCounts, cvesRecent, daily, kev, hibp, epss] = await Promise.all([
     read(STATS_FILES.nvdCounts, STATS_SCHEMAS.nvdCounts),
     read(STATS_FILES.cvesRecent, STATS_SCHEMAS.cvesRecent),
+    read(STATS_FILES.daily, STATS_SCHEMAS.daily),
     read(STATS_FILES.kev, STATS_SCHEMAS.kev),
     read(STATS_FILES.hibp, STATS_SCHEMAS.hibp),
     read(STATS_FILES.epss, STATS_SCHEMAS.epss),
   ]);
-  return { nvdCounts, cvesRecent, kev, hibp, epss };
+  return { nvdCounts, cvesRecent, daily, kev, hibp, epss };
 });
 
 /** Weekly briefings from data/briefings/<week>.json, newest week first; empty until the first Monday run. */
