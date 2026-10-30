@@ -2,7 +2,10 @@ name: collect
 
 on:
   schedule:
-    # Hourly, off the hour to avoid GitHub's top-of-the-hour queue delays. Sources keep their own
+    # The fallback clock. GitHub ran this hourly slot only three to five times a day in October 2026,
+    # so the Cloudflare Worker (worker/src/dispatch.ts) starts the workflow through workflow_dispatch
+    # every 30 minutes and skips a tick while a run is active. Hourly, off the hour to avoid GitHub's
+    # top-of-the-hour queue delays. Sources keep their own
     # cadence (every_run, six_hourly, daily, weekly, monthly in collector/config/sources.json);
     # a run that changes only bookkeeping files commits with "[no site change]" and skips the deploy.
     # Re-saved on 2026-10-26 so GitHub re-registers the hourly schedule: after the workflow was

@@ -11,6 +11,9 @@
  * unreachable, the last good payload (kept in KV for an hour) is served with
  * `stale: true`; with nothing to serve, a 503 lets the page show its idle
  * state.
+ *
+ * The cron trigger (wrangler.jsonc) is the collector's clock: every 30
+ * minutes it starts collect.yml on GitHub (./dispatch.ts).
  */
 import {
   assemble,
@@ -29,6 +32,7 @@ import {
   type RadarTopLocations,
   type Window,
 } from "./assemble";
+import { dispatchCollector } from "./dispatch";
 
 const RADAR = "https://api.cloudflare.com/client/v4/radar";
 /** Bumped with the payload's shape, so a deploy never serves a cached payload of the old one as fresh. */
@@ -199,5 +203,19 @@ export default {
       res = json({ error: "internal error" }, 500, { "Cache-Control": "no-store" });
     }
     return request.method === "HEAD" ? new Response(null, { status: res.status, headers: res.headers }) : res;
+  },
+
+  async scheduled(controller, env): Promise<void> {
+    const token = env.GITHUB_DISPATCH_TOKEN;
+    if (!token) {
+      console.error(JSON.stringify({ event: "dispatch_no_token" }));
+      return;
+    }
+    try {
+      const result = await dispatchCollector(token);
+      console.log(JSON.stringify({ event: "dispatch", result, cron: controller.cron }));
+    } catch (e) {
+      console.error(JSON.stringify({ event: "dispatch_failed", error: String(e) }));
+    }
   },
 } satisfies ExportedHandler<Env>;

@@ -227,7 +227,7 @@ console.log(\`\${t.incidents} AI security incidents (the AI lens) from \${t.from
         </li>
         <li>
           Each JSON file says when it was made: <span className="num text-[13px]">generated_at</span> for the deploy and{" "}
-          <span className="num text-[13px]">last_collector_run</span> for the data. Polling more than once an hour gains nothing.
+          <span className="num text-[13px]">last_collector_run</span> for the data. The collector runs every 30 minutes, so polling more often gains nothing.
         </li>
         <li>Records change after publication: sources are added, severities rise when exploitation is confirmed, duplicates are merged. Refetch rather than append.</li>
       </ul>
