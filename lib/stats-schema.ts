@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * The statistics files the collector's daily stats stage writes under
+ * The statistics files the collector's stats stage writes under
  * data/stats/ (collector/stats/*), and the public shape prebuild derives
  * from them for the home page (lib/home.ts). Each data file carries when it
  * was fetched and where it came from, so every number on the page can name
@@ -49,6 +49,18 @@ export const CvesRecentSchema = z.object({
   cves: z.array(RecentCveSchema),
 });
 export type CvesRecent = z.infer<typeof CvesRecentSchema>;
+
+/**
+ * CVEs published per UTC day (and those scored 9.0 or higher), the newest
+ * 120 complete days, counted from cves-recent on every stats run
+ * (collector/stats/daily.ts).
+ */
+export const DailyStatsSchema = z.object({
+  fetched_at: isoDateTime,
+  source: StatsSourceSchema,
+  days: z.record(isoDate, z.object({ cves: count, critical: count })),
+});
+export type DailyStats = z.infer<typeof DailyStatsSchema>;
 
 export const KevStatEntrySchema = z.object({
   cve: cveId,
@@ -107,10 +119,11 @@ export const EpssStatsSchema = z.object({
 });
 export type EpssStats = z.infer<typeof EpssStatsSchema>;
 
-/** The five files, each null when absent or invalid. */
+/** The six files, each null when absent or invalid. */
 export interface StatsFiles {
   nvdCounts: NvdCounts | null;
   cvesRecent: CvesRecent | null;
+  daily: DailyStats | null;
   kev: KevStats | null;
   hibp: HibpStats | null;
   epss: EpssStats | null;
@@ -119,6 +132,7 @@ export interface StatsFiles {
 export const STATS_FILES = {
   nvdCounts: "nvd-counts.json",
   cvesRecent: "cves-recent.json",
+  daily: "daily.json",
   kev: "kev.json",
   hibp: "hibp.json",
   epss: "epss.json",
@@ -127,13 +141,14 @@ export const STATS_FILES = {
 export const STATS_SCHEMAS = {
   nvdCounts: NvdCountsSchema,
   cvesRecent: CvesRecentSchema,
+  daily: DailyStatsSchema,
   kev: KevStatsSchema,
   hibp: HibpStatsSchema,
   epss: EpssStatsSchema,
 } as const;
 
 export function emptyStats(): StatsFiles {
-  return { nvdCounts: null, cvesRecent: null, kev: null, hibp: null, epss: null };
+  return { nvdCounts: null, cvesRecent: null, daily: null, kev: null, hibp: null, epss: null };
 }
 
 /* ---------- public/stats/home.json ---------- */

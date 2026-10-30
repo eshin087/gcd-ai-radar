@@ -10,7 +10,7 @@ import { monthLabel, timestampLabel } from "@/lib/format";
 import type { BreachStat, HomeStats, KevStatEntry } from "@/lib/stats-schema";
 
 /**
- * Band 4: the charts everyone should know. Four lean column charts; a column
+ * On /trends, under the whole web: the charts everyone should know. Four lean column charts; a column
  * opens its list (a drawer from /stats/*.json, the archive, or the year on
  * NVD), and every panel names its source and when it was fetched.
  */

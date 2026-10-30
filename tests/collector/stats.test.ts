@@ -4,20 +4,22 @@ import path from "node:path";
 import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import settingsJson from "@/collector/config/settings.json";
 import { SettingsSchema, type Settings } from "@/collector/lib/config";
+import { addDays } from "@/collector/lib/ids";
+import { DAILY_DAYS, completeDays, dailyModule, mergeDays } from "@/collector/stats/daily";
 import { epssModule, batches } from "@/collector/stats/epss";
 import { breachStat } from "@/collector/stats/hibp";
 import { isFresh, readAllStats, runStats, serializeStats } from "@/collector/stats/index";
-import { kevStatEntry } from "@/collector/stats/kev";
-import { cvssOf, nvdTime, resetNvdClock, toRecentCve, windows, yearWindows, type NvdCve } from "@/collector/stats/nvd";
+import { KEV_SOURCE, kevModule, kevStatEntry } from "@/collector/stats/kev";
+import { NVD_SOURCE, RECENT_DAYS, cvssOf, nvdTime, resetNvdClock, toRecentCve, windows, yearWindows, type NvdCve } from "@/collector/stats/nvd";
 import type { StatsContext, StatsHttp } from "@/collector/stats/types";
 import type { HttpOptions } from "@/collector/lib/http";
-import { STATS_FILES } from "@/lib/stats-schema";
+import { STATS_FILES, type CvesRecent } from "@/lib/stats-schema";
 
 const settings: Settings = SettingsSchema.parse(settingsJson);
 const NOW = new Date("2026-10-26T12:00:00Z");
 
 function ctx(http: StatsHttp, extra: Partial<StatsContext> = {}): StatsContext {
-  return { settings, now: NOW, http, recordCveIds: [], extraCveIds: [], log: () => undefined, ...extra };
+  return { settings, now: NOW, http, recordCveIds: [], extraCveIds: [], produced: {}, log: () => undefined, ...extra };
 }
 
 /** A recorded-shape HTTP client answering by URL, counting calls. */
@@ -85,6 +87,48 @@ describe("KEV, HIBP and EPSS mapping", () => {
     expect(kevStatEntry(entry, undefined, undefined)).toMatchObject({ published: null, cvss: null });
   });
 
+  it("runs the NVD join only for a new listing, a recent entry still unscored, or no previous file", async () => {
+    const listing = (dateAdded = "2026-10-20") => ({ ...entry, cveID: "CVE-2026-0001", dateAdded });
+    const http = (vulnerabilities: (typeof entry)[]) =>
+      fakeHttp((url) => {
+        if (url.startsWith("https://www.cisa.gov/")) return { catalogVersion: "2026.10.26", vulnerabilities };
+        if (url.includes("hasKev")) return { totalResults: 1, resultsPerPage: 500, startIndex: 0, vulnerabilities: [{ cve: nvdCve("CVE-2026-0001", "2026-10-02T00:00:00.000", { cvssMetricV31: [{ cvssData: { baseScore: 7.5, baseSeverity: "HIGH" } }] }) }] };
+        return new Error(`unexpected ${url}`);
+      });
+    const nvdCalls = (h: { calls: string[] }) => h.calls.filter((u) => u.includes("hasKev")).length;
+    const previous = (l: typeof entry, nvd: { published: string; cvss: number | null }, fetched_at = "2026-10-26T10:00:00.000Z") => ({ fetched_at, source: KEV_SOURCE, catalog_version: "2026.10.25", entries: [kevStatEntry(l, nvd, undefined)] });
+    const scored = { published: "2026-10-01", cvss: 9.1 };
+
+    // a quiet refresh, even from a file written on an earlier UTC day: no join, the previous date and score carry over
+    const lines: string[] = [];
+    const quiet = http([listing()]);
+    const kept = (await kevModule.fetch(ctx(quiet, { log: (msg) => lines.push(msg) }), previous(listing(), scored, "2026-10-24T23:30:00.000Z")))!;
+    expect(nvdCalls(quiet)).toBe(0);
+    expect(kept.entries[0]).toMatchObject({ cve: "CVE-2026-0001", published: "2026-10-01", cvss: 9.1 });
+    expect(lines).toContain("stats kev: no new listing, NVD join skipped");
+
+    // a CVE the previous file lacks: joined, and the join's answers win
+    const listed = http([listing(), { ...entry, cveID: "CVE-2026-0002", dateAdded: "2026-10-26" }]);
+    const joined = (await kevModule.fetch(ctx(listed), previous(listing(), scored)))!;
+    expect(nvdCalls(listed)).toBe(1);
+    expect(joined.entries.find((e) => e.cve === "CVE-2026-0001")).toMatchObject({ published: "2026-10-02", cvss: 7.5 });
+
+    // listed 10 days ago and still unscored: joined until NVD scores it
+    const recent = http([listing("2026-10-16")]);
+    await kevModule.fetch(ctx(recent), previous(listing("2026-10-16"), { published: "2026-10-01", cvss: null }));
+    expect(nvdCalls(recent)).toBe(1);
+
+    // listed 40 days ago and still unscored: left alone
+    const old = http([listing("2026-09-16")]);
+    await kevModule.fetch(ctx(old), previous(listing("2026-09-16"), { published: "2026-09-01", cvss: null }));
+    expect(nvdCalls(old)).toBe(0);
+
+    // no previous file: joined
+    const first = http([listing()]);
+    await kevModule.fetch(ctx(first), null);
+    expect(nvdCalls(first)).toBe(1);
+  });
+
   it("reduces a breach and drops malformed ones", () => {
     const b = breachStat({ Name: "Acme", Title: "Acme Corp", Domain: "acme.test", BreachDate: "2026-09-01", AddedDate: "2026-10-05T10:00:00Z", PwnCount: 1234, Description: "", DataClasses: [], IsVerified: true, IsFabricated: false, IsRetired: false, IsSpamList: false, IsMalware: true, IsStealerLog: false });
     expect(b).toMatchObject({ name: "Acme", added: "2026-10-05", breach_date: "2026-09-01", accounts: 1234, verified: true, malware: true, spam_list: false });
@@ -100,7 +144,7 @@ describe("KEV, HIBP and EPSS mapping", () => {
       return { status: "OK", data: list.map((cve) => ({ cve, epss: "0.123456", percentile: "0.5", date: "2026-10-26" })) };
     });
     const previous = { fetched_at: "2026-10-25T12:00:00Z", source: { name: "x", url: "https://x.test", license: "y" }, model_date: "2026-10-25", scores: { "CVE-2026-1100": [0.9, 0.99] as [number, number], "CVE-2000-0001": [0.1, 0.1] as [number, number] } };
-    const out = await epssModule.fetch(ctx(http, { recordCveIds: ids }), previous);
+    const out = (await epssModule.fetch(ctx(http, { recordCveIds: ids }), previous))!;
     expect(http.calls).toHaveLength(2);
     expect(out.scores["CVE-2026-1000"]).toEqual([0.1235, 0.5]);
     expect(out.scores["CVE-2026-1100"]).toEqual([0.9, 0.99]); // the failed batch kept the previous score
@@ -160,13 +204,15 @@ describe("runStats", () => {
 
     const second = await runStats(settings, { dataDir: dir, http, now: new Date(NOW.getTime() + 3_600_000), recordCveIds: [] });
     expect(second.changed).toEqual([]);
-    expect(second.skipped).toHaveLength(5);
+    expect(second.skipped).toHaveLength(6);
 
     // a day later with the same answers: due again, but only fetched_at would differ, so nothing is written
+    // except daily.json, which gains the day that has closed since (2026-10-26, no CVEs)
     const later = new Date(NOW.getTime() + 25 * 3_600_000);
     const same = await runStats(settings, { dataDir: dir, http, now: later, recordCveIds: ["CVE-2026-0009"] });
-    expect(same.changed).toEqual([]);
+    expect(same.changed).toEqual(["stats/daily.json"]);
     expect(same.skipped).toHaveLength(5);
+    expect((await readAllStats(dir)).daily!.days["2026-10-26"]).toEqual({ cves: 0, critical: 0 });
 
     // a changed catalog in a dry run: reported as changed, written nowhere
     const dry = await runStats(settings, { dataDir: dir, http: liveLike(false, "2026.10.27"), now: later, recordCveIds: ["CVE-2026-0009"], dryRun: true, only: ["kev"] });
@@ -185,6 +231,34 @@ describe("runStats", () => {
     expect((await readAllStats(dir)).kev).toEqual(before.kev);
   });
 
+  it("builds daily.json from the cves-recent window this run fetched, with no request of its own, and skips it without one", async () => {
+    // no cves-recent file: nothing to count, so skipped (not failed) and nothing written
+    const none = await runStats(settings, { dataDir: dir, http: fakeHttp(() => new Error("no calls")), now: NOW, recordCveIds: [], only: ["daily"] });
+    expect(none).toEqual({ changed: [], failed: [], skipped: ["daily"] });
+    expect((await readAllStats(dir)).daily).toBeNull();
+
+    const http = liveLike();
+    const r = await runStats(settings, { dataDir: dir, http, now: NOW, recordCveIds: [], only: ["cves-recent", "daily"] });
+    expect(r.changed).toEqual(["stats/cves-recent.json", "stats/daily.json"]);
+    expect(http.calls).toHaveLength(1); // the cves-recent page; daily asked nothing
+    // the window opens at 00:00 UTC, so its first day is whole: completeDays relies on this
+    expect(http.calls[0]).toContain(`pubStartDate=${encodeURIComponent(`${addDays("2026-10-26", -RECENT_DAYS)}T00:00:00.000+00:00`)}`);
+    const daily = (await readAllStats(dir)).daily!;
+    expect(daily.fetched_at).toBe(NOW.toISOString());
+    expect(Object.keys(daily.days)).toEqual(Array.from({ length: RECENT_DAYS }, (_, n) => addDays("2026-10-12", n)));
+    expect(daily.days["2026-10-25"]).toEqual({ cves: 1, critical: 0 });
+    // one day per line
+    const raw = await readFile(path.join(dir, "stats", STATS_FILES.daily), "utf8");
+    expect(raw.split("\n").filter((l) => l.startsWith('  "2026-'))).toHaveLength(RECENT_DAYS);
+  });
+
+  it("reads the KEV catalog on every hourly run (every other one at 30 minutes) and counts daily.json on every run", () => {
+    const ago = (minutes: number) => ({ fetched_at: new Date(NOW.getTime() - minutes * 60_000).toISOString() });
+    expect(isFresh(ago(60), kevModule.maxAgeHours, NOW)).toBe(false);
+    expect(isFresh(ago(30), kevModule.maxAgeHours, NOW)).toBe(true);
+    expect(isFresh(ago(0), dailyModule.maxAgeHours, NOW)).toBe(false);
+  });
+
   it("freshness and serialization", () => {
     expect(isFresh({ fetched_at: "2026-10-26T00:00:00Z" }, 20, NOW)).toBe(true);
     expect(isFresh({ fetched_at: "2026-10-25T00:00:00Z" }, 20, NOW)).toBe(false);
@@ -192,5 +266,68 @@ describe("runStats", () => {
     const s = serializeStats({ fetched_at: "x", years: [{ year: 1 }, { year: 2 }], scores: { b: [1, 1], a: [0, 0] }, none: [] });
     expect(JSON.parse(s)).toEqual({ fetched_at: "x", years: [{ year: 1 }, { year: 2 }], scores: { a: [0, 0], b: [1, 1] }, none: [] });
     expect(s.split("\n").filter((l) => l.startsWith("  {"))).toHaveLength(2);
+  });
+});
+
+describe("daily.json", () => {
+  const SRC = { name: "NVD", url: "https://nvd.test", license: "public domain" };
+  const cve = (id: string, published: string, score: number | null): CvesRecent["cves"][number] => ({ id, published, score, severity: null, version: null, description: "" });
+  const recent = (fetched_at: string, cves: CvesRecent["cves"], window_days = 4): CvesRecent => ({ fetched_at, source: SRC, window_days, cves });
+
+  it("counts complete days only: inside the window and before the UTC day it was fetched, zeros included, critical from 9.0", () => {
+    const days = completeDays(
+      recent("2026-10-26T12:00:00.000Z", [
+        cve("CVE-2026-0001", "2026-10-21T23:59:59.999Z", 9.8), // before the window
+        cve("CVE-2026-0002", "2026-10-23T00:00:00.000Z", 9.0),
+        cve("CVE-2026-0003", "2026-10-23T12:00:00.000Z", 8.9),
+        cve("CVE-2026-0004", "2026-10-24T05:00:00.000Z", null),
+        cve("CVE-2026-0005", "2026-10-25T23:59:59.999Z", 10),
+        cve("CVE-2026-0006", "2026-10-26T01:00:00.000Z", 9.8), // today, still filling up
+      ]),
+    );
+    expect(days).toEqual({
+      "2026-10-22": { cves: 0, critical: 0 },
+      "2026-10-23": { cves: 2, critical: 1 },
+      "2026-10-24": { cves: 1, critical: 0 },
+      "2026-10-25": { cves: 1, critical: 1 },
+    });
+  });
+
+  it("lets a newer count replace an older one and keeps the newest 120 days, keys ascending", () => {
+    const merged = mergeDays({ "2026-10-23": { cves: 1, critical: 0 }, "2026-10-20": { cves: 5, critical: 1 } }, { "2026-10-23": { cves: 3, critical: 1 } });
+    expect(merged).toEqual({ "2026-10-20": { cves: 5, critical: 1 }, "2026-10-23": { cves: 3, critical: 1 } });
+    expect(Object.keys(merged)).toEqual(["2026-10-20", "2026-10-23"]);
+
+    const start = "2026-06-01";
+    const long: Record<string, { cves: number; critical: number }> = {};
+    for (let n = 0; n < 125; n++) long[addDays(start, n)] = { cves: n, critical: 0 };
+    const keys = Object.keys(mergeDays(long, { [addDays(start, 125)]: { cves: 125, critical: 0 } }));
+    expect(DAILY_DAYS).toBe(120);
+    expect(keys).toHaveLength(DAILY_DAYS);
+    expect(keys[0]).toBe(addDays(start, 6));
+    expect(keys[keys.length - 1]).toBe(addDays(start, 125));
+    expect([...keys].sort()).toEqual(keys);
+  });
+
+  it("returns nothing without cves-recent, or with one older than its counts, and otherwise merges and stamps the cves-recent fetch", async () => {
+    const http = fakeHttp(() => new Error("no calls"));
+    expect(await dailyModule.fetch(ctx(http), null)).toBeNull();
+    expect(await dailyModule.fetch(ctx(http, { produced: { "cves-recent": null } }), null)).toBeNull();
+
+    const r = recent("2026-10-26T06:00:00.000Z", [cve("CVE-2026-0002", "2026-10-25T10:00:00.000Z", 9.1)]);
+    const previous = { fetched_at: "2026-10-25T06:00:00.000Z", source: NVD_SOURCE, days: { "2026-10-01": { cves: 7, critical: 2 }, "2026-10-25": { cves: 0, critical: 0 } } };
+    expect(await dailyModule.fetch(ctx(http, { produced: { "cves-recent": r } }), previous)).toEqual({
+      fetched_at: r.fetched_at,
+      source: NVD_SOURCE,
+      days: {
+        "2026-10-01": { cves: 7, critical: 2 },
+        "2026-10-22": { cves: 0, critical: 0 },
+        "2026-10-23": { cves: 0, critical: 0 },
+        "2026-10-24": { cves: 0, critical: 0 },
+        "2026-10-25": { cves: 1, critical: 1 },
+      },
+    });
+    expect(await dailyModule.fetch(ctx(http, { produced: { "cves-recent": r } }), { ...previous, fetched_at: "2026-10-26T07:00:00.000Z" })).toBeNull();
+    expect(http.calls).toEqual([]);
   });
 });

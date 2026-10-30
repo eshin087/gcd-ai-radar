@@ -134,7 +134,7 @@ async function main() {
       summarize(summary);
       const settings = loadConfig().settings;
       const radarChanged = !sourceIds ? await maybeUpdateRadar(settings, { dryRun }) : false;
-      // the daily statistics files (data/stats): due once a day, skipped in dry runs so a pipeline rehearsal stays quick
+      // the statistics files (data/stats): each due on its own cadence (the KEV catalog about hourly, most once a day), skipped in dry runs so a pipeline rehearsal stays quick
       const statsChanged = !sourceIds && !dryRun ? (await runStats(settings)).changed.length > 0 : false;
       const sideChanged = radarChanged || statsChanged;
       let unpushed = false;

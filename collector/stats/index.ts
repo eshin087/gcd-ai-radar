@@ -7,6 +7,7 @@ import type { Settings } from "../lib/config";
 import { httpJson, sleep } from "../lib/http";
 import { errorMessage, log } from "../lib/log";
 import { DATA_DIR, writeAtomic } from "../lib/state";
+import { dailyModule } from "./daily";
 import { epssModule } from "./epss";
 import { hibpModule } from "./hibp";
 import { kevModule } from "./kev";
@@ -14,19 +15,21 @@ import { cvesRecentModule, nvdCountsModule } from "./nvd";
 import type { StatsContext, StatsHttp, StatsModule, StatsResult } from "./types";
 
 /**
- * The daily stats stage: five files under data/stats/, each owned by one
- * module (nvd.ts, kev.ts, hibp.ts, epss.ts). Like the Radar sidebar data,
+ * The stats stage: six files under data/stats/, each owned by one module
+ * (nvd.ts, daily.ts, kev.ts, hibp.ts, epss.ts). Like the Radar sidebar data,
  * each file carries its own fetched_at and is due again once it is older
- * than the module's maxAgeHours; a failed fetch keeps the previous file and
- * logs a warning; a changed file is a site change, so the run deploys.
+ * than the module's maxAgeHours (about a day for most, under an hour for
+ * the KEV catalog, every run for daily.json, which only counts what
+ * cves-recent holds); a failed fetch keeps the previous file and logs a
+ * warning; a changed file is a site change, so the run deploys.
  * `npm run stats` runs it by hand (--dry-run, --force, --only=<name>).
  */
 
 export const STATS_SUBDIR = "stats";
 export const STATS_DIR = path.join(DATA_DIR, STATS_SUBDIR);
 
-/** In dependency order: EPSS needs the ids the earlier modules produced. */
-export const STATS_MODULES: readonly StatsModule<unknown>[] = [nvdCountsModule, cvesRecentModule, kevModule, hibpModule, epssModule] as readonly StatsModule<unknown>[];
+/** In dependency order: daily counts what cves-recent produced, EPSS needs the ids the earlier modules produced. */
+export const STATS_MODULES: readonly StatsModule<unknown>[] = [nvdCountsModule, cvesRecentModule, dailyModule, kevModule, hibpModule, epssModule] as readonly StatsModule<unknown>[];
 
 export interface RunStatsOptions {
   dryRun?: boolean;
@@ -54,25 +57,27 @@ export async function readStatsFile<T>(dataDir: string, file: string, schema: Zo
 
 /** Every stats file, each null when absent or invalid (the site's loader uses the same rule). */
 export async function readAllStats(dataDir = DATA_DIR): Promise<StatsFiles> {
-  const [nvdCounts, cvesRecent, kev, hibp, epss] = await Promise.all([
+  const [nvdCounts, cvesRecent, daily, kev, hibp, epss] = await Promise.all([
     readStatsFile(dataDir, STATS_FILES.nvdCounts, STATS_SCHEMAS.nvdCounts),
     readStatsFile(dataDir, STATS_FILES.cvesRecent, STATS_SCHEMAS.cvesRecent),
+    readStatsFile(dataDir, STATS_FILES.daily, STATS_SCHEMAS.daily),
     readStatsFile(dataDir, STATS_FILES.kev, STATS_SCHEMAS.kev),
     readStatsFile(dataDir, STATS_FILES.hibp, STATS_SCHEMAS.hibp),
     readStatsFile(dataDir, STATS_FILES.epss, STATS_SCHEMAS.epss),
   ]);
-  return { nvdCounts, cvesRecent, kev, hibp, epss };
+  return { nvdCounts, cvesRecent, daily, kev, hibp, epss };
 }
 
 /**
- * Stable JSON with one array element (or one `scores` entry) per line, so a
- * daily refresh diffs as the lines that changed rather than a rewritten file.
+ * Stable JSON with one array element (or one `scores` or `days` entry, keys
+ * sorted) per line, so a refresh diffs as the lines that changed rather than
+ * a rewritten file.
  */
 export function serializeStats(obj: Record<string, unknown>): string {
   const parts = Object.entries(obj).map(([key, value]) => {
     const k = JSON.stringify(key);
     if (Array.isArray(value)) return value.length === 0 ? `${k}: []` : `${k}: [\n${value.map((x) => `  ${JSON.stringify(x)}`).join(",\n")}\n ]`;
-    if (key === "scores" && value && typeof value === "object") {
+    if ((key === "scores" || key === "days") && value && typeof value === "object") {
       const entries = Object.entries(value as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b));
       return entries.length === 0 ? `${k}: {}` : `${k}: {\n${entries.map(([a, b]) => `  ${JSON.stringify(a)}: ${JSON.stringify(b)}`).join(",\n")}\n }`;
     }
@@ -105,10 +110,12 @@ export async function runStats(settings: Settings, opts: RunStatsOptions = {}): 
   const recordCveIds = opts.recordCveIds ?? (await recordCveIdsFromDisk(dataDir));
   const result: StatsResult = { changed: [], failed: [], skipped: [] };
   const extraCveIds: string[] = [];
-  const ctx: StatsContext = { settings, now, http, recordCveIds, extraCveIds, log: (msg, meta) => log.info(msg, meta) };
+  const produced: Record<string, unknown> = {};
+  const ctx: StatsContext = { settings, now, http, recordCveIds, extraCveIds, produced, log: (msg, meta) => log.info(msg, meta) };
 
   for (const mod of STATS_MODULES) {
     const previous = await readStatsFile(dataDir, mod.file, mod.schema);
+    produced[mod.name] = previous;
     if (opts.only && !opts.only.includes(mod.name)) {
       extraCveIds.push(...idsFrom(mod.name, previous));
       continue;
@@ -120,7 +127,14 @@ export async function runStats(settings: Settings, opts: RunStatsOptions = {}): 
       continue;
     }
     try {
-      const next = mod.schema.parse(await mod.fetch(ctx, previous));
+      const fetched = await mod.fetch(ctx, previous);
+      if (fetched === null) {
+        result.skipped.push(mod.name);
+        extraCveIds.push(...idsFrom(mod.name, previous));
+        continue;
+      }
+      const next = mod.schema.parse(fetched);
+      produced[mod.name] = next;
       extraCveIds.push(...idsFrom(mod.name, next));
       const content = serializeStats(next as Record<string, unknown>);
       const file = path.join(STATS_SUBDIR, mod.file);

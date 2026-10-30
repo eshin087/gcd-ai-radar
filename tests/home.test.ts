@@ -33,6 +33,7 @@ function stats(): StatsFiles {
         { id: "CVE-2026-0003", published: hoursAgo(24 * 20), score: null, severity: null, version: null, description: "Unscored, old." },
       ],
     },
+    daily: null,
     kev: {
       fetched_at: hoursAgo(3),
       source: { ...SRC, name: "CISA KEV" },

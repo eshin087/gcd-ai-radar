@@ -114,10 +114,15 @@ export function RankRows({ rows, head, codeWidth = "3.75rem", color, chart, max 
               <span className="num text-right text-[14px] text-faint">0</span>
             )}
             {hasExtra &&
-              (r.extra && r.extra.count > 0 ? (
+              (r.extra && r.extra.count > 0 && r.extra.onClick ? (
                 <button type="button" onClick={r.extra.onClick} aria-label={`${r.extra.name}: ${r.extra.count} disclosed vulnerabilities`} className={`${COUNT} text-right text-[13px] text-soft`}>
                   {r.extra.count.toLocaleString("en-US")}
                 </button>
+              ) : r.extra && r.extra.count > 0 ? (
+                // a number with nothing to open (the EPSS ten's CVSS) is not a control
+                <span className="num text-right text-[13px] text-soft" title={r.extra.name}>
+                  {r.extra.count.toLocaleString("en-US")}
+                </span>
               ) : (
                 <span className="num text-right text-[13px] text-faint">{r.extra ? "0" : ""}</span>
               ))}

@@ -393,6 +393,37 @@ export default function MethodologyPage() {
         ))}
       </ul>
 
+      <H2 id="panel">The home page&rsquo;s instruments</H2>
+      <p>The home page is built from the same records and statistics files as the rest of the site; every rule below is stated in the code that applies it (lib/panel).</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          <strong>Level words.</strong> A count is quiet below the 25th percentile of its own history, normal up to the 75th, busy up to the 90th and very busy above.
+          New CVEs in 24 hours are judged against the thirteen 24-hour windows before them; CISA KEV additions in 7 days against every 7-day window of the 36 months
+          before. The day&rsquo;s word is the higher of the two. A week of CVEs is judged against this year&rsquo;s average week: busy above 1.25 times it, quiet below 0.75.
+        </li>
+        <li>
+          <strong>CVE windows</strong> count back from when NVD was last fetched, so &ldquo;24 hours&rdquo; is always a whole 24 hours; the page then brings the counts up
+          to the minute from NVD through our Worker when it can.
+        </li>
+        <li>
+          <strong>Attack types</strong> sort the week&rsquo;s incidents with keyword rules, first match wins: ransomware and extortion, supply chain, espionage and state
+          actors, phishing/fraud/deepfakes, malware and botnets, attacks on AI models and agents, data breaches and leaks, exploited vulnerabilities, other. Rules
+          misfile some records; a classifier field can replace them later.
+        </li>
+        <li>
+          <strong>Attack surface</strong> sorts CISA KEV entries by technology with ordered keyword rules over vendor, product and name: AI stack, network edge and
+          VPN, remote access and IT tools, operating systems, browsers, enterprise and web apps, OT and IoT, other.
+        </li>
+        <li>
+          <strong>My stack</strong> counts, per product, KEV entries and our exploited records of the last 90 days, once per CVE. A tile turns red only while
+          something is exploited and open: a KEV deadline ahead, no full patch, or confirmed loss. Your picks stay in your browser.
+        </li>
+        <li>
+          <strong>How AI shows up</strong> splits the week&rsquo;s incidents by AI role. It shows counts, never a share over time: until 19 October 2026 the
+          collector tracked AI incidents only, so an AI share trend would chart the collector, not the world.
+        </li>
+      </ul>
+
       <H2 id="cves">AI vulnerability records</H2>
       <p>
         The collector reads CVEs and advisories for an allow-list of LLM and agent-era tooling from NVD, the GitHub Advisory Database and Microsoft&rsquo;s
@@ -486,6 +517,10 @@ export default function MethodologyPage() {
           research) with a live or closed state, a fix status and a timeline per record; a third AI role, &ldquo;no AI role&rdquo;; the live feed as the home page;
           the chart dashboard at /trends; a tag directory; feed.json, changes.json, llms.txt, per-lane and per-tag feeds and a Markdown brief per record. Every AI
           count (Trends, summary.json, the embed card, the briefing, the chart images) counts AI records only, so no existing number changed meaning.
+        </li>
+        <li>
+          2026-10-30 · the home page becomes an instrument panel (My stack, Act now, Latest, attack types, attack surface, how AI shows up, the sieve); its
+          charts move to Trends. The CVE counters now count back from when NVD was fetched rather than from the build, so a day&rsquo;s count is never partial.
         </li>
       </ul>
     </div>
