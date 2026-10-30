@@ -53,8 +53,8 @@ export interface ClusterKev {
 
 export type ClusterLane = "patch" | "breach" | "supply_chain";
 
+/** What the Open tile draws of a record; the tile links the live board, so no slug ships with it. */
 export interface ClusterOpen {
-  slug: string;
   /** The first product family named, else the title. */
   name: string;
   lane: ClusterLane;
@@ -232,7 +232,7 @@ export function buildCluster(live: LiveData, stats: StatsFiles, home: HomeStats,
 
   // open: our live records of severity 3 and up in the action lanes
   const lanes: Record<ClusterLane, number> = { patch: 0, breach: 0, supply_chain: 0 };
-  const open: (ClusterOpen & { update: string })[] = [];
+  const open: (ClusterOpen & { slug: string; update: string })[] = [];
   for (const b of live.boards) {
     if (b.key !== "patch" && b.key !== "breach" && b.key !== "supply_chain") continue;
     for (const r of b.groups.flatMap((g) => g.rows)) {
@@ -275,7 +275,7 @@ export function buildCluster(live: LiveData, stats: StatsFiles, home: HomeStats,
     open: {
       lanes,
       total: lanes.patch + lanes.breach + lanes.supply_chain,
-      rows: open.slice(0, CLUSTER_ITEMS).map((r) => ({ slug: r.slug, name: r.name, lane: r.lane, patch: r.patch, reported: r.reported })),
+      rows: open.slice(0, CLUSTER_ITEMS).map((r) => ({ name: r.name, lane: r.lane, patch: r.patch, reported: r.reported })),
     },
     cves,
     breaches,

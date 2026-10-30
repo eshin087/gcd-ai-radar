@@ -221,7 +221,12 @@ describe("the hero cluster", () => {
   it("counts open severity 3+ records per action lane, newest first", () => {
     expect(c.open.lanes).toEqual({ patch: 1, breach: 2, supply_chain: 0 });
     expect(c.open.total).toBe(3);
-    expect(c.open.rows.map((r) => r.slug)).toEqual(["c", "b", "a"]);
+    // records c, b and a, newest first
+    expect(c.open.rows.map((r) => [r.lane, r.reported])).toEqual([
+      ["breach", "2026-10-23"],
+      ["breach", "2026-10-22"],
+      ["patch", "2026-10-20"],
+    ]);
     expect(c.open.rows.length).toBeLessThanOrEqual(CLUSTER_ITEMS);
   });
 
