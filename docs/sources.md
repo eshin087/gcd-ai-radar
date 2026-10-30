@@ -1,6 +1,6 @@
 # Sources
 
-Every feed, API and dataset the collector reads, verified live on 2026-10-17 and 2026-10-18 (the general advisory and press feeds and Have I Been Pwned on 2026-10-25). The collector runs hourly; each source keeps its own cadence (`schedule` in `collector/config/sources.json`: every run, every six hours, daily, weekly or monthly). For each source: how it is accessed, its licence or terms, what attribution it requires, which fields it provides and any caveats. The collector's configuration is `collector/config/sources.json`; this page is kept in step with it.
+Every feed, API and dataset the collector reads, verified live on 2026-10-17 and 2026-10-18 (the general advisory and press feeds and Have I Been Pwned on 2026-10-25). The collector runs every 30 minutes; each source keeps its own cadence (`schedule` in `collector/config/sources.json`: every run, every six hours, daily, weekly or monthly). For each source: how it is accessed, its licence or terms, what attribution it requires, which fields it provides and any caveats. The collector's configuration is `collector/config/sources.json`; this page is kept in step with it.
 
 Policy: a source is used only if its feed or API is offered for machine reading, its path is not disallowed in robots.txt, and its terms do not forbid what the collector does (store title, link and date; write an original two-sentence summary; link back). Nothing is fetched behind paywalls or logins, and article text is never stored.
 
