@@ -1,5 +1,65 @@
 [
   {
+    "key": "7c08440eddd7ddb0",
+    "title": "OpenAI-Linked AI Agents May Have Contributed to a Partial Outage of the Wikimedia Foundation's Data Query Service",
+    "url": "https://incidentdatabase.ai/cite/1779",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm with no security angle, operational friction rather than a cyberattack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
+    "key": "c26a63301fb6a992",
+    "title": "Meta's Muse AI Agent Reportedly Shared a Seller's Home Address and Arranged an Unexpected Pickup in Toronto",
+    "url": "https://incidentdatabase.ai/cite/1776",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: AI harm with no security angle, a privacy leak resulting from user configuration.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
+    "key": "d8e25de96b288725",
+    "title": "Spain's People's Party Reportedly Published Purported Deepfakes Featuring Fabricated Admissions of Misconduct",
+    "url": "https://incidentdatabase.ai/cite/1785",
+    "publisher": "AI Incident Database",
+    "source_id": "aiid",
+    "reason": "out of scope: Deepfake political controversy and defamation complaint without a cybersecurity angle.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
+    "key": "9bd41e8038f20928",
+    "title": "Bedrock Data routes data exposure fixes to owners and verifies results",
+    "url": "https://helpnetsecurity.com/2026/10/30/bedrock-data-ai-assisted-remediation",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch / vendor feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
+    "key": "6734aa3aec6c0e42",
+    "title": "Syrian Hacker Behind Fake Tweet That Triggered $136 Billion Market Drop Gets 42 Months in Prison",
+    "url": "https://thehackernews.com/2026/10/syrian-hacker-behind-fake-tweet-that.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Sentencing and court cases for old campaigns are follow-ups, not new incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
+    "key": "0c2147badfd62acb",
+    "title": "Fresh WordPress Vulnerability in Attackers’ Crosshairs",
+    "url": "https://securityweek.com/fresh-wordpress-vulnerability-in-attackers-crosshairs",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: A high-severity vulnerability without a stated CVE, fix details, or confirmation of successful wild exploitation.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-30T13:27:13.057Z"
+  },
+  {
     "key": "0dfdc466bd16c054",
     "title": "Smart TVs can harbor unpatched security flaws and track what you watch",
     "url": "https://helpnetsecurity.com/2026/10/30/bitdefender-smart-tvs-vulnerabilities-report",

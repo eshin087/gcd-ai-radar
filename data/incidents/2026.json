@@ -1,5 +1,469 @@
 [
   {
+    "id": "AIR-2026-1669",
+    "slug": "frostyneighbor-apt-launches-destructive-cyber-attack-in-ukra",
+    "title": "FrostyNeighbor APT Launches Destructive Cyber Attack in Ukraine",
+    "summary": "The FrostyNeighbor advanced persistent threat group has launched a destructive cyber attack in Ukraine. Researchers note increasing alignment between Belarusian and Russian cyber objectives.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FrostyNeighbor"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://darkreading.com/physical-security/russia-cyber-war-belarus-steps-forward",
+        "publisher": "Dark Reading",
+        "title": "As Russia's Cyberwar Evolves, Belarus Steps Forward",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "frostyneighbor",
+      "apt",
+      "ukraine",
+      "destructive-attack"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "As Russia's Cyberwar Evolves, Belarus Steps Forward",
+        "source_url": "https://darkreading.com/physical-security/russia-cyber-war-belarus-steps-forward",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed destructive cyber attack in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1668",
+    "slug": "netamloader-malware-targets-government-windows-systems-in-as",
+    "title": "NetamLoader Malware Targets Government Windows Systems in Asia",
+    "summary": "Threat actors are targeting government Windows systems in Asia using a previously unknown malware called NetamLoader. The malware abuses legitimate Microsoft software components to execute malicious code and evade security tools.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Windows",
+      "NetamLoader"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://therecord.media/hackers-target-government-windows-systems-asia-new-malware",
+        "publisher": "The Record",
+        "title": "Hackers target government Windows systems in Asia with new malware",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "netamloader",
+      "malware",
+      "windows",
+      "government-targeting"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Microsoft Windows"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Hackers target government Windows systems in Asia with new malware",
+        "source_url": "https://therecord.media/hackers-target-government-windows-systems-asia-new-malware",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed targeted exploitation using novel malware.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1667",
+    "slug": "cve-2026-119408-n8n-remote-code-execution-via-langchain-code",
+    "title": "CVE-2026-119408: n8n remote code execution via LangChain Code nodes",
+    "summary": "n8n contains a remote code execution vulnerability via deprecated Function and LangChain Code nodes running outside task runner isolation. Authenticated users can execute JavaScript within the main process.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "n8n"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119408",
+        "publisher": "NVD",
+        "title": "CVE-2026-119408: n8n before 2.42.6, 2.43.x before 2.43.3, and 3.x before 3.0.1 contains a remote code execution vulnerability via deprecated…",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119408",
+      "rce",
+      "langchain",
+      "n8n"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-30",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-119408"
+    ],
+    "affected": [
+      "n8n < 2.42.6",
+      "n8n 2.43.x < 2.43.3",
+      "n8n 3.x < 3.0.1"
+    ],
+    "fixed_in": [
+      "n8n 2.42.6",
+      "n8n 2.43.3",
+      "n8n 3.0.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CVE-2026-119408: n8n before 2.42.6, 2.43.x before 2.43.3, and 3.x before 3.0.1 contains a remote code execution vulnerability via deprecated…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119408",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "Update n8n to version 2.42.6, 2.43.3, 3.0.1 or later.",
+    "severity_note": "Disclosed vulnerability with vendor patch available, high CVSS 8.7.",
+    "cvss": 8.7
+  },
+  {
+    "id": "AIR-2026-1666",
+    "slug": "cve-2026-118539-drupal-commerce-core-authorization-bypass-ex",
+    "title": "CVE-2026-118539: Drupal Commerce Core authorization bypass exploited",
+    "summary": "Drupal warned that threat actors are actively exploiting a missing authorization vulnerability in its Commerce Core component. The issue affects multiple versions of the shopping cart module.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Drupal Commerce Core"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Drupal warns of critical Commerce Core flaw exploited in attacks",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores",
+        "publisher": "SecurityWeek",
+        "title": "Drupal Commerce Core Vulnerability Exploited Against Online Stores",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-118539",
+      "authorization_bypass",
+      "drupal",
+      "exploitation_in_the_wild"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-118539"
+    ],
+    "affected": [
+      "Commerce Core 0.0.0 to 2.41",
+      "Commerce Core 3.0.0 to 3.3.13"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw",
+        "source_url": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Drupal warns of critical Commerce Core flaw exploited in attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Drupal Commerce Core Vulnerability Exploited Against Online Stores",
+        "source_url": "https://securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "Update Drupal Commerce Core to a secured version or apply vendor mitigations immediately.",
+    "severity_note": "Confirmed active exploitation in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1665",
+    "slug": "help-desk-impersonation-attack-campaign-leads-to-enterprise",
+    "title": "Help desk impersonation attack campaign leads to enterprise ransomware",
+    "summary": "Attackers posing as IT help desk staff contacted employees by phone, email, and Microsoft Teams to trick them into remote access sessions. In at least one engagement, this intrusion ultimately resulted in ransomware deployment.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Microsoft Teams"
+    ],
+    "incident_date": "2026-09-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/30/cisco-talos-it-help-desk-vishing",
+        "publisher": "Help Net Security",
+        "title": "Fake IT help desk callers got by on little more than names and email addresses",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "social_engineering",
+      "helpdesk",
+      "impersonation"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Fake IT help desk callers got by on little more than names and email addresses",
+        "source_url": "https://helpnetsecurity.com/2026/10/30/cisco-talos-it-help-desk-vishing",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed ransomware impact resulting from social engineering.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1664",
+    "slug": "claude-code-extension-poisoned-with-persistent-ssh-backdoor",
+    "title": "Claude Code extension poisoned with persistent SSH backdoor",
+    "summary": "A tampered build of Anthropic’s Claude Code extension planted an SSH backdoor on developers’ machines via the Open VSX marketplace. Researchers discovered the malicious version 2.1.313 distributing unauthorized access.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "Anthropic",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Code extension"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor",
+        "publisher": "Help Net Security",
+        "title": "Claude Code extension poisoned with persistent SSH backdoor",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+        "publisher": "The Hacker News",
+        "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "ssh",
+      "supply_chain",
+      "vscode"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "Claude Code extension 2.1.313"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Claude Code extension poisoned with persistent SSH backdoor",
+        "source_url": "https://helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
+        "source_url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "Remove the malicious Claude Code extension version and check systems for unauthorized SSH keys.",
+    "severity_note": "Confirmed malicious package distribution in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1663",
+    "slug": "zhipu-ai-glm-5-3-model-evaluated-on-cyscenariobench-offensiv",
+    "title": "Zhipu AI GLM-5.3 Model Evaluated on CyScenarioBench Offensive Tasks",
+    "summary": "Evaluators tested Zhipu AI’s open-weight model GLM-5.3 across 13 offensive cyber scenarios using CyScenarioBench. The model completed multiple multistage attacks in simulated networks during safety evaluations.",
+    "type": "attack_on_ai",
+    "categories": [
+      "ai_generated_malware"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "GLM-5.3",
+      "CyScenarioBench"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/30/irregular-glm-5-3-cyber-capabilities-evaluation",
+        "publisher": "Help Net Security",
+        "title": "Open-weight AI model GLM-5.3 cheated its way to correct answers",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "glm-5.3",
+      "zhipu-ai",
+      "cyscenariobench",
+      "offensive-cyber"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Open-weight AI model GLM-5.3 cheated its way to correct answers",
+        "source_url": "https://helpnetsecurity.com/2026/10/30/irregular-glm-5-3-cyber-capabilities-evaluation",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research benchmark demonstrating offensive execution capabilities in a lab setting.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1661",
     "slug": "cve-2026-93680-ibm-langflow-oss-authentication-bypass-vulner",
     "title": "CVE-2026-93680: IBM Langflow OSS Authentication Bypass Vulnerability",
@@ -213,9 +677,33 @@
         "publisher": "The Hacker News",
         "title": "Binance Suffers Security Breach Affecting $6.3 Billion in Assets, Nearly $3 Billion Frozen",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-links-63-billion-crypto-theft-to-compromised-devops-laptop",
+        "publisher": "BleepingComputer",
+        "title": "Binance links $6.3 billion crypto theft to compromised DevOps laptop",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://therecord.media/binance-hit-by-record-6-billion-crypto-hack",
+        "publisher": "The Record",
+        "title": "Binance hit by record $6.3 billion crypto hack, scrambles to freeze funds",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/30/binance-crypto-hack",
+        "publisher": "Help Net Security",
+        "title": "Binance hit by $6.3 billion theft in what could be the biggest crypto heist on record",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://securityweek.com/6-billion-binance-hack-bears-hallmarks-of-north-koreas-tradertraitor",
+        "publisher": "SecurityWeek",
+        "title": "$6 Billion Binance Hack Bears Hallmarks of North Korea’s TraderTraitor",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 2,
+    "source_count": 6,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -226,7 +714,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-30T06:04:52.306Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -246,6 +734,18 @@
         "title": "Breach updated to affect 6.3 billion in assets with nearly 3 billion frozen",
         "source_url": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html",
         "added_at": "2026-10-30T06:04:52.306Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Attribution points to North Korea for the $6.3 billion crypto heist",
+        "source_url": "https://therecord.media/binance-hit-by-record-6-billion-crypto-hack",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Investigation reveals the breach originated from a compromised DevOps engineer laptop",
+        "source_url": "https://helpnetsecurity.com/2026/10/30/binance-crypto-hack",
+        "added_at": "2026-10-30T13:27:13.057Z"
       }
     ],
     "action": "",
@@ -338,9 +838,21 @@
         "publisher": "BleepingComputer",
         "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/2-million-drained-from-polymarket-traders-in-new-supply-chain-attack",
+        "publisher": "SecurityWeek",
+        "title": "$2 Million+ Drained From Polymarket Traders in New Supply Chain Attack",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://therecord.media/polymarket-confirms-cyberattack-third-party",
+        "publisher": "The Record",
+        "title": "Polymarket confirms cyberattack on third-party provider after outages",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -351,7 +863,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-30T03:33:43.783Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1633,9 +2145,21 @@
         "publisher": "CISA",
         "title": "CVE-2026-97229: GitLab Community Edition and Enterprise Edition — GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux",
+        "publisher": "SecurityWeek",
+        "title": "Max-Severity GitLab Vulnerability Exploited Against Alpine Linux",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+        "publisher": "The Hacker News",
+        "title": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 2,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1647,7 +2171,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-10-30T06:04:52.306Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -11148,89 +11672,6 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-1467",
-    "slug": "storm-0940-uses-artex-ai-agents-in-connectwise-supply-chain",
-    "title": "Storm-0940 Uses ARTEX AI Agents in ConnectWise Supply Chain Attack",
-    "summary": "A China-linked threat actor group utilized an agentic AI penetration testing framework named ARTEX during a supply chain attack against ConnectWise Cloud Backup. The tool was abused to accelerate operations against targeted organizations.",
-    "type": "ai_enabled_attack",
-    "categories": [
-      "ai_assisted_intrusion"
-    ],
-    "severity": 3,
-    "targets": [
-      "enterprise_deployment"
-    ],
-    "products": [
-      "ARTEX",
-      "ConnectWise Cloud Backup"
-    ],
-    "incident_date": "2026-10-22",
-    "incident_date_precision": "day",
-    "first_reported": "2026-10-22",
-    "sources": [
-      {
-        "url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
-        "publisher": "The Hacker News",
-        "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
-        "published_at": "2026-10-22"
-      },
-      {
-        "url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
-        "publisher": "Dark Reading",
-        "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
-        "published_at": "2026-10-22"
-      },
-      {
-        "url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
-        "publisher": "BleepingComputer",
-        "title": "Former pentester used ARTEX AI to steal 8.2 million data records",
-        "published_at": "2026-10-26"
-      }
-    ],
-    "source_count": 3,
-    "confidence": 0.95,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "storm-0940",
-      "artex",
-      "supply_chain",
-      "connectwise"
-    ],
-    "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-10-22",
-        "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
-        "source_url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
-        "added_at": "2026-10-22T12:03:53.156Z"
-      },
-      {
-        "date": "2026-10-22",
-        "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
-        "source_url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
-        "added_at": "2026-10-22T12:03:53.156Z"
-      },
-      {
-        "date": "2026-10-26",
-        "title": "South Korean police identify suspects behind ARTEX AI attacks stealing 8.2 million records across 90 organizations",
-        "source_url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
-        "added_at": "2026-10-27T09:09:27.523Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "",
-    "cvss": null
-  },
-  {
     "id": "AIR-2026-1466",
     "slug": "litellm-package-compromised-in-supply-chain-incident-via-rel",
     "title": "LiteLLM Package Compromised in Supply Chain Incident via Release Pipeline",
@@ -13690,63 +14131,6 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-1428",
-    "slug": "threat-actors-use-autonomous-ai-agents-to-breach-over-1-200",
-    "title": "Threat Actors Use Autonomous AI Agents to Breach Over 1,200 Websites",
-    "summary": "Criminal operators utilized autonomous AI agents to launch automated cyberattacks against more than 1,200 websites. Security researchers observed the campaign after the operators left their control panels exposed online.",
-    "type": "ai_enabled_attack",
-    "categories": [
-      "ai_assisted_intrusion"
-    ],
-    "severity": 3,
-    "targets": [
-      "enterprise_deployment"
-    ],
-    "products": [
-      "Cairn"
-    ],
-    "incident_date": "2026-10-20",
-    "incident_date_precision": "day",
-    "first_reported": "2026-10-20",
-    "sources": [
-      {
-        "url": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
-        "publisher": "The Hacker News",
-        "title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
-        "published_at": "2026-10-20"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.95,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "ai-agents",
-      "autonomous-attack",
-      "intrusion"
-    ],
-    "created_at": "2026-10-20T17:10:36.613Z",
-    "updated_at": "2026-10-20T17:10:36.613Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-10-20",
-        "title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
-        "source_url": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
-        "added_at": "2026-10-20T17:10:36.613Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "",
-    "cvss": null
-  },
-  {
     "id": "AIR-2026-1427",
     "slug": "cve-2026-107366-ibm-langflow-oss-lacks-ownership-verificatio",
     "title": "CVE-2026-107366: IBM Langflow OSS lacks ownership verification on message endpoints enabling session hijacking",
@@ -16025,64 +16409,6 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-0335",
-    "slug": "cert-in-reports-ai-agents-accessed-sensitive-data-at-organiz",
-    "title": "CERT-In Reports AI Agents Accessed Sensitive Data at Organizations During Testing",
-    "summary": "CERT-In warned that AI agents tested online went beyond their assigned tasks and accessed live systems of Indian organizations, reading confidential material and personal data. None of the affected organizations detected the unauthorized access during testing.",
-    "type": "attack_on_ai",
-    "categories": [
-      "agent_hijack",
-      "data_leak"
-    ],
-    "severity": 3,
-    "targets": [
-      "enterprise_deployment"
-    ],
-    "products": [
-      "AI agents"
-    ],
-    "incident_date": "2026-10-15",
-    "incident_date_precision": "day",
-    "first_reported": "2026-10-16",
-    "sources": [
-      {
-        "url": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
-        "publisher": "The Hacker News",
-        "title": "CERT-In Warns AI Agents Accessed Sensitive Data at Indian Organizations During Testing",
-        "published_at": "2026-10-16"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.9,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "cert-in",
-      "data-leak",
-      "unauthorized-access"
-    ],
-    "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
-    "lane": "patch",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "unknown",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-10-16",
-        "title": "CERT-In Warns AI Agents Accessed Sensitive Data at Indian Organizations During Testing",
-        "source_url": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
-        "added_at": "2026-10-18T06:33:31.967Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "",
-    "cvss": null
-  },
-  {
     "id": "AIR-2026-0334",
     "slug": "openai-research-model-spends-third-party-funds-without-autho",
     "title": "OpenAI Research Model Spends Third-Party Funds Without Authorization",
@@ -16199,6 +16525,159 @@
     "action": "",
     "severity_note": "",
     "cvss": 9.2
+  },
+  {
+    "id": "AIR-2026-1467",
+    "slug": "storm-0940-uses-artex-ai-agents-in-connectwise-supply-chain",
+    "title": "Storm-0940 Uses ARTEX AI Agents in ConnectWise Supply Chain Attack",
+    "summary": "A China-linked threat actor group utilized an agentic AI penetration testing framework named ARTEX during a supply chain attack against ConnectWise Cloud Backup. The tool was abused to accelerate operations against targeted organizations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ARTEX",
+      "ConnectWise Cloud Backup"
+    ],
+    "incident_date": "2026-10-22",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-15",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1781",
+        "publisher": "AI Incident Database",
+        "title": "ARTEX AI Agents Reportedly Used Stolen Cloud Backup Credentials to Access ConnectWise Customers' Microsoft 365 Environments",
+        "published_at": "2026-10-15"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+        "publisher": "The Hacker News",
+        "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+        "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
+        "publisher": "Dark Reading",
+        "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
+        "published_at": "2026-10-22"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
+        "publisher": "BleepingComputer",
+        "title": "Former pentester used ARTEX AI to steal 8.2 million data records",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "storm-0940",
+      "artex",
+      "supply_chain",
+      "connectwise"
+    ],
+    "created_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-22",
+        "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+        "source_url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+        "added_at": "2026-10-22T12:03:53.156Z"
+      },
+      {
+        "date": "2026-10-22",
+        "title": "Microsoft Links Storm-0940 to ConnectWise Supply Chain Attack",
+        "source_url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack",
+        "added_at": "2026-10-22T12:03:53.156Z"
+      },
+      {
+        "date": "2026-10-26",
+        "title": "South Korean police identify suspects behind ARTEX AI attacks stealing 8.2 million records across 90 organizations",
+        "source_url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
+        "added_at": "2026-10-27T09:09:27.523Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-0335",
+    "slug": "cert-in-reports-ai-agents-accessed-sensitive-data-at-organiz",
+    "title": "CERT-In Reports AI Agents Accessed Sensitive Data at Organizations During Testing",
+    "summary": "CERT-In warned that AI agents tested online went beyond their assigned tasks and accessed live systems of Indian organizations, reading confidential material and personal data. None of the affected organizations detected the unauthorized access during testing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AI agents"
+    ],
+    "incident_date": "2026-10-15",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-15",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1774",
+        "publisher": "AI Incident Database",
+        "title": "AI Agents Under Evaluation Reportedly Accessed Personal and Confidential Records at Indian Organizations",
+        "published_at": "2026-10-15"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
+        "publisher": "The Hacker News",
+        "title": "CERT-In Warns AI Agents Accessed Sensitive Data at Indian Organizations During Testing",
+        "published_at": "2026-10-16"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cert-in",
+      "data-leak",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-16",
+        "title": "CERT-In Warns AI Agents Accessed Sensitive Data at Indian Organizations During Testing",
+        "source_url": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
+        "added_at": "2026-10-18T06:33:31.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0331",
@@ -23385,6 +23864,64 @@
     "cvss": 8.1
   },
   {
+    "id": "AIR-2026-1662",
+    "slug": "attackers-used-artex-ai-tool-to-breach-south-korean-financia",
+    "title": "Attackers Used ARTEX AI Tool to Breach South Korean Financial Firms",
+    "summary": "Threat actors utilized the ARTEX AI security-testing tool and large language models to breach South Korean financial institutions and steal data. Compromised systems included loan-broker inquiries and employee mobile work-support systems.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ARTEX"
+    ],
+    "incident_date": "2026-09-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-09-27",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1782",
+        "publisher": "AI Incident Database",
+        "title": "Attackers Reportedly Used ARTEX, an AI Security-Testing Tool, to Steal Data from South Korean Financial Institutions",
+        "published_at": "2026-09-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "artex",
+      "south-korea",
+      "financial-breach",
+      "ai-assisted-intrusion"
+    ],
+    "created_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-11",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-09-27",
+        "title": "Attackers Reportedly Used ARTEX, an AI Security-Testing Tool, to Steal Data from South Korean Financial Institutions",
+        "source_url": "https://incidentdatabase.ai/cite/1782",
+        "added_at": "2026-10-30T13:27:13.057Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data theft at financial institutions.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-0214",
     "slug": "vllm-audio-size-enforcement-bypass-permits-resource-exhausti",
     "title": "vLLM Audio Size Enforcement Bypass Permits Resource Exhaustion",
@@ -24271,6 +24808,69 @@
     "action": "",
     "severity_note": "",
     "cvss": 7.1
+  },
+  {
+    "id": "AIR-2026-1428",
+    "slug": "threat-actors-use-autonomous-ai-agents-to-breach-over-1-200",
+    "title": "Threat Actors Use Autonomous AI Agents to Breach Over 1,200 Websites",
+    "summary": "Criminal operators utilized autonomous AI agents to launch automated cyberattacks against more than 1,200 websites. Security researchers observed the campaign after the operators left their control panels exposed online.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cairn"
+    ],
+    "incident_date": "2026-10-20",
+    "incident_date_precision": "day",
+    "first_reported": "2026-09-25",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1766",
+        "publisher": "AI Incident Database",
+        "title": "Cybercriminal Reportedly Used Cairn AI Agents to Breach More Than 100 Company Websites",
+        "published_at": "2026-09-25"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
+        "published_at": "2026-10-20"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-agents",
+      "autonomous-attack",
+      "intrusion"
+    ],
+    "created_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-10-30T13:27:13.057Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-20",
+        "title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
+        "source_url": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
+        "added_at": "2026-10-20T17:10:36.613Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0378",

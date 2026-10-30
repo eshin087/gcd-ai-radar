@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "key": "fb09ce6fb0633868",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/teamviewer-flaw-could-let-malicious-hosts-take-over-support-technicians-machines",
+    "title": "TeamViewer Flaw Could Let Malicious Hosts Take Over Support Technicians’ Machines",
+    "published_at": "2026-10-30",
+    "publisher": "SecurityWeek",
+    "hint": "An integer overflow tracked as CVE-2026-111585 could be used to execute arbitrary code on the viewer’s system.",
+    "cve_ids": [
+      "CVE-2026-111585"
+    ],
+    "discovered_at": "2026-10-30T12:59:26.167Z",
+    "extra": {
+      "ai_hint": false
+    }
+  }
+]
