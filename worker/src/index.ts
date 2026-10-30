@@ -9,7 +9,10 @@
  * unreachable, the last good payload (kept in KV for an hour) is served with
  * `stale: true`; with nothing to serve, a 503 lets the page show its idle
  * state.
+ *
+ * GET /v1/pulse: live NVD CVE counts (last 24 hours, last 7 days), cached ten minutes in KV; see pulse.ts.
  */
+import { pulse } from "./pulse";
 import { assemble, lastHourWindow, parseRoutes, type InternetPayload, type RadarBotClassGroups, type RadarEvents, type RadarOutages, type RadarTimeseries, type RadarTopAttacks } from "./assemble";
 
 const RADAR = "https://api.cloudflare.com/client/v4/radar";
@@ -134,7 +137,8 @@ export default {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (request.method !== "GET" && request.method !== "HEAD") return json({ error: "method not allowed" }, 405, { Allow: "GET, HEAD, OPTIONS" });
-    if (url.pathname !== "/v1/internet") return json({ error: "not found", routes: ["/v1/internet"] }, 404, { "Cache-Control": "public, max-age=60" });
+    if (url.pathname === "/v1/pulse") return pulse(request, env.CACHE, ctx);
+    if (url.pathname !== "/v1/internet") return json({ error: "not found", routes: ["/v1/internet", "/v1/pulse"] }, 404, { "Cache-Control": "public, max-age=60" });
 
     const now = new Date();
     let res: Response;
