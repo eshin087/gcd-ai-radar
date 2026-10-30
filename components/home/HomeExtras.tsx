@@ -6,11 +6,11 @@ import { Panel, fetchedLabel } from "@/components/home/HomeCharts";
 import type { HomeStats } from "@/lib/stats-schema";
 
 /**
- * Band 5: two numbers nobody else shows. The median days from a CVE's
+ * On /trends, under the whole web: two numbers nobody else shows. The median days from a CVE's
  * publication to its KEV listing, by year of listing; and the ten recently
  * published CVEs most likely to be exploited in the next 30 days (EPSS).
  */
-export function HomeExtras({ stats }: { stats: HomeStats }) {
+export function HomeExtras({ stats, recent }: { stats: HomeStats; recent?: { n: number; sameDay: number; week: number } }) {
   const lag = stats.series.kev_lag_by_year.map((y) => ({ key: String(y.year), label: String(y.year), values: [Math.round(y.median_days)], note: `${Math.round(y.within_7d * 100)}% listed within a week · ${y.n} entries` }));
   const rows: RankRow[] = stats.epss_top.map((e) => ({
     key: e.cve,
@@ -28,7 +28,7 @@ export function HomeExtras({ stats }: { stats: HomeStats }) {
     <div className="grid gap-x-10 gap-y-6 lg:grid-cols-2">
       <Panel
         title="Days from publication to exploitation"
-        lede="For the CVEs CISA listed as exploited within a year of their publication, the days between NVD publication and KEV listing: the median per year of listing, with the share listed within a week in the tooltip. Older backlog listings are left out. Falling columns mean exploitation follows disclosure faster."
+        lede={`For the CVEs CISA listed as exploited within a year of their publication, the days between NVD publication and KEV listing: the median per year of listing, with the share listed within a week in the tooltip. Older backlog listings are left out. Falling columns mean exploitation follows disclosure faster.${recent && recent.n ? ` Of the ${recent.n} CVEs CISA listed in the last 90 days, ${recent.sameDay} were listed the day they were published and ${recent.week} within a week.` : ""}`}
         source={<>CISA KEV joined to NVD publish dates · {fetchedLabel(stats.fetched.kev)} · CC0 and public domain</>}
       >
         {lag.length ? <Columns name="kev-lag-by-year" periods={lag} colors={["var(--color-live)"]} unit="days (median)" /> : <p className="border-t border-line-soft py-6 text-[13px] text-dim">Not computed yet.</p>}

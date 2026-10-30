@@ -287,3 +287,182 @@ body {
 .prose-sources a:hover {
   color: var(--color-accent);
 }
+
+/* ---------- the home page's instrument panel (components/home/panel) ---------- */
+
+/*
+ * ASCII marks are CSS blocks, never font glyphs, so no fallback glyph can
+ * shift a row; the only glyphs drawn are · : + % • and digits, while a mark
+ * builds. The server renders every mark final. Under html.motion (an inline
+ * script in app/layout.tsx, off under reduced motion) an instrument's marks
+ * and numbers wait empty until it scrolls into view and builds
+ * (components/home/panel/PanelMotion.tsx).
+ */
+.ascii-cells {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+  vertical-align: middle;
+  flex-wrap: nowrap;
+}
+.ascii-cells > i,
+.ascii-units > i {
+  display: inline-block;
+  font-style: normal;
+  font-family: var(--font-plex-mono), monospace;
+  text-align: center;
+  color: var(--color-accent);
+  background: var(--color-accent);
+}
+.ascii-cells > i {
+  width: 7px;
+  height: 12px;
+  font-size: 10px;
+  line-height: 12px;
+}
+.ascii-units {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: center;
+}
+.ascii-units > i {
+  width: 8px;
+  height: 8px;
+  font-size: 9px;
+  line-height: 8px;
+}
+.ascii-units > i.old {
+  background: rgba(255, 179, 92, 0.32);
+}
+.ascii-units > i.red {
+  color: var(--color-live);
+  background: var(--color-live);
+}
+.ascii-cells > i.b,
+.ascii-units > i.b,
+.motion [data-build]:not([data-built]) .ascii-cells > i,
+.motion [data-build]:not([data-built]) .ascii-units > i {
+  background: none;
+}
+.motion [data-num="wait"],
+.motion [data-build]:not([data-built]) .flow-ribbons {
+  visibility: hidden;
+}
+
+/* the severity meter: three bars lit for exploited, four in red for confirmed loss */
+.sev-meter {
+  display: inline-flex;
+  gap: 2px;
+  vertical-align: middle;
+}
+.sev-meter > i {
+  display: inline-block;
+  width: 4px;
+  height: 11px;
+  background: rgba(160, 170, 195, 0.16);
+}
+.sev-meter > i.on {
+  background: var(--color-accent);
+}
+.sev-meter.s4 > i.on {
+  background: var(--color-live);
+}
+
+/* the pulse on red items: · • ● • once a second, in a fixed one-character box */
+.ascii-pulse {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  font-family: var(--font-plex-mono), monospace;
+  line-height: 1;
+  color: var(--color-live);
+}
+.ascii-pulse::before {
+  content: "●";
+}
+.pulse-0 .ascii-pulse::before {
+  content: "·";
+}
+.pulse-1 .ascii-pulse::before,
+.pulse-3 .ascii-pulse::before {
+  content: "•";
+}
+
+/* the newest Latest row types itself in */
+.typing::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  margin-left: 1px;
+  vertical-align: -2px;
+  background: var(--color-accent);
+}
+
+/* How AI shows up: dotted ribbons, one line per two incidents, drifting along their curves */
+.flow-ribbons path {
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.flow-ribbons path.t {
+  stroke: var(--color-accent);
+  stroke-dasharray: 1.5 4.5;
+}
+.flow-ribbons path.w {
+  stroke: var(--color-accent);
+  stroke-dasharray: 4 3.5;
+  opacity: 0.8;
+}
+.flow-ribbons path.z {
+  stroke: rgba(160, 170, 195, 0.26);
+  stroke-dasharray: 1.5 4.5;
+}
+.motion .flow-ribbons path {
+  animation: ribbon-drift 7s linear infinite;
+}
+.motion .flow-ribbons path.w {
+  animation-duration: 5.5s;
+}
+@keyframes ribbon-drift {
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+/* the sieve: glyphs fall through each stage as it builds */
+.sieve-rain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.sieve-rain > i {
+  position: absolute;
+  top: -14px;
+  font-style: normal;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0;
+  animation: sieve-fall 0.9s linear forwards;
+}
+@keyframes sieve-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110px);
+    opacity: 0;
+  }
+}
+
+/* a returning visitor's own stack: stack-dependent numbers wait for it instead of flashing the default */
+.stack-custom [data-stack]:not([data-stack="ready"]) {
+  visibility: hidden;
+}

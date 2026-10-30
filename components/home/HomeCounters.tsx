@@ -9,7 +9,7 @@ import { dateLabel, monthLabel } from "@/lib/format";
 import type { BreachStat, HomeStats, KevStatEntry, RecentCve } from "@/lib/stats-schema";
 
 /**
- * Band 2: today's numbers. Each counter is a button that opens the list it
+ * On /trends, the whole web's numbers. Each counter is a button that opens the list it
  * counts (a drawer fed by /stats/*.json) or a link to the live board. The
  * data-counter and data-value attributes are what scripts/check-home.mjs
  * compares with /stats/home.json; the accessible name follows the
@@ -118,7 +118,13 @@ export function BreachLi({ b }: { b: BreachStat }) {
   );
 }
 
-export function HomeCounters({ stats }: { stats: HomeStats }) {
+/**
+ * `buttonsHidden`: the home page keeps only the drawers, for the hero
+ * cluster's New CVEs and Breached tiles, which open them by clicking these
+ * buttons (components/hero/RadarCluster.tsx openCounter); the counters
+ * themselves are on /trends.
+ */
+export function HomeCounters({ stats, buttonsHidden = false }: { stats: HomeStats; buttonsHidden?: boolean }) {
   const [open, setOpen] = useState<DrawerKey>(null);
   const c = stats.counters;
   const cveUrl = open === "cves_24h" ? stats.lists.cves_day.file : open === "cves_7d" || open === "critical_7d" ? stats.lists.cves_week.file : null;
@@ -135,8 +141,8 @@ export function HomeCounters({ stats }: { stats: HomeStats }) {
   const breachRows = breaches.data?.breaches ?? [];
   const nvdNote = "NVD, public domain. This product uses data from the NVD API but is not endorsed or certified by the NVD.";
 
-  return (
-    <section aria-label="Today's numbers" className="grid grid-cols-2 border-y border-line sm:grid-cols-3 lg:grid-cols-6">
+  const buttons = (
+    <>
       <Counter id="cves_24h" label="New CVEs, 24 h" value={c.cves_24h} onOpen={() => setOpen("cves_24h")} title="CVEs NVD published in the last 24 hours" />
       <Counter id="cves_7d" label="New CVEs, 7 days" value={c.cves_7d} onOpen={() => setOpen("cves_7d")} title="CVEs NVD published in the last seven days" />
       <Counter id="critical_7d" label="Critical this week" value={c.critical_7d} onOpen={() => setOpen("critical_7d")} title="CVEs published in the last seven days with a CVSS base score of 9.0 or higher" />
@@ -157,6 +163,18 @@ export function HomeCounters({ stats }: { stats: HomeStats }) {
         title="Accounts in verified breaches Have I Been Pwned added this month; spam lists, stealer logs and malware dumps are left out"
       />
       <Counter id="live" label="Live incidents here" value={c.live} href="/live" title="Live records in the three action lanes: patch now, breaches and attacks, supply chain" />
+    </>
+  );
+
+  return (
+    <>
+      {buttonsHidden ? (
+        <div hidden>{buttons}</div>
+      ) : (
+        <section aria-label="Today's numbers" className="grid grid-cols-2 border-y border-line sm:grid-cols-3 lg:grid-cols-6">
+          {buttons}
+        </section>
+      )}
 
       <ListDrawer
         open={cveUrl !== null}
@@ -207,6 +225,6 @@ export function HomeCounters({ stats }: { stats: HomeStats }) {
           <BreachLi key={b.name} b={b} />
         ))}
       </ListDrawer>
-    </section>
+    </>
   );
 }

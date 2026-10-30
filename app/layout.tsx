@@ -46,9 +46,22 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Runs before first paint. `motion` lets the home page's instruments build in
+ * as they scroll into view (components/home/panel/PanelMotion.tsx); it stays
+ * off under reduced motion and with ?final, and comes off after four seconds
+ * if the page's script never started, so marks can never stay hidden.
+ * `stack-custom` hides the numbers that depend on a returning visitor's own
+ * stack until it has loaded, instead of flashing the default one.
+ */
+const BOOT = `(function(){try{var d=document.documentElement,q=location.search;if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!/[?&]final(=|&|$)/.test(q)){d.classList.add("motion")}var s=null;try{s=localStorage.getItem("gcd-radar:stack")}catch(e){}if(s||/[?&]stack=/.test(q)){d.classList.add("stack-custom")}setTimeout(function(){if(!window.__panelMotion){d.classList.remove("motion","stack-custom")}},4000)}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: BOOT }} />
+      </head>
       <body className="min-h-dvh flex flex-col">{children}</body>
     </html>
   );
