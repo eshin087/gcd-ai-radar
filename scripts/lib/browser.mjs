@@ -165,6 +165,16 @@ export async function navigate(client, url, readyExpression = "true") {
   await sleep(300);
 }
 
+/**
+ * Makes every request to these hosts fail, so a check can read the page as
+ * it was built (the home page's live layer fetches the Worker). Pass [] to
+ * lift the block.
+ */
+export async function blockHosts(client, hosts) {
+  await client.send("Network.enable");
+  await client.send("Network.setBlockedURLs", { urls: hosts.flatMap((h) => [`*://${h}/*`, `*://${h}`]) });
+}
+
 /** Collects page exceptions and console.error calls for the run. */
 export function collectErrors(client) {
   const errors = [];
