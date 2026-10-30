@@ -8,6 +8,7 @@ import { IncidentRow } from "@/components/incidents/IncidentRow";
 import { dateLabel, monthLabel } from "@/lib/format";
 import type { HomeColumn } from "@/lib/home";
 import type { HomePayload } from "@/lib/home-data";
+import { SCOPE_FILE } from "@/lib/scope";
 import { SITE } from "@/lib/site";
 
 /**
@@ -15,7 +16,8 @@ import { SITE } from "@/lib/site";
  * HomeHero), today's numbers, what to act on, the charts everyone should
  * know, two numbers nobody else shows, the AI lens with the radar scope, this
  * week and the machine endpoints. Built at deploy time from
- * lib/home.ts; the drawers fetch /stats/*.json in the browser.
+ * lib/home.ts; the drawers and the scope's blips fetch /stats/*.json in the
+ * browser.
  */
 
 function Kicker({ n, children }: { n: string; children: React.ReactNode }) {
@@ -55,6 +57,8 @@ function Column({ col }: { col: HomeColumn }) {
 
 export function HomePage({ data }: { data: HomePayload }) {
   const s = data.stats;
+  // the scope's blips are a long list: the page carries its frame, the browser fetches the blips
+  const { days, total, wedges } = data.live.scope;
   return (
     <div className="space-y-10">
       <HomeHero data={data} />
@@ -117,7 +121,7 @@ export function HomePage({ data }: { data: HomePayload }) {
             </Link>
           </p>
         </div>
-        <ThreatScope scope={data.live.scope} running className="h-[220px] min-[600px]:h-[264px]" />
+        <ThreatScope scope={{ days, total, wedges }} src={SCOPE_FILE} running className="h-[220px] min-[600px]:h-[264px]" />
       </section>
 
       <section className="grid gap-6 border-t border-line pt-6 lg:grid-cols-2">
