@@ -3,10 +3,16 @@
   // The GCD RADAR internet band: GET /v1/internet, assembled from Cloudflare Radar
   // and cached for five minutes. The Radar token lives in the secret
   // CLOUDFLARE_RADAR_TOKEN (wrangler secret put), never in this file.
+  // The cron trigger starts the collector (collect.yml) on GitHub every 30
+  // minutes, off GitHub's own :17 slot; its token is the secret
+  // GITHUB_DISPATCH_TOKEN (src/dispatch.ts).
   "name": "gcd-ai-radar-internet",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-20",
   "compatibility_flags": ["nodejs_compat"],
+  "triggers": {
+    "crons": ["5,35 * * * *"]
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 0.1

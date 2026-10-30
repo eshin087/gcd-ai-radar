@@ -11,6 +11,10 @@
  *   labels  one point per ISO alpha-2 code: [lon10, lat10, name], from the
  *           file's LABEL_X / LABEL_Y, plus a few places too small for the 110m
  *           file (Singapore, Hong Kong, ...) that attack routes name often
+ *   countries  which country each 1° cell's centre falls in, so an outage can
+ *           darken its country's dots: `codes` lists the alpha-2 codes, and
+ *           `rows` holds one flat list per latitude row from the north pole of
+ *           [start, end, index] runs (columns as in the mask, index into codes)
  *
  * The GeoJSON (about 840 KB) is read straight from the network on each run and
  * never written to disk; only the output is committed. To work offline, point
@@ -26,6 +30,8 @@ const SOURCE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/m
 const OUT = path.join(process.cwd(), "lib", "globe-data.json");
 /** Degrees per mask cell, in latitude and longitude. */
 const RES = 0.5;
+/** Degrees per country cell: coarser than the mask, since it only has to say whose a dot is. */
+const COUNTRY_RES = 1;
 
 /** Places absent from the 110m file (too small to draw) that Radar routes name: [lon, lat, name]. */
 const EXTRA_LABELS: Record<string, [number, number, string]> = {
@@ -135,7 +141,14 @@ interface Poly {
   outer: Ring;
   holes: Ring[];
   box: [number, number, number, number];
+  /** The feature's alpha-2 code, or null when it has none. */
+  code: string | null;
 }
+
+const codeOf = (f: Feature) => {
+  const c = f.properties.ISO_A2_EH;
+  return c && /^[A-Z]{2}$/.test(c) ? c : null;
+};
 
 function polygons(features: Feature[]): Poly[] {
   const out: Poly[] = [];
@@ -144,21 +157,56 @@ function polygons(features: Feature[]): Poly[] {
     for (const rings of parts) {
       const [outer, ...holes] = rings;
       if (!outer || outer.length < 4) continue;
-      out.push({ outer, holes, box: bbox(outer) });
+      out.push({ outer, holes, box: bbox(outer), code: codeOf(f) });
     }
   }
   return out;
 }
 
-function onLand(lon: number, lat: number, polys: Poly[]): boolean {
+/** The polygon a point falls in, or null at sea. */
+function polyAt(lon: number, lat: number, polys: Poly[]): Poly | null {
   for (const p of polys) {
     const [x0, y0, x1, y1] = p.box;
     if (lon < x0 || lon > x1 || lat < y0 || lat > y1) continue;
     if (!inRing(lon, lat, p.outer)) continue;
     if (p.holes.some((h) => inRing(lon, lat, h))) continue;
-    return true;
+    return p;
   }
-  return false;
+  return null;
+}
+
+const onLand = (lon: number, lat: number, polys: Poly[]) => polyAt(lon, lat, polys) !== null;
+
+/** The country grid: codes, and per row [start, end, index] runs over the cells whose centre lies in a coded country. */
+function countryGrid(polys: Poly[]): { codes: string[]; rows: number[][] } {
+  const codes: string[] = [];
+  const index = new Map<string, number>();
+  const cols = Math.round(360 / COUNTRY_RES), rowsN = Math.round(180 / COUNTRY_RES);
+  const rows: number[][] = [];
+  for (let r = 0; r < rowsN; r++) {
+    const lat = 90 - (r + 0.5) * COUNTRY_RES;
+    const runs: number[] = [];
+    let open = -1, cur = -1;
+    for (let c = 0; c <= cols; c++) {
+      let k = -1;
+      if (c < cols) {
+        const code = polyAt(-180 + (c + 0.5) * COUNTRY_RES, lat, polys)?.code ?? null;
+        if (code) {
+          if (!index.has(code)) {
+            index.set(code, codes.length);
+            codes.push(code);
+          }
+          k = index.get(code)!;
+        }
+      }
+      if (k === cur) continue;
+      if (cur >= 0) runs.push(open, c, cur);
+      open = c;
+      cur = k;
+    }
+    rows.push(runs);
+  }
+  return { codes, rows };
 }
 
 async function main() {
@@ -201,6 +249,7 @@ async function main() {
     if (!labels[code]) labels[code] = [Math.round(x * 10), Math.round(y * 10), name];
   }
   const sorted = Object.fromEntries(Object.entries(labels).sort(([a], [b]) => a.localeCompare(b)));
+  const countries = countryGrid(polys);
 
   const out = {
     source: "Natural Earth 110m admin 0 countries (public domain), via nvkelso/natural-earth-vector",
@@ -208,10 +257,15 @@ async function main() {
     res: RES,
     mask,
     labels: sorted,
+    countries: { res: COUNTRY_RES, ...countries },
   };
   const json = JSON.stringify(out);
   await fs.writeFile(OUT, json + "\n");
-  console.log(`${land} land cells of ${cols * rowsN} in ${runsN} runs, ${Object.keys(sorted).length} labels (${skipped.length} features skipped: ${skipped.join(", ") || "none"}), ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(process.cwd(), OUT)}`);
+  const countryRuns = countries.rows.reduce((n, r) => n + r.length / 3, 0);
+  console.log(
+    `${land} land cells of ${cols * rowsN} in ${runsN} runs, ${Object.keys(sorted).length} labels (${skipped.length} features skipped: ${skipped.join(", ") || "none"}), ` +
+      `${countries.codes.length} countries in ${countryRuns} runs, ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(process.cwd(), OUT)}`,
+  );
 }
 
 main().catch((e) => {

@@ -2,18 +2,18 @@
 
 import { useEffect, useImperativeHandle, useRef, type Ref } from "react";
 import { clamp, DEG, wrap } from "./globe/geo";
-import { buildArc, GlobeRenderer, type Arc, type Palette } from "./globe/render";
+import { buildArc, buildVisual, GlobeRenderer, type Arc, type Palette, type Visual } from "./globe/render";
+import { stopKey, type Stop } from "./tour";
 import type { InternetRoute } from "./useInternet";
 
 /**
- * The band's globe: the top web attack routes from Cloudflare Radar on an
- * orthographic sphere whose land is lit by the real Sun (canvas 2D,
- * ./globe/render.ts draws it).
+ * The band's globe: what Cloudflare Radar reports (DDoS routes, the origins
+ * of exploit attempts, route hijacks, outages) on an orthographic sphere
+ * whose land is lit by the real Sun (canvas 2D, ./globe/render.ts draws it).
  *
- * A tour visits the TOUR largest routes in turn: the camera glides to the
- * route, the route draws in from the attacking country, rings where it lands,
- * then pulses until the next one; `onFocus` tells the caption beside it which
- * route is on screen, and `controlRef.focus(i)` jumps to one.
+ * A tour visits the stops in turn: the camera glides to one, it draws in,
+ * then plays its own animation until the next; `onFocus` tells the caption
+ * beside it which stop is on screen, and `controlRef.focus(i)` jumps to one.
  *
  * Drag to turn it: the point under the pointer follows the pointer, and a
  * flick keeps it turning and slows to a stop. The tour waits RESUME_S after
@@ -22,11 +22,9 @@ import type { InternetRoute } from "./useInternet";
  * screen or in a hidden tab; reduced motion gets still frames.
  */
 
-/** Routes the tour visits, largest share first. */
-export const TOUR = 5;
-/** Seconds each route stays once the camera has arrived. */
+/** Seconds each stop stays once the camera has arrived. */
 const HOLD_S = 7;
-/** Seconds a route takes to draw in. */
+/** Seconds a stop takes to draw in. */
 const DRAW_S = 1.1;
 /** Seconds after the last touch before the tour takes the camera back. */
 const RESUME_S = 4;
@@ -42,11 +40,13 @@ export interface GlobeControl {
 }
 
 export interface GlobeProps {
-  /** Routes that can be drawn (see `onMap`), largest share first; the first TOUR are toured, the rest show as faint context. */
-  routes: InternetRoute[];
+  /** The tour, in order (see ./tour.ts: every stop has a place on the map). */
+  stops: Stop[];
+  /** Routes drawn as faint hairlines behind the tour. */
+  context: InternetRoute[];
   /** False keeps the globe still: no data, an error, or loading. */
   running: boolean;
-  /** The index of the route the tour turns to, when it starts turning. */
+  /** The index of the stop the tour turns to, when it starts turning. */
   onFocus?: (i: number) => void;
   controlRef?: Ref<GlobeControl>;
   className?: string;
@@ -54,13 +54,14 @@ export interface GlobeProps {
 
 const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-export function Globe({ routes, running, onFocus, controlRef, className = "" }: GlobeProps) {
+export function Globe({ stops, context, running, onFocus, controlRef, className = "" }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const runningRef = useRef(running);
-  const routesRef = useRef(routes);
+  const dataRef = useRef({ stops, context });
   const onFocusRef = useRef(onFocus);
-  const apiRef = useRef<{ setRoutes(): void; kick(): void; focus(i: number): void } | null>(null);
-  const routesKey = routes.map((r) => `${r.origin}>${r.target}:${r.share}`).join("|");
+  const apiRef = useRef<{ setData(): void; kick(): void; focus(i: number): void } | null>(null);
+  // what the drawing depends on: each stop's identity (and an outage's end and type), and the hairlines
+  const dataKey = [...stops.map((s) => (s.kind === "outage" ? `${stopKey(s)}:${s.event.until ?? ""}:${s.event.type ?? ""}` : stopKey(s))), "|", ...context.map((r) => `${r.origin}>${r.target}`)].join(",");
 
   useImperativeHandle(controlRef, () => ({ focus: (i: number) => apiRef.current?.focus(i) }), []);
 
@@ -74,11 +75,11 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
   }, [running]);
 
   useEffect(() => {
-    routesRef.current = routes;
-    apiRef.current?.setRoutes();
-    // routesKey stands for routes' content; a new array with the same routes changes nothing
+    dataRef.current = { stops, context };
+    apiRef.current?.setData();
+    // dataKey stands for the stops' and routes' content; new arrays with the same content change nothing
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [routesKey]);
+  }, [dataKey]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -96,7 +97,8 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
     };
     const r = new GlobeRenderer(canvas, pal);
 
-    let arcs: Arc[] = [];
+    let visuals: Visual[] = [];
+    let context: Arc[] = [];
     let lon = START[0], lat = START[1];
     let vLon = 0, vLat = 0;
     let drag: { id: number; x: number; y: number; lon: number; lat: number; samples: [number, number, number][] } | null = null;
@@ -109,7 +111,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
     let raf = 0, visible = false, lastMs = 0;
 
     const secs = () => performance.now() / 1000;
-    const tourN = () => (runningRef.current ? Math.min(TOUR, arcs.length) : 0);
+    const tourN = () => (runningRef.current ? visuals.length : 0);
 
     const startGlide = (t: number, to: [number, number]) => {
       const dl = wrap(to[0] - lon), dp = to[1] - lat;
@@ -132,7 +134,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
       eventT = 0;
       drawnLatch = still ? 1 : 0;
       pulseT = -1;
-      startGlide(t, arcs[i]!.view);
+      startGlide(t, visuals[i]!.view);
       onFocusRef.current?.(i);
     };
 
@@ -151,7 +153,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
         }
       } else if (tourN() > 0 && t - lastTouch >= RESUME_S) {
         if (focus < 0) startEvent(0, t);
-        else if (resume) startGlide(t, arcs[focus]!.view);
+        else if (resume) startGlide(t, visuals[focus]!.view);
         resume = false;
         if (glide) {
           const e = clamp((t - glide.t0) / glide.dur, 0, 1), q = easeInOut(e);
@@ -173,11 +175,11 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
         lon,
         lat,
         now: Date.now(),
-        arcs: on ? arcs : [],
-        focus: on ? focus : -1,
+        context: on ? context : [],
+        focus: on ? (visuals[focus] ?? null) : null,
         drawn: on && focus >= 0 ? drawnLatch : 0,
         pulse: on && !still ? pulseT : -1,
-        fade: on ? fade : -1,
+        fade: on ? (visuals[fade] ?? null) : null,
         fadeAlpha: clamp(1 - (t - fadeT0) / FADE_S, 0, 1),
       });
     };
@@ -209,14 +211,14 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
       render(secs());
     };
 
-    const key = (a: Arc | undefined) => (a ? `${a.route.origin}>${a.route.target}` : "");
-    const setRoutes = () => {
-      const shown = key(arcs[focus]);
-      arcs = routesRef.current.map(buildArc).filter((a): a is Arc => !!a);
+    const setData = () => {
+      const shown = visuals[focus]?.key ?? "";
+      visuals = dataRef.current.stops.map((s) => buildVisual(s, stopKey(s))).filter((v): v is Visual => !!v);
+      context = dataRef.current.context.map(buildArc).filter((a): a is Arc => !!a);
       fade = -1;
-      // a refresh keeps the route on screen when it is still toured (at its new place in the order);
-      // otherwise the tour starts again from the largest
-      const at = shown ? arcs.findIndex((a) => key(a) === shown) : -1;
+      // a refresh keeps the stop on screen when it is still toured (at its new place in the order);
+      // otherwise the tour starts again from the first
+      const at = shown ? visuals.findIndex((v) => v.key === shown) : -1;
       if (at >= 0 && at < tourN()) {
         focus = at;
         onFocusRef.current?.(at);
@@ -232,7 +234,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
       startEvent(i, secs());
       kick();
     };
-    apiRef.current = { setRoutes, kick, focus: focusOn };
+    apiRef.current = { setData, kick, focus: focusOn };
 
     const onDown = (e: PointerEvent) => {
       if (e.pointerType === "mouse" && e.button !== 0) return;
@@ -298,7 +300,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
     canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerup", onUp);
     canvas.addEventListener("pointercancel", onCancel);
-    setRoutes();
+    setData();
 
     return () => {
       cancelAnimationFrame(raf);
@@ -316,7 +318,7 @@ export function Globe({ routes, running, onFocus, controlRef, className = "" }: 
   return (
     <figure className={`relative m-0 ${className}`}>
       <figcaption className="sr-only">
-        A globe of the largest web attack routes Cloudflare Radar reports, turning to each route in turn. The text beside it names the route on screen.
+        A globe of what Cloudflare Radar reports: the largest DDoS attack routes, where blocked exploit attempts come from, a route hijack and a recent outage, turning to each in turn. The text beside it describes the one on screen.
       </figcaption>
       <canvas ref={canvasRef} aria-hidden className="absolute inset-0 block h-full w-full cursor-grab select-none" style={{ touchAction: "pan-y" }} />
     </figure>

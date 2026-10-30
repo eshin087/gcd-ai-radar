@@ -1,8 +1,53 @@
 import { describe, expect, it } from "vitest";
-import { basis, DEG, dot3, inSentence, isLand, landDots, lonLat, onMap, place, plainName, subsolar, toLonLat, unproject, wrap } from "@/components/internet/globe/geo";
-import { buildArc } from "@/components/internet/globe/render";
+import { basis, countryAt, countryName, DEG, dot3, inSentence, isLand, landDots, lonLat, onMap, place, plainName, subsolar, toLonLat, unproject, wrap } from "@/components/internet/globe/geo";
+import { buildArc, buildVisual } from "@/components/internet/globe/render";
+import { ruleName, utcSpan } from "@/components/internet/InternetBand";
+import { buildTour, stopKey, TOUR, type Stop } from "@/components/internet/tour";
+import { readPayload, type InternetData } from "@/components/internet/useInternet";
 
 const route = (origin: string, target: string, share = 5) => ({ origin, origin_name: origin, target, target_name: target, share });
+
+/** A Worker payload in the 2026-10-30 shape, with the parts a test sets. */
+function payload(parts: Partial<{ routes: unknown[]; ddos: unknown[]; waf: unknown[]; hijacks: unknown[]; outages: unknown[] }>): InternetData {
+  return readPayload({
+    generated_at: "2026-10-30T03:45:00Z",
+    radar_updated: "2026-10-30T01:30:00Z",
+    window: "1h",
+    attacks: { routes: parts.routes ?? [], top_targets: [], ddos: { window: "1h", routes: parts.ddos ?? [] }, waf: { window: "1h", origins: parts.waf ?? [] } },
+    traffic: { points: [] },
+    outages: parts.outages ?? [],
+    bgp: { leaks: 0, hijacks: 0 },
+    hijacks: parts.hijacks ?? [],
+    attribution: {},
+    stale: false,
+  })!;
+}
+
+const hijack = (id: number, hijacker: string, victims: string[], n = 1) => ({
+  id,
+  url: `https://radar.cloudflare.com/routing/anomalies/event/hijack-${id}`,
+  confidence: 12,
+  start: "2026-10-29T04:09:32.815Z",
+  end: "2026-10-29T04:45:02.551Z",
+  hijacker: { asn: 64511, name: "Example Transit", country: hijacker },
+  victims: victims.map((c, i) => ({ asn: 64500 + i, name: null, country: c })),
+  prefixes: ["203.0.113.0/24"],
+  prefix_count: n,
+});
+
+const outage = (codes: string[], until: string | null = "2026-10-27T12:00:00Z", type = "regional") => ({
+  location: "Bangladesh",
+  codes,
+  type,
+  region: null,
+  since: "2026-10-27T06:30:00Z",
+  until,
+  cause: "power outage",
+  description: "A fault on the national grid caused a drop in Internet traffic.",
+  url: "https://x.com/CloudflareRadar/status/2115132538502992056",
+});
+
+const waf = (country: string, share: number) => ({ country, name: country === "US" ? "United States" : country, share, rules: [{ name: "Directory Traversal", share: 35.9 }] });
 
 describe("globe geometry", () => {
   it("round-trips longitude and latitude through unit vectors", () => {
@@ -56,6 +101,19 @@ describe("land mask", () => {
   });
 });
 
+describe("country cells", () => {
+  it("says whose land a point is, and nobody's at sea", () => {
+    for (const [lon, lat, code] of [[90.4, 23.8, "BD"], [-72.3, 18.9, "HT"], [30.5, 50.4, "UA"], [2.3, 46.5, "FR"], [-100, 40, "US"], [134, -25, "AU"]] as const) expect(countryAt(lon, lat), code).toBe(code);
+    expect(countryAt(-30, 0)).toBeNull();
+    expect(countryAt(-150, 20)).toBeNull();
+  });
+
+  it("names countries from the globe file", () => {
+    expect(countryName("BD")).toBe("Bangladesh");
+    expect(countryName("ZZ")).toBe("ZZ");
+  });
+});
+
 describe("subsolar point", () => {
   it("sits over the equator near Greenwich at the March equinox's noon", () => {
     const [lon, lat] = subsolar(Date.UTC(2026, 2, 20, 12));
@@ -102,11 +160,82 @@ describe("routes", () => {
     expect(Math.hypot(last.x - first.x, last.y - first.y, last.z - first.z)).toBeLessThan(1e-6);
   });
 
+  it("builds a visual for every kind of stop", () => {
+    const d = payload({ ddos: [route("ID", "CY")], waf: [waf("US", 29)], hijacks: [hijack(1, "BR", ["PY"])], outages: [outage(["BD"], null, "nationwide")] });
+    const visuals = buildTour(d).map((s) => buildVisual(s, stopKey(s)));
+    expect(visuals.map((v) => v?.kind)).toEqual(["ddos", "hijack", "waf", "outage"]);
+    const [ddos, hij, w, out] = visuals;
+    expect(ddos && "path" in ddos && ddos.path.self).toBe(false);
+    // a hijack runs from the hijacker to the victim
+    expect(hij && "path" in hij && dot3(hij.path.pts[0]!, place("BR")!)).toBeCloseTo(1, 6);
+    expect(w?.kind === "waf" && dot3(w.at, place("US")!)).toBeCloseTo(1, 6);
+    expect(out?.kind === "outage" && [out.code, out.ended, out.depth]).toEqual(["BD", false, 0.88]);
+  });
+
   it("names countries plainly, with 'the' where a sentence needs it", () => {
     expect(plainName("Russian Federation")).toBe("Russia");
     expect(plainName("Germany")).toBe("Germany");
     expect(inSentence("United States")).toBe("the United States");
     expect(inSentence("Netherlands")).toBe("the Netherlands");
     expect(inSentence("Viet Nam")).toBe("Vietnam");
+  });
+});
+
+describe("the tour", () => {
+  it("mixes the kinds: flood, hijack, exploits, outage, then a flood across a border", () => {
+    const d = payload({
+      ddos: [route("US", "US", 12.4), route("ID", "CY", 6), route("ID", "US", 3.9)],
+      waf: [waf("US", 29), waf("CN", 6.2)],
+      hijacks: [hijack(1, "BR", ["PY", "BR"], 201)],
+      outages: [outage(["HT"]), outage(["BD"])],
+    });
+    const tour = buildTour(d);
+    expect(tour).toHaveLength(TOUR);
+    expect(tour.map(stopKey)).toEqual(["ddos:US>US", "hijack:1", "waf:US", "outage:2026-10-27T06:30:00Z:HT", "ddos:ID>CY"]);
+  });
+
+  it("picks a victim in another country, and skips events with no place on the map", () => {
+    const d = payload({ ddos: [route("ID", "CY")], hijacks: [hijack(1, "XX", ["BR"]), hijack(2, "RO", ["RO", "AM"])], outages: [outage([]), outage(["ZZ", "BD"])] });
+    const tour = buildTour(d);
+    const h = tour.find((s): s is Extract<Stop, { kind: "hijack" }> => s.kind === "hijack");
+    expect(h?.event.id).toBe(2);
+    expect(h?.victim.country).toBe("AM");
+    const o = tour.find((s): s is Extract<Stop, { kind: "outage" }> => s.kind === "outage");
+    expect(o?.code).toBe("BD");
+  });
+
+  it("fills missing events with more routes and origins, without repeats", () => {
+    const tour = buildTour(payload({ ddos: [route("ID", "CY"), route("US", "US")], waf: [waf("US", 29), waf("CN", 6)] }));
+    expect(tour.map(stopKey)).toEqual(["ddos:ID>CY", "waf:US", "ddos:US>US", "waf:CN"]);
+  });
+
+  it("falls back to the plain routes of an older Worker", () => {
+    const old = readPayload({ generated_at: "2026-10-29T03:00:00Z", window: "1h", attacks: { routes: [route("US", "US"), route("ID", "CY"), route("ID", "XX")] }, outages: [{ location: "Tonga", since: "2026-10-26T06:10:00Z" }] })!;
+    expect(old.attacks.ddos.routes).toEqual([]);
+    expect(old.hijacks).toEqual([]);
+    expect(old.outages[0]?.codes).toEqual([]);
+    expect(buildTour(old).map(stopKey)).toEqual(["route:US>US", "route:ID>CY"]);
+  });
+
+  it("drops malformed hijacks and outages when reading a payload", () => {
+    const d = payload({ hijacks: [{ id: 1 }, { ...hijack(2, "BR", ["PY"]), url: "javascript:alert(1)" }, hijack(3, "BR", ["PY"])], outages: [{ since: "x" }, outage(["BD"])] });
+    expect(d.hijacks.map((h) => h.id)).toEqual([3]);
+    expect(d.outages).toHaveLength(1);
+  });
+});
+
+describe("caption words", () => {
+  it("writes an outage's time span in UTC", () => {
+    expect(utcSpan("2026-10-27T06:30:00Z", "2026-10-27T12:00:00Z")).toBe("Oct 27, 06:30–12:00 UTC");
+    expect(utcSpan("2026-10-23T21:45:00Z", "2026-10-25T04:30:00Z")).toBe("Oct 23, 21:45 – Oct 25, 04:30 UTC");
+    expect(utcSpan("2026-10-27T06:30:00Z", null)).toBe("since Oct 27, 06:30 UTC");
+  });
+
+  it("names Radar's rule categories in plain words", () => {
+    expect(ruleName("SQLi")).toBe("SQL injection");
+    expect(ruleName("XSS")).toBe("cross-site scripting");
+    expect(ruleName("Directory Traversal")).toBe("directory traversal");
+    expect(ruleName("Command Injection")).toBe("command injection");
+    expect(ruleName("RCE")).toBe("RCE");
   });
 });

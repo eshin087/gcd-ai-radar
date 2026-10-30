@@ -2,8 +2,8 @@
   "_comment": "Collector behaviour. Thresholds and budgets are deliberately conservative until free-tier limits are confirmed in Google AI Studio. Providers run in order; to add any OpenAI-compatible endpoint (OpenRouter, Cloudflare Workers AI, Ollama, vLLM) append { \"id\": \"openrouter\", \"kind\": \"openai_compatible\", \"base_url\": \"https://openrouter.ai/api/v1\", \"model\": \"<model>:free\", \"env\": \"OPENROUTER_API_KEY\", \"json_mode\": \"json_object\", \"rpm\": 10, \"daily_calls\": 40, \"batch_size\": 3 } and set that env var as a repo secret (also add it to collect.yml).",
   "confidence_threshold": 0.8,
   "review_severity_4": false,
-  "_review_not_ai_comment": "Severity-4 claims with no AI role (confirmed real-world loss: HIBP breaches, say) go to the review queue first while the general lanes are new.",
-  "review_not_ai_severity_4": true,
+  "_review_not_ai_comment": "When true, severity-4 claims with no AI role (confirmed real-world loss: HIBP breaches, say) wait in the review queue. Off since 2026-10-30: nobody tended the queue, so the largest breaches of the week (Polymarket, iRhythm, Sony So-net) never reached the site. Low-confidence items still go to review.",
+  "review_not_ai_severity_4": false,
   "dedupe": {
     "_comment": "Headlines about one event from different outlets score 0.16-0.52 on title similarity, so llm_check_similarity sits at 0.40 and two more triggers ask the model: a shared rare title token (entity_max_df, entity_window_days) and, after classification, a shared product with incident dates within product_window_days. A false trigger costs one LLM call, never a merge: merges need the model's answer at confidence 0.6 or more.",
     "lookback_days": 90,
@@ -76,12 +76,12 @@
     }
   ],
   "alerts": {
-    "_comment": "The job fails (so GitHub emails the owner) after stalled_runs consecutive scheduled runs that classified nothing while candidates waited, e.g. every LLM provider down or out of quota. With hourly runs 12 is half a day. pending_warn only warns in the job summary.",
-    "stalled_runs": 12,
+    "_comment": "The job fails (so GitHub emails the owner) after stalled_runs consecutive scheduled runs that classified nothing while candidates waited, e.g. every LLM provider down or out of quota. With the Worker's half-hourly dispatch 24 is half a day. pending_warn only warns in the job summary.",
+    "stalled_runs": 24,
     "pending_warn": 300
   },
   "retention": {
-    "_comment": "runs_keep is the quota ledger and the schedule memory: 240 hourly runs is ten days, longer than any schedule except monthly, which collector-state.json remembers.",
+    "_comment": "runs_keep is the quota ledger: 240 half-hourly runs is five days, well over the one day a quota covers. Source schedules live in collector-state.json, not here.",
     "rejected_days": 90,
     "runs_keep": 240
   }

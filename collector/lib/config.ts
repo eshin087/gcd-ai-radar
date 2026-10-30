@@ -70,7 +70,7 @@ export type ProviderConfig = z.infer<typeof ProviderSchema>;
 export const SettingsSchema = z.object({
   confidence_threshold: z.number().min(0).max(1),
   review_severity_4: z.boolean(),
-  /** Severity-4 claims with no AI role (HIBP breaches, say) go to review first while the general lanes are new. */
+  /** Severity-4 claims with no AI role (HIBP breaches, say) go to review first. settings.json turns it off: an untended queue hid the biggest breaches. */
   review_not_ai_severity_4: z.boolean().default(true),
   dedupe: z.object({
     lookback_days: z.number().int().positive(),
