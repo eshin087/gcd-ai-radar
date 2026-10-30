@@ -1,6 +1,6 @@
 "use client";
 
-import { useId } from "react";
+import { Fragment, useId } from "react";
 import { niceStep, useWidth } from "./hooks";
 
 export interface ColumnPeriod {
@@ -71,14 +71,38 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
   const slot = plotW / n;
   const barW = r1(Math.max(2, Math.min(slot * 0.72, 48)));
   const y = (v: number) => r1((scale === "sqrt" ? Math.sqrt(v / max) : v / max) * plotH);
+  /** A gridline's height in the svg (and its label's, `dy` lower), rounded again: the sum brings back float noise ("19.900000000000006"). */
+  const gy = (t: number, dy = 0) => r1(TOP + plotH - y(t) + dy);
   const step = niceStep(max / 4);
   const ticks: number[] = [];
   for (let t = step; t <= max * 1.0001 && ticks.length < 8; t += step) ticks.push(t);
   const every = labelEvery ?? Math.max(1, Math.ceil(n / Math.max(2, Math.floor(plotW / 64))));
+  // each period's stacks, bottom to top: the top edge and the height, empty ones left out
+  const cols = periods.map((p, i) => {
+    let acc = 0;
+    const bars = p.values.flatMap((v, k) => {
+      const h0 = y(acc);
+      acc += v;
+      const h1 = y(acc);
+      const hh = r1(Math.max(0, h1 - h0));
+      return hh === 0 ? [] : [{ k, top: TOP + plotH - h1, hh }];
+    });
+    return { p, i, x: r1(LEFT + i * slot + (slot - barW) / 2), total: totals[i]!, bars };
+  });
+  const stacks = Math.max(0, ...periods.map((p) => p.values.length));
 
+  // What the columns share sits on a group, once per chart rather than once per column (this markup was most of the home
+  // page's HTML). Columns never overlap, so drawing a stack at a time paints what drawing a period at a time did.
   return (
     <div ref={ref} data-chart={name} className={`w-full ${className}`}>
-      <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} role="group" aria-label={`${name}: ${periods.length} periods`} className="block overflow-visible">
+      <svg
+        width="100%"
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        role="group"
+        aria-label={`${name}: ${periods.length} periods`}
+        className="block overflow-visible [&_[role=button]]:cursor-pointer [&_[role=button]]:outline-none [&_[role=button]:focus-visible]:stroke-[var(--color-accent)]"
+      >
         <defs>
           <pattern id={patternId} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <rect width="6" height="6" fill="transparent" />
@@ -86,79 +110,86 @@ export function Columns({ periods, colors, stackLabels, unit, name, onPick, acti
           </pattern>
         </defs>
         {/* gridlines and the axis */}
-        {ticks.map((t) => (
-          <g key={t}>
-            <line x1={LEFT} x2={LEFT + plotW} y1={TOP + plotH - y(t)} y2={TOP + plotH - y(t)} stroke="var(--color-line-soft)" />
-            <text x={LEFT - 6} y={TOP + plotH - y(t) + 4} textAnchor="end" className="num" fontSize="11" fill="var(--color-faint)">
+        <g stroke="var(--color-line-soft)">
+          {ticks.map((t) => (
+            <line key={t} x1={LEFT} x2={LEFT + plotW} y1={gy(t)} y2={gy(t)} />
+          ))}
+        </g>
+        <g textAnchor="end" className="num" fontSize="11" fill="var(--color-faint)">
+          {ticks.map((t) => (
+            <text key={t} x={LEFT - 6} y={gy(t, 4)}>
               {format(t)}
             </text>
-          </g>
-        ))}
+          ))}
+        </g>
         <line x1={LEFT} x2={LEFT + plotW} y1={TOP + plotH + 0.5} y2={TOP + plotH + 0.5} stroke="var(--color-line)" />
         {scale === "sqrt" && (
           <text x={LEFT + plotW} y={TOP - 1} textAnchor="end" fontSize="10" fill="var(--color-faint)">
             square-root scale
           </text>
         )}
-        {/* columns */}
-        {periods.map((p, i) => {
-          const x = r1(LEFT + i * slot + (slot - barW) / 2);
-          let acc = 0;
-          const total = totals[i]!;
-          const isActive = active === p.key;
-          // one string, one text node: two adjacent text children inside an SVG <title> do not hydrate
-          const tip = `${stackLabels ? `${p.label}: ${total} ${unit} (${p.values.map((v, k) => `${stackLabels[k] ?? k}: ${v}`).join(", ")})` : `${p.label}: ${total} ${unit}`}${p.note ? ` · ${p.note}` : ""}${p.provisional ? " · so far" : ""}`;
-          return (
-            <g key={p.key}>
-              {p.values.map((v, k) => {
-                const h0 = y(acc);
-                acc += v;
-                const h1 = y(acc);
-                const hh = r1(Math.max(0, h1 - h0));
-                if (hh === 0) return null;
-                return (
-                  <g key={k}>
-                    <rect x={x} width={barW} y={TOP + plotH - h1} height={hh} fill={colors[k] ?? colors[0]} opacity={p.provisional ? 0.35 : isActive ? 1 : 0.85} />
-                    {p.provisional && <rect x={x} width={barW} y={TOP + plotH - h1} height={hh} fill={`url(#${patternId})`} color={colors[k] ?? colors[0]} opacity={0.7} />}
-                  </g>
-                );
-              })}
-              {total === 0 && <rect x={x} width={barW} y={TOP + plotH - 1} height={1} fill="var(--color-line)" />}
-              {(p.short !== undefined ? p.short !== "" : i % every === 0) && (
-                <text x={r1(x + barW / 2)} y={TOP + plotH + 15} textAnchor="middle" className="num" fontSize="11" fill="var(--color-dim)">
-                  {p.short ?? p.label}
-                </text>
-              )}
-              {onPick ? (
-                <rect
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`${p.label}: ${total} ${unit}`}
-                  aria-pressed={isActive}
-                  x={r1(LEFT + i * slot)}
-                  width={r1(slot)}
-                  y={TOP}
-                  height={plotH + BOTTOM}
-                  fill="transparent"
-                  className="cursor-pointer outline-none focus-visible:stroke-[var(--color-accent)]"
-                  onClick={() => onPick(p.key)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onPick(p.key);
-                    }
-                  }}
-                >
-                  <title>{tip}</title>
-                </rect>
-              ) : (
-                <rect x={r1(LEFT + i * slot)} width={r1(slot)} y={TOP} height={plotH + BOTTOM} fill="transparent">
-                  <title>{tip}</title>
-                </rect>
-              )}
-            </g>
-          );
-        })}
+        {/* columns, a stack at a time; fill-opacity is opacity for a plain fill, and the active or open period sets its own */}
+        {Array.from({ length: stacks }, (_, k) => (
+          <g key={k} fill={colors[k] ?? colors[0]} fillOpacity={0.85}>
+            {cols.map(({ p, x, bars }) => {
+              const b = bars.find((s) => s.k === k);
+              return b && <rect key={p.key} x={x} width={barW} y={b.top} height={b.hh} fillOpacity={p.provisional ? 0.35 : active === p.key ? 1 : undefined} />;
+            })}
+          </g>
+        ))}
+        {cols.flatMap(({ p, x, bars }) =>
+          p.provisional ? bars.map((b) => <rect key={`${p.key}:${b.k}`} x={x} width={barW} y={b.top} height={b.hh} fill={`url(#${patternId})`} color={colors[b.k] ?? colors[0]} opacity={0.7} />) : [],
+        )}
+        <g fill="var(--color-line)">
+          {cols
+            .filter((c) => c.total === 0)
+            .map(({ p, x }) => (
+              <rect key={p.key} x={x} width={barW} y={TOP + plotH - 1} height={1} />
+            ))}
+        </g>
+        {/* labels and hit rects period by period, as before: the next label still draws over a focused column's outline */}
+        <g textAnchor="middle" className="num" fontSize="11" fill="var(--color-dim)">
+          {cols.map(({ p, i, x, total }) => {
+            const isActive = active === p.key;
+            // one string, one text node: two adjacent text children inside an SVG <title> do not hydrate
+            const tip = `${stackLabels ? `${p.label}: ${total} ${unit} (${p.values.map((v, k) => `${stackLabels[k] ?? k}: ${v}`).join(", ")})` : `${p.label}: ${total} ${unit}`}${p.note ? ` · ${p.note}` : ""}${p.provisional ? " · so far" : ""}`;
+            return (
+              <Fragment key={p.key}>
+                {(p.short !== undefined ? p.short !== "" : i % every === 0) && (
+                  <text x={r1(x + barW / 2)} y={TOP + plotH + 15}>
+                    {p.short ?? p.label}
+                  </text>
+                )}
+                {onPick ? (
+                  <rect
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${p.label}: ${total} ${unit}`}
+                    aria-pressed={isActive}
+                    x={r1(LEFT + i * slot)}
+                    width={r1(slot)}
+                    y={TOP}
+                    height={plotH + BOTTOM}
+                    fill="transparent"
+                    onClick={() => onPick(p.key)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        onPick(p.key);
+                      }
+                    }}
+                  >
+                    <title>{tip}</title>
+                  </rect>
+                ) : (
+                  <rect x={r1(LEFT + i * slot)} width={r1(slot)} y={TOP} height={plotH + BOTTOM} fill="transparent">
+                    <title>{tip}</title>
+                  </rect>
+                )}
+              </Fragment>
+            );
+          })}
+        </g>
       </svg>
     </div>
   );
