@@ -1,5 +1,4333 @@
 [
   {
+    "id": "AIR-2026-1661",
+    "slug": "cve-2026-93680-ibm-langflow-oss-authentication-bypass-vulner",
+    "title": "CVE-2026-93680: IBM Langflow OSS Authentication Bypass Vulnerability",
+    "summary": "Improper authentication in IBM Langflow OSS versions 1.0.0 through 1.12.8 allows remote attackers to bypass security restrictions. The vulnerability has been rated critical with a CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
+        "publisher": "NVD",
+        "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-93680",
+      "auth-bypass",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-93680"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.8 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1660",
+    "slug": "cve-2026-110186-ibm-langflow-oss-code-generation-vulnerabili",
+    "title": "CVE-2026-110186: IBM Langflow OSS Code Generation Vulnerability",
+    "summary": "Improper control of code generation in IBM Langflow OSS versions 1.0.0 through 1.12.8 enables remote attackers to execute arbitrary code. The vulnerability carries a critical CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110186",
+        "publisher": "NVD",
+        "title": "CVE-2026-110186: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110186",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110186"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110186: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute arbitrary code due to improper control of code…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110186",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.8 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1659",
+    "slug": "cve-2026-107327-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107327: IBM Langflow OSS Remote Code Execution Vulnerability",
+    "summary": "A missing authorization vulnerability in IBM Langflow OSS versions 1.0.0 through 1.12.4 allows remote authenticated attackers to execute arbitrary code. The vulnerability has been assigned a critical CVSS score of 9.9.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107327",
+        "publisher": "NVD",
+        "title": "CVE-2026-107327: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107327",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107327"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107327: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to missing…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107327",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates.",
+    "severity_note": "Critical CVSS 9.9 vulnerability with no confirmed exploitation yet.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1658",
+    "slug": "binance-investigates-potential-security-breach-involving-cry",
+    "title": "Binance investigates potential security breach involving crypto assets",
+    "summary": "Binance announced it is investigating a potential major security breach involving digital assets. The exchange is reviewing the incident to determine the scope and impact.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Binance"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack",
+        "publisher": "BleepingComputer",
+        "title": "Binance probes potential $5.8 billion crypto-theft hack",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "binance",
+      "investigation",
+      "crypto",
+      "breach"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Binance probes potential $5.8 billion crypto-theft hack",
+        "source_url": "https://bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed security incident investigation at a major cryptocurrency exchange.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1655",
+    "slug": "hugging-face-malware-campaign-returns-to-hijack-gpus",
+    "title": "Hugging Face malware campaign returns to hijack GPUs",
+    "summary": "A crypto-mining campaign returned to Hugging Face, hijacking GPU servers by distributing backdoored models downloaded over 28,000 times. Attackers also used a fake Solana starter kit on GitHub to target AI coding agents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Hugging Face"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hugging-face-malware-campaign-returns-to-hijack-gpus-for-crypto-mining",
+        "publisher": "BleepingComputer",
+        "title": "Hugging Face malware campaign returns to hijack GPUs for crypto mining",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cryptojacking",
+      "huggingface",
+      "supply-chain",
+      "gpu"
+    ],
+    "created_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hugging Face malware campaign returns to hijack GPUs for crypto mining",
+        "source_url": "https://bleepingcomputer.com/news/security/hugging-face-malware-campaign-returns-to-hijack-gpus-for-crypto-mining",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Review downloaded models from untrusted authors and audit GPU server activity.",
+    "severity_note": "Confirmed real-world malicious campaign abusing hosted models for cryptojacking.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1654",
+    "slug": "bae-systems-reports-no-data-stolen-in-federal-bankruptcy-cou",
+    "title": "BAE Systems reports no data stolen in federal bankruptcy courts cyber incident",
+    "summary": "A federal contractor stated that no data was extracted during a recent cyberattack targeting systems for federal bankruptcy courts. An investigation into the intrusion is ongoing.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "BAE Systems federal bankruptcy courts systems"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://therecord.media/us-bankruptcy-courts-it-contractor-says-no-data-stolen-cyberattack",
+        "publisher": "The Record",
+        "title": "Federal bankruptcy courts contractor says no data stolen during cyber intrusion",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/bae-says-no-data-extracted-in-incident-hitting-bankruptcy-courts",
+        "publisher": "SecurityWeek",
+        "title": "BAE Says No Data Extracted in Incident Hitting Bankruptcy Courts",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "breach"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Federal bankruptcy courts contractor says no data stolen during cyber intrusion",
+        "source_url": "https://therecord.media/us-bankruptcy-courts-it-contractor-says-no-data-stolen-cyberattack",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "BAE Says No Data Extracted in Incident Hitting Bankruptcy Courts",
+        "source_url": "https://securityweek.com/bae-says-no-data-extracted-in-incident-hitting-bankruptcy-courts",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyber intrusion with no data extraction reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1653",
+    "slug": "cve-2026-107329-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107329: IBM Langflow OSS remote code execution vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a vulnerability that allows remote authenticated attackers to execute arbitrary code. The issue arises from improper control of code generation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107329",
+        "publisher": "NVD",
+        "title": "CVE-2026-107329: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107329",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107329"
+    ],
+    "affected": [
+      "1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107329: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107329",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor updates and apply fixes for IBM Langflow OSS.",
+    "severity_note": "Critical rating (CVSS 9.9) with no exploitation confirmed in the wild.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1652",
+    "slug": "cve-2026-107328-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-107328: IBM Langflow OSS remote code execution vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 are vulnerable to improper neutralization of code in eval/exec, allowing remote authenticated attackers to execute arbitrary code. The vulnerability carries a critical CVSS score of 9.9.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107328",
+        "publisher": "NVD",
+        "title": "CVE-2026-107328: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-107328",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-107328"
+    ],
+    "affected": [
+      "1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-107328: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107328",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor patches and update IBM Langflow OSS.",
+    "severity_note": "Critical vulnerability rated CVSS 9.9 with no exploitation in the wild confirmed.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1651",
+    "slug": "cve-2026-104339-ibm-langflow-oss-os-command-injection-vulner",
+    "title": "CVE-2026-104339: IBM Langflow OSS OS command injection vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 contain an OS command injection flaw allowing remote attackers to execute arbitrary code. The issue is rated critical with a CVSS score of 9.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104339",
+        "publisher": "NVD",
+        "title": "CVE-2026-104339: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker to execute arbitrary code due to improper neutralization of…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104339",
+      "command-injection",
+      "rce"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104339"
+    ],
+    "affected": [
+      "1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104339: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker to execute arbitrary code due to improper neutralization of…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104339",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor patches and update Langflow OSS.",
+    "severity_note": "Disclosed vulnerability rated critical (CVSS 9.8) with no exploitation reported.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1650",
+    "slug": "cisa-warns-of-exploited-fragnesia-linux-privilege-escalation",
+    "title": "CISA warns of exploited Fragnesia Linux privilege escalation flaw",
+    "summary": "CISA issued a warning regarding a high-severity Linux kernel privilege escalation vulnerability being actively chained in the wild with PHP2Shell flaws. Federal agencies have been instructed to apply patches.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Fragnesia Linux"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisa",
+      "privilege-escalation",
+      "linux",
+      "exploitation-in-the-wild"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Patch the affected Linux kernel components as advised by CISA.",
+    "severity_note": "Confirmed exploitation in the wild reported by CISA.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1649",
+    "slug": "cve-2026-104308-ibm-langflow-oss-command-injection-vulnerabi",
+    "title": "CVE-2026-104308: IBM Langflow OSS Command Injection Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 allow remote authenticated attackers to cause a denial of service via improper neutralization of OS command special elements. The vulnerability has a medium CVSS base score of 4.3.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104308",
+        "publisher": "NVD",
+        "title": "CVE-2026-104308: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to cause a denial of service due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104308",
+      "denial-of-service"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104308"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104308: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to cause a denial of service due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104308",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1648",
+    "slug": "cve-2026-77817-ibm-langflow-oss-information-disclosure-vulne",
+    "title": "CVE-2026-77817: IBM Langflow OSS Information Disclosure Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 expose sensitive information due to improper sanitization of secrets during project and flow exports. The vulnerability is assigned a medium CVSS score of 6.5.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77817",
+        "publisher": "NVD",
+        "title": "CVE-2026-77817: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-77817",
+      "information-disclosure"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-77817"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-77817: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77817",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1647",
+    "slug": "cve-2026-104317-ibm-langflow-oss-deserialization-vulnerabili",
+    "title": "CVE-2026-104317: IBM Langflow OSS Deserialization Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 are susceptible to arbitrary code execution through the deserialization of untrusted data reaching the message broker. The vulnerability is rated high with a CVSS score of 8.1.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104317",
+        "publisher": "NVD",
+        "title": "CVE-2026-104317: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104317",
+      "deserialization"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104317"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104317: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104317",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1646",
+    "slug": "cve-2026-110190-ibm-langflow-oss-directory-traversal-vulnera",
+    "title": "CVE-2026-110190: IBM Langflow OSS Directory Traversal Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a directory traversal vulnerability allowing authenticated users to view arbitrary files via crafted URLs. The issue has a medium severity rating with a CVSS score of 6.5.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110190",
+        "publisher": "NVD",
+        "title": "CVE-2026-110190: IBM Langflow OSS 1.0.0 through 1.12.4 could allow an authenticated user to traverse directories on the system.",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110190",
+      "directory-traversal"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110190"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110190: IBM Langflow OSS 1.0.0 through 1.12.4 could allow an authenticated user to traverse directories on the system.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110190",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1645",
+    "slug": "cve-2026-104314-ibm-langflow-oss-credential-disclosure-vulne",
+    "title": "CVE-2026-104314: IBM Langflow OSS Credential Disclosure Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.3 allow an authenticated attacker to retrieve stored third-party credentials from API responses. The vulnerability carries a medium CVSS score of 6.5 and requires a read or share grant on the target flow.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104314",
+        "publisher": "NVD",
+        "title": "CVE-2026-104314: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker with a read or share grant on a target flow to…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-104314",
+      "credential-disclosure"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-104314"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-104314: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker with a read or share grant on a target flow to…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104314",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1644",
+    "slug": "cyberattack-disrupts-belgian-tax-services-before-filing-dead",
+    "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+    "summary": "A cyberattack disrupted the Federal Public Service Finance in Belgium, forcing authorities to temporarily suspend access to the MyMinfin tax platform. Officials are currently investigating the extent of the incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "MyMinfin"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://therecord.media/cyberattack-disrupts-belgian-tax-services-before-deadline",
+        "publisher": "The Record",
+        "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "belgium",
+      "tax",
+      "fps_finance",
+      "disruption"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Cyberattack disrupts Belgian tax services before filing deadline",
+        "source_url": "https://therecord.media/cyberattack-disrupts-belgian-tax-services-before-deadline",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberattack causing disruption of a national tax platform.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1643",
+    "slug": "cve-2026-110196-ibm-langflow-oss-remote-code-execution-vulne",
+    "title": "CVE-2026-110196: IBM Langflow OSS Remote Code Execution Vulnerability",
+    "summary": "IBM Langflow OSS versions 1.0.0 through 1.12.4 contain a vulnerability that allows authenticated low-privileged users to bypass administrator restrictions and execute arbitrary code. The issue is rated high with a CVSS score of 8.8.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110196",
+        "publisher": "NVD",
+        "title": "CVE-2026-110196: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker with a low-privileged authenticated account to bypass the…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110196",
+      "rce",
+      "langflow"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-110196"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 through 1.12.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110196: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker with a low-privileged authenticated account to bypass the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110196",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Check for vendor updates or patches for Langflow OSS.",
+    "severity_note": "Disclosed vulnerability with CVSS 8.8 and no exploitation reported.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1642",
+    "slug": "cve-2026-110193-ibm-langflow-oss-agentic-assistant-command-e",
+    "title": "CVE-2026-110193: IBM Langflow OSS Agentic Assistant Command Execution Flaw",
+    "summary": "An issue in IBM Langflow OSS 1.0.0 through 1.12.8 lets low-privileged authenticated users force the Agentic Assistant to create or submit unblocked component code patterns. This results in arbitrary operating system command execution on the server host.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110193",
+        "publisher": "NVD",
+        "title": "CVE-2026-110193: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker with a low-privileged authenticated account to cause the…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-110193",
+      "langflow",
+      "agentic-assistant",
+      "command-execution"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-110193"
+    ],
+    "affected": [
+      "IBM Langflow OSS 1.0.0 to 1.12.8"
+    ],
+    "fixed_in": [
+      "1.12.9"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-110193: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker with a low-privileged authenticated account to cause the…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110193",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Update IBM Langflow OSS to version 1.12.9 or later.",
+    "severity_note": "Disclosed vulnerability with a high CVSS score of 8.8 and a patch available.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1641",
+    "slug": "cve-2026-98432-linux-kernel-tcp-flaw-exploitable-via-ai-auth",
+    "title": "CVE-2026-98432: Linux Kernel TCP Flaw Exploitable via AI-Authored Code",
+    "summary": "A critical TCP vulnerability in the Linux kernel is rated 9.8 by the vendor. Anthropic disclosed that its AI model wrote a working exploit enabling unauthenticated remote code execution as root.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Linux Kernel"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+        "publisher": "The Hacker News",
+        "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-98432",
+      "linux",
+      "tcp",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-98432"
+    ],
+    "affected": [
+      "Linux Kernel TCP"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
+        "source_url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Apply the latest Linux kernel security updates when available from your distribution.",
+    "severity_note": "Demonstrated research exploit via AI with a critical CVSS score of 9.8.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1640",
+    "slug": "researchers-bypass-browser-security-in-ai-coding-assistants",
+    "title": "Researchers bypass browser security in AI coding assistants",
+    "summary": "Researchers discovered vulnerabilities in built-in browsers across five AI coding assistants, enabling code execution and local file access. The flaws affected tools from Cursor, GitHub Copilot, OpenAI, Microsoft, and Anthropic.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "OpenAI",
+      "Microsoft",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Cursor",
+      "GitHub Copilot",
+      "Codex",
+      "VS Code",
+      "Claude Desktop"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities",
+        "publisher": "Help Net Security",
+        "title": "Researchers broke the browsers built into VS Code, Cursor, Copilot, Codex and Claude Desktop",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "browser_escape",
+      "cursor",
+      "copilot",
+      "claude_desktop"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Cursor",
+      "GitHub Copilot",
+      "Codex",
+      "VS Code",
+      "Claude Desktop"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Researchers broke the browsers built into VS Code, Cursor, Copilot, Codex and Claude Desktop",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/research-ai-assistant-browser-vulnerabilities",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research finding demonstrating local file access and code execution without wild exploitation confirmation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1639",
+    "slug": "cve-2026-119052-llama-cpp-uncaught-exception-in-ggml-rpc-ser",
+    "title": "CVE-2026-119052: llama.cpp uncaught exception in ggml-rpc server",
+    "summary": "An uncaught exception vulnerability in the ggml-rpc server of llama.cpp allows unauthenticated remote attackers to crash the server via oversized messages. This triggers a denial of service for all clients.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119052",
+        "publisher": "NVD",
+        "title": "CVE-2026-119052: llama.cpp b2877 before b11935 contains an uncaught exception vulnerability in the ggml-rpc server that allows unauthenticated…",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119052",
+      "llama.cpp",
+      "dos",
+      "infra_vuln"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-29",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-119052"
+    ],
+    "affected": [
+      "llama.cpp b2877 before b11935"
+    ],
+    "fixed_in": [
+      "llama.cpp b11935"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "CVE-2026-119052: llama.cpp b2877 before b11935 contains an uncaught exception vulnerability in the ggml-rpc server that allows unauthenticated…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119052",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Update llama.cpp to version b11935 or later.",
+    "severity_note": "High severity disclosed vulnerability with a CVSS score of 8.7.",
+    "cvss": 8.7
+  },
+  {
+    "id": "AIR-2026-1638",
+    "slug": "yoba-malware-spreads-via-fake-desktop-versions-of-chatgpt-an",
+    "title": "Yoba malware spreads via fake desktop versions of ChatGPT and Claude",
+    "summary": "Threat actors are distributing the Yoba malware chain disguised as desktop versions of ChatGPT and Claude on GitHub. The fake projects deliver cryptocurrency miners to victims.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "ChatGPT",
+      "Claude"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/fake-chatgpt-claude-apps-github-yoba-malware-cryptominer",
+        "publisher": "Help Net Security",
+        "title": "Yoba malware hides in fake desktop versions of ChatGPT and Claude",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+        "publisher": "The Hacker News",
+        "title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "yoba",
+      "cryptominer",
+      "malware",
+      "github"
+    ],
+    "created_at": "2026-10-29T19:37:17.247Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Yoba malware hides in fake desktop versions of ChatGPT and Claude",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/fake-chatgpt-claude-apps-github-yoba-malware-cryptominer",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners",
+        "source_url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Do not download unofficial desktop clients for AI applications from GitHub repositories.",
+    "severity_note": "Confirmed real-world malicious campaign spreading cryptocurrency miners.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1634",
+    "slug": "cve-2026-97229-attacker-attempted-exploitation-of-gitlab-on",
+    "title": "CVE-2026-97229: Attacker Attempted Exploitation of GitLab on Alpine Linux",
+    "summary": "An attacker attempted to exploit a CVSS 10.0 remote code execution flaw in GitLab on Alpine Linux's server. Alpine reported no evidence of successful compromise following the attack.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GitLab"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+        "publisher": "The Hacker News",
+        "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-97229",
+      "gitlab",
+      "alpine-linux",
+      "rce"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-97229"
+    ],
+    "affected": [
+      "GitLab"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+        "source_url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Update GitLab to the latest patched version.",
+    "severity_note": "Exploitation attempt against a real server using a critical flaw.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1633",
+    "slug": "attackers-exploit-php2shell-flaws-in-palo-alto-networks-inte",
+    "title": "Attackers Exploit PHP2Shell Flaws in Palo Alto Networks Interfaces",
+    "summary": "Threat actors are actively exploiting recently patched vulnerabilities in internet-exposed Palo Alto Networks management interfaces. Palo Alto Networks updated its advisory to warn of the ongoing attacks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Palo Alto Networks Management Interface"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Exploit PHP2Shell Flaws in Internet-Exposed Palo Alto Networks Management Interfaces",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "palo-alto",
+      "exploitation",
+      "vulnerability"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Attackers Exploit PHP2Shell Flaws in Internet-Exposed Palo Alto Networks Management Interfaces",
+        "source_url": "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Ensure management interfaces are not exposed to the internet and apply available patches.",
+    "severity_note": "Active exploitation in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1632",
+    "slug": "26-400-cloud-and-ai-credentials-exposed-in-public-gitee-repo",
+    "title": "26,400 Cloud and AI Credentials Exposed in Public Gitee Repositories",
+    "summary": "Researcher Ben Zimmermann discovered 26,400 active cloud and AI service credentials leaked in public Gitee repositories. The exposed keys could be used by anyone to access the associated services.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Gitee"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+        "publisher": "The Hacker News",
+        "title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.94,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "gitee",
+      "credentials",
+      "cloud",
+      "ai",
+      "leak"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories",
+        "source_url": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Remove exposed credentials from public repositories and rotate them.",
+    "severity_note": "Massive credential leak with no known exploitation yet.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1631",
+    "slug": "cisco-sd-wan-flaw-exploited-to-deploy-keydrift-malware",
+    "title": "Cisco SD‑WAN Flaw Exploited to Deploy KeyDrift Malware",
+    "summary": "Hackers leveraged a critical Cisco Catalyst SD‑WAN vulnerability to install the KeyDrift malware that steals encryption keys. Although the flaw was patched in February, the attacks were observed historically.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco Catalyst SD‑WAN"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware",
+        "publisher": "BleepingComputer",
+        "title": "Hackers exploit Cisco SD-WAN flaw to deploy custom KeyDrift malware",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisco",
+      "sd-wan",
+      "malware",
+      "keydrift",
+      "CVE-2026-20127"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [
+      "CVE-2026-20127"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Hackers Exploited Cisco SD-WAN Flaw to Plant Malware Built to Steal Encryption Keys",
+        "source_url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "APT group UAT-11473 observed exploiting the vulnerability to deploy KeyDrift malware",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware",
+        "added_at": "2026-10-29T19:37:17.247Z"
+      }
+    ],
+    "action": "Search for KeyDrift malware on SD‑WAN devices and rotate compromised encryption keys.",
+    "severity_note": "Exploited SD‑WAN flaw to steal encryption keys.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1630",
+    "slug": "cve-2026-76418-cisco-asa-and-ftd-vpn-flaw-actively-exploited",
+    "title": "CVE-2026-76418: Cisco ASA and FTD VPN Flaw Actively Exploited",
+    "summary": "Cisco released patches for CVE‑2026‑76418, a remote code execution flaw in ASA and FTD software that is being exploited in the wild. The vulnerability scores 8.6 CVSS and could allow unauthenticated attackers to crash firewalls.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco ASA",
+      "Cisco FTD"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+        "publisher": "The Hacker News",
+        "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+        "publisher": "BleepingComputer",
+        "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august",
+        "publisher": "SecurityWeek",
+        "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.96,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-76418",
+      "cisco",
+      "vpn",
+      "remote_code_execution"
+    ],
+    "created_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-76418"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+        "source_url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+        "source_url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
+        "source_url": "https://securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Apply the Cisco ASA and FTD patches released for CVE‑2026‑76418.",
+    "severity_note": "Exploited in the wild, CVSS 8.6.",
+    "cvss": 8.6
+  },
+  {
+    "id": "AIR-2026-1629",
+    "slug": "stolen-staff-logins-are-spreading-attacks-between-k-12-schoo",
+    "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+    "summary": "Attackers are using stolen staff credentials circulating on dark web marketplaces to compromise K-12 school districts. The compromised accounts are subsequently leveraged to launch further phishing and access attempts across educational networks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "school district staff accounts"
+    ],
+    "incident_date": "2026-10-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-29",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/cis-k-12-cybersecurity",
+        "publisher": "Help Net Security",
+        "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential-theft",
+      "phishing",
+      "k-12",
+      "ms-isac"
+    ],
+    "created_at": "2026-10-29T06:01:57.225Z",
+    "updated_at": "2026-10-29T06:01:57.225Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-29",
+        "title": "Stolen staff logins are spreading attacks between K-12 school districts",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/cis-k-12-cybersecurity",
+        "added_at": "2026-10-29T06:01:57.225Z"
+      }
+    ],
+    "action": "Reset compromised staff credentials and enforce multi-factor authentication across all district accounts.",
+    "severity_note": "Confirmed real-world access and attacks using stolen credentials across numerous school districts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1628",
+    "slug": "ddossecrets-publishes-hacked-data-concerning-thousands-of-dh",
+    "title": "DDoSSecrets publishes hacked data concerning thousands of DHS employees",
+    "summary": "Hacktivists obtained and leaked sensitive data regarding more than 41,000 Department of Homeland Security employees. The leaked records were shared via DDoSecrets after being distributed by independent researchers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Department of Homeland Security systems"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets",
+        "publisher": "CyberScoop",
+        "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/over-41000-dhs-employee-records-leaked-online",
+        "publisher": "SecurityWeek",
+        "title": "Over 41,000 DHS Employee Records Leaked Online",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/icepick-dhs-leak-ice-undercover-agents",
+        "publisher": "Help Net Security",
+        "title": "Hacktivists leak 41,000 DHS staff records, revealing undercover ICE agents",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://cyberscoop.com/dhs-employee-breach-icepick-database-takedown",
+        "publisher": "CyberScoop",
+        "title": "Leaked DHS employee archive, Icepick, faces challenges to stay online",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "dhs",
+      "leak-site"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Leak site publishes data on more than 41,000 DHS employees obtained by hacktivists",
+        "source_url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Reports indicate the personal and work information was stolen from an Okta single sign-on system earlier this year.",
+        "source_url": "https://securityweek.com/over-41000-dhs-employee-records-leaked-online",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The leaked dataset is named Icepick and includes undercover ICE agents.",
+        "source_url": "https://helpnetsecurity.com/2026/10/29/icepick-dhs-leak-ice-undercover-agents",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The leaked DHS employee dataset experiences hosting challenges and takedown requests",
+        "source_url": "https://cyberscoop.com/dhs-employee-breach-icepick-database-takedown",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Monitor affected accounts and secure government internal portals.",
+    "severity_note": "Confirmed data leak of thousands of government employee records.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1627",
+    "slug": "japan-airlines-suffers-data-breach-exposing-customer-passpor",
+    "title": "Japan Airlines suffers data breach exposing customer passport and contact data",
+    "summary": "Hackers compromised Japan Airlines systems and stole personal data, including passport numbers and email addresses, belonging to about 2,000 customers. The incident highlights rising cyber threats targeting Japanese transportation infrastructure.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Japan Airlines booking system"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://therecord.media/japan-airlines-warns-of-breach-country-grapples-with-incidents",
+        "publisher": "The Record",
+        "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info",
+        "publisher": "BleepingComputer",
+        "title": "Japan Airlines suffers third-party data breach exposing passenger info",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "japan-airlines",
+      "pii-leak"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Japan Airlines warns of data breach as country grapples with multiple cyber incidents",
+        "source_url": "https://therecord.media/japan-airlines-warns-of-breach-country-grapples-with-incidents",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Third-party breach at a passenger service system exposes data of 92,000 customers",
+        "source_url": "https://bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info",
+        "added_at": "2026-10-29T23:23:38.250Z"
+      }
+    ],
+    "action": "Investigate affected systems and notify impacted customers.",
+    "severity_note": "Confirmed breach involving unauthorized access and data theft.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1626",
+    "slug": "uat-11473-exploits-cisco-sd-wan-authentication-bypass-to-dep",
+    "title": "UAT-11473 Exploits Cisco SD-WAN Authentication Bypass to Deploy KeyDrift",
+    "summary": "The APT group UAT-11473 exploited CVE-2026-20127, an authentication bypass vulnerability in Cisco SD-WAN Catalyst Controller instances, to gain unauthorized access and deploy the KeyDrift malware.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco SD-WAN Catalyst Controller"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://blog.talosintelligence.com/uat-11473-keydrift",
+        "publisher": "Cisco Talos",
+        "title": "Inside KeyDrift: Analyzing historical UAT-11473 activity on Cisco SD-WAN",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-20127",
+      "keydrift",
+      "cisco"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [
+      "CVE-2026-20127"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Inside KeyDrift: Analyzing historical UAT-11473 activity on Cisco SD-WAN",
+        "source_url": "https://blog.talosintelligence.com/uat-11473-keydrift",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in real-world attacks.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1625",
+    "slug": "cve-2026-46300-linux-kernel-missing-variable-initialization",
+    "title": "CVE-2026-46300: Linux Kernel Missing Variable Initialization Vulnerability",
+    "summary": "The Linux Kernel contains a variable initialization flaw that causes ESP input processing to decrypt shared fragments in place, allowing for unintended page-cache data modification. CISA added this vulnerability to its KEV catalog following confirmed exploitation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Linux Kernel"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-46300",
+        "publisher": "CISA",
+        "title": "CVE-2026-46300: Linux Kernel — Linux Kernel Missing Initialization of a Variable Vulnerability",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-46300",
+      "kev",
+      "linux"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-46300"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-46300: Linux Kernel — Linux Kernel Missing Initialization of a Variable Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-46300",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "Apply mitigations according to vendor instructions.",
+    "severity_note": "Exploitation in the wild is confirmed.",
+    "cvss": 7.8
+  },
+  {
+    "id": "AIR-2026-1624",
+    "slug": "cve-2026-118667-langgraph-sdk-unencoded-identifiers-request",
+    "title": "CVE-2026-118667: LangGraph SDK Unencoded Identifiers Request Redirection",
+    "summary": "The LangGraph Python SDK v3 streaming client fails to properly encode caller-supplied identifiers in request paths. This flaw can redirect authenticated GET requests to other paths on the server.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangGraph Python SDK"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-3fx2-cqw9-xr3c",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-118667: LangGraph: Unencoded identifiers in LangGraph SDK v3 streaming can redirect authenticated GET requests",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-118667",
+      "langgraph"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-28",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-118667"
+    ],
+    "affected": [
+      "LangGraph Python SDK v3"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-118667: LangGraph: Unencoded identifiers in LangGraph SDK v3 streaming can redirect authenticated GET requests",
+        "source_url": "https://github.com/advisories/GHSA-3fx2-cqw9-xr3c",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation.",
+    "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1623",
+    "slug": "cve-2026-41709-broadcom-vmware-esx-insufficient-logging-vuln",
+    "title": "CVE-2026-41709: Broadcom VMware ESX Insufficient Logging Vulnerability",
+    "summary": "Broadcom VMware ESX contains an insufficient logging vulnerability allowing administrators to perform operations without logging. Exploitation in the wild is confirmed by CISA.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "VMware ESX"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-41709",
+        "publisher": "CISA",
+        "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day",
+        "publisher": "SecurityWeek",
+        "title": "Chinese Hackers Quietly Used Low-Severity ESXi Logging Flaw as Zero-Day",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+        "publisher": "The Hacker News",
+        "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/php2shell-fragnesia-vmware-esx-zero-day",
+        "publisher": "Help Net Security",
+        "title": "Chinese hackers used VMware ESX zero-day; PHP2Shell and Fragnesia chained to root firewalls",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-41709",
+      "kev"
+    ],
+    "created_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-41709"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-41709: Broadcom VMware ESX — Broadcom VMWare ESX Insufficient Logging Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-41709",
+        "added_at": "2026-10-29T00:20:42.318Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Threat actor Warp Panda is attributed to the zero-day attacks targeting the U.S. legal sector.",
+        "source_url": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
+    "severity_note": "Exploitation in the wild is confirmed.",
+    "cvss": 2.7
+  },
+  {
+    "id": "AIR-2026-1622",
+    "slug": "attacker-scans-for-credentials-by-impersonating-ai-bots",
+    "title": "Attacker Scans for Credentials by Impersonating AI Bots",
+    "summary": "Threat actors conducted credential scanning campaigns by disguising their traffic as official bots from major artificial intelligence companies. The activity targeted exposed endpoints to harvest sensitive data.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Meta"
+    ],
+    "products": [
+      "OpenAI bots",
+      "Anthropic bots",
+      "Meta bots"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyber-risk/attacker-impersonates-ai-bots-scans-credentials",
+        "publisher": "Dark Reading",
+        "title": "Attacker Relentlessly Scans for Credentials by Impersonating AI Bots",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential-stuffing",
+      "bot-impersonation",
+      "reconnaissance"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Attacker Relentlessly Scans for Credentials by Impersonating AI Bots",
+        "source_url": "https://darkreading.com/cyber-risk/attacker-impersonates-ai-bots-scans-credentials",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      }
+    ],
+    "action": "Block suspicious scanning traffic and verify user-agent signatures against official AI bot IP ranges.",
+    "severity_note": "Confirmed active scanning campaign in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1621",
+    "slug": "china-nexus-attack-using-php2shell-breaches-u-s-government-a",
+    "title": "China-Nexus Attack Using PHP2Shell Breaches U.S. Government-Affiliated Network",
+    "summary": "Threat actors exploited PHP2Shell vulnerabilities and combined them with a kernel privilege escalation exploit to compromise 25 servers in a network with U.S. government affiliation. The activity was identified by cybersecurity researchers as part of an active campaign.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PHP2Shell"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+        "publisher": "The Hacker News",
+        "title": "PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "php2shell",
+      "privilege-escalation",
+      "china-nexus"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network",
+        "source_url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation and intrusion against a real target network.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1620",
+    "slug": "volt-typhoon-used-silent-train-network-in-zero-day-campaigns",
+    "title": "Volt Typhoon used Silent Train network in zero-day campaigns",
+    "summary": "The China-nexus espionage group Volt Typhoon was linked to a covert access network named Silent Train, utilized for zero-day exploitation. The infrastructure leverages rotating chains of compromised SOHO, IoT, and enterprise devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SOHO and IoT enterprise infrastructure"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+        "publisher": "The Hacker News",
+        "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs",
+        "publisher": "CyberScoop",
+        "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network",
+        "publisher": "SecurityWeek",
+        "title": "Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "volt-typhoon",
+      "zero-day",
+      "espionage"
+    ],
+    "created_at": "2026-10-28T19:40:57.881Z",
+    "updated_at": "2026-10-29T13:22:31.658Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+        "source_url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Researchers uncover Volt Typhoon’s covert, ephemeral network",
+        "source_url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs",
+        "added_at": "2026-10-28T19:40:57.881Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Cisco SD-WAN zero-day exploitation is tied to the Silent Train network and key-stealing malware.",
+        "source_url": "https://securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network",
+        "added_at": "2026-10-29T13:22:31.658Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed zero-day exploitation campaigns by an advanced persistent threat group.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1619",
+    "slug": "china-linked-hackers-exploit-php2shell-to-root-firewalls",
+    "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+    "summary": "State-sponsored threat actors chained PHP2Shell and Fragnesia exploits to compromise two servers belonging to a US government-affiliated organization. The attacks resulted in unauthorized root access on the affected firewalls.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "firewalls"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls",
+        "publisher": "SecurityWeek",
+        "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "php2shell",
+      "fragnesia",
+      "china-linked",
+      "firewall"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "China-Linked Hackers Exploit PHP2Shell to Root Firewalls",
+        "source_url": "https://securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in the wild against a real target.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1618",
+    "slug": "foxio-discloses-tls-flaws-in-goahead-web-server",
+    "title": "FoxIO Discloses TLS Flaws in GoAhead Web Server",
+    "summary": "FoxIO uncovered three TLS vulnerabilities in the GoAhead Web Server that bypass revoked certificate checks or expose encrypted sessions to eavesdropping. The affected server is deployed across hundreds of millions of embedded devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GoAhead Web Server"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices",
+        "publisher": "SecurityWeek",
+        "title": "TLS Flaws Found in GoAhead Web Server Used in Hundreds of Millions of Devices",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "tls",
+      "goahead",
+      "embedded-devices"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "TLS Flaws Found in GoAhead Web Server Used in Hundreds of Millions of Devices",
+        "source_url": "https://securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Check for vendor advisories and updates for GoAhead Web Server.",
+    "severity_note": "Disclosed research findings with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1617",
+    "slug": "cisa-warns-of-active-exploitation-of-critical-node2shell-vul",
+    "title": "CISA Warns of Active Exploitation of Critical Node2Shell Vulnerability",
+    "summary": "CISA confirmed that attackers are actively exploiting the critical Node2Shell vulnerability affecting Brotli implementations. Honeypots have logged multiple attack attempts targeting the flaw.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Node2Shell"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw",
+        "publisher": "BleepingComputer",
+        "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts",
+        "publisher": "SecurityWeek",
+        "title": "CISA Warns of Node2Shell Exploitation as Honeypots Log Attack Attempts",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cisa",
+      "exploitation-in-the-wild",
+      "node2shell"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+        "source_url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "CISA Warns of Node2Shell Exploitation as Honeypots Log Attack Attempts",
+        "source_url": "https://securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Review CISA advisories and apply available patches or mitigations immediately.",
+    "severity_note": "Confirmed active exploitation in the wild.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1616",
+    "slug": "cve-2026-104351-adobe-fixes-critical-campaign-classic-code-i",
+    "title": "CVE-2026-104351: Adobe Fixes Critical Campaign Classic Code Injection Flaw",
+    "summary": "Adobe released security updates to fix eight critical vulnerabilities in Campaign Classic, including a code injection flaw tracked as CVE-2026-104351. Successful exploitation of these issues can lead to arbitrary code execution and privilege escalation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Campaign Classic"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+        "publisher": "The Hacker News",
+        "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-104351",
+      "adobe",
+      "campaign-classic",
+      "code-execution"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-104351"
+    ],
+    "affected": [
+      "Adobe Campaign Classic"
+    ],
+    "fixed_in": [
+      "Adobe Campaign Classic latest patch"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
+        "source_url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply the latest security patches provided by Adobe for Campaign Classic.",
+    "severity_note": "Critical rating with a vendor fix available.",
+    "cvss": 9.9
+  },
+  {
+    "id": "AIR-2026-1615",
+    "slug": "cve-2026-35273-oracle-peoplesoft-zero-day-chained-flaws-expl",
+    "title": "CVE-2026-35273: Oracle PeopleSoft Zero-Day Chained Flaws Exploited",
+    "summary": "Researchers revealed that a critical Oracle PeopleSoft zero-day exploited by ShinyHunters actually consists of three chained flaws patched under CVE-2026-35273. The vulnerability stems from an SSRF issue allowing unauthorized access to internal management interfaces.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PeopleSoft"
+    ],
+    "incident_date": "2026-06",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+        "publisher": "The Hacker News",
+        "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-35273",
+      "peoplesoft",
+      "shinyhunters",
+      "ssrf"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-35273"
+    ],
+    "affected": [
+      "Oracle PeopleSoft"
+    ],
+    "fixed_in": [
+      "Oracle PeopleSoft patch update"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+        "source_url": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Update Oracle PeopleSoft to the latest patched version addressing CVE-2026-35273.",
+    "severity_note": "Confirmed exploitation in the wild by threat actors.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1614",
+    "slug": "anthropic-ai-model-chains-flaws-into-working-exploits-in-lab",
+    "title": "Anthropic AI Model Chains Flaws Into Working Exploits in Lab Research",
+    "summary": "An unreleased Anthropic AI model discovered security flaws in major operating systems and browsers, chaining them into working proof-of-concept exploits. All discovered vulnerabilities were reported to vendors and patched before public disclosure.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "Google",
+      "Apple",
+      "Microsoft"
+    ],
+    "products": [
+      "Chrome",
+      "Safari",
+      "Windows",
+      "Linux",
+      "Android"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
+        "publisher": "The Hacker News",
+        "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "anthropic",
+      "ai-assisted-intrusion",
+      "chrome",
+      "safari",
+      "windows"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Chrome",
+      "Safari",
+      "Android",
+      "Windows",
+      "Linux"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+        "source_url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research proof-of-concept demonstrated in a lab setting with all underlying bugs already patched.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1612",
+    "slug": "critical-uefi-flaw-in-edk-ii-allows-pre-boot-code-execution",
+    "title": "Critical UEFI flaw in EDK II allows pre-boot code execution",
+    "summary": "A long-standing critical flaw in EDK II, an open-source UEFI firmware codebase, allows attackers to run code before the operating system loads during network booting. Hardware makers rely on this code to build device firmware.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "EDK II"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html",
+        "publisher": "The Hacker News",
+        "title": "Critical 16-Year-Old UEFI Flaw Can Run Code Before Secure Boot on Network-Booting Servers",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "uefi",
+      "edk-ii",
+      "secure-boot"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "EDK II UEFI firmware"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Critical 16-Year-Old UEFI Flaw Can Run Code Before Secure Boot on Network-Booting Servers",
+        "source_url": "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply firmware updates provided by your hardware vendor.",
+    "severity_note": "Critical rating with researcher disclosure.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1611",
+    "slug": "cve-2026-101767-threat-actors-probe-critical-oracle-e-busine",
+    "title": "CVE-2026-101767: Threat actors probe critical Oracle E-Business Suite RCE flaw",
+    "summary": "Threat actors are probing for a critical remote code execution vulnerability in the Oracle Application Object Library of Oracle E-Business Suite. Oracle patched the flaw as part of its Critical Patch Update shortly before active scanning began.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Oracle E-Business Suite"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Start Probing Fresh Oracle EBS Vulnerability",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw",
+        "publisher": "BleepingComputer",
+        "title": "Hackers now scanning systems for recently-patched Oracle flaw",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/29/oracle-e-business-suite-cve-2026-101767-exploitation",
+        "publisher": "Help Net Security",
+        "title": "Exploitation attempts against recently patched Oracle EBS flaw have begun (CVE-2026-101767)",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 4,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-101767",
+      "rce",
+      "oracle-ebs"
+    ],
+    "created_at": "2026-10-28T14:26:12.130Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-101767"
+    ],
+    "affected": [
+      "Oracle Application Object Library"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+        "source_url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Hackers Start Probing Fresh Oracle EBS Vulnerability",
+        "source_url": "https://securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Hackers now scanning systems for recently-patched Oracle flaw",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Apply the latest Oracle Critical Patch Update immediately.",
+    "severity_note": "Critical vulnerability with active probing in the wild.",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1608",
+    "slug": "cve-2026-118375-llama-cpp-out-of-bounds-write-in-rdma-transp",
+    "title": "CVE-2026-118375: llama.cpp out-of-bounds write in RDMA transport",
+    "summary": "An out-of-bounds write vulnerability exists in the ggml-rpc RDMA transport rdma_recv function of llama.cpp versions b8841 before b11865. Unauthenticated peers can send crafted HELLO messages to overflow the stack, causing a server crash or potential code execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llama.cpp"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118375",
+        "publisher": "NVD",
+        "title": "CVE-2026-118375: llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function…",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.98,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-118375",
+      "out-of-bounds-write",
+      "rdma"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-28",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-118375"
+    ],
+    "affected": [
+      "llama.cpp b8841 to b11864"
+    ],
+    "fixed_in": [
+      "llama.cpp b11865"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "CVE-2026-118375: llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118375",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "Update llama.cpp to version b11865 or later.",
+    "severity_note": "Critical vulnerability rated CVSS 9.2 with a patch available.",
+    "cvss": 9.2
+  },
+  {
+    "id": "AIR-2026-1607",
+    "slug": "revisiting-privacy-risks-and-membership-inference-attacks-in",
+    "title": "Revisiting privacy risks and membership inference attacks in quantized DNNs",
+    "summary": "Researchers present an empirical study evaluating privacy risks and membership inference attacks across quantized deep neural networks. The work demonstrates how model quantization impacts training data privacy.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Quantized Deep Neural Networks"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.37488",
+        "publisher": "arXiv",
+        "title": "Revisiting Privacy Risks in Quantized Deep Neural Networks",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "membership-inference",
+      "privacy",
+      "quantization"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Revisiting Privacy Risks in Quantized Deep Neural Networks",
+        "source_url": "https://arxiv.org/abs/2610.37488",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers as an empirical security evaluation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1606",
+    "slug": "log-to-leak-prompt-injection-attacks-on-tool-using-llm-agent",
+    "title": "Log-To-Leak: Prompt injection attacks on tool-using LLM agents via MCP",
+    "summary": "Researchers introduce Log-To-Leak, an additive post-hoc logging attack that exploits natural-language metadata in the Model Context Protocol. The attack induces unauthorized tool calls and targets user queries and agent responses.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol"
+    ],
+    "incident_date": "2026-10-28",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.36108",
+        "publisher": "arXiv",
+        "title": "Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "mcp",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-28T07:05:45.669Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM Agents via the Model Context Protocol",
+        "source_url": "https://arxiv.org/abs/2610.36108",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration of an attack vector against LLM agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1605",
+    "slug": "anthropic-demonstrates-ai-assisted-vulnerability-discovery-u",
+    "title": "Anthropic demonstrates AI-assisted vulnerability discovery using Claude",
+    "summary": "An unreleased internal research model from Anthropic was used to find critical software vulnerabilities in operating systems and browsers. The research demonstrated multiple attack chains leading to remote code execution.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "publisher": "Anthropic",
+        "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
+        "publisher": "Dark Reading",
+        "title": "Claude Model Builds Exploits Across Major Browsers & OSes",
+        "published_at": "2026-10-29"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-assisted-intrusion",
+      "remote-code-execution",
+      "claude"
+    ],
+    "created_at": "2026-10-28T07:05:45.669Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+        "source_url": "https://anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "added_at": "2026-10-28T07:05:45.669Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1603",
+    "slug": "hackers-hijack-convertr-analytics-script-for-payment-card-sk",
+    "title": "Hackers hijack Convertr analytics script for payment card skimming",
+    "summary": "A credit card skimming group compromised a shared analytics script used by e-commerce platform Convertr. Attackers used the compromised script to steal shoppers' payment card data during checkout.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Convertr analytics script"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-hijack-convertr-analytics-script-to-steal-payment-card-data",
+        "publisher": "BleepingComputer",
+        "title": "Hackers hijack Convertr analytics script to steal payment card data",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "magecart",
+      "credit-card-skimming",
+      "supply-chain"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Convertr analytics script"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Hackers hijack Convertr analytics script to steal payment card data",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-hijack-convertr-analytics-script-to-steal-payment-card-data",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world malicious script injection affecting e-commerce checkouts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1602",
+    "slug": "gmo-group-urges-customer-system-shutdowns-following-onamae-b",
+    "title": "GMO Group urges customer system shutdowns following Onamae breach",
+    "summary": "Japan's GMO Group advised customers to disconnect systems and shut down computers after threat actors breached Onamae Desktop Cloud and threatened ransomware deployment. The incident caused precautionary operational disruptions.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Onamae Desktop Cloud"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat",
+        "publisher": "BleepingComputer",
+        "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+        "publisher": "The Hacker News",
+        "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://techradar.com/pro/security/japanese-internet-giant-gmo-tells-customers-to-shut-down-and-disconnect-pcs-from-the-internet-following-data-breach-and-ransomware-threat",
+        "publisher": "techradar.com",
+        "title": "Japanese internet giant GMO tells customers to unplug PCs after compromise",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "cloud-breach",
+      "gmo-group"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Onamae Desktop Cloud"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+        "source_url": "https://bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GMO announces up to $1 million bounty for information on the Onamae breach",
+        "source_url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      }
+    ],
+    "action": "Disconnect affected systems from the internet and shut down computers as advised.",
+    "severity_note": "Confirmed breach with severe operational response.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1601",
+    "slug": "cve-2026-48356-adobe-commerce-and-magento-unrestricted-file",
+    "title": "CVE-2026-48356: Adobe Commerce and Magento unrestricted file upload exploited",
+    "summary": "Adobe Commerce and Magento contain an unrestricted file upload vulnerability that allows arbitrary code execution. CISA added the flaw to its Known Exploited Vulnerabilities catalog after confirming active exploitation in the wild.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Adobe Commerce",
+      "Magento"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48356",
+        "publisher": "CISA",
+        "title": "CVE-2026-48356: Adobe Commerce and Magento — Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-48356",
+      "arbitrary-code-execution",
+      "cisa-kev"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-48356"
+    ],
+    "affected": [
+      "Adobe Commerce",
+      "Magento"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-48356: Adobe Commerce and Magento — Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48356",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Apply mitigations and updates in accordance with vendor instructions.",
+    "severity_note": "Exploitation in the wild is confirmed via CISA KEV.",
+    "cvss": 9.6
+  },
+  {
+    "id": "AIR-2026-1600",
+    "slug": "cve-2026-59158-nuxt-ollama-exposes-cloud-api-keys-in-public",
+    "title": "CVE-2026-59158: Nuxt Ollama exposes cloud API keys in public configuration",
+    "summary": "Nuxt Ollama prior to version 1.3.1 unconditionally merges module options including cloud API keys into public runtime configuration. This serializes sensitive credentials into server-rendered HTML payloads, exposing them to unauthenticated clients.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Nuxt Ollama"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59158",
+        "publisher": "NVD",
+        "title": "CVE-2026-59158: Nuxt Ollama integrates the official Ollama JavaScript library into Nuxt applications.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-59158",
+      "api-key-exposure",
+      "nuxt-ollama"
+    ],
+    "created_at": "2026-10-28T00:54:15.308Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-59158"
+    ],
+    "affected": [
+      "Nuxt Ollama < 1.3.1"
+    ],
+    "fixed_in": [
+      "Nuxt Ollama 1.3.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-59158: Nuxt Ollama integrates the official Ollama JavaScript library into Nuxt applications.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59158",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Update Nuxt Ollama to version 1.3.1 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1599",
+    "slug": "stored-prompt-injection-vulnerability-through-api-gateway",
+    "title": "Stored Prompt Injection Vulnerability Through API Gateway",
+    "summary": "A security write-up demonstrates how stored prompt injection can be achieved through an API gateway to manipulate AI agent behavior. The technique highlights risks in handling untrusted inputs within AI-integrated architectures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "API Gateway"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://druhindhavala.com/ai-governance/stored-prompt-injection-api-gateway",
+        "publisher": "druhindhavala.com",
+        "title": "Who Governs the Governor? – Stored Prompt Injection Through the API Gateway",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "api_gateway",
+      "research",
+      "ai_security"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Who Governs the Governor? – Stored Prompt Injection Through the API Gateway",
+        "source_url": "https://druhindhavala.com/ai-governance/stored-prompt-injection-api-gateway",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Sanitize and validate inputs processed by API gateways and LLM integrations.",
+    "severity_note": "Research proof-of-concept demonstrating prompt injection via API gateway.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1598",
+    "slug": "hpe-patches-dozens-of-critical-flaws-in-networking-products",
+    "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+    "summary": "Hewlett Packard Enterprise released patches for dozens of security defects in its networking products, including eight maximum-severity vulnerabilities. These flaws could potentially lead to remote code execution and authentication bypass.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "HPE Networking Products"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://securityweek.com/hpe-patches-dozens-of-critical-flaws-in-networking-products",
+        "publisher": "SecurityWeek",
+        "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "hpe",
+      "rce",
+      "authentication_bypass",
+      "networking"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "HPE Patches Dozens of Critical Flaws in Networking Products",
+        "source_url": "https://securityweek.com/hpe-patches-dozens-of-critical-flaws-in-networking-products",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Apply the latest security updates provided by HPE.",
+    "severity_note": "Critical rating with patches available.",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1596",
+    "slug": "warp-discloses-breach-exposing-ai-agent-logs-and-telemetry-d",
+    "title": "Warp discloses breach exposing AI agent logs and telemetry data",
+    "summary": "Warp disclosed a security breach affecting its third-party vendor infrastructure that exposed agent decision logs and user telemetry data. The incident resulted in the unauthorized exposure of internal development environment records.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Warp agentic development environment"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data",
+        "publisher": "BleepingComputer",
+        "title": "Warp discloses breach exposing AI agent logs, user telemetry data",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "telemetry",
+      "supply-chain-breach"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Warp discloses breach exposing AI agent logs, user telemetry data",
+        "source_url": "https://bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data leak via third-party breach",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1594",
+    "slug": "malicious-apps-prey-on-russians-anxiety-about-fuel-prices-an",
+    "title": "Malicious apps prey on Russians' anxiety about fuel prices and drone strikes",
+    "summary": "Cybercriminals are distributing infostealer malware through fraudulent mobile applications tracking gas prices and drone strikes in Russia. The campaign targets anxious citizens with deceptive utilities to harvest personal data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "infostealer apps"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://therecord.media/malicious-apps-russian-anxiety-gas-prices-drone-strikes",
+        "publisher": "The Record",
+        "title": "Malicious apps prey on Russians’ anxiety about fuel prices, drone strikes",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "infostealer",
+      "mobile-malware",
+      "fraud-campaign"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Malicious apps prey on Russians’ anxiety about fuel prices, drone strikes",
+        "source_url": "https://therecord.media/malicious-apps-russian-anxiety-gas-prices-drone-strikes",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world malware distribution campaign",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1593",
+    "slug": "aokigahara-stealer-malware-targets-developer-keyrings-and-ai",
+    "title": "Aokigahara Stealer Malware Targets Developer Keyrings and AI Assistants",
+    "summary": "A new infostealer malware named Aokigahara is targeting developer keyrings and local AI assistant sessions to harvest sensitive business data from compromised endpoints. The campaign expands traditional infostealer tactics to target LLM session histories.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Aokigahara Stealer"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
+        "publisher": "Dark Reading",
+        "title": "'Aokigahara' Stealer Targets 'Developer Keyrings' & AI Assistants",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "aokigahara",
+      "infostealer",
+      "developer-tools"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "'Aokigahara' Stealer Targets 'Developer Keyrings' & AI Assistants",
+        "source_url": "https://darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Scan endpoints for Aokigahara stealer indicators and isolate compromised developer machines.",
+    "severity_note": "Active malware campaign confirmed targeting developer and AI data.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1592",
+    "slug": "cve-2026-65120-nvidia-tensorrt-llm-server-side-request-forge",
+    "title": "CVE-2026-65120: NVIDIA TensorRT-LLM Server-Side Request Forgery Vulnerability",
+    "summary": "NVIDIA TensorRT-LLM contains a server-side request forgery vulnerability that can lead to information disclosure. The issue was published in an official CVE record.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "TensorRT-LLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65120",
+        "publisher": "NVD",
+        "title": "CVE-2026-65120: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-65120",
+      "tensorrt-llm",
+      "ssrf"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-65120"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-65120: NVIDIA TensorRT-LLM contains a vulnerability where an attacker could cause a server-side request forgery.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65120",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Apply available vendor updates for TensorRT-LLM.",
+    "severity_note": "Disclosed vulnerability with high CVSS score, no exploitation reported.",
+    "cvss": 7.1
+  },
+  {
+    "id": "AIR-2026-1591",
+    "slug": "cve-2026-86950-apple-backports-fix-for-exploited-coregraphic",
+    "title": "CVE-2026-86950: Apple Backports Fix for Exploited CoreGraphics Flaw",
+    "summary": "Apple backported patches for an out-of-bounds write vulnerability in CoreGraphics that was exploited in real-world attacks. The flaw could result in arbitrary code execution when processing a malicious file.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Apple"
+    ],
+    "products": [
+      "CoreGraphics",
+      "iOS",
+      "iPadOS"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
+        "publisher": "The Hacker News",
+        "title": "Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones",
+        "publisher": "BleepingComputer",
+        "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18",
+        "publisher": "SecurityWeek",
+        "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-86950",
+      "coregraphics",
+      "zero-day"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-86950"
+    ],
+    "affected": [
+      "iOS < 18"
+    ],
+    "fixed_in": [
+      "iOS 18 and newer backports"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads",
+        "source_url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+        "source_url": "https://bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
+        "source_url": "https://securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Update affected iPhones and iPads to the latest backported software versions.",
+    "severity_note": "Confirmed exploitation in the wild with vendor patch.",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1590",
+    "slug": "cyberstrikeai-uses-ai-agents-to-automate-hacking-operations",
+    "title": "CyberStrikeAI Uses AI Agents to Automate Hacking Operations in Japan",
+    "summary": "Threat actors deployed an operation using numerous AI agents to automate attacks against organizations in Japan. Researchers analyzed exposed server environments to uncover the malicious campaigns.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "CyberStrikeAI"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+        "publisher": "The Hacker News",
+        "title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cyberstrikeai",
+      "ai-agents",
+      "japan"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets",
+        "source_url": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world attack campaign using AI agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1589",
+    "slug": "litellm-internal-user-viewer-arbitrary-local-file-read-via-v",
+    "title": "LiteLLM: internal_user_viewer arbitrary local file read via vertex_ai_credentials",
+    "summary": "An authenticated low-privilege user can read arbitrary local files on the proxy runtime by sending a crafted vertex_ai_credentials value. The value reaches the Vertex AI credential loader and triggers an unintended file read.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-g5ff-637f-6q2m",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-g5ff-637f-6q2m: LiteLLM: internal_user_viewer arbitrary local file read via `vertex_ai_credentials`",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "ghsa-g5ff-637f-6q2m",
+      "litellm",
+      "file-read"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "litellm < 1.95.0"
+    ],
+    "fixed_in": [
+      "litellm 1.95.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-g5ff-637f-6q2m: LiteLLM: internal_user_viewer arbitrary local file read via `vertex_ai_credentials`",
+        "source_url": "https://github.com/advisories/GHSA-g5ff-637f-6q2m",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "Check the advisory for fixed versions and update LiteLLM.",
+    "severity_note": "Disclosed vulnerability with a security advisory; no exploitation confirmed.",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1588",
+    "slug": "cve-2026-116684-model-context-protocol-python-sdk-resource-c",
+    "title": "CVE-2026-116684: Model Context Protocol Python SDK resource-confusion authentication flaw",
+    "summary": "Server-side bearer authentication in the Model Context Protocol Python SDK fails to independently validate token audiences when multiple resources share an authorization server. This allows token holders to improperly authenticate and interact with incorrect MCP servers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116684",
+        "publisher": "NVD",
+        "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-w4fh-qvv9-3v23",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116684: Model Context Protocol Python SDK: Server bearer-token authentication accepts tokens issued for a different resource server",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116684",
+      "authentication",
+      "mcp"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116684"
+    ],
+    "affected": [
+      "1.0.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116684: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116684",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-w4fh-qvv9-3v23",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches and no confirmed exploitation.",
+    "cvss": 6.8
+  },
+  {
+    "id": "AIR-2026-1587",
+    "slug": "cve-2026-116686-model-context-protocol-python-sdk-ssrf-and-l",
+    "title": "CVE-2026-116686: Model Context Protocol Python SDK SSRF and local file read via schema resolution",
+    "summary": "The Model Context Protocol Python SDK validates server output schemas using a resolver that triggers network requests or local file reads for unresolved references. Malicious servers can exploit this behavior to force blind requests, read local files, and stall client sessions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116686",
+        "publisher": "NVD",
+        "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-rwrf-2pqf-9j8j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116686: Model Context Protocol Python SDK: Client fetched server-chosen $ref URLs while validating tool results against output schemas",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116686",
+      "ssrf",
+      "mcp"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116686"
+    ],
+    "affected": [
+      "1.10.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116686: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116686",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-rwrf-2pqf-9j8j",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches and no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1586",
+    "slug": "cve-2026-116685-model-context-protocol-python-sdk-credential",
+    "title": "CVE-2026-116685: Model Context Protocol Python SDK credential leakage via redirects",
+    "summary": "Certain client paths in the Model Context Protocol Python SDK improperly follow cross-origin redirects, forwarding custom credential headers and request bodies. Attackers able to manipulate redirect destinations can capture sensitive authentication material.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol Python SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116685",
+        "publisher": "NVD",
+        "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-5h93-6whr-6q8j",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-116685: Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116685",
+      "mcp",
+      "python"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-116685"
+    ],
+    "affected": [
+      "1.8.0 to 1.29.x",
+      "2.0.0 to 2.1.x"
+    ],
+    "fixed_in": [
+      "1.30.0",
+      "2.2.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "CVE-2026-116685: The Model Context Protocol Python SDK is the official Python SDK for Model Context Protocol servers and clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116685",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-5h93-6whr-6q8j",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      }
+    ],
+    "action": "Update to version 1.30.0 or 2.2.0.",
+    "severity_note": "CVE advisory with patches available and no exploitation reported.",
+    "cvss": 5.9
+  },
+  {
+    "id": "AIR-2026-1585",
+    "slug": "mcp-typescript-sdk-lacks-request-body-size-and-batch-length",
+    "title": "MCP TypeScript SDK lacks request body size and batch length limits",
+    "summary": "HTTP server transports in the MCP TypeScript SDK fail to limit POST body sizes or JSON-RPC batch lengths. Unauthenticated clients can cause memory exhaustion and block server availability with large or lengthy requests.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP TypeScript SDK"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-f897-62hf-6gxq",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-f897-62hf-6gxq: MCP TypeScript SDK: HTTP server transports and handlers did not limit request body size or JSON-RPC batch length",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "dos",
+      "mcp",
+      "typescript"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "@modelcontextprotocol/sdk >= 1.10.0, < 1.30.1",
+      "@modelcontextprotocol/server >= 2.0.0, < 2.1.0",
+      "@modelcontextprotocol/node >= 2.0.0, < 2.1.0",
+      "@modelcontextprotocol/hono >= 2.0.0, < 2.0.1"
+    ],
+    "fixed_in": [
+      "@modelcontextprotocol/sdk 1.30.1",
+      "@modelcontextprotocol/server 2.1.0",
+      "@modelcontextprotocol/node 2.1.0",
+      "@modelcontextprotocol/hono 2.0.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-f897-62hf-6gxq: MCP TypeScript SDK: HTTP server transports and handlers did not limit request body size or JSON-RPC batch length",
+        "source_url": "https://github.com/advisories/GHSA-f897-62hf-6gxq",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1584",
+    "slug": "litellm-reflected-xss-vulnerability-in-sso-debug-callback",
+    "title": "LiteLLM reflected XSS vulnerability in /sso/debug/callback",
+    "summary": "An unauthenticated reflected cross-site scripting flaw exists in LiteLLM due to improper escaping of identity-provider-controlled fields within an inline script block. Attackers can execute arbitrary JavaScript in the proxy origin when an IdP returns crafted strings.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "incident_date": "2026-10-27",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-27",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-hhww-mrg2-969h",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-hhww-mrg2-969h: LiteLLM vulnerable to reflected XSS in /sso/debug/callback",
+        "published_at": "2026-10-27"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "xss",
+      "litellm",
+      "sso"
+    ],
+    "created_at": "2026-10-27T20:48:16.236Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-10-27",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "litellm >= 1.65.5, < 1.85.0"
+    ],
+    "fixed_in": [
+      "litellm 1.85.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-10-27",
+        "title": "GHSA-hhww-mrg2-969h: LiteLLM vulnerable to reflected XSS in /sso/debug/callback",
+        "source_url": "https://github.com/advisories/GHSA-hhww-mrg2-969h",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with no confirmed exploitation in the wild.",
+    "cvss": 6.8
+  },
+  {
     "id": "AIR-2026-1583",
     "slug": "critical-vulnerability-in-f5-big-ip-apm-exploited-in-the-wil",
     "title": "Critical Vulnerability in F5 BIG-IP APM Exploited in the Wild",
@@ -618,9 +4946,15 @@
         "publisher": "CERT-EU",
         "title": "2026-010: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal",
+        "publisher": "SecurityWeek",
+        "title": "This is Fine: What NetScaler Zero-Days Tell Us About the New Normal",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -630,7 +4964,7 @@
       "active-exploitation"
     ],
     "created_at": "2026-10-27T15:31:15.081Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -760,9 +5094,15 @@
         "publisher": "Help Net Security",
         "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://therecord.media/new-mexico-cyberattack-hospital",
+        "publisher": "The Record",
+        "title": "University of New Mexico restores hospital systems, urges no contact with hackers",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -773,7 +5113,7 @@
       "unm"
     ],
     "created_at": "2026-10-27T15:31:15.081Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-29T19:37:17.247Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -787,6 +5127,12 @@
         "title": "Cyberattack disrupts University of New Mexico hospitals, extortion group claims attack",
         "source_url": "https://helpnetsecurity.com/2026/10/27/university-of-new-mexico-hospitals-cyberattack",
         "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "The University of New Mexico restored hospital systems following the cyberattack",
+        "source_url": "https://therecord.media/new-mexico-cyberattack-hospital",
+        "added_at": "2026-10-29T19:37:17.247Z"
       }
     ],
     "action": "",
@@ -1773,9 +6119,15 @@
         "publisher": "Cisco",
         "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates",
+        "publisher": "BleepingComputer",
+        "title": "Microsoft releases Windows OOB updates to distrust eMudhra certificates",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1785,11 +6137,11 @@
       "key_compromise"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unpatched",
+    "patch_status": "partial",
     "cve_ids": [],
     "affected": [
       "eMudhra intermediate certificates"
@@ -1801,9 +6153,15 @@
         "title": "Cisco Informational for Emergency Distrust of eMudhra Root and Intermediate Certificate Authorities",
         "source_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-emudhra-info-ScS22A1r?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Informational+for+Emergency+Distrust+of+eMudhra+Root+and+Intermediate+Certificate+Authorities%26vs_k%3D1",
         "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Microsoft releases out-of-band Windows updates to distrust compromised eMudhra certificates",
+        "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates",
+        "added_at": "2026-10-27T20:48:16.236Z"
       }
     ],
-    "action": "Distrust the affected eMudhra root and intermediate certificates.",
+    "action": "Apply the out-of-band Windows updates to remove trust in affected eMudhra certificates.",
     "severity_note": "Critical security compromise involving Certificate Authorities.",
     "cvss": null
   },
@@ -2078,9 +6436,15 @@
         "publisher": "The Hacker News",
         "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/cloud-security/email-bombing-external-teams-chats-repeatable-access-path",
+        "publisher": "Dark Reading",
+        "title": "External Teams Chats Anchor 15-Minute Malware Delivery",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2091,7 +6455,7 @@
       "microsoft-teams"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2198,9 +6562,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-6757-hggm-hp2w",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115912: vLLM: Public multimodal SHM handle forgery reaches worker-side `pickle.loads()` with insecure serialization disabled",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -2209,7 +6579,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2229,6 +6599,12 @@
         "title": "CVE-2026-115912: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115912",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-6757-hggm-hp2w",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -2260,9 +6636,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-q97c-p368-75c4",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115916: vLLM: Out-of-vocabulary prompt token id passes input validation and triggers a CUDA device-side assert (engine crash / DoS)",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -2271,7 +6653,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2291,6 +6673,12 @@
         "title": "CVE-2026-115916: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115916",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-q97c-p368-75c4",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -2322,9 +6710,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-x567-49g5-p4cf",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115918: vLLM: Responses API bypasses trust_request_chat_template for chat_template_kwargs",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -2333,7 +6727,7 @@
       "resource-exhaustion"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2353,6 +6747,12 @@
         "title": "CVE-2026-115918: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115918",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-x567-49g5-p4cf",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -2384,9 +6784,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-gq5q-89c7-vhvx",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115914: vLLM DeepSeek-OCR image processing vulnerable to denial of service",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -2395,7 +6801,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2415,6 +6821,12 @@
         "title": "CVE-2026-115914: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115914",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-gq5q-89c7-vhvx",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM version 0.32.0.",
@@ -2446,9 +6858,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-h3rc-j82p-2c3h",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115915: vLLM: Untrusted EPS inputs can trigger denial of service or Ghostscript RCE",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -2457,7 +6875,7 @@
       "rce"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2477,6 +6895,12 @@
         "title": "CVE-2026-115915: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115915",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-h3rc-j82p-2c3h",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -2508,9 +6932,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-vvpg-rrww-wpmh",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115917: vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -2519,7 +6949,7 @@
       "cors"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2539,6 +6969,12 @@
         "title": "CVE-2026-115917: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-vvpg-rrww-wpmh",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -2570,9 +7006,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-8397-8qf6-f2gm",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115913: vLLM: Phi-4 multimodal audio encoder materializes and retains full attention matrices: a single max-length audio OOM-crashes the vLLM engine",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -2581,7 +7023,7 @@
       "out-of-memory"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2601,6 +7043,12 @@
         "title": "CVE-2026-115913: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115913",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-8397-8qf6-f2gm",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -2632,9 +7080,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-542m-9234-8gvf",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-115911: vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -2643,7 +7097,7 @@
       "denial-of-service"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-26",
@@ -2663,6 +7117,12 @@
         "title": "CVE-2026-115911: vLLM is an inference and serving engine for large language models.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115911",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-542m-9234-8gvf",
+        "added_at": "2026-10-29T00:20:42.318Z"
       }
     ],
     "action": "Update to vLLM 0.32.0 or later.",
@@ -2799,7 +7259,7 @@
     "categories": [
       "general"
     ],
-    "severity": 2,
+    "severity": 3,
     "targets": [
       "n/a"
     ],
@@ -2855,9 +7315,39 @@
         "publisher": "CyberScoop",
         "title": "Experts temper emergency-level alarms over critical Brotli defect",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497",
+        "publisher": "Help Net Security",
+        "title": "Brotli bug reaches far beyond Node.js (CVE-2026-111497)",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in node.js Affecting Cisco Products: October 2026",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111497",
+        "publisher": "CISA",
+        "title": "CVE-2026-111497: Google Brotli — Google Brotli Unchecked Return Value Vulnerability",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html",
+        "publisher": "The Hacker News",
+        "title": "Adobe Commerce PolyShell Attacks Breach Hundreds of Stores as Brotli Exploit Traffic Emerges",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+Node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in Node.js Affecting Cisco Products: October 2026",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 7,
+    "source_count": 12,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2870,10 +7360,11 @@
       "CVE-2026-106069",
       "CVE-2026-111497",
       "CVE-2026-105481",
-      "CVE-2026-106072"
+      "CVE-2026-106072",
+      "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -2891,7 +7382,10 @@
       "PHP 8.2",
       "PHP 8.3",
       "PHP 8.4",
-      "PHP 8.5"
+      "PHP 8.5",
+      "Node.js 22.x",
+      "Node.js 24.x",
+      "Node.js 26.x"
     ],
     "timeline": [
       {
@@ -2923,6 +7417,18 @@
         "title": "Microsoft releases emergency .NET security updates for the Brotli vulnerability",
         "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw",
         "added_at": "2026-10-26T19:34:40.193Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111497",
+        "added_at": "2026-10-28T00:54:15.308Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "Node.js releases updates for lines 22.x, 24.x, and 26.x addressing the Brotli decoder vulnerability",
+        "source_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+node.js+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "added_at": "2026-10-28T00:54:15.308Z"
       }
     ],
     "action": "Update PHP Windows packages to the latest patched releases.",
@@ -2997,9 +7503,33 @@
         "publisher": "CERT-EU",
         "title": "2026-018: Critical Vulnerabilities in PHP",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://therecord.media/php-vulnerabilities-cisa-kev",
+        "publisher": "The Record",
+        "title": "CISA warns of PHP bug exploitation attempts, gives federal agencies days to patch",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619",
+        "publisher": "Unit 42",
+        "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
+        "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://therecord.media/php2shell-successful-exploitation-reports-emerge",
+        "publisher": "The Record",
+        "title": "Limited reports of PHP bug exploitation emerge",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 8,
+    "source_count": 12,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3011,7 +7541,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-10-29T23:23:38.250Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3065,6 +7595,12 @@
         "title": "PHP releases versions 8.5.12, 8.4.27, 8.3.36, and 8.2.35 fixing the critical vulnerabilities",
         "source_url": "https://cert.europa.eu/publications/security-advisories/2026-018",
         "added_at": "2026-10-27T09:09:27.523Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "New reports link PHP bug exploitation to a suspected Chinese campaign targeting government affiliated servers",
+        "source_url": "https://therecord.media/php2shell-successful-exploitation-reports-emerge",
+        "added_at": "2026-10-29T23:23:38.250Z"
       }
     ],
     "action": "Upgrade PHP installations to version 8.5.12, 8.4.27, 8.3.36, 8.2.35 or later immediately.",
@@ -3103,9 +7639,15 @@
         "publisher": "Dark Reading",
         "title": "'Gheist' Weaponizes GitHub Tokens to Steal Cloud Secrets",
         "published_at": "2026-10-26"
+      },
+      {
+        "url": "https://darkreading.com/application-security/ghostaction-hacking-wave-fizzles-attackers-github",
+        "publisher": "Dark Reading",
+        "title": "GhostAction Hacking Wave Fizzles, But Attackers Lurk on in GitHub",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3117,7 +7659,7 @@
       "supply-chain"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -3649,9 +8191,27 @@
         "publisher": "BleepingComputer",
         "title": "Tailscale warns of SSH flaws allowing root privilege escalation",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://securityweek.com/tailscale-rushes-patches-after-uncoordinated-disclosure-of-tailworm-flaws",
+        "publisher": "SecurityWeek",
+        "title": "Tailscale Rushes Patches After Uncoordinated Disclosure of ‘Tailworm’ Flaws",
+        "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html",
+        "publisher": "The Hacker News",
+        "title": "Tailscale Patches SSH Flaws That Could Let Hacked Devices Gain Root Access on Other Servers",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/10/28/tailscale-fixes-tailworm-ssh-flaws",
+        "publisher": "Help Net Security",
+        "title": "Tailscale fixes SSH flaws allowing lateral movement within tailnets",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 2,
+    "source_count": 5,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -3661,7 +8221,7 @@
       "unpatched"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-10-28T14:26:12.130Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -3670,7 +8230,9 @@
     "affected": [
       "Tailscale SSH"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "1.104.4"
+    ],
     "timeline": [
       {
         "date": "2026-10-25",
@@ -3683,9 +8245,21 @@
         "title": "The vendor is working on patches for nearly a dozen security vulnerabilities involving Tailscale SSH.",
         "source_url": "https://bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation",
         "added_at": "2026-10-27T15:31:15.081Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Tailscale releases version 1.104.4 fixing the SSH flaws",
+        "source_url": "https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html",
+        "added_at": "2026-10-28T14:26:12.130Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Tailscale ships fixes for SSH vulnerabilities",
+        "source_url": "https://helpnetsecurity.com/2026/10/28/tailscale-fixes-tailworm-ssh-flaws",
+        "added_at": "2026-10-28T14:26:12.130Z"
       }
     ],
-    "action": "Disable Tailscale SSH port forwarding or tighten network access rules until a fix is released.",
+    "action": "Apply the latest Tailscale updates that include the SSH fixes",
     "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
     "cvss": null
   },
@@ -3773,9 +8347,21 @@
         "publisher": "The Hacker News",
         "title": "PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking",
         "published_at": "2026-10-25"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score",
+        "publisher": "BleepingComputer",
+        "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure",
+        "publisher": "BleepingComputer",
+        "title": "InfraTrust report warns of exploited flaws in critical network infrastructure",
+        "published_at": "2026-10-28"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3786,7 +8372,7 @@
       "post-exploitation"
     ],
     "created_at": "2026-10-25T20:55:01.683Z",
-    "updated_at": "2026-10-25T20:55:01.683Z",
+    "updated_at": "2026-10-28T19:40:57.881Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -7408,9 +11994,21 @@
         "publisher": "NVD",
         "title": "CVE-2026-114053: vLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers…",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-f623-hjm8-5wg5: Duplicate Advisory: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+        "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-h3rc-6mm3-gc2m",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-114053: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+        "published_at": "2026-10-27"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -7420,22 +12018,38 @@
       "vllm"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-10-27T20:48:16.236Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-21",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-114053"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "vllm >= 0.7.3, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vllm 0.31.0"
+    ],
     "timeline": [
       {
         "date": "2026-10-21",
         "title": "CVE-2026-114053: vLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114053",
         "added_at": "2026-10-21T05:04:24.513Z"
+      },
+      {
+        "date": "2026-10-21",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
+        "added_at": "2026-10-27T20:48:16.236Z"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-h3rc-6mm3-gc2m",
+        "added_at": "2026-10-27T20:48:16.236Z"
       }
     ],
     "action": "",
@@ -11153,10 +15767,10 @@
       "zero-click"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -11210,10 +15824,10 @@
       "authentication"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -11269,10 +15883,10 @@
       "ai-assisted-intrusion"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-29T00:20:42.318Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -11633,10 +16247,10 @@
       "path-traversal"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-10-28T00:54:15.308Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-27",
     "patch_status": "unknown",
     "cve_ids": [
       "CVE-2026-103572"

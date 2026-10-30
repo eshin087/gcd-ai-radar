@@ -1,136 +1,140 @@
 {
  "sources": {
   "anthropic": {
-   "last_success_at": "2026-10-27T09:03:03.937Z"
+   "last_success_at": "2026-10-29T05:51:43.381Z"
   },
   "arxiv-cscr": {
-   "last_success_at": "2026-10-27T09:03:09.442Z"
+   "last_success_at": "2026-10-29T05:51:52.556Z"
   },
   "bleepingcomputer": {
-   "last_success_at": "2026-10-27T15:23:29.640Z"
+   "last_success_at": "2026-10-29T23:19:13.085Z"
   },
   "cert-eu": {
-   "last_success_at": "2026-10-27T09:03:05.886Z"
+   "last_success_at": "2026-10-29T05:51:47.085Z"
   },
   "checkmarx-zero": {
-   "last_success_at": "2026-10-27T15:23:33.731Z"
+   "last_success_at": "2026-10-29T23:19:16.711Z"
   },
   "cisa-alerts": {
-   "last_success_at": "2026-10-27T15:23:30.626Z"
+   "last_success_at": "2026-10-29T23:19:13.847Z"
   },
   "cisco-psirt": {
-   "last_success_at": "2026-10-27T15:23:31.076Z"
+   "last_success_at": "2026-10-29T23:19:14.482Z"
   },
   "cyberscoop": {
-   "last_success_at": "2026-10-27T15:23:29.904Z"
+   "last_success_at": "2026-10-29T23:19:13.226Z"
   },
   "darkreading": {
-   "last_success_at": "2026-10-27T15:23:29.767Z"
+   "last_success_at": "2026-10-29T23:19:13.469Z"
   },
   "deepmind": {
-   "last_success_at": "2026-10-27T15:23:30.290Z"
+   "last_success_at": "2026-10-29T23:19:13.630Z"
   },
   "embracethered": {
-   "last_success_at": "2026-10-27T15:23:31.552Z"
+   "last_success_at": "2026-10-29T23:19:15.279Z"
   },
   "fortinet-psirt": {
-   "last_success_at": "2026-10-27T15:23:32.765Z"
+   "last_success_at": "2026-10-29T23:19:16.214Z"
   },
   "gdelt": {
-   "last_success_at": "2026-10-27T15:30:02.221Z"
+   "last_success_at": "2026-10-29T19:37:11.492Z"
   },
   "ghsa": {
-   "last_success_at": "2026-10-27T15:23:34.672Z"
+   "last_success_at": "2026-10-29T23:19:17.793Z"
   },
   "google-security": {
-   "last_success_at": "2026-10-27T15:23:30.234Z"
+   "last_success_at": "2026-10-29T23:19:13.729Z"
   },
   "gtig": {
-   "last_success_at": "2026-10-27T15:23:31.255Z"
+   "last_success_at": "2026-10-29T23:19:15.040Z"
   },
   "helpnetsecurity": {
-   "last_success_at": "2026-10-27T15:23:30.009Z"
+   "last_success_at": "2026-10-29T23:19:13.304Z"
   },
   "hibp": {
-   "last_success_at": "2026-10-27T15:23:35.206Z"
+   "last_success_at": "2026-10-29T18:58:47.103Z"
   },
   "hiddenlayer": {
-   "last_success_at": "2026-10-27T09:03:09.241Z"
+   "last_success_at": "2026-10-29T05:51:52.478Z"
   },
   "hn": {
-   "last_success_at": "2026-10-27T15:23:36.450Z"
+   "last_success_at": "2026-10-29T23:19:19.651Z"
   },
   "kev": {
-   "last_success_at": "2026-10-27T15:23:34.768Z"
+   "last_success_at": "2026-10-29T18:58:46.826Z"
   },
   "krebs": {
-   "last_success_at": "2026-10-27T15:23:29.674Z"
+   "last_success_at": "2026-10-29T23:19:13.055Z"
   },
   "meta-eng": {
-   "last_success_at": "2026-10-27T15:23:30.499Z"
+   "last_success_at": "2026-10-29T23:19:13.788Z"
   },
   "ms-ai": {
-   "last_success_at": "2026-10-27T15:23:30.418Z"
+   "last_success_at": "2026-10-29T23:19:14.287Z"
   },
   "ms-security": {
-   "last_success_at": "2026-10-27T15:23:30.333Z"
+   "last_success_at": "2026-10-29T23:19:13.668Z"
   },
   "ms-threat-intel": {
-   "last_success_at": "2026-10-27T15:23:30.363Z"
+   "last_success_at": "2026-10-29T23:19:13.692Z"
   },
   "msrc-sug": {
-   "last_success_at": "2026-10-27T09:03:04.964Z"
+   "last_success_at": "2026-10-29T05:51:46.039Z"
   },
   "ncsc-uk": {
-   "last_success_at": "2026-10-27T09:03:05.606Z"
+   "last_success_at": "2026-10-29T05:51:46.802Z"
   },
   "nvd": {
-   "last_success_at": "2026-10-27T15:29:01.406Z"
+   "last_success_at": "2026-10-29T23:23:34.797Z"
   },
   "openai": {
-   "last_success_at": "2026-10-27T15:23:30.145Z"
+   "last_success_at": "2026-10-29T23:19:13.414Z"
   },
   "owasp-genai": {
-   "last_success_at": "2026-10-27T15:23:33.059Z"
+   "last_success_at": "2026-10-29T23:19:15.818Z"
   },
   "paloalto-psirt": {
-   "last_success_at": "2026-10-27T15:23:31.268Z"
+   "last_success_at": "2026-10-29T23:19:14.446Z"
   },
   "securityweek": {
-   "last_success_at": "2026-10-27T15:23:29.538Z"
+   "last_success_at": "2026-10-29T23:19:12.993Z"
   },
   "simonw-pi": {
-   "last_success_at": "2026-10-27T15:23:31.407Z"
+   "last_success_at": "2026-10-29T23:19:15.146Z"
   },
   "simonw-sec": {
-   "last_success_at": "2026-10-27T15:23:31.458Z"
+   "last_success_at": "2026-10-29T23:19:15.568Z"
   },
   "straiker": {
-   "last_success_at": "2026-10-27T15:23:33.140Z"
+   "last_success_at": "2026-10-29T23:19:15.906Z"
   },
   "talos": {
-   "last_success_at": "2026-10-27T15:23:32.906Z"
+   "last_success_at": "2026-10-29T23:19:15.737Z"
   },
   "therecord": {
-   "last_success_at": "2026-10-27T15:23:29.992Z"
+   "last_success_at": "2026-10-29T23:19:13.247Z"
   },
   "thn": {
-   "last_success_at": "2026-10-27T15:23:29.581Z"
+   "last_success_at": "2026-10-29T23:19:13.074Z"
   },
   "trailofbits": {
-   "last_success_at": "2026-10-27T15:23:31.794Z"
+   "last_success_at": "2026-10-29T23:19:15.465Z"
   },
   "trendmicro": {
-   "last_success_at": "2026-10-27T15:23:33.245Z"
+   "last_success_at": "2026-10-28T00:32:34.385Z"
   },
   "unit42": {
-   "last_success_at": "2026-10-27T15:23:32.808Z"
+   "last_success_at": "2026-10-29T23:19:15.631Z"
   },
   "unit42-ai": {
-   "last_success_at": "2026-10-27T15:23:32.937Z"
+   "last_success_at": "2026-10-29T23:19:16.609Z"
   }
  },
  "cve_lookups": {
+  "CVE-2026-101767": {
+   "at": "2026-10-28T14:26:12.130Z",
+   "found": true
+  },
   "CVE-2026-103572": {
    "at": "2026-10-26T14:52:59.139Z",
    "found": true
@@ -151,12 +155,32 @@
    "at": "2026-10-26T14:52:59.139Z",
    "found": true
   },
+  "CVE-2026-41709": {
+   "at": "2026-10-29T00:20:42.318Z",
+   "found": true
+  },
   "CVE-2026-44756": {
    "at": "2026-10-27T15:31:15.081Z",
    "found": true
   },
+  "CVE-2026-46300": {
+   "at": "2026-10-29T00:20:42.318Z",
+   "found": true
+  },
+  "CVE-2026-48356": {
+   "at": "2026-10-28T00:54:15.308Z",
+   "found": true
+  },
   "CVE-2026-58240": {
    "at": "2026-10-27T09:09:27.523Z",
+   "found": true
+  },
+  "CVE-2026-76418": {
+   "at": "2026-10-29T13:22:31.658Z",
+   "found": true
+  },
+  "CVE-2026-97229": {
+   "at": "2026-10-29T13:22:31.658Z",
    "found": true
   }
  }

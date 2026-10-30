@@ -1,5 +1,685 @@
 [
   {
+    "key": "7325900e53d99905",
+    "title": "ThreatsDay: Critical Firewall Flaws, Banking Trojans Rented, Weaponized PDF, Token Theft + 26 More Stories",
+    "url": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundups, newsletters, podcasts, opinion and explainers without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "a869a38f35917b63",
+    "title": "CVE-2026-110245: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110245",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity advisory without critical rating or exploitation does not clear the curation bar.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "d28967fce9c692cd",
+    "title": "How we detect frontier model misalignment",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Vendor feature announcements and defensive monitoring overviews are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "a43db913e25cf3a4",
+    "title": "Anthropic-Themed Phishing Emails Bypass Top Security Tools",
+    "url": "https://darkreading.com/cyberattacks-data-breaches/anthropic-phishing-emails-bypass-security-tools",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Phishing campaigns using generic brand themes without a specific named victim organization breach or proven AI-generated custom attack scale are out of scope.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "adeab37eb59ae639",
+    "title": "Cisco Open Sources Quarry to Catch AI Agent Attacks Hidden in Harmless Steps",
+    "url": "https://securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Open-source tool releases and defensive frameworks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "199f33ac9dc4b795",
+    "title": "Adobe, Veeam, Juniper Networks Patch Critical Vulnerabilities",
+    "url": "https://securityweek.com/adobe-veeam-juniper-networks-patch-critical-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Roundups summarizing multiple vendor advisories without detailing specific exploitation in the wild are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "2fb5721b3549d5e7",
+    "title": "GitHub Supply Chain Attack: Command Injection and CI/CD Data Exfiltration",
+    "url": "https://radware.com/blog/inside-a-github-supply-chain-attack-campaign",
+    "publisher": "radware.com",
+    "source_id": "hn",
+    "reason": "out of scope: Insufficient details to verify a specific incident",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-29T23:23:38.250Z"
+  },
+  {
+    "key": "e51dfa0ce70e82af",
+    "title": "Tracking AI adoption in North Korean threat actor tradecraft",
+    "url": "https://microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft",
+    "publisher": "Microsoft Security",
+    "source_id": "ms-security",
+    "reason": "out of scope: It is a threat intelligence report tracking general threat actor trends and AI adoption without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "005f2528861a55a1",
+    "title": "Google's Gemini 4 Carbon Leads Benchmarks for Finding, Exploiting, and Patching Vulnerabilities",
+    "url": "https://thehackernews.com/2026/10/googles-gemini-4-carbon-leads.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Product launches and vendor feature announcements are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "e28c480889724bd3",
+    "title": "CVE-2026-18894: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to trigger pre-existing stored Python component code in a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18894",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability without exploitation in the wild does not clear the curation bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "b00fb711149ba77b",
+    "title": "CVE-2026-104312: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker to produce a server-generated ZIP archive containing…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104312",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Low severity vulnerability does not clear the newsworthiness bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "32ab3ab76238ee2a",
+    "title": "CVE-2026-104315: IBM Langflow OSS 1.0.0 through 1.12.3 is vulnerable to server-side request forgery (SSRF).",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104315",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 4.3) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "74e20ceca4d0c6de",
+    "title": "CVE-2026-104331: IBM Langflow OSS 1.0.0 through 1.12.3 is vulnerable to server-side request forgery (SSRF).",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104331",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 5.4) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "444bcbf04a2b41c8",
+    "title": "CVE-2026-104316: IBM Langflow OSS 1.0.0 through 1.12.3 could allow an authenticated attacker to cancel any victim's running background workflow…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104316",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability (CVSS 6.5) with no exploitation reported.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "c0526dcdbf92fde3",
+    "title": "CVE-2026-104309: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104309",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "ac27addac01865ae",
+    "title": "CVE-2026-104328: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104328",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "4cd52464945d4d13",
+    "title": "CVE-2026-107326: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107326",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "92e6203594bb0ab4",
+    "title": "CVE-2026-110244: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110244",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity advisory without exploitation",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "bf1414b8ff18f6a6",
+    "title": "CVE-2026-77819: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to overwrite arbitrary files due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77819",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "b498f6b6def02402",
+    "title": "CVE-2026-104310: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104310",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "405560dde2928f1d",
+    "title": "CVE-2026-90991: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to cause a denial of service due to allocation…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90991",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "14d5c09043900eb8",
+    "title": "CVE-2026-101288: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101288",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: high severity vulnerability with no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "1e185ade2932c5c3",
+    "title": "CVE-2026-110200: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to obtain sensitive information due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110200",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "e5cd19f4c37e7756",
+    "title": "CVE-2026-102590: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to obtain sensitive information due to a…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102590",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "87bf0426d26e44e3",
+    "title": "CVE-2026-110192: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote authenticated attacker to obtain sensitive information due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110192",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: medium severity vulnerability with a fix and no exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "08252db330fbf362",
+    "title": "IR trends Q3 2026: Actors impersonate IT help desks in vishing attacks as ransomware activity increases",
+    "url": "https://blog.talosintelligence.com/ir-trends-q3-2026",
+    "publisher": "Cisco Talos",
+    "source_id": "talos",
+    "reason": "out of scope: surveys, statistics and report finds pieces are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "3c9c8a3651bc3536",
+    "title": "CVE-2026-110309: IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote authenticated attacker to execute arbitrary commands due to improper…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110309",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "7aa04de03f1c311a",
+    "title": "CVE-2026-104324: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary code due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104324",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "682b22510c5fa059",
+    "title": "CVE-2026-103092: IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote authenticated attacker to execute arbitrary SQL commands due to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103092",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: High severity vulnerability without exploitation or critical rating of 9 or above",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T19:37:17.247Z"
+  },
+  {
+    "key": "33d84e217e1c12f0",
+    "title": "Qualys CISO on what security teams can do as exploit campaigns grow",
+    "url": "https://helpnetsecurity.com/2026/10/29/nathan-smolenski-qualys-ai-vulnerability-management",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Interview lacks a specific incident, flaw, breach, or campaign.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "dd1c518d70f0f107",
+    "title": "Telegram Android Flaw Lets Attackers Run Code When Users Answer Voice Calls",
+    "url": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "below the curation bar: No exploitation reported and CVSS not critical, so does not meet newsworthy criteria.",
+    "confidence": 0.94,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "0ea52adc29294154",
+    "title": "Why Healthcare AI Inventory Precedes Governance | Straiker",
+    "url": "https://straiker.ai/blog/healthcare-ai-agent-discovery",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Survey or report findings piece about healthcare shadow AI inventory without a specific security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "19168680e7384cb3",
+    "title": "Cyber Vulnerabilities Besiege Italy, Absent Clear Cause",
+    "url": "https://darkreading.com/cybersecurity-analytics/cyber-vulnerabilities-besiege-italy",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: General statistical discussion and research findings piece without a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-29T13:22:31.658Z"
+  },
+  {
+    "key": "9a2691fd01905cd4",
+    "title": "Shame and sleepless nights haunt scam victims long after the money is gone",
+    "url": "https://helpnetsecurity.com/2026/10/29/itrc-identity-theft-recovery-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: It is a survey and research report on consumer impacts rather than a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T06:01:57.225Z"
+  },
+  {
+    "key": "2700988428bd6bbf",
+    "title": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa-EHchtZk?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Catalyst+SD-WAN+Controller+Authentication+Bypass+Vulnerability%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Medium or high advisory with a fix and no confirmed exploitation does not clear the curation bar.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-29T00:20:42.318Z"
+  },
+  {
+    "key": "bf65784fd277bccf",
+    "title": "Court strikes down West Virginia law barring disclosure of public officials’ personal data",
+    "url": "https://therecord.media/west-virginia-daniels-law-struck-down-appellate-court",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: policy, regulation and standards news; court ruling on legislation",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-29T00:20:42.318Z"
+  },
+  {
+    "key": "7693ae35048e0be2",
+    "title": "Digitate adds AI agents for patch planning, service desks, and SAP operations",
+    "url": "https://helpnetsecurity.com/2026/10/28/digitate-ignio-hummingbird",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch / vendor feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "de5450926ea86d1c",
+    "title": "Compromised camera management software gives attackers a way into corporate networks",
+    "url": "https://helpnetsecurity.com/2026/10/28/compromised-camera-management-software-initial-access",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: lacks named software or specific exploit details",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "f7243678e7377374",
+    "title": "GitHub’s npm package firewall can block brand-new versions before they install",
+    "url": "https://helpnetsecurity.com/2026/10/28/github-package-firewall-npm",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch / security feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "b057f3381d273763",
+    "title": "Google to Allow One-Tap Android App Installs From Approved Third-Party Stores Outside U.S.",
+    "url": "https://thehackernews.com/2026/10/google-to-allow-one-tap-android-app.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Product feature announcement and policy update by Google regarding third-party app stores.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "42279ffd24bfffbd",
+    "title": "Microsoft urges Entra ID admins to migrate users to passkeys",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Advisory notification about upcoming feature retirement and general authentication migration.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "c9692a8d0f482f78",
+    "title": "Unwrapping Retail Peak Season Cyber Threats",
+    "url": "https://unit42.paloaltonetworks.com/unwrapping-retail-cyber-threats",
+    "publisher": "Unit 42",
+    "source_id": "unit42",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "b967772398499b5e",
+    "title": "Belarusian hackers increasingly acting as proxies for Russia amid war in Ukraine",
+    "url": "https://therecord.media/belarus-russia-hackers-ukraine-war",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "97c244f464f9a7f4",
+    "title": "Ukrainian Hive and Nefilim Ransomware Affiliate Gets 70 Months in US Prison",
+    "url": "https://securityweek.com/ukrainian-hive-and-nefilim-ransomware-affiliate-gets-70-months-in-us-prison",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: A court case, sentencing or indictment about an old campaign is a follow-up, not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T19:40:57.881Z"
+  },
+  {
+    "key": "ca1945b2dbf7aa58",
+    "title": "Ukrainian ransomware hacker sentenced, $11 million reward offered for co-conspirator",
+    "url": "https://helpnetsecurity.com/2026/10/28/doj-ukrainian-ransomware-hacker-sentenced",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Sentencing and court proceedings regarding past campaigns are follow-ups rather than new live incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "169a3a02ba4a388f",
+    "title": "American Organizations Under Attack: Skyw4lker Device Code Phishing Campaign Exposed",
+    "url": "https://thehackernews.com/2026/10/american-organizations-under-attack.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: A general analysis of phishing techniques and campaign tactics without a specific named breach or distinct newsworthy incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "ce5fe177d9dacc31",
+    "title": "Wazuh and AI for Enhanced SOC Workflows",
+    "url": "https://thehackernews.com/2026/10/wazuh-and-ai-for-enhanced-soc-workflows.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: General discussion and roundup about AI in cybersecurity workflows without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "d86da89b8e9385e6",
+    "title": "Nefilim and Hive ransomware affiliate gets 70 months in prison",
+    "url": "https://bleepingcomputer.com/news/security/nefilim-and-hive-ransomware-affiliate-gets-70-months-in-prison",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Sentencing for historical ransomware campaigns is a follow-up, not a new incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "5556a3357d1d4775",
+    "title": "Long-Hidden Flaws Patched in EPICS Research Facility Control Software",
+    "url": "https://securityweek.com/long-hidden-flaws-patched-in-epics-research-facility-control-software",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "below the curation bar: Disclosed vulnerabilities with a fix and no reported exploitation in the wild",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "03c86e7aa78bbd33",
+    "title": "Chrome and Firefox Updates Patch Over 200 Vulnerabilities",
+    "url": "https://securityweek.com/chrome-and-firefox-updates-patch-over-200-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Routine multi-vulnerability roundup without specific critical individual CVE focus or exploitation details.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T14:26:12.130Z"
+  },
+  {
+    "key": "d8c6f7f0da66c175",
+    "title": "What Victims Take Away: Attack Reuse and Defense Revision after Prompt-Injection Attacks",
+    "url": "https://arxiv.org/abs/2610.36422",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper studying target reuse of prompt injections rather than demonstrating a new working attack or vulnerability.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "58076d801c97c5a3",
+    "title": "The Envelope Layer: An Underestimated Surface of LLM Agent Defense",
+    "url": "https://arxiv.org/abs/2610.37415",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper focused primarily on defense mechanisms and evaluating defense effectiveness rather than demonstrating a new attack.",
+    "confidence": 0.8,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "3637503321111d51",
+    "title": "Pricing Cross-Bank Context in Federated Anti-Money Laundering",
+    "url": "https://arxiv.org/abs/2610.35996",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "1d1d392776a2ffa6",
+    "title": "PrivacyEvalClaw: A Tool-Augmented Deliberative Agent for Auditing Privacy Leakage in LLM Jailbreak Responses",
+    "url": "https://arxiv.org/abs/2610.36711",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose evaluation methods, benchmarks or defences are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "4f406c1503327647",
+    "title": "Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness",
+    "url": "https://arxiv.org/abs/2610.37657",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "afe1688bc19f7aa1",
+    "title": "PHP2Shell and the Future of AI-Discovered Vulnerability Disclosure: Evidence, Verification, and Human Authority",
+    "url": "https://arxiv.org/abs/2610.36334",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose policies, regulations, frameworks or standards are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "c81525e9fb84f92c",
+    "title": "Detecting and Mitigating Query-Based System Prompt Leakage Attacks",
+    "url": "https://arxiv.org/abs/2610.36295",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences, benchmarks or architectures are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "6a64c430c2d7743a",
+    "title": "Breach victims discover their data was held by companies they’ve never heard of",
+    "url": "https://helpnetsecurity.com/2026/10/28/kroll-third-party-data-breaches-insurance-claims-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "19a8c396761b780e",
+    "title": "Bellini Capital CISO on AI security governance and the limits of patching faster",
+    "url": "https://helpnetsecurity.com/2026/10/28/brian-blakley-bellini-capital-ai-security-governance",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion, interviews and commentary pieces without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T07:05:45.669Z"
+  },
+  {
+    "key": "6655d337c4637473",
+    "title": "SBOMs Alone Can't Reveal the Scope of a Supply Chain Attack",
+    "url": "https://darkreading.com/cyber-risk/sboms-alone-scope-supply-chain-attack",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Surveys, statistics, opinion and explainer pieces without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T00:54:15.308Z"
+  },
+  {
+    "key": "2f6663d0ce966b03",
+    "title": "Nefilim, Hive ransomware operator given five-year-plus sentence after guilty plea",
+    "url": "https://therecord.media/nefilim-hive-ransomware-operator-70-months-prison",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Court cases, sentencings or indictments about old campaigns are follow-ups rather than new incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-28T00:54:15.308Z"
+  },
+  {
+    "key": "c030906e13ad9f86",
+    "title": "Blazle – Block prompt injection and secret leaks before AI agents act",
+    "url": "https://blazle.io/",
+    "publisher": "blazle.io",
+    "source_id": "hn",
+    "reason": "out of scope: Product launch and vendor feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "8cb333260a17a324",
+    "title": "How Check Point accelerates vulnerability research with Daybreak",
+    "url": "https://openai.com/index/check-point-daybreak",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Vendor marketing and feature announcement",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "90994376b22086f2",
+    "title": "What happens when security tools go dark before the ransomware",
+    "url": "https://cyberscoop.com/warlock-ransomware-storm-2603-sharepoint-attacks-op-ed",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: General article discussing tactics without detailing a specific named victim organization.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "37ead5afc46237ea",
+    "title": "Hackers repeatedly breached suppliers holding UK police data, watchdog finds",
+    "url": "https://therecord.media/uk-police-data-breached-from-suppliers-watchdog-report",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Watchdog report summarising historical multi-year breaches rather than a single specific newly reported incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "0cd2fe7d97993e07",
+    "title": "Prolific Hive and Nefilim ransomware affiliate sentenced to 70 months in prison",
+    "url": "https://cyberscoop.com/nefilim-hive-ransomware-affiliate-artem-stryzhak-sentenced",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Sentencing update regarding old historical ransomware campaigns.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "c75ce4708bf6d307",
+    "title": "US indicts Malaysian national after Madagascar scam operation uncovered",
+    "url": "https://therecord.media/malaysian-national-indicted-after-scam-centers-raid-madagascar",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Law enforcement indictment and roundup report covering an ongoing scam center industry.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
+    "key": "adaa99bf4028a150",
+    "title": "Maritime Coalition Launches Free Vulnerability Database for Ship and Port Systems",
+    "url": "https://securityweek.com/maritime-coalition-launches-free-vulnerability-database-for-ship-and-port-systems",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Launch of a vulnerability database product/initiative rather than a specific software flaw or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-27T20:48:16.236Z"
+  },
+  {
     "key": "954cf9f5d28d70c7",
     "title": "Cisco Unified Communications Products Security Hardening Release: October 2026",
     "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-hardening-twgbH9e3?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Unified+Communications+Products+Security+Hardening+Release%3A+October+2026%26vs_k%3D1",
