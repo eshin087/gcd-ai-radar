@@ -198,7 +198,19 @@ body {
   }
 }
 
+/* the globe caption's text, each time the route on screen changes */
+.caption-in {
+  animation: caption-in 420ms ease-out both;
+}
+@keyframes caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .caption-in,
   .brand-sweep,
   .brand-blip,
   .brand-ping,

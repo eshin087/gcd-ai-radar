@@ -1,5 +1,8 @@
 /** Site-wide constants. Branding follows the gcd family conventions. */
 
+/** The Cloudflare Worker behind the hero globe (worker/). Its origin is in vercel.json's connect-src. */
+export const INTERNET_API = "https://gcd-ai-radar-internet.eshin087.workers.dev/v1/internet";
+
 export const SITE = {
   name: "GCD RADAR",
   wordmark: "GCD RADAR",
@@ -15,6 +18,8 @@ export const SITE = {
   ],
   dataLicense: { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" },
   codeLicense: { name: "MIT", url: "https://github.com/eshin087/gcd-ai-radar/blob/main/LICENSE" },
+  /** The globe's data: INTERNET_API, or NEXT_PUBLIC_INTERNET_API for local work against `wrangler dev`. */
+  internetApi: process.env.NEXT_PUBLIC_INTERNET_API || INTERNET_API,
 } as const;
 
 export const NAV = [

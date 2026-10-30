@@ -1,16 +1,20 @@
 /**
  * Builds lib/globe-data.json for components/internet/Globe.tsx from Natural
- * Earth's 110m countries (public domain; naturalearthdata.com/about/terms-of-use):
+ * Earth's 110m countries (public domain; naturalearthdata.com/about/terms-of-use,
+ * "Crediting the authors is unnecessary"):
  *
- *   rows    land dots on a 2° grid of latitude rows, each row [lat10, lon10, lon10, ...]
- *           (tenths of a degree, longitudes ascending), about 3,000 dots in all
+ *   mask    the land as a 0.5° grid: one array per latitude row from the north
+ *           pole down (row r covers 90 - r/2 to 90 - (r+1)/2 degrees), each a
+ *           flat list of [start, end) column runs, column c covering
+ *           -180 + c/2 to -180 + (c+1)/2 degrees of longitude. The globe samples
+ *           it at whatever density a look wants (dots, glyph cells).
  *   labels  one point per ISO alpha-2 code: [lon10, lat10, name], from the
  *           file's LABEL_X / LABEL_Y, plus a few places too small for the 110m
  *           file (Singapore, Hong Kong, ...) that attack routes name often
  *
  * The GeoJSON (about 840 KB) is read straight from the network on each run and
- * never written to disk; only the ~20 KB output is committed. To work offline,
- * point GLOBE_SOURCE at a copy you downloaded yourself.
+ * never written to disk; only the output is committed. To work offline, point
+ * GLOBE_SOURCE at a copy you downloaded yourself.
  *
  *   npx tsx scripts/build-globe.ts
  *   GLOBE_SOURCE=/path/to/ne_110m_admin_0_countries.geojson npx tsx scripts/build-globe.ts
@@ -20,8 +24,8 @@ import path from "node:path";
 
 const SOURCE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson";
 const OUT = path.join(process.cwd(), "lib", "globe-data.json");
-/** Degrees between latitude rows; the longitude step grows with 1/cos(lat) so dots stay evenly spaced on the sphere. */
-const STEP = 2;
+/** Degrees per mask cell, in latitude and longitude. */
+const RES = 0.5;
 
 /** Places absent from the 110m file (too small to draw) that Radar routes name: [lon, lat, name]. */
 const EXTRA_LABELS: Record<string, [number, number, string]> = {
@@ -160,21 +164,25 @@ function onLand(lon: number, lat: number, polys: Poly[]): boolean {
 async function main() {
   const features = await source();
   const polys = polygons(features);
-  const rows: number[][] = [];
-  let dots = 0;
-  for (let lat = -88; lat <= 88; lat += STEP) {
-    const n = Math.max(1, Math.round((360 / STEP) * Math.cos((lat * Math.PI) / 180)));
-    const row: number[] = [Math.round(lat * 10)];
-    // offset alternate rows by half a step so the dots do not line up in columns
-    const phase = ((lat / STEP) % 2 === 0 ? 0 : 0.5) * (360 / n);
-    for (let k = 0; k < n; k++) {
-      const lon = -180 + phase + (k * 360) / n;
-      if (onLand(lon, lat, polys)) row.push(Math.round(lon * 10));
+  const cols = Math.round(360 / RES), rowsN = Math.round(180 / RES);
+  const mask: number[][] = [];
+  let land = 0, runsN = 0;
+  for (let r = 0; r < rowsN; r++) {
+    const lat = 90 - (r + 0.5) * RES;
+    const runs: number[] = [];
+    let open = -1;
+    for (let c = 0; c < cols; c++) {
+      const on = onLand(-180 + (c + 0.5) * RES, lat, polys);
+      if (on) land++;
+      if (on && open < 0) open = c;
+      if (!on && open >= 0) {
+        runs.push(open, c);
+        open = -1;
+      }
     }
-    if (row.length > 1) {
-      rows.push(row);
-      dots += row.length - 1;
-    }
+    if (open >= 0) runs.push(open, cols);
+    runsN += runs.length / 2;
+    mask.push(runs);
   }
 
   const labels: Record<string, [number, number, string]> = {};
@@ -196,15 +204,14 @@ async function main() {
 
   const out = {
     source: "Natural Earth 110m admin 0 countries (public domain), via nvkelso/natural-earth-vector",
-    credit: "Made with Natural Earth",
     built: new Date().toISOString().slice(0, 10),
-    step: STEP,
-    rows,
+    res: RES,
+    mask,
     labels: sorted,
   };
   const json = JSON.stringify(out);
   await fs.writeFile(OUT, json + "\n");
-  console.log(`${dots} land dots in ${rows.length} rows, ${Object.keys(sorted).length} labels (${skipped.length} features skipped: ${skipped.join(", ") || "none"}), ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(process.cwd(), OUT)}`);
+  console.log(`${land} land cells of ${cols * rowsN} in ${runsN} runs, ${Object.keys(sorted).length} labels (${skipped.length} features skipped: ${skipped.join(", ") || "none"}), ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(process.cwd(), OUT)}`);
 }
 
 main().catch((e) => {

@@ -1,26 +1,29 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { Globe } from "./Globe";
-import { useInternet, type InternetData, type InternetPoint } from "./useInternet";
+import { useMemo, useRef, useState } from "react";
+import { Globe, TOUR, type GlobeControl } from "./Globe";
+import { inSentence, onMap, plainName } from "./globe/geo";
+import { useInternet, type InternetData, type InternetRoute, type InternetStatus } from "./useInternet";
 
 /**
- * The home page's live internet band: the globe in the middle, the lead copy
- * (passed in) on the left, four plain-HTML readouts from Cloudflare Radar on
- * the right and the attribution line under them. 300 px tall at lg; on phones
- * it stacks with the globe at 240 px and the readouts in a 2 × 2 grid.
+ * The hero's live band: the globe, and beside it one narrow caption that says
+ * in words which route the globe is showing. The routes are Cloudflare
+ * Radar's top layer 7 attack pairs for the last hour: the origin is where the
+ * attacking IP addresses are, the target is the billing location of the
+ * attacked site ("For the target location of the attacks, Cloudflare uses the
+ * billing location associated with the zone under attack",
+ * developers.cloudflare.com/radar/investigate/application-layer-attacks), and
+ * the share is of all the layer 7 attacks Cloudflare mitigated in the window.
  *
- * States: "loading" shows the globe and empty readouts; "live" shows the
- * routes and readouts with Radar's own timestamp (never the clock); "idle"
- * (no Worker URL, unreachable, or an error) keeps the globe still and says so
- * in one line. The data is CC BY-NC 4.0 and never enters the dataset.
+ * Radar data is CC BY-NC 4.0: the credit line under the caption names it,
+ * links it, carries Radar's own timestamp and the licence, and the data never
+ * enters the CC BY-SA dataset. Idle (no Worker, unreachable, an error) keeps
+ * the globe still and says so in one line.
  */
 
 export interface InternetBandProps {
   /** The Worker's /v1/internet URL; undefined renders the idle state. */
   apiUrl?: string;
-  /** The left column at lg: live dot, h1, lede, links. */
-  lead?: ReactNode;
   className?: string;
 }
 
@@ -32,145 +35,99 @@ export function utcClock(iso: string | null): string | null {
   return `${new Date(ms).toISOString().slice(11, 16)} UTC`;
 }
 
-const pct = (n: number | null) => (n === null ? "–" : `${Math.round(n)} %`);
-
-function Readout({ label, children, className = "" }: { label: string; children: ReactNode; className?: string }) {
-  return (
-    <div className={`min-w-0 border-t border-line-soft pt-1.5 ${className}`}>
-      <div className="label">{label}</div>
-      {children}
-    </div>
-  );
-}
-
-/** The 24-hour request series as one hairline, its last point marked. */
-function Pulse({ points }: { points: InternetPoint[] }) {
-  if (points.length < 2) return <div className="h-7 text-[12px] text-faint">no series</div>;
-  const values = points.map((p) => p.value);
-  const lo = Math.min(...values), hi = Math.max(...values);
-  const span = hi - lo || 1;
-  const n = points.length - 1;
-  const path = points.map((p, i) => `${((i / n) * 100).toFixed(2)},${(22 - ((p.value - lo) / span) * 20).toFixed(2)}`).join(" ");
-  const last = points[points.length - 1]!;
-  const ly = 22 - ((last.value - lo) / span) * 20;
-  return (
-    <svg viewBox="0 0 100 24" preserveAspectRatio="none" className="block h-7 w-full" aria-hidden>
-      <line x1="0" y1="23.5" x2="100" y2="23.5" stroke="rgba(160,170,195,0.18)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
-      <polyline points={path} fill="none" stroke="var(--color-accent)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-      <rect x="99" y={ly - 1.5} width="2" height="3" fill="var(--color-ink)" vectorEffect="non-scaling-stroke" />
-    </svg>
-  );
-}
-
-function Readouts({ data }: { data: InternetData }) {
-  const points = data.traffic.points;
-  const lastShare = [...points].reverse().find((p) => p.human !== null && p.bot !== null) ?? null;
-  const routes = data.attacks.routes.slice(0, 3);
-  const open = data.outages.filter((o) => o.until === null);
-  const shown = (open.length ? open : data.outages).slice(0, 2);
-  return (
-    <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-      <Readout label="Traffic · 24 h">
-        <Pulse points={points} />
-        <p className="num mt-0.5 text-[12px] text-soft">
-          human <span className="text-ink">{pct(lastShare?.human ?? null)}</span> · bot <span className="text-ink">{pct(lastShare?.bot ?? null)}</span>
-        </p>
-      </Readout>
-      <Readout label={data.window === "1h" ? "Attacks · 1 h" : "Attacks · 24 h"}>
-        {routes.length ? (
-          <ol className="num text-[12px] leading-[18px]">
-            {routes.map((r) => (
-              <li key={`${r.origin}-${r.target}`} className="flex justify-between gap-2" title={`${r.origin_name} → ${r.target_name}`}>
-                <span className="text-ink">
-                  {r.origin} → {r.target}
-                </span>
-                <span className="text-dim">{r.share.toFixed(1)} %</span>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="text-[12px] text-faint">no routes reported</p>
-        )}
-      </Readout>
-      <Readout label="Outages now">
-        <p className="num text-[13px] leading-snug text-ink">
-          {open.length}
-          {open.length === 0 && data.outages.length > 0 && <span className="text-dim"> · {data.outages.length} in 24 h</span>}
-        </p>
-        <ul className="text-[12px] leading-[16px] text-soft">
-          {shown.map((o) => (
-            <li key={`${o.location}-${o.since}`} className="truncate" title={o.description}>
-              {o.url ? (
-                <a href={o.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:underline hover:underline-offset-4">
-                  {o.location}
-                </a>
-              ) : (
-                o.location
-              )}
-              {o.cause && <span className="text-dim"> · {o.cause}</span>}
-              {o.until && <span className="text-faint"> · ended</span>}
-            </li>
-          ))}
-        </ul>
-      </Readout>
-      <Readout label="Routing · 24 h">
-        <p className="num text-[13px] leading-snug text-ink">
-          {data.bgp.leaks} <span className="text-dim">route leaks</span>
-        </p>
-        <p className="num text-[13px] leading-snug text-ink">
-          {data.bgp.hijacks} <span className="text-dim">hijacks</span>
-        </p>
-      </Readout>
-    </div>
-  );
-}
-
-export function InternetBand({ apiUrl, lead, className = "" }: InternetBandProps) {
-  const { status, data } = useInternet(apiUrl);
-  const routes = data?.attacks.routes ?? [];
+function Credit({ data }: { data: InternetData | null }) {
   const clock = utcClock(data?.radar_updated ?? null);
-  const live = status === "live" && !!data;
+  const link = "hover:text-accent hover:underline hover:underline-offset-4";
   return (
-    <section
-      aria-label="The internet now"
-      className={`grid gap-x-6 gap-y-4 ${lead ? "lg:grid-cols-[minmax(0,1fr)_300px_minmax(0,1.1fr)]" : "lg:grid-cols-[300px_minmax(0,1fr)]"} lg:h-[300px] ${className}`}
-    >
-      {lead && <div className="min-w-0 lg:flex lg:flex-col lg:justify-center">{lead}</div>}
-      <Globe routes={live ? routes : []} running={live} className="h-[240px] w-full lg:h-[300px]" />
-      <div className="flex min-w-0 flex-col justify-between gap-3">
-        {live && data ? (
-          <Readouts data={data} />
-        ) : (
-          <p className="text-[12px] text-faint" aria-live="polite">
-            {status === "loading" ? "Reading Cloudflare Radar…" : "Live internet readouts are unavailable: Cloudflare Radar is not reachable right now."}
-          </p>
-        )}
-        <p className="num text-[12px] text-dim">
-          {live && data ? (
-            <>
-              <span aria-hidden className={`mr-1.5 inline-block size-1.5 rounded-full align-middle ${data.stale ? "bg-partial" : "bg-patched"}`} />
-              <a href={data.attribution.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:underline hover:underline-offset-4">
-                {data.attribution.name}
-              </a>
-              {clock && <> · {clock}</>}
-              {" · "}
-              <a href={data.attribution.license_url} target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:underline hover:underline-offset-4">
-                {data.attribution.license}
-              </a>
-              {data.stale && <span className="text-partial"> · stale</span>}
-            </>
+    <p className="num text-[12px] leading-snug text-faint">
+      <a href={data?.attribution.url ?? "https://radar.cloudflare.com/"} target="_blank" rel="noopener noreferrer" className={link}>
+        Cloudflare Radar
+      </a>
+      <br />
+      {clock && <>{clock} · </>}
+      {data?.stale && <span className="text-partial">stale · </span>}
+      <a href={data?.attribution.license_url ?? "https://creativecommons.org/licenses/by-nc/4.0/"} target="_blank" rel="noopener noreferrer" className={link}>
+        {data?.attribution.license ?? "CC BY-NC 4.0"}
+      </a>
+    </p>
+  );
+}
+
+function Caption({ status, data, tour, focus, onPick }: { status: InternetStatus; data: InternetData | null; tour: InternetRoute[]; focus: number; onPick: (i: number) => void }) {
+  const r = tour[focus];
+  if (!data || status !== "live" || !r) {
+    return (
+      <div className="flex min-w-0 flex-col justify-center gap-2">
+        <p className="label">Web attacks</p>
+        <p className="text-[13px] leading-snug text-soft" aria-live="polite">
+          {status === "loading" ? "Reading Cloudflare Radar…" : "Live attack routes are unavailable right now."}
+        </p>
+        <Credit data={null} />
+      </div>
+    );
+  }
+  const from = plainName(r.origin_name), to = plainName(r.target_name);
+  const fromIn = inSentence(r.origin_name), toIn = inSentence(r.target_name);
+  const self = r.origin === r.target;
+  return (
+    <div className="flex min-w-0 flex-col justify-center gap-3">
+      <p className="label">{data.window === "1h" ? "Last hour" : "Last 24 hours"}</p>
+      <div aria-live="polite" key={`${r.origin}>${r.target}`} className="caption-in">
+        <p className="text-[16px] font-semibold leading-snug text-ink">
+          {self ? (
+            <>Within {fromIn}</>
           ) : (
             <>
-              <span aria-hidden className="mr-1.5 inline-block size-1.5 rounded-full bg-closed align-middle" />
-              <a href="https://radar.cloudflare.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:underline hover:underline-offset-4">
-                Cloudflare Radar
-              </a>
-              {" · "}
-              {status === "loading" ? "loading" : "idle"} · CC BY-NC 4.0
+              {from} <span className="text-accent">→</span> {to}
             </>
           )}
         </p>
+        <p className="num mt-2 text-[28px] leading-none text-ink">
+          {r.share.toFixed(1)}
+          <span className="text-[14px] text-dim"> %</span>
+        </p>
+        <p className="mt-1.5 text-[12px] leading-snug text-soft">of the web attacks Cloudflare stopped</p>
+        <p className="mt-2 text-[12px] leading-snug text-faint">{self ? `From IPs in ${fromIn} to sites billed there.` : `From IPs in ${fromIn} to sites billed in ${toIn}.`}</p>
       </div>
+      {tour.length > 1 && (
+        <div className="flex items-center">
+          {tour.map((t, i) => (
+            <button
+              key={`${t.origin}>${t.target}`}
+              type="button"
+              onClick={() => onPick(i)}
+              aria-label={`Show route ${i + 1} of ${tour.length}: ${plainName(t.origin_name)} to ${plainName(t.target_name)}, ${t.share.toFixed(1)} %`}
+              aria-current={i === focus ? "true" : undefined}
+              className="group flex h-6 items-center px-[3px] first:pl-0"
+            >
+              <span className={`block h-[5px] rounded-full transition-[width,background-color] duration-300 ${i === focus ? "w-5 bg-accent" : "w-[5px] bg-faint group-hover:bg-dim"}`} />
+            </button>
+          ))}
+          <span className="num ml-2 text-[12px] text-faint">
+            {focus + 1} / {tour.length}
+          </span>
+        </div>
+      )}
+      <Credit data={data} />
+    </div>
+  );
+}
+
+export function InternetBand({ apiUrl, className = "" }: InternetBandProps) {
+  const { status, data } = useInternet(apiUrl);
+  const live = status === "live" && !!data;
+  const routes = useMemo(() => (live && data ? data.attacks.routes.filter(onMap) : []), [live, data]);
+  const tour = routes.slice(0, TOUR);
+  const [focus, setFocus] = useState(0);
+  const control = useRef<GlobeControl>(null);
+  const shown = Math.min(focus, Math.max(0, tour.length - 1));
+  return (
+    <section
+      aria-label="Web attacks in the last hour"
+      className={`grid gap-x-5 gap-y-3 lg:h-[300px] lg:grid-cols-[minmax(0,1fr)_164px] xl:grid-cols-[minmax(0,1fr)_180px] xl:gap-x-6 ${className}`}
+    >
+      <Globe routes={routes} running={live} onFocus={setFocus} controlRef={control} className="h-[260px] w-full lg:h-full" />
+      <Caption status={status} data={data} tour={tour} focus={shown} onPick={(i) => control.current?.focus(i)} />
     </section>
   );
 }

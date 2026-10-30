@@ -1,21 +1,20 @@
 import Link from "next/link";
-import { RadarCluster } from "@/components/hero/RadarCluster";
 import { ThreatScope } from "@/components/hero/ThreatScope";
 import { HomeCharts } from "@/components/home/HomeCharts";
+import { HomeHero } from "@/components/home/HomeHero";
 import { HomeCounters } from "@/components/home/HomeCounters";
 import { HomeExtras } from "@/components/home/HomeExtras";
 import { IncidentRow } from "@/components/incidents/IncidentRow";
-import { Ago } from "@/components/ui/Ago";
 import { dateLabel, monthLabel } from "@/lib/format";
 import type { HomeColumn } from "@/lib/home";
 import type { HomePayload } from "@/lib/home-data";
 import { SITE } from "@/lib/site";
 
 /**
- * The home page, top to bottom: the headline, the hero cluster and the radar
- * scope (the live internet band takes this slot when it lands), today's numbers, what to act
- * on, the charts everyone should know, two numbers nobody else shows, the AI
- * lens, this week and the machine endpoints. Built at deploy time from
+ * The home page, top to bottom: the hero (headline, cluster, live globe; see
+ * HomeHero), today's numbers, what to act on, the charts everyone should
+ * know, two numbers nobody else shows, the AI lens with the radar scope, this
+ * week and the machine endpoints. Built at deploy time from
  * lib/home.ts; the drawers fetch /stats/*.json in the browser.
  */
 
@@ -58,37 +57,7 @@ export function HomePage({ data }: { data: HomePayload }) {
   const s = data.stats;
   return (
     <div className="space-y-10">
-      <section className="grid gap-5 lg:min-h-[300px] lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10">
-        <div className="order-2 min-w-0 space-y-3 self-center lg:order-1">
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-dim">
-            <span aria-hidden className="live-dot" />
-            <span className="uppercase tracking-[0.1em]">Live</span> · <Ago iso={data.lastUpdated} prefix="last sweep" className="text-soft" />
-          </p>
-          <h1 className="text-[30px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[34px]">What is being exploited right now.</h1>
-          <p className="text-[15px] leading-relaxed text-soft">
-            Live security incidents across the web, with an AI lens, and the numbers behind them: new CVEs, what is exploited, who was breached, and where
-            it is heading. Every figure names its source and opens its list.
-          </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1 font-mono text-[12px] uppercase tracking-[0.08em]">
-            <Link href="/live" className="text-accent hover:underline">
-              Live board →
-            </Link>
-            <Link href="/incidents" className="text-dim hover:text-ink">
-              Archive
-            </Link>
-            <Link href="/methodology" className="text-dim hover:text-ink">
-              How we count
-            </Link>
-          </div>
-        </div>
-        {/* the cluster shows once the figure is 600 px wide (ThreatScope), so the figure is tall enough for it from 600 px of viewport up */}
-        <ThreatScope
-          scope={data.live.scope}
-          running
-          side={<RadarCluster data={data.cluster} />}
-          className="order-1 h-[200px] min-[600px]:h-[264px] lg:order-2 lg:h-full"
-        />
-      </section>
+      <HomeHero data={data} />
 
       <HomeCounters stats={s} />
 
@@ -148,6 +117,7 @@ export function HomePage({ data }: { data: HomePayload }) {
             </Link>
           </p>
         </div>
+        <ThreatScope scope={data.live.scope} running className="h-[220px] min-[600px]:h-[264px]" />
       </section>
 
       <section className="grid gap-6 border-t border-line pt-6 lg:grid-cols-2">

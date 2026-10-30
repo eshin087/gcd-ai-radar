@@ -1,6 +1,7 @@
 import { createRequire } from "node:module";
 import { describe, expect, it } from "vitest";
 import vercel from "../vercel.json";
+import { INTERNET_API } from "../lib/site";
 
 /**
  * vercel.json, applied the way Vercel applies it: each rule's source compiled
@@ -73,6 +74,15 @@ describe("vercel.json headers", () => {
       const { headers } = headersFor(path);
       expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
       expect(headers.get("Cache-Control"), path).toBeUndefined();
+    }
+  });
+
+  it("lets the page fetch the hero globe's Worker and nothing else off-site", () => {
+    const origin = new URL(INTERNET_API).origin;
+    for (const path of ["/", "/embed", "/live"]) {
+      const csp = headersFor(path).headers.get("Content-Security-Policy")!;
+      const connect = csp.split(";").map((d) => d.trim()).find((d) => d.startsWith("connect-src"));
+      expect(connect, path).toBe(`connect-src 'self' ${origin}`);
     }
   });
 
