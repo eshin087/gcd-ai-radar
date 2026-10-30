@@ -1,8 +1,10 @@
 {
- "fetched_at": "2026-10-29T19:38:09.395Z",
+ "fetched_at": "2026-10-30T06:04:55.588Z",
  "source": {"name":"CISA Known Exploited Vulnerabilities catalog","url":"https://www.cisa.gov/known-exploited-vulnerabilities-catalog","license":"CC0 1.0"},
- "catalog_version": "2026.10.28",
+ "catalog_version": "2026.10.29",
  "entries": [
+  {"cve":"CVE-2026-76418","added":"2026-10-29","due":"2026-11-01","vendor":"Cisco","product":"Secure Firewall ASA Software and Cisco Secure FTD Software","name":"Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability","ransomware":false,"published":"2026-10-28","cvss":8.6},
+  {"cve":"CVE-2026-97229","added":"2026-10-29","due":"2026-11-01","vendor":"GitLab","product":"Community Edition and Enterprise Edition","name":"GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability","ransomware":false,"published":"2026-10-13","cvss":10},
   {"cve":"CVE-2026-41709","added":"2026-10-28","due":"2026-11-11","vendor":"Broadcom","product":"VMware ESX","name":"Broadcom VMWare ESX Insufficient Logging Vulnerability","ransomware":false,"published":"2026-07-30","cvss":2.7},
   {"cve":"CVE-2026-46300","added":"2026-10-28","due":"2026-10-31","vendor":"Linux","product":"Kernel","name":"Linux Kernel Missing Initialization of a Variable Vulnerability","ransomware":false,"published":"2026-05-23","cvss":7.8},
   {"cve":"CVE-2026-111497","added":"2026-10-27","due":"2026-11-10","vendor":"Google","product":"Brotli","name":"Google Brotli Unchecked Return Value Vulnerability","ransomware":false,"published":"2026-10-22","cvss":9.2},

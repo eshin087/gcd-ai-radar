@@ -1,5 +1,25 @@
 [
   {
+    "key": "0dfdc466bd16c054",
+    "title": "Smart TVs can harbor unpatched security flaws and track what you watch",
+    "url": "https://helpnetsecurity.com/2026/10/30/bitdefender-smart-tvs-vulnerabilities-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: report finds and statistics piece with no specific named incident or software flaw",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-30T06:04:52.306Z"
+  },
+  {
+    "key": "6c276082931cbfc7",
+    "title": "Scammers rebuild fake shopping sites within hours of a takedown",
+    "url": "https://helpnetsecurity.com/2026/10/30/akamai-fake-account-abuse-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: report findings and threat landscape overview rather than a specific targeted breach report",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-30T06:04:52.306Z"
+  },
+  {
     "key": "4b13c4e2edcfd5a8",
     "title": "Two unpatched zero-day vulnerabilities in NTE allow for full account takeover",
     "url": "https://hunio.org/security/nte-account-takeover",

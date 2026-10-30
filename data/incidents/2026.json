@@ -207,9 +207,15 @@
         "publisher": "BleepingComputer",
         "title": "Binance probes potential $5.8 billion crypto-theft hack",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html",
+        "publisher": "The Hacker News",
+        "title": "Binance Suffers Security Breach Affecting $6.3 Billion in Assets, Nearly $3 Billion Frozen",
+        "published_at": "2026-10-30"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -220,7 +226,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -234,6 +240,12 @@
         "title": "Binance probes potential $5.8 billion crypto-theft hack",
         "source_url": "https://bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack",
         "added_at": "2026-10-29T23:23:38.250Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "Breach updated to affect 6.3 billion in assets with nearly 3 billion frozen",
+        "source_url": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html",
+        "added_at": "2026-10-30T06:04:52.306Z"
       }
     ],
     "action": "",
@@ -1615,9 +1627,15 @@
         "publisher": "The Hacker News",
         "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-97229",
+        "publisher": "CISA",
+        "title": "CVE-2026-97229: GitLab Community Edition and Enterprise Edition — GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1625,10 +1643,11 @@
       "CVE-2026-97229",
       "gitlab",
       "alpine-linux",
-      "rce"
+      "rce",
+      "cisa-kev"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1646,6 +1665,12 @@
         "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
         "source_url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
         "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-97229",
+        "added_at": "2026-10-30T06:04:52.306Z"
       }
     ],
     "action": "Update GitLab to the latest patched version.",
@@ -1879,9 +1904,15 @@
         "publisher": "SecurityWeek",
         "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-76418",
+        "publisher": "CISA",
+        "title": "CVE-2026-76418: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software — Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+        "published_at": "2026-10-29"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.96,
     "status": "published",
     "origin": "news",
@@ -1889,10 +1920,11 @@
       "CVE-2026-76418",
       "cisco",
       "vpn",
-      "remote_code_execution"
+      "remote_code_execution",
+      "cisa-kev"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-10-29T13:22:31.658Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1920,6 +1952,12 @@
         "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
         "source_url": "https://securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august",
         "added_at": "2026-10-29T13:22:31.658Z"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-76418",
+        "added_at": "2026-10-30T06:04:52.306Z"
       }
     ],
     "action": "Apply the Cisco ASA and FTD patches released for CVE‑2026‑76418.",
@@ -16200,10 +16238,10 @@
       "webshell"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-29",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -16258,10 +16296,10 @@
       "model-security"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-29",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -16317,10 +16355,10 @@
       "impersonation"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-29",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -16374,10 +16412,10 @@
       "data-breach"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-30T03:33:43.783Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-28",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -17221,10 +17259,10 @@
       "data-breach"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-30T03:33:43.783Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-26",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -21752,10 +21790,10 @@
       "mcp"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-30T06:04:52.306Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-29",
     "patch_status": "unknown",
     "cve_ids": [
       "CVE-2026-105740"
