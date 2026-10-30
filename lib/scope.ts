@@ -1,14 +1,16 @@
-import { familyOf, type Family } from "./families";
+import { FAMILIES, familyOf, type Family } from "./families";
 import type { CompactRow } from "./rows";
 import { isRealWorld } from "./stats";
 import type { Severity } from "./taxonomy";
 
 /** How far back the hero's radar scope looks, by first-report date. */
 export const SCOPE_DAYS = 120;
+/** Where prebuild writes the scope for the home page, which fetches its blips instead of carrying them. */
+export const SCOPE_FILE = "/stats/scope.json";
 /**
- * At most this many blips ship with the page: every real-world incident in the
- * window, then the newest of the rest. Keeps the hero's payload bounded once
- * live collection fills the window with research write-ups.
+ * At most this many blips: every real-world incident in the window, then the
+ * newest of the rest. Keeps SCOPE_FILE bounded once live collection fills the
+ * window with research write-ups.
  */
 export const MAX_BLIPS = 360;
 
@@ -32,9 +34,18 @@ export interface Scope {
   days: number;
   /** Incidents first reported in the window, before the blip cap. */
   total: number;
+  /** The wedges in order: the seven families always, "other" only when a blip needs it. */
+  wedges: Family[];
   /** Newest first. */
   blips: ScopeBlip[];
 }
+
+/**
+ * The scope without its blips, for a page that fetches them from SCOPE_FILE:
+ * the caption's numbers and the wedges, so the frame draws at once and
+ * nothing moves when the blips arrive.
+ */
+export type ScopeHead = Omit<Scope, "blips">;
 
 const DAY_MS = 86_400_000;
 
@@ -47,11 +58,13 @@ export function buildScope(rows: readonly CompactRow[], now: Date): Scope {
     .sort((a, b) => a.age - b.age || b.r.severity - a.r.severity || a.r.slug.localeCompare(b.r.slug));
   const real = inWindow.filter(({ r }) => isRealWorld(r)).slice(0, MAX_BLIPS);
   const keep = new Set([...real, ...inWindow.filter(({ r }) => !isRealWorld(r)).slice(0, MAX_BLIPS - real.length)]);
+  const blips = inWindow
+    .filter((e) => keep.has(e))
+    .map(({ r, age }) => ({ slug: r.slug, title: r.title, severity: r.severity, family: familyOf(r.categories[0] ?? "other"), age }));
   return {
     days: SCOPE_DAYS,
     total: inWindow.length,
-    blips: inWindow
-      .filter((e) => keep.has(e))
-      .map(({ r, age }) => ({ slug: r.slug, title: r.title, severity: r.severity, family: familyOf(r.categories[0] ?? "other"), age })),
+    wedges: FAMILIES.filter((f) => f !== "other" || blips.some((b) => b.family === "other")),
+    blips,
   };
 }

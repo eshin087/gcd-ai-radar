@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { FAMILIES, FAMILY_COLORS, FAMILY_META, type Family } from "@/lib/families";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useJson } from "@/components/home/useJson";
+import { FAMILY_COLORS, FAMILY_META } from "@/lib/families";
 import { SEVERITY_COLORS } from "@/lib/palette";
-import type { Scope, ScopeBlip } from "@/lib/scope";
+import type { ScopeBlip, ScopeHead } from "@/lib/scope";
 import { SEVERITY_META, type Severity } from "@/lib/taxonomy";
 import { THEME as T } from "@/lib/theme";
 
@@ -20,6 +21,8 @@ const RINGS = [1, 7, 30];
 const NARROW = 520;
 
 const ago = (a: number) => (a <= 0 ? "today" : a === 1 ? "1 day ago" : `${a} days ago`);
+/** Until fetched blips arrive: one array, so the drawing effect does not run again for nothing. */
+const NO_BLIPS: ScopeBlip[] = [];
 
 function hash01(s: string): number {
   let h = 2166136261;
@@ -74,9 +77,11 @@ function Chip({ label, color }: { label: string; color: string }) {
  * `side` fills a 280 px column on the left once the figure is 600 px wide
  * (the home page puts the hero cluster there, ./RadarCluster.tsx); the scope
  * takes the rest. Canvas 2D, paused off screen, when `running` is false, and
- * still under reduced motion.
+ * still under reduced motion. A page that does not carry the blips passes
+ * `src` (the home page, lib/scope.ts SCOPE_FILE): the frame draws at once,
+ * the blips when they arrive.
  */
-export function ThreatScope({ scope, running, side, className = "" }: { scope: Scope; running: boolean; side?: ReactNode; className?: string }) {
+export function ThreatScope({ scope, src, running, side, className = "" }: { scope: ScopeHead & { blips?: ScopeBlip[] }; src?: string; running: boolean; side?: ReactNode; className?: string }) {
   const router = useRouter();
   const rootRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -85,8 +90,9 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
   const tipRef = useRef<Tip | null>(null);
   const runningRef = useRef(running);
   const kickRef = useRef<() => void>(() => {});
-  // the families on the scope: the seven always, "other" only when a blip needs it
-  const wedges = useMemo<Family[]>(() => FAMILIES.filter((f) => f !== "other" || scope.blips.some((b) => b.family === "other")), [scope]);
+  const fetched = useJson<{ blips: ScopeBlip[] }>(scope.blips || !src ? null : src);
+  const blips = scope.blips ?? fetched.data?.blips ?? NO_BLIPS;
+  const { days, wedges } = scope;
 
   useEffect(() => {
     runningRef.current = running;
@@ -105,11 +111,11 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
     const css = getComputedStyle(canvas);
     const sans = `${css.getPropertyValue("--font-inter").trim() || "ui-sans-serif"}, system-ui, sans-serif`;
     const mono = `${css.getPropertyValue("--font-plex-mono").trim() || "ui-monospace"}, monospace`;
-    const ageR = (a: number) => Math.sqrt((Math.max(0, a) + 0.7) / (scope.days + 0.7));
+    const ageR = (a: number) => Math.sqrt((Math.max(0, a) + 0.7) / (days + 0.7));
     const sw = Math.PI / wedges.length;
 
     let w = 0, h = 0, R = 0, cx = 0, cy = 0, narrow = false;
-    let blips: Placed[] = [];
+    let placed: Placed[] = [];
     let prev: number | null = null;
     let hover: ScopeBlip | null = null;
     let raf = 0, visible = false;
@@ -130,7 +136,7 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
       R = Math.max(40, Math.min(h - (narrow ? 30 : 52), (w - side - (narrow ? 24 : 150)) / 2));
       cx = side + (w - side) / 2;
       cy = h - (narrow ? 20 : 26);
-      blips = scope.blips
+      placed = blips
         .map((b) => {
           const ang = Math.PI + (Math.max(0, wedges.indexOf(b.family)) + 0.13 + 0.74 * hash01(b.slug)) * sw;
           const rr = R * Math.min(0.985, ageR(b.age + (hash01(`${b.slug}r`) - 0.5) * 0.9));
@@ -157,16 +163,16 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
       const dir = ang >= from ? 1 : -1;
       if (!still && Math.abs(ang - from) < 0.6) {
         const lo = Math.min(from, ang), hi = Math.max(from, ang);
-        for (const bl of blips) if (bl.ang >= lo && bl.ang <= hi) bl.lit = time;
+        for (const bl of placed) if (bl.ang >= lo && bl.ang <= hi) bl.lit = time;
       }
       prev = ang;
 
       // rings at 1, 7, 30 days and the window's edge, labelled along the left baseline
       ctx.font = `12px ${mono}`;
       ctx.textBaseline = "top";
-      for (const a of [...RINGS, scope.days]) {
+      for (const a of [...RINGS, days]) {
         const rr = R * ageR(a);
-        const edge = a === scope.days;
+        const edge = a === days;
         ctx.strokeStyle = edge ? "rgba(140,160,210,.34)" : "rgba(140,160,210,.15)";
         ctx.lineWidth = 1;
         ctx.beginPath();
@@ -228,7 +234,7 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
       }
 
       // blips: brighter when freshly swept, a ping ring for exploited or worse
-      for (const bl of blips) {
+      for (const bl of placed) {
         const since = time - bl.lit;
         const glow = !still && since >= 0 && since < 8 ? Math.exp(-since / 1.7) : 0;
         ctx.globalAlpha = Math.min(1, (bl.b.severity >= 3 ? 0.7 : 0.5) + 0.5 * glow);
@@ -241,7 +247,7 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
       ctx.globalAlpha = 1;
       const shown = tipRef.current?.b ?? hover;
       if (shown) {
-        const bl = blips.find((x) => x.b === shown);
+        const bl = placed.find((x) => x.b === shown);
         if (bl) ring(bl.x, bl.y, bl.r + 4, T.ink, 1, 1.5);
       }
       ctx.fillStyle = T.accent;
@@ -280,7 +286,7 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
     const pick = (x: number, y: number) => {
       let best: ScopeBlip | null = null;
       let bd = 81;
-      for (const bl of blips) {
+      for (const bl of placed) {
         const d = (bl.x - x) ** 2 + (bl.y - y) ** 2;
         if (d < bd) {
           bd = d;
@@ -338,7 +344,7 @@ export function ThreatScope({ scope, running, side, className = "" }: { scope: S
       canvas.removeEventListener("click", onClick);
       kickRef.current = () => {};
     };
-  }, [scope, wedges, router]);
+  }, [days, wedges, blips, router]);
 
   // a pinned tip (touch) closes on a tap anywhere else
   useEffect(() => {

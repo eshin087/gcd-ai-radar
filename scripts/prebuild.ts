@@ -31,6 +31,7 @@ import { boardsWithAll, buildLive } from "../lib/live";
 import { buildLlmsTxt } from "../lib/llms";
 import { buildTagIndex, tagSlugsOf } from "../lib/tags";
 import type { Briefing } from "../lib/schema";
+import { SCOPE_FILE } from "../lib/scope";
 import { SITE } from "../lib/site";
 import { slim } from "../lib/slim";
 import { ATLAS_RELEASE, INCIDENT_TYPES, LANES, LANE_META, OWASP_LLM_EDITION, atlasFor, owaspFor, type Lane } from "../lib/taxonomy";
@@ -246,7 +247,8 @@ async function main() {
   );
 
   // public/stats: the home page's statistics (counters, series, the EPSS ten) and the lists its drawers open,
-  // derived from data/stats (the collector's daily stats stage) by lib/home.ts; what scripts/check-home.mjs compares the page against
+  // derived from data/stats (the collector's daily stats stage) by lib/home.ts; what scripts/check-home.mjs compares the page against.
+  // The radar scope's blips sit beside them: the home page carries only the scope's frame (lib/scope.ts SCOPE_FILE).
   const statsDir = path.join(PUBLIC, "stats");
   await resetDir(statsDir);
   const stats = await loadStats();
@@ -254,6 +256,7 @@ async function main() {
   // one list file per charted month, so every column opens its month
   await Promise.all([
     fs.writeFile(path.join(statsDir, "home.json"), JSON.stringify(home.stats, null, 1) + "\n"),
+    fs.writeFile(path.join(PUBLIC, SCOPE_FILE), JSON.stringify({ generated_at: home.now, ...home.live.scope }) + "\n"),
     fs.writeFile(path.join(statsDir, "cves-day.json"), JSON.stringify({ generated_at: home.now, days: 1, source: stats.cvesRecent?.source ?? null, cves: dayCvesList(stats, now) }) + "\n"),
     fs.writeFile(path.join(statsDir, "cves-week.json"), JSON.stringify({ generated_at: home.now, days: 7, source: stats.cvesRecent?.source ?? null, cves: weekCvesList(stats, now) }) + "\n"),
     ...home.stats.series.kev_by_month.map(({ month }) =>

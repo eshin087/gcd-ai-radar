@@ -42,6 +42,15 @@ describe("buildScope", () => {
       [0, "agent", 3],
       [119, "injection", 1],
     ]);
+    // no blip in "other", so its wedge stays off the scope
+    expect(scope.wedges).toEqual(["injection", "infra", "exposure", "agent", "supply", "social", "offense"]);
+  });
+
+  it("adds the other wedge, last, when a blip needs it", () => {
+    const scope = buildScope([row({ first_reported: "2026-10-20", categories: ["general"] })], NOW);
+    expect(scope.blips.map((b) => b.family)).toEqual(["other"]);
+    expect(scope.wedges).toHaveLength(8);
+    expect(scope.wedges.at(-1)).toBe("other");
   });
 
   it("caps the blips but always keeps the real-world incidents", () => {

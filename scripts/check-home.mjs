@@ -4,8 +4,9 @@
  * from: every counter equals /stats/home.json, every counter and chart
  * column opens a list whose count line starts with the same number, the hero
  * cluster beside the radar shows and draws the same numbers, the two
- * news columns show their rows, the HTML stays under its size budget, and
- * nothing scrolls sideways on a phone. Zero dependencies (scripts/lib/browser.mjs).
+ * news columns show their rows, the radar scope fetches the blips its caption
+ * counts, the HTML stays under its size budget, and nothing scrolls sideways
+ * on a phone. Zero dependencies (scripts/lib/browser.mjs).
  *
  *   npm run build
  *   node scripts/check-home.mjs                 # serves ./out on a free port
@@ -121,6 +122,14 @@ async function run(client, base, dir) {
   const cols = await evaluate(client, `[...document.querySelectorAll('[data-home-column]')].map((c) => ({ lane: c.dataset.homeColumn, rows: c.querySelectorAll('[data-row]').length, lanes: [...c.querySelectorAll('[data-row]')].map((r) => r.dataset.lane) }))`);
   for (const c of cols) check(`column ${c.lane}`, c.rows > 0 && c.rows <= 5 && c.lanes.every((l) => l === c.lane), `${c.rows} rows`);
   check("two news columns", cols.length === 2);
+
+  // the radar scope: the page carries its frame, the blips come from /stats/scope.json
+  const scope = await fetch(`${base}/stats/scope.json`).then((r) => (r.ok ? r.json() : { total: null, blips: [] }));
+  const fig = await evaluate(client, `(() => {
+    const cap = [...document.querySelectorAll("figcaption")].find((f) => f.textContent.startsWith("Radar scope of the"));
+    return { total: Number((cap?.textContent.match(/of the (\\d+) incidents/) || [])[1]), fetched: performance.getEntriesByType("resource").some((e) => new URL(e.name).pathname === "/stats/scope.json") };
+  })()`);
+  check("radar scope fetches the blips its caption counts", fig.fetched && fig.total === scope.total && (scope.blips.length > 0 || scope.total === 0) && scope.blips.length <= scope.total, `caption ${fig.total}, scope.json ${scope.total} incidents and ${scope.blips.length} blips, fetched ${fig.fetched}`);
 
   // phones: nothing scrolls sideways
   await client.send("Emulation.setDeviceMetricsOverride", { width: 375, height: 812, deviceScaleFactor: 2, mobile: true });
