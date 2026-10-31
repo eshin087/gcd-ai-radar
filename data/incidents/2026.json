@@ -1,5 +1,826 @@
 [
   {
+    "id": "AIR-2026-1695",
+    "slug": "role-grounding-attack-against-agent-memory-via-social-intera",
+    "title": "Role Grounding Attack against Agent Memory via Social Interaction",
+    "summary": "Researchers demonstrate Role Grounding Attack, a vulnerability in LLM agent memory systems where malicious social interactions cause an agent to misattribute attacker preferences to the user. The technique exploits role-to-principal attribution flaws in multi-agent or social environments.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM-based Agents"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38209",
+        "publisher": "arXiv",
+        "title": "Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "memory-manipulation",
+      "social-interaction"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction",
+        "source_url": "https://arxiv.org/abs/2610.38209",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an agent memory manipulation attack.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1694",
+    "slug": "sparsebleed-bypassing-attribute-inference-defenses-via-spars",
+    "title": "SPARSEBLEED: Bypassing Attribute-Inference Defenses via Sparsity",
+    "summary": "Researchers introduce SparseBleed, a hardware-level attribute-stealing attack that bypasses privacy defenses in deep neural networks by exploiting accelerator performance optimizations. The technique successfully extracts confidential training data attributes without requiring gradient or weight access.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "n/a"
+    ],
+    "products": [
+      "Deep Neural Networks"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38110",
+        "publisher": "arXiv",
+        "title": "SPARSEBLEED: Bypassing Attribute-Inference Defenses via Sparsity Optimizations",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "attribute-inference",
+      "hardware-attack",
+      "privacy-leak"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "SPARSEBLEED: Bypassing Attribute-Inference Defenses via Sparsity Optimizations",
+        "source_url": "https://arxiv.org/abs/2610.38110",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a hardware-level attribute stealing attack.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1693",
+    "slug": "jailbreak-connectivity-universal-multimodal-llm-jailbreak",
+    "title": "Jailbreak Connectivity: Universal Multimodal LLM Jailbreak",
+    "summary": "Researchers present Jailbreak Connectivity, an attack framework that optimizes continuous adversarial paths in image space to bypass multimodal large language model safety safeguards. The study demonstrates diverse and transferable visual jailbreak attacks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "n/a"
+    ],
+    "products": [
+      "Multimodal Large Language Models"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38091",
+        "publisher": "arXiv",
+        "title": "Jailbreak Connectivity: Towards Diverse, Transferable, and Universal Multimodal Large Language Model Jailbreak",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "multimodal",
+      "adversarial-attacks"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Jailbreak Connectivity: Towards Diverse, Transferable, and Universal Multimodal Large Language Model Jailbreak",
+        "source_url": "https://arxiv.org/abs/2610.38091",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel MLLM jailbreak technique with no real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1692",
+    "slug": "self-evolution-degrades-robustness-of-personal-agents-to-ind",
+    "title": "Self-Evolution Degrades Robustness of Personal Agents to Indirect Prompt Injection",
+    "summary": "Researchers evaluated whether self-evolution and learning from user feedback degrade the robustness of personal AI agents against indirect prompt injection. The study shows that adaptation to untrusted external content increases agent vulnerability to unauthorized execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Personal Agents"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.39122",
+        "publisher": "arXiv",
+        "title": "Appreciation Teaches Unauthorized Execution: Self-Evolution Degrades the Robustness of Personal Agents to Indirect Prompt Injection",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "self-evolution",
+      "indirect-prompt-injection",
+      "personal-agents"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Appreciation Teaches Unauthorized Execution: Self-Evolution Degrades the Robustness of Personal Agents to Indirect Prompt Injection",
+        "source_url": "https://arxiv.org/abs/2610.39122",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a security weakness in personal agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1691",
+    "slug": "where-you-inject-matters-the-trust-region-effect-in-llm-agen",
+    "title": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
+    "summary": "Researchers analyzed how the placement location of indirect prompt injections affects the success rate of attacks on LLM agents. The study identifies specific trust regions within external environments that maximize agent vulnerability to adversarial manipulation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Agents"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38867",
+        "publisher": "arXiv",
+        "title": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "indirect-prompt-injection",
+      "trust-region-effect",
+      "llm-agents"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
+        "source_url": "https://arxiv.org/abs/2610.38867",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating attack characteristics without real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1690",
+    "slug": "security-impact-of-coding-agent-s-memory-files",
+    "title": "Security Impact of Coding Agent's Memory Files",
+    "summary": "Researchers studied how malicious project memory files, such as CLAUDE.md, can be used to steer coding agents into generating insecure code that passes tests. The study highlights memory files as an unmonitored attack surface for indirect prompt injection.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code",
+      "Coding Agents"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38521",
+        "publisher": "arXiv",
+        "title": "Security Impact of Coding Agent's Memory Files",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "memory-files",
+      "claude-md",
+      "insecure-code-generation",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Security Impact of Coding Agent's Memory Files",
+        "source_url": "https://arxiv.org/abs/2610.38521",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel attack methodology with no known exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1689",
+    "slug": "cari-cross-boundary-adversarial-runtime-injection-in-coding",
+    "title": "CARI: Cross-Boundary Adversarial Runtime Injection in Coding-Agent Workflows",
+    "summary": "Researchers demonstrated a cross-boundary adversarial runtime injection attack targeting coding agents through manipulated peer development components and runtime feedback. The technique allows malicious or compromised peer roles to influence coding agent execution and code integration.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Coding Agents"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38799",
+        "publisher": "arXiv",
+        "title": "CARI: Cross-Boundary Adversarial Runtime Injection in Coding-Agent Workflows",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "coding-agents",
+      "runtime-injection",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "CARI: Cross-Boundary Adversarial Runtime Injection in Coding-Agent Workflows",
+        "source_url": "https://arxiv.org/abs/2610.38799",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel attack vector with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1688",
+    "slug": "flipjev-fast-black-box-red-teaming-finds-universal-adversari",
+    "title": "FlipJev: Fast Black-Box Red Teaming Finds Universal Adversarial Suffixes for Typed Decision Models",
+    "summary": "Researchers present FlipJev, a fast black-box query-based attack that discovers universal adversarial suffixes for typed decision models. The technique highlights vulnerabilities in security-sensitive classification tasks handled by decision models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Jev"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38895",
+        "publisher": "arXiv",
+        "title": "FlipJev: Fast Black-Box Red Teaming Finds Universal Adversarial Suffixes for Typed Decision Models",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "adversarial-suffixes",
+      "red-teaming",
+      "decision-models",
+      "black-box-attack"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Jev model"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "FlipJev: Fast Black-Box Red Teaming Finds Universal Adversarial Suffixes for Typed Decision Models",
+        "source_url": "https://arxiv.org/abs/2610.38895",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a proof-of-concept adversarial attack.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1687",
+    "slug": "poisoned-skills-propagating-jailbreaks-through-agent-markdow",
+    "title": "Poisoned Skills: Propagating Jailbreaks Through Agent Markdown Files",
+    "summary": "Researchers demonstrate that embedding jailbreaks into agent markdown skill files can successfully propagate through LangChain-based frameworks to induce prohibited behavior. The findings highlight a configuration-based injection channel in modern agent systems.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "jailbreak",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LangChain"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.37738",
+        "publisher": "arXiv",
+        "title": "Poisoned Skills: Propagating Jailbreaks Through Agent Markdown Files",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "markdown-injection",
+      "langchain",
+      "agent-hijack",
+      "jailbreak"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "LangChain agents"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Poisoned Skills: Propagating Jailbreaks Through Agent Markdown Files",
+        "source_url": "https://arxiv.org/abs/2610.37738",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a proof-of-concept attack.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1686",
+    "slug": "when-skills-tell-agents-not-to-ask-oversight-directives-stud",
+    "title": "When Skills Tell Agents Not to Ask: Oversight Directives Study",
+    "summary": "Researchers conducted a large-scale study on oversight-loosening directives embedded within public LLM agent skills. The findings reveal how copied instructions can silently instruct agents to bypass approval checks and security boundaries.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "agent skills"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.37734",
+        "publisher": "arXiv",
+        "title": "When Skills Tell Agents Not to Ask: A Large-Scale Study of Oversight Directives in Agent Skills",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-skills",
+      "oversight-bypass",
+      "prompt-security"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "When Skills Tell Agents Not to Ask: A Large-Scale Study of Oversight Directives in Agent Skills",
+        "source_url": "https://arxiv.org/abs/2610.37734",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Severity 1 research paper demonstrating security risks in agent skill instructions.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1685",
+    "slug": "understanding-and-mitigating-role-spoofing-in-llms",
+    "title": "Understanding and Mitigating Role Spoofing in LLMs",
+    "summary": "Researchers explore role confusion vulnerabilities where LLMs attribute text source based on style rather than labeled roles, enabling role spoofing. Malicious web pages accessed by agents can exploit this to impersonate users and bypass security controls.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "LLMs"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.40396",
+        "publisher": "arXiv",
+        "title": "Understanding and Mitigating Role Spoofing in LLMs",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "role-spoofing",
+      "agent-hijack"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Understanding and Mitigating Role Spoofing in LLMs",
+        "source_url": "https://arxiv.org/abs/2610.40396",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a role spoofing attack vector with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1684",
+    "slug": "provably-secure-diffusion-watermarking-against-removal-adver",
+    "title": "Provably Secure Diffusion Watermarking Against Removal Adversaries",
+    "summary": "Researchers demonstrated that an adversary with batched detector access can reconstruct transformations and permanently remove diffusion watermarks. The work shows that secret long-term transformations fail to secure watermarking decision boundaries against adaptive attackers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "latent-based diffusion watermarking"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.39189",
+        "publisher": "arXiv",
+        "title": "Provably Secure Diffusion Watermarking Against Removal Adversaries with Batched Detector Access",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "watermarking",
+      "diffusion-models",
+      "adversarial-attack"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Provably Secure Diffusion Watermarking Against Removal Adversaries with Batched Detector Access",
+        "source_url": "https://arxiv.org/abs/2610.39189",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an evasion attack on AI watermarking with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1683",
+    "slug": "answer-only-disclosure-private-context-llm-assistance-over-w",
+    "title": "Answer-Only Disclosure: Private-Context LLM Assistance over Web APIs",
+    "summary": "Researchers demonstrated that message transcripts in collaborative LLM decoding can disclose private document content not present in the public view or final answer. The finding highlights information leakage risks in split on-device and cloud LLM architectures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "collaborative decoding web assistants"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.38126",
+        "publisher": "arXiv",
+        "title": "Answer-Only Disclosure: Private-Context LLM Assistance over Web APIs with a Leakage Ledger",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "llm",
+      "collaborative-decoding"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Answer-Only Disclosure: Private-Context LLM Assistance over Web APIs with a Leakage Ledger",
+        "source_url": "https://arxiv.org/abs/2610.38126",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a leakage vulnerability with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1682",
+    "slug": "agentic-backdoors-via-pretraining-poisoning",
+    "title": "Agentic Backdoors via Pretraining Poisoning",
+    "summary": "Researchers demonstrated that planting poisoned content in pretraining data can introduce remote code execution backdoors into AI agents. By pretraining Qwen3 models from scratch, they showed that agents can be manipulated to execute arbitrary commands on a user machine.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Qwen3"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.37741",
+        "publisher": "arXiv",
+        "title": "Agentic Backdoors via Pretraining Poisoning",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-poisoning",
+      "backdoor",
+      "agent",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Agentic Backdoors via Pretraining Poisoning",
+        "source_url": "https://arxiv.org/abs/2610.37741",
+        "added_at": "2026-10-31T02:32:18.139Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel data poisoning attack with no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1681",
     "slug": "data-breach-impacts-multiple-bay-street-law-firms",
     "title": "Data breach impacts multiple Bay Street law firms",
@@ -1093,9 +1914,15 @@
         "publisher": "BleepingComputer",
         "title": "Malicious Claude Code extension on Cursor planted SSH backdoors",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor",
+        "publisher": "Microsoft Security",
+        "title": "Inside a malicious Claude Code-branded extension and its persistent SSH backdoor",
+        "published_at": "2026-10-31"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1106,7 +1933,7 @@
       "vscode"
     ],
     "created_at": "2026-10-30T13:27:13.057Z",
-    "updated_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -17017,10 +17844,10 @@
       "theft"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-30",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -17075,10 +17902,10 @@
       "unauthorized-action"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-30",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -17136,10 +17963,10 @@
       "clickfix"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-30",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -17193,10 +18020,10 @@
       "unauthorized-action"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-30",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -17407,10 +18234,10 @@
       "unauthorized-access"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-10-31T02:32:18.139Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-30",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],

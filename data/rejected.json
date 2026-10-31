@@ -1,5 +1,205 @@
 [
   {
+    "key": "84cef11f429e2126",
+    "title": "Trustworthy Distributed Machine Learning in Cloud-Edge-IoT Systems: A Heterogeneity-Aware Survey of Security, Privacy, and Robustness",
+    "url": "https://arxiv.org/abs/2610.38793",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: survey and roadmap paper proposing a broad overview without a specific demonstrated attack",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "173c7933e1e6d617",
+    "title": "IDSForge: Self-Explaining Network Intrusion Detection Through Neural Behavioral Rule Learning",
+    "url": "https://arxiv.org/abs/2610.38890",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: proposes a defense mechanism for intrusion detection systems",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "65b150a993847570",
+    "title": "Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy",
+    "url": "https://arxiv.org/abs/2610.39532",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: proposes a contextual integrity privacy mechanism for multi-agent systems rather than demonstrating an attack",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "449cc9b2bd611d60",
+    "title": "WebMaze: Defending Against LLM-Powered Web Scanners with Functionality-Coupled Deception",
+    "url": "https://arxiv.org/abs/2610.38524",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: proposes a defense system against LLM-powered web scanners rather than demonstrating an attack or vulnerability",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "3edb924933411862",
+    "title": "How Deterministic SAST and AI Security Agents Divide the Work: Coverage, Harness Policy and Cost in Snyk VulnBench 2.0",
+    "url": "https://arxiv.org/abs/2610.38617",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark evaluation paper comparing SAST and AI coding agents, out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "0483984519f870ae",
+    "title": "Structured Security Explanations for Learning-Based Vulnerability Detection",
+    "url": "https://arxiv.org/abs/2610.37797",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defence framework (VulnLens) for vulnerability detection, out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "33a407c523334019",
+    "title": "Scan Before You Install: Detecting and Mitigating Local and Composite Vulnerabilities in Skills",
+    "url": "https://arxiv.org/abs/2610.37901",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "5f0b8e55e36f2367",
+    "title": "REALM: Identifying Minimal Task Assets for LLM Agents",
+    "url": "https://arxiv.org/abs/2610.39155",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "c693b519b7ca98d8",
+    "title": "Attack-Resilient Multi-Bit Image Watermarking Framework via Latent Coordinate Sign Clamping",
+    "url": "https://arxiv.org/abs/2610.40204",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "1a9378050a61ecd7",
+    "title": "Tracekit Box: Running AI Agents in Micro-VMs Where Every Way Out Is Decided and Signed",
+    "url": "https://arxiv.org/abs/2610.38458",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "46130f49b5452940",
+    "title": "Difficulty Calibration Across Time for Membership Inference in Diffusion Models",
+    "url": "https://arxiv.org/abs/2610.40616",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper focuses on evaluating membership inference attacks and improving calibration metrics rather than demonstrating a novel practical exploitation or vulnerability instance.",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "db12848720544173",
+    "title": "Recurrent Bipartite Graph Neural Networks for QC-MDPC Error Decoding in McEliece Cryptosystems",
+    "url": "https://arxiv.org/abs/2610.38479",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a neural network decoder for post-quantum cryptography rather than an attack or vulnerability involving AI security.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "9ce485b748b6d430",
+    "title": "DeepDiff: Neuro-Dynamic Regression-Freedom Checking for Security Patch Validation",
+    "url": "https://arxiv.org/abs/2610.39066",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a defensive technique for validating security patches rather than reporting an active vulnerability or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "9eba9554bec8dcd9",
+    "title": "AgentHeal: Evaluating Goal-Preserving Resource Recovery of Web Agents under Access Barriers",
+    "url": "https://arxiv.org/abs/2610.39234",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a benchmark and evaluation paper about resource recovery and access barriers, not a demonstrated attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "bef3e3ed9491806a",
+    "title": "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints",
+    "url": "https://arxiv.org/abs/2610.39899",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "bb2b1ca6f3017f17",
+    "title": "Systematic Evaluation of Adversarial Jailbreaking Attacks and Defenses Across Seven Large Language Models",
+    "url": "https://arxiv.org/abs/2610.39509",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: surveys, statistics and report finds pieces",
+    "confidence": 0.9,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "12e34ae4b1c06233",
+    "title": "A Defense-Aware Explainable AI Framework for Feature-Level Vulnerability Analysis in Optimal Power Flow",
+    "url": "https://arxiv.org/abs/2610.38945",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only or benchmark/analysis paper proposing a model enhancement without a demonstrated attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "934df833f2e2ff2b",
+    "title": "SEAL: Sealed Queries for Local Sanitization against Indirect Prompt Injection",
+    "url": "https://arxiv.org/abs/2610.39758",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-only research paper introducing a mitigation for indirect prompt injection.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "b8b2a24188dd62d3",
+    "title": "GI-RTL-Fuzz: Grammar-Informed RTL Generation with LLMs for End-to-End Differential Simulator Fuzzing",
+    "url": "https://arxiv.org/abs/2610.38489",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a fuzzing tool/methodology using LLMs rather than demonstrating a security vulnerability or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
+    "key": "4f4135a6df52af4f",
+    "title": "The Privacy and Security Risks of Edge LLM Optimization",
+    "url": "https://arxiv.org/abs/2610.40543",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Survey or theoretical analysis paper discussing optimization risks without a concrete demonstrated exploit or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T02:32:18.139Z"
+  },
+  {
     "key": "70dcd36fc5b40878",
     "title": "Behind the Scenes of How Operation Blackout Went Down",
     "url": "https://darkreading.com/cybersecurity-operations/behind-the-scenes-how-operation-blackout-went-down",
