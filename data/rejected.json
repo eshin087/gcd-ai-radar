@@ -1,5 +1,15 @@
 [
   {
+    "key": "21ad2182a1367363",
+    "title": "Cloudflare Reports 18.2 Million Network-Layer DDoS Attacks in Q3, Up 38%",
+    "url": "https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T10:18:42.504Z"
+  },
+  {
     "key": "84cef11f429e2126",
     "title": "Trustworthy Distributed Machine Learning in Cloud-Edge-IoT Systems: A Heterogeneity-Aware Survey of Security, Privacy, and Robustness",
     "url": "https://arxiv.org/abs/2610.38793",
