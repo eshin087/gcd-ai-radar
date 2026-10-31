@@ -1,5 +1,15 @@
 [
   {
+    "key": "09e2bf40898ea025",
+    "title": "From Beginner to Bug Hunter: Learning Cybersecurity in the AI Era.",
+    "url": "https://bleepingcomputer.com/news/security/from-beginner-to-bug-hunter-learning-cybersecurity-in-the-ai-era",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: It is an educational article discussing bug hunting in the AI era and AI-generated reports, not a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T20:18:18.874Z"
+  },
+  {
     "key": "775984650187a6c4",
     "title": "Syrian Hacker Gets Prison Time in US After Over a Decade on the Run",
     "url": "https://securityweek.com/syrian-hacker-gets-prison-time-in-us-after-over-a-decade-on-the-run",
