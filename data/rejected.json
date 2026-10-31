@@ -1,5 +1,15 @@
 [
   {
+    "key": "775984650187a6c4",
+    "title": "Syrian Hacker Gets Prison Time in US After Over a Decade on the Run",
+    "url": "https://securityweek.com/syrian-hacker-gets-prison-time-in-us-after-over-a-decade-on-the-run",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Court sentencing and legal follow-up on an old campaign, not a new incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-10-31T15:50:02.005Z"
+  },
+  {
     "key": "21ad2182a1367363",
     "title": "Cloudflare Reports 18.2 Million Network-Layer DDoS Attacks in Q3, Up 38%",
     "url": "https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html",

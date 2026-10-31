@@ -1,5 +1,192 @@
 [
   {
+    "id": "AIR-2026-1699",
+    "slug": "volta-infostealer-employs-llms-for-victim-profiling-and-prio",
+    "title": "VOLTA Infostealer Employs LLMs for Victim Profiling and Prioritization",
+    "summary": "Researchers analyzed the VOLTA infostealer, which steals sensitive credentials and cryptocurrency wallets while integrating large language models to profile victims. The malware automatically ranks high-value assets to maximize attacker efficiency.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "VOLTA infostealer"
+    ],
+    "incident_date": "2026-10-31",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-31",
+    "sources": [
+      {
+        "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer",
+        "publisher": "Cisco Talos",
+        "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
+        "published_at": "2026-10-31"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "infostealer",
+      "volta",
+      "llm"
+    ],
+    "created_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-10-31T15:50:02.005Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-31",
+        "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
+        "source_url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Documented research report detailing a new malware capability.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1698",
+    "slug": "cve-2026-58882-android-sms-of-death-proof-of-concept-release",
+    "title": "CVE-2026-58882: Android SMS of Death Proof-of-Concept Released",
+    "summary": "A security researcher published a proof-of-concept exploit for CVE-2026-58882, an Android vulnerability enabling remote crashes via crafted SMS messages. The flaw affects unpatched devices running vulnerable versions of the operating system.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Android"
+    ],
+    "incident_date": "2026-10-31",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-31",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones",
+        "publisher": "BleepingComputer",
+        "title": "New Android SMS of Death exploit can remotely crash unpatched phones",
+        "published_at": "2026-10-31"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-58882",
+      "android",
+      "dos"
+    ],
+    "created_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-10-31T15:50:02.005Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-58882"
+    ],
+    "affected": [
+      "Android"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-31",
+        "title": "New Android SMS of Death exploit can remotely crash unpatched phones",
+        "source_url": "https://bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      }
+    ],
+    "action": "Apply the latest Android security updates.",
+    "severity_note": "Researcher published a proof-of-concept exploit without reported wild exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1697",
+    "slug": "chainalysis-discloses-internal-breach-and-customer-data-expo",
+    "title": "Chainalysis Discloses Internal Breach and Customer Data Exposure",
+    "summary": "Blockchain analysis firm Chainalysis suffered a security incident where an external actor accessed non-sensitive customer data using agentic techniques. The company stated that investigation content, authentication credentials, and session tokens remained secure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Chainalysis internal tools"
+    ],
+    "incident_date": "2026-10-31",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-31",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+        "publisher": "The Hacker News",
+        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
+        "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
+        "publisher": "BleepingComputer",
+        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
+        "published_at": "2026-10-31"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "chainalysis",
+      "agentic"
+    ],
+    "created_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-10-31T15:50:02.005Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-31",
+        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
+        "source_url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      },
+      {
+        "date": "2026-10-31",
+        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
+        "source_url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed data breach at a named enterprise organisation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1696",
     "slug": "chatgpt-share-link-vulnerability-allowed-code-execution-and",
     "title": "ChatGPT Share Link Vulnerability Allowed Code Execution and Data Access",
