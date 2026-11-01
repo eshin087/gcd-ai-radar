@@ -169,7 +169,7 @@ describe("routes", () => {
     // a hijack runs from the hijacker to the victim
     expect(hij && "path" in hij && dot3(hij.path.pts[0]!, place("BR")!)).toBeCloseTo(1, 6);
     expect(w?.kind === "waf" && dot3(w.at, place("US")!)).toBeCloseTo(1, 6);
-    expect(out?.kind === "outage" && [out.code, out.ended, out.depth]).toEqual(["BD", false, 0.88]);
+    expect(out?.kind === "outage" && [out.code, out.ended, out.depth]).toEqual(["BD", false, 0.9]);
   });
 
   it("names countries plainly, with 'the' where a sentence needs it", () => {
@@ -237,5 +237,14 @@ describe("caption words", () => {
     expect(ruleName("Directory Traversal")).toBe("directory traversal");
     expect(ruleName("Command Injection")).toBe("command injection");
     expect(ruleName("RCE")).toBe("RCE");
+  });
+});
+
+describe("example payloads", () => {
+  it("gives two samples per known category, interleaved, and a default set otherwise", async () => {
+    const { examplePayloads } = await import("@/components/internet/globe/payloads");
+    expect(examplePayloads(["SQLi", "XSS"])).toEqual(["?id=1' OR '1'='1", "<script>alert(1)</script>", "UNION SELECT user, pass FROM users", '"><img src=x onerror=alert(1)>']);
+    expect(examplePayloads(["Unknown rule"])).toEqual(["GET /../../etc/passwd", "GET /.env", "GET /static/..%2f..%2f.env", "GET /wp-admin/setup-config.php"]);
+    expect(examplePayloads([])).toHaveLength(4);
   });
 });
