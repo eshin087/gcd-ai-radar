@@ -8,6 +8,9 @@ on:
     # top-of-the-hour queue delays. Sources keep their own
     # cadence (every_run, six_hourly, daily, weekly, monthly in collector/config/sources.json);
     # a run that changes only bookkeeping files commits with "[no site change]" and skips the deploy.
+    # Since 2026-11-01 so does every scheduled run outside the deploy windows (06 and 18 UTC, see
+    # DEFAULT_DEPLOY_HOURS_UTC in collector/cli.ts; the COLLECTOR_DEPLOY_HOURS variable overrides it):
+    # the data still lands on main every run, the site is rebuilt twice a day instead of ~30 times.
     # Re-saved on 2026-10-26 so GitHub re-registers the hourly schedule: after the workflow was
     # disabled and re-enabled around the cron change, the 07:17 and 08:17 UTC slots did not fire.
     - cron: "17 * * * *"
@@ -60,6 +63,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COLLECTOR_GIT_NAME: ${{ vars.COLLECTOR_GIT_NAME }}
           COLLECTOR_GIT_EMAIL: ${{ vars.COLLECTOR_GIT_EMAIL }}
+          COLLECTOR_DEPLOY_HOURS: ${{ vars.COLLECTOR_DEPLOY_HOURS }}
           COLLECTOR_DEBUG: ${{ inputs.verbose && '1' || '' }}
           # workflow inputs are passed as environment variables, never interpolated into the script
           INPUT_DRY_RUN: ${{ inputs.dry_run }}
