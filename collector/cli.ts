@@ -63,15 +63,44 @@ function parseArgs(argv: string[]): Args {
 }
 
 /**
- * The data commit's subject: what the run changed. When only bookkeeping
- * files changed (the run ledger, seen and pending lists, collector state) the
- * site is the same and the subject ends with the marker vercel.json's
- * ignoreCommand looks for, so no build is spent on it.
+ * The UTC hours whose scheduled runs rebuild the site. Every run commits and
+ * pushes its data, but only a run started in one of these hours leaves the
+ * marker off its subject and pings the deploy hook; the others carry
+ * "[no site change]" and Vercel skips their build. Until 2026-11-01 every
+ * run with new data deployed (about 30 builds a day of a 3,400-page site),
+ * which filled the Vercel account's deployment storage. Two windows a day
+ * keep the site within half a day of the data; a merge to main still deploys
+ * at once with everything collected so far. COLLECTOR_DEPLOY_HOURS (comma-
+ * separated UTC hours, "*" for every run) overrides the default.
  */
-export function runCommitMessage(record: RunRecord, changedFiles: string[] = [], radarChanged = false): string {
+export const DEFAULT_DEPLOY_HOURS_UTC: readonly number[] = [6, 18];
+
+export function deployHours(env: Record<string, string | undefined> = process.env): readonly number[] | "*" {
+  const raw = env.COLLECTOR_DEPLOY_HOURS?.trim();
+  if (!raw) return DEFAULT_DEPLOY_HOURS_UTC;
+  if (raw === "*") return "*";
+  const hours = raw.split(",").map((h) => Number(h.trim())).filter((h) => Number.isInteger(h) && h >= 0 && h < 24);
+  return hours.length ? hours : DEFAULT_DEPLOY_HOURS_UTC;
+}
+
+/** True when a run started at `startedAt` (ISO, UTC) falls in a deploy window. */
+export function inDeployWindow(startedAt: string, hours: readonly number[] | "*" = deployHours()): boolean {
+  if (hours === "*") return true;
+  const h = new Date(startedAt).getUTCHours();
+  return Number.isFinite(h) && hours.includes(h);
+}
+
+/**
+ * The data commit's subject: what the run changed. The subject ends with the
+ * marker vercel.json's ignoreCommand looks for, so no build is spent on it,
+ * when only bookkeeping files changed (the run ledger, seen and pending lists,
+ * collector state) or when the run is outside a deploy window (`deployNow`
+ * false; see DEFAULT_DEPLOY_HOURS_UTC).
+ */
+export function runCommitMessage(record: RunRecord, changedFiles: string[] = [], radarChanged = false, deployNow = true): string {
   const c = record.counts;
   const base = `data: run ${record.started_at.slice(0, 16)}Z (+${c.published} published, +${c.review} review, ${c.merged} merged, ${c.updated ?? 0} updated, ${c.closed ?? 0} closed)`;
-  return siteUnchanged(changedFiles, radarChanged) ? `${base} ${NO_SITE_CHANGE}` : base;
+  return !deployNow || siteUnchanged(changedFiles, radarChanged) ? `${base} ${NO_SITE_CHANGE}` : base;
 }
 
 /** True when every changed file is bookkeeping (and the radar sidebar data did not change). */
@@ -139,8 +168,11 @@ async function main() {
       const sideChanged = radarChanged || statsChanged;
       let unpushed = false;
       if (commit && (summary.changedFiles.length || sideChanged)) {
-        const quiet = siteUnchanged(summary.changedFiles, sideChanged);
-        const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, sideChanged), { deploy: !quiet });
+        // a scheduled run deploys only in a deploy window; a manual run (the owner at the keyboard) deploys as before
+        const deployNow = opts.mode !== "scheduled" || inDeployWindow(summary.record.started_at);
+        const quiet = !deployNow || siteUnchanged(summary.changedFiles, sideChanged);
+        if (!deployNow) log.info("outside a deploy window: the data is committed, the site is rebuilt at the next window", { hours: deployHours() });
+        const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, sideChanged, deployNow), { deploy: !quiet });
         unpushed = result.committed && !result.pushed;
       }
       // Health: a job summary on Actions, and a failed job (owner gets an email) when classification

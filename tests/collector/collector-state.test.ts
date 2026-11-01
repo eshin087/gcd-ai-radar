@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { runCommitMessage, siteUnchanged, validateLifecycle } from "@/collector/cli";
+import { DEFAULT_DEPLOY_HOURS_UTC, deployHours, inDeployWindow, runCommitMessage, siteUnchanged, validateLifecycle } from "@/collector/cli";
 import { NO_SITE_CHANGE } from "@/collector/git";
 import { CollectorStateSchema, emptyCollectorState, pruneCollectorState, serialize, type State } from "@/collector/lib/state";
 import { DUE_HOURS, isDue, lastSuccessBySource } from "@/collector/pipeline/run";
@@ -94,6 +94,30 @@ describe("the data commit", () => {
     const re = /\[no site change\]/;
     expect(re.test(runCommitMessage(record, ["runs.json"], false))).toBe(true);
     expect(re.test(runCommitMessage(record, ["incidents/2026.json"], false))).toBe(false);
+  });
+
+  it("carries the marker outside a deploy window even when the site changed", () => {
+    expect(runCommitMessage(record, ["incidents/2026.json"], false, false)).toContain(NO_SITE_CHANGE);
+    expect(runCommitMessage(record, ["incidents/2026.json"], false, true)).not.toContain(NO_SITE_CHANGE);
+    expect(runCommitMessage(record, ["incidents/2026.json"], true, false)).toContain(NO_SITE_CHANGE);
+  });
+});
+
+describe("deploy windows", () => {
+  it("default to 06 and 18 UTC and follow the run's start hour", () => {
+    expect(deployHours({})).toEqual(DEFAULT_DEPLOY_HOURS_UTC);
+    expect(inDeployWindow("2026-10-25T06:17:00.000Z", DEFAULT_DEPLOY_HOURS_UTC)).toBe(true);
+    expect(inDeployWindow("2026-10-25T18:58:00.000Z", DEFAULT_DEPLOY_HOURS_UTC)).toBe(true);
+    expect(inDeployWindow("2026-10-25T13:17:00.000Z", DEFAULT_DEPLOY_HOURS_UTC)).toBe(false);
+    expect(inDeployWindow("2026-10-25T05:59:59.000Z", DEFAULT_DEPLOY_HOURS_UTC)).toBe(false);
+  });
+
+  it("read COLLECTOR_DEPLOY_HOURS, with * meaning every run and junk meaning the default", () => {
+    expect(deployHours({ COLLECTOR_DEPLOY_HOURS: "0, 12" })).toEqual([0, 12]);
+    expect(deployHours({ COLLECTOR_DEPLOY_HOURS: "*" })).toBe("*");
+    expect(inDeployWindow("2026-10-25T13:17:00.000Z", "*")).toBe(true);
+    expect(deployHours({ COLLECTOR_DEPLOY_HOURS: "x,99" })).toEqual(DEFAULT_DEPLOY_HOURS_UTC);
+    expect(inDeployWindow("not a date", [6])).toBe(false);
   });
 });
 
