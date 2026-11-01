@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1701",
+    "slug": "brazilian-court-sanctions-lawyers-for-prompt-injection-in-fi",
+    "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Filing",
+    "summary": "Two lawyers inserted hidden white-on-white text into a court document to manipulate the reviewing AI system. The court detected the prompt injection and fined the legal representatives 16,000 dollars.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Court AI Document Processing System"
+    ],
+    "incident_date": "2026-11-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-01",
+    "sources": [
+      {
+        "url": "https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing",
+        "publisher": "jetstream.security",
+        "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Court Filing",
+        "published_at": "2026-11-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "legal",
+      "fraud",
+      "sanctions"
+    ],
+    "created_at": "2026-11-01T06:30:25.526Z",
+    "updated_at": "2026-11-01T06:30:25.526Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-01",
+        "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Court Filing",
+        "source_url": "https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing",
+        "added_at": "2026-11-01T06:30:25.526Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world regulatory action and financial penalties resulting from the injection attack.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1700",
     "slug": "northflank-security-breach-leads-to-unauthorized-use-of-ai-a",
     "title": "Northflank security breach leads to unauthorized use of AI API keys",
