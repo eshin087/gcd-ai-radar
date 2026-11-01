@@ -76,10 +76,6 @@ export const ruleName = (name: string) =>
 
 const sentenceCase = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const windowWords = (w: InternetWindow) => (w === "1h" ? "last hour" : "last 24 hours");
-const LEARN = {
-  ddos: "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/",
-  waf: "https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/",
-};
 const OUTAGE_CENTER = "https://radar.cloudflare.com/outage-center";
 
 /** What the caption shows for one stop. */
@@ -110,7 +106,7 @@ function card(s: Stop): Card {
         figure: <Share value={r.share} />,
         note: s.kind === "ddos" ? "of the DDoS attacks Cloudflare stopped" : "of the web attacks Cloudflare stopped",
         detail: self ? `From IPs in ${fromIn} to sites billed there.` : `From IPs in ${fromIn} to sites billed in ${toIn}.`,
-        link: s.kind === "ddos" ? { href: LEARN.ddos, text: "What a DDoS attack is" } : null,
+        link: null,
         short: `${s.kind === "ddos" ? "DDoS flood" : "Attacks"}, ${self ? `within ${fromIn}` : `${from} to ${to}`}, ${r.share.toFixed(1)} %`,
       };
     }
@@ -122,8 +118,8 @@ function card(s: Stop): Card {
         title: <>From {inSentence(o.name)}</>,
         figure: <Share value={o.share} />,
         note: "of the requests Cloudflare's firewall (WAF) stopped",
-        detail: rules.length ? `Its rules caught mostly ${rules.join(" and ")}.` : `Sent from IPs in ${inSentence(o.name)}.`,
-        link: { href: LEARN.waf, text: "What a WAF stops" },
+        detail: `${rules.length ? `Its rules caught mostly ${rules.join(" and ")}.` : `Sent from IPs in ${inSentence(o.name)}.`} The requests on the globe are examples of these kinds.`,
+        link: null,
         short: `Web exploits from ${inSentence(o.name)}, ${o.share.toFixed(1)} %`,
       };
     }
