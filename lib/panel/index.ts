@@ -1,6 +1,5 @@
 import type { FullIncident } from "../lifecycle";
 import type { HomeStats, KevStatEntry, StatsFiles } from "../stats-schema";
-import { addDays } from "../lifecycle";
 import { buildActNow, buildLatest, type ActNow, type LatestRow } from "./act";
 import { buildAiFlow, type AiFlow } from "./ai-flow";
 import { buildAttackTypes, weekIncidents, type AttackTypeRow } from "./attack-types";
@@ -101,7 +100,8 @@ export function kevWeekHistory(added: readonly string[], today: string, months =
   return { now: week(0), history };
 }
 
-export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles, home: HomeStats, now: Date): { panel: PanelData; stackFile: StackFile } {
+/** `kevWeek`: the KEV additions the kev_7d counter counts (lib/home.ts kevWeekList), which the sieve's Known exploited stage lists. */
+export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles, home: HomeStats, now: Date, kevWeek: readonly KevStatEntry[]): { panel: PanelData; stackFile: StackFile } {
   const nowIso = now.toISOString();
   const today = nowIso.slice(0, 10);
   const kev = stats.kev?.entries ?? [];
@@ -171,7 +171,7 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
       critical: c.critical_7d,
       exploited: c.kev_7d,
       exploitedLevel: kevLevel,
-      exploitedEntries: kev.filter((e) => e.added > addDays(today, -7) && e.added <= today).sort((a, b) => b.added.localeCompare(a.added) || a.cve.localeCompare(b.cve)),
+      exploitedEntries: [...kevWeek],
       inStack,
       nvdFetched: stats.cvesRecent?.fetched_at ?? null,
     },

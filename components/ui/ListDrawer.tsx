@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, type ReactNode } from "react";
+import { Children, useId, type ReactNode } from "react";
 import { Drawer } from "@/components/ui/Drawer";
 
 interface Props {
@@ -28,7 +28,9 @@ interface Props {
 /**
  * A list that is not made of incident records (the week's CVEs, a month's
  * KEV additions, a month's breaches) in the shared drawer shell. The count
- * line starts with plain digits, which scripts/check-home.mjs reads.
+ * line starts with plain digits, which scripts/check-home.mjs reads, and the
+ * list's state is marked for it: data-loading, data-error, or the rows (an
+ * empty list says so, data-empty).
  */
 export function ListDrawer({ open, onClose, kicker, title, count, unit, note, outbound, loading, error, children, capNote }: Props) {
   const titleId = useId();
@@ -45,9 +47,17 @@ export function ListDrawer({ open, onClose, kicker, title, count, unit, note, ou
         {capNote && <p className="text-[12px] text-faint">{capNote}</p>}
       </header>
       {error ? (
-        <p className="text-[13px] text-live">{error}</p>
+        <p data-error className="text-[13px] text-live">
+          {error}
+        </p>
       ) : loading ? (
-        <p className="text-[13px] text-dim">Loading…</p>
+        <p data-loading className="text-[13px] text-dim">
+          Loading…
+        </p>
+      ) : Children.count(children) === 0 ? (
+        <p data-empty className="text-[13px] text-dim">
+          No {unit} to list.
+        </p>
       ) : (
         <ol className="border-y border-line-soft">{children}</ol>
       )}

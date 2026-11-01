@@ -198,7 +198,7 @@ export const HomeStatsSchema = z.object({
   lists: z.object({
     cves_day: z.object({ count: count, file: z.string() }),
     cves_week: z.object({ count: count, file: z.string() }),
-    kev_month: z.object({ month: z.string(), count: count, file: z.string() }),
+    kev_week: z.object({ count: count, file: z.string() }),
     breaches_month: z.object({ month: z.string(), count: count, file: z.string() }),
   }),
 });
