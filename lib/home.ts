@@ -193,6 +193,18 @@ export function dayCvesList(stats: StatsFiles, now: Date): RecentCve[] {
   return cvesSince(stats, now, 86_400_000).sort(byScoreDesc);
 }
 
+/**
+ * The KEV entries CISA added in the seven days to `today` (added after
+ * today - 7, not after today), newest first: what the kev_7d counter counts
+ * and its drawers list. Counted by date, never from a month's file: the week
+ * often starts in the month before. A week's additions are a few dozen at
+ * most, so the list is not capped.
+ */
+export function kevWeekList(stats: StatsFiles, today: string): KevStatEntry[] {
+  const from = addDays(today, -7);
+  return (stats.kev?.entries ?? []).filter((e) => e.added > from && e.added <= today).sort((a, b) => b.added.localeCompare(a.added) || a.cve.localeCompare(b.cve));
+}
+
 export function kevMonthList(stats: StatsFiles, month: string): KevStatEntry[] {
   return (stats.kev?.entries ?? []).filter((e) => e.added.startsWith(month)).slice(0, LIST_CAP);
 }
@@ -337,7 +349,7 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
   const cves = stats.cvesRecent ? cvesSince(stats, now, 7 * 86_400_000) : null;
   const since24h = new Date(cveEnd(stats, now) - 86_400_000).toISOString();
   const kev = stats.kev?.entries ?? null;
-  const kevWeekFrom = addDays(today, -7);
+  const kevWeek = kev ? kevWeekList(stats, today) : null;
   const breaches = stats.hibp?.breaches.filter(countableBreach) ?? null;
   const breachesMonth = breaches?.filter((b) => b.added.startsWith(month)) ?? null;
   const nextDue = kev?.map((e) => e.due).filter((d): d is string => d !== null && d >= today).sort()[0] ?? null;
@@ -384,7 +396,7 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
       cves_24h: cves ? cves.filter((c) => c.published >= since24h).length : null,
       cves_7d: cves ? cves.length : null,
       critical_7d: cves ? cves.filter((c) => c.score !== null && c.score >= 9).length : null,
-      kev_7d: kev ? kev.filter((e) => e.added > kevWeekFrom).length : null,
+      kev_7d: kevWeek ? kevWeek.length : null,
       kev_next_due: nextDue,
       breaches_month: breachesMonth ? breachesMonth.length : null,
       breached_accounts_month: breachesMonth ? breachesMonth.reduce((s, b) => s + b.accounts, 0) : null,
@@ -401,13 +413,13 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
     lists: {
       cves_day: { count: dayCvesList(stats, now).length, file: "/stats/cves-day.json" },
       cves_week: { count: weekCvesList(stats, now).length, file: "/stats/cves-week.json" },
-      kev_month: { month, count: kevMonthList(stats, month).length, file: `/stats/kev-${month}.json` },
+      kev_week: { count: kevWeek?.length ?? 0, file: "/stats/kev-week.json" },
       breaches_month: { month, count: breachesMonthList(stats, month).length, file: `/stats/breaches-${month}.json` },
     },
   };
 
   const aiMonth = counted.filter((i) => isAiRecord(i) && i.first_reported.startsWith(month));
-  const { panel, stackFile } = buildPanel(incidents, stats, homeStats, now);
+  const { panel, stackFile } = buildPanel(incidents, stats, homeStats, now, kevWeek ?? []);
   const lagFrom = addDays(today, -90);
   const lags = (kev ?? []).filter((e) => e.added > lagFrom && e.published).map((e) => Math.max(0, daysBetween(e.published!, e.added)));
   return {

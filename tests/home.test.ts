@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BREACH_MONTHS, CLUSTER_DAYS, CLUSTER_ITEMS, EPSS_TOP, HOME_ROWS, KEV_MONTHS, LAG_MIN_N, aiCvesByQuarter, breachesMonthList, buildHome, countableBreach, dayCvesList, kevLagByYear, median, quarterKey, quarterRange, weekCvesList } from "@/lib/home";
+import { BREACH_MONTHS, CLUSTER_DAYS, CLUSTER_ITEMS, EPSS_TOP, HOME_ROWS, KEV_MONTHS, LAG_MIN_N, LIST_CAP, aiCvesByQuarter, breachesMonthList, buildHome, countableBreach, dayCvesList, kevLagByYear, kevMonthList, kevWeekList, median, quarterKey, quarterRange, weekCvesList } from "@/lib/home";
 import { HomeStatsSchema, emptyStats, type BreachStat, type KevStatEntry, type StatsFiles } from "@/lib/stats-schema";
 import { disclosedCve, incident } from "./fixtures";
 
@@ -144,7 +144,7 @@ describe("buildHome", () => {
     expect(home.stats.lists).toEqual({
       cves_day: { count: 1, file: "/stats/cves-day.json" },
       cves_week: { count: 2, file: "/stats/cves-week.json" },
-      kev_month: { month: "2026-10", count: 2, file: "/stats/kev-2026-10.json" },
+      kev_week: { count: 1, file: "/stats/kev-week.json" },
       breaches_month: { month: "2026-10", count: 1, file: "/stats/breaches-2026-10.json" },
     });
     expect(weekCvesList(stats(), NOW).map((c) => c.id)).toEqual(["CVE-2026-0001", "CVE-2026-0002"]);
@@ -180,6 +180,70 @@ describe("buildHome", () => {
     expect(bare.stats.epss_top).toEqual([]);
     expect(bare.stats.fetched).toEqual({ nvd: null, kev: null, hibp: null, epss: null });
     expect(() => HomeStatsSchema.parse(bare.stats)).not.toThrow();
+  });
+});
+
+describe("every counter opens its list with the same count", () => {
+  // the first day of a month: the week's KEV additions are all in the month before, and no breach is in this one yet
+  const MONTH_START = new Date("2026-11-01T17:00:00Z");
+  function boundaryStats(): StatsFiles {
+    const s = stats();
+    s.kev!.entries = [
+      kevEntry({ cve: "CVE-2026-2001", added: "2026-11-01", due: "2026-11-22" }),
+      kevEntry({ cve: "CVE-2026-2002", added: "2026-10-30", due: "2026-11-20" }),
+      kevEntry({ cve: "CVE-2026-2003", added: "2026-10-30", due: "2026-11-20" }),
+      kevEntry({ cve: "CVE-2026-2004", added: "2026-10-26", due: "2026-11-16" }), // the week's first day
+      kevEntry({ cve: "CVE-2026-2005", added: "2026-10-25", due: "2026-11-15" }), // eight days back: out
+      kevEntry({ cve: "CVE-2026-2006", added: "2026-11-02", due: "2026-11-23" }), // after the build day: out
+    ];
+    return s;
+  }
+  const s = boundaryStats();
+  const home = buildHome(records(), s, MONTH_START, null, SITE);
+  const c = home.stats.counters;
+
+  it("the 7-day KEV list crosses the month boundary and holds exactly what kev_7d counts", () => {
+    const week = kevWeekList(s, home.today);
+    expect(week.map((e) => e.cve)).toEqual(["CVE-2026-2001", "CVE-2026-2002", "CVE-2026-2003", "CVE-2026-2004"]);
+    expect(c.kev_7d).toBe(4);
+    expect(home.stats.lists.kev_week).toEqual({ count: 4, file: "/stats/kev-week.json" });
+    // the month's file, which the drawer used to filter, holds one of the four
+    expect(kevMonthList(s, "2026-11").filter((e) => week.includes(e))).toHaveLength(1);
+    // the sieve's Known exploited stage lists the same entries
+    expect(home.panel.sieve.exploited).toBe(c.kev_7d);
+    expect(home.panel.sieve.exploitedEntries).toEqual(week);
+  });
+
+  it("a month with no breaches yet counts zero and lists none, from a file prebuild writes", () => {
+    expect(c.breaches_month).toBe(0);
+    expect(c.breached_accounts_month).toBe(0);
+    expect(breachesMonthList(s, "2026-11")).toEqual([]);
+    expect(home.stats.lists.breaches_month).toEqual({ month: "2026-11", count: 0, file: "/stats/breaches-2026-11.json" });
+    // prebuild writes one breaches file per charted month, and the current month is the last column
+    expect(home.stats.series.breaches_by_month.at(-1)!.month).toBe(home.stats.lists.breaches_month.month);
+  });
+
+  it("each counter's list has as many rows as the counter, capped only where the list is", () => {
+    const many: StatsFiles = boundaryStats();
+    many.cvesRecent!.fetched_at = MONTH_START.toISOString();
+    many.cvesRecent!.cves = Array.from({ length: LIST_CAP + 30 }, (_, n) => ({
+      id: `CVE-2026-${String(30000 + n)}`,
+      published: new Date(MONTH_START.getTime() - (n + 1) * 1_800_000).toISOString(),
+      score: n % 3 === 0 ? 9.8 : 5.0,
+      severity: n % 3 === 0 ? "CRITICAL" : "MEDIUM",
+      version: "3.1",
+      description: "Synthetic.",
+    }));
+    const h = buildHome(records(), many, MONTH_START, null, SITE);
+    const k = h.stats.counters;
+    const week = weekCvesList(many, MONTH_START);
+    expect(dayCvesList(many, MONTH_START)).toHaveLength(k.cves_24h!);
+    expect(k.cves_7d).toBe(LIST_CAP + 30);
+    expect(week).toHaveLength(Math.min(k.cves_7d!, LIST_CAP));
+    expect(week.filter((x) => x.score !== null && x.score >= 9)).toHaveLength(Math.min(k.critical_7d!, LIST_CAP));
+    expect(kevWeekList(many, h.today)).toHaveLength(k.kev_7d!);
+    expect(breachesMonthList(many, h.stats.lists.breaches_month.month)).toHaveLength(Math.min(k.breaches_month!, LIST_CAP));
+    expect(h.stats.lists).toMatchObject({ cves_day: { count: k.cves_24h }, cves_week: { count: Math.min(k.cves_7d!, LIST_CAP) }, kev_week: { count: k.kev_7d } });
   });
 });
 

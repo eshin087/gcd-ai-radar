@@ -128,16 +128,17 @@ export function HomeCounters({ stats, buttonsHidden = false }: { stats: HomeStat
   const [open, setOpen] = useState<DrawerKey>(null);
   const c = stats.counters;
   const cveUrl = open === "cves_24h" ? stats.lists.cves_day.file : open === "cves_7d" || open === "critical_7d" ? stats.lists.cves_week.file : null;
-  const kevUrl = open === "kev_7d" ? stats.lists.kev_month.file : null;
+  const kevUrl = open === "kev_7d" ? stats.lists.kev_week.file : null;
   const breachUrl = open === "breaches" ? stats.lists.breaches_month.file : null;
   const cves = useJson<{ cves: RecentCve[] }>(cveUrl);
   const kev = useJson<{ entries: KevStatEntry[] }>(kevUrl);
   const breaches = useJson<{ breaches: BreachStat[] }>(breachUrl);
   const close = () => setOpen(null);
-  const weekFrom = new Date(Date.parse(stats.generated_at) - 7 * 86_400_000).toISOString().slice(0, 10);
+  // the first day kev_7d counts (lib/home.ts kevWeekList: added after the build day minus seven)
+  const weekFrom = new Date(Date.parse(stats.generated_at) - 6 * 86_400_000).toISOString().slice(0, 10);
 
   const cveRows = (cves.data?.cves ?? []).filter((x) => (open === "critical_7d" ? x.score !== null && x.score >= 9 : true));
-  const kevRows = (kev.data?.entries ?? []).filter((e) => e.added > weekFrom);
+  const kevRows = kev.data?.entries ?? [];
   const breachRows = breaches.data?.breaches ?? [];
   const nvdNote = "NVD, public domain. This product uses data from the NVD API but is not endorsed or certified by the NVD.";
 

@@ -37,6 +37,8 @@ const verbose = Boolean(args.verbose);
 const BUDGET_KB = Number(args.budget ?? 250);
 const WORKER = "gcd-ai-radar-internet.eshin087.workers.dev";
 const HOME_READY = `document.querySelector('[data-instrument="sieve"]') && document.querySelectorAll('[data-build][data-built]').length >= 8`;
+/** The drawer lists' cap (lib/home.ts LIST_CAP). */
+const LIST_CAP = 200;
 const TRENDS_READY = `document.querySelectorAll('[data-counter]').length >= 6 && document.querySelector('[data-chart="kev-by-month"] rect')`;
 
 const checks = [];
@@ -45,7 +47,11 @@ function check(name, ok, detail) {
   if (verbose || !ok) console.log(`${ok ? "ok  " : "FAIL"} ${name}${detail ? `: ${detail}` : ""}`);
 }
 
-/** Clicks an element, waits for the drawer's list, reads its count line, closes it. */
+/**
+ * Clicks an element, waits for the drawer's list, reads its count line, closes it. A ListDrawer
+ * marks its state (components/ui/ListDrawer.tsx): `listed` is true once it shows rows or says it
+ * has none, `error` holds a failed fetch's message.
+ */
 const OPEN_AND_READ = `async (sel, index) => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const all = document.querySelectorAll(sel);
@@ -54,12 +60,20 @@ const OPEN_AND_READ = `async (sel, index) => {
   el.dispatchEvent(new MouseEvent("click", { bubbles: true }));
   for (let i = 0; i < 60; i++) {
     const d = document.querySelector('[role="dialog"]');
-    if (d && (d.querySelector("ol > li") || d.querySelector(".text-live") || /^0\\s/.test(d.querySelector("p.num")?.textContent ?? ""))) break;
+    if (d && !d.querySelector("[data-loading]") && (d.querySelector("ol > li, [data-empty], [data-error]") || /^0\\s/.test(d.querySelector("p.num")?.textContent ?? ""))) break;
     await sleep(150);
   }
   const d = document.querySelector('[role="dialog"]');
   const head = d?.querySelector("p.num")?.textContent.trim() ?? "";
-  const res = { label: el.getAttribute("aria-label"), head, count: Number((head.match(/^(\\d+)\\s/) || [])[1]), rows: d ? d.querySelectorAll("ol > li").length : 0, locked: document.documentElement.style.overflow === "hidden" };
+  const res = {
+    label: el.getAttribute("aria-label"),
+    head,
+    count: Number((head.match(/^(\\d+)\\s/) || [])[1]),
+    rows: d ? d.querySelectorAll("ol > li").length : 0,
+    listed: Boolean(d?.querySelector("ol > li, [data-empty]")),
+    error: d?.querySelector("[data-error]")?.textContent ?? null,
+    locked: document.documentElement.style.overflow === "hidden",
+  };
   window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
   await sleep(250);
   res.closed = !document.querySelector('[role="dialog"]') && document.documentElement.style.overflow !== "hidden";
@@ -181,7 +195,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   check("hero cluster draws", inked > 2000, `${inked} inked pixels`);
   if (home.counters.breaches_month !== null) {
     const r = await openAndRead(client, `[data-tile="breached"]`);
-    check("cluster Breached opens the month's breaches", r.count === home.counters.breaches_month && r.closed, `count line "${r.head?.slice(0, 50)}", expected ${home.counters.breaches_month}`);
+    check("cluster Breached opens the month's breaches", r.count === home.counters.breaches_month && r.listed && r.rows === Math.min(home.counters.breaches_month, LIST_CAP) && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${home.counters.breaches_month}`);
   }
 
   // a shared stack link applies, stores and recomputes
@@ -232,18 +246,26 @@ async function checkTrends(client, base, home) {
   for (const key of ["cves_24h", "cves_7d", "critical_7d", "kev_7d", "breached_accounts_month", "live"]) {
     check(`trends counter ${key}`, counters[key] === home.counters[key], `page ${counters[key]}, home.json ${home.counters[key]}`);
   }
-  const expectations = { cves_24h: home.counters.cves_24h, cves_7d: home.counters.cves_7d, critical_7d: home.counters.critical_7d, kev_7d: home.counters.kev_7d, breached_accounts_month: home.counters.breaches_month };
-  for (const [key, expected] of Object.entries(expectations)) {
+  // every counter's drawer lists what it counts: as many rows, or the first LIST_CAP where the list is capped; a zero lists none
+  const expectations = {
+    cves_24h: [home.counters.cves_24h, Infinity],
+    cves_7d: [home.counters.cves_7d, LIST_CAP],
+    critical_7d: [home.counters.critical_7d, LIST_CAP],
+    kev_7d: [home.counters.kev_7d, Infinity],
+    breached_accounts_month: [home.counters.breaches_month, LIST_CAP],
+  };
+  for (const [key, [expected, cap]] of Object.entries(expectations)) {
     if (expected === null) continue;
     const r = await openAndRead(client, `button[data-counter="${key}"]`);
-    check(`trends counter ${key} opens its list`, r.count === expected && r.rows > 0 && r.locked && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${expected}`);
+    const rows = Math.min(expected, cap);
+    check(`trends counter ${key} opens its list`, r.count === expected && r.listed && !r.error && r.rows === rows && r.locked && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${expected} and ${rows} rows${r.error ? `, error "${r.error}"` : ""}`);
   }
   const day = await openAndRead(client, `button[data-counter="cves_24h"]`);
   check("the 24-hour list is complete", day.rows === home.counters.cves_24h, `${day.rows} rows, counter ${home.counters.cves_24h}`);
 
   const kevLast = home.series.kev_by_month[home.series.kev_by_month.length - 1];
   const kev = await openAndRead(client, `[data-chart="kev-by-month"] rect[role="button"]`, -1);
-  check(`KEV column ${kevLast.month} opens its additions`, kev.count === kevLast.total && kev.rows === Math.min(kevLast.total, 200), `${kev.label} → "${kev.head?.slice(0, 40)}", ${kev.rows} rows`);
+  check(`KEV column ${kevLast.month} opens its additions`, kev.count === kevLast.total && kev.rows === Math.min(kevLast.total, LIST_CAP), `${kev.label} → "${kev.head?.slice(0, 40)}", ${kev.rows} rows`);
   const brPrev = home.series.breaches_by_month[home.series.breaches_by_month.length - 2];
   const br = await openAndRead(client, `[data-chart="breaches-by-month"] rect[role="button"]`, -2);
   check(`breach column ${brPrev.month} opens its breaches`, br.count === brPrev.accounts && br.rows === brPrev.breaches, `${br.label} → "${br.head?.slice(0, 40)}", ${br.rows} rows`);
