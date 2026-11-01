@@ -8,11 +8,31 @@
 export const STACK_STORAGE_KEY = "gcd-radar:stack";
 export const STACK_FILE = "/stats/stack.json";
 export const STACK_MAX = 12;
+export const STACK_DAYS = 90;
 
 export interface StackMatch {
   name: string;
   cve: string;
   due: string | null;
+}
+
+/** What a tile's number is made of: one KEV entry, or one of our exploited records that no KEV entry already stands for. */
+export interface StackItem {
+  kind: "kev" | "record";
+  /** The KEV entry's product, or the record's title. */
+  name: string;
+  /** Its CVE ids, if any. */
+  cves: string[];
+  /** The day CISA listed it, or the record's first report. */
+  date: string;
+  /** The CISA deadline, for a KEV entry that has one. */
+  due: string | null;
+  cvss: number | null;
+  /** Why it is still open, the tile's red reasons item by item; null once it is not. */
+  open: "due" | "unpatched" | "partial" | "loss" | null;
+  /** Our record when one names the CVE, else NVD. */
+  href: string;
+  external: boolean;
 }
 
 export interface StackCandidate {
@@ -27,7 +47,10 @@ export interface StackCandidate {
   why: string[];
   /** KEV entries CISA added in the 7 days that belong to it: the sieve's last stage. */
   kev7: StackMatch[];
+  /** Where the tile's drawer points on: the family's product page, or CISA's catalog searched for the vendor. */
   href: string;
+  /** Every item behind `n`, open ones first, then newest first. Only in /stats/stack.json; the page's tiles leave it out. */
+  items?: StackItem[];
 }
 
 export interface StackFile {

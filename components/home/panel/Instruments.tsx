@@ -102,7 +102,27 @@ export function Latest({ rows, built }: { rows: LatestRow[]; built: string }) {
   );
 }
 
-/* ---------- Attack types ---------- */
+/* ---------- Attack types and Attack surface: two tables on one grid ---------- */
+
+/**
+ * The two side-by-side tables share one grid (label, marks, two numbers) and
+ * one row height, so their labels, bars and numbers sit on the same lines
+ * across the gutter. Both start with the same 18 px head row.
+ */
+const TABLE_COLS = "grid-cols-[minmax(0,150px)_minmax(0,1fr)_30px_30px] gap-x-2 sm:grid-cols-[minmax(0,210px)_minmax(0,1fr)_36px_36px] sm:gap-x-3";
+const TABLE_HEAD = `grid h-[18px] items-end ${TABLE_COLS} font-mono text-[12px] tracking-[0.06em] text-faint`;
+const TABLE_ROW = `grid h-[30px] items-center ${TABLE_COLS}`;
+
+function TableHead({ a, b }: { a: string; b: string }) {
+  return (
+    <li aria-hidden className={TABLE_HEAD}>
+      <span />
+      <span />
+      <span className="text-right">{a}</span>
+      <span className="text-right">{b}</span>
+    </li>
+  );
+}
 
 const TYPE_CELLS = 26;
 
@@ -111,14 +131,9 @@ export function AttackTypes({ rows }: { rows: AttackTypeRow[] }) {
   return (
     <Instrument id="types" label="Attack types" sub="incidents in the last 7 days" source="our records" caption="AI counts the incidents where AI was the target or the weapon. Disclosed CVEs without exploitation are left out.">
       <ol data-types>
-        <li aria-hidden className="grid h-[18px] grid-cols-[minmax(0,150px)_minmax(0,1fr)_28px_28px] gap-x-2 font-mono text-[11px] tracking-[0.06em] text-faint sm:grid-cols-[minmax(0,210px)_minmax(0,1fr)_32px_32px] sm:gap-x-3">
-          <span />
-          <span />
-          <span className="text-right">ALL</span>
-          <span className="text-right">AI</span>
-        </li>
+        <TableHead a="all" b="AI" />
         {rows.map((t) => (
-          <li key={t.key} data-type={t.key} data-n={t.n} data-ai={t.ai} className="grid h-[30px] grid-cols-[minmax(0,150px)_minmax(0,1fr)_28px_28px] items-center gap-x-2 sm:grid-cols-[minmax(0,210px)_minmax(0,1fr)_32px_32px] sm:gap-x-3">
+          <li key={t.key} data-type={t.key} data-n={t.n} data-ai={t.ai} className={TABLE_ROW}>
             <span className="truncate text-[13px] text-soft">{t.label}</span>
             <span className="min-w-0 overflow-hidden">
               <Cells n={Math.max(1, Math.round((t.n / max) * TYPE_CELLS))} />
@@ -132,17 +147,19 @@ export function AttackTypes({ rows }: { rows: AttackTypeRow[] }) {
   );
 }
 
-/* ---------- Attack surface ---------- */
-
 export function AttackSurface({ rows }: { rows: SurfaceRow[] }) {
   return (
-    <Instrument id="surface" label="Attack surface" sub="exploited, by technology, 90 days" source="CISA KEV" caption="One square per CVE CISA listed as exploited. Bright: listed in the last 30 days.">
+    <Instrument id="surface" label="Attack surface" sub="exploited, by technology, 90 days" source="CISA KEV" caption="One square per CVE CISA listed as exploited; bright ones were listed in the last 30 days.">
       <ol data-surface>
+        <TableHead a="90 d" b="30 d" />
         {rows.map((s) => (
-          <li key={s.label} data-tech={s.label} data-n={s.n} className="grid min-h-[30px] grid-cols-[minmax(0,130px)_minmax(0,1fr)_28px] items-center gap-x-3 py-1 sm:grid-cols-[minmax(0,190px)_minmax(0,1fr)_32px]">
+          <li key={s.label} data-tech={s.label} data-n={s.n} data-recent={s.recent} className={TABLE_ROW}>
             <span className="truncate text-[13px] text-soft">{s.label}</span>
-            <Units n={s.n} bright={s.recent} />
+            <span className="min-w-0">
+              <Units n={s.n} bright={s.recent} />
+            </span>
             <Num value={String(s.n)} className="text-right font-mono text-[13px] text-ink" />
+            <Num value={String(s.recent)} className={`text-right font-mono text-[13px] ${s.recent ? "text-accent" : "text-faint"}`} />
           </li>
         ))}
       </ol>

@@ -1,12 +1,12 @@
 import { isDisclosedIncident } from "../counting";
 import { addDays, type FullIncident } from "../lifecycle";
-import { explorerHref, productFamily } from "../products";
+import { productFamily, productIndex, productSlug } from "../products";
 import type { KevStatEntry } from "../stats-schema";
 import { techOf } from "./technology";
 import { kevName, recordCves, recordText, shortDate, slugKey } from "./util";
-import type { StackCandidate, StackFile } from "./picks";
+import { STACK_DAYS, type StackCandidate, type StackFile, type StackItem } from "./picks";
 
-export { STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stackMatches, type StackCandidate, type StackFile, type StackMatch } from "./picks";
+export { STACK_DAYS, STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stackMatches, type StackCandidate, type StackFile, type StackItem, type StackMatch } from "./picks";
 
 /**
  * My stack: products a visitor watches, each a tile with one number, the
@@ -26,7 +26,10 @@ export { STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stackMatches, typ
  *
  * The number: KEV entries in the 90 days plus our exploited records (severity
  * 3 or more, no disclosed CVEs) first reported in the 90 days, counted once
- * per CVE id; a record with no CVE id counts once.
+ * per CVE id; a record with no CVE id counts once. The tile opens exactly
+ * these items (`items`): a KEV entry links our record when one names its CVE,
+ * else NVD; a record whose CVEs are all on KEV is that entry's link, not a
+ * row of its own. Open items come first, then newest first.
  *
  * Red: a KEV deadline on or after today ("due 31 Oct"), else a live patch-lane
  * record of severity 3 or more with no patch yet or a partial one ("no patch
@@ -37,9 +40,13 @@ export { STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stackMatches, typ
  * KEV entries in the 90 days and the three AI families with the highest
  * number, at least two. Picks live in the browser (localStorage
  * STACK_STORAGE_KEY, lib/panel/picks.ts) and travel in a URL as ?stack=key,key.
+ *
+ * `href` is where the drawer points on from its list: an AI family's product
+ * page when the site has one, else CISA's catalog searched for the label. The
+ * explorer cannot stand in: its product filter is one family, and KEV entries
+ * are not records.
  */
 
-export const STACK_DAYS = 90;
 export const STACK_DEFAULT_VENDORS = 5;
 export const STACK_DEFAULT_AI = 3;
 export const STACK_AI_MIN = 2;
@@ -84,6 +91,29 @@ function familyMember(family: string): Member {
   };
 }
 
+export function kevCatalogHref(label: string): string {
+  return `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${encodeURIComponent(label)}`;
+}
+
+/** Why an exploited record is still open, by the tile's rule; null when it is closed or nothing is pending. */
+function openOf(i: FullIncident): StackItem["open"] {
+  if (i.state !== "live" || i.severity < 3) return null;
+  if (i.severity >= 4) return "loss";
+  if (i.lane === "patch" && (i.patch_status === "unpatched" || i.patch_status === "partial")) return i.patch_status;
+  return null;
+}
+
+/** Open items first (deadlines nearest first), then newest first. */
+function sortItems(items: StackItem[]): StackItem[] {
+  const rank = (x: StackItem) => (x.open ? 0 : 1);
+  return items.sort((a, b) => rank(a) - rank(b) || (a.open === "due" && b.open === "due" ? a.due!.localeCompare(b.due!) : 0) || b.date.localeCompare(a.date) || a.name.localeCompare(b.name));
+}
+
+/** A candidate as the page's tile: everything but the item list, which the browser fetches from the file when a tile opens. */
+export function tileOf(c: StackCandidate): StackCandidate {
+  return { key: c.key, label: c.label, kind: c.kind, n: c.n, flag: c.flag, why: c.why, kev7: c.kev7, href: c.href };
+}
+
 export function buildStack(incidents: readonly FullIncident[], kev: readonly KevStatEntry[], today: string, nowIso: string): StackFile {
   const from = addDays(today, -STACK_DAYS);
   const weekFrom = addDays(today, -7);
@@ -92,6 +122,9 @@ export function buildStack(incidents: readonly FullIncident[], kev: readonly Kev
   const ahead = kev.filter((e) => e.due !== null && e.due >= today);
   const exploited90 = incidents.filter((i) => i.severity >= 3 && !isDisclosedIncident(i) && i.first_reported > from && i.first_reported <= today);
   const live = incidents.filter((i) => i.state === "live" && i.severity >= 3);
+  const slugByCve = new Map<string, string>();
+  for (const i of incidents) for (const c of recordCves(i)) if (!slugByCve.has(c)) slugByCve.set(c, i.slug);
+  const productPages = new Set(productIndex(incidents).map((p) => p.slug));
 
   // the candidates
   const vendorKevCount = new Map<string, number>();
@@ -116,12 +149,28 @@ export function buildStack(incidents: readonly FullIncident[], kev: readonly Kev
     if (!key) continue;
     const mine = kev90.filter(member.kev);
     const seen = new Set(mine.map((e) => e.cve));
-    let n = mine.length;
+    const items: StackItem[] = mine.map((e) => {
+      const slug = slugByCve.get(e.cve);
+      return {
+        kind: "kev",
+        name: kevName(e.vendor, e.product),
+        cves: [e.cve],
+        date: e.added,
+        due: e.due,
+        cvss: e.cvss,
+        open: e.due !== null && e.due >= today ? "due" : null,
+        href: slug ? `/incidents/${slug}` : `https://nvd.nist.gov/vuln/detail/${e.cve}`,
+        external: !slug,
+      };
+    });
     for (const i of exploited90.filter(member.record)) {
       const ids = recordCves(i);
-      if (ids.length === 0 || ids.some((c) => !seen.has(c))) n += 1;
+      if (ids.length === 0 || ids.some((c) => !seen.has(c))) {
+        items.push({ kind: "record", name: i.title, cves: ids.sort(), date: i.first_reported, due: null, cvss: i.cvss, open: openOf(i), href: `/incidents/${i.slug}`, external: false });
+      }
       for (const c of ids) seen.add(c);
     }
+    const n = items.length;
     const why: string[] = [];
     let flag: string | null = null;
     const due = ahead.filter(member.kev).map((e) => e.due!).sort()[0];
@@ -143,7 +192,8 @@ export function buildStack(incidents: readonly FullIncident[], kev: readonly Kev
       flag,
       why,
       kev7: kev7.filter(member.kev).map((e) => ({ name: kevName(e.vendor, e.product), cve: e.cve, due: e.due })),
-      href: explorerHref(label),
+      href: kind === "ai" && productPages.has(productSlug(label)) ? `/products/${productSlug(label)}` : kevCatalogHref(label),
+      items: sortItems(items),
     });
   }
   candidates.sort((a, b) => b.n - a.n || a.label.localeCompare(b.label));

@@ -4,7 +4,7 @@ import { buildActNow, buildLatest, type ActNow, type LatestRow } from "./act";
 import { buildAiFlow, type AiFlow } from "./ai-flow";
 import { buildAttackTypes, weekIncidents, type AttackTypeRow } from "./attack-types";
 import { bandOf, levelOf, ratioLevel, type Band, type Level } from "./levels";
-import { buildStack, stackMatches, type StackCandidate, type StackFile, type StackMatch } from "./stack";
+import { buildStack, stackMatches, tileOf, type StackCandidate, type StackFile, type StackMatch } from "./stack";
 import { buildSurface, type SurfaceRow } from "./technology";
 import { DAY_MS } from "./util";
 
@@ -158,7 +158,7 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
       aiWeek: ai.target.n + ai.weapon.n,
       incidentsWeek: ai.total,
     },
-    stack: { tiles: stackFile.default.map((k) => stackFile.candidates.find((x) => x.key === k)!), default: stackFile.default },
+    stack: { tiles: stackFile.default.map((k) => tileOf(stackFile.candidates.find((x) => x.key === k)!)), default: stackFile.default },
     act,
     latest: buildLatest(incidents, nowIso),
     types: buildAttackTypes(week).filter((t) => t.key !== "other" || t.n > 0),
@@ -181,7 +181,7 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
 
 export { LEVEL_WORDS } from "./levels";
 export type { Level } from "./levels";
-export type { StackCandidate, StackFile, StackMatch } from "./stack";
+export type { StackCandidate, StackFile, StackItem, StackMatch } from "./stack";
 export type { ActRow, LatestRow } from "./act";
 export type { AttackTypeRow } from "./attack-types";
 export type { SurfaceRow } from "./technology";
