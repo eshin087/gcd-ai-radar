@@ -3,8 +3,8 @@
  * Checks the home page and the web half of /trends in a real browser against
  * the files they were built from.
  *
- * The home page (the instrument panel, lib/panel): the verdict's numbers and
- * level equal /stats/panel.json and /stats/home.json; My stack shows the
+ * The home page (the instrument panel, lib/panel): the hero's three numbers
+ * equal /stats/panel.json and /stats/home.json; My stack shows the
  * default tiles with red flags only where the rule put them, a tile opens
  * the list it counts, and a ?stack=
  * link applies, stores and recomputes the picks; Act now and Latest show
@@ -12,7 +12,8 @@
  * draw one cell or square per count; the AI flow draws ceil(n / 2) ribbons
  * per role inside its box, and the weak link one square per CVE with the
  * exploited ones red; the sieve's stages match and open their lists; the
- * hero cluster beside the globe shows and draws the counters' numbers; motion
+ * hero's exploited-this-week numeral is the KEV counter, draws, lists the
+ * week's newest entries and opens the week's list; motion
  * is off under reduced motion; the HTML stays under its budget; nothing
  * scrolls sideways on a phone. These loads block the Worker, so the page
  * reads as built; one more load lets it through and expects either the live
@@ -105,14 +106,12 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   }
 
   // the verdict
-  const v = await evaluate(client, `(() => { const p = document.querySelector('[data-verdict]'); return p && { level: Number(p.dataset.level), cves: p.dataset.cves === "" ? null : Number(p.dataset.cves), kev: Number(p.dataset.kev), stack: Number(p.dataset.stackMatch), noPatch: Number(p.dataset.noPatch), text: p.textContent }; })()`);
+  const v = await evaluate(client, `(() => { const p = document.querySelector('[data-verdict]'); return p && { cves: p.dataset.cves === "" ? null : Number(p.dataset.cves), stack: Number(p.dataset.stackMatch), noPatch: Number(p.dataset.noPatch), text: p.textContent }; })()`);
   check("verdict shows", Boolean(v), v?.text.slice(0, 80));
-  check("verdict level", v?.level === panel.verdict.level, `page ${v?.level}, panel.json ${panel.verdict.level}`);
   check("verdict CVEs are the 24 h counter", v?.cves === home.counters.cves_24h, `page ${v?.cves}, home.json ${home.counters.cves_24h}`);
-  check("verdict KEV is the 7-day counter", v?.kev === (home.counters.kev_7d ?? 0), `page ${v?.kev}, home.json ${home.counters.kev_7d}`);
   check("verdict no-patch count", v?.noPatch === panel.verdict.noFullPatch, `page ${v?.noPatch}, panel.json ${panel.verdict.noFullPatch}`);
   check("verdict stack count", v?.stack === panel.verdict.inStack, `page ${v?.stack}, panel.json ${panel.verdict.inStack}`);
-  check("verdict reads its numbers", v?.text.includes(`${home.counters.cves_24h?.toLocaleString("en-US")} new CVEs`) && v?.text.includes(`AI in ${panel.verdict.aiWeek} of this week`), v?.text.slice(0, 160));
+  check("verdict reads its numbers", v?.text.includes(`${home.counters.cves_24h?.toLocaleString("en-US")}new CVEs in 24 h`) && v?.text.includes(`${panel.verdict.noFullPatch.toLocaleString("en-US")}exploited, no full patch`) && v?.text.includes("hit your stack this week"), v?.text.slice(0, 160));
 
   // My stack: the default tiles, red only where the rule says
   const tiles = await evaluate(client, `[...document.querySelectorAll('[data-stack-tile]')].map((t) => ({ key: t.dataset.stackTile, n: Number(t.dataset.n), flag: t.dataset.flag, shown: t.querySelector('[data-num]')?.textContent, red: Boolean(t.querySelector('.ascii-pulse')) }))`);
@@ -186,24 +185,24 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   const foot = await evaluate(client, `[...document.querySelectorAll('[data-panel-foot] a')].map((a) => a.getAttribute('href'))`);
   check("footer links", ["/feed.xml", "/feed.json", "/changes.json", "/llms.txt", "/live.json", "/stats/home.json", "/data", "/live"].every((h) => foot.includes(h)), `${foot.length} links`);
 
-  // the hero cluster beside the globe: the counters' numbers, drawn
-  const cl = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-tile][data-value]')].map((e) => [e.dataset.tile, { value: e.dataset.value === "" ? null : Number(e.dataset.value), w: e.getBoundingClientRect().width }]))`);
-  check("hero cluster shows four tiles", ["due", "open", "cves", "breached"].every((k) => cl[k]?.w > 100), JSON.stringify(Object.fromEntries(Object.entries(cl).map(([k, t]) => [k, Math.round(t.w)]))));
-  check("cluster New CVEs is the 24 h counter", cl.cves?.value === home.counters.cves_24h, `tile ${cl.cves?.value}, home.json ${home.counters.cves_24h}`);
-  check("cluster Breached is the accounts counter", cl.breached?.value === home.counters.breached_accounts_month, `tile ${cl.breached?.value}, home.json ${home.counters.breached_accounts_month}`);
-  await sleep(2500);
+  // the hero's middle: this week's KEV additions as a dot-matrix numeral, the newest three under it
+  const ex = await evaluate(client, `(() => { const e = document.querySelector('[data-exploited]'); return e && { value: e.dataset.value === "" ? null : Number(e.dataset.value), rows: [...e.querySelectorAll('[data-kev-row]')].map((r) => r.dataset.kevRow), w: e.getBoundingClientRect().width }; })()`);
+  check("hero exploited is the 7-day KEV counter", ex?.value === home.counters.kev_7d && ex.w > 200, `page ${ex?.value} (${Math.round(ex?.w ?? 0)} px), home.json ${home.counters.kev_7d}`);
+  const newest = panel.sieve.exploitedEntries.slice(0, 3).map((e) => e.cve);
+  check("hero exploited lists the week's newest three", ex?.rows.join(",") === newest.join(","), `page ${ex?.rows.join(",")}, panel.json ${newest.join(",")}`);
+  await sleep(1500);
   const inked = await evaluate(client, `(() => {
-    const c = document.querySelector('[data-tile="due"]')?.parentElement?.parentElement?.querySelector("canvas");
+    const c = document.querySelector('[data-exploited] canvas');
     if (!c || !c.width) return 0;
     const px = c.getContext("2d").getImageData(0, 0, c.width, c.height).data;
     let n = 0;
-    for (let i = 3; i < px.length; i += 4) if (px[i] > 40) n++;
+    for (let i = 3; i < px.length; i += 4) if (px[i] > 200) n++;
     return n;
   })()`);
-  check("hero cluster draws", inked > 2000, `${inked} inked pixels`);
-  if (home.counters.breaches_month !== null) {
-    const r = await openAndRead(client, `[data-tile="breached"]`);
-    check("cluster Breached opens the month's breaches", r.count === home.counters.breaches_month && r.listed && r.rows === Math.min(home.counters.breaches_month, LIST_CAP) && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${home.counters.breaches_month}`);
+  check("hero exploited numeral draws", home.counters.kev_7d === null || inked > 400, `${inked} inked pixels`);
+  if (home.counters.kev_7d) {
+    const r = await openAndRead(client, "[data-exploited] button");
+    check("hero exploited opens the week's list", r.count === home.counters.kev_7d && r.listed && r.rows === Math.min(home.counters.kev_7d, LIST_CAP) && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${home.counters.kev_7d}`);
   }
 
   // a shared stack link applies, stores and recomputes
