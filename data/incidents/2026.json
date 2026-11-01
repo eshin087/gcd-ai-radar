@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1702",
+    "slug": "canonical-lxd-and-microcloud-client-impersonation-flaw",
+    "title": "Canonical LXD and MicroCloud Client Impersonation Flaw",
+    "summary": "A critical authentication bypass flaw in Canonical LXD and MicroCloud allows attackers to impersonate trusted clients using their public certificates. Successful exploitation grants attackers full cluster and virtual machine access.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "LXD",
+      "MicroCloud"
+    ],
+    "incident_date": "2026-11-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-01",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html",
+        "publisher": "The Hacker News",
+        "title": "CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key",
+        "published_at": "2026-11-01"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "authentication-bypass",
+      "lxd",
+      "microcloud"
+    ],
+    "created_at": "2026-11-01T14:00:59.477Z",
+    "updated_at": "2026-11-01T14:00:59.477Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-01",
+        "title": "CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key",
+        "source_url": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html",
+        "added_at": "2026-11-01T14:00:59.477Z"
+      }
+    ],
+    "action": "Update LXD and MicroCloud to the latest fixed versions.",
+    "severity_note": "Critical vendor rating with fixed release available.",
+    "cvss": 10
+  },
+  {
     "id": "AIR-2026-1701",
     "slug": "brazilian-court-sanctions-lawyers-for-prompt-injection-in-fi",
     "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Filing",
@@ -2013,9 +2071,15 @@
         "publisher": "The Record",
         "title": "Hackers target government Windows systems in Asia with new malware",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/netamloader-malware-targets-government.html",
+        "publisher": "The Hacker News",
+        "title": "NetamLoader Malware Targets Government Windows 10 Systems in Asia via .NET Injection",
+        "published_at": "2026-11-01"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2026,7 +2090,7 @@
       "government-targeting"
     ],
     "created_at": "2026-10-30T13:27:13.057Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-01T14:00:59.477Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2649,9 +2713,15 @@
         "publisher": "SecurityWeek",
         "title": "$6 Billion Binance Hack Bears Hallmarks of North Korea’s TraderTraitor",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html",
+        "publisher": "The Hacker News",
+        "title": "FBI Links North Korea's TraderTraitor to Record $6.43 Billion Binance Crypto Heist",
+        "published_at": "2026-11-01"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2662,7 +2732,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-01T14:00:59.477Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2694,6 +2764,12 @@
         "title": "Investigation reveals the breach originated from a compromised DevOps engineer laptop",
         "source_url": "https://helpnetsecurity.com/2026/10/30/binance-crypto-hack",
         "added_at": "2026-10-30T13:27:13.057Z"
+      },
+      {
+        "date": "2026-11-01",
+        "title": "FBI officially attributes the record $6.43 billion Binance heist to North Korea's TraderTraitor group",
+        "source_url": "https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html",
+        "added_at": "2026-11-01T14:00:59.477Z"
       }
     ],
     "action": "",
@@ -2798,9 +2874,15 @@
         "publisher": "The Record",
         "title": "Polymarket confirms cyberattack on third-party provider after outages",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Steal About $2.7 Million From Polymarket Traders via Hijacked DebugBear Script",
+        "published_at": "2026-11-01"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2811,7 +2893,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-01T14:00:59.477Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2825,6 +2907,12 @@
         "title": "Polymarket halts trading after crypto-draining script breach, $2.5M traced",
         "source_url": "https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced",
         "added_at": "2026-10-29T23:23:38.250Z"
+      },
+      {
+        "date": "2026-11-01",
+        "title": "Polymarket confirms refunds for 726 affected wallets totaling approximately $2.7 million",
+        "source_url": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html",
+        "added_at": "2026-11-01T14:00:59.477Z"
       }
     ],
     "action": "",
