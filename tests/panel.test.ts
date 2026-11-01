@@ -4,7 +4,7 @@ import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
-import { buildStack, parsePicks, stackMatches } from "@/lib/panel/stack";
+import { buildStack, kevCatalogHref, parsePicks, stackMatches, tileOf } from "@/lib/panel/stack";
 import { buildSurface, techOf } from "@/lib/panel/technology";
 import { kevName, recordCves, shortDate, slugKey } from "@/lib/panel/util";
 import type { KevStatEntry } from "@/lib/stats-schema";
@@ -219,6 +219,25 @@ describe("my stack", () => {
     expect(tile("microsoft").n).toBe(2);
     expect(tile("citrix").n).toBe(1);
     expect(tile("litellm").n).toBe(2);
+  });
+  it("lists exactly what it counts, open items first, a KEV entry linking the record that names it", () => {
+    for (const c of file.candidates) expect(c.items).toHaveLength(c.n);
+    const ms = tile("microsoft").items!;
+    expect(ms.map((x) => x.cves[0])).toEqual(["CVE-2026-1001", "CVE-2026-1002"]);
+    expect(ms[0]).toMatchObject({ kind: "kev", name: "Microsoft Windows", date: "2026-10-01", due: "2026-10-22", open: null, external: false });
+    expect(ms[0]!.href).toMatch(/^\/incidents\/fixture-incident-\d+$/);
+    expect(ms[1]).toMatchObject({ kind: "kev", href: "https://nvd.nist.gov/vuln/detail/CVE-2026-1002", external: true });
+    expect(tile("linux").items![0]).toMatchObject({ kind: "kev", open: "due", due: "2026-10-31" });
+    expect(tile("citrix").items).toMatchObject([{ kind: "record", name: "Citrix gateway attacks", cves: [], open: "unpatched", external: false }]);
+    expect(tile("litellm").items!.map((x) => x.name)).toEqual(["LiteLLM proxy hijack", "LiteLLM key theft"]);
+    expect(tile("litellm").items!.every((x) => x.open === null)).toBe(true);
+  });
+  it("points a vendor at CISA's catalog and a family at its product page; the page's tiles carry no list", () => {
+    expect(tile("microsoft").href).toBe(kevCatalogHref("Microsoft"));
+    expect(tile("microsoft").href).toBe("https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=Microsoft");
+    expect(tile("litellm").href).toBe("/products/litellm");
+    expect("items" in tileOf(tile("microsoft"))).toBe(false);
+    expect(tileOf(tile("microsoft"))).toMatchObject({ key: "microsoft", n: 2 });
   });
   it("is red only while exploited and open", () => {
     expect(tile("microsoft").flag).toBeNull();

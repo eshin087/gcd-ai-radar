@@ -3,37 +3,153 @@
 import Link from "next/link";
 import { useId, useState } from "react";
 import { Instrument, Pulse } from "@/components/home/panel/Instrument";
+import { ScoreOrDash } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
 import { usePanelState } from "@/components/home/panel/PanelState";
 import { Drawer } from "@/components/ui/Drawer";
-import { STACK_MAX, type StackCandidate, type StackFile } from "@/lib/panel/picks";
+import { dateLabel } from "@/lib/format";
+import { STACK_DAYS, STACK_MAX, type StackCandidate, type StackFile, type StackItem } from "@/lib/panel/picks";
 
 /**
  * My stack (lib/panel/stack.ts): one tile per product, its exploitation in the
  * last 90 days, and a red flag only while something is exploited and still
- * open. "choose products" opens every candidate in a drawer; "share link"
- * copies the page's address with the picks in ?stack=, so a bookmark or a
- * teammate's link opens the same stack anywhere.
+ * open. A tile opens the list behind its number (the candidate's `items`,
+ * fetched with /stats/stack.json on first use). "choose products" opens every
+ * candidate in a drawer; "share link" copies the page's address with the
+ * picks in ?stack=, so a bookmark or a teammate's link opens the same stack
+ * anywhere.
  */
 
-function Tile({ t }: { t: StackCandidate }) {
+function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
   return (
-    <div data-stack-tile={t.key} data-flag={t.flag ?? ""} data-n={t.n} title={t.why.length ? t.why.join(" · ") : "nothing exploited and open"} className="min-w-0 border-l border-line-soft pl-3">
-      <Link href={t.href} className={`block truncate text-[13px] font-semibold hover:text-accent ${t.flag ? "text-ink" : "text-soft"}`}>
-        {t.label}
-      </Link>
+    <button
+      type="button"
+      onClick={onOpen}
+      data-stack-tile={t.key}
+      data-flag={t.flag ?? ""}
+      data-n={t.n}
+      title={t.why.length ? t.why.join(" · ") : "nothing exploited and open"}
+      aria-label={`${t.label}: ${t.n} exploited in ${STACK_DAYS} days${t.flag ? `, ${t.flag}` : ""}, open the list`}
+      className="group block w-full min-w-0 border-l border-line-soft pl-3 text-left hover:border-accent"
+    >
+      <span className={`block truncate text-[13px] font-semibold group-hover:text-accent ${t.flag ? "text-ink" : "text-soft"}`}>{t.label}</span>
       <Num value={String(t.n)} className="mt-1 block font-mono text-[28px] font-medium leading-[1.15] text-ink" />
-      <div className="mt-0.5 flex min-h-[18px] items-center gap-1.5 overflow-hidden whitespace-nowrap font-mono text-[12px] text-live">
+      <span className="mt-0.5 flex min-h-[18px] items-center gap-1.5 overflow-hidden whitespace-nowrap font-mono text-[12px] text-live">
         {t.flag && (
           <>
             <Pulse />
             <span className="truncate">{t.flag}</span>
           </>
         )}
-      </div>
-    </div>
+      </span>
+    </button>
   );
 }
+
+/* ---------- the tile's list ---------- */
+
+const OPEN_WORDS: Record<Exclude<StackItem["open"], null | "due">, { word: string; cls: string }> = {
+  unpatched: { word: "no patch yet", cls: "text-live" },
+  partial: { word: "partly patched", cls: "text-partial" },
+  loss: { word: "confirmed loss", cls: "text-live" },
+};
+
+function ItemRow({ it }: { it: StackItem }) {
+  const cls = "text-[13.5px] text-ink hover:text-accent";
+  const cve = it.cves.length > 1 ? `${it.cves[0]} +${it.cves.length - 1}` : it.cves[0];
+  return (
+    <li data-stack-item={it.kind} className="grid grid-cols-[3rem_minmax(0,1fr)] gap-3 border-t border-line-soft py-2.5 first:border-t-0">
+      <div className="pt-0.5">
+        <ScoreOrDash score={it.cvss} />
+      </div>
+      <div className="min-w-0">
+        {it.external ? (
+          <a href={it.href} target="_blank" rel="noopener noreferrer" className={cls}>
+            {it.name}
+          </a>
+        ) : (
+          <Link href={it.href} className={cls}>
+            {it.name}
+          </Link>
+        )}
+        {cve && <span className="num ml-2 text-[12px] text-dim">{cve}</span>}
+        <p className="num mt-0.5 text-[12px] text-dim">
+          {it.kind === "kev" ? "listed by CISA" : "reported"} {dateLabel(it.date)}
+          {it.due && (
+            <>
+              {" · "}
+              <span className={it.open === "due" ? "text-accent" : ""}>due {dateLabel(it.due)}</span>
+            </>
+          )}
+          {it.open && it.open !== "due" && <span className={`ml-2 ${OPEN_WORDS[it.open].cls}`}>{OPEN_WORDS[it.open].word}</span>}
+        </p>
+      </div>
+    </li>
+  );
+}
+
+/**
+ * What a tile counts, in the shared drawer shell: KEV entries CISA listed in
+ * the 90 days and our exploited records no entry stands for, open ones first.
+ * The count line starts with plain digits and the rows are `ol > li`, the
+ * contract scripts/check-home.mjs reads; the red line and the rows appear
+ * together once the file is in.
+ */
+function StackDrawer({ cand, file, onClose }: { cand: StackCandidate | null; file: StackFile | null; onClose: () => void }) {
+  const titleId = useId();
+  if (!cand) return null;
+  const items = file?.candidates.find((c) => c.key === cand.key)?.items ?? null;
+  const kevN = items ? items.filter((x) => x.kind === "kev").length : 0;
+  const external = cand.href.startsWith("http");
+  return (
+    <Drawer
+      open
+      onClose={onClose}
+      titleId={titleId}
+      kicker={`My stack · exploited in the last ${STACK_DAYS} days`}
+      footerLink={{ href: cand.href, label: external ? "CISA’s catalog →" : "product page →", external }}
+      closeLabel="Close the list"
+    >
+      <header className="space-y-1">
+        <h2 id={titleId} className="text-[18px] font-semibold leading-tight tracking-tight text-ink">
+          {cand.label}
+        </h2>
+        <p className="num text-[13px] text-dim">
+          {String(cand.n)} exploited in {STACK_DAYS} days
+          {items && (
+            <>
+              {" · "}
+              {kevN} on CISA’s list · {items.length - kevN} in our records
+            </>
+          )}
+        </p>
+      </header>
+      {!items ? (
+        <p className="text-[13px] text-dim">Loading…</p>
+      ) : (
+        <>
+          {cand.why.length > 0 && (
+            <p className="flex items-center gap-2 font-mono text-[12px] text-live">
+              <Pulse />
+              <span>red: {cand.why.join(" · ")}</span>
+            </p>
+          )}
+          {items.length === 0 ? (
+            <p className="text-[13px] text-dim">Nothing exploited in the last {STACK_DAYS} days.</p>
+          ) : (
+            <ol className="border-y border-line-soft">
+              {items.map((it, i) => (
+                <ItemRow key={`${it.kind}-${it.cves[0] ?? it.href}-${i}`} it={it} />
+              ))}
+            </ol>
+          )}
+        </>
+      )}
+    </Drawer>
+  );
+}
+
+/* ---------- choosing products ---------- */
 
 function Chooser({ open, onClose, file, picks, onChange, onReset }: { open: boolean; onClose: () => void; file: StackFile | null; picks: string[]; onChange: (key: string, on: boolean) => void; onReset: () => void }) {
   const titleId = useId();
@@ -100,10 +216,15 @@ function Chooser({ open, onClose, file, picks, onChange, onReset }: { open: bool
 export function MyStack() {
   const { tiles, picks, isDefault, ready, file, loadFile, setPicks } = usePanelState();
   const [open, setOpen] = useState(false);
+  const [shown, setShown] = useState<StackCandidate | null>(null);
   const [copied, setCopied] = useState<"" | "copied" | "in the address bar">("");
 
   const choose = async () => {
     setOpen(true);
+    await loadFile();
+  };
+  const show = async (t: StackCandidate) => {
+    setShown(t);
     await loadFile();
   };
   const share = async () => {
@@ -138,7 +259,7 @@ export function MyStack() {
       }
       caption={
         <>
-          Red: exploited and still open, meaning a CISA deadline ahead, no full patch, or confirmed loss.{" "}
+          Red: exploited and still open, meaning a CISA deadline ahead, no full patch, or confirmed loss. A tile opens its list.{" "}
           {isDefault ? "Until you choose, these are the most-exploited vendors and AI products." : "Your choice stays in this browser."} The share link carries it to any device or teammate.
         </>
       }
@@ -146,10 +267,11 @@ export function MyStack() {
       <div className="overflow-hidden">
         <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="-ml-3 grid grid-cols-2 gap-y-4 sm:grid-cols-4 xl:grid-cols-8">
           {tiles.map((t) => (
-            <Tile key={t.key} t={t} />
+            <Tile key={t.key} t={t} onOpen={() => show(t)} />
           ))}
         </div>
       </div>
+      <StackDrawer cand={shown} file={file} onClose={() => setShown(null)} />
       <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} onChange={change} onReset={() => setPicks([])} />
     </Instrument>
   );

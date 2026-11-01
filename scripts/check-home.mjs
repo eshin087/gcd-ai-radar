@@ -5,7 +5,8 @@
  *
  * The home page (the instrument panel, lib/panel): the verdict's numbers and
  * level equal /stats/panel.json and /stats/home.json; My stack shows the
- * default tiles with red flags only where the rule put them, and a ?stack=
+ * default tiles with red flags only where the rule put them, a tile opens
+ * the list it counts, and a ?stack=
  * link applies, stores and recomputes the picks; Act now and Latest show
  * their rows and the deadlines tick; attack types and the attack surface
  * draw one cell or square per count; the AI flow draws ceil(n / 2) ribbons
@@ -105,6 +106,13 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   for (const t of panel.stack.tiles) {
     const p = tiles.find((x) => x.key === t.key);
     check(`stack tile ${t.key}`, p && p.n === t.n && num(p.shown) === t.n && p.flag === (t.flag ?? "") && p.red === Boolean(t.flag), `page n ${p?.n} shown ${p?.shown} flag "${p?.flag}", panel.json n ${t.n} flag "${t.flag ?? ""}"`);
+  }
+
+  // a tile opens the list it counts, with as many rows as its number
+  {
+    const t = panel.stack.tiles[0];
+    const r = await openAndRead(client, "[data-stack-tile]", 0);
+    check("a stack tile opens its list", r.count === t.n && r.rows === t.n && r.closed, `count line "${r.head?.slice(0, 48)}", ${r.rows} rows, tile n ${t.n}`);
   }
 
   // Act now and Latest

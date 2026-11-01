@@ -415,8 +415,9 @@ export default function MethodologyPage() {
           VPN, remote access and IT tools, operating systems, browsers, enterprise and web apps, OT and IoT, other.
         </li>
         <li>
-          <strong>My stack</strong> counts, per product, KEV entries and our exploited records of the last 90 days, once per CVE. A tile turns red only while
-          something is exploited and open: a KEV deadline ahead, no full patch, or confirmed loss. Your picks stay in your browser.
+          <strong>My stack</strong> counts, per product, KEV entries and our exploited records of the last 90 days, once per CVE; a tile opens that
+          list. A tile turns red only while something is exploited and open: a KEV deadline ahead, no full patch, or confirmed loss. Your picks stay in
+          your browser.
         </li>
         <li>
           <strong>How AI shows up</strong> splits the week&rsquo;s incidents by AI role. It shows counts, never a share over time: until 19 October 2026 the
