@@ -1,0 +1,162 @@
+{
+  "week": "2026-W44",
+  "start": "2026-10-26",
+  "end": "2026-11-01",
+  "counts": {
+    "records": 94,
+    "incidents": 52,
+    "real_world": 10,
+    "disclosed_vulnerabilities": 42,
+    "by_type": {
+      "attack_on_ai": 40,
+      "ai_enabled_attack": 12
+    },
+    "by_family": {
+      "injection": 13,
+      "infra": 0,
+      "exposure": 8,
+      "agent": 10,
+      "supply": 8,
+      "social": 1,
+      "offense": 11,
+      "other": 1
+    },
+    "by_severity": {
+      "1": 41,
+      "2": 1,
+      "3": 7,
+      "4": 3
+    }
+  },
+  "previous": {
+    "week": "2026-W43",
+    "incidents": 71,
+    "real_world": 23,
+    "disclosed_vulnerabilities": 43
+  },
+  "deltas": {
+    "incidents": {
+      "now": 52,
+      "before": 71,
+      "change": -19,
+      "pct": -26.76056338028169
+    },
+    "real_world": {
+      "now": 10,
+      "before": 23,
+      "change": -13,
+      "pct": -56.52173913043478
+    },
+    "disclosed_vulnerabilities": {
+      "now": 42,
+      "before": 43,
+      "change": -1,
+      "pct": -2.3255813953488373
+    }
+  },
+  "busiest_family": {
+    "family": "injection",
+    "count": 13
+  },
+  "top_targets": [
+    {
+      "target": "framework_or_tooling",
+      "count": 22
+    },
+    {
+      "target": "open_weight_model",
+      "count": 12
+    },
+    {
+      "target": "enterprise_deployment",
+      "count": 9
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-1697",
+      "slug": "chainalysis-discloses-internal-breach-and-customer-data-expo",
+      "title": "Chainalysis Discloses Internal Breach and Customer Data Exposure",
+      "type": "attack_on_ai",
+      "category": "agent_hijack",
+      "family": "agent",
+      "severity": 4,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-10-31",
+      "source_count": 3
+    },
+    {
+      "id": "AIR-2026-1701",
+      "slug": "brazilian-court-sanctions-lawyers-for-prompt-injection-in-fi",
+      "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Filing",
+      "type": "attack_on_ai",
+      "category": "prompt_injection",
+      "family": "injection",
+      "severity": 4,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-11-01",
+      "source_count": 2
+    },
+    {
+      "id": "AIR-2026-1700",
+      "slug": "northflank-security-breach-leads-to-unauthorized-use-of-ai-a",
+      "title": "Northflank security breach leads to unauthorized use of AI API keys",
+      "type": "attack_on_ai",
+      "category": "data_leak",
+      "family": "exposure",
+      "severity": 4,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-10-31",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1664",
+      "slug": "claude-code-extension-poisoned-with-persistent-ssh-backdoor",
+      "title": "Claude Code extension poisoned with persistent SSH backdoor",
+      "type": "attack_on_ai",
+      "category": "supply_chain",
+      "family": "supply",
+      "severity": 3,
+      "targets": [
+        "Anthropic",
+        "framework_or_tooling"
+      ],
+      "first_reported": "2026-10-30",
+      "source_count": 4
+    },
+    {
+      "id": "AIR-2026-1679",
+      "slug": "vapor-panda-uses-agentic-ai-pentesting-tool-in-multi-target",
+      "title": "Vapor Panda uses agentic AI pentesting tool in multi-target campaign",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "n/a"
+      ],
+      "first_reported": "2026-10-30",
+      "source_count": 1
+    }
+  ],
+  "generated_at": "2026-11-02T16:38:07.717Z",
+  "narrative": {
+    "headline": "Chainalysis breach and Claude Code extension poisoning highlight AI supply chain attacks",
+    "text": "The week had 52 incidents, down 19 from 71, including 10 real-world incidents, down 13 from 23. Notable incidents included blockchain analysis firm Chainalysis suffering a security breach where an external actor accessed non-sensitive customer data using agentic techniques. In Brazil, lawyers were sanctioned after inserting hidden text into a court document to manipulate an AI system. Cloud hosting platform Northflank had stored secrets accessed, leading to unauthorized use of AI API keys. Additionally, a tampered build of Anthropic’s Claude Code extension planted an SSH backdoor on developers’ machines, and a China-backed threat group compromised targets using an agentic AI pentesting tool. A crypto-mining campaign also returned to Hugging Face by distributing backdoored models, while infostealer malware targeted developer keyrings and AI assistant sessions. The busiest family was Prompt injection & jailbreaks with 13 occurrences, and the most-listed targets were Framework / tooling, Open-weight model, and Enterprise deployment. The week also had 42 disclosed vulnerabilities, down 1 from 43.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-11-02T16:38:07.717Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 2127,
+    "incidents": 531,
+    "last_collector_run": "2026-11-02T11:35:38.133Z"
+  }
+}
