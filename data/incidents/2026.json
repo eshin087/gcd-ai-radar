@@ -1,5 +1,1092 @@
 [
   {
+    "id": "AIR-2026-1722",
+    "slug": "revolve-data-breach-impacts-at-least-180-000-people",
+    "title": "Revolve Data Breach Impacts at Least 180,000 People",
+    "summary": "Threat actors gained unauthorized access to Revolve's online shopping platform and stole personal and payment card data belonging to customers. The incident has impacted at least 180,000 individuals.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Revolve online shopping platform"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://securityweek.com/revolve-data-breach-impacts-at-least-180000-people",
+        "publisher": "SecurityWeek",
+        "title": "Revolve Data Breach Impacts at Least 180,000 People",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "revolve",
+      "data-breach",
+      "pii",
+      "payment-card-theft"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Revolve online shopping platform"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Revolve Data Breach Impacts at Least 180,000 People",
+        "source_url": "https://securityweek.com/revolve-data-breach-impacts-at-least-180000-people",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PII and payment card breach affecting 180,000 people.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1721",
+    "slug": "hackers-hijack-emergency-apps-to-spread-fake-nuclear-attack",
+    "title": "Hackers Hijack Emergency Apps to Spread Fake Nuclear Attack Warnings",
+    "summary": "A popular Ukrainian air raid alert system was compromised, leading to a retaliatory breach against a similar Russian system by opposing hackers. The attackers used the emergency applications to broadcast fake nuclear attack warnings.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Air Raid Alert System"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://therecord.media/ukraine-hackers-russia-alert-system",
+        "publisher": "The Record",
+        "title": "Russian and Ukrainian hackers hijack emergency apps to spread fake nuclear attack warnings",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "russia",
+      "ukraine",
+      "emergency-apps",
+      "defacement"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Ukrainian air raid alert system",
+      "Russian alert system"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Russian and Ukrainian hackers hijack emergency apps to spread fake nuclear attack warnings",
+        "source_url": "https://therecord.media/ukraine-hackers-russia-alert-system",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed intrusion and disruption of critical public alert infrastructure.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1720",
+    "slug": "synology-warns-of-c3rb3r-ransomware-attacks-targeting-nas-de",
+    "title": "Synology Warns of C3RB3R Ransomware Attacks Targeting NAS Devices",
+    "summary": "Synology issued an urgent warning to customers regarding a surge in C3RB3r ransomware attacks hitting its network-attached storage devices. Users are advised to update their systems immediately to prevent exploitation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Synology NAS"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/synology-warns-customers-of-ongoing-c3rb3r-ransomware-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Synology warns of C3RB3R ransomware attacks targeting NAS devices",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "synology",
+      "ransomware",
+      "c3rb3r",
+      "nas"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Synology NAS"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Synology warns of C3RB3R ransomware attacks targeting NAS devices",
+        "source_url": "https://bleepingcomputer.com/news/security/synology-warns-customers-of-ongoing-c3rb3r-ransomware-attacks",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "Update your Synology NAS devices immediately.",
+    "severity_note": "Confirmed real-world ransomware attacks in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1719",
+    "slug": "paprat-cyber-espionage-campaign-targets-south-asia",
+    "title": "PapRAT Cyber-Espionage Campaign Targets South Asia",
+    "summary": "An India-linked threat group is conducting cyber-espionage operations against organizations in South Asia. The attackers utilize legitimate Windows functionality across three distinct attack chains to maintain persistence and gather intelligence.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PapRAT"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/paprat-cyberespionage-campaign-bitter-south-asia",
+        "publisher": "Dark Reading",
+        "title": "PapRAT Cyber-Espionage Campaign Leaves a 'Bitter' Taste in South Asia",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "paprat",
+      "windows",
+      "south-asia"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "PapRAT Cyber-Espionage Campaign Leaves a 'Bitter' Taste in South Asia",
+        "source_url": "https://darkreading.com/cyberattacks-data-breaches/paprat-cyberespionage-campaign-bitter-south-asia",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed targeted cyber-espionage campaign in the wild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1718",
+    "slug": "russia-s-statistics-agency-confirms-cyberattack-and-data-the",
+    "title": "Russia's Statistics Agency Confirms Cyberattack and Data Theft",
+    "summary": "An alliance of Belarusian and pro-Ukrainian hackers compromised Russia's federal statistics agency, Rosstat. The attackers claimed to have taken down the agency and stolen government data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Rosstat"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://therecord.media/hackers-ukraine-belarus-russia",
+        "publisher": "The Record",
+        "title": "Russia's statistics agency confirms cyberattack claimed by Belarusian and Ukrainian hackers",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rosstat",
+      "data-theft",
+      "hacktivism",
+      "russia"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Russia's statistics agency confirms cyberattack claimed by Belarusian and Ukrainian hackers",
+        "source_url": "https://therecord.media/hackers-ukraine-belarus-russia",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberattack and data theft at a national statistics agency.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1717",
+    "slug": "btcpay-server-warns-of-hot-wallet-crypto-thefts-on-outdated",
+    "title": "BTCPay Server Warns of Hot Wallet Crypto Thefts on Outdated Instances",
+    "summary": "The maintainer of BTCPay Server urged users to update after hackers drained hot wallets on outdated instances. Users running older versions are advised to upgrade immediately.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "BTCPay Server"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/btcpay-server-warns-of-hot-wallet-thefts-targeting-outdated-instances",
+        "publisher": "BleepingComputer",
+        "title": "BTCPay Server warns of hot wallet crypto thefts on outdated instances",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "btcpay-server",
+      "crypto",
+      "hot-wallets",
+      "exploitation"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "BTCPay Server older versions"
+    ],
+    "fixed_in": [
+      "latest version"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "BTCPay Server warns of hot wallet crypto thefts on outdated instances",
+        "source_url": "https://bleepingcomputer.com/news/security/btcpay-server-warns-of-hot-wallet-thefts-targeting-outdated-instances",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "Install the latest version of BTCPay Server.",
+    "severity_note": "Active exploitation resulting in hot wallet theft.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1716",
+    "slug": "michigan-state-cyber-incident-claimed-by-ransomware-gang",
+    "title": "Michigan State Cyber Incident Claimed by Ransomware Gang",
+    "summary": "The BYOD ransomware gang claimed responsibility for a security incident at Michigan State University. The attack prompted campus-wide action following similar activity against other universities.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Michigan State University network"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://therecord.media/michigan-state-university-byod-gang-cyber-incident",
+        "publisher": "The Record",
+        "title": "Michigan State cyber incident claimed by ransomware gang behind recent hospital attack",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "byod",
+      "michigan-state-university"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Michigan State cyber incident claimed by ransomware gang behind recent hospital attack",
+        "source_url": "https://therecord.media/michigan-state-university-byod-gang-cyber-incident",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed ransomware intrusion at a named educational institution.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1715",
+    "slug": "google-disrupts-1-3-million-device-android-botnet-linked-to",
+    "title": "Google Disrupts 1.3 Million-Device Android Botnet Linked to TV Box Maker",
+    "summary": "Google successfully disrupted a 1.3 million-device Android botnet operating primarily on TV set-top boxes. Investigators attribute the botnet to device maker Videostrong, which allegedly integrated backdoors to sell unauthorized network access.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Videostrong Android TV boxes"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/google-disrupts-13-million-device.html",
+        "publisher": "The Hacker News",
+        "title": "Google Disrupts 1.3 Million-Device Android Botnet, Says TV Box Maker Sold Criminal Access",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "botnet",
+      "android",
+      "videostrong",
+      "backdoor"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Google Disrupts 1.3 Million-Device Android Botnet, Says TV Box Maker Sold Criminal Access",
+        "source_url": "https://thehackernews.com/2026/11/google-disrupts-13-million-device.html",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed large-scale botnet takedown involving compromised hardware.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1714",
+    "slug": "government-linux-servers-targeted-with-sysgorat-and-suspecte",
+    "title": "Government Linux Servers Targeted With SysGoRAT and Suspected AI Scripts",
+    "summary": "Researchers uncovered a cyber espionage campaign targeting government Linux infrastructure using SysGoRAT and suspected AI-generated scripts. The activity was tracked between October 2025 and April 2026 by Unit 42.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_generated_malware"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SysGoRAT"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/government-linux-servers-targeted-with.html",
+        "publisher": "The Hacker News",
+        "title": "Government Linux Servers Targeted With SysGoRAT and Suspected AI-Generated Scripts",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sysgorat",
+      "linux",
+      "espionage",
+      "cl-unk-1211"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Government Linux Servers Targeted With SysGoRAT and Suspected AI-Generated Scripts",
+        "source_url": "https://thehackernews.com/2026/11/government-linux-servers-targeted-with.html",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research disclosure of a targeted espionage campaign.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1713",
+    "slug": "darkblinders-compromises-israeli-and-iraqi-kurdish-targets",
+    "title": "DarkBlinders compromises Israeli and Iraqi Kurdish targets",
+    "summary": "An Iran state-aligned threat group conducted an espionage campaign between August and October 2026, compromising a high-profile individual in Israel and a government cloud environment in the Kurdistan Region of Iraq. Dream Research Labs disclosed the intrusions.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "DarkBlinders"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/darkblinders-compromises-israeli-target.html",
+        "publisher": "The Hacker News",
+        "title": "DarkBlinders Compromises Israeli Target and Iraqi Kurdish Government Cloud Environment",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "darkblinders",
+      "cloud",
+      "iran"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "DarkBlinders Compromises Israeli Target and Iraqi Kurdish Government Cloud Environment",
+        "source_url": "https://thehackernews.com/2026/11/darkblinders-compromises-israeli-target.html",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyber espionage breach against government and prominent targets.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1712",
+    "slug": "google-disrupts-xcpe-botnet-and-bans-videostrong-technology",
+    "title": "Google disrupts XCPE botnet and bans Videostrong Technology",
+    "summary": "Google dismantled the infrastructure of the XCPE botnet, which infected over 1.3 million Android TV set-top boxes via embedded firmware backdoors. The hardware manufacturer allegedly sold unauthorized access to criminal affiliates.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "XCPE malware",
+      "Android TV set-top boxes"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/xcpe-botnet-android-backdoor",
+        "publisher": "Help Net Security",
+        "title": "Google disrupts XCPE botnet, bans the company behind it",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/google-disrupts-million-device-xcpe-android-malware-botnet-bans-tv-box-maker",
+        "publisher": "BleepingComputer",
+        "title": "Google disrupts million-device XCPE Android malware botnet, bans TV box maker",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "botnet",
+      "backdoor",
+      "android",
+      "firmware"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Google disrupts XCPE botnet, bans the company behind it",
+        "source_url": "https://helpnetsecurity.com/2026/11/02/xcpe-botnet-android-backdoor",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Google disrupts million-device XCPE Android malware botnet, bans TV box maker",
+        "source_url": "https://bleepingcomputer.com/news/security/google-disrupts-million-device-xcpe-android-malware-botnet-bans-tv-box-maker",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed compromise of over 1.3 million devices.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1711",
+    "slug": "second-wave-of-refrigeration-cyberattacks-hits-european-supe",
+    "title": "Second wave of refrigeration cyberattacks hits European supermarkets",
+    "summary": "Attackers remotely switched refrigeration units to defrost mode across multiple European supermarket chains, causing widespread food spoilage. The incident follows a similar wave of attacks in France weeks prior.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "refrigeration units"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/european-supermarkets-refrigeration-units-cyberattacks",
+        "publisher": "Help Net Security",
+        "title": "Second wave of refrigeration cyberattacks hits European supermarkets",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-disrupt-refrigeration-systems-at-european-supermarkets",
+        "publisher": "BleepingComputer",
+        "title": "Hackers disrupt refrigeration systems at European supermarkets",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sabotage",
+      "iot",
+      "supermarkets",
+      "refrigeration"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Second wave of refrigeration cyberattacks hits European supermarkets",
+        "source_url": "https://helpnetsecurity.com/2026/11/02/european-supermarkets-refrigeration-units-cyberattacks",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Hackers disrupt refrigeration systems at European supermarkets",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-disrupt-refrigeration-systems-at-european-supermarkets",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world operational disruption and food spoilage.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1710",
+    "slug": "accept-changes-reject-attacks-robust-memory-management-for-l",
+    "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+    "summary": "Researchers explore memory poisoning and outdated memory vulnerabilities in long-term memory management systems for LLM agents. The study demonstrates how planted passages and injected instructions can compromise agent memory integrity.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Agent Memory Managers"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.41056",
+        "publisher": "arXiv",
+        "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "memory-poisoning",
+      "llm-agents",
+      "adversarial-attack"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+        "source_url": "https://arxiv.org/abs/2610.41056",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating memory poisoning attacks against LLM agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1709",
+    "slug": "clic-closed-loop-intent-consistency-for-securing-llm-driven",
+    "title": "CLIC: Closed-Loop Intent Consistency for Securing LLM-Driven Control in Open RAN",
+    "summary": "Researchers demonstrate runtime prompt injection and residual virtual prompt injection attacks against LLM-driven control loops in Open RAN networks. The findings show how injected intents can manipulate resource management and slicing decisions without breaching interface authentication.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "O-RAN RIC"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.40744",
+        "publisher": "arXiv",
+        "title": "CLIC: Closed-Loop Intent Consistency for Securing LLM-Driven Control in Open RAN",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "o-ran",
+      "telecom",
+      "llm"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "O-RAN RIC"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "CLIC: Closed-Loop Intent Consistency for Securing LLM-Driven Control in Open RAN",
+        "source_url": "https://arxiv.org/abs/2610.40744",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating prompt injection against O-RAN controllers.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1708",
+    "slug": "characterizing-recoverable-expert-utilization-signatures-in",
+    "title": "Characterizing Recoverable Expert-Utilization Signatures in Fine-Tuned MoE LLMs",
+    "summary": "Researchers uncover structural memorization vulnerabilities in fine-tuned mixture-of-experts large language models, where models leak internal routing pathways used during training. This creates a characteristic fingerprint unique to the training process that can be extracted.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Mixture-of-Experts LLMs"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.41039",
+        "publisher": "arXiv",
+        "title": "Characterizing Recoverable Expert-Utilization Signatures in Fine-Tuned Mixture-of-Experts LLMs",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "mixture-of-experts",
+      "memorization",
+      "routing-fingerprint"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Characterizing Recoverable Expert-Utilization Signatures in Fine-Tuned Mixture-of-Experts LLMs",
+        "source_url": "https://arxiv.org/abs/2610.41039",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel structural memorization vulnerability in MoE LLMs.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1707",
+    "slug": "prevented-is-not-protected-what-attack-success-rate-hides-ab",
+    "title": "Prevented is Not Protected: What Attack Success Rate Hides about RAG",
+    "summary": "Researchers demonstrate that Retrieval-Augmented Generation systems remain vulnerable to knowledge poisoning where adversaries manipulate retrieved evidence. The study introduces Aligned RAG Evaluation to uncover defense-induced failures.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Retrieval-Augmented Generation"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.40742",
+        "publisher": "arXiv",
+        "title": "Prevented is Not Protected: What Attack Success Rate Hides about RAG",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rag",
+      "knowledge-poisoning",
+      "research"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Prevented is Not Protected: What Attack Success Rate Hides about RAG",
+        "source_url": "https://arxiv.org/abs/2610.40742",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an attack methodology with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1706",
+    "slug": "llmjacking-intrusions-hijack-enterprise-cloud-and-llm-resour",
+    "title": "LLMJacking intrusions hijack enterprise cloud and LLM resources",
+    "summary": "Mandiant responded to multiple 2026 incidents where threat actors hijacked enterprise access to Large Language Models. These intrusions affected organizations across multiple regions and sectors.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "other"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Large Language Models",
+      "Cloud Resources"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+        "publisher": "Google Threat Intelligence",
+        "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "llmjacking",
+      "cloud",
+      "ai-infrastructure"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+        "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "Audit and secure cloud and LLM API keys and access controls.",
+    "severity_note": "Confirmed real-world exploitation of enterprise LLM deployments.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1705",
+    "slug": "xcpe-botnet-dismantled-after-infecting-1-3-million-set-top-b",
+    "title": "XCPE botnet dismantled after infecting 1.3 million set-top boxes",
+    "summary": "Google and industry partners dismantled the XCPE backdoor which infected over 1.3 million set-top boxes. The OEM Videostrong Technology operated the botnet for financial gain by loading ad-fraud modules.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "XCPE backdoor",
+      "Android set-top boxes"
+    ],
+    "incident_date": "2026-10-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet",
+        "publisher": "Google Threat Intelligence",
+        "title": "Shutting the Door on the XCPE Botnet",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "botnet",
+      "backdoor",
+      "ad-fraud",
+      "android"
+    ],
+    "created_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Videostrong Android set-top boxes"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Shutting the Door on the XCPE Botnet",
+        "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet",
+        "added_at": "2026-11-02T20:57:03.700Z"
+      }
+    ],
+    "action": "Disconnect or replace affected compromised set-top boxes.",
+    "severity_note": "Confirmed large-scale botnet affecting 1.3 million devices.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1704",
     "slug": "ivanti-patches-two-connect-secure-zero-days-exploited-in-att",
     "title": "Ivanti patches two Connect Secure zero-days exploited in attacks",
@@ -333,9 +1420,15 @@
         "publisher": "The Hacker News",
         "title": "New VOLTA Infostealer Uses Claude, Gemini, and Kimi AI to Rank Victims by Financial Value",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/ai-powered-infostealer-volta-victim-profiling",
+        "publisher": "Help Net Security",
+        "title": "AI-powered infostealer picks out the most profitable parts of your stolen data",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -345,7 +1438,7 @@
       "llm"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -463,9 +1556,15 @@
         "publisher": "SecurityWeek",
         "title": "Chainalysis Discloses Data Breach Following AI-Driven Cyberattack",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/chainalysis-breached-using-offensive-agentic-techniques",
+        "publisher": "Help Net Security",
+        "title": "Chainalysis breached using “offensive agentic techniques”",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -475,7 +1574,7 @@
       "agentic"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1599,9 +2698,15 @@
         "publisher": "SecurityWeek",
         "title": "Ivanti Patches Two More Zero-Days Exploited in Connect Secure Attack Chain",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/cisa-to-federal-agencies-remediate-exploited-ivanti-connect-secure-vulnerabilities-cve-2026-111357-cve-2026-118527",
+        "publisher": "Help Net Security",
+        "title": "CISA to federal agencies: Remediate exploited Ivanti Connect Secure vulnerabilities (CVE-2026-111357, CVE-2026-118527)",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -1613,7 +2718,7 @@
       "CVE-2026-111357"
     ],
     "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1920,9 +3025,15 @@
         "publisher": "CyberScoop",
         "title": "Apple notifications alert victims in 99 countries about mercenary spyware infections",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://therecord.media/apple-warns-users-99-countries-mercenary-spyware",
+        "publisher": "The Record",
+        "title": "Apple warns users in 99 countries of mercenary spyware",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1933,7 +3044,7 @@
       "threat-notifications"
     ],
     "created_at": "2026-10-30T18:43:14.146Z",
-    "updated_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1978,9 +3089,15 @@
         "publisher": "The Record",
         "title": "Florida warns that 4.9 million people had Social Security numbers leaked in financial aid site breach",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://securityweek.com/florida-student-aid-website-hack-puts-data-of-4-9-million-people-at-risk",
+        "publisher": "SecurityWeek",
+        "title": "Florida Student Aid Website Hack Puts Data of 4.9 Million People at Risk",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1991,7 +3108,7 @@
       "social-security-numbers"
     ],
     "created_at": "2026-10-30T18:43:14.146Z",
-    "updated_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2440,9 +3557,15 @@
         "publisher": "Help Net Security",
         "title": "Fake IT help desk callers got by on little more than names and email addresses",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/attackers-pose-as-it-support-on.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Pose as IT Support on Microsoft Teams, Abuse AD CS to Steal Company Data",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2453,7 +3576,7 @@
       "impersonation"
     ],
     "created_at": "2026-10-30T13:27:13.057Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2517,9 +3640,15 @@
         "publisher": "Microsoft Security",
         "title": "Inside a malicious Claude Code-branded extension and its persistent SSH backdoor",
         "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://securityweek.com/malicious-claude-code-extension-served-in-cursor-supply-chain-attack",
+        "publisher": "SecurityWeek",
+        "title": "Malicious Claude Code Extension Served in Cursor Supply Chain Attack",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2530,7 +3659,7 @@
       "vscode"
     ],
     "created_at": "2026-10-30T13:27:13.057Z",
-    "updated_at": "2026-10-31T02:32:18.139Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -2648,9 +3777,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
         "published_at": "2026-10-29"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Langflow Flaws Could Let Unauthenticated Attackers Run Code on Servers",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -2660,27 +3795,35 @@
       "langflow"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-10-29T23:23:38.250Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-29",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-93680"
     ],
     "affected": [
       "IBM Langflow OSS 1.0.0 to 1.12.8"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "1.13.0"
+    ],
     "timeline": [
       {
         "date": "2026-10-29",
         "title": "CVE-2026-93680: IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass security restrictions due to improper…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93680",
         "added_at": "2026-10-29T23:23:38.250Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Vendor releases version 1.13.0 to resolve critical authentication bypass and remote code execution vulnerabilities",
+        "source_url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+        "added_at": "2026-11-02T20:57:03.700Z"
       }
     ],
-    "action": "Check vendor advisories for available updates.",
+    "action": "Upgrade Langflow OSS to version 1.13.0 immediately to mitigate critical authentication bypass and code execution vulnerabilities.",
     "severity_note": "Critical CVSS 9.8 vulnerability with no confirmed exploitation yet.",
     "cvss": 9.8
   },
@@ -3058,9 +4201,15 @@
         "publisher": "SecurityWeek",
         "title": "Polymarket Returns $3.9 Million to Traders as DebugBear Cites DNS Hijack",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://therecord.media/polymarket-returning-funds-to-customers-after-site-compromise",
+        "publisher": "The Record",
+        "title": "Polymarket pledges to give $3.9 million back to victims after site compromise",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3071,7 +4220,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -3097,6 +4246,12 @@
         "title": "Third-party provider DebugBear confirms a DNS hijack via its domain registrar",
         "source_url": "https://securityweek.com/polymarket-returns-3-9-million-to-traders-as-debugbear-cites-dns-hijack",
         "added_at": "2026-11-02T11:35:30.453Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Polymarket announces plans to refund $3.9 million to victims of the site compromise.",
+        "source_url": "https://therecord.media/polymarket-returning-funds-to-customers-after-site-compromise",
+        "added_at": "2026-11-02T20:57:03.700Z"
       }
     ],
     "action": "",
@@ -3985,9 +5140,15 @@
         "publisher": "BleepingComputer",
         "title": "Critical Linux kernel flaw allows remote root attacks on MPTCP servers",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-188",
+        "publisher": "Fortinet",
+        "title": "Linux kernel RCE CVE-2026-98432",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -3998,7 +5159,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-29T19:37:17.247Z",
-    "updated_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -4395,9 +5556,15 @@
         "publisher": "BleepingComputer",
         "title": "Alpine Linux rebuilds GitLab after attempted RCE attack",
         "published_at": "2026-11-01"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Over 1,000 GitLab servers vulnerable to ongoing RCE attacks",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4409,7 +5576,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-29T13:22:31.658Z",
-    "updated_at": "2026-11-01T19:02:52.090Z",
+    "updated_at": "2026-11-02T20:57:03.700Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,

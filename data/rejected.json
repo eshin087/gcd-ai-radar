@@ -1,5 +1,185 @@
 [
   {
+    "key": "c1e9a888a7165ad2",
+    "title": "Backporting security fixes at scale with Codex",
+    "url": "https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex",
+    "publisher": "Trail of Bits",
+    "source_id": "trailofbits",
+    "reason": "out of scope: Product launch or vendor tool announcement without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "281c55a32de9ffe8",
+    "title": "DeepWeave: Weaving Neural and Symbolic Evidence for ML-Based Network Intrusion Detection System",
+    "url": "https://arxiv.org/abs/2610.41541",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a defense and network intrusion detection system rather than demonstrating an attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "4e0f7f22ef71a5be",
+    "title": "SecPO: Principled Adversarial Training for Prompt Injection Security",
+    "url": "https://arxiv.org/abs/2610.41998",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: defence-only or benchmark papers are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "d821ebe9c6b5af32",
+    "title": "RiskyPy: Toward Model-Calibrated Prompt Generation for Joint Security and Functionality Evaluation of LLM-Generated Code",
+    "url": "https://arxiv.org/abs/2610.40735",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: defence-only or benchmark papers are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "188b4c8769f728a5",
+    "title": "Erase the Injected Region: Multimodal Prompt-Injection Defense with On-Policy Self-Distillation",
+    "url": "https://arxiv.org/abs/2610.41307",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: defence-only or benchmark papers are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "435084075cf50fdb",
+    "title": "From Training Exposure to Membership Evidence: A Controlled Study of OLMo 2",
+    "url": "https://arxiv.org/abs/2610.41732",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: defence-only or benchmark papers are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "d54ecbdd14ddd2f7",
+    "title": "MetaVul: Agentic Harness Discovery for Vulnerability Detection",
+    "url": "https://arxiv.org/abs/2610.40721",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: defence-only or benchmark papers are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "a526271aac4bd76a",
+    "title": "PP-Mark: Provable and Publicly Verifiable Watermarking for Generative AI",
+    "url": "https://arxiv.org/abs/2610.41170",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "0145f221243edca0",
+    "title": "Beyond Smart Homes: Characterizing IoT Vulnerabilities Across Sectors, Vendors, and Products",
+    "url": "https://arxiv.org/abs/2610.42032",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: surveys, statistics and report finds pieces are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "a3d8f5f8db8d6ea6",
+    "title": "Simple Features Beat Most AI Control Monitors",
+    "url": "https://arxiv.org/abs/2610.41713",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "70830e904acf9aae",
+    "title": "What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer",
+    "url": "https://arxiv.org/abs/2610.41803",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "fa9f85962573ae13",
+    "title": "PrivacyFlow: Privacy in AI Agents through Information Flow Analysis and Consequence-Aware Risk Management",
+    "url": "https://arxiv.org/abs/2610.40714",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "56371e1b61b30724",
+    "title": "Characterizing LLM Agent Behaviors in Module Shadowing Environments",
+    "url": "https://arxiv.org/abs/2610.40716",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "417a46768a5da387",
+    "title": "ANGLER: Verifier-Grounded Benchmarking with an Adaptive Attacker for Web Agents",
+    "url": "https://arxiv.org/abs/2610.41272",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "3525fc997dbb2c09",
+    "title": "Adaptive Dynamic Security for Operational Technology Against AI-Powered Attacks",
+    "url": "https://arxiv.org/abs/2610.41007",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Research paper proposing a defense framework against AI-powered attacks, with no demonstrated attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "65afadf0cbc2316d",
+    "title": "⚡ Weekly Recap: Critical CVEs, Linux DDoS Botnet, Device-Code Phishing, Android Spyware and More",
+    "url": "https://thehackernews.com/2026/11/weekly-recap-critical-cves-linux-ddos.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundups, newsletters, podcasts, opinion and explainers without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "9c3bad316912929b",
+    "title": "Your Mobile Carrier Stores Your Call Logs for Years",
+    "url": "https://bleepingcomputer.com/news/security/your-mobile-carrier-stores-your-call-logs-for-years",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
+    "key": "bc55c760c34f559d",
+    "title": "Microsoft's AI Risk Report Misses This Key Detail",
+    "url": "https://darkreading.com/cyberattacks-data-breaches/microsoft-ai-cyber-risk-report-miss",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Opinion and report commentary pieces without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T20:57:03.700Z"
+  },
+  {
     "key": "0a3ac47875428027",
     "title": "Product showcase: Trust Onion uses rotating codewords to verify callers",
     "url": "https://helpnetsecurity.com/2026/11/02/product-showcase-trust-onion",
