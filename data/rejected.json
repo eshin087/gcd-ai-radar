@@ -1,5 +1,25 @@
 [
   {
+    "key": "0a3ac47875428027",
+    "title": "Product showcase: Trust Onion uses rotating codewords to verify callers",
+    "url": "https://helpnetsecurity.com/2026/11/02/product-showcase-trust-onion",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and review piece for a verification app",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T11:35:30.453Z"
+  },
+  {
+    "key": "fa151c6b68b83976",
+    "title": "The first ten lines of a command policy for AI coding agents",
+    "url": "https://helpnetsecurity.com/2026/11/02/vinay-thakker-kloudstax-ai-agent-access-control",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion, interview, and advice piece on setting command policies for AI agents",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-02T11:35:30.453Z"
+  },
+  {
     "key": "3e2f06306a914521",
     "title": "Northstar Security Exits Stealth With $7M to Expose Toxic Risk Combinations",
     "url": "https://securityweek.com/northstar-security-exits-stealth-with-7m-to-expose-toxic-risk-combinations",

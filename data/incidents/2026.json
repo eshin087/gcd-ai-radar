@@ -1,5 +1,127 @@
 [
   {
+    "id": "AIR-2026-1704",
+    "slug": "ivanti-patches-two-connect-secure-zero-days-exploited-in-att",
+    "title": "Ivanti patches two Connect Secure zero-days exploited in attacks",
+    "summary": "Ivanti has issued security updates to address two zero-day vulnerabilities in its Connect Secure gateways. The flaws have been actively chained in attacks since at least October.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ivanti Connect Secure"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ivanti",
+      "connect-secure",
+      "zero-day",
+      "exploitation-in-the-wild"
+    ],
+    "created_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Ivanti Connect Secure"
+    ],
+    "fixed_in": [
+      "Latest security updates"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks",
+        "added_at": "2026-11-02T11:35:30.453Z"
+      }
+    ],
+    "action": "Apply the latest security updates from Ivanti immediately.",
+    "severity_note": "Confirmed zero-day exploitation in the wild",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1703",
+    "slug": "aur0ra-ransomware-operators-used-ai-coding-agents-for-intrus",
+    "title": "Aur0ra ransomware operators used AI coding agents for intrusion workflows",
+    "summary": "The Aur0ra ransomware gang utilized AI coding assistants during network intrusions to harvest credentials and navigate victim environments. Researchers recovered artifacts showing attackers delegating reconnaissance tasks to the agents.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "agent_hijack"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Cursor AI"
+    ],
+    "incident_date": "2026-08",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-02",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/aur0ra-ransomware-ai-agents",
+        "publisher": "Help Net Security",
+        "title": "Ransomware gang talked AI agents into doing much of its dirty work",
+        "published_at": "2026-11-02"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "aur0ra",
+      "gold-ogre",
+      "ransomware",
+      "cursor-ai"
+    ],
+    "created_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-02",
+        "title": "Ransomware gang talked AI agents into doing much of its dirty work",
+        "source_url": "https://helpnetsecurity.com/2026/11/02/aur0ra-ransomware-ai-agents",
+        "added_at": "2026-11-02T11:35:30.453Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world use of AI agents in ransomware attacks",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1702",
     "slug": "canonical-lxd-and-microcloud-client-impersonation-flaw",
     "title": "Canonical LXD and MicroCloud Client Impersonation Flaw",
@@ -205,9 +327,15 @@
         "publisher": "Cisco Talos",
         "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
         "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html",
+        "publisher": "The Hacker News",
+        "title": "New VOLTA Infostealer Uses Claude, Gemini, and Kimi AI to Rank Victims by Financial Value",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -217,7 +345,7 @@
       "llm"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -329,9 +457,15 @@
         "publisher": "BleepingComputer",
         "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
         "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://securityweek.com/chainalysis-discloses-data-breach-following-ai-driven-cyberattack",
+        "publisher": "SecurityWeek",
+        "title": "Chainalysis Discloses Data Breach Following AI-Driven Cyberattack",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -341,7 +475,7 @@
       "agentic"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1459,9 +1593,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-118527: Ivanti Connect Secure — Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain",
+        "publisher": "SecurityWeek",
+        "title": "Ivanti Patches Two More Zero-Days Exploited in Connect Secure Attack Chain",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -1469,16 +1609,18 @@
       "CVE-2026-118527",
       "kev",
       "file_upload",
-      "ivanti"
+      "ivanti",
+      "CVE-2026-111357"
     ],
     "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "partial",
     "cve_ids": [
-      "CVE-2026-118527"
+      "CVE-2026-118527",
+      "CVE-2026-111357"
     ],
     "affected": [
       "Ivanti Connect Secure"
@@ -2725,9 +2867,27 @@
         "publisher": "The Hacker News",
         "title": "FBI Links North Korea's TraderTraitor to Record $6.43 Billion Binance Crypto Heist",
         "published_at": "2026-11-01"
+      },
+      {
+        "url": "https://securityweek.com/fbi-flags-over-600-addresses-tied-to-north-koreas-binance-heist",
+        "publisher": "SecurityWeek",
+        "title": "FBI Flags Over 600 Addresses Tied to North Korea’s Binance Heist",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://therecord.media/fbi-blames-tradertraitor-for-binance-hack",
+        "publisher": "The Record",
+        "title": "FBI blames N. Korea’s TraderTraitor for Binance theft, urges crypto industry to block transactions",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/fbi-north-korea-binance-hack",
+        "publisher": "Help Net Security",
+        "title": "FBI pins $6.3 billion Binance crypto heist on North Korea while scammers circle anxious users",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 7,
+    "source_count": 10,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2738,7 +2898,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-01T14:00:59.477Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2776,6 +2936,12 @@
         "title": "FBI officially attributes the record $6.43 billion Binance heist to North Korea's TraderTraitor group",
         "source_url": "https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html",
         "added_at": "2026-11-01T14:00:59.477Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "FBI flags over 600 crypto addresses tied to the heist as laundering continues",
+        "source_url": "https://securityweek.com/fbi-flags-over-600-addresses-tied-to-north-koreas-binance-heist",
+        "added_at": "2026-11-02T11:35:30.453Z"
       }
     ],
     "action": "",
@@ -2886,9 +3052,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Steal About $2.7 Million From Polymarket Traders via Hijacked DebugBear Script",
         "published_at": "2026-11-01"
+      },
+      {
+        "url": "https://securityweek.com/polymarket-returns-3-9-million-to-traders-as-debugbear-cites-dns-hijack",
+        "publisher": "SecurityWeek",
+        "title": "Polymarket Returns $3.9 Million to Traders as DebugBear Cites DNS Hijack",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2899,7 +3071,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-01T14:00:59.477Z",
+    "updated_at": "2026-11-02T11:35:30.453Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2919,6 +3091,12 @@
         "title": "Polymarket confirms refunds for 726 affected wallets totaling approximately $2.7 million",
         "source_url": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html",
         "added_at": "2026-11-01T14:00:59.477Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Third-party provider DebugBear confirms a DNS hijack via its domain registrar",
+        "source_url": "https://securityweek.com/polymarket-returns-3-9-million-to-traders-as-debugbear-cites-dns-hijack",
+        "added_at": "2026-11-02T11:35:30.453Z"
       }
     ],
     "action": "",
