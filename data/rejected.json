@@ -1,5 +1,35 @@
 [
   {
+    "key": "af7ad9c53af55ed5",
+    "title": "What exploited vulnerabilities have in common: A data-driven analysis of real-world attacks",
+    "url": "https://microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks",
+    "publisher": "Microsoft Security",
+    "source_id": "ms-security",
+    "reason": "out of scope: Survey or report about vulnerability trends, not a specific incident.",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-03T03:04:26.484Z"
+  },
+  {
+    "key": "dffecfa43dde2774",
+    "title": "Unit 42 Threat Intelligence Highlights - Nov. 2, 2026",
+    "url": "https://unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026",
+    "publisher": "Unit 42",
+    "source_id": "unit42",
+    "reason": "out of scope: A threat intelligence roundup mentioning multiple trends without detailing a specific new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T03:04:26.484Z"
+  },
+  {
+    "key": "266b3df3272b7461",
+    "title": "UK faces ‘unprecedented rise’ in cyberattacks in coming months, warns cyber chief",
+    "url": "https://therecord.media/uk-ncsc-predicts-rise-cyberattacks-coming-months",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: An official warning and policy report preview regarding future cyber threats.",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-03T03:04:26.484Z"
+  },
+  {
     "key": "c1e9a888a7165ad2",
     "title": "Backporting security fixes at scale with Codex",
     "url": "https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex",

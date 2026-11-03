@@ -440,9 +440,15 @@
         "publisher": "The Hacker News",
         "title": "Google Disrupts 1.3 Million-Device Android Botnet, Says TV Box Maker Sold Criminal Access",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://cyberscoop.com/google-disrupts-xcpe-botnet-videostrong-android-devices",
+        "publisher": "CyberScoop",
+        "title": "Google shuts down global botnet running on certified Android devices",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -453,7 +459,7 @@
       "backdoor"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1051,9 +1057,15 @@
         "publisher": "Google Threat Intelligence",
         "title": "Shutting the Door on the XCPE Botnet",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies",
+        "publisher": "Krebs on Security",
+        "title": "Tech Firms Dismantle Botnet That Turned 1.3M TV Boxes Into Proxies",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1064,7 +1076,7 @@
       "android"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1080,6 +1092,12 @@
         "title": "Shutting the Door on the XCPE Botnet",
         "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet",
         "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Takedown actions severed botnet access to more than 10 million additional compromised IoT systems",
+        "source_url": "https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies",
+        "added_at": "2026-11-03T03:04:26.484Z"
       }
     ],
     "action": "Disconnect or replace affected compromised set-top boxes.",
@@ -4028,9 +4046,15 @@
         "publisher": "Help Net Security",
         "title": "FBI pins $6.3 billion Binance crypto heist on North Korea while scammers circle anxious users",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/binance-hack-test-attack-paths",
+        "publisher": "Dark Reading",
+        "title": "One Compromised Laptop, Billions Lost: The Binance Attack-Path Warning",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 10,
+    "source_count": 11,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -4041,7 +4065,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -15625,9 +15649,15 @@
         "publisher": "Microsoft Security",
         "title": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise",
         "published_at": "2026-10-21"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs",
+        "publisher": "BleepingComputer",
+        "title": "Chinese hackers use ARTEX AI in automated attacks against 200 orgs",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -15639,7 +15669,7 @@
       "supply_chain"
     ],
     "created_at": "2026-10-21T21:54:09.300Z",
-    "updated_at": "2026-10-21T21:54:09.300Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -15653,6 +15683,12 @@
         "title": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise",
         "source_url": "https://microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise",
         "added_at": "2026-10-21T21:54:09.300Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Attacks impacted more than 200 organizations across 14 countries using the ARTEX framework",
+        "source_url": "https://bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs",
+        "added_at": "2026-11-03T03:04:26.484Z"
       }
     ],
     "action": "",
@@ -18330,10 +18366,10 @@
       "model_extraction"
     ],
     "created_at": "2026-10-19T22:32:46.941Z",
-    "updated_at": "2026-10-19T22:32:46.941Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18385,10 +18421,10 @@
       "kyc"
     ],
     "created_at": "2026-10-19T22:32:46.941Z",
-    "updated_at": "2026-10-19T22:32:46.941Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18442,10 +18478,10 @@
       "openai"
     ],
     "created_at": "2026-10-19T22:32:46.941Z",
-    "updated_at": "2026-10-19T22:32:46.941Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -18798,10 +18834,10 @@
       "credential_exposure"
     ],
     "created_at": "2026-10-19T13:12:24.048Z",
-    "updated_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18860,10 +18896,10 @@
       "supply_chain"
     ],
     "created_at": "2026-10-19T13:12:24.048Z",
-    "updated_at": "2026-10-19T13:12:24.048Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -19034,10 +19070,10 @@
       "black-box-attack"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19094,10 +19130,10 @@
       "agents"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19151,10 +19187,10 @@
       "safety-alignment"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19208,10 +19244,10 @@
       "llm-safety"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19267,10 +19303,10 @@
       "red-teaming"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19326,10 +19362,10 @@
       "machine-learning"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19386,10 +19422,10 @@
       "mllm"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19445,10 +19481,10 @@
       "tool-use"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19505,10 +19541,10 @@
       "trojanforge"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19565,10 +19601,10 @@
       "weight-poisoning"
     ],
     "created_at": "2026-10-19T05:07:38.588Z",
-    "updated_at": "2026-10-19T05:07:38.588Z",
+    "updated_at": "2026-11-03T03:04:26.484Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-02",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
