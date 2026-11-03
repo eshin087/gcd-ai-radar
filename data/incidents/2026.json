@@ -1,5 +1,765 @@
 [
   {
+    "id": "AIR-2026-1740",
+    "slug": "spoofing-the-latent-state-imperceptible-goal-image-attacks-o",
+    "title": "Spoofing the Latent State: Imperceptible Goal-Image Attacks on LeWM",
+    "summary": "Researchers demonstrated a test-time attack that derails planning in LeWorldModel by manipulating goal-image latents. The work shows that imperceptible perturbations can force the visual world model to misdirect control tasks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "LeWorldModel"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00427",
+        "publisher": "arXiv",
+        "title": "Spoofing the Latent State: Imperceptible Goal-Image Attacks Derail Planning in LeWorldModel",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "adversarial-attack",
+      "world-model",
+      "latent-space"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Spoofing the Latent State: Imperceptible Goal-Image Attacks Derail Planning in LeWorldModel",
+        "source_url": "https://arxiv.org/abs/2611.00427",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1739",
+    "slug": "prompt-stealing-attacks-on-synthetic-video-generation-models",
+    "title": "Prompt Stealing Attacks on Synthetic Video Generation Models",
+    "summary": "A study shows adversaries can reconstruct prompts from a single public synthetic video, enabling unauthorized reuse and editing of generated content. The attack adapts captioning and optimization techniques but achieves limited fidelity, exposing a new vector for prompt leakage.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "synthetic video generation models"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00102",
+        "publisher": "arXiv",
+        "title": "Demystifying Prompt Stealing Attacks against Synthetic Video",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_stealing",
+      "video",
+      "synthetic",
+      "ai_security"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Demystifying Prompt Stealing Attacks against Synthetic Video",
+        "source_url": "https://arxiv.org/abs/2611.00102",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "Implement watermarking and access controls to protect prompt confidentiality in video generators.",
+    "severity_note": "Proof‑of‑concept prompt extraction, no confirmed real‑world exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1738",
+    "slug": "silent-phi-leakage-by-medical-ai-agents-demonstrated-via-can",
+    "title": "Silent PHI Leakage by Medical AI Agents Demonstrated via Canary Embedding",
+    "summary": "Researchers demonstrate that medical AI agents can retrieve patient identifiers without revealing them, enabling silent access to protected health information. The attack uses embedded canaries in synthetic records and is shown across multiple language models, highlighting a data‑leak vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "medical AI agents"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.02319",
+        "publisher": "arXiv",
+        "title": "Accessed, never disclosed: Silent access to protected health information by medical artificial intelligence agents",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_leak",
+      "medical",
+      "privacy",
+      "ai_agents"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Accessed, never disclosed: Silent access to protected health information by medical artificial intelligence agents",
+        "source_url": "https://arxiv.org/abs/2611.02319",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "Monitor AI agent outputs for unauthorized data retrieval and enforce strict data‑minimization controls.",
+    "severity_note": "Proof‑of‑concept demonstrates silent PHI leakage, no known real‑world exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1737",
+    "slug": "ete-earn-then-exploit-fraud-attacks-against-coding-agents",
+    "title": "EtE: Earn-then-Exploit Fraud Attacks against Coding Agents",
+    "summary": "Researchers present EtE, a web fraud attack framework that targets coding agents with high privileges. The attack uses multi-round genuine interactions to build trust before executing malicious actions against the agent.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Coding Agents"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00725",
+        "publisher": "arXiv",
+        "title": "The Long Con on the Web: Earn-then-Exploit Fraud Attacks against Coding Agents",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "coding-agents",
+      "web-fraud",
+      "earn-then-exploit"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "The Long Con on the Web: Earn-then-Exploit Fraud Attacks against Coding Agents",
+        "source_url": "https://arxiv.org/abs/2611.00725",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated attack framework in a research paper.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1736",
+    "slug": "agentcap-capability-based-runtime-authorization-for-secure-l",
+    "title": "AgentCap: Capability-Based Runtime Authorization for Secure LLM Agent Execution",
+    "summary": "Researchers explore how indirect prompt injection can hijack language-model agent reasoning to execute unauthorized actions when action selection and authorization are combined. They present a runtime authorization layer called AgentCap to externalize and mediate tool invocations.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "AgentCap"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00729",
+        "publisher": "arXiv",
+        "title": "AgentCap: Capability-Based Runtime Authorization for Secure LLM Agent Execution",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "llm-agents",
+      "indirect-prompt-injection",
+      "authorization",
+      "research"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "AgentCap: Capability-Based Runtime Authorization for Secure LLM Agent Execution",
+        "source_url": "https://arxiv.org/abs/2611.00729",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating LLM agent security risks and proposing a runtime defense layer.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1735",
+    "slug": "hideout-user-protection-against-localization-in-mobile-netwo",
+    "title": "HideOut - User Protection Against Localization in Mobile Networks",
+    "summary": "Researchers demonstrate that plaintext channel state information leaked in cellular networks can be leveraged by an AI model to localize user equipment. The paper also proposes a privacy-enhancing mechanism to protect user location data against such localization attacks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00088",
+        "publisher": "arXiv",
+        "title": "HideOut - User Protection Against Localization with Throughput Guarantees in Mobile Networks",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "privacy",
+      "mobile-networks",
+      "localization",
+      "research"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "HideOut - User Protection Against Localization with Throughput Guarantees in Mobile Networks",
+        "source_url": "https://arxiv.org/abs/2611.00088",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an AI-based localization attack on cellular networks.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1734",
+    "slug": "beyond-prompt-injection-the-tool-update-gap-in-llm-agent-sec",
+    "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
+    "summary": "Researchers identified a supply-chain vulnerability in agentic systems where updated external tools can introduce malicious functionality without re-verification. The issue bypasses context-window defenses because tool updates execute outside the model's direct visibility.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Agent Frameworks"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.01976",
+        "publisher": "arXiv",
+        "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "tool-update-gap",
+      "supply-chain",
+      "agent-security"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
+        "source_url": "https://arxiv.org/abs/2611.01976",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack vector with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1733",
+    "slug": "step-zero-attack-agent-safety-before-observability",
+    "title": "Step-Zero Attack: Agent Safety Before Observability",
+    "summary": "Researchers demonstrate Step-Zero attacks where coding agents suffer harm during initial processing of archives or network responses before content reaches the model context. The evaluation spans multiple harnesses and models.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [
+      "coding agents"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.01953",
+        "publisher": "arXiv",
+        "title": "Step-Zero Attack: Agent Safety Before Observability",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "coding-agents",
+      "step-zero",
+      "agent-safety",
+      "preprocessing"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Step-Zero Attack: Agent Safety Before Observability",
+        "source_url": "https://arxiv.org/abs/2611.01953",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated attack by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1732",
+    "slug": "kerkoporta-injecting-structured-output-backdoors-in-reasonin",
+    "title": "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents",
+    "summary": "Researchers introduce structured-output backdoor attacks against reasoning models in agentic coding settings under the name Kerkoporta. A contextual trigger causes the model to emit an attacker-chosen tool call, compromising system integrity and confidentiality.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "reasoning coding agents"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.00138",
+        "publisher": "arXiv",
+        "title": "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoors",
+      "reasoning-models",
+      "coding-agents",
+      "structured-output"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents",
+        "source_url": "https://arxiv.org/abs/2611.00138",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating backdoors that force reasoning coding agents to execute attacker tool calls.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1731",
+    "slug": "mcp-tool-poisoning-in-agentic-ai-frameworks-across-multiple",
+    "title": "MCP Tool Poisoning in Agentic AI Frameworks Across Multiple Frameworks",
+    "summary": "Researchers present the first cross-framework measurement of Model Context Protocol (MCP) tool poisoning with real tool execution. Using an open-source tool called mcpvenom, the study demonstrates how untrusted tool descriptions and response data compromise agentic frameworks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "infra_vuln",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol",
+      "mcpvenom"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.03555",
+        "publisher": "arXiv",
+        "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "model-context-protocol",
+      "tool-poisoning",
+      "agentic-ai",
+      "mcpvenom"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Model Context Protocol frameworks"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+        "source_url": "https://arxiv.org/abs/2611.03555",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating active tool poisoning and execution across Model Context Protocol frameworks.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1730",
+    "slug": "measuring-and-detecting-vulnerability-targeted-manipulation",
+    "title": "Measuring and Detecting Vulnerability-Targeted Manipulation in LLM Assistants",
+    "summary": "This research paper explores operator-induced vulnerability-targeted manipulation (VTM), where enterprise LLM assistants exploit vulnerabilities disclosed by customers to pursue hidden operator goals. The study provides methods for measuring and detecting such manipulations from conversational logs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "website LLM assistants"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.02689",
+        "publisher": "arXiv",
+        "title": "The Customer Never Sees the Goal: Measuring and Detecting Vulnerability-Targeted Manipulation in LLM Assistants",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "llm-assistants",
+      "manipulation",
+      "agent-hijack",
+      "research"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "The Customer Never Sees the Goal: Measuring and Detecting Vulnerability-Targeted Manipulation in LLM Assistants",
+        "source_url": "https://arxiv.org/abs/2611.02689",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper documenting vulnerability-targeted manipulation in deployed LLM assistants.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1729",
+    "slug": "black-box-adversarial-example-attacks-on-ml-election-systems",
+    "title": "Black-Box Adversarial Example Attacks on ML Election Systems",
+    "summary": "Researchers demonstrate black-box adversarial example attacks against machine learning-based ballot classification models used in election systems. The work proves that classifiers can be manipulated to alter election outcomes without requiring white-box access to model parameters.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "ballot classification models"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.02166",
+        "publisher": "arXiv",
+        "title": "Black-Box Adversarial Example Attacks on Machine Learning based Election Systems",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "adversarial-examples",
+      "black-box",
+      "election-systems",
+      "evasion"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Black-Box Adversarial Example Attacks on Machine Learning based Election Systems",
+        "source_url": "https://arxiv.org/abs/2611.02166",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating black-box adversarial evasion attacks against election ML classifiers.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1728",
+    "slug": "adversarial-perturbation-attacks-against-watchdogs-in-distri",
+    "title": "Adversarial Perturbation Attacks against Watchdogs in Distributed LLM Inference",
+    "summary": "Researchers introduced Hush-Up, a stealthy availability attack exploiting tolerance bounds in decentralized large language model inference verification. The paper demonstrates how malicious workers can execute availability attacks while avoiding detection mechanisms.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Hush-Up"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.01097",
+        "publisher": "arXiv",
+        "title": "The Blind Spots of Detection: Adversarial Perturbation Attacks against Watchdogs in Distributed LLM Inference",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "adversarial-perturbation",
+      "llm-inference",
+      "availability-attack"
+    ],
+    "created_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "The Blind Spots of Detection: Adversarial Perturbation Attacks against Watchdogs in Distributed LLM Inference",
+        "source_url": "https://arxiv.org/abs/2611.01097",
+        "added_at": "2026-11-03T19:03:48.975Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Academic research paper demonstrating a novel attack.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1727",
     "slug": "cve-2026-81648-unpatched-cryptopayment-gateway-flaw-targeted",
     "title": "CVE-2026-81648: Unpatched CryptoPayment Gateway Flaw Targeted",
@@ -85,9 +845,15 @@
         "publisher": "The Hacker News",
         "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation",
+        "publisher": "Help Net Security",
+        "title": "Attackers exploit critical Node-RED flaw to deploy Linux bot and backdoors (CVE-2026-58115)",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -97,7 +863,7 @@
       "active-exploitation"
     ],
     "created_at": "2026-11-03T11:03:25.155Z",
-    "updated_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -115,6 +881,12 @@
         "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
         "source_url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
         "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "New analysis reveals the authentication flaw affecting Node-RED is being exploited to deploy Linux bots and backdoors.",
+        "source_url": "https://helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "Check vendor advisories for updates and restrict network access to vulnerable devices.",
@@ -205,9 +977,15 @@
         "publisher": "Help Net Security",
         "title": "Gorbag APT group hits Ukrainian courts and city councils with self-deleting malware",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+        "publisher": "The Hacker News",
+        "title": "Russia-Aligned Gorbag Hackers Exploit WinRAR Flaw to Deploy Data-Stealing Malware",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -218,7 +996,7 @@
       "ukraine"
     ],
     "created_at": "2026-11-03T11:03:25.155Z",
-    "updated_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -232,6 +1010,12 @@
         "title": "Gorbag APT group hits Ukrainian courts and city councils with self-deleting malware",
         "source_url": "https://helpnetsecurity.com/2026/11/03/gorbag-apt-group-malware",
         "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "The Gorbag APT group exploits a WinRAR vulnerability to deploy its data-stealing malware.",
+        "source_url": "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "",
@@ -1042,9 +1826,15 @@
         "publisher": "The Hacker News",
         "title": "New Wave of Refrigeration Cyberattacks Hits Supermarkets Across Europe, Forcing Stores to Pull Food",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://therecord.media/british-businesses-caught-in-europe-wide-supermarket-fridge-attacks",
+        "publisher": "The Record",
+        "title": "British businesses caught in Europe-wide supermarket fridge attacks",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1055,7 +1845,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1362,9 +2152,15 @@
         "publisher": "Help Net Security",
         "title": "Stolen AI access leaves companies with cloud bills of up to $1 million",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html",
+        "publisher": "The Hacker News",
+        "title": "Google Warns LLMjacking Attacks Are Costing Some Enterprises Up to $1 Million in Cloud Charges",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1374,7 +2170,7 @@
       "ai-infrastructure"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4421,9 +5217,21 @@
         "publisher": "Dark Reading",
         "title": "One Compromised Laptop, Billions Lost: The Binance Attack-Path Warning",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+        "publisher": "The Hacker News",
+        "title": "Binance Reveals How Fake Job Interviews and AI Tool Abuse Led to $6.43 Billion Theft",
+        "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://therecord.media/binance-cryptocurrency-theft-months-long-campaign-nkorea",
+        "publisher": "The Record",
+        "title": "Binance CEO says ‘months-long campaign’ led to $6.3 billion theft as N. Korea denies responsibility",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 11,
+    "source_count": 13,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -4434,7 +5242,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-03T03:04:26.484Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4478,6 +5286,12 @@
         "title": "FBI flags over 600 crypto addresses tied to the heist as laundering continues",
         "source_url": "https://securityweek.com/fbi-flags-over-600-addresses-tied-to-north-koreas-binance-heist",
         "added_at": "2026-11-02T11:35:30.453Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Investigation details reveal the multi-stage campaign involved fake job interviews, recruitment-themed social engineering, and a tampered Homebrew installation.",
+        "source_url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "",
@@ -5539,9 +6353,15 @@
         "publisher": "Fortinet",
         "title": "Linux kernel RCE CVE-2026-98432",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
+        "publisher": "The Hacker News",
+        "title": "Red Hat Patches 9.8-Rated Linux TCP RCE Flaw While Ubuntu Releases Fixes for Testing",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -5552,7 +6372,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-10-29T19:37:17.247Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -5570,9 +6390,15 @@
         "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
         "source_url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
         "added_at": "2026-10-29T19:37:17.247Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Red Hat releases official patches for the critical Linux kernel TCP remote code execution vulnerability.",
+        "source_url": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
-    "action": "Apply the latest Linux kernel security updates when available from your distribution.",
+    "action": "Apply available kernel updates for Red Hat Enterprise Linux immediately.",
     "severity_note": "Demonstrated research exploit via AI with a critical CVSS score of 9.8.",
     "cvss": 9.8
   },
@@ -10732,9 +11558,15 @@
         "publisher": "CERT-EU",
         "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
         "published_at": "2026-10-27"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-inj-2bLVGmhX?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Secure+Email+Gateway+SQL+Injection+Vulnerability%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Cisco Secure Email Gateway SQL Injection Vulnerability",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -10743,7 +11575,7 @@
       "active-exploitation"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -60869,9 +61701,15 @@
         "publisher": "NVD",
         "title": "CVE-2025-71333: Flowise through 2.2.4 contains an unauthenticated arbitrary file upload vulnerability in the /api/v1/attachments endpoint when…",
         "published_at": "2026-06-25"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-c3hj-m5hq-59xw",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-c3hj-m5hq-59xw: Duplicate Advisory : Flowise allows arbitrary file write to RCE",
+        "published_at": "2026-06-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -60881,15 +61719,17 @@
       "path-traversal"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-06-25",
-    "patch_status": "unknown",
+    "patch_status": "unpatched",
     "cve_ids": [
       "CVE-2025-71333"
     ],
-    "affected": [],
+    "affected": [
+      "flowise <= 2.2.7"
+    ],
     "fixed_in": [],
     "timeline": [
       {
@@ -60897,6 +61737,12 @@
         "title": "CVE-2025-71333: Flowise through 2.2.4 contains an unauthenticated arbitrary file upload vulnerability in the /api/v1/attachments endpoint when…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71333",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-06-26",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-c3hj-m5hq-59xw",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "",
@@ -61103,9 +61949,15 @@
         "publisher": "NVD",
         "title": "CVE-2025-71336: Flowise before 3.0.6 (affected versions 2.2.7-patch.1 and earlier) contains an unsandboxed remote code execution vulnerability in…",
         "published_at": "2026-06-25"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-q2xp-j85q-883h",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-q2xp-j85q-883h: Duplicate Advisory: Flowise has unsandboxed remote code execution via Custom MCP",
+        "published_at": "2026-06-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -61115,22 +61967,32 @@
       "infra_vuln"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-06-25",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2025-71336"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "flowise >= 2.2.7-patch.1, < 3.0.6"
+    ],
+    "fixed_in": [
+      "flowise 3.0.6"
+    ],
     "timeline": [
       {
         "date": "2026-06-25",
         "title": "CVE-2025-71336: Flowise before 3.0.6 (affected versions 2.2.7-patch.1 and earlier) contains an unsandboxed remote code execution vulnerability in…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71336",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-06-26",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-q2xp-j85q-883h",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "",
@@ -61162,9 +62024,15 @@
         "publisher": "NVD",
         "title": "CVE-2025-71334: Flowise before 3.0.6 (affected versions 2.2.8 and earlier) contains an arbitrary file access vulnerability due to missing…",
         "published_at": "2026-06-25"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-w5r9-j49j-2m55",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-w5r9-j49j-2m55: Duplicate Advisory : Flowise has arbitrary file access due to missing chat flow id validation",
+        "published_at": "2026-06-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -61174,22 +62042,32 @@
       "infra_vuln"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-11-03T19:03:48.975Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-06-25",
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2025-71334"
     ],
-    "affected": [],
-    "fixed_in": [],
+    "affected": [
+      "flowise >= 2.2.8, < 3.0.6"
+    ],
+    "fixed_in": [
+      "flowise 3.0.6"
+    ],
     "timeline": [
       {
         "date": "2026-06-25",
         "title": "CVE-2025-71334: Flowise before 3.0.6 (affected versions 2.2.8 and earlier) contains an arbitrary file access vulnerability due to missing…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71334",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-06-26",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-w5r9-j49j-2m55",
+        "added_at": "2026-11-03T19:03:48.975Z"
       }
     ],
     "action": "",

@@ -1,5 +1,265 @@
 [
   {
+    "key": "4013afcb1a2f2a20",
+    "title": "Coding Agent Security Risks in LLM Gateways",
+    "url": "https://hiddenlayer.com/research/blog-llm-gateway-coding-agent-security",
+    "publisher": "HiddenLayer",
+    "source_id": "hiddenlayer",
+    "reason": "out of scope: Vendor research blog post and conceptual discussion without a specific new incident.",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "fabd905d9508c546",
+    "title": "Assured helps recovery teams find clean backups after ransomware attacks",
+    "url": "https://helpnetsecurity.com/2026/11/03/assured-data-protection-cleanroom-scan",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and vendor feature announcement.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "3d1ff0ce517cddd1",
+    "title": "What Must Be Done Here? Using a Bounded Application-Security Ontology at the Point of Change",
+    "url": "https://arxiv.org/abs/2611.01127",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Out of scope: research paper proposing a security ontology and engineering guidance without demonstrating a specific attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "5728e7dbd718b5f7",
+    "title": "Where Does MCP Security End? A Three-Tier Mitigation Mapping Framework for the OWASP MCP Top 10",
+    "url": "https://arxiv.org/abs/2611.02611",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "bb9268a425936198",
+    "title": "Novee puts forgotten internet-facing assets through penetration testing",
+    "url": "https://helpnetsecurity.com/2026/11/03/novee-external-surface-testing",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launches and vendor feature announcements, including security products",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "b8837853951f48e9",
+    "title": "Trouble With Time: Compile Timestamps and First-Seen Date Regression in EMBER2024",
+    "url": "https://arxiv.org/abs/2611.01031",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "fd07d7c5f4436975",
+    "title": "Cyber-JEV: Matched Contrastive Fine-Tuning of Language Models for Fast Source-Code Vulnerability Triage",
+    "url": "https://arxiv.org/abs/2611.02957",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "5ebe2a69c9fa9c97",
+    "title": "Decision Models as Policy Gates for Coding Agents: Explicit Policy Boundaries Improve Detection and Reduce False Alarms",
+    "url": "https://arxiv.org/abs/2611.02155",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences or benchmarks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "64db30cbbd904679",
+    "title": "SANAI: Secure ECC Distributed Keyed Parity Embedded in Weights for Protecting Neural Networks against Bit-Flip Attacks",
+    "url": "https://arxiv.org/abs/2611.02042",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences or benchmarks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "6461e5665c224f7d",
+    "title": "Illusion: Safeguarding Topology Confidentiality in LLM Multi-Agent Systems via Behavior-Preserving Obfuscation",
+    "url": "https://arxiv.org/abs/2611.00923",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose defences or benchmarks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "60c19915f6d97555",
+    "title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
+    "url": "https://arxiv.org/abs/2611.02788",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Papers that only propose improvements to tools or benchmarks are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "4dc0db5c8ff79720",
+    "title": "E-UDE: A Scientific Machine Learning Model for Malware Propagation Dynamics",
+    "url": "https://arxiv.org/abs/2611.00971",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a defense or modeling paper proposing a machine learning framework for understanding malware propagation dynamics, without demonstrating a novel attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "f064327606d18ad4",
+    "title": "Evaluating autonomous self-healing against persistent cyber-attacks",
+    "url": "https://arxiv.org/abs/2611.02858",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper evaluating autonomous cyber resilience and defense-oriented self-healing software, which is out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "da468489298cd0b3",
+    "title": "Detect, Repair and Audit: A Hierarchical Multi-Agent Defense Against Adversarial Attacks in Energy Forecasting",
+    "url": "https://arxiv.org/abs/2611.02310",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a defense-only paper proposing a hierarchical multi-agent defense system against adversarial attacks in energy forecasting.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "6d2b5215232f178a",
+    "title": "IAMRAGBENCH: Benchmarking Authorization Expansions in LLM-Generated AWS IAM Policies under RAG Poisoning",
+    "url": "https://arxiv.org/abs/2611.03431",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper only introduces a benchmark for evaluating authorization expansions, which falls under out-of-scope benchmarks and defense evaluations.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "b183229f30f1144e",
+    "title": "Ranked but Not Stopped: Detecting Prompt-Injection Hijacks from Typed Decision Models' Output Probabilities",
+    "url": "https://arxiv.org/abs/2611.02522",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a defense monitor against prompt injection hijacks, which falls under out-of-scope defense-only research.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "9223cb0446c85b82",
+    "title": "Threat Modeling Intimate Partner Abuse in Agentic Systems",
+    "url": "https://arxiv.org/abs/2611.00489",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper applies a threat model to agentic systems regarding intimate partner abuse, which lacks a specific demonstrated attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "93cde7bb4c32af15",
+    "title": "ZT-DAC: ML-Driven Dynamic Access Control Policy for Zero Trust in DER Networks",
+    "url": "https://arxiv.org/abs/2611.02107",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: General smart grid access control research with no AI-specific security angle or incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "1d71558573e02642",
+    "title": "Malware Clustering in the Wild: Taxonomy, Challenges, and Evaluation Metrics",
+    "url": "https://arxiv.org/abs/2611.02380",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Survey paper without a specific security incident",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "ba3f081cb4452d98",
+    "title": "TrafficInstruct: A Multi-Task Network Traffic Dataset and Benchmark for Instruction Tuning",
+    "url": "https://arxiv.org/abs/2611.03319",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Dataset/benchmark release without an incident",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "b50c142bde0b129c",
+    "title": "Enhancing Edge AI System Security with a Stacked Hardware Security Controller for Robust and Energy-Efficient Anomaly Detectio",
+    "url": "https://arxiv.org/abs/2611.01150",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defensive hardware design paper, no specific incident",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "0bfae2575b29c95c",
+    "title": "StateFence: Task-State Protection Against Evidence-Chain Contamination in Blue-Team LLM Agents",
+    "url": "https://arxiv.org/abs/2611.02605",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defence mechanism for LLM agents rather than a new attack",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "2fb5f412d84af770",
+    "title": "ATrust: Adaptive Trust Boundary Expansion for Securing LLM Agents",
+    "url": "https://arxiv.org/abs/2611.02741",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defence framework for securing LLM agents",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "43435471e0fc425e",
+    "title": "HaloGuard 2.0: An Open-Weights Constitutional Output Guard for Multilingual Response Safety",
+    "url": "https://arxiv.org/abs/2611.02134",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Introduces an output guard product/defence mechanism",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "b7c5a52e40e83ec5",
+    "title": "Police seize over 100 servers linked to investment fraud with more than €4 million in losses",
+    "url": "https://helpnetsecurity.com/2026/11/03/investment-fraud-network-servers-seized",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Infrastructure seizure and arrests following an old campaign are follow-ups, not a new incident disclosure",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
+    "key": "503dc8a978b49e6d",
+    "title": "Police seizes over 100 servers in investment scam crackdown",
+    "url": "https://bleepingcomputer.com/news/security/police-seizes-over-100-servers-in-investment-scam-crackdown",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Infrastructure seizure and arrests following an old campaign are follow-ups, not a new incident disclosure",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T19:03:48.975Z"
+  },
+  {
     "key": "6fd6ad7938fa5bc5",
     "title": "Rewarding defenders with bigger bug bounties",
     "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
