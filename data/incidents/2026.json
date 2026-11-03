@@ -1,5 +1,314 @@
 [
   {
+    "id": "AIR-2026-1727",
+    "slug": "cve-2026-81648-unpatched-cryptopayment-gateway-flaw-targeted",
+    "title": "CVE-2026-81648: Unpatched CryptoPayment Gateway Flaw Targeted",
+    "summary": "Threat actors are attempting to exploit an unpatched maximum-severity vulnerability in the CryptoPayment Gateway WordPress plugin. The flaw permits unauthenticated users to delete arbitrary files and extract credentials.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "CryptoPayment Gateway WordPress plugin"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/attackers-target-unpatched.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-81648",
+      "wordpress",
+      "arbitrary-file-deletion"
+    ],
+    "created_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [
+      "CVE-2026-81648"
+    ],
+    "affected": [
+      "CryptoPayment Gateway WordPress plugin"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials",
+        "source_url": "https://thehackernews.com/2026/11/attackers-target-unpatched.html",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      }
+    ],
+    "action": "Disable the vulnerable plugin until a patch becomes available.",
+    "severity_note": "Active exploitation attempts reported against an unpatched flaw.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1726",
+    "slug": "cve-2026-58115-siemens-simatic-iot2050-flaw-exploited",
+    "title": "CVE-2026-58115: Siemens SIMATIC IoT2050 Flaw Exploited",
+    "summary": "Attackers are actively exploiting a maximum-severity missing authentication vulnerability in Siemens SIMATIC IoT2050 Advanced devices. The flaw allows unauthenticated remote attackers to execute arbitrary code and install backdoors.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SIMATIC IoT2050 Advanced"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-58115",
+      "remote-code-execution",
+      "active-exploitation"
+    ],
+    "created_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-58115"
+    ],
+    "affected": [
+      "SIMATIC IoT2050 Advanced"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
+        "source_url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      }
+    ],
+    "action": "Check vendor advisories for updates and restrict network access to vulnerable devices.",
+    "severity_note": "Confirmed active exploitation in the wild.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1725",
+    "slug": "ai-coding-agents-install-unpatched-archived-mcp-servers",
+    "title": "AI coding agents install unpatched archived MCP servers",
+    "summary": "Research shows AI coding agents select deprecated and unpatched Model Context Protocol servers from archived repositories during user sessions. This creates ongoing supply chain exposure on developer machines.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "MCP servers"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/mcphantom-deprecated-mcp-servers",
+        "publisher": "Help Net Security",
+        "title": "AI coding agents are installing MCP servers that will never be patched",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "mcphantom",
+      "mcp",
+      "supply-chain",
+      "coding-agents"
+    ],
+    "created_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "AI coding agents are installing MCP servers that will never be patched",
+        "source_url": "https://helpnetsecurity.com/2026/11/03/mcphantom-deprecated-mcp-servers",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration showing unpatched deprecated packages being introduced by agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1724",
+    "slug": "gorbag-apt-targets-ukrainian-courts-and-city-councils-with-m",
+    "title": "Gorbag APT targets Ukrainian courts and city councils with malware",
+    "summary": "A Russia-aligned threat group tracked as Gorbag has been infiltrating Ukrainian law enforcement and local administration bodies. The attackers use spearphishing attachments to deploy self-deleting stealers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ukrainian courts and city council systems"
+    ],
+    "incident_date": "2025-02",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/gorbag-apt-group-malware",
+        "publisher": "Help Net Security",
+        "title": "Gorbag APT group hits Ukrainian courts and city councils with self-deleting malware",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "gorbag",
+      "apt",
+      "spearphishing",
+      "ukraine"
+    ],
+    "created_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Gorbag APT group hits Ukrainian courts and city councils with self-deleting malware",
+        "source_url": "https://helpnetsecurity.com/2026/11/03/gorbag-apt-group-malware",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberespionage campaign against named organizations.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1723",
+    "slug": "harvard-university-data-breach-exposes-over-850-000-accounts",
+    "title": "Harvard University data breach exposes over 850,000 accounts",
+    "summary": "Harvard University suffered a data breach in November 2025 linked to a ShinyHunters extortion attempt, exposing over 850,000 unique records. The leaked information included personal profile details, contact information, and donor records.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Harvard University systems"
+    ],
+    "incident_date": "2025-11-18",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/Harvard",
+        "publisher": "Have I Been Pwned",
+        "title": "Harvard data breach exposes 850,537 accounts",
+        "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/harvard-university-data-breach-exposed-info-of-851-000-accounts",
+        "publisher": "BleepingComputer",
+        "title": "Harvard University data breach exposed info of 851,000 accounts",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.99,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "shinyhunters",
+      "extortion",
+      "harvard"
+    ],
+    "created_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Harvard data breach exposes 850,537 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/Harvard",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Harvard University data breach exposed info of 851,000 accounts",
+        "source_url": "https://bleepingcomputer.com/news/security/harvard-university-data-breach-exposed-info-of-851-000-accounts",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with massive PII exposure.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1722",
     "slug": "revolve-data-breach-impacts-at-least-180-000-people",
     "title": "Revolve Data Breach Impacts at Least 180,000 People",
@@ -145,9 +454,15 @@
         "publisher": "BleepingComputer",
         "title": "Synology warns of C3RB3R ransomware attacks targeting NAS devices",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html",
+        "publisher": "The Hacker News",
+        "title": "Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -158,7 +473,7 @@
       "nas"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -174,6 +489,12 @@
         "title": "Synology warns of C3RB3R ransomware attacks targeting NAS devices",
         "source_url": "https://bleepingcomputer.com/news/security/synology-warns-customers-of-ongoing-c3rb3r-ransomware-attacks",
         "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Ransomware attacks are confirmed to exploit a DSM vulnerability previously patched in December 2024.",
+        "source_url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html",
+        "added_at": "2026-11-03T11:03:25.155Z"
       }
     ],
     "action": "Update your Synology NAS devices immediately.",
@@ -321,9 +642,15 @@
         "publisher": "BleepingComputer",
         "title": "BTCPay Server warns of hot wallet crypto thefts on outdated instances",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-btcpay-server-flaw-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploit BTCPay Server Flaw to Steal Bitcoin and Litecoin From Hot Wallets",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -334,7 +661,7 @@
       "exploitation"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -352,6 +679,12 @@
         "title": "BTCPay Server warns of hot wallet crypto thefts on outdated instances",
         "source_url": "https://bleepingcomputer.com/news/security/btcpay-server-warns-of-hot-wallet-thefts-targeting-outdated-instances",
         "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Hot wallet crypto thefts are confirmed to target instances running BTCPay Server 2.4.1 or earlier.",
+        "source_url": "https://thehackernews.com/2026/11/hackers-exploit-btcpay-server-flaw-to.html",
+        "added_at": "2026-11-03T11:03:25.155Z"
       }
     ],
     "action": "Install the latest version of BTCPay Server.",
@@ -697,9 +1030,21 @@
         "publisher": "BleepingComputer",
         "title": "Hackers disrupt refrigeration systems at European supermarkets",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://securityweek.com/over-100-european-stores-hit-as-supermarket-fridge-attacks-resume",
+        "publisher": "SecurityWeek",
+        "title": "Over 100 European Stores Hit as Supermarket Fridge Attacks Return",
+        "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html",
+        "publisher": "The Hacker News",
+        "title": "New Wave of Refrigeration Cyberattacks Hits Supermarkets Across Europe, Forcing Stores to Pull Food",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 2,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -710,7 +1055,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -730,6 +1075,18 @@
         "title": "Hackers disrupt refrigeration systems at European supermarkets",
         "source_url": "https://bleepingcomputer.com/news/security/hackers-disrupt-refrigeration-systems-at-european-supermarkets",
         "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "The second wave of refrigeration cyberattacks expands to stores in Belgium, Sweden, and Ireland.",
+        "source_url": "https://securityweek.com/over-100-european-stores-hit-as-supermarket-fridge-attacks-resume",
+        "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "The second wave of supermarket refrigeration attacks expands to include stores in Estonia, Belgium, and Sweden.",
+        "source_url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html",
+        "added_at": "2026-11-03T11:03:25.155Z"
       }
     ],
     "action": "",
@@ -999,9 +1356,15 @@
         "publisher": "Google Threat Intelligence",
         "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/llmjacking-stolen-ai-access-cloud-bills",
+        "publisher": "Help Net Security",
+        "title": "Stolen AI access leaves companies with cloud bills of up to $1 million",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1011,7 +1374,7 @@
       "ai-infrastructure"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1025,6 +1388,12 @@
         "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
         "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models",
         "added_at": "2026-11-02T20:57:03.700Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Attackers generated massive cloud bills up to one million dollars by hijacking corporate accounts for unauthorized AI model usage",
+        "source_url": "https://helpnetsecurity.com/2026/11/03/llmjacking-stolen-ai-access-cloud-bills",
+        "added_at": "2026-11-03T11:03:25.155Z"
       }
     ],
     "action": "Audit and secure cloud and LLM API keys and access controls.",
@@ -11894,9 +12263,15 @@
         "publisher": "Cisco",
         "title": "Vulnerabilities in Node.js Affecting Cisco Products: October 2026",
         "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/product-showcase-sweet-security-virtual-patching",
+        "publisher": "Help Net Security",
+        "title": "Product showcase: Sweet Virtual Patching stops HTTP2Shell while fixes catch up",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 12,
+    "source_count": 13,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -11913,7 +12288,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-29T00:20:42.318Z",
+    "updated_at": "2026-11-03T11:03:25.155Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,

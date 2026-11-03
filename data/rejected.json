@@ -1,5 +1,45 @@
 [
   {
+    "key": "6fd6ad7938fa5bc5",
+    "title": "Rewarding defenders with bigger bug bounties",
+    "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: product launches and vendor feature announcements, including security products",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T11:03:25.155Z"
+  },
+  {
+    "key": "842188ad7cf45f92",
+    "title": "OpenAI raises top bug bounty payout to $172,000 with bonuses",
+    "url": "https://helpnetsecurity.com/2026/11/03/openai-bigger-bug-bounty-rewards",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launches and vendor feature announcements, including security products",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-03T11:03:25.155Z"
+  },
+  {
+    "key": "dd400a15f4010268",
+    "title": "What human hackers still do better than AI, according to HackerOne’s CEO",
+    "url": "https://helpnetsecurity.com/2026/11/03/kara-sprague-hackerone-ai-bug-bounty",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: surveys, statistics and report finds pieces",
+    "confidence": 0.98,
+    "rejected_at": "2026-11-03T11:03:25.155Z"
+  },
+  {
+    "key": "7765765fa7d8700c",
+    "title": "Google patched a zero day I found and has not paid me",
+    "url": "https://github.com/jegly/jegly",
+    "publisher": "GitHub",
+    "source_id": "hn",
+    "reason": "out of scope: Vague GitHub repository README with insufficient details about a specific incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-03T11:03:25.155Z"
+  },
+  {
     "key": "af7ad9c53af55ed5",
     "title": "What exploited vulnerabilities have in common: A data-driven analysis of real-world attacks",
     "url": "https://microsoft.com/en-us/security/blog/2026/11/02/exploited-vulnerabilities-common-data-driven-analysis-real-world-attacks",
