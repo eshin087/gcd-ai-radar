@@ -1,5 +1,495 @@
 [
   {
+    "id": "AIR-2026-1779",
+    "slug": "french-bank-credit-mutuel-arkea-confirms-cyber-heist-resulti",
+    "title": "French bank Crédit Mutuel Arkéa confirms cyber heist resulting in massive theft",
+    "summary": "Crédit Mutuel Arkéa reported a cyber heist resulting in an estimated $133 million stolen via unauthorized transfers. Attackers used internal bank accounts after compromising an unnamed supplier.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Crédit Mutuel Arkéa banking systems"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://therecord.media/french-bank-confirms-cyber-heist",
+        "publisher": "The Record",
+        "title": "French bank confirms cyber heist, hackers suspected to have stolen an estimated $133 million",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "financial-loss",
+      "cyber-heist",
+      "supply-chain"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Crédit Mutuel Arkéa systems"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "French bank confirms cyber heist, hackers suspected to have stolen an estimated $133 million",
+        "source_url": "https://therecord.media/french-bank-confirms-cyber-heist",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Audit supplier access controls and monitor high-value transfer mechanisms.",
+    "severity_note": "Confirmed real-world financial loss of approximately $133 million.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1778",
+    "slug": "dreamhost-confirms-breach-exposed-customer-ftp-credentials-a",
+    "title": "DreamHost confirms breach exposed customer FTP credentials and webmail sessions",
+    "summary": "DreamHost issued a warning after attackers gained unauthorized access to its File Manager platform for two months. The breach exposed customer FTP and SFTP usernames and passwords.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "DreamHost File Manager"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions",
+        "publisher": "BleepingComputer",
+        "title": "DreamHost confirms data breach exposed FTP logins and webmail sessions",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "credentials",
+      "ftpsftp"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "DreamHost File Manager"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "DreamHost confirms data breach exposed FTP logins and webmail sessions",
+        "source_url": "https://bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Reset FTP and SFTP passwords and review webmail access logs.",
+    "severity_note": "Confirmed data breach affecting customer credentials.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1777",
+    "slug": "zyxel-fixes-zero-day-exploited-in-attacks-against-gs1900-swi",
+    "title": "Zyxel fixes zero-day exploited in attacks against GS1900 switches",
+    "summary": "Zyxel patched a zero-day flaw in its GS1900 series switches that attackers actively exploited to compromise nearly 1,000 devices. The breach allowed attackers to exfiltrate configuration files and credentials.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Zyxel GS1900 series network switches"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches",
+        "publisher": "BleepingComputer",
+        "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "zero-day",
+      "compromise",
+      "network-switches"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Zyxel GS1900 series"
+    ],
+    "fixed_in": [
+      "latest firmware"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
+        "source_url": "https://bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Update Zyxel GS1900 series switches to the latest firmware immediately.",
+    "severity_note": "Confirmed exploitation in the wild against multiple devices.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1776",
+    "slug": "msecure-password-manager-suffers-cyberattack-exposing-custom",
+    "title": "mSecure Password Manager Suffers Cyberattack Exposing Customer Data",
+    "summary": "mSeven Software urged mSecure customers to reset master passwords, 2FA, and passkeys following a cyberattack. The incident resulted in the exposure of an encrypted customer database.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "mSecure"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings",
+        "publisher": "BleepingComputer",
+        "title": "mSecure password manager hack prompts password reset warnings",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "msecure",
+      "password_manager",
+      "data_breach",
+      "credential_exposure"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "mSecure"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "mSecure password manager hack prompts password reset warnings",
+        "source_url": "https://bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Change master passwords, reset two-factor authentication, and remove passkeys as advised.",
+    "severity_note": "Confirmed cyberattack and database exposure affecting real users.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1775",
+    "slug": "multiple-asian-airlines-report-data-breaches-following-amade",
+    "title": "Multiple Asian Airlines Report Data Breaches Following Amadeus IT Hack",
+    "summary": "Major airlines including Japan Airlines and Cathay Pacific disclosed data breaches traced back to a cyberattack on Spanish IT provider Amadeus. The incident impacted flight reservation, ticketing, and check-in platforms.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Amadeus IT Group reservation systems"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://therecord.media/asian-airlines-announce-data-breach-it-provider-incident",
+        "publisher": "The Record",
+        "title": "More Asian airlines announce data breaches after attack on Spanish IT provider Amadeus",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "amadeus",
+      "supply_chain_breach",
+      "airlines",
+      "data_leak"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Amadeus IT Group platforms"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "More Asian airlines announce data breaches after attack on Spanish IT provider Amadeus",
+        "source_url": "https://therecord.media/asian-airlines-announce-data-breach-it-provider-incident",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with multiple corporate victims.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1774",
+    "slug": "apt-package-manager-flaw-allows-mitm-attackers-to-execute-ar",
+    "title": "APT Package Manager Flaw Allows MitM Attackers to Execute Arbitrary Code",
+    "summary": "A vulnerability in the APT package manager for Debian and Ubuntu allows MitM attackers to swap verified packages during failed download retries. Exploitation results in arbitrary code execution running with root privileges.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "APT",
+      "Debian",
+      "Ubuntu"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html",
+        "publisher": "The Hacker News",
+        "title": "Debian and Ubuntu APT Flaw Lets MitM Attackers Swap Verified Packages and Run Code as Root",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "apt",
+      "debian",
+      "ubuntu",
+      "mitm",
+      "remote_code_execution"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Debian 12 and later APT"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Debian and Ubuntu APT Flaw Lets MitM Attackers Swap Verified Packages and Run Code as Root",
+        "source_url": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Update APT package manager packages as provided by Debian and Ubuntu advisories.",
+    "severity_note": "Disclosed vulnerability with vendor patches and no confirmed exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1773",
+    "slug": "openai-codex-jailbreak-toolkit-hides-prompt-adware-to-hijack",
+    "title": "OpenAI Codex Jailbreak Toolkit Hides Prompt Adware to Hijack AI Agents",
+    "summary": "Researchers uncovered a malicious OpenAI Codex jailbreak bundle designed to modify an AI agent's instructions and insert unauthorized advertisements. Codenamed Haiou, the toolkit alters configuration files to inject third-party AI gateway prompts.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "jailbreak",
+      "supply_chain"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "OpenAI Codex",
+      "Haiou jailbreak bundle"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html",
+        "publisher": "The Hacker News",
+        "title": "Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_adware",
+      "codex",
+      "haiou",
+      "jailbreak"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit",
+        "source_url": "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research disclosure demonstrating an attack vector without reported exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1772",
+    "slug": "cve-2024-27834-apple-multiple-products-improper-authenticati",
+    "title": "CVE-2024-27834: Apple Multiple Products Improper Authentication Vulnerability",
+    "summary": "Apple operating systems contain an improper authentication flaw allowing attackers to bypass pointer authentication. CISA added the vulnerability to its Known Exploited Vulnerabilities catalog following confirmed in-the-wild attacks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "iOS",
+      "iPadOS",
+      "macOS",
+      "Safari",
+      "tvOS",
+      "watchOS"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-27834",
+        "publisher": "CISA",
+        "title": "CVE-2024-27834: Apple Multiple Products — Apple Multiple Products Improper Authentication Vulnerability",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2024-27834",
+      "authentication_bypass",
+      "pointer_authentication"
+    ],
+    "created_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2024-27834"
+    ],
+    "affected": [
+      "iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "CVE-2024-27834: Apple Multiple Products — Apple Multiple Products Improper Authentication Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-27834",
+        "added_at": "2026-11-04T22:01:52.020Z"
+      }
+    ],
+    "action": "Apply mitigations and security updates in accordance with vendor instructions and CISA guidance.",
+    "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
+    "cvss": 8.1
+  },
+  {
     "id": "AIR-2026-1770",
     "slug": "sonicwall-warns-of-unpatched-security-flaws-in-end-of-life-g",
     "title": "SonicWall warns of unpatched security flaws in end-of-life GMS software",
@@ -24,9 +514,15 @@
         "publisher": "BleepingComputer",
         "title": "SonicWall warns of unpatched flaws in end-of-life GMS software",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html",
+        "publisher": "The Hacker News",
+        "title": "SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -34,15 +530,18 @@
       "sonicwall",
       "gms",
       "eol",
-      "unpatched"
+      "unpatched",
+      "CVE-2026-109593"
     ],
     "created_at": "2026-11-04T15:36:32.106Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "unpatched",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-109593"
+    ],
     "affected": [
       "Global Management System (GMS) EOL versions"
     ],
@@ -57,7 +556,7 @@
     ],
     "action": "Upgrade from end-of-life GMS systems to supported alternatives.",
     "severity_note": "Disclosed vulnerability with no fix available due to end-of-life status.",
-    "cvss": null
+    "cvss": 9.1
   },
   {
     "id": "AIR-2026-1769",
@@ -3440,9 +3939,15 @@
         "publisher": "CyberScoop",
         "title": "Google shuts down global botnet running on certified Android devices",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://darkreading.com/endpoint-security/google-13-million-device-strong-xcpe-botnet",
+        "publisher": "Dark Reading",
+        "title": "Google, Partners Disrupt 1.3 Million-Device-Strong XCPE Botnet",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3453,7 +3958,7 @@
       "backdoor"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-03T03:04:26.484Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -15020,9 +15525,15 @@
         "publisher": "Help Net Security",
         "title": "Product showcase: Sweet Virtual Patching stops HTTP2Shell while fixes catch up",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+Node.js+and+Brotli+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "publisher": "Cisco",
+        "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 13,
+    "source_count": 14,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -15039,7 +15550,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-11-03T11:03:25.155Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,

@@ -1,5 +1,25 @@
 [
   {
+    "key": "ede1220cf0eb096b",
+    "title": "Canadian extradited to US for allegedly hacking schools in at least four states",
+    "url": "https://therecord.media/canadian-nationals-accused-us-education-hacks-cryptomining",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Follow-up report on extradition and older campaign from 2016, not a new incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T22:01:52.020Z"
+  },
+  {
+    "key": "94ac3c3bdec22b17",
+    "title": "Vercel rolls out new protection against stolen session cookie attacks",
+    "url": "https://bleepingcomputer.com/news/security/vercel-rolls-out-new-protection-against-stolen-session-cookie-attacks",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Product launches and vendor feature announcements are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T22:01:52.020Z"
+  },
+  {
     "key": "b3bffc899789757b",
     "title": "LoRA-Patch: Defending Against Backdoored LoRA Adapters via Directional Steering",
     "url": "https://arxiv.org/abs/2611.03752",

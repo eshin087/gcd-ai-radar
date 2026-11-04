@@ -24,9 +24,15 @@
         "publisher": "twitter.com",
         "title": "The Gacha game I play everyday, Nikke, was targeted by a supply chain attack",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/nikke-pc-game-launcher-hacked-to-spread-remote-access-data-stealing-malware",
+        "publisher": "BleepingComputer",
+        "title": "NIKKE PC game launcher hacked to spread remote access, data-stealing malware",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.7,
     "status": "review",
     "origin": "news",
@@ -36,7 +42,7 @@
       "unverified"
     ],
     "created_at": "2026-11-04T15:36:32.106Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T22:01:52.020Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -50,6 +56,12 @@
         "title": "The Gacha game I play everyday, Nikke, was targeted by a supply chain attack",
         "source_url": "https://twitter.com/lauriferrd/status/2117655602843533509",
         "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "Developers confirm a supply-chain attack tampered with the PC launcher scripts, distributing data-stealing malware",
+        "source_url": "https://bleepingcomputer.com/news/security/nikke-pc-game-launcher-hacked-to-spread-remote-access-data-stealing-malware",
+        "added_at": "2026-11-04T22:01:52.020Z"
       }
     ],
     "action": "",
