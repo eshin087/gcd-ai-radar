@@ -1,5 +1,75 @@
 [
   {
+    "key": "20c9c9965d29956a",
+    "title": "The 4 Elements of Exposure Prioritization and How to Operationalize Them",
+    "url": "https://thehackernews.com/2026/11/the-4-elements-of-exposure.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: General guidance and report roundup discussing vulnerability management best practices.",
+    "confidence": 1,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "e554aac3b811bc45",
+    "title": "Gartner Predicts SOCs Will Have 50% More Engineers Than Analysts by 2028",
+    "url": "https://bleepingcomputer.com/news/security/gartner-predicts-socs-will-have-50-percent-more-engineers-than-analysts-by-2028",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Gartner prediction and industry survey piece with no specific security incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "01cf60e8e006d588",
+    "title": "Cyber chief: UK facing AI-powered attacks on critical infrastructure within two years",
+    "url": "https://ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years",
+    "publisher": "NCSC",
+    "source_id": "ncsc-uk",
+    "reason": "out of scope: Policy and risk warning statement rather than a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "bd2ce0813b5a7527",
+    "title": "Germany Busts 'Crime-as-a-Service' Investment Fraud Outfit",
+    "url": "https://darkreading.com/cybersecurity-operations/germany-crime-service-investment-fraud",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Police sweep and arrests for an ongoing fraud campaign are out of scope as a follow-up, not a new incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "d28d36f219921031",
+    "title": "UK school estate hit by 3AM ransomware in suspected AI-assisted attack",
+    "url": "https://bleepingcomputer.com/news/security/uk-school-estate-hit-by-3am-ransomware-in-suspected-ai-assisted-attack",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Speculation about AI assistance in a ransomware attack without AI being the target or actual tool makes this a standard incident classified as not_ai.",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "047ffd57ab63ecf2",
+    "title": "CISA’s new strategy runs into America’s blind trust problem",
+    "url": "https://cyberscoop.com/cisa-2030-strategy-operational-technology-blind-trust-op-ed",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Policy and strategy news regarding CISA roadmaps are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
+    "key": "f28dbdb8f40308df",
+    "title": "Google adds new $250,000 Cloud VRP reward for Root-in-Cloud bugs",
+    "url": "https://bleepingcomputer.com/news/google/google-adds-new-250-000-cloud-vrp-reward-for-root-in-cloud-bugs",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Vendor bug bounty program expansion and reward announcements are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T00:07:17.182Z"
+  },
+  {
     "key": "4013afcb1a2f2a20",
     "title": "Coding Agent Security Risks in LLM Gateways",
     "url": "https://hiddenlayer.com/research/blog-llm-gateway-coding-agent-security",

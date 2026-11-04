@@ -1,5 +1,734 @@
 [
   {
+    "id": "AIR-2026-1752",
+    "slug": "doj-warns-fbi-data-breach-impacts-justice-department-employe",
+    "title": "DOJ Warns FBI Data Breach Impacts Justice Department Employees",
+    "summary": "The Department of Justice warned that an ongoing FBI data breach has likely compromised the personal information of Justice Department employees. Authorities are continuing to evaluate the scope and impact of the intrusion.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FBI"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://politico.com/news/2026/11/03/fbi-hack-department-justice-letter-01146667",
+        "publisher": "politico.com",
+        "title": "DOJ warns FBI data breach likely extends to Justice Department employees",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "fbi",
+      "doj"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "DOJ warns FBI data breach likely extends to Justice Department employees",
+        "source_url": "https://politico.com/news/2026/11/03/fbi-hack-department-justice-letter-01146667",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world breach impacting government employees.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1751",
+    "slug": "android-november-2026-updates-patch-critical-framework-flaw",
+    "title": "Android November 2026 Updates Patch Critical Framework Flaw",
+    "summary": "Google released the November 2026 security updates for Android, addressing over 200 vulnerabilities including a critical remote code execution flaw in the Framework component. The critical vulnerability can be exploited without user interaction.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Android Framework"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities",
+        "publisher": "SecurityWeek",
+        "title": "Android’s November 2026 Updates Patch Over 200 Vulnerabilities",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "android",
+      "rce",
+      "patch-tuesday"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [
+      "Android November 2026 security patch"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Android’s November 2026 Updates Patch Over 200 Vulnerabilities",
+        "source_url": "https://securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "Update Android devices to the November 2026 security patch level.",
+    "severity_note": "Critical rating with a fix available.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1750",
+    "slug": "critical-node-red-flaw-exploited-in-attacks",
+    "title": "Critical Node-RED Flaw Exploited in Attacks",
+    "summary": "Threat actors actively exploited a critical vulnerability in Node-RED to deploy malicious payloads including Linux bots and webshells. Multiple attack attempts originated from the same IP address.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Node-RED"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://securityweek.com/critical-node-red-flaw-exploited-in-attacks",
+        "publisher": "SecurityWeek",
+        "title": "Critical Node-RED Flaw Exploited in Attacks",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "node-red",
+      "webshell",
+      "botnet",
+      "exploitation"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Critical Node-RED Flaw Exploited in Attacks",
+        "source_url": "https://securityweek.com/critical-node-red-flaw-exploited-in-attacks",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in the wild against real targets.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1749",
+    "slug": "frontline-education-data-breach-impacts-over-1-3-million",
+    "title": "Frontline Education Data Breach Impacts Over 1.3 Million",
+    "summary": "Hackers exploited a third-party software flaw to steal personal information from school district staff and students. The incident resulted in a confirmed data breach affecting more than 1.3 million individuals.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Frontline Education"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://securityweek.com/frontline-education-data-breach-impacts-over-1-3-million",
+        "publisher": "SecurityWeek",
+        "title": "Frontline Education Data Breach Impacts Over 1.3 Million",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "third-party",
+      "pii"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Frontline Education Data Breach Impacts Over 1.3 Million",
+        "source_url": "https://securityweek.com/frontline-education-data-breach-impacts-over-1-3-million",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world loss of PII impacting over 1.3 million people.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1748",
+    "slug": "workos-breached-via-artex-ai-compromise-of-internal-app",
+    "title": "WorkOS Breached via ARTEX AI Compromise of Internal App",
+    "summary": "Developer platform WorkOS experienced a data breach after an attacker leveraged ARTEX AI to access internal sales applications. The intrusion exposed business contact records and summaries of customer communications.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "ARTEX AI",
+      "WorkOS internal sales app"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/workos-says-attacker-used-artex-ai-to-breach-internal-sales-app",
+        "publisher": "BleepingComputer",
+        "title": "WorkOS says attacker used ARTEX AI to breach internal sales app",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "workos",
+      "artex-ai",
+      "data-breach"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "WorkOS says attacker used ARTEX AI to breach internal sales app",
+        "source_url": "https://bleepingcomputer.com/news/security/workos-says-attacker-used-artex-ai-to-breach-internal-sales-app",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed data breach involving customer communications.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1747",
+    "slug": "3am-affiliate-uses-ai-assisted-loops-in-european-school-atta",
+    "title": "3AM Affiliate Uses AI-Assisted Loops in European School Attack",
+    "summary": "Evidence suggests a ransomware affiliate leveraged AI models to generate and refine commands during an attack on a European school. Researchers noted automated looping behavior during the intrusion.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "3AM ransomware tooling"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://darkreading.com/data-privacy/3am-affiliate-ai-loops-european-school-attack",
+        "publisher": "Dark Reading",
+        "title": "3AM Affiliate Embraces AI-Like Loops in European School Attack",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "3am",
+      "ransomware",
+      "ai-assisted",
+      "education"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "3AM Affiliate Embraces AI-Like Loops in European School Attack",
+        "source_url": "https://darkreading.com/data-privacy/3am-affiliate-ai-loops-european-school-attack",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world ransomware attack with financial and operational impact.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1746",
+    "slug": "russia-linked-spies-target-ukrainian-war-crimes-investigatio",
+    "title": "Russia-Linked Spies Target Ukrainian War Crimes Investigations",
+    "summary": "Russia-linked cyber spies targeted Ukrainian organizations near the front lines using simple malware. The attackers stole sensitive documents, login credentials, and investigative data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "custom malware"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://therecord.media/russia-linked-cyber-spies-target-ukraine-war-support",
+        "publisher": "The Record",
+        "title": "Russia-linked cyber spies target Ukraine's war crimes investigations, military aid routes",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "ukraine",
+      "credential-theft",
+      "malware"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Russia-linked cyber spies target Ukraine's war crimes investigations, military aid routes",
+        "source_url": "https://therecord.media/russia-linked-cyber-spies-target-ukraine-war-support",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed targeted intrusion resulting in sensitive data loss.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1745",
+    "slug": "chainstack-discloses-production-systems-breach-exposing-cust",
+    "title": "Chainstack Discloses Production Systems Breach Exposing Customer Data",
+    "summary": "Blockchain infrastructure provider Chainstack disclosed that an unauthorized party accessed parts of its infrastructure. The breach exposed customer data and password hashes.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Chainstack infrastructure"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html",
+        "publisher": "The Hacker News",
+        "title": "Chainstack Reports Production Systems Breach Exposing Customer Data and Password Hashes",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "breach",
+      "data-exfiltration",
+      "chainstack"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Chainstack Reports Production Systems Breach Exposing Customer Data and Password Hashes",
+        "source_url": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with customer data exposure.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1744",
+    "slug": "cpguard-update-channel-hijacked-to-deploy-backdoors-and-stea",
+    "title": "cPGuard update channel hijacked to deploy backdoors and steal password hashes",
+    "summary": "Attackers breached the update system of the cPGuard security tool on November 2 to distribute a malicious script to customer Linux servers. The script deployed a backdoor and exfiltrated sensitive files including password hashes.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "cPGuard"
+    ],
+    "incident_date": "2026-11-02",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/cpguard-update-channel-hijacked-to.html",
+        "publisher": "The Hacker News",
+        "title": "cPGuard Update Channel Hijacked to Backdoor Linux Servers and Collect Password Hashes",
+        "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-hijack-cpguard-autoupdate-to-deploy-backdoor-steal-data",
+        "publisher": "BleepingComputer",
+        "title": "Hackers hijack cPGuard autoupdate to deploy backdoor, steal data",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "cpguard",
+      "backdoor",
+      "credential-theft"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "cPGuard < 5.88.25"
+    ],
+    "fixed_in": [
+      "cPGuard 5.88.25"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "cPGuard Update Channel Hijacked to Backdoor Linux Servers and Collect Password Hashes",
+        "source_url": "https://thehackernews.com/2026/11/cpguard-update-channel-hijacked-to.html",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Hackers hijack cPGuard autoupdate to deploy backdoor, steal data",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-hijack-cpguard-autoupdate-to-deploy-backdoor-steal-data",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "Update cPGuard to version 5.88.25 or later and inspect servers for compromise.",
+    "severity_note": "Confirmed real-world data theft via hijacked software update channel.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1743",
+    "slug": "cve-2026-116606-barracuda-authorization-bypass-and-command-i",
+    "title": "CVE-2026-116606: Barracuda authorization bypass and command injection flaws grant root access",
+    "summary": "Barracuda disclosed two vulnerabilities, including CVE-2026-116606 with a CVSS score of 9.3, that can be chained to bypass authorization controls. Successful exploitation allows attackers to gain root access to susceptible appliances.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Barracuda devices"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+        "publisher": "The Hacker News",
+        "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
+        "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices",
+        "publisher": "BleepingComputer",
+        "title": "Barracuda warns of critical flaws allowing root access to devices",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-116606",
+      "command-injection",
+      "auth-bypass"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-116606"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
+        "source_url": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-11-03",
+        "title": "Barracuda warns of critical flaws allowing root access to devices",
+        "source_url": "https://bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "Apply available patches or mitigations provided by Barracuda.",
+    "severity_note": "Critical rating (CVSS 9.3) disclosed by vendor.",
+    "cvss": 9.3
+  },
+  {
+    "id": "AIR-2026-1742",
+    "slug": "china-linked-threat-groups-use-ai-agents-to-scale-espionage",
+    "title": "China-linked threat groups use AI agents to scale espionage attacks",
+    "summary": "A China-nexus espionage group and separate Chinese-speaking operators used large language model agents to orchestrate attacks against over 200 organizations and educational institutions. The AI agents automated command execution and scaled operations based on human-defined goals.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM-based agent tooling"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/03/ai-powered-cyberattacks-artex-cyberstrikeai",
+        "publisher": "Help Net Security",
+        "title": "AI agents scale and speed up Chinese-linked attacks",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai-agents",
+      "espionage",
+      "campaign"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "AI agents scale and speed up Chinese-linked attacks",
+        "source_url": "https://helpnetsecurity.com/2026/11/03/ai-powered-cyberattacks-artex-cyberstrikeai",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed large-scale cyberattack campaign using AI agents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1741",
+    "slug": "cve-2026-88968-path-traversal-flaw-in-claude-code-allows-arb",
+    "title": "CVE-2026-88968: Path traversal flaw in Claude Code allows arbitrary file overwrite",
+    "summary": "A path validation flaw in Claude Code prior to 2.1.251 allows malicious code running inside the Bash sandbox to overwrite user-writable files outside the workspace via symlink replacement. Anthropic released version 2.1.251 to address the vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "Anthropic",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88968",
+        "publisher": "NVD",
+        "title": "CVE-2026-88968: Claude Code is an agentic coding tool.",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-88968",
+      "path-traversal",
+      "sandbox-escape"
+    ],
+    "created_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-03",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-88968"
+    ],
+    "affected": [
+      "Claude Code < 2.1.251"
+    ],
+    "fixed_in": [
+      "Claude Code 2.1.251"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "CVE-2026-88968: Claude Code is an agentic coding tool.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88968",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      }
+    ],
+    "action": "Update Claude Code to version 2.1.251 or later.",
+    "severity_note": "Disclosed vulnerability with a vendor fix available.",
+    "cvss": 7.7
+  },
+  {
     "id": "AIR-2026-1740",
     "slug": "spoofing-the-latent-state-imperceptible-goal-image-attacks-o",
     "title": "Spoofing the Latent State: Imperceptible Goal-Image Attacks on LeWM",
@@ -1832,9 +2561,15 @@
         "publisher": "The Record",
         "title": "British businesses caught in Europe-wide supermarket fridge attacks",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://darkreading.com/ics-ot-security/fresh-european-fridge-attacks-cold-chain-security",
+        "publisher": "Dark Reading",
+        "title": "Fresh European Fridge Attacks Put Cold-Chain Security in Focus",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1845,7 +2580,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2158,9 +2893,15 @@
         "publisher": "The Hacker News",
         "title": "Google Warns LLMjacking Attacks Are Costing Some Enterprises Up to $1 Million in Cloud Charges",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges",
+        "publisher": "BleepingComputer",
+        "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -2170,7 +2911,7 @@
       "ai-infrastructure"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -5229,9 +5970,15 @@
         "publisher": "The Record",
         "title": "Binance CEO says ‘months-long campaign’ led to $6.3 billion theft as N. Korea denies responsibility",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist",
+        "publisher": "BleepingComputer",
+        "title": "Binance says fake job interview led to $6.3 billion crypto heist",
+        "published_at": "2026-11-03"
       }
     ],
-    "source_count": 13,
+    "source_count": 14,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -5242,7 +5989,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -18289,10 +19036,10 @@
       "ai-assisted-intrusion"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18345,10 +19092,10 @@
       "distillation"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -18401,10 +19148,10 @@
       "autonomous-attacks"
     ],
     "created_at": "2026-10-21T05:04:24.513Z",
-    "updated_at": "2026-10-21T05:04:24.513Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -18707,10 +19454,10 @@
       "cybercrime"
     ],
     "created_at": "2026-10-20T17:10:36.613Z",
-    "updated_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18764,10 +19511,10 @@
       "ai-assisted-intrusion"
     ],
     "created_at": "2026-10-20T17:10:36.613Z",
-    "updated_at": "2026-10-20T17:10:36.613Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18942,10 +19689,10 @@
       "red-teaming"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19001,10 +19748,10 @@
       "embedding-geometry"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19059,10 +19806,10 @@
       "financial-markets"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19116,10 +19863,10 @@
       "reasoning-attack"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19176,10 +19923,10 @@
       "backdoor"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19232,10 +19979,10 @@
       "reasoning"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19289,10 +20036,10 @@
       "financial-risk"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19344,10 +20091,10 @@
       "cost-inflation"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19400,10 +20147,10 @@
       "agent-security"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19457,10 +20204,10 @@
       "llm-agents"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19515,10 +20262,10 @@
       "research"
     ],
     "created_at": "2026-10-20T04:59:02.302Z",
-    "updated_at": "2026-10-20T04:59:02.302Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -29506,10 +30253,10 @@
       "intrusion"
     ],
     "created_at": "2026-10-20T17:10:36.613Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-03",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -69655,64 +70402,6 @@
     "cvss": 5.1
   },
   {
-    "id": "AIR-2026-1079",
-    "slug": "cve-2026-45339-api-key-restriction-bypass-in-open-webui",
-    "title": "CVE-2026-45339: API Key Restriction Bypass in Open WebUI",
-    "summary": "An authentication header bypass in Open WebUI allows restricted API keys to access blocked message endpoints. The issue has been patched in version 0.9.0.",
-    "type": "attack_on_ai",
-    "categories": [
-      "infra_vuln"
-    ],
-    "severity": 2,
-    "targets": [
-      "framework_or_tooling"
-    ],
-    "products": [
-      "Open WebUI"
-    ],
-    "incident_date": "2026-05-15",
-    "incident_date_precision": "day",
-    "first_reported": "2026-05-15",
-    "sources": [
-      {
-        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45339",
-        "publisher": "NVD",
-        "title": "CVE-2026-45339: Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline.",
-        "published_at": "2026-05-15"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.95,
-    "status": "published",
-    "origin": "seed_nvd",
-    "tags": [
-      "CVE-2026-45339",
-      "authentication-bypass"
-    ],
-    "created_at": "2026-10-18T10:04:21.885Z",
-    "updated_at": "2026-10-18T10:04:21.885Z",
-    "lane": "patch",
-    "state": "closed",
-    "closed_at": "2026-05-15",
-    "patch_status": "unknown",
-    "cve_ids": [
-      "CVE-2026-45339"
-    ],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-05-15",
-        "title": "CVE-2026-45339: Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline.",
-        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45339",
-        "added_at": "2026-10-18T10:04:21.885Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "",
-    "cvss": 6.5
-  },
-  {
     "id": "AIR-2026-1078",
     "slug": "cve-2026-45665-stored-xss-in-open-webui-banner-component",
     "title": "CVE-2026-45665: Stored XSS in Open WebUI Banner Component",
@@ -69885,6 +70574,80 @@
     "action": "",
     "severity_note": "",
     "cvss": 4.6
+  },
+  {
+    "id": "AIR-2026-1079",
+    "slug": "cve-2026-45339-api-key-restriction-bypass-in-open-webui",
+    "title": "CVE-2026-45339: API Key Restriction Bypass in Open WebUI",
+    "summary": "An authentication header bypass in Open WebUI allows restricted API keys to access blocked message endpoints. The issue has been patched in version 0.9.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Open WebUI"
+    ],
+    "incident_date": "2026-05-15",
+    "incident_date_precision": "day",
+    "first_reported": "2026-05-14",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-57q6-fvp4-pqmm",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-45339: Open WebUI's API key endpoint restrictions bypassed via `x-api-key` header — full message processing on restricted endpoints",
+        "published_at": "2026-05-14"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45339",
+        "publisher": "NVD",
+        "title": "CVE-2026-45339: Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline.",
+        "published_at": "2026-05-15"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-45339",
+      "authentication-bypass"
+    ],
+    "created_at": "2026-10-18T10:04:21.885Z",
+    "updated_at": "2026-11-04T00:07:17.182Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-05-15",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-45339"
+    ],
+    "affected": [
+      "open-webui < 0.9.0"
+    ],
+    "fixed_in": [
+      "open-webui 0.9.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-05-14",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-57q6-fvp4-pqmm",
+        "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-05-15",
+        "title": "CVE-2026-45339: Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45339",
+        "added_at": "2026-10-18T10:04:21.885Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "",
+    "cvss": 6.5
   },
   {
     "id": "AIR-2026-1075",
