@@ -1,5 +1,45 @@
 [
   {
+    "key": "afd53a279f3f4d7d",
+    "title": "Secure your containers without breaking what works",
+    "url": "https://helpnetsecurity.com/2026/11/04/rapidfort-runtime-container-profiling",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: General article discussing container security best practices and vulnerability management challenges without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T06:50:52.011Z"
+  },
+  {
+    "key": "940b70444e967904",
+    "title": "Companies going all in on AI could see their strategy backfire",
+    "url": "https://helpnetsecurity.com/2026/11/04/ai-strategy-miscalculation-gartner-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Survey and enterprise risk report overview with no specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T06:50:52.011Z"
+  },
+  {
+    "key": "fa963be2acfc0dd1",
+    "title": "Anthropic open-sources FlashProve, its provable inference prototype for MoE models",
+    "url": "https://helpnetsecurity.com/2026/11/04/anthropic-flashprove-provable-inference",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product and prototype release announcement rather than a vulnerability or security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T06:50:52.011Z"
+  },
+  {
+    "key": "bebd7b96cd79deb1",
+    "title": "How to Turn AI Red Team Findings Into Runtime Controls",
+    "url": "https://straiker.ai/blog/how-ai-red-teaming-findings-become-runtime-protection",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Vendor product launch, tutorial, and marketing piece without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T06:50:52.011Z"
+  },
+  {
     "key": "20c9c9965d29956a",
     "title": "The 4 Elements of Exposure Prioritization and How to Operationalize Them",
     "url": "https://thehackernews.com/2026/11/the-4-elements-of-exposure.html",

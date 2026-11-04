@@ -1,5 +1,126 @@
 [
   {
+    "id": "AIR-2026-1754",
+    "slug": "philippine-overseas-employment-administration-data-leaked-in",
+    "title": "Philippine Overseas Employment Administration Data Leaked in Breach",
+    "summary": "An unknown threat actor exfiltrated 69GB of SQL Server backups from the Philippine Overseas Employment Administration. The breach compromised personal data belonging to migrant workers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Microsoft SQL Server"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyberattacks-data-breaches/philippine-migrant-worker-data-69gb-government-breach",
+        "publisher": "Dark Reading",
+        "title": "Philippine Migrant Worker Data Likely Leaked in 69GB Government Breach",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "sql-server",
+      "government",
+      "philippines"
+    ],
+    "created_at": "2026-11-04T06:50:52.011Z",
+    "updated_at": "2026-11-04T06:50:52.011Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Philippine Migrant Worker Data Likely Leaked in 69GB Government Breach",
+        "source_url": "https://darkreading.com/cyberattacks-data-breaches/philippine-migrant-worker-data-69gb-government-breach",
+        "added_at": "2026-11-04T06:50:52.011Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with 69GB of exfiltrated government records.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1753",
+    "slug": "cve-2026-119977-wordpress-core-time-of-check-time-of-use-rac",
+    "title": "CVE-2026-119977: WordPress Core Time-of-Check Time-of-Use Race Condition Vulnerability",
+    "summary": "WordPress core contains a time-of-check time-of-use race condition vulnerability allowing unauthenticated attackers to execute code via predictable staging paths during upgrades. CISA added the flaw to its known exploited vulnerabilities catalog following confirmed in-the-wild exploitation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "WordPress Core"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-03",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-119977",
+        "publisher": "CISA",
+        "title": "CVE-2026-119977: WordPress WordPress Core — WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+        "published_at": "2026-11-03"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119977",
+      "toctou",
+      "race-condition",
+      "cisa-kev",
+      "rce"
+    ],
+    "created_at": "2026-11-04T06:50:52.011Z",
+    "updated_at": "2026-11-04T06:50:52.011Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-119977"
+    ],
+    "affected": [
+      "WordPress Core"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-03",
+        "title": "CVE-2026-119977: WordPress WordPress Core — WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-119977",
+        "added_at": "2026-11-04T06:50:52.011Z"
+      }
+    ],
+    "action": "Apply available security updates and vendor mitigations immediately.",
+    "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
+    "cvss": 8.1
+  },
+  {
     "id": "AIR-2026-1752",
     "slug": "doj-warns-fbi-data-breach-impacts-justice-department-employe",
     "title": "DOJ Warns FBI Data Breach Impacts Justice Department Employees",
