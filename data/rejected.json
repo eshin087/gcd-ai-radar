@@ -1,5 +1,135 @@
 [
   {
+    "key": "b3bffc899789757b",
+    "title": "LoRA-Patch: Defending Against Backdoored LoRA Adapters via Directional Steering",
+    "url": "https://arxiv.org/abs/2611.03752",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposed defense mechanism paper without a demonstrated novel attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "a09b34e789b0532a",
+    "title": "What Malware Actually Does: An Empirical Analysis of Post-Infection Behavior Across Malware Families",
+    "url": "https://arxiv.org/abs/2611.03774",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Survey or general research paper proposing detection models without a new attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "ce47a44f728f4e4d",
+    "title": "ScrambleMark: Zero-Query Watermark-Agnostic Black-Box Evasion of Modern Speech Watermarking",
+    "url": "https://arxiv.org/abs/2611.04122",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence or watermark evasion research paper without demonstrating active exploitation.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "bd84c67ef474eb5a",
+    "title": "The Devil is in the Context: Nine Dimensions of Prompt Injection Attacks",
+    "url": "https://arxiv.org/abs/2611.04672",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Taxonomy and evaluation paper on prompt injection rather than a new practical exploit.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "387b31502d5ade8e",
+    "title": "RuntimeTickets: Source-Grounded Security Obligations for Agent Skills",
+    "url": "https://arxiv.org/abs/2611.03772",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defense-oriented paper introducing a protocol for agent skill security.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "1aad21035cc5fb3a",
+    "title": "TxBench: A Benchmark of Attack Transactions and Evidence-Backed Negatives on Seven EVM Chains",
+    "url": "https://arxiv.org/abs/2611.04411",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark paper for smart contract detectors without specific active incidents.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "a0d1c8419a8178cd",
+    "title": "Towards Effective Fuzzing of EDK2 Components",
+    "url": "https://arxiv.org/abs/2611.03854",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Out of scope research paper about bootloader fuzzing with no AI component.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "7885870b6407b7e6",
+    "title": "Impart uses AI to build virtual patches without putting models in the traffic path",
+    "url": "https://helpnetsecurity.com/2026/11/04/impart-security-runtime-defense-harness",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and vendor feature announcement.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "d1762a631af8ac29",
+    "title": "CVE-2026-121938: langchain4j-aideepin before 3.31.0 contains an insecure direct object reference vulnerability that allows authenticated users to…",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121938",
+    "publisher": "NVD",
+    "source_id": "nvd",
+    "reason": "out of scope: Medium severity vulnerability without exploitation in the wild does not clear the bar.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "40a5a2749a728f96",
+    "title": "Russian Police Arrest 3 Suspected VasyGrek Hackers, Dismantle Criminal Infrastructure",
+    "url": "https://thehackernews.com/2026/11/russian-police-arrest-3-suspected.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Police arrests and infrastructure seizures are follow-ups to old campaigns rather than new incidents.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "12311134cad37195",
+    "title": "Phishing-Resistant Isn't Enough; Yubico Takes Aim at Identity-Verification Gap",
+    "url": "https://darkreading.com/identity-access-management-security/beyond-phishing-resistant-yubico-identity-verification-gap",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Product launch and vendor feature announcement.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "bff53d5f4130f088",
+    "title": "North Korea Launches Missiles Toward the Sea as Pyongyang Protests Against US Claims on Binance Hack",
+    "url": "https://securityweek.com/north-korea-launches-missiles-toward-the-sea-as-pyongyang-protests-against-us-claims-on-binance-hack",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Geopolitical news and missile tests without a specific software or cyber incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
+    "key": "1ac188488fb96fc4",
+    "title": "Meta Shares Top Muse Bug Bounty Findings as Payouts Reach $1.2 Million",
+    "url": "https://securityweek.com/meta-shares-top-muse-bug-bounty-findings-as-payouts-reach-1-2-million",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Bug bounty payout summary and general security program round-up.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-04T15:36:32.106Z"
+  },
+  {
     "key": "afd53a279f3f4d7d",
     "title": "Secure your containers without breaking what works",
     "url": "https://helpnetsecurity.com/2026/11/04/rapidfort-runtime-container-profiling",

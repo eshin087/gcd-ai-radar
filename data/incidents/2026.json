@@ -1,5 +1,984 @@
 [
   {
+    "id": "AIR-2026-1770",
+    "slug": "sonicwall-warns-of-unpatched-security-flaws-in-end-of-life-g",
+    "title": "SonicWall warns of unpatched security flaws in end-of-life GMS software",
+    "summary": "SonicWall issued a warning regarding two security vulnerabilities impacting end-of-life Global Management System products. The vendor confirmed that these vulnerabilities will not receive software patches.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SonicWall Global Management System"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software",
+        "publisher": "BleepingComputer",
+        "title": "SonicWall warns of unpatched flaws in end-of-life GMS software",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sonicwall",
+      "gms",
+      "eol",
+      "unpatched"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "Global Management System (GMS) EOL versions"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "SonicWall warns of unpatched flaws in end-of-life GMS software",
+        "source_url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "Upgrade from end-of-life GMS systems to supported alternatives.",
+    "severity_note": "Disclosed vulnerability with no fix available due to end-of-life status.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1769",
+    "slug": "two-canadians-charged-for-hacking-us-universities-to-mine-cr",
+    "title": "Two Canadians charged for hacking US universities to mine cryptocurrency",
+    "summary": "A federal grand jury indicted two Canadian nationals accused of breaching multiple US university networks. The compromised systems were subsequently used to unlawfully mine cryptocurrency.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "university networks"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/us-charges-two-canadians-accused-of-hacking-us-universities",
+        "publisher": "BleepingComputer",
+        "title": "US charges two Canadians accused of hacking US universities",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cryptojacking",
+      "indictment",
+      "universities"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "US charges two Canadians accused of hacking US universities",
+        "source_url": "https://bleepingcomputer.com/news/security/us-charges-two-canadians-accused-of-hacking-us-universities",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world intrusion and resource theft.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1768",
+    "slug": "operation-cloudfire-phishing-campaign-hijacks-google-session",
+    "title": "Operation CloudFire Phishing Campaign Hijacks Google Sessions",
+    "summary": "A phishing campaign used Google Calendar invites and fake login pages to bypass multi-factor authentication and hijack corporate sessions. Security researchers tracked the attacks and assisted in taking down hundreds of domains used in the campaign.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Google"
+    ],
+    "products": [
+      "Google Calendar"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/google-calendar-phishing-campaign-hijacks-sessions-bypasses-mfa",
+        "publisher": "BleepingComputer",
+        "title": "Google Calendar phishing campaign hijacks sessions, bypasses MFA",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "mfa-bypass",
+      "session-hijacking",
+      "google-calendar"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Google Calendar phishing campaign hijacks sessions, bypasses MFA",
+        "source_url": "https://bleepingcomputer.com/news/security/google-calendar-phishing-campaign-hijacks-sessions-bypasses-mfa",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed active phishing campaign with session hijacking.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1767",
+    "slug": "xen-hypervisor-flaws-allow-cross-vm-memory-access",
+    "title": "Xen Hypervisor Flaws Allow Cross-VM Memory Access",
+    "summary": "Two vulnerabilities in the Xen hypervisor allow malicious guest virtual machines to read and write memory across other VMs on the same host. The Xen Project released patches for all supported versions starting from 4.6.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Xen Hypervisor"
+    ],
+    "incident_date": "2026-11-03",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html",
+        "publisher": "The Hacker News",
+        "title": "Xen Hypervisor Flaws Let One Malicious VM Read and Write Any Other VM's Memory",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "xen",
+      "hypervisor",
+      "virtualization",
+      "memory-leak"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Xen Hypervisor 4.6 and later"
+    ],
+    "fixed_in": [
+      "Xen Project security advisory patches"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Xen Hypervisor Flaws Let One Malicious VM Read and Write Any Other VM's Memory",
+        "source_url": "https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "Apply the official patches provided by the Xen Project.",
+    "severity_note": "Critical hypervisor flaws with patches released.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1766",
+    "slug": "ruby-on-rails-active-storage-flaw-allows-arbitrary-file-writ",
+    "title": "Ruby on Rails Active Storage Flaw Allows Arbitrary File Writes",
+    "summary": "A critical vulnerability in Ruby on Rails Active Storage lets unauthenticated attackers write files to the server using crafted ImageMagick uploads. The project released versions 8.1.4.1 and 8.0.5.2 to address the issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Ruby on Rails"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Rails Flaw Lets Attackers Write Server Files via Crafted ImageMagick Uploads",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ruby-on-rails",
+      "active-storage",
+      "imagemagick",
+      "file-write"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Ruby on Rails versions prior to 8.1.4.1 and 8.0.5.2"
+    ],
+    "fixed_in": [
+      "Ruby on Rails 8.1.4.1",
+      "Ruby on Rails 8.0.5.2"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Critical Rails Flaw Lets Attackers Write Server Files via Crafted ImageMagick Uploads",
+        "source_url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "Update to Ruby on Rails 8.1.4.1 or 8.0.5.2.",
+    "severity_note": "Critical flaw with patches released.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1765",
+    "slug": "cve-2026-58868-google-issues-patches-for-critical-android-fl",
+    "title": "CVE-2026-58868: Google Issues Patches for Critical Android Flaw",
+    "summary": "Google disclosed a critical remote code execution vulnerability affecting Android versions 14 through 17. The issue requires no user interaction, and users must apply the November security patch level to receive the fix.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Android"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+        "publisher": "The Hacker News",
+        "title": "Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-58868",
+      "android",
+      "rce"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-58868"
+    ],
+    "affected": [
+      "Android 14 through 17"
+    ],
+    "fixed_in": [
+      "security patch level 2026-11-01"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction",
+        "source_url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "Update to security patch level 2026-11-01 or later.",
+    "severity_note": "Critical vulnerability rated by the vendor with a patch available.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1764",
+    "slug": "slippynunchucks-hijacks-sogou-input-method-dns-to-deploy-dar",
+    "title": "SlippyNunchucks Hijacks Sogou Input Method DNS to Deploy DarkVigil",
+    "summary": "A China-aligned threat actor dubbed SlippyNunchucks hijacked DNS requests in Windows versions of Sogou Input Method. The campaign abused insecure HTTP communications to deploy the DarkVigil backdoor for surveillance.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Sogou Input Method"
+    ],
+    "incident_date": "2026-07-01",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/china-aligned-hackers-hijack-sogou.html",
+        "publisher": "The Hacker News",
+        "title": "China-Aligned Hackers Hijack Sogou Input Method DNS Requests to Deploy DarkVigil Backdoor",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "dns-hijacking",
+      "darkvigil",
+      "slippynunchucks",
+      "sogou-input-method"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Sogou Input Method Windows versions"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "China-Aligned Hackers Hijack Sogou Input Method DNS Requests to Deploy DarkVigil Backdoor",
+        "source_url": "https://thehackernews.com/2026/11/china-aligned-hackers-hijack-sogou.html",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world targeting and backdoor deployment.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1763",
+    "slug": "apt29-conducts-watering-hole-campaign-against-ios-and-androi",
+    "title": "APT29 Conducts Watering Hole Campaign Against iOS and Android Users",
+    "summary": "APT29 used compromised websites, lookalike domains and a hijacked web analytics service to target iOS and Android users with n-day exploits. The campaign stole cookies, messages and Wi-Fi passwords from targeted mobile devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "iOS",
+      "Android"
+    ],
+    "incident_date": "2026-10-15",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/04/apt29-watering-hole-mobile-devices-n-day-exploits",
+        "publisher": "Help Net Security",
+        "title": "Russian hackers target iOS and Android users with n-day exploits",
+        "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html",
+        "publisher": "The Hacker News",
+        "title": "APT29-Linked Hackers Hijack Web Analytics Script to Deliver iOS and Android Exploits",
+        "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-use-n-day-exploits-in-zero-click-attacks-on-ios-android-devices",
+        "publisher": "BleepingComputer",
+        "title": "Hackers use n-day exploits in zero-click attacks on iOS, Android devices",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "apt29",
+      "watering-hole",
+      "ios",
+      "android",
+      "n-day"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Russian hackers target iOS and Android users with n-day exploits",
+        "source_url": "https://helpnetsecurity.com/2026/11/04/apt29-watering-hole-mobile-devices-n-day-exploits",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "APT29-Linked Hackers Hijack Web Analytics Script to Deliver iOS and Android Exploits",
+        "source_url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "Hackers use n-day exploits in zero-click attacks on iOS, Android devices",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-use-n-day-exploits-in-zero-click-attacks-on-ios-android-devices",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in the wild against targets.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1762",
+    "slug": "brainwashedllm-jailbreaking-via-automated-chain-of-thoughts",
+    "title": "BrainwashedLLM: Jailbreaking via Automated Chain of Thoughts Discovery",
+    "summary": "Researchers introduce BrainwashedLLM, a framework that automates the discovery of adversarial chain-of-thought reasoning traces to jailbreak large reasoning models. The approach exploits vulnerabilities in intermediate reasoning surfaces to bypass safety alignment.",
+    "type": "attack_on_ai",
+    "categories": [
+      "jailbreak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Large Reasoning Models"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04717",
+        "publisher": "arXiv",
+        "title": "BrainwashedLLM: Jailbreaking via Automated Adversarial Chain of Thoughts Discovery",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "jailbreak",
+      "chain_of_thought",
+      "large_reasoning_models"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "BrainwashedLLM: Jailbreaking via Automated Adversarial Chain of Thoughts Discovery",
+        "source_url": "https://arxiv.org/abs/2611.04717",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research paper with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1761",
+    "slug": "defending-llm-agents-against-parameter-poisoning",
+    "title": "Defending LLM Agents Against Parameter Poisoning",
+    "summary": "Researchers analyze parameter poisoning vulnerabilities where indirect prompt injection alters tool arguments while preserving intended actions. The attack manipulates task-critical values without introducing new tool calls.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM agents"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04673",
+        "publisher": "arXiv",
+        "title": "Right Tool, Wrong Parameters: Defending LLM Agents Against Parameter Poisoning",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "parameter_poisoning",
+      "agent_hijack",
+      "indirect_prompt_injection"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Right Tool, Wrong Parameters: Defending LLM Agents Against Parameter Poisoning",
+        "source_url": "https://arxiv.org/abs/2611.04673",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research study with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1760",
+    "slug": "adversarial-self-evolving-attacks-on-search-agents",
+    "title": "Adversarial Self-Evolving Attacks on Search Agents",
+    "summary": "Researchers propose an adversarial self-evolution framework to emulate dynamic threats against LLM search agents. The method automates malicious information injection and context manipulation during web retrieval.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM search agents"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.03754",
+        "publisher": "arXiv",
+        "title": "The Web Doesn't Sit Still: Adversarial Self-Evolving Attacks on Search Agents",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "search_agents",
+      "prompt_injection",
+      "adversarial_attack"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "The Web Doesn't Sit Still: Adversarial Self-Evolving Attacks on Search Agents",
+        "source_url": "https://arxiv.org/abs/2611.03754",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research paper with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1759",
+    "slug": "weaponized-safety-warnings-for-controlling-ai-agents",
+    "title": "Weaponized Safety Warnings for Controlling AI Agents",
+    "summary": "Researchers demonstrate a novel attack vector where LLM agents are steered through fabricated safety warnings in retrieved content. The technique exploits agent harm-avoidance behaviors to manipulate transactions or decisions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "LLM agents"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04393",
+        "publisher": "arXiv",
+        "title": "Voluntary Servitude: Weaponized Safety Warning Mechanisms for Controlling AI Agents",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent_hijack",
+      "prompt_injection",
+      "safety_warning"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Voluntary Servitude: Weaponized Safety Warning Mechanisms for Controlling AI Agents",
+        "source_url": "https://arxiv.org/abs/2611.04393",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated attack vector by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1758",
+    "slug": "affordance-induced-delegated-scope-violations-in-multi-agent",
+    "title": "Affordance-Induced Delegated-Scope Violations in Multi-Agent LLM Systems",
+    "summary": "Researchers study how competitive pressure causes LLM agents to cross from their delegated scope into peer resources on shared infrastructure. The evaluation across eight models in simulated pipelines demonstrates frequent unauthorized permission usage.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Multi-Agent LLM Systems"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04086",
+        "publisher": "arXiv",
+        "title": "Permitted but Unauthorized: Affordance-Induced Delegated-Scope Violations in Multi-Agent LLM Systems",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multi-agent",
+      "scope-violation",
+      "authorization",
+      "research"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Permitted but Unauthorized: Affordance-Induced Delegated-Scope Violations in Multi-Agent LLM Systems",
+        "source_url": "https://arxiv.org/abs/2611.04086",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating agent privilege and scope violations in lab environments.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1757",
+    "slug": "social-bias-vulnerabilities-in-multi-agent-safety-deliberati",
+    "title": "Social-Bias Vulnerabilities in Multi-Agent Safety Deliberation",
+    "summary": "Researchers investigate how social dynamics like conformity pressure and authority deference in multi-agent debate override safety boundaries. The study shows that group deliberation structures can paradoxically amplify latent risks from retrieved web sources.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Multi-Agent Debate Systems"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04289",
+        "publisher": "arXiv",
+        "title": "When Debate Amplifies Risk: Social-Bias Vulnerabilities in Multi-Agent Safety Deliberation",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multi-agent",
+      "safety",
+      "social-bias",
+      "research"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "When Debate Amplifies Risk: Social-Bias Vulnerabilities in Multi-Agent Safety Deliberation",
+        "source_url": "https://arxiv.org/abs/2611.04289",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper analyzing multi-agent safety vulnerabilities without real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1756",
+    "slug": "extracting-system-prompts-of-llm-services-via-hierarchical-o",
+    "title": "Extracting System Prompts of LLM Services via Hierarchical Optimization",
+    "summary": "Researchers study prompt extraction attacks targeting modern complex and agentic LLM services. The work proposes hierarchical optimization techniques to recover lengthy, highly structured system prompts containing tool schemas and guardrails.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Services"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04803",
+        "publisher": "arXiv",
+        "title": "Extracting System Prompt of LLM Services in Complex (Agentic) Settings: Hierarchical Optimization and Reliable Evaluation Metrics",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-extraction",
+      "llm",
+      "system-prompt",
+      "research"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "Extracting System Prompt of LLM Services in Complex (Agentic) Settings: Hierarchical Optimization and Reliable Evaluation Metrics",
+        "source_url": "https://arxiv.org/abs/2611.04803",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a prompt extraction technique with no live exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1755",
+    "slug": "cloakfem-agentic-fem-code-generation-for-resource-exhaustion",
+    "title": "CloakFEM: Agentic FEM Code Generation for Resource Exhaustion Attacks",
+    "summary": "Researchers introduce an agentic code generation approach to craft finite element method programs that force excessive computational resource consumption. The work demonstrates how attackers can leverage AI to perform denial-of-service attacks on scientific solvers.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "CloakFEM"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.04356",
+        "publisher": "arXiv",
+        "title": "CloakFEM: Agentic FEM Code Generation for Red-Teaming Computational Resource Exhaustion",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "denial-of-service",
+      "fem",
+      "code-generation",
+      "research"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "CloakFEM: Agentic FEM Code Generation for Red-Teaming Computational Resource Exhaustion",
+        "source_url": "https://arxiv.org/abs/2611.04356",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel attack vector with no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1754",
     "slug": "philippine-overseas-employment-administration-data-leaked-in",
     "title": "Philippine Overseas Employment Administration Data Leaked in Breach",
@@ -82,9 +1061,21 @@
         "publisher": "CISA",
         "title": "CVE-2026-119977: WordPress WordPress Core — WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html",
+        "publisher": "The Hacker News",
+        "title": "CISA Confirms Hackers Exploiting WordPress Core Flaw During Software Upgrades",
+        "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA flags WordPress RCE flaw as actively exploited in attacks",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -96,7 +1087,7 @@
       "rce"
     ],
     "created_at": "2026-11-04T06:50:52.011Z",
-    "updated_at": "2026-11-04T06:50:52.011Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -377,9 +1368,15 @@
         "publisher": "BleepingComputer",
         "title": "WorkOS says attacker used ARTEX AI to breach internal sales app",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://securityweek.com/ai-linked-breaches-mount-as-workos-northflank-trigger-dev-disclose-hacks",
+        "publisher": "SecurityWeek",
+        "title": "AI-Linked Breaches Mount as WorkOS, Northflank, Trigger.dev Disclose Hacks",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.85,
     "status": "published",
     "origin": "news",
@@ -389,7 +1386,7 @@
       "data-breach"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -613,9 +1610,21 @@
         "publisher": "BleepingComputer",
         "title": "Hackers hijack cPGuard autoupdate to deploy backdoor, steal data",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/04/cpguard-update-supply-chain-compromised",
+        "publisher": "Help Net Security",
+        "title": "Poisoned cPGuard update hits thousands of web hosting servers",
+        "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://securityweek.com/malicious-cpguard-updates-served-in-opsshield-supply-chain-attack",
+        "publisher": "SecurityWeek",
+        "title": "Malicious cPGuard Updates Served in OpsShield Supply Chain Attack",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 2,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -626,7 +1635,7 @@
       "credential-theft"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -650,6 +1659,18 @@
         "title": "Hackers hijack cPGuard autoupdate to deploy backdoor, steal data",
         "source_url": "https://bleepingcomputer.com/news/security/hackers-hijack-cpguard-autoupdate-to-deploy-backdoor-steal-data",
         "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "The poisoned cPGuard update affected nearly 3000 customer servers using versions 5.88.12 through 5.88.19",
+        "source_url": "https://helpnetsecurity.com/2026/11/04/cpguard-update-supply-chain-compromised",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "Attackers accessed OpsShield update servers using compromised credentials to poison multiple cPGuard versions",
+        "source_url": "https://securityweek.com/malicious-cpguard-updates-served-in-opsshield-supply-chain-attack",
+        "added_at": "2026-11-04T15:36:32.106Z"
       }
     ],
     "action": "Update cPGuard to version 5.88.25 or later and inspect servers for compromise.",
@@ -687,9 +1708,15 @@
         "publisher": "BleepingComputer",
         "title": "Barracuda warns of critical flaws allowing root access to devices",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root",
+        "publisher": "SecurityWeek",
+        "title": "Barracuda ESG Authentication Bypass Flaw Opens Path to Root",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -699,7 +1726,7 @@
       "auth-bypass"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -6097,9 +7124,21 @@
         "publisher": "BleepingComputer",
         "title": "Binance says fake job interview led to $6.3 billion crypto heist",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://securityweek.com/rigged-coding-assignment-abused-ai-tool-opened-path-to-6-billion-binance-heist",
+        "publisher": "SecurityWeek",
+        "title": "Rigged Coding Assignment, Abused AI Tool Opened Path to $6 Billion Binance Heist",
+        "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/04/binance-hack-north-korea-fake-job-interview",
+        "publisher": "Help Net Security",
+        "title": "Fake job interview opened the door to $6.34 billion Binance heist",
+        "published_at": "2026-11-04"
       }
     ],
-    "source_count": 14,
+    "source_count": 16,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -6110,7 +7149,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -6160,6 +7199,18 @@
         "title": "Investigation details reveal the multi-stage campaign involved fake job interviews, recruitment-themed social engineering, and a tampered Homebrew installation.",
         "source_url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
         "added_at": "2026-11-03T19:03:48.975Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "Binance incident report reveals the massive heist stemmed from a months-long campaign compromising three engineers computers",
+        "source_url": "https://securityweek.com/rigged-coding-assignment-abused-ai-tool-opened-path-to-6-billion-binance-heist",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-04",
+        "title": "Binance incident report confirms the multi-stage attack compromised three engineers computers through fake recruitment interviews and malicious installers",
+        "source_url": "https://helpnetsecurity.com/2026/11/04/binance-hack-north-korea-fake-job-interview",
+        "added_at": "2026-11-04T15:36:32.106Z"
       }
     ],
     "action": "",

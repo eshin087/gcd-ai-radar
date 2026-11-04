@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "id": "AIR-2026-1771",
+    "slug": "unverified-supply-chain-attack-claim-against-goddess-of-vict",
+    "title": "Unverified Supply Chain Attack Claim Against Goddess of Victory: Nikke",
+    "summary": "A social media report claimed that the game Nikke experienced a supply chain attack. No specific technical disclosures or official confirmations accompanied the claim.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Nikke"
+    ],
+    "incident_date": "2026-11-04",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-04",
+    "sources": [
+      {
+        "url": "https://twitter.com/lauriferrd/status/2117655602843533509",
+        "publisher": "twitter.com",
+        "title": "The Gacha game I play everyday, Nikke, was targeted by a supply chain attack",
+        "published_at": "2026-11-04"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.7,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "nikke",
+      "supply-chain",
+      "unverified"
+    ],
+    "created_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-04T15:36:32.106Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-04",
+        "title": "The Gacha game I play everyday, Nikke, was targeted by a supply chain attack",
+        "source_url": "https://twitter.com/lauriferrd/status/2117655602843533509",
+        "added_at": "2026-11-04T15:36:32.106Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Unverified claim on social media.",
+    "cvss": null
+  }
+]
