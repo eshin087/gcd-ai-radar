@@ -1,5 +1,25 @@
 [
   {
+    "key": "e429a5434e884539",
+    "title": "Enforcing Accountable Disclosure in Confidential AI",
+    "url": "https://arxiv.org/abs/2611.05971",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence‑oriented research paper, no attack or vulnerability demonstrated",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-05T18:55:00.365Z"
+  },
+  {
+    "key": "e4f0c1172fa843c1",
+    "title": "A Bag of Tricks for Defending Deep Learning-based Face Recognition Pipelines against Backdoor Attacks",
+    "url": "https://arxiv.org/abs/2611.06412",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence‑only paper that proposes mitigations without presenting a new attack or vulnerability",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-05T18:55:00.365Z"
+  },
+  {
     "key": "a4f4c423c5426033",
     "title": "A thousand fewer paths to root",
     "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",

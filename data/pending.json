@@ -58,5 +58,396 @@
     "extra": {
       "ai_hint": false
     }
+  },
+  {
+    "key": "c3cd435ab23ebf1f",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research",
+    "title": "AI Agents Got Root on Linux via 948 Kernel Flaws in OpenAI Research",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "An unreleased OpenAI cyber model found and exploited 948 distinct Linux kernel privilege escalation bugs for about $1.2 million.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.291Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "371a04c9d1e97a97",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/bank-phishing-sites-show-fake-suspended-pages-to-evade-takedowns",
+    "title": "Bank Phishing Sites Show Fake ‘Suspended’ Pages to Evade Takedowns",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "More than 200 sites were seen serving phishing content to first-time visitors but not to those who revisit.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.291Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "a702aadca31b58d3",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised",
+    "title": "Cyberattack Hits French Blood Bank Site but No Blood Products Are Compromised",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "The incident comes after supermarkets in a number of European countries reported this week that their fridges and freezers warmed up after they were remotely hacked.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.292Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "ebf5d655fd2a8a72",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/ciso-conversations-ryan-davis-the-unknown-is-where-security-meets-reality",
+    "title": "CISO Conversations: Ryan Davis – The Unknown Is Where Security Meets Reality",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "Ryan Davis went from hacking his school’s network to running security at New Charter Technologies. What worries him now is shadow AI.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.292Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "fac8587161417c5c",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/cisco-watchguard-release-patches-sonicwall-wont-fix-gms-flaws",
+    "title": "Cisco, WatchGuard Release Patches; SonicWall Won’t Fix GMS Flaws",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "Cisco patched an RCE in UCS Central Software; WatchGuard fixed authentication and MitM flaws.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.292Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "59043a85553579c0",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html",
+    "title": "ThreatsDay: Apache OFBiz RCE, DreamHost Breach, DeFi Site Hijacks + 17 More Stories",
+    "published_at": "2026-11-05",
+    "publisher": "The Hacker News",
+    "hint": "How much damage can someone do without breaking much? Quite a lot, it seems. A stolen login can open doors across several systems. A trusted setting can be used to lock people out. Even a simple file copy can reach places it shouldn't. And while new tools are helping find security holes faster, some important systems are still taking months, sometimes over a year, to get patched. Not exactly a",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.311Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "5d4d032693916d5d",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/is-your-exposure-management-platform.html",
+    "title": "Is Your Exposure Management Platform Leaving You Exposed? Five Tests to Find Out",
+    "published_at": "2026-11-05",
+    "publisher": "The Hacker News",
+    "hint": "A critical finding can move through several security tools and still leave the organization exposed. The vulnerability has a severity score, and a ticket has reached the queue. Progress then depends on information the finding may lack: who owns the system, whether attackers can reach it, what protection exists, and how a change could affect the business. Each missing detail creates",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.311Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "c9328f3234f41cce",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/closing-the-identity-gap-at-the-service-desk",
+    "title": "Closing the Identity Gap at the Service Desk",
+    "published_at": "2026-11-05",
+    "publisher": "BleepingComputer",
+    "hint": "Attackers target IT service desks to bypass MFA by impersonating employees and convincing staff to reset passwords or register new authentication devices. Specops Software explains why traditional identity verification methods are no longer sufficient and how organizations can secure account recovery against social engineering risks.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.391Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "5977cc9f965be18c",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts",
+    "title": "OpenSSH flaw lets attackers log into password-disabled Linux accounts",
+    "published_at": "2026-11-05",
+    "publisher": "BleepingComputer",
+    "hint": "A newly disclosed OpenSSH vulnerability dubbed \"*sshole\" allows attackers to log in to certain Alpine Linux and other musl-based Linux accounts that are configured to block password authentication, simply by entering an oversized password.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.391Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "5853e49f7990a77e",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents",
+    "title": "DigiCert data breach exposes customer information, identity documents",
+    "published_at": "2026-11-05",
+    "publisher": "BleepingComputer",
+    "hint": "DigiCert warns it suffered a data breach after a server migration mistakenly exposed an internal business system to the internet, allowing unauthorized access to customer information and identity documents.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.391Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "9dc905a90c35587c",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/hackers-backdoor-linux-servers-using-trojanized-cwp-web-server",
+    "title": "Hackers backdoor Linux servers using trojanized CWP web server",
+    "published_at": "2026-11-05",
+    "publisher": "BleepingComputer",
+    "hint": "A new Linux malware called CWPdoor is being distributed through a trojanized version of cwpsrv, the web server behind the Control Web Panel (CWP) management interface.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.391Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "497e42f2de5b0100",
+    "source_id": "cyberscoop",
+    "origin": "news",
+    "url": "https://cyberscoop.com/openai-gpt-6-cyber-security-model",
+    "title": "OpenAI debuts GPT-6 Cyber, touting better performance — and safety guardrails",
+    "published_at": "2026-11-05",
+    "publisher": "CyberScoop",
+    "hint": "After a summer of sandbox escaping hacks, OpenAI said their new model was trained to be more cautious around user intent and less sensitive to “reward hacking” behaviors.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:56.867Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "260025e601bbcf9c",
+    "source_id": "therecord",
+    "origin": "news",
+    "url": "https://therecord.media/ukraine-fires-senior-security-officials-amid-scam-center-corruption-investigation",
+    "title": "Ukraine fires two senior security officials amid corruption probe into scam call centers",
+    "published_at": "2026-11-05",
+    "publisher": "The Record",
+    "hint": "Ukraine's security service has fired two senior officials amid a corruption investigation into an alleged criminal network that bribed law enforcement officers to protect fraudulent call centers and other illegal operations.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:57.032Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "95963327b652b707",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/11/05/vercel-security-review-session-hijacking",
+    "title": "Vercel ties login sessions to devices, rolls out AI security reviews in public beta",
+    "published_at": "2026-11-05",
+    "publisher": "Help Net Security",
+    "hint": "Vercel, the popular cloud platform for building and hosting websites and web applications, has announced the rollout of Device Bound Session Credentials (DBSC) and the launch of Vercel Security Review in public beta. Making stolen session cookies worthless Device Bound Session Credentials is a security technology designed to limit the consequences of an infostealer infection and to thwart attackers’ session hijacking attempts. Aside from stealing authentication credentials, modern info-stealing malware such as Lumma, RedLine, and … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:57.050Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "354adfdd4f6f674b",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/11/05/norad-grants-portal-breach",
+    "title": "Cyberattack on Norway’s aid agency may have swept up all user data",
+    "published_at": "2026-11-05",
+    "publisher": "Help Net Security",
+    "hint": "The names and email addresses of 20,614 people registered on Norad’s Grants Portal may have ended up in the hands of attackers, Norway’s development aid agency has disclosed. Norad, short for the Norwegian Agency for Development Cooperation, works with partners around the world on development aid. It operates the portal, and both the agency and Norway’s Ministry of Foreign Affairs use it to collect funding applications for aid projects. According to the agency, the portal … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:57.050Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "f3893c1774b0f670",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/11/05/gta-6-scams-fake-leaks-early-access",
+    "title": "Scammers capitalize on GTA 6 hype to push malware and crypto cons",
+    "published_at": "2026-11-05",
+    "publisher": "Help Net Security",
+    "hint": "Scammers are offering supposed leaked builds, early copies and phone versions of Grand Theft Auto VI (GTA 6) weeks before the game’s November 19 launch, Netcraft warned in a new blog post. The company looked at GTA VI-themed domains that appeared between July 1 and October 27, 2026. Most of the lures fell into four groups, with sites borrowing the name of popular GTA VI leaker CyberLeek, promising early access, advertising mobile versions that don’t … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:57.050Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "53c56afbaf05f856",
+    "source_id": "openai",
+    "origin": "news",
+    "url": "https://openai.com/index/introducing-gpt-6-cyber",
+    "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+    "published_at": "2026-11-05",
+    "publisher": "OpenAI",
+    "hint": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:57.203Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "ae7b9ae3c82fa6b4",
+    "source_id": "ms-security",
+    "origin": "news",
+    "url": "https://microsoft.com/en-us/security/blog/2026/11/05/email-threat-landscape-q3-2026-trends-and-insights",
+    "title": "Email threat landscape: Q3 2026 trends and insights",
+    "published_at": "2026-11-05",
+    "publisher": "Microsoft Security",
+    "hint": "Microsoft Threat Intelligence observed a sharp rise in email-based phishing activity at the end of Q3 2026 (July – September), even as QR code phishing declined, CAPTCHA-gated phishing recovered, and malicious messages spoofing familiar business-service sender domains exposed risks associated with security overrides.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:58.097Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "111881779310dad9",
+    "source_id": "ms-security",
+    "origin": "news",
+    "url": "https://microsoft.com/en-us/security/blog/2026/11/05/whats-new-in-microsoft-security-november-2026",
+    "title": "​​​​What’s new in Microsoft Security: November 2026",
+    "published_at": "2026-11-05",
+    "publisher": "Microsoft Security",
+    "hint": "Microsoft Security’s November 2026 updates strengthen AI agent security, least privilege, threat protection, and exposure management.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:47:58.097Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "487e638ef59a9052",
+    "source_id": "straiker",
+    "origin": "news",
+    "url": "https://straiker.ai/blog/truefoundry-straiker-ai-gateway-security",
+    "title": "TrueFoundry & Straiker | AI Gateway Security for Agents",
+    "published_at": "2026-11-05",
+    "publisher": "Straiker",
+    "hint": "TrueFoundry and Straiker join forces to bring runtime protection, AI guardrails, adversarial testing, and agent containment to enterprise AI gateway traffic.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:02.093Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "80f819f380f3ece6",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.06173",
+    "title": "Network Intrusion Forensic Detection System with Explainable Artificial Intelligence and Digital Chain of Custody",
+    "published_at": "2026-11-05",
+    "publisher": "arXiv",
+    "hint": "Deploying an explainable intrusion detection model from a validated laboratory setting into a forensic workflow requires guarantees that benchmarks do not test: that the certified model is the exact artifact applied to a case, that heterogeneous evidence can be classified reliably, and that every step is verifiable. We present MODEXRE, a forensic pipeline that extends a previously validated synthetic-data-trained XGBoost classifier with SHAP explainability (arXiv:2607.00763) into a dual-mode architecture: a Laboratory mode, where models are…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:02.843Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "9f8504671859ad86",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.06553",
+    "title": "Addition by Subtraction: Toward Mitigating Fragile Safety Alignment in Large Language Models",
+    "published_at": "2026-11-05",
+    "publisher": "arXiv",
+    "hint": "Large language models (LLMs) undergo safety alignment to prevent harmful generations, yet they remain vulnerable to jailbreak attacks. Recent work reveals a deeper structural weakness: safety alignment can be highly sparse, such that pruning a small number of safety-critical neurons or ablating a single refusal direction can substantially undermine aligned behavior. In this work, we take the first steps toward strengthening safety alignment such that it is less dependent on sparse model components. We propose Addition by Subtraction, which…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:02.844Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "cross",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "dff2c1828d5ea506",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.06585",
+    "title": "Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains",
+    "published_at": "2026-11-05",
+    "publisher": "arXiv",
+    "hint": "AI agents rely on third-party tools, such as Model Context Protocol (MCP) servers, whose publishers can be authenticated and whose execution can be restricted by runtime security policies. Yet authenticity does not guarantee benign behaviour: a legitimately signed tool may perform its advertised function while concealing malicious code that leaks confidential information. We demonstrate this trust failure with a signed MCP tool that embeds sensitive data in requests to a policy-allowed destination. Meta's MCPGuard-Dynamic, a state-of-the-art…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:02.844Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "387d22232f4d2670",
+    "source_id": "aiid",
+    "origin": "seed_aiid",
+    "url": "https://incidentdatabase.ai/cite/1796",
+    "title": "Attacker Reportedly Used AI Agents to Breach Healthcare Organizations and Steal Medical Records in Argentina",
+    "published_at": "2026-05-19",
+    "publisher": "AI Incident Database",
+    "hint": "An attacker reportedly used Claude Code in a two-agent workflow to compromise at least 15 healthcare organizations in Argentina. Credentials and medical records were reportedly stolen from at least one victim. The organizations and affected patient count were not disclosed. Deployer: Agentic Threat Actors, Threat Actors, Cybercriminals, Ai Agent System Deployers. Developer: Anthropic, Ai Agent System Developers, Large Language Model Developers. Harmed: Healthcare Organizations In Argentina, Healthcare Organizations, Patients, Information Security, Privacy.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:07.362Z",
+    "extra": {
+      "classifier_hint": "AI Incident Database record (CC BY-SA 4.0). The description is an editor summary; the original reports are listed as sources. In scope only if the incident is a cybersecurity event involving AI (attack on an AI system, or AI used in an attack); AI harms without a security angle are out of scope. incident_date: 2026-05-19.",
+      "aiid_id": 1796,
+      "incident_date": "2026-05-19",
+      "mit_subdomain": "",
+      "additional_sources": [],
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "2a23bb2b827c2b66",
+    "source_id": "aiid",
+    "origin": "seed_aiid",
+    "url": "https://incidentdatabase.ai/cite/1791",
+    "title": "Dartmouth College Provost's Undisclosed AI-Assisted Writing Was Found to Have Breached Publication Policies",
+    "published_at": "2026-08-09",
+    "publisher": "AI Incident Database",
+    "hint": "A faculty review at Dartmouth College in Hanover, New Hampshire, found that provost Santiago Schnell used ChatGPT and Claude in published writing without required disclosure and fell short of institutional standards. The review examined AI logs and correspondence rather than detector scores. Schnell resigned and was leaving the college after the findings were released. Deployer: Santiago Schnell, Academics, Chatbot Users. Developer: Openai, Anthropic, Large Language Model Developers. Harmed: Dartmouth College, Universities, Educational Communities, Academic Integrity, Santiago Schnell.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T18:48:07.362Z",
+    "extra": {
+      "classifier_hint": "AI Incident Database record (CC BY-SA 4.0). The description is an editor summary; the original reports are listed as sources. In scope only if the incident is a cybersecurity event involving AI (attack on an AI system, or AI used in an attack); AI harms without a security angle are out of scope. incident_date: 2026-08-09.",
+      "aiid_id": 1791,
+      "incident_date": "2026-08-09",
+      "mit_subdomain": "",
+      "additional_sources": [],
+      "ai_hint": true
+    }
   }
 ]

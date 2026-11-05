@@ -1,5 +1,173 @@
 [
   {
+    "id": "AIR-2026-1788",
+    "slug": "text-vector-integrity-gap-enables-hijacking-in-offline-retri",
+    "title": "Text‑Vector Integrity Gap Enables Hijacking in Offline Retrieval‑Augmented Generation",
+    "summary": "The paper identifies a text‑vector integrity gap in offline retrieval‑augmented generation where signed knowledge packs can be manipulated to control query results. A verifier that tolerates vector deviations enables an attacker to hijack a share of queries.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.06498",
+        "publisher": "arXiv",
+        "title": "Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "vector_integrity",
+      "retrieval_augmented_generation",
+      "rag",
+      "hijack"
+    ],
+    "created_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation",
+        "source_url": "https://arxiv.org/abs/2611.06498",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "demonstrates a novel attack on RAG infrastructure; no known exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1787",
+    "slug": "temporal-membership-inference-attack-on-continuously-updated",
+    "title": "Temporal Membership Inference Attack on Continuously Updated Models",
+    "summary": "Researchers introduce a temporal membership inference attack that can determine if and when a specific data sample was used to train a continually updated model. The study reveals privacy risks for models that are periodically retrained.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.05781",
+        "publisher": "arXiv",
+        "title": "Timing is Everything: Inferring Temporal Membership in Continually Updated Models",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "membership_inference",
+      "temporal_privacy",
+      "privacy"
+    ],
+    "created_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Timing is Everything: Inferring Temporal Membership in Continually Updated Models",
+        "source_url": "https://arxiv.org/abs/2611.05781",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "demonstrates a privacy attack; no known exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1786",
+    "slug": "analysis-of-local-open-weight-llm-agents-on-vulnerability-re",
+    "title": "Analysis of Local Open-Weight LLM Agents on Vulnerability-Reproduction Tasks",
+    "summary": "Researchers show that local open-weight LLM agents can be used to automatically generate inputs that trigger crashes in vulnerable software builds. The proof‑of‑concept demonstrates an AI‑enabled attack without evidence of real‑world exploitation.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "open-weight LLM agents"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.06257",
+        "publisher": "arXiv",
+        "title": "Analysis of Local Open-Weight LLM Agents on Vulnerability-Reproduction Tasks",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai_assisted_intrusion",
+      "vulnerability_reproduction",
+      "open_weight"
+    ],
+    "created_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Analysis of Local Open-Weight LLM Agents on Vulnerability-Reproduction Tasks",
+        "source_url": "https://arxiv.org/abs/2611.06257",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Proof‑of‑concept attack, no confirmed exploitation",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1781",
     "slug": "openai-model-generates-948-linux-root-exploits-in-automated",
     "title": "OpenAI model generates 948 Linux root exploits in automated run",
@@ -285,9 +453,15 @@
         "publisher": "The Hacker News",
         "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/05/zyxel-cve-2026-107441-exploit",
+        "publisher": "Help Net Security",
+        "title": "Patched Zyxel GS1900 switches remained open to in-the-wild exploit (CVE-2026-107441)",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -295,16 +469,18 @@
       "zero-day",
       "compromise",
       "network-switches",
-      "CVE-2026-107441"
+      "CVE-2026-107441",
+      "CVE-2026-7273"
     ],
     "created_at": "2026-11-04T22:01:52.020Z",
-    "updated_at": "2026-11-05T11:07:15.817Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "patched",
     "cve_ids": [
-      "CVE-2026-107441"
+      "CVE-2026-107441",
+      "CVE-2026-7273"
     ],
     "affected": [
       "Zyxel GS1900 series"
@@ -330,6 +506,12 @@
         "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
         "source_url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
         "added_at": "2026-11-05T11:07:15.817Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Patched Zyxel GS1900 switches remained open to in-the-wild exploit (CVE-2026-107441)",
+        "source_url": "https://helpnetsecurity.com/2026/11/05/zyxel-cve-2026-107441-exploit",
+        "added_at": "2026-11-05T18:55:00.365Z"
       }
     ],
     "action": "Update Zyxel GS1900 series switches to the latest firmware immediately.",
@@ -1135,9 +1317,15 @@
         "publisher": "SecurityWeek",
         "title": "Russia-Linked Hackers Hit iOS, Android Devices With Exploit Chains via Watering Holes",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://therecord.media/russia-hackers-smartphone-cyberattacks",
+        "publisher": "The Record",
+        "title": "Russian state-linked hackers target iPhone, Android devices in zero-click espionage campaign",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1149,7 +1337,7 @@
       "n-day"
     ],
     "created_at": "2026-11-04T15:36:32.106Z",
-    "updated_at": "2026-11-05T11:07:15.817Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1181,6 +1369,12 @@
         "title": "Russia-Linked Hackers Hit iOS, Android Devices With Exploit Chains via Watering Holes",
         "source_url": "https://securityweek.com/russia-linked-hackers-hit-ios-android-devices-with-exploit-chains-via-watering-holes",
         "added_at": "2026-11-05T11:07:15.817Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Russian state-linked hackers target iPhone, Android devices in zero-click espionage campaign",
+        "source_url": "https://therecord.media/russia-hackers-smartphone-cyberattacks",
+        "added_at": "2026-11-05T18:55:00.365Z"
       }
     ],
     "action": "",
@@ -5279,99 +5473,6 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-1697",
-    "slug": "chainalysis-discloses-internal-breach-and-customer-data-expo",
-    "title": "Chainalysis Discloses Internal Breach and Customer Data Exposure",
-    "summary": "Blockchain analysis firm Chainalysis suffered a security incident where an external actor accessed non-sensitive customer data using agentic techniques. The company stated that investigation content, authentication credentials, and session tokens remained secure.",
-    "type": "attack_on_ai",
-    "categories": [
-      "agent_hijack"
-    ],
-    "severity": 4,
-    "targets": [
-      "enterprise_deployment"
-    ],
-    "products": [
-      "Chainalysis internal tools"
-    ],
-    "incident_date": "2026-10-31",
-    "incident_date_precision": "day",
-    "first_reported": "2026-10-31",
-    "sources": [
-      {
-        "url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
-        "publisher": "The Hacker News",
-        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
-        "published_at": "2026-10-31"
-      },
-      {
-        "url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
-        "publisher": "BleepingComputer",
-        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
-        "published_at": "2026-10-31"
-      },
-      {
-        "url": "https://securityweek.com/chainalysis-discloses-data-breach-following-ai-driven-cyberattack",
-        "publisher": "SecurityWeek",
-        "title": "Chainalysis Discloses Data Breach Following AI-Driven Cyberattack",
-        "published_at": "2026-11-02"
-      },
-      {
-        "url": "https://helpnetsecurity.com/2026/11/02/chainalysis-breached-using-offensive-agentic-techniques",
-        "publisher": "Help Net Security",
-        "title": "Chainalysis breached using “offensive agentic techniques”",
-        "published_at": "2026-11-02"
-      },
-      {
-        "url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
-        "publisher": "The Record",
-        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
-        "published_at": "2026-11-05"
-      }
-    ],
-    "source_count": 5,
-    "confidence": 0.9,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "data-breach",
-      "chainalysis",
-      "agentic"
-    ],
-    "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-11-05T11:07:15.817Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-10-31",
-        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
-        "source_url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
-        "added_at": "2026-10-31T15:50:02.005Z"
-      },
-      {
-        "date": "2026-10-31",
-        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
-        "source_url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
-        "added_at": "2026-10-31T15:50:02.005Z"
-      },
-      {
-        "date": "2026-11-05",
-        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
-        "source_url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
-        "added_at": "2026-11-05T11:07:15.817Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "Confirmed data breach at a named enterprise organisation.",
-    "cvss": null
-  },
-  {
     "id": "AIR-2026-1696",
     "slug": "chatgpt-share-link-vulnerability-allowed-code-execution-and",
     "title": "ChatGPT Share Link Vulnerability Allowed Code Execution and Data Access",
@@ -5444,6 +5545,111 @@
     ],
     "action": "Ensure ChatGPT is updated to the latest version.",
     "severity_note": "Rated P1 by OpenAI and patched within eight days.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1697",
+    "slug": "chainalysis-discloses-internal-breach-and-customer-data-expo",
+    "title": "Chainalysis Discloses Internal Breach and Customer Data Exposure",
+    "summary": "Blockchain analysis firm Chainalysis suffered a security incident where an external actor accessed non-sensitive customer data using agentic techniques. The company stated that investigation content, authentication credentials, and session tokens remained secure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Chainalysis internal tools"
+    ],
+    "incident_date": "2026-10-31",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-30",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1795",
+        "publisher": "AI Incident Database",
+        "title": "Attacker Reportedly Used AI Agents to Breach Blockchain Analytics Firm Chainalysis and Access Customer Data",
+        "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+        "publisher": "The Hacker News",
+        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
+        "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
+        "publisher": "BleepingComputer",
+        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
+        "published_at": "2026-10-31"
+      },
+      {
+        "url": "https://securityweek.com/chainalysis-discloses-data-breach-following-ai-driven-cyberattack",
+        "publisher": "SecurityWeek",
+        "title": "Chainalysis Discloses Data Breach Following AI-Driven Cyberattack",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/02/chainalysis-breached-using-offensive-agentic-techniques",
+        "publisher": "Help Net Security",
+        "title": "Chainalysis breached using “offensive agentic techniques”",
+        "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
+        "publisher": "The Record",
+        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 6,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "chainalysis",
+      "agentic"
+    ],
+    "created_at": "2026-10-31T15:50:02.005Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-30",
+        "title": "Attacker Reportedly Used AI Agents to Breach Blockchain Analytics Firm Chainalysis and Access Customer Data",
+        "source_url": "https://incidentdatabase.ai/cite/1795",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      },
+      {
+        "date": "2026-10-31",
+        "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
+        "source_url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      },
+      {
+        "date": "2026-10-31",
+        "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
+        "source_url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
+        "added_at": "2026-10-31T15:50:02.005Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
+        "source_url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
+        "added_at": "2026-11-05T11:07:15.817Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed data breach at a named enterprise organisation.",
     "cvss": null
   },
   {
@@ -6379,63 +6585,6 @@
     ],
     "action": "",
     "severity_note": "Confirmed real-world loss of customer payment card information.",
-    "cvss": null
-  },
-  {
-    "id": "AIR-2026-1679",
-    "slug": "vapor-panda-uses-agentic-ai-pentesting-tool-in-multi-target",
-    "title": "Vapor Panda uses agentic AI pentesting tool in multi-target campaign",
-    "summary": "A China-backed threat group named Vapor Panda compromised over one hundred sensitive targets using an agentic AI pentesting tool. The rapid and successful campaign spanned multiple countries and organizations.",
-    "type": "ai_enabled_attack",
-    "categories": [
-      "ai_assisted_intrusion"
-    ],
-    "severity": 3,
-    "targets": [
-      "n/a"
-    ],
-    "products": [
-      "agentic AI pentesting tool"
-    ],
-    "incident_date": "2026-10-30",
-    "incident_date_precision": "day",
-    "first_reported": "2026-10-30",
-    "sources": [
-      {
-        "url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
-        "publisher": "CyberScoop",
-        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
-        "published_at": "2026-10-30"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.9,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "vapor-panda",
-      "ai-assisted-intrusion",
-      "pentesting-tool"
-    ],
-    "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-10-30T23:21:39.510Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-10-30",
-        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
-        "source_url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
-        "added_at": "2026-10-30T23:21:39.510Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "Confirmed real-world exploitation across numerous targets.",
     "cvss": null
   },
   {
@@ -14340,6 +14489,64 @@
     ],
     "action": "",
     "severity_note": "Confirmed personal data breach affecting hundreds of thousands of accounts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1784",
+    "slug": "cathedral-used-ai-agents-to-access-anthropic-internal-busine",
+    "title": "Cathedral Used AI Agents to Access Anthropic Internal Business Systems",
+    "summary": "Security firm Cathedral leveraged AI agents to exploit third‑party software and gain limited access to Anthropic’s internal business systems during an authorized test. Anthropic confirmed the breach, blocked the access, and noted incomplete adherence to testing rules.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "AI agents"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-26",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1789",
+        "publisher": "AI Incident Database",
+        "title": "Cybersecurity Firm Cathedral Reportedly Used AI Agents to Access Anthropic's Internal Business Systems",
+        "published_at": "2026-10-26"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.88,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "anthropic",
+      "ai_agents",
+      "intrusion",
+      "security-testing"
+    ],
+    "created_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-26",
+        "title": "Cybersecurity Firm Cathedral Reportedly Used AI Agents to Access Anthropic's Internal Business Systems",
+        "source_url": "https://incidentdatabase.ai/cite/1789",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      }
+    ],
+    "action": "Review and strengthen internal access controls and monitor AI agent usage.",
+    "severity_note": "Attackers accessed internal business systems, confirming exploitation.",
     "cvss": null
   },
   {
@@ -23509,6 +23716,75 @@
     "cvss": null
   },
   {
+    "id": "AIR-2026-1679",
+    "slug": "vapor-panda-uses-agentic-ai-pentesting-tool-in-multi-target",
+    "title": "Vapor Panda uses agentic AI pentesting tool in multi-target campaign",
+    "summary": "A China-backed threat group named Vapor Panda compromised over one hundred sensitive targets using an agentic AI pentesting tool. The rapid and successful campaign spanned multiple countries and organizations.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "agentic AI pentesting tool"
+    ],
+    "incident_date": "2026-10-30",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-17",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1794",
+        "publisher": "AI Incident Database",
+        "title": "China-Linked Espionage Group VAPOR PANDA Reportedly Used ARTEX AI Agents to Breach Government and Corporate Systems Worldwide",
+        "published_at": "2026-10-17"
+      },
+      {
+        "url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
+        "publisher": "CyberScoop",
+        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
+        "published_at": "2026-10-30"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "vapor-panda",
+      "ai-assisted-intrusion",
+      "pentesting-tool"
+    ],
+    "created_at": "2026-10-30T23:21:39.510Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-17",
+        "title": "China-Linked Espionage Group VAPOR PANDA Reportedly Used ARTEX AI Agents to Breach Government and Corporate Systems Worldwide",
+        "source_url": "https://incidentdatabase.ai/cite/1794",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "China-backed threat group used agentic AI pentesting tool to compromise 140 sensitive targets in 11 days",
+        "source_url": "https://cyberscoop.com/china-vapor-panda-agentic-ai-artex-campaign-crowdstrike",
+        "added_at": "2026-10-30T23:21:39.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world exploitation across numerous targets.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-0338",
     "slug": "ai-agent-hacked-into-crypto-wallet-and-stole-funds",
     "title": "AI Agent Hacked into Crypto Wallet and Stole Funds",
@@ -31460,9 +31736,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-100607: Flowise through 3.1.4 resolves SSO and local-password users solely by email without storing provider or subject identifier…",
         "published_at": "2026-09-26"
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-mgrx-3hqw-485h",
+        "publisher": "GitHub Advisory Database",
+        "title": "GHSA-mgrx-3hqw-485h: Duplicate Advisory: INVITED users auto-promoted via SSO email match (invite-token bypass)",
+        "published_at": "2026-09-26"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -31472,15 +31754,17 @@
       "authentication"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:33:31.967Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-09-26",
-    "patch_status": "unknown",
+    "patch_status": "unpatched",
     "cve_ids": [
       "CVE-2026-100607"
     ],
-    "affected": [],
+    "affected": [
+      "flowise <= 3.1.4"
+    ],
     "fixed_in": [],
     "timeline": [
       {
@@ -31488,6 +31772,12 @@
         "title": "CVE-2026-100607: Flowise through 3.1.4 resolves SSO and local-password users solely by email without storing provider or subject identifier…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100607",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-09-26",
+        "title": "GitHub advisory published",
+        "source_url": "https://github.com/advisories/GHSA-mgrx-3hqw-485h",
+        "added_at": "2026-11-05T18:55:00.365Z"
       }
     ],
     "action": "",
@@ -34459,6 +34749,64 @@
     "action": "",
     "severity_note": "",
     "cvss": 5.3
+  },
+  {
+    "id": "AIR-2026-1783",
+    "slug": "johns-hopkins-bayview-employee-uploaded-patient-data-to-unap",
+    "title": "Johns Hopkins Bayview Employee Uploaded Patient Data to Unapproved AI Tool",
+    "summary": "A Johns Hopkins Bayview Hospital employee uploaded a spreadsheet containing patient information to an unapproved public AI service, prompting notification to over three thousand patients. The hospital is seeking deletion of the data and reinforcing staff training.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "public AI tool"
+    ],
+    "incident_date": "2026-09-21",
+    "incident_date_precision": "day",
+    "first_reported": "2026-09-21",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1792",
+        "publisher": "AI Incident Database",
+        "title": "A Johns Hopkins Bayview Hospital Employee in Baltimore Reportedly Uploaded Patient Data to an Unapproved AI Tool",
+        "published_at": "2026-09-21"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "healthcare",
+      "data-leak",
+      "privacy",
+      "phidata"
+    ],
+    "created_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-05T18:55:00.365Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-05",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-09-21",
+        "title": "A Johns Hopkins Bayview Hospital Employee in Baltimore Reportedly Uploaded Patient Data to an Unapproved AI Tool",
+        "source_url": "https://incidentdatabase.ai/cite/1792",
+        "added_at": "2026-11-05T18:55:00.365Z"
+      }
+    ],
+    "action": "Notify affected patients, assess the AI service for data retention, and enforce strict data‑handling policies.",
+    "severity_note": "Patient data was exposed to an external AI service, constituting a real‑world PHI breach.",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0159",

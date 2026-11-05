@@ -17115,5 +17115,320 @@
       "trendmicro: getaddrinfo ENOTFOUND feeds.trendmicro.com",
       "classification: gemini gemini-3.5-flash-lite: {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\"status\":\"UNAVAILABLE\"}} | groq openai/gpt-oss-120b: 429 {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m56w0qzgeb9rnszb4r86dwav` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4447, Requested 6592. Please try again in 22.7925s. Need more tokens? Upgrade to Dev Tier today at https:"
     ]
+  },
+  {
+    "id": "run-20261105T184756",
+    "started_at": "2026-11-05T18:47:56.143Z",
+    "finished_at": "2026-11-05T18:57:22.105Z",
+    "mode": "scheduled",
+    "sources": [
+      {
+        "id": "securityweek",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 138
+      },
+      {
+        "id": "thn",
+        "ok": true,
+        "items": 19,
+        "duration_ms": 159
+      },
+      {
+        "id": "bleepingcomputer",
+        "ok": true,
+        "items": 15,
+        "duration_ms": 78
+      },
+      {
+        "id": "krebs",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 257
+      },
+      {
+        "id": "darkreading",
+        "ok": true,
+        "items": 6,
+        "duration_ms": 358
+      },
+      {
+        "id": "cyberscoop",
+        "ok": true,
+        "items": 3,
+        "duration_ms": 116
+      },
+      {
+        "id": "therecord",
+        "ok": true,
+        "items": 5,
+        "duration_ms": 481
+      },
+      {
+        "id": "helpnetsecurity",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 182
+      },
+      {
+        "id": "openai",
+        "ok": true,
+        "items": 7,
+        "duration_ms": 170
+      },
+      {
+        "id": "google-security",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 238
+      },
+      {
+        "id": "deepmind",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 79
+      },
+      {
+        "id": "anthropic",
+        "ok": true,
+        "items": 5,
+        "duration_ms": 1008
+      },
+      {
+        "id": "ms-security",
+        "ok": true,
+        "items": 3,
+        "duration_ms": 37
+      },
+      {
+        "id": "gtig",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 1486
+      },
+      {
+        "id": "ms-ai",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 117
+      },
+      {
+        "id": "ms-threat-intel",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 1089
+      },
+      {
+        "id": "meta-eng",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 48
+      },
+      {
+        "id": "cisa-alerts",
+        "ok": false,
+        "items": 0,
+        "status": 403,
+        "error": "HTTP 403 for https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
+        "duration_ms": 68
+      },
+      {
+        "id": "msrc-sug",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 851
+      },
+      {
+        "id": "cert-eu",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 703
+      },
+      {
+        "id": "ncsc-uk",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 65
+      },
+      {
+        "id": "paloalto-psirt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 109
+      },
+      {
+        "id": "cisco-psirt",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 434
+      },
+      {
+        "id": "simonw-pi",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 128
+      },
+      {
+        "id": "simonw-sec",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 315
+      },
+      {
+        "id": "embracethered",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 100
+      },
+      {
+        "id": "trailofbits",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 166
+      },
+      {
+        "id": "unit42-ai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 731
+      },
+      {
+        "id": "unit42",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 18
+      },
+      {
+        "id": "fortinet-psirt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 1754
+      },
+      {
+        "id": "talos",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 109
+      },
+      {
+        "id": "owasp-genai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 158
+      },
+      {
+        "id": "straiker",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 76
+      },
+      {
+        "id": "checkmarx-zero",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 592
+      },
+      {
+        "id": "hiddenlayer",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 109
+      },
+      {
+        "id": "arxiv-cscr",
+        "ok": true,
+        "items": 19,
+        "duration_ms": 47
+      },
+      {
+        "id": "hn",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 8254
+      },
+      {
+        "id": "ghsa",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 748
+      },
+      {
+        "id": "kev",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 84
+      },
+      {
+        "id": "hibp",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 819
+      },
+      {
+        "id": "aiid",
+        "ok": true,
+        "items": 16,
+        "duration_ms": 1309
+      },
+      {
+        "id": "trendmicro",
+        "ok": false,
+        "items": 0,
+        "error": "getaddrinfo ENOTFOUND feeds.trendmicro.com",
+        "duration_ms": 15790
+      },
+      {
+        "id": "nvd",
+        "ok": true,
+        "items": 16,
+        "duration_ms": 252260
+      },
+      {
+        "id": "gdelt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 412441
+      }
+    ],
+    "counts": {
+      "fetched": 155,
+      "prefiltered": 106,
+      "merged": 5,
+      "classified": 11,
+      "published": 5,
+      "review": 1,
+      "rejected": 2,
+      "pending": 29,
+      "updated": 5,
+      "closed": 0,
+      "reopened": 0
+    },
+    "llm": {
+      "calls": 12,
+      "prompt_tokens": 21498,
+      "completion_tokens": 9434,
+      "by_model": {
+        "gemini-lite/gemini-3.5-flash-lite": {
+          "calls": 4,
+          "prompt_tokens": 4631,
+          "completion_tokens": 534
+        },
+        "gemini-flash/gemini-3.8-flash": {
+          "calls": 2,
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "groq/openai/gpt-oss-120b": {
+          "calls": 6,
+          "prompt_tokens": 16867,
+          "completion_tokens": 8900
+        }
+      }
+    },
+    "errors": [
+      "cisa-alerts: HTTP 403 for https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
+      "trendmicro: getaddrinfo ENOTFOUND feeds.trendmicro.com",
+      "classification: groq openai/gpt-oss-120b: 400 {\"error\":{\"message\":\"Generated JSON does not match the expected schema. Please adjust your prompt. See 'failed_generation' for more details. Error: jsonschema: '/results' does not validate with /properties/results/type: expected array, but got object\",\"type\":\"invalid_request_error\",\"code\":\"json_"
+    ]
   }
 ]
