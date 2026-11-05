@@ -1,5 +1,15 @@
 [
   {
+    "key": "a4f4c423c5426033",
+    "title": "A thousand fewer paths to root",
+    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Product launch and research feature announcement about automated patching pipelines without an exploited target or specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-05T02:33:56.451Z"
+  },
+  {
     "key": "ede1220cf0eb096b",
     "title": "Canadian extradited to US for allegedly hacking schools in at least four states",
     "url": "https://therecord.media/canadian-nationals-accused-us-education-hacks-cryptomining",
