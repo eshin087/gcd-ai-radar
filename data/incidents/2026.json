@@ -1,5 +1,78 @@
 [
   {
+    "id": "AIR-2026-1781",
+    "slug": "openai-model-generates-948-linux-root-exploits-in-automated",
+    "title": "OpenAI model generates 948 Linux root exploits in automated run",
+    "summary": "OpenAI disclosed that its upcoming AI model automatically created working exploits for 948 Linux kernel bugs and produced patches for each. The research shows AI can be used to mass‑generate privilege‑escalation exploits.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_generated_malware",
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "OpenAI model",
+      "Linux kernel"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/05/openai-linux-kernel-root-exploits",
+        "publisher": "Help Net Security",
+        "title": "OpenAI’s upcoming AI model built 948 working Linux root exploits in a single run",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html",
+        "publisher": "The Hacker News",
+        "title": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ai_generated_malware",
+      "linux",
+      "openai",
+      "exploit",
+      "research"
+    ],
+    "created_at": "2026-11-05T11:07:15.817Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "OpenAI’s upcoming AI model built 948 working Linux root exploits in a single run",
+        "source_url": "https://helpnetsecurity.com/2026/11/05/openai-linux-kernel-root-exploits",
+        "added_at": "2026-11-05T11:07:15.817Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run",
+        "source_url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html",
+        "added_at": "2026-11-05T11:07:15.817Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration of AI‑generated Linux kernel exploits",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1780",
     "slug": "ruby-on-rails-vulnerable-to-arbitrary-file-read-and-write-in",
     "title": "Ruby on Rails Vulnerable to Arbitrary File Read and Write in Active Storage",
@@ -200,24 +273,39 @@
         "publisher": "BleepingComputer",
         "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day",
+        "publisher": "SecurityWeek",
+        "title": "Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
+        "publisher": "The Hacker News",
+        "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
     "tags": [
       "zero-day",
       "compromise",
-      "network-switches"
+      "network-switches",
+      "CVE-2026-107441"
     ],
     "created_at": "2026-11-04T22:01:52.020Z",
-    "updated_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "patched",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-107441"
+    ],
     "affected": [
       "Zyxel GS1900 series"
     ],
@@ -230,6 +318,18 @@
         "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
         "source_url": "https://bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches",
         "added_at": "2026-11-04T22:01:52.020Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day",
+        "source_url": "https://securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day",
+        "added_at": "2026-11-05T11:07:15.817Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
+        "source_url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
+        "added_at": "2026-11-05T11:07:15.817Z"
       }
     ],
     "action": "Update Zyxel GS1900 series switches to the latest firmware immediately.",
@@ -511,9 +611,15 @@
         "publisher": "CISA",
         "title": "CVE-2024-27834: Apple Multiple Products — Apple Multiple Products Improper Authentication Vulnerability",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-patched-apple-flaw-to.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploit Patched Apple Flaw to Deliver Info-Stealing Malware, CISA Says",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -523,7 +629,7 @@
       "pointer_authentication"
     ],
     "created_at": "2026-11-04T22:01:52.020Z",
-    "updated_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -541,6 +647,12 @@
         "title": "CVE-2024-27834: Apple Multiple Products — Apple Multiple Products Improper Authentication Vulnerability",
         "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-27834",
         "added_at": "2026-11-04T22:01:52.020Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Hackers Exploit Patched Apple Flaw to Deliver Info-Stealing Malware, CISA Says",
+        "source_url": "https://thehackernews.com/2026/11/hackers-exploit-patched-apple-flaw-to.html",
+        "added_at": "2026-11-05T11:07:15.817Z"
       }
     ],
     "action": "Apply mitigations and security updates in accordance with vendor instructions and CISA guidance.",
@@ -1017,9 +1129,15 @@
         "publisher": "BleepingComputer",
         "title": "Hackers use n-day exploits in zero-click attacks on iOS, Android devices",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://securityweek.com/russia-linked-hackers-hit-ios-android-devices-with-exploit-chains-via-watering-holes",
+        "publisher": "SecurityWeek",
+        "title": "Russia-Linked Hackers Hit iOS, Android Devices With Exploit Chains via Watering Holes",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1031,7 +1149,7 @@
       "n-day"
     ],
     "created_at": "2026-11-04T15:36:32.106Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1057,6 +1175,12 @@
         "title": "Hackers use n-day exploits in zero-click attacks on iOS, Android devices",
         "source_url": "https://bleepingcomputer.com/news/security/hackers-use-n-day-exploits-in-zero-click-attacks-on-ios-android-devices",
         "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Russia-Linked Hackers Hit iOS, Android Devices With Exploit Chains via Watering Holes",
+        "source_url": "https://securityweek.com/russia-linked-hackers-hit-ios-android-devices-with-exploit-chains-via-watering-holes",
+        "added_at": "2026-11-05T11:07:15.817Z"
       }
     ],
     "action": "",
@@ -5197,9 +5321,15 @@
         "publisher": "Help Net Security",
         "title": "Chainalysis breached using “offensive agentic techniques”",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
+        "publisher": "The Record",
+        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -5209,7 +5339,7 @@
       "agentic"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -5229,6 +5359,12 @@
         "title": "Chainalysis discloses data breach from \"offensive agentic techniques\"",
         "source_url": "https://bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques",
         "added_at": "2026-10-31T15:50:02.005Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
+        "source_url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
+        "added_at": "2026-11-05T11:07:15.817Z"
       }
     ],
     "action": "",

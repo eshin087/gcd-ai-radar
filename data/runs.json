@@ -16842,5 +16842,278 @@
       "cisa-alerts: HTTP 403 for https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
       "trendmicro: getaddrinfo ENOTFOUND feeds.trendmicro.com"
     ]
+  },
+  {
+    "id": "run-20261105T105940",
+    "started_at": "2026-11-05T10:59:40.863Z",
+    "finished_at": "2026-11-05T11:07:56.445Z",
+    "mode": "scheduled",
+    "sources": [
+      {
+        "id": "securityweek",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 374
+      },
+      {
+        "id": "thn",
+        "ok": true,
+        "items": 17,
+        "duration_ms": 721
+      },
+      {
+        "id": "krebs",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 441
+      },
+      {
+        "id": "bleepingcomputer",
+        "ok": true,
+        "items": 12,
+        "duration_ms": 192
+      },
+      {
+        "id": "darkreading",
+        "ok": true,
+        "items": 5,
+        "duration_ms": 502
+      },
+      {
+        "id": "therecord",
+        "ok": true,
+        "items": 5,
+        "duration_ms": 525
+      },
+      {
+        "id": "cyberscoop",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 304
+      },
+      {
+        "id": "helpnetsecurity",
+        "ok": true,
+        "items": 10,
+        "duration_ms": 371
+      },
+      {
+        "id": "openai",
+        "ok": true,
+        "items": 6,
+        "duration_ms": 315
+      },
+      {
+        "id": "deepmind",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 411
+      },
+      {
+        "id": "google-security",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 855
+      },
+      {
+        "id": "ms-security",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 187
+      },
+      {
+        "id": "ms-threat-intel",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 70
+      },
+      {
+        "id": "ms-ai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 56
+      },
+      {
+        "id": "meta-eng",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 546
+      },
+      {
+        "id": "cisa-alerts",
+        "ok": false,
+        "items": 0,
+        "status": 403,
+        "error": "HTTP 403 for https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
+        "duration_ms": 277
+      },
+      {
+        "id": "gtig",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 2057
+      },
+      {
+        "id": "cisco-psirt",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 685
+      },
+      {
+        "id": "paloalto-psirt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 287
+      },
+      {
+        "id": "simonw-pi",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 587
+      },
+      {
+        "id": "simonw-sec",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 507
+      },
+      {
+        "id": "embracethered",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 354
+      },
+      {
+        "id": "trailofbits",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 519
+      },
+      {
+        "id": "unit42-ai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 1155
+      },
+      {
+        "id": "unit42",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 36
+      },
+      {
+        "id": "hn",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 7919
+      },
+      {
+        "id": "fortinet-psirt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 3473
+      },
+      {
+        "id": "talos",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 246
+      },
+      {
+        "id": "owasp-genai",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 289
+      },
+      {
+        "id": "straiker",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 258
+      },
+      {
+        "id": "checkmarx-zero",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 549
+      },
+      {
+        "id": "ghsa",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 817
+      },
+      {
+        "id": "kev",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 230
+      },
+      {
+        "id": "hibp",
+        "ok": true,
+        "items": 1,
+        "duration_ms": 467
+      },
+      {
+        "id": "trendmicro",
+        "ok": false,
+        "items": 0,
+        "error": "getaddrinfo ENOTFOUND feeds.trendmicro.com",
+        "duration_ms": 16042
+      },
+      {
+        "id": "nvd",
+        "ok": true,
+        "items": 15,
+        "duration_ms": 269978
+      },
+      {
+        "id": "gdelt",
+        "ok": true,
+        "items": 0,
+        "duration_ms": 390417
+      }
+    ],
+    "counts": {
+      "fetched": 89,
+      "prefiltered": 65,
+      "merged": 5,
+      "classified": 5,
+      "published": 1,
+      "review": 1,
+      "rejected": 0,
+      "pending": 4,
+      "updated": 4,
+      "closed": 0,
+      "reopened": 0
+    },
+    "llm": {
+      "calls": 9,
+      "prompt_tokens": 6351,
+      "completion_tokens": 4329,
+      "by_model": {
+        "gemini-lite/gemini-3.5-flash-lite": {
+          "calls": 4,
+          "prompt_tokens": 526,
+          "completion_tokens": 48
+        },
+        "gemini-flash/gemini-3.8-flash": {
+          "calls": 2,
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "groq/openai/gpt-oss-120b": {
+          "calls": 3,
+          "prompt_tokens": 5825,
+          "completion_tokens": 4281
+        }
+      }
+    },
+    "errors": [
+      "cisa-alerts: HTTP 403 for https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
+      "trendmicro: getaddrinfo ENOTFOUND feeds.trendmicro.com",
+      "classification: gemini gemini-3.5-flash-lite: {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\"status\":\"UNAVAILABLE\"}} | groq openai/gpt-oss-120b: 429 {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m56w0qzgeb9rnszb4r86dwav` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4447, Requested 6592. Please try again in 22.7925s. Need more tokens? Upgrade to Dev Tier today at https:"
+    ]
   }
 ]

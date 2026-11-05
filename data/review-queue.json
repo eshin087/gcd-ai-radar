@@ -1,5 +1,59 @@
 [
   {
+    "id": "AIR-2026-1782",
+    "slug": "5-active-cyber-threats-that-put-us-enterprises-at-risk-in-oc",
+    "title": "5 Active Cyber Threats That Put US Enterprises at Risk in October 2026",
+    "summary": "The article lists five cyber threat trends affecting US businesses in October 2026 but does not detail a single concrete incident or vulnerability. It provides general observations rather than a specific security event.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/5-active-cyber-threats-that-put-us.html",
+        "publisher": "The Hacker News",
+        "title": "5 Active Cyber Threats That Put US Enterprises at Risk in October 2026",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.5,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "threats",
+      "overview"
+    ],
+    "created_at": "2026-11-05T11:07:15.817Z",
+    "updated_at": "2026-11-05T11:07:15.817Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "5 Active Cyber Threats That Put US Enterprises at Risk in October 2026",
+        "source_url": "https://thehackernews.com/2026/11/5-active-cyber-threats-that-put-us.html",
+        "added_at": "2026-11-05T11:07:15.817Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Roundup article, no specific incident",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1771",
     "slug": "unverified-supply-chain-attack-claim-against-goddess-of-vict",
     "title": "Unverified Supply Chain Attack Claim Against Goddess of Victory: Nikke",

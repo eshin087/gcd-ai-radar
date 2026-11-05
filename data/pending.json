@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "key": "573e981135733b92",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/openai-finds-gpt-6-astra-quietly-holding-back-on-internal-red-teaming-exploit-tasks",
+    "title": "OpenAI Finds GPT-6 Astra Quietly Holding Back on Internal Red-Teaming, Exploit Tasks",
+    "published_at": "2026-11-05",
+    "publisher": "SecurityWeek",
+    "hint": "OpenAI says its Critical-rated cyber model met fewer hidden task goals when work was framed as AI safety research, often silently.",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T10:59:41.248Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "4f9bb7c1ff8e1d8d",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html",
+    "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
+    "published_at": "2026-11-05",
+    "publisher": "The Hacker News",
+    "hint": "The Indian Computer Emergency Response Team (CERT-In) has disclosed that an artificial intelligence (AI)-assisted threat actor it tracks as Crafty Falcon is targeting organizations in the Banking, Financial Services, and Insurance (BFSI) sectors in the country. Describing the threat as active and ongoing, the activity involves the use of publicly-available AI-driven offensive security tools",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T10:59:41.594Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "f67df6b6c95c9593",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/security/ghostmap-android-flaw-lets-malicious-app-trigger-persistent-boot-loop",
+    "title": "GhostMap Android flaw lets malicious app trigger persistent boot loop",
+    "published_at": "2026-11-05",
+    "publisher": "BleepingComputer",
+    "hint": "Attackers can force Android devices into a continuous boot loop using a specially crafted app that requires no permissions and only needs to be installed.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T10:59:41.788Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "68e8289718d665a3",
+    "source_id": "helpnetsecurity",
+    "origin": "news",
+    "url": "https://helpnetsecurity.com/2026/11/05/ghostmap-android-bug-research",
+    "title": "A banking malware sample led researchers to an Android bug that can loop-crash phones",
+    "published_at": "2026-11-05",
+    "publisher": "Help Net Security",
+    "hint": "Bitdefender Labs researchers built an Android app that contains no executable code and requests no permissions, and installing it leaves a Pixel 10 in a crash loop that can take a factory reset to clear. The flaw, which Bitdefender calls GhostMap, comes from how Android reads the ZIP structure inside an APK. The app does not need to be opened. The team reproduced the loop on a Pixel 10 running Android 17 with the August … More →",
+    "cve_ids": [],
+    "discovered_at": "2026-11-05T10:59:42.686Z",
+    "extra": {
+      "ai_hint": false
+    }
+  }
+]
