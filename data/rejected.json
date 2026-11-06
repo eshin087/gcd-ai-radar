@@ -1,5 +1,185 @@
 [
   {
+    "key": "04d9cc88a81eef70",
+    "title": "KeHoSu: Keyed Homoglyph Substitution for Authenticated Text Provenance over Copy-Paste Channels",
+    "url": "https://arxiv.org/abs/2611.08046",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a paper proposing text attribution and watermarking mechanisms using homoglyphs, which is a defence and provenance mechanism.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "96214a43bf671892",
+    "title": "Decision Models as Retrieval Gates Against Injection and Pollution",
+    "url": "https://arxiv.org/abs/2611.08325",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper proposing a defence mechanism (decision models as retrieval gates) against injection.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "3c6ddc4830f8c2d7",
+    "title": "LABBA: LLM-Assisted Behavioral Biometric Authentication",
+    "url": "https://arxiv.org/abs/2611.08343",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper proposing a new behavioral biometric authentication system using LLMs, which is a defence/product proposal.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "d93081553b9b4583",
+    "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
+    "url": "https://arxiv.org/abs/2611.07222",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "72881a5bcb71e8e0",
+    "title": "JailBound: FOL-Guided Jailbreak Evaluation for Exploring LLM Behavioral Boundaries",
+    "url": "https://arxiv.org/abs/2611.07530",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "cf90cacafafebdd4",
+    "title": "A Gingerbread House for LLM Agents: Source-Planned Honeypots That Lure Autonomous Attackers into an Isolated Shadow",
+    "url": "https://arxiv.org/abs/2611.07611",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "02ba1d0ecbe58e70",
+    "title": "AI-Native Task-Oriented Semantic Communications over a Relay: Benefits and Vulnerabilities",
+    "url": "https://arxiv.org/abs/2611.08155",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "468404fd3490fba4",
+    "title": "CANMentor: A Large-Small Model Collaboration Framework for CAN Bus Intrusion Detection",
+    "url": "https://arxiv.org/abs/2611.07853",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: AI harms with no security angle or general research papers outside the specific criteria are out of scope",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "1482780abff91adc",
+    "title": "Escalate or Close: How Fast-Tier Models Handle Held-Out Web Attack Families in Two-Tier Triage",
+    "url": "https://arxiv.org/abs/2611.08229",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence-only or benchmark research paper without a specific attack demonstration.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "83c6293972f63e14",
+    "title": "MEvince: Knowledge-Constrained LLM Reasoning for Technique Identification from Malware Reports",
+    "url": "https://arxiv.org/abs/2611.07486",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence or analysis tool research paper, out of scope for GCD RADAR.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "092890ea30ce6876",
+    "title": "OpenAI’s GPT-6 Cyber found 81 Firefox flaws earlier AI testing missed",
+    "url": "https://helpnetsecurity.com/2026/11/06/openai-gpt-6-cyber-released",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and security testing model announcement, out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "e6c233abba1afcb4",
+    "title": "OpenAI Says New GPT-6 Cyber Model Hunts Flaws Without Crossing the Line",
+    "url": "https://securityweek.com/openai-says-new-gpt-6-cyber-model-hunts-flaws-without-crossing-the-line",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product launch and security testing model announcement, out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "4bbe0af4a580e986",
+    "title": "Show HN: An open source webbluetooth and NFC browser for iOS",
+    "url": "https://github.com/hito-dev/wand-browser",
+    "publisher": "GitHub",
+    "source_id": "hn",
+    "reason": "out of scope: Show HN product launch and developer project announcement.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "dbf283d3b1963126",
+    "title": "Sarajevo Cyber Security Summit 2026 puts the Western Balkans’ cyber resilience in focus",
+    "url": "https://helpnetsecurity.com/2026/11/06/sarajevo-cyber-security-summit-2026",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Conference announcement discussing cyber resilience and supply chain risks in general terms without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "d0408474df43b7cb",
+    "title": "The Secret Leak Test: a prompt injection filter vs. attacks",
+    "url": "https://hodor.gatebolt.com/blog/secret-leak-test",
+    "publisher": "hodor.gatebolt.com",
+    "source_id": "hn",
+    "reason": "out of scope: Vendor product evaluation or benchmark test comparing prompt injection filters rather than a distinct incident.",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "26ad458e1da2f620",
+    "title": "In Other News: Trezor Implant, LLMJacking Bills Hit $1M, SAP Flaws Weaponized Within Days",
+    "url": "https://securityweek.com/in-other-news-trezor-implant-llmjacking-bills-hit-1m-sap-flaws-weaponized-within-days",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: News roundup piece mentioning multiple topics without providing a single detailed incident record.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "61f003d9bff4d8d6",
+    "title": "IMSI vs IMEI: What Your Phone Broadcasts and Who Can Read It",
+    "url": "https://bleepingcomputer.com/news/security/imsi-vs-imei-what-your-phone-broadcasts-and-who-can-read-it",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: general explainer or educational guide with no specific named incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
+    "key": "197757f56a66b23c",
+    "title": "MetaMask says recent attack didn't affect wallet infrastructure",
+    "url": "https://bleepingcomputer.com/news/security/metamask-says-recent-attack-didnt-affect-wallet-infrastructure",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: vendor statement denying impact from a security incident without specific breach details or named exploit",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T16:25:59.244Z"
+  },
+  {
     "key": "2a23bb2b827c2b66",
     "title": "Dartmouth College Provost's Undisclosed AI-Assisted Writing Was Found to Have Breached Publication Policies",
     "url": "https://incidentdatabase.ai/cite/1791",

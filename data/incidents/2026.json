@@ -1,5 +1,362 @@
 [
   {
+    "id": "AIR-2026-1812",
+    "slug": "ceo-spoofing-scammers-used-ai-to-help-steal-more-than-100-mi",
+    "title": "CEO-spoofing scammers used AI to help steal more than $100 million",
+    "summary": "Federal authorities announced that scammers utilized AI voice spoofing to impersonate executives and steal over $100 million in fraud campaigns. The U.S. is currently seeking extradition of three suspects from Europe.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud",
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "CEO impersonation tooling"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://therecord.media/ceo-spoofing-scammers-charged",
+        "publisher": "The Record",
+        "title": "CEO-spoofing scammers used AI to help steal more than $100 million, feds say",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ceo-fraud",
+      "deepfake",
+      "voice-spoofing",
+      "financial-loss"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "CEO-spoofing scammers used AI to help steal more than $100 million, feds say",
+        "source_url": "https://therecord.media/ceo-spoofing-scammers-charged",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss exceeding $100 million.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1811",
+    "slug": "malicious-browser-extensions-abuse-claude-dispatch-to-execut",
+    "title": "Malicious Browser Extensions Abuse Claude Dispatch to Execute Code",
+    "summary": "Researchers demonstrated that malicious browser extensions interacting with claude.ai can trick Claude Desktop into running arbitrary code via the Dispatch feature. The underlying security issue remains exploitable.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Desktop",
+      "Claude Dispatch"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html",
+        "publisher": "The Hacker News",
+        "title": "Malicious Browser Extensions Could Use Claude Dispatch to Run Code on Users' Computers",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "claude-desktop",
+      "browser-extension",
+      "agent-hijack",
+      "dispatch"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Claude Desktop",
+      "Claude Dispatch"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "Malicious Browser Extensions Could Use Claude Dispatch to Run Code on Users' Computers",
+        "source_url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research proof of concept demonstrating code execution via AI desktop integration.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1810",
+    "slug": "cve-2026-83844-microsoft-paint-rce-flaw-fixed-via-microsoft",
+    "title": "CVE-2026-83844: Microsoft Paint RCE Flaw Fixed via Microsoft Store",
+    "summary": "A remote code execution flaw in Microsoft Paint allows attackers to run code over a network via an out-of-bounds read. Microsoft has released a patch available through the Microsoft Store rather than Windows Update.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft Paint"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
+        "publisher": "The Hacker News",
+        "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-83844",
+      "rce",
+      "microsoft-paint"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-83844"
+    ],
+    "affected": [
+      "Microsoft Paint prior to build 11.2609.401.0"
+    ],
+    "fixed_in": [
+      "Microsoft Paint 11.2609.401.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
+        "source_url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "Update Microsoft Paint via the Microsoft Store to version 11.2609.401.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch available through the Microsoft Store.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1809",
+    "slug": "us-agencies-warn-threat-actors-target-commercial-refrigerati",
+    "title": "US Agencies Warn Threat Actors Target Commercial Refrigeration Systems",
+    "summary": "Five US federal agencies issued a joint warning regarding ongoing attacks against grocery store and cold storage refrigeration controllers. Threat actors are attempting to manipulate temperatures and force continuous heating cycles.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Refrigeration system controllers"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/06/cyberattacks-refrigeration-systems-cisa-fbi",
+        "publisher": "Help Net Security",
+        "title": "US agencies warn attackers are targeting refrigeration systems that protect food and medicine",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ics",
+      "critical-infrastructure",
+      "cisa-advisory"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "US agencies warn attackers are targeting refrigeration systems that protect food and medicine",
+        "source_url": "https://helpnetsecurity.com/2026/11/06/cyberattacks-refrigeration-systems-cisa-fbi",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "Review the joint advisory from CISA and partner agencies and secure refrigeration system controllers against unauthorized access.",
+    "severity_note": "Confirmed active targeting of critical infrastructure reported by multiple US federal agencies.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1808",
+    "slug": "beyond-instruction-override-benchmarking-indirect-prompt-inj",
+    "title": "Beyond Instruction Override: Benchmarking Indirect Prompt Injection",
+    "summary": "Researchers explore task-tampering attacks where indirect prompt injection alters ongoing process outcomes rather than purely redirecting agent tasks. The work proposes a broader definition of prompt injection based on authority rather than exact instruction phrasing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.07640",
+        "publisher": "arXiv",
+        "title": "Beyond Instruction Override: Benchmarking Indirect Prompt Injection with Task-Tampering Attacks",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "agents",
+      "benchmarking",
+      "research"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "Beyond Instruction Override: Benchmarking Indirect Prompt Injection with Task-Tampering Attacks",
+        "source_url": "https://arxiv.org/abs/2611.07640",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating indirect prompt injection task-tampering attacks.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1807",
+    "slug": "the-promise-of-strategic-agentic-scambaiting",
+    "title": "The Promise of Strategic Agentic Scambaiting",
+    "summary": "Researchers examine the use of autonomous agents in scambaiting to engage AI-driven scam operations and extract threat intelligence. The paper evaluates strategic interaction models for gathering mule accounts and cryptocurrency addresses.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_phishing_social_engineering",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.08170",
+        "publisher": "arXiv",
+        "title": "The Promise of Strategic Agentic Scambaiting",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "scambaiting",
+      "fraud",
+      "agents",
+      "research"
+    ],
+    "created_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "The Promise of Strategic Agentic Scambaiting",
+        "source_url": "https://arxiv.org/abs/2611.08170",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating defensive and offensive agent tactics with no real-world exploitation tracked.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1806",
     "slug": "brazilian-credit-guarantor-fund-suffers-data-breach-exposing",
     "title": "Brazilian Credit Guarantor Fund Suffers Data Breach Exposing PII",
@@ -515,9 +872,15 @@
         "publisher": "BleepingComputer",
         "title": "DigiCert data breach exposes customer information, identity documents",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://securityweek.com/digicert-data-breach-impacts-business-customer-information",
+        "publisher": "SecurityWeek",
+        "title": "DigiCert Data Breach Impacts Business Customer Information",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -528,7 +891,7 @@
       "pii-exposure"
     ],
     "created_at": "2026-11-06T08:21:33.691Z",
-    "updated_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -544,6 +907,12 @@
         "title": "DigiCert data breach exposes customer information, identity documents",
         "source_url": "https://bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents",
         "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Attackers created an account on an internal system and accessed names, emails, phone numbers, and addresses",
+        "source_url": "https://securityweek.com/digicert-data-breach-impacts-business-customer-information",
+        "added_at": "2026-11-06T16:25:59.244Z"
       }
     ],
     "action": "Review communications from DigiCert if you are an affected customer and monitor for identity theft.",
@@ -905,24 +1274,39 @@
         "publisher": "BleepingComputer",
         "title": "OpenSSH flaw lets attackers log into password-disabled Linux accounts",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass",
+        "publisher": "SecurityWeek",
+        "title": "OpenSSH Rushes Patches for ‘SSHole’ Authentication Bypass",
+        "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation",
+        "publisher": "Help Net Security",
+        "title": "OpenSSH flaw exploited in the wild just hours after disclosure (CVE-2026-123158)",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 2,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
     "tags": [
       "cve",
       "openssh",
-      "authentication-bypass"
+      "authentication-bypass",
+      "CVE-2026-123158"
     ],
     "created_at": "2026-11-06T00:23:41.043Z",
-    "updated_at": "2026-11-06T00:23:41.043Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "patched",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-123158"
+    ],
     "affected": [],
     "fixed_in": [
       "OpenSSH 10.6p2"
@@ -939,6 +1323,12 @@
         "title": "OpenSSH flaw lets attackers log into password-disabled Linux accounts",
         "source_url": "https://bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts",
         "added_at": "2026-11-06T00:23:41.043Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Threat intelligence confirms active exploitation of the OpenSSH authentication bypass flaw in the wild.",
+        "source_url": "https://helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation",
+        "added_at": "2026-11-06T16:25:59.244Z"
       }
     ],
     "action": "Update OpenSSH to version 10.6p2 and ensure Alpine packages are upgraded",
@@ -5692,9 +6082,15 @@
         "publisher": "BleepingComputer",
         "title": "FBI, CISA warn of cyberattacks targeting refrigeration systems",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://securityweek.com/us-agencies-urge-organizations-to-harden-refrigeration-controllers",
+        "publisher": "SecurityWeek",
+        "title": "US Agencies Urge Organizations to Harden Refrigeration Controllers",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 7,
+    "source_count": 8,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5705,7 +6101,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -5743,9 +6139,15 @@
         "title": "The FBI and CISA issue a warning regarding active cyberattacks targeting industrial refrigeration and cold-chain systems",
         "source_url": "https://bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems",
         "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "US agencies urge organizations to harden refrigeration controllers amid attacks on supermarkets and blood banks",
+        "source_url": "https://securityweek.com/us-agencies-urge-organizations-to-harden-refrigeration-controllers",
+        "added_at": "2026-11-06T16:25:59.244Z"
       }
     ],
-    "action": "",
+    "action": "Review and harden industrial refrigeration controllers against remote tampering.",
     "severity_note": "Confirmed real-world operational disruption and food spoilage.",
     "cvss": null
   },
@@ -6704,9 +7106,21 @@
         "publisher": "The Record",
         "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html",
+        "publisher": "The Hacker News",
+        "title": "Chainalysis Breach Exposes All Users' Credentials, Forces Shutdown of Key Services",
+        "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers",
+        "publisher": "BleepingComputer",
+        "title": "Chainalysis says breach exposed credentials for all customers",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 6,
+    "source_count": 8,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -6716,7 +7130,7 @@
       "agentic"
     ],
     "created_at": "2026-10-31T15:50:02.005Z",
-    "updated_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -6748,9 +7162,21 @@
         "title": "Chainalysis warns all users hit in cyber breach involving ‘agentic’ techniques",
         "source_url": "https://therecord.media/chainalysis-all-users-hit-by-agentic-cyberattack",
         "added_at": "2026-11-05T11:07:15.817Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "The breach exposed password hashes and live tokens for all users, forcing the shutdown of key services",
+        "source_url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html",
+        "added_at": "2026-11-06T16:25:59.244Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "The breach exposed credentials and live tokens for all customers",
+        "source_url": "https://bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers",
+        "added_at": "2026-11-06T16:25:59.244Z"
       }
     ],
-    "action": "",
+    "action": "Reset all user credentials, revoke active session tokens, and rotate API keys.",
     "severity_note": "Confirmed data breach at a named enterprise organisation.",
     "cvss": null
   },
@@ -9086,9 +9512,15 @@
         "publisher": "Help Net Security",
         "title": "Fake job interview opened the door to $6.34 billion Binance heist",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://blog.trailofbits.com/2026/11/06/after-binance-check-what-your-signing-systems-can-approve",
+        "publisher": "Trail of Bits",
+        "title": "After Binance, check what your signing systems can approve",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 16,
+    "source_count": 17,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -9099,7 +9531,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-06T16:25:59.244Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
