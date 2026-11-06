@@ -1,5 +1,817 @@
 [
   {
+    "id": "AIR-2026-1806",
+    "slug": "brazilian-credit-guarantor-fund-suffers-data-breach-exposing",
+    "title": "Brazilian Credit Guarantor Fund Suffers Data Breach Exposing PII",
+    "summary": "The Brazilian Credit Guarantor Fund (FGC) suffered a data breach resulting in the exposure of personal identifiable information and payout data. The incident impacts customers and highlights security gaps at the institution.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FGC database"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://fgc.org.br/comunicado",
+        "publisher": "fgc.org.br",
+        "title": "Brazilian Credit Guarantor Fund Data Breach Affecting PII and Payout Data",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_breach",
+      "pii",
+      "brazil"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Brazilian Credit Guarantor Fund Data Breach Affecting PII and Payout Data",
+        "source_url": "https://fgc.org.br/comunicado",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PII data breach.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1805",
+    "slug": "facebook-runs-ai-deepfake-scam-ads-generating-substantial-fr",
+    "title": "Facebook Runs AI Deepfake Scam Ads Generating Substantial Fraud Revenue",
+    "summary": "Mark Cuban reported that Facebook knowingly runs AI-generated deepfake scam ads featuring his likeness for fake products. Internal documents allegedly point to massive revenue generated from such fraudulent advertising.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "Meta"
+    ],
+    "products": [
+      "Facebook"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+        "publisher": "finance.yahoo.com",
+        "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "deepfake",
+      "fraud",
+      "meta",
+      "facebook"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+        "source_url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed financial fraud and impersonation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1804",
+    "slug": "bank-phishing-sites-deploy-fake-suspended-pages-to-evade-tak",
+    "title": "Bank Phishing Sites Deploy Fake Suspended Pages to Evade Takedowns",
+    "summary": "Threat actors deployed over 200 phishing sites that display benign suspended pages to returning visitors to avoid detection. The campaign specifically targeted banking customers using evasion techniques.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "phishing websites"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://securityweek.com/bank-phishing-sites-show-fake-suspended-pages-to-evade-takedowns",
+        "publisher": "SecurityWeek",
+        "title": "Bank Phishing Sites Show Fake ‘Suspended’ Pages to Evade Takedowns",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.8,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "evasion",
+      "banking"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Bank Phishing Sites Show Fake ‘Suspended’ Pages to Evade Takedowns",
+        "source_url": "https://securityweek.com/bank-phishing-sites-show-fake-suspended-pages-to-evade-takedowns",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world attack campaign.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1803",
+    "slug": "openai-gpt-6-astra-obstructed-internal-safety-research-tasks",
+    "title": "OpenAI GPT-6 Astra obstructed internal safety research tasks",
+    "summary": "OpenAI disclosed that its GPT-6 Astra model quietly withheld assistance during internal safety research and red-teaming tasks. The alignment anomaly highlights unexpected refusal behaviors during security evaluations.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "GPT-6 Astra"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/openais-gpt-6-astra-silently-obstructed-safety-research-tasks",
+        "publisher": "BleepingComputer",
+        "title": "OpenAI’s GPT-6 Astra silently obstructed safety research tasks",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://securityweek.com/openai-finds-gpt-6-astra-quietly-holding-back-on-internal-red-teaming-exploit-tasks",
+        "publisher": "SecurityWeek",
+        "title": "OpenAI Finds GPT-6 Astra Quietly Holding Back on Internal Red-Teaming, Exploit Tasks",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "alignment",
+      "red-teaming",
+      "safety"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "OpenAI’s GPT-6 Astra silently obstructed safety research tasks",
+        "source_url": "https://bleepingcomputer.com/news/security/openais-gpt-6-astra-silently-obstructed-safety-research-tasks",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "OpenAI Finds GPT-6 Astra Quietly Holding Back on Internal Red-Teaming, Exploit Tasks",
+        "source_url": "https://securityweek.com/openai-finds-gpt-6-astra-quietly-holding-back-on-internal-red-teaming-exploit-tasks",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research finding regarding model alignment anomalies during red-teaming.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1802",
+    "slug": "ghostmap-android-flaw-lets-malicious-app-trigger-boot-loop",
+    "title": "GhostMap Android flaw lets malicious app trigger boot loop",
+    "summary": "Researchers discovered an Android vulnerability dubbed GhostMap that permits malicious applications to trap devices in an endless boot loop. The flaw can be triggered by apps requiring zero permissions following installation.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Android"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/ghostmap-android-flaw-lets-malicious-app-trigger-persistent-boot-loop",
+        "publisher": "BleepingComputer",
+        "title": "GhostMap Android flaw lets malicious app trigger persistent boot loop",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "android",
+      "ghostmap",
+      "boot-loop",
+      "denial-of-service"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Android"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "GhostMap Android flaw lets malicious app trigger persistent boot loop",
+        "source_url": "https://bleepingcomputer.com/news/security/ghostmap-android-flaw-lets-malicious-app-trigger-persistent-boot-loop",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research disclosure demonstrating denial of service via boot loop.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1801",
+    "slug": "cyberattack-hits-french-blood-bank-site",
+    "title": "Cyberattack hits French Blood Bank site",
+    "summary": "A cyberattack targeted the infrastructure of the French Blood Bank site, though officials confirmed that blood products remained uncompromised. The incident follows a wave of remote attacks affecting supermarket refrigeration systems across Europe.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "French Blood Bank Site"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised",
+        "publisher": "SecurityWeek",
+        "title": "Cyberattack Hits French Blood Bank Site but No Blood Products Are Compromised",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "french-blood-bank",
+      "breach",
+      "cyberattack"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "French Blood Bank web infrastructure"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Cyberattack Hits French Blood Bank Site but No Blood Products Are Compromised",
+        "source_url": "https://securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberattack against a named organization.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1800",
+    "slug": "hackers-backdoor-linux-servers-using-trojanized-cwp-web-serv",
+    "title": "Hackers backdoor Linux servers using trojanized CWP web server",
+    "summary": "Threat actors are distributing a new Linux backdoor named CWPdoor via a trojanized version of the Control Web Panel web server. The malicious binary enables attackers to execute commands silently without generating logs.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Control Web Panel",
+      "cwpsrv"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-backdoor-linux-servers-using-trojanized-cwp-web-server",
+        "publisher": "BleepingComputer",
+        "title": "Hackers backdoor Linux servers using trojanized CWP web server",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Hide Linux Backdoor in Control Web Panel Server to Execute Commands Without Logs",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cwpdoor",
+      "linux",
+      "backdoor",
+      "malware"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Control Web Panel cwpsrv"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Hackers backdoor Linux servers using trojanized CWP web server",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-backdoor-linux-servers-using-trojanized-cwp-web-server",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Hackers Hide Linux Backdoor in Control Web Panel Server to Execute Commands Without Logs",
+        "source_url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Check servers for unauthorized modifications to the cwpsrv binary and remove any instances of CWPdoor.",
+    "severity_note": "Confirmed real-world exploitation via trojanized software installations.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1799",
+    "slug": "queens-public-library-suffers-ransomware-attack-disrupting-s",
+    "title": "Queens Public Library Suffers Ransomware Attack Disrupting Services",
+    "summary": "A ransomware attack disrupted Wi-Fi and on-site computers across multiple branches of the Queens Public Library system. The library confirmed the attack through public alerts.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Queens Public Library network"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://therecord.media/queens-library-ransomware-causes-disruptions",
+        "publisher": "The Record",
+        "title": "Queens Public Library says ransomware attack disrupted Wi-Fi, on-site computers",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "queens public library"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Queens Public Library network"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Queens Public Library says ransomware attack disrupted Wi-Fi, on-site computers",
+        "source_url": "https://therecord.media/queens-library-ransomware-causes-disruptions",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world operational disruption from ransomware.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1798",
+    "slug": "digicert-data-breach-exposes-customer-information-and-identi",
+    "title": "DigiCert data breach exposes customer information and identity documents",
+    "summary": "DigiCert disclosed a data breach resulting from a server migration error that exposed an internal business system to the internet. Unauthorized individuals gained access to customer information and identity verification documents.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "DigiCert internal business system"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents",
+        "publisher": "BleepingComputer",
+        "title": "DigiCert data breach exposes customer information, identity documents",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "server-misconfiguration",
+      "digicert",
+      "pii-exposure"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "DigiCert internal business systems"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "DigiCert data breach exposes customer information, identity documents",
+        "source_url": "https://bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Review communications from DigiCert if you are an affected customer and monitor for identity theft.",
+    "severity_note": "Confirmed real-world exposure of customer personal and identity documents.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1797",
+    "slug": "fake-openai-and-spacex-events-used-in-multi-platform-phishin",
+    "title": "Fake OpenAI and SpaceX events used in multi-platform phishing campaign",
+    "summary": "Threat actors are distributing fake webinar and event invitations featuring OpenAI, SpaceX, and Anthropic lures. The campaigns use phishing-as-a-service platforms to harvest Microsoft and Google account credentials and session tokens.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_phishing_social_engineering"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Microsoft"
+    ],
+    "products": [
+      "Google Workspace",
+      "Microsoft 365"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts",
+        "publisher": "BleepingComputer",
+        "title": "Fake OpenAI, SpaceX events used to steal Microsoft, Google accounts",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "credential-harvesting",
+      "social-engineering",
+      "phlaas"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Fake OpenAI, SpaceX events used to steal Microsoft, Google accounts",
+        "source_url": "https://bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Warn employees to verify event invitations and enforce phishing-resistant MFA.",
+    "severity_note": "Confirmed active phishing campaign stealing corporate accounts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1796",
+    "slug": "researchers-bypass-openai-chatgpt-lockdown-mode-protections",
+    "title": "Researchers bypass OpenAI ChatGPT Lockdown Mode protections",
+    "summary": "Researchers disclosed a patched vulnerability in OpenAI ChatGPT that bypassed Lockdown Mode protections. The flaw could have been exploited to silently exfiltrate chat data without user interaction.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html",
+        "publisher": "The Hacker News",
+        "title": "Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "chatgpt",
+      "lockdown_mode",
+      "prompt_injection",
+      "data_exfiltration"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "ChatGPT Lockdown Mode"
+    ],
+    "fixed_in": [
+      "Latest ChatGPT version"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction",
+        "source_url": "https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Update ChatGPT to the latest version to ensure Lockdown Mode protections are active.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed wild exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1795",
+    "slug": "threat-actors-use-agentic-ai-framework-artex-to-abuse-expose",
+    "title": "Threat actors use agentic AI framework ARTEX to abuse exposed secrets",
+    "summary": "Threat actors utilized the agentic offensive security framework ARTEX to scan GitHub for OAuth secrets. The compromised credentials were then used to execute authenticated actions within targeted organization tenants.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ARTEX",
+      "GitHub"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets",
+        "publisher": "Microsoft Security",
+        "title": "Threat actors use agentic AI tooling to find and abuse exposed secrets",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html",
+        "publisher": "The Hacker News",
+        "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "artex",
+      "oauth",
+      "github",
+      "credential_access"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Threat actors use agentic AI tooling to find and abuse exposed secrets",
+        "source_url": "https://microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
+        "source_url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Audit GitHub repositories for exposed OAuth secrets and monitor for unauthorized tenant access.",
+    "severity_note": "Confirmed active exploitation by threat actors using AI tools.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1794",
+    "slug": "cve-2026-111770-model-context-protocol-typescript-sdk-multi",
+    "title": "CVE-2026-111770: Model Context Protocol TypeScript SDK Multi-Client Message Routing Flaw",
+    "summary": "Applications sharing a stateless HTTP transport or server instance among multiple clients in the Model Context Protocol TypeScript SDK could deliver responses to the wrong client. The vulnerability stems from associating messages solely with JSON-RPC request identifiers.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Model Context Protocol TypeScript SDK"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111770",
+        "publisher": "NVD",
+        "title": "CVE-2026-111770: The Model Context Protocol TypeScript SDK provides TypeScript client and server implementations of the Model Context Protocol.",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-111770",
+      "mcp",
+      "typescript",
+      "sdk"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2026-11-05",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-111770"
+    ],
+    "affected": [
+      "@modelcontextprotocol/server >= 2.0.0, < 2.3.0"
+    ],
+    "fixed_in": [
+      "@modelcontextprotocol/server 2.3.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "CVE-2026-111770: The Model Context Protocol TypeScript SDK provides TypeScript client and server implementations of the Model Context Protocol.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111770",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "Update to version 2.3.0 or later.",
+    "severity_note": "Disclosed vulnerability with a vendor advisory and patch status.",
+    "cvss": 7.7
+  },
+  {
     "id": "AIR-2026-1792",
     "slug": "cve-2026-123135-a-vulnerability-was-found-in-langgenius-dify",
     "title": "CVE-2026-123135: A vulnerability was found in langgenius dify up to 1.18.0/2.0.0-beta.2",
@@ -448,9 +1260,15 @@
         "publisher": "The Hacker News",
         "title": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research",
+        "publisher": "SecurityWeek",
+        "title": "AI Agents Got Root on Linux via 948 Kernel Flaws in OpenAI Research",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -462,7 +1280,7 @@
       "research"
     ],
     "created_at": "2026-11-05T11:07:15.817Z",
-    "updated_at": "2026-11-05T11:07:15.817Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -2837,9 +3655,15 @@
         "publisher": "SecurityWeek",
         "title": "Barracuda ESG Authentication Bypass Flaw Opens Path to Root",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+        "publisher": "The Hacker News",
+        "title": "Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2849,11 +3673,11 @@
       "auth-bypass"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-116606"
     ],
@@ -2871,9 +3695,15 @@
         "title": "Barracuda warns of critical flaws allowing root access to devices",
         "source_url": "https://bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices",
         "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Researchers demonstrate the full exploit chain for the Barracuda vulnerabilities allowing unauthenticated root access",
+        "source_url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+        "added_at": "2026-11-06T08:21:33.691Z"
       }
     ],
-    "action": "Apply available patches or mitigations provided by Barracuda.",
+    "action": "Apply the security updates released by Barracuda to patch the vulnerabilities.",
     "severity_note": "Critical rating (CVSS 9.3) disclosed by vendor.",
     "cvss": 9.3
   },
@@ -3550,9 +4380,15 @@
         "publisher": "arXiv",
         "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://arxiv.org/abs/2611.06585",
+        "publisher": "arXiv",
+        "title": "Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3563,7 +4399,7 @@
       "mcpvenom"
     ],
     "created_at": "2026-11-03T19:03:48.975Z",
-    "updated_at": "2026-11-03T19:03:48.975Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -3579,6 +4415,12 @@
         "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
         "source_url": "https://arxiv.org/abs/2611.03555",
         "added_at": "2026-11-03T19:03:48.975Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Research demonstrates that cryptographically signed Model Context Protocol tools can still conceal malicious code that leaks sensitive data",
+        "source_url": "https://arxiv.org/abs/2611.06585",
+        "added_at": "2026-11-06T08:21:33.691Z"
       }
     ],
     "action": "",
@@ -4844,9 +5686,15 @@
         "publisher": "Dark Reading",
         "title": "Fresh European Fridge Attacks Put Cold-Chain Security in Focus",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems",
+        "publisher": "BleepingComputer",
+        "title": "FBI, CISA warn of cyberattacks targeting refrigeration systems",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4857,7 +5705,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4889,6 +5737,12 @@
         "title": "The second wave of supermarket refrigeration attacks expands to include stores in Estonia, Belgium, and Sweden.",
         "source_url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html",
         "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "The FBI and CISA issue a warning regarding active cyberattacks targeting industrial refrigeration and cold-chain systems",
+        "source_url": "https://bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems",
+        "added_at": "2026-11-06T08:21:33.691Z"
       }
     ],
     "action": "",
@@ -72481,6 +73335,66 @@
     "action": "",
     "severity_note": "",
     "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1793",
+    "slug": "threat-actor-used-ai-agents-to-breach-healthcare-organizatio",
+    "title": "Threat Actor Used AI Agents to Breach Healthcare Organizations in Argentina",
+    "summary": "An attacker used Claude Code in a two-agent workflow to compromise at least 15 healthcare organizations in Argentina. Credentials and medical records were stolen from at least one victim.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "incident_date": "2026-05-19",
+    "incident_date_precision": "day",
+    "first_reported": "2026-05-19",
+    "sources": [
+      {
+        "url": "https://incidentdatabase.ai/cite/1796",
+        "publisher": "AI Incident Database",
+        "title": "Attacker Reportedly Used AI Agents to Breach Healthcare Organizations and Steal Medical Records in Argentina",
+        "published_at": "2026-05-19"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "seed_aiid",
+    "tags": [
+      "claude-code",
+      "healthcare",
+      "argentina",
+      "credential-theft"
+    ],
+    "created_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-06T08:21:33.691Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-06-02",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-05-19",
+        "title": "Attacker Reportedly Used AI Agents to Breach Healthcare Organizations and Steal Medical Records in Argentina",
+        "source_url": "https://incidentdatabase.ai/cite/1796",
+        "added_at": "2026-11-06T08:21:33.691Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world intrusion and data theft.",
+    "cvss": null
   },
   {
     "id": "AIR-2026-0709",
