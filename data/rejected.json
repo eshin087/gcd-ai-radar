@@ -1,5 +1,65 @@
 [
   {
+    "key": "17e04fbcf2b3d16d",
+    "title": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits",
+    "url": "https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Product launch and security research capability announcement without a specific live security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
+    "key": "a0b0bc2c9ffa9304",
+    "title": "OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs",
+    "url": "https://bleepingcomputer.com/news/security/openais-new-gpt-6-cyber-ai-finds-81-firefox-flaws-948-linux-bugs",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Product launch and security research capability announcement without a specific live security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
+    "key": "936db54ee335b781",
+    "title": "Japan unveils emergency cybersecurity package amid data breach concerns",
+    "url": "https://english.kyodonews.net/articles/-/90630",
+    "publisher": "english.kyodonews.net",
+    "source_id": "hn",
+    "reason": "out of scope: Policy, regulation and government announcement piece",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
+    "key": "13ca7084bed2e432",
+    "title": "Japan Announces Emergency Cybersecurity Package Following a Wave of Attacks",
+    "url": "https://securityweek.com/japan-announces-emergency-cybersecurity-package-following-a-wave-of-attacks",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Policy, regulation and government announcement piece",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
+    "key": "ea6b9d64cfe5f3ca",
+    "title": "Medical services company settles with 4 states over 2023 hack of sensitive patient records",
+    "url": "https://therecord.media/medical-services-company-settles-with-4-state-ags",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Follow-up on a previous breach via legal settlement, not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
+    "key": "bc8f9eac19663ff6",
+    "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+    "url": "https://openai.com/index/partnering-with-hacktron",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Product launch, partnership announcement and vendor feature security initiative.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-06T21:36:00.678Z"
+  },
+  {
     "key": "04d9cc88a81eef70",
     "title": "KeHoSu: Keyed Homoglyph Substitution for Authenticated Text Provenance over Copy-Paste Channels",
     "url": "https://arxiv.org/abs/2611.08046",

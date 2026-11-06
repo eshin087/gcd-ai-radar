@@ -1,5 +1,303 @@
 [
   {
+    "id": "AIR-2026-1817",
+    "slug": "fake-security-tools-on-github-push-backdoors-and-infostealer",
+    "title": "Fake security tools on GitHub push backdoors and infostealers",
+    "summary": "Threat actors are hosting malicious security projects on GitHub to target cybersecurity professionals. The fake repositories deliver infostealers and backdoors to unsuspecting users.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GitHub repositories"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers",
+        "publisher": "BleepingComputer",
+        "title": "Fake security tools on GitHub push backdoors and infostealers",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "github",
+      "infostealer",
+      "backdoor",
+      "malicious-repository"
+    ],
+    "created_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "Fake security tools on GitHub push backdoors and infostealers",
+        "source_url": "https://bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers",
+        "added_at": "2026-11-06T21:36:00.678Z"
+      }
+    ],
+    "action": "Avoid downloading unverified security tools from untrusted GitHub accounts.",
+    "severity_note": "Confirmed malicious software distribution campaign.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1816",
+    "slug": "qnap-warns-of-plex2shell-attacks-exploiting-plex-media-serve",
+    "title": "QNAP warns of Plex2Shell attacks exploiting Plex Media Server on NAS devices",
+    "summary": "Hackers are actively exploiting a vulnerability chain dubbed Plex2Shell to compromise QNAP network-attached storage devices. QNAP has urged users to update their Plex Media Server installations immediately.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "QNAP NAS",
+      "Plex Media Server"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+        "publisher": "BleepingComputer",
+        "title": "QNAP says hackers breaching NAS devices in Plex2Shell attacks",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "plex2shell",
+      "nas",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [
+      "Plex Media Server"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "QNAP says hackers breaching NAS devices in Plex2Shell attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+        "added_at": "2026-11-06T21:36:00.678Z"
+      }
+    ],
+    "action": "Update Plex Media Server to the latest version available in the QNAP App Center.",
+    "severity_note": "Confirmed exploitation in the wild against QNAP NAS devices.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1815",
+    "slug": "fbi-agent-pleads-guilty-to-stealing-cryptocurrency-from-hack",
+    "title": "FBI Agent Pleads Guilty to Stealing Cryptocurrency from Hackers",
+    "summary": "An FBI agent pleaded guilty to wire fraud and money laundering charges after admitting to using his position to steal more than $2.4 million in cryptocurrency. He faces up to 20 years in prison.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://therecord.media/fbi-agent-pleads-guilty-to-stealing-from-nation-state-hackers",
+        "publisher": "The Record",
+        "title": "FBI agent pleads guilty to stealing $2.4 million in crypto from nation-state hackers",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "insider-threat",
+      "fraud",
+      "crypto"
+    ],
+    "created_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "FBI agent pleads guilty to stealing $2.4 million in crypto from nation-state hackers",
+        "source_url": "https://therecord.media/fbi-agent-pleads-guilty-to-stealing-from-nation-state-hackers",
+        "added_at": "2026-11-06T21:36:00.678Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial fraud and legal proceedings.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1814",
+    "slug": "cve-2026-102610-fast-agent-unauthenticated-rce-vulnerability",
+    "title": "CVE-2026-102610: fast-agent Unauthenticated RCE Vulnerability",
+    "summary": "Prior to 0.7.21, the fast-agent framework uses HTTP transport bound to 0.0.0.0 without authentication, allowing remote clients to invoke exposed agent tools. When started with the shell option, unauthenticated remote clients can achieve arbitrary operating system command execution.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "fast-agent"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102610",
+        "publisher": "NVD",
+        "title": "CVE-2026-102610: fast-agent is a framework for building, running, and evaluating AI agents with Model Context Protocol support.",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-102610",
+      "rce",
+      "mcp"
+    ],
+    "created_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-06",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-102610"
+    ],
+    "affected": [
+      "fast-agent < 0.7.21"
+    ],
+    "fixed_in": [
+      "fast-agent 0.7.21"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "CVE-2026-102610: fast-agent is a framework for building, running, and evaluating AI agents with Model Context Protocol support.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102610",
+        "added_at": "2026-11-06T21:36:00.678Z"
+      }
+    ],
+    "action": "Update fast-agent to version 0.7.21 or later.",
+    "severity_note": "Disclosed vulnerability with a vendor fix and no confirmed wild exploitation.",
+    "cvss": 6.4
+  },
+  {
+    "id": "AIR-2026-1813",
+    "slug": "cve-2026-58141-dify-ssrf-vulnerability-in-console-api",
+    "title": "CVE-2026-58141: Dify SSRF Vulnerability in Console API",
+    "summary": "Dify before 1.15.0 contains a server-side request forgery vulnerability that allows authenticated console users to bypass SSRF protections. Attackers can issue arbitrary HTTP requests to internal services and cloud metadata endpoints via multiple console endpoints.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Dify"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58141",
+        "publisher": "NVD",
+        "title": "CVE-2026-58141: Dify before 1.15.0 contains a server-side request forgery vulnerability that allows any authenticated console user to bypass SSRF…",
+        "published_at": "2026-11-06"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-58141",
+      "ssrf"
+    ],
+    "created_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-06",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-58141"
+    ],
+    "affected": [
+      "Dify < 1.15.0"
+    ],
+    "fixed_in": [
+      "Dify 1.15.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "CVE-2026-58141: Dify before 1.15.0 contains a server-side request forgery vulnerability that allows any authenticated console user to bypass SSRF…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58141",
+        "added_at": "2026-11-06T21:36:00.678Z"
+      }
+    ],
+    "action": "Update Dify to version 1.15.0 or later.",
+    "severity_note": "Disclosed vulnerability with a vendor fix and no confirmed wild exploitation.",
+    "cvss": 7.2
+  },
+  {
     "id": "AIR-2026-1812",
     "slug": "ceo-spoofing-scammers-used-ai-to-help-steal-more-than-100-mi",
     "title": "CEO-spoofing scammers used AI to help steal more than $100 million",
@@ -878,9 +1176,15 @@
         "publisher": "SecurityWeek",
         "title": "DigiCert Data Breach Impacts Business Customer Information",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://therecord.media/digicert-certificate-authority-reports-data-breach",
+        "publisher": "The Record",
+        "title": "Certificate authority DigiCert reports data breach involving business customer info",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -891,7 +1195,7 @@
       "pii-exposure"
     ],
     "created_at": "2026-11-06T08:21:33.691Z",
-    "updated_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1286,9 +1590,15 @@
         "publisher": "Help Net Security",
         "title": "OpenSSH flaw exploited in the wild just hours after disclosure (CVE-2026-123158)",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Target OpenSSH SSHole Flaw Within Hours of Disclosure, Gain Root on Honeypot",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1299,7 +1609,7 @@
       "CVE-2026-123158"
     ],
     "created_at": "2026-11-06T00:23:41.043Z",
-    "updated_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3404,9 +3714,15 @@
         "publisher": "BleepingComputer",
         "title": "CISA flags WordPress RCE flaw as actively exploited in attacks",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html",
+        "publisher": "The Hacker News",
+        "title": "Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -3418,7 +3734,7 @@
       "rce"
     ],
     "created_at": "2026-11-04T06:50:52.011Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3436,9 +3752,15 @@
         "title": "CVE-2026-119977: WordPress WordPress Core — WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
         "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-119977",
         "added_at": "2026-11-04T06:50:52.011Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Research shows the WordPress update process can be vulnerable during installation, requiring web access to the staging path to be blocked.",
+        "source_url": "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html",
+        "added_at": "2026-11-06T21:36:00.678Z"
       }
     ],
-    "action": "Apply available security updates and vendor mitigations immediately.",
+    "action": "Block web access to the staging directory while applying WordPress updates to prevent race condition exploitation during the installation phase.",
     "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
     "cvss": 8.1
   },
@@ -6088,9 +6410,15 @@
         "publisher": "SecurityWeek",
         "title": "US Agencies Urge Organizations to Harden Refrigeration Controllers",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/europes-refrigeration-systems-attacks",
+        "publisher": "Unit 42",
+        "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration System",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 8,
+    "source_count": 9,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -6101,7 +6429,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-06T21:36:00.678Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
