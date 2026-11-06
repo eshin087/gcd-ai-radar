@@ -1,5 +1,45 @@
 [
   {
+    "key": "80f819f380f3ece6",
+    "title": "Network Intrusion Forensic Detection System with Explainable Artificial Intelligence and Digital Chain of Custody",
+    "url": "https://arxiv.org/abs/2611.06173",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a defense and forensic pipeline rather than demonstrating an attack",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T00:23:41.043Z"
+  },
+  {
+    "key": "95963327b652b707",
+    "title": "Vercel ties login sessions to devices, rolls out AI security reviews in public beta",
+    "url": "https://helpnetsecurity.com/2026/11/05/vercel-security-review-session-hijacking",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Feature announcement without a specific security incident",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-06T00:23:41.043Z"
+  },
+  {
+    "key": "68e8289718d665a3",
+    "title": "A banking malware sample led researchers to an Android bug that can loop-crash phones",
+    "url": "https://helpnetsecurity.com/2026/11/05/ghostmap-android-bug-research",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Vulnerability does not meet newsworthy criteria (no exploitation or critical rating)",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-06T00:23:41.043Z"
+  },
+  {
+    "key": "59043a85553579c0",
+    "title": "ThreatsDay: Apache OFBiz RCE, DreamHost Breach, DeFi Site Hijacks + 17 More Stories",
+    "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundup article without a specific incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-06T00:23:41.043Z"
+  },
+  {
     "key": "e429a5434e884539",
     "title": "Enforcing Accountable Disclosure in Confidential AI",
     "url": "https://arxiv.org/abs/2611.05971",

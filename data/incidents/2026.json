@@ -1,5 +1,253 @@
 [
   {
+    "id": "AIR-2026-1792",
+    "slug": "cve-2026-123135-a-vulnerability-was-found-in-langgenius-dify",
+    "title": "CVE-2026-123135: A vulnerability was found in langgenius dify up to 1.18.0/2.0.0-beta.2",
+    "summary": "A vulnerability in langgenius dify allows remote attackers to obtain hard‑coded credentials via a sandbox handler. An exploit has been publicly released, though the CVSS score is low.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "langgenius dify"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123135",
+        "publisher": "NVD",
+        "title": "CVE-2026-123135: A vulnerability was found in langgenius dify up to 1.18.0/2.0.0-beta.2.",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-123135",
+      "langgenius",
+      "infra_vuln"
+    ],
+    "created_at": "2026-11-06T00:23:41.043Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-05",
+    "patch_status": "unpatched",
+    "cve_ids": [
+      "CVE-2026-123135"
+    ],
+    "affected": [
+      "langgenius dify <= 1.18.0",
+      "langgenius dify <= 2.0.0-beta.2"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "CVE-2026-123135: A vulnerability was found in langgenius dify up to 1.18.0/2.0.0-beta.2.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123135",
+        "added_at": "2026-11-06T00:23:41.043Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with public exploit, no confirmed loss",
+    "cvss": 2.1
+  },
+  {
+    "id": "AIR-2026-1791",
+    "slug": "openssh-issues-emergency-fix-for-flaw-letting-long-passwords",
+    "title": "OpenSSH Issues Emergency Fix for Flaw Letting Long Passwords Bypass SSH Auth on Alpine Linux",
+    "summary": "A critical flaw in OpenSSH allowed authentication bypass using overly long passwords on Alpine Linux servers. The vendor released OpenSSH 10.6p2 to fix the issue and Alpine published patched packages.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "OpenSSH",
+      "Alpine Linux"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html",
+        "publisher": "The Hacker News",
+        "title": "OpenSSH Issues Emergency Fix for Flaw Letting Long Passwords Bypass SSH Auth on Alpine Linux",
+        "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts",
+        "publisher": "BleepingComputer",
+        "title": "OpenSSH flaw lets attackers log into password-disabled Linux accounts",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cve",
+      "openssh",
+      "authentication-bypass"
+    ],
+    "created_at": "2026-11-06T00:23:41.043Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [
+      "OpenSSH 10.6p2"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "OpenSSH Issues Emergency Fix for Flaw Letting Long Passwords Bypass SSH Auth on Alpine Linux",
+        "source_url": "https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html",
+        "added_at": "2026-11-06T00:23:41.043Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "OpenSSH flaw lets attackers log into password-disabled Linux accounts",
+        "source_url": "https://bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts",
+        "added_at": "2026-11-06T00:23:41.043Z"
+      }
+    ],
+    "action": "Update OpenSSH to version 10.6p2 and ensure Alpine packages are upgraded",
+    "severity_note": "Critical rating and patch available, no confirmed exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1790",
+    "slug": "scammers-use-gta-vi-hype-to-distribute-malware-and-crypto-sc",
+    "title": "Scammers use GTA VI hype to distribute malware and crypto scams",
+    "summary": "Fraudsters are hosting fake Grand Theft Auto VI download sites that deliver malware and cryptocurrency scams to unsuspecting users. Netcraft identified multiple domains impersonating leaker CyberLeek and promising early access.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Grand Theft Auto VI"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/05/gta-6-scams-fake-leaks-early-access",
+        "publisher": "Help Net Security",
+        "title": "Scammers capitalize on GTA 6 hype to push malware and crypto cons",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "malware",
+      "scam",
+      "gta6"
+    ],
+    "created_at": "2026-11-06T00:23:41.043Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Scammers capitalize on GTA 6 hype to push malware and crypto cons",
+        "source_url": "https://helpnetsecurity.com/2026/11/05/gta-6-scams-fake-leaks-early-access",
+        "added_at": "2026-11-06T00:23:41.043Z"
+      }
+    ],
+    "action": "Warn users to avoid downloading from untrusted GTA VI sites",
+    "severity_note": "Malware distribution confirmed via fraudulent sites",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1789",
+    "slug": "norad-grants-portal-breach-exposes-data-of-over-20-000-users",
+    "title": "Norad Grants Portal breach exposes data of over 20,000 users",
+    "summary": "Norway’s development aid agency Norad disclosed that the names and email addresses of 20,614 users of its Grants Portal were accessed by attackers. The breach likely resulted from a cyberattack on the portal.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Norad Grants Portal"
+    ],
+    "incident_date": "2026-11-05",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-05",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/05/norad-grants-portal-breach",
+        "publisher": "Help Net Security",
+        "title": "Cyberattack on Norway’s aid agency may have swept up all user data",
+        "published_at": "2026-11-05"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.94,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_breach",
+      "norad",
+      "personal_data"
+    ],
+    "created_at": "2026-11-06T00:23:41.043Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-05",
+        "title": "Cyberattack on Norway’s aid agency may have swept up all user data",
+        "source_url": "https://helpnetsecurity.com/2026/11/05/norad-grants-portal-breach",
+        "added_at": "2026-11-06T00:23:41.043Z"
+      }
+    ],
+    "action": "Investigate the breach, notify affected users and reset credentials",
+    "severity_note": "Confirmed data exfiltration affecting thousands of users",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1788",
     "slug": "text-vector-integrity-gap-enables-hijacking-in-offline-retri",
     "title": "Text‑Vector Integrity Gap Enables Hijacking in Offline Retrieval‑Augmented Generation",
@@ -18923,10 +19171,10 @@
       "litellm"
     ],
     "created_at": "2026-10-22T22:10:34.459Z",
-    "updated_at": "2026-10-22T22:10:34.459Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "supply_chain",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19124,10 +19372,10 @@
       "model_context_protocol"
     ],
     "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19182,10 +19430,10 @@
       "credential_stealer"
     ],
     "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-22T12:03:53.156Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "supply_chain",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19241,10 +19489,10 @@
       "llm_security"
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
-    "updated_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19298,10 +19546,10 @@
       "system-prompt-extraction"
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
-    "updated_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19354,10 +19602,10 @@
       "fine-tuning"
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
-    "updated_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19411,10 +19659,10 @@
       "provenance-destruction"
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
-    "updated_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19468,10 +19716,10 @@
       "anti-forensics"
     ],
     "created_at": "2026-10-22T04:45:27.696Z",
-    "updated_at": "2026-10-22T04:45:27.696Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-05",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -21277,9 +21525,15 @@
         "publisher": "GitHub Advisory Database",
         "title": "CVE-2026-111768: MCP TypeScript SDK: One HTTP request within the default size limit could exhaust server memory during validation",
         "published_at": "2026-10-20"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111768",
+        "publisher": "NVD",
+        "title": "CVE-2026-111768: The Model Context Protocol TypeScript SDK provides TypeScript client and server implementations of the Model Context Protocol.",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_ghsa",
@@ -21289,7 +21543,7 @@
       "dos"
     ],
     "created_at": "2026-10-20T22:08:19.958Z",
-    "updated_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-20",
@@ -21305,6 +21559,12 @@
         "title": "CVE-2026-111768: MCP TypeScript SDK: One HTTP request within the default size limit could exhaust server memory during validation",
         "source_url": "https://github.com/advisories/GHSA-46jr-4wx8-v453",
         "added_at": "2026-10-20T22:08:19.958Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "NVD record published",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111768",
+        "added_at": "2026-11-06T00:23:41.043Z"
       }
     ],
     "action": "",
@@ -21336,9 +21596,15 @@
         "publisher": "GitHub Advisory Database",
         "title": "CVE-2026-111771: MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
         "published_at": "2026-10-20"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111771",
+        "publisher": "NVD",
+        "title": "CVE-2026-111771: The Model Context Protocol TypeScript SDK provides TypeScript client and server implementations of the Model Context Protocol.",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_ghsa",
@@ -21348,7 +21614,7 @@
       "authentication"
     ],
     "created_at": "2026-10-20T22:08:19.958Z",
-    "updated_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-20",
@@ -21364,6 +21630,12 @@
         "title": "CVE-2026-111771: MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
         "source_url": "https://github.com/advisories/GHSA-rvq5-wwqv-78pq",
         "added_at": "2026-10-20T22:08:19.958Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "NVD record published",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111771",
+        "added_at": "2026-11-06T00:23:41.043Z"
       }
     ],
     "action": "",
@@ -21395,9 +21667,15 @@
         "publisher": "GitHub Advisory Database",
         "title": "CVE-2026-111769: MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request…",
         "published_at": "2026-10-20"
+      },
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111769",
+        "publisher": "NVD",
+        "title": "CVE-2026-111769: The Model Context Protocol TypeScript SDK provides TypeScript client and server implementations of the Model Context Protocol.",
+        "published_at": "2026-11-05"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_ghsa",
@@ -21408,7 +21686,7 @@
       "redirect"
     ],
     "created_at": "2026-10-20T22:08:19.958Z",
-    "updated_at": "2026-10-20T22:08:19.958Z",
+    "updated_at": "2026-11-06T00:23:41.043Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-10-20",
@@ -21424,6 +21702,12 @@
         "title": "CVE-2026-111769: MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request…",
         "source_url": "https://github.com/advisories/GHSA-6prh-2h8m-c8cw",
         "added_at": "2026-10-20T22:08:19.958Z"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "NVD record published",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111769",
+        "added_at": "2026-11-06T00:23:41.043Z"
       }
     ],
     "action": "",
