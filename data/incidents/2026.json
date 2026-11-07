@@ -30,9 +30,15 @@
         "publisher": "BleepingComputer",
         "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
         "published_at": "2026-11-07"
+      },
+      {
+        "url": "https://securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins",
+        "publisher": "SecurityWeek",
+        "title": "SonicWall Patches Exploited SonicOS Vulnerability That Weakens VPN Logins",
+        "published_at": "2026-11-07"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -43,11 +49,11 @@
       "sonicwall"
     ],
     "created_at": "2026-11-07T02:05:34.301Z",
-    "updated_at": "2026-11-07T02:05:34.301Z",
+    "updated_at": "2026-11-07T15:48:15.152Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "partial",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-19868"
     ],
@@ -65,6 +71,12 @@
         "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
         "source_url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks",
         "added_at": "2026-11-07T02:05:34.301Z"
+      },
+      {
+        "date": "2026-11-07",
+        "title": "Vendor releases patches to address the exploited SSLVPN authentication bypass vulnerability",
+        "source_url": "https://securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins",
+        "added_at": "2026-11-07T15:48:15.152Z"
       }
     ],
     "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
@@ -2173,9 +2185,15 @@
         "publisher": "The Record",
         "title": "French bank confirms cyber heist, hackers suspected to have stolen an estimated $133 million",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider",
+        "publisher": "BleepingComputer",
+        "title": "Hackers pull off $133 million French bank heist via service provider",
+        "published_at": "2026-11-07"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2185,7 +2203,7 @@
       "supply-chain"
     ],
     "created_at": "2026-11-04T22:01:52.020Z",
-    "updated_at": "2026-11-04T22:01:52.020Z",
+    "updated_at": "2026-11-07T15:48:15.152Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,

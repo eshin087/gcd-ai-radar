@@ -1,5 +1,15 @@
 [
   {
+    "key": "5aed4ae3be3cbeba",
+    "title": "CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands",
+    "url": "https://bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General threat report and roundup about phishing campaigns rather than a specific targeted breach or unique incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-07T15:48:15.152Z"
+  },
+  {
     "key": "17e04fbcf2b3d16d",
     "title": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits",
     "url": "https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html",
