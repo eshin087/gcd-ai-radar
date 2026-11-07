@@ -1453,9 +1453,15 @@
         "publisher": "The Hacker News",
         "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
         "published_at": "2026-11-05"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector",
+        "publisher": "Microsoft Security",
+        "title": "ARTEX abuse expands as cybercriminals target financial sector",
+        "published_at": "2026-11-07"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1466,7 +1472,7 @@
       "credential_access"
     ],
     "created_at": "2026-11-06T08:21:33.691Z",
-    "updated_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-07T09:06:47.332Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1486,6 +1492,12 @@
         "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
         "source_url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html",
         "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-07",
+        "title": "Storm-3358 targeted the financial sector using the ARTEX framework in October 2026",
+        "source_url": "https://microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector",
+        "added_at": "2026-11-07T09:06:47.332Z"
       }
     ],
     "action": "Audit GitHub repositories for exposed OAuth secrets and monitor for unauthorized tenant access.",
