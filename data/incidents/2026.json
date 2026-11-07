@@ -1,5 +1,77 @@
 [
   {
+    "id": "AIR-2026-1818",
+    "slug": "cve-2026-19868-sonicwall-sonicos-sslvpn-mfa-bypass",
+    "title": "CVE-2026-19868: SonicWall SonicOS SSLVPN MFA Bypass",
+    "summary": "SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that allows users to bypass SAML authentication and multi-factor controls. The flaw is actively exploited in the wild and has been added to the CISA Known Exploited Vulnerabilities catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SonicOS SSLVPN"
+    ],
+    "incident_date": "2026-11-06",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-06",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-19868",
+        "publisher": "CISA",
+        "title": "CVE-2026-19868: SonicWall SonicOS SSLVPN — SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+        "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
+        "published_at": "2026-11-07"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-19868",
+      "mfa-bypass",
+      "sslvpn",
+      "sonicwall"
+    ],
+    "created_at": "2026-11-07T02:05:34.301Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-19868"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-06",
+        "title": "CVE-2026-19868: SonicWall SonicOS SSLVPN — SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-19868",
+        "added_at": "2026-11-07T02:05:34.301Z"
+      },
+      {
+        "date": "2026-11-07",
+        "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks",
+        "added_at": "2026-11-07T02:05:34.301Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
+    "severity_note": "Exploitation confirmed in the wild and added to CISA KEV.",
+    "cvss": 7.5
+  },
+  {
     "id": "AIR-2026-1817",
     "slug": "fake-security-tools-on-github-push-backdoors-and-infostealer",
     "title": "Fake security tools on GitHub push backdoors and infostealers",
@@ -4027,9 +4099,15 @@
         "publisher": "SecurityWeek",
         "title": "AI-Linked Breaches Mount as WorkOS, Northflank, Trigger.dev Disclose Hacks",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox",
+        "publisher": "BleepingComputer",
+        "title": "Runaway AI hacking agent behind WorkOS breach after escaping sandbox",
+        "published_at": "2026-11-06"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.85,
     "status": "published",
     "origin": "news",
@@ -4039,7 +4117,7 @@
       "data-breach"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4053,6 +4131,12 @@
         "title": "WorkOS says attacker used ARTEX AI to breach internal sales app",
         "source_url": "https://bleepingcomputer.com/news/security/workos-says-attacker-used-artex-ai-to-breach-internal-sales-app",
         "added_at": "2026-11-04T00:07:17.182Z"
+      },
+      {
+        "date": "2026-11-06",
+        "title": "Investigation reveals the AI agent responsible for the breach escaped its testing environment.",
+        "source_url": "https://bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox",
+        "added_at": "2026-11-07T02:05:34.301Z"
       }
     ],
     "action": "",
@@ -8494,7 +8578,7 @@
       "CVE-2026-111357"
     ],
     "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -8517,7 +8601,7 @@
     ],
     "action": "Apply mitigations in accordance with vendor instructions.",
     "severity_note": "Confirmed exploitation in the wild via CISA KEV.",
-    "cvss": null
+    "cvss": 4.3
   },
   {
     "id": "AIR-2026-1677",
@@ -19609,10 +19693,10 @@
       "compute-hijack"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19843,10 +19927,10 @@
       "automation"
     ],
     "created_at": "2026-10-23T22:00:30.389Z",
-    "updated_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -19901,10 +19985,10 @@
       "litellm"
     ],
     "created_at": "2026-10-23T22:00:30.389Z",
-    "updated_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "supply_chain",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -19958,10 +20042,10 @@
       "phantom"
     ],
     "created_at": "2026-10-23T22:00:30.389Z",
-    "updated_at": "2026-10-23T22:00:30.389Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -20196,10 +20280,10 @@
       "triton"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20253,10 +20337,10 @@
       "synthetic_data"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20312,10 +20396,10 @@
       "adversarial-perturbation"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20371,10 +20455,10 @@
       "medical-ai"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20430,10 +20514,10 @@
       "mosaic-effect"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20485,10 +20569,10 @@
       "disinformation"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20540,10 +20624,10 @@
       "llm"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20598,10 +20682,10 @@
       "llm-agents"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20655,10 +20739,10 @@
       "evasion"
     ],
     "created_at": "2026-10-23T05:05:04.694Z",
-    "updated_at": "2026-10-23T05:05:04.694Z",
+    "updated_at": "2026-11-07T02:05:34.301Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-06",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
