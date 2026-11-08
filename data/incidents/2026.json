@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1820",
+    "slug": "cve-2026-97677-ibm-langflow-oss-arbitrary-file-read-and-writ",
+    "title": "CVE-2026-97677: IBM Langflow OSS Arbitrary File Read and Write",
+    "summary": "An authenticated flow author in IBM Langflow OSS can write arbitrary file content and bypass file access isolation. Attackers can leverage a crafted index to read sensitive files accessible to the service process.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "IBM Langflow OSS"
+    ],
+    "incident_date": "2026-11-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-08",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97677",
+        "publisher": "NVD",
+        "title": "CVE-2026-97677: IBM Langflow OSS 1.0.0 through 1.12.2 An authenticated flow author could write attacker-controlled file content into any…",
+        "published_at": "2026-11-08"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-97677",
+      "arbitrary-file-read",
+      "arbitrary-file-write"
+    ],
+    "created_at": "2026-11-08T23:35:57.920Z",
+    "updated_at": "2026-11-08T23:35:57.920Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-08",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-97677"
+    ],
+    "affected": [
+      "1.0.0 through 1.12.2"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-08",
+        "title": "CVE-2026-97677: IBM Langflow OSS 1.0.0 through 1.12.2 An authenticated flow author could write attacker-controlled file content into any…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97677",
+        "added_at": "2026-11-08T23:35:57.920Z"
+      }
+    ],
+    "action": "Check vendor advisories for updates addressing CVE-2026-97677.",
+    "severity_note": "Disclosed vulnerability with a high CVSS score and no exploitation confirmed.",
+    "cvss": 8.1
+  },
+  {
     "id": "AIR-2026-1819",
     "slug": "iris-ohyama-cloud-breach-exposes-7-7-million-customer-record",
     "title": "Iris Ohyama cloud breach exposes 7.7 million customer records",
