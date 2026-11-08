@@ -1,5 +1,15 @@
 [
   {
+    "key": "2976ec11234844e4",
+    "title": "Brava Security Emerges From Stealth With $15 Million in Funding",
+    "url": "https://securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product launch and vendor funding announcement without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-08T13:46:24.388Z"
+  },
+  {
     "key": "5aed4ae3be3cbeba",
     "title": "CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands",
     "url": "https://bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands",
