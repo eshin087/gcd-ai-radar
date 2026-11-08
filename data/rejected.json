@@ -1,5 +1,15 @@
 [
   {
+    "key": "3a2862f6d8e44a4c",
+    "title": "Open dataset of prompt-injection CVEs with a monthly threat index",
+    "url": "https://promptinjections.de/threat-index/zahlen",
+    "publisher": "promptinjections.de",
+    "source_id": "hn",
+    "reason": "out of scope: This is an open dataset statistics and threat index roundup piece, not a specific live incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-08T18:56:10.862Z"
+  },
+  {
     "key": "2976ec11234844e4",
     "title": "Brava Security Emerges From Stealth With $15 Million in Funding",
     "url": "https://securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding",

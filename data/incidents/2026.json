@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1819",
+    "slug": "iris-ohyama-cloud-breach-exposes-7-7-million-customer-record",
+    "title": "Iris Ohyama cloud breach exposes 7.7 million customer records",
+    "summary": "Japanese manufacturer Iris Ohyama suffered a cloud service intrusion exposing personal information for about 7.7 million customers. The company disclosed the incident after discovering unauthorized access to its shopping platform infrastructure.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Iris Plaza"
+    ],
+    "incident_date": "2026-11-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-08",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers",
+        "publisher": "BleepingComputer",
+        "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
+        "published_at": "2026-11-08"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "cloud-security",
+      "customer-data"
+    ],
+    "created_at": "2026-11-08T18:56:10.862Z",
+    "updated_at": "2026-11-08T18:56:10.862Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-08",
+        "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
+        "source_url": "https://bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers",
+        "added_at": "2026-11-08T18:56:10.862Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach affecting 7.7 million individuals.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1818",
     "slug": "cve-2026-19868-sonicwall-sonicos-sslvpn-mfa-bypass",
     "title": "CVE-2026-19868: SonicWall SonicOS SSLVPN MFA Bypass",
