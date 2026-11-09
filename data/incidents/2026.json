@@ -254,9 +254,15 @@
         "publisher": "BleepingComputer",
         "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://therecord.media/ukraine-arrests-scam-call-centers-germany",
+        "publisher": "The Record",
+        "title": "Ukraine arrests four in $5 million crypto scam targeting Germans",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -267,7 +273,7 @@
       "ukraine"
     ],
     "created_at": "2026-11-09T12:41:04.445Z",
-    "updated_at": "2026-11-09T12:41:04.445Z",
+    "updated_at": "2026-11-09T16:10:45.048Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -281,6 +287,12 @@
         "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
         "source_url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
         "added_at": "2026-11-09T12:41:04.445Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "Law enforcement identified the arrested individuals as including the alleged leader of the criminal call centers",
+        "source_url": "https://therecord.media/ukraine-arrests-scam-call-centers-germany",
+        "added_at": "2026-11-09T16:10:45.048Z"
       }
     ],
     "action": "",
@@ -2856,9 +2868,15 @@
         "publisher": "SecurityWeek",
         "title": "Hackers Exploiting ‘SSHole’ Authentication Bypass in OpenSSH",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems",
+        "publisher": "BleepingComputer",
+        "title": "Hackers exploit SSHole OpenSSH flaw to breach Linux systems",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2869,7 +2887,7 @@
       "CVE-2026-123158"
     ],
     "created_at": "2026-11-06T00:23:41.043Z",
-    "updated_at": "2026-11-09T12:41:04.445Z",
+    "updated_at": "2026-11-09T16:10:45.048Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
