@@ -1,5 +1,65 @@
 [
   {
+    "id": "AIR-2026-1821",
+    "slug": "google-deepmind-ai-agents-lower-cost-of-rsa-1024-attacks",
+    "title": "Google DeepMind AI Agents Lower Cost of RSA-1024 Attacks",
+    "summary": "Google DeepMind researchers deployed AI agents that successfully reduced the computational cost of forging RSA-1024 signatures and factoring keys. The research highlights novel cryptographic attack capabilities achieved through autonomous agents.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "n/a"
+    ],
+    "products": [
+      "Google DeepMind AI Agents"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack",
+        "publisher": "SecurityWeek",
+        "title": "Google DeepMind’s AI Agents Make 1024-Bit RSA Keys Cheaper to Attack",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rsa",
+      "cryptography",
+      "ai-agents",
+      "deepmind"
+    ],
+    "created_at": "2026-11-09T09:10:41.226Z",
+    "updated_at": "2026-11-09T09:10:41.226Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Google DeepMind’s AI Agents Make 1024-Bit RSA Keys Cheaper to Attack",
+        "source_url": "https://securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack",
+        "added_at": "2026-11-09T09:10:41.226Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration showing lowered attack costs with no direct live exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1820",
     "slug": "cve-2026-97677-ibm-langflow-oss-arbitrary-file-read-and-writ",
     "title": "CVE-2026-97677: IBM Langflow OSS Arbitrary File Read and Write",
