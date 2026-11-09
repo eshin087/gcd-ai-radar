@@ -176,7 +176,9 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
           {/* EPSS: the score, the percentile and the model date ("0.94 · top 1% · 2026-10-26"); nothing when the file knows none of the record's CVEs, so no row shows a number it does not have */}
           {epss && (
             <Fact label="EPSS" title={EPSS_TOOLTIP}>
-              <span className="num">{epssScoreLabel(epss.epss)}</span> · {epssPercentileLabel(epss.percentile)} · <span className="num">{epss.model_date}</span>
+              {/* each token stays whole, so a narrow cell wraps at the separators and never inside the date */}
+              <span className="num">{epssScoreLabel(epss.epss)}</span> · <span className="whitespace-nowrap">{epssPercentileLabel(epss.percentile)}</span> ·{" "}
+              <span className="num whitespace-nowrap">{epss.model_date}</span>
               <div className="text-[12px] text-faint">
                 <a href={EPSS_URL} rel="noopener noreferrer" target="_blank" className="hover:text-ink">
                   EPSS scores by FIRST
