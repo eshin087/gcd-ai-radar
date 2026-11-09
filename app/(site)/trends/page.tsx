@@ -4,6 +4,8 @@ import { ThreatScope } from "@/components/hero/ThreatScope";
 import { HomeCharts } from "@/components/home/HomeCharts";
 import { HomeCounters } from "@/components/home/HomeCounters";
 import { HomeExtras } from "@/components/home/HomeExtras";
+import { AiFlow, AttackSurface, AttackTypes } from "@/components/home/panel/Instruments";
+import { PanelMotion } from "@/components/home/panel/PanelMotion";
 import { getDashboardData } from "@/lib/dashboard";
 import { getHomeData } from "@/lib/home-data";
 import { SCOPE_FILE } from "@/lib/scope";
@@ -17,9 +19,11 @@ export const metadata: Metadata = {
 /**
  * Two halves. The whole web: the counters, column charts, exploitation lag
  * and EPSS ten that used to sit on the home page (lib/home.ts, the same
- * drawers). AI security: the radar scope and the chart dashboard over the AI
- * records (lib/counting.ts aiLens), where every count and bar opens its
- * incidents.
+ * drawers), then this week's attack types and the exploited attack surface
+ * (lib/panel). AI security: the radar scope, how AI shows up this week and
+ * the chart dashboard over the AI records (lib/counting.ts aiLens), where
+ * every count and bar opens its incidents. PanelMotion builds the three
+ * instruments in as they scroll into view, as on the home page.
  */
 export default async function TrendsPage() {
   const [data, home] = await Promise.all([getDashboardData(), getHomeData()]);
@@ -41,6 +45,10 @@ export default async function TrendsPage() {
         <HomeCounters stats={home.stats} />
         <HomeCharts stats={home.stats} />
         <HomeExtras stats={home.stats} recent={home.kevLagRecent} />
+        <div className="grid gap-x-12 gap-y-10 pt-2 lg:grid-cols-2">
+          <AttackTypes rows={home.panel.types} />
+          <AttackSurface rows={home.panel.surface} />
+        </div>
       </section>
 
       <section id="ai-security" className="scroll-mt-28 space-y-6">
@@ -53,8 +61,10 @@ export default async function TrendsPage() {
           </p>
         </header>
         <ThreatScope scope={{ days, total, wedges }} src={SCOPE_FILE} running className="h-[220px] min-[600px]:h-[264px]" />
+        <AiFlow ai={home.panel.ai} />
         <Dashboard data={data} />
       </section>
+      <PanelMotion />
     </div>
   );
 }

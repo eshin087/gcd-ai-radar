@@ -52,7 +52,7 @@ export interface HomeData {
   live: LiveData;
   columns: { patch: HomeColumn; breach: HomeColumn; supply_chain: number; research: number };
   stats: HomeStats;
-  /** The instrument panel below the hero (lib/panel). */
+  /** The day sheet below the hero, and the instruments /trends shows (lib/panel). */
   panel: PanelData;
   /** Every stack candidate, for public/stats/stack.json; the page never ships it inline. */
   stackFile: StackFile;
@@ -286,7 +286,7 @@ export function buildHome(incidents: readonly FullIncident[], stats: StatsFiles,
   };
 
   const aiMonth = counted.filter((i) => isAiRecord(i) && i.first_reported.startsWith(month));
-  const { panel, stackFile } = buildPanel(incidents, stats, homeStats, now, kevWeek ?? []);
+  const { panel, stackFile } = buildPanel(incidents, stats, homeStats, now, kevWeek ?? [], breaches ?? []);
   const lagFrom = addDays(today, -90);
   const lags = (kev ?? []).filter((e) => e.added > lagFrom && e.published).map((e) => Math.max(0, daysBetween(e.published!, e.added)));
   return {

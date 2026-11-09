@@ -1,12 +1,13 @@
 import type { FullIncident } from "../lifecycle";
-import type { HomeStats, KevStatEntry, StatsFiles } from "../stats-schema";
-import { buildActNow, buildLatest, type ActNow, type LatestRow } from "./act";
+import type { BreachStat, HomeStats, KevStatEntry, StatsFiles } from "../stats-schema";
 import { buildAiFlow, type AiFlow } from "./ai-flow";
 import { buildAttackTypes, weekIncidents, type AttackTypeRow } from "./attack-types";
+import { buildLedger, type Ledger } from "./ledger";
 import { bandOf, levelOf, ratioLevel, type Band, type Level } from "./levels";
 import { buildStack, stackMatches, tileOf, type StackCandidate, type StackFile, type StackMatch } from "./stack";
 import { buildSurface, type SurfaceRow } from "./technology";
 import { DAY_MS } from "./util";
+import { buildWeek, typicalBreachMonth, typicalCriticalWeek, typicalCveWeek, type Week } from "./week";
 
 /**
  * The home page's instrument panel (components/home/panel), built once at
@@ -14,19 +15,22 @@ import { DAY_MS } from "./util";
  * writes it as public/stats/panel.json for scripts/check-home.mjs and the
  * stack candidates as public/stats/stack.json for the browser.
  *
+ * The page: My stack (lib/panel/stack.ts), the ledger (lib/panel/ledger.ts)
+ * and the week (lib/panel/week.ts). Attack types, the attack surface and
+ * how AI shows up are built here too and shown on /trends.
+ *
  * The verdict: the day's level is the higher of two. New CVEs: the last 24
  * hours against the thirteen 24-hour windows before it (lib/panel/levels.ts),
  * every window counted back from when NVD was fetched so none is partial.
  * Known exploited: KEV additions in the 7 days against every 7-day window of
  * the 36 months before.
  *
- * The sieve: the week from everything published to what touches the
- * visitor. Published and critical (CVSS 9 or more) are lib/home.ts's 7-day
- * counters; a typical week is this year's NVD total over the days elapsed
- * when it was counted, times seven (busy above 1.25 of it, quiet below 0.75).
- * Known exploited is the 7-day KEV counter. In your stack is those KEV
- * additions that belong to the picks (lib/panel/stack.ts), recomputed in the
- * browser when the picks change.
+ * The sieve's numbers feed the hero's exploited-this-week block and the
+ * week's readouts: published and critical (CVSS 9 or more) are
+ * lib/home.ts's 7-day counters, judged against a typical week this year
+ * (lib/panel/week.ts); known exploited is the 7-day KEV counter; in your
+ * stack is those KEV additions that belong to the picks
+ * (lib/panel/stack.ts), recomputed in the browser when the picks change.
  */
 
 export const CVE_WINDOWS = 14;
@@ -53,7 +57,7 @@ export interface Sieve {
   critical: number | null;
   exploited: number | null;
   exploitedLevel: Level;
-  /** The KEV additions behind `exploited`, newest first: the stage's list, inline (a week is a handful). */
+  /** The KEV additions behind `exploited`, newest first: the hero's list and the week's drawer, inline (a week is a handful). */
   exploitedEntries: KevStatEntry[];
   /** The default stack's matches; the browser recomputes them for the visitor's picks. */
   inStack: StackMatch[];
@@ -63,8 +67,8 @@ export interface Sieve {
 export interface PanelData {
   verdict: Verdict;
   stack: { tiles: StackCandidate[]; default: string[] };
-  act: ActNow;
-  latest: LatestRow[];
+  ledger: Ledger;
+  week: Week;
   types: AttackTypeRow[];
   surface: SurfaceRow[];
   ai: AiFlow;
@@ -83,7 +87,7 @@ export function cveWindows(published: readonly string[], endMs: number, windows 
   return out;
 }
 
-/** KEV additions in every 7-day window ending on each day of the history, and in the 7 days ending today. */
+/** KEV additions in every 7-day window ending on each day of the history (last week first), and in the 7 days ending today. */
 export function kevWeekHistory(added: readonly string[], today: string, months = KEV_HISTORY_MONTHS): { now: number; history: number[] } {
   const perDay = new Map<string, number>();
   for (const a of added) perDay.set(a, (perDay.get(a) ?? 0) + 1);
@@ -100,15 +104,20 @@ export function kevWeekHistory(added: readonly string[], today: string, months =
   return { now: week(0), history };
 }
 
-/** `kevWeek`: the KEV additions the kev_7d counter counts (lib/home.ts kevWeekList), which the sieve's Known exploited stage lists. */
-export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles, home: HomeStats, now: Date, kevWeek: readonly KevStatEntry[]): { panel: PanelData; stackFile: StackFile } {
+/**
+ * `kevWeek`: the KEV additions the kev_7d counter counts (lib/home.ts
+ * kevWeekList), which the hero and the week's drawer list. `breaches`: the
+ * breaches the counters count (lib/home.ts countableBreach), for the week's
+ * typical month.
+ */
+export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles, home: HomeStats, now: Date, kevWeek: readonly KevStatEntry[], breaches: readonly BreachStat[]): { panel: PanelData; stackFile: StackFile } {
   const nowIso = now.toISOString();
   const today = nowIso.slice(0, 10);
   const kev = stats.kev?.entries ?? [];
   const c = home.counters;
 
   const stackFile = buildStack(incidents, kev, today, nowIso);
-  const act = buildActNow(incidents, kev, today);
+  const ledger = buildLedger(incidents, kev, stackFile, today, nowIso);
   const week = weekIncidents(incidents, today);
   const ai = buildAiFlow(week, incidents, kev, today);
 
@@ -125,24 +134,22 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
     cvesLevel = levelOf(c.cves_24h ?? w[w.length - 1]!, cvesBand);
   }
   let kevLevel: Level = 1;
+  let kevBand: Band | null = null;
+  let kevLastWeek: number | null = null;
   if (stats.kev) {
     const k = kevWeekHistory(
       kev.map((e) => e.added),
       today,
     );
-    kevLevel = levelOf(c.kev_7d ?? k.now, bandOf(k.history));
+    kevBand = bandOf(k.history);
+    kevLevel = levelOf(c.kev_7d ?? k.now, kevBand);
+    kevLastWeek = k.history[0] ?? null;
   }
 
-  // the sieve's typical week, from the year's NVD total when it was counted
-  let typicalWeek: number | null = null;
-  const nvd = stats.nvdCounts;
-  if (nvd) {
-    const fetched = nvd.fetched_at.slice(0, 10);
-    const year = Number(fetched.slice(0, 4));
-    const total = nvd.years.find((y) => y.year === year)?.total;
-    const elapsed = (Date.parse(`${fetched}T00:00:00Z`) - Date.parse(`${year}-01-01T00:00:00Z`)) / DAY_MS + 1;
-    if (total && elapsed >= 14) typicalWeek = Math.round((total / elapsed) * 7);
-  }
+  const typicalWeek = typicalCveWeek(stats.nvdCounts);
+  const typicalCritical = typicalCriticalWeek(stats.daily, today);
+  const month = today.slice(0, 7);
+  const publishedLevel: Level = c.cves_7d === null ? 1 : ratioLevel(c.cves_7d, typicalWeek);
 
   const inStack = stackMatches(stackFile, stackFile.default);
   const panel: PanelData = {
@@ -153,20 +160,27 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
       cvesBand,
       kev7: c.kev_7d,
       kevLevel,
-      noFullPatch: act.noFullPatch,
+      noFullPatch: ledger.noFullPatch,
       inStack: inStack.length,
       aiWeek: ai.target.n + ai.weapon.n,
       incidentsWeek: ai.total,
     },
     stack: { tiles: stackFile.default.map((k) => tileOf(stackFile.candidates.find((x) => x.key === k)!)), default: stackFile.default },
-    act,
-    latest: buildLatest(incidents, nowIso),
+    ledger,
+    week: buildWeek({
+      today,
+      published: { n: c.cves_7d, typical: typicalWeek, level: publishedLevel },
+      critical: { n: c.critical_7d, typical: typicalCritical, level: c.critical_7d === null ? 1 : ratioLevel(c.critical_7d, typicalCritical) },
+      exploited: { n: c.kev_7d, band: kevBand, level: kevLevel, lastWeek: kevLastWeek },
+      breaches: { month, n: c.breaches_month, accounts: c.breached_accounts_month, typicalMonth: typicalBreachMonth(breaches, month) },
+      ai,
+    }),
     types: buildAttackTypes(week).filter((t) => t.key !== "other" || t.n > 0),
     surface: buildSurface(kev, today),
     ai,
     sieve: {
       published: c.cves_7d,
-      publishedLevel: c.cves_7d === null ? 1 : ratioLevel(c.cves_7d, typicalWeek),
+      publishedLevel,
       typicalWeek,
       critical: c.critical_7d,
       exploited: c.kev_7d,
@@ -182,7 +196,8 @@ export function buildPanel(incidents: readonly FullIncident[], stats: StatsFiles
 export { LEVEL_WORDS } from "./levels";
 export type { Level } from "./levels";
 export type { StackCandidate, StackFile, StackItem, StackMatch } from "./stack";
-export type { ActRow, LatestRow } from "./act";
+export type { DueRow, Ledger, NewRow, PatchRow } from "./ledger";
+export type { Week } from "./week";
 export type { AttackTypeRow } from "./attack-types";
 export type { SurfaceRow } from "./technology";
 export type { AiFlow, FlowRole } from "./ai-flow";

@@ -350,6 +350,36 @@ body {
   visibility: hidden;
 }
 
+/* the week's bar against typical (components/home/panel/marks.tsx Vs): cells on a fixed track, a hairline at typical, a dim band over the usual range, a faint hairline where busy starts */
+.vs {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  flex: none;
+  vertical-align: middle;
+}
+.vs .ascii-cells {
+  position: relative;
+}
+.vs .band {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  background: rgba(160, 170, 195, 0.12);
+  border-radius: 1px;
+}
+.vs .tick {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--color-soft);
+}
+.vs .tick.p90 {
+  background: var(--color-faint);
+}
+
 /* the severity meter: three bars lit for exploited, four in red for confirmed loss */
 .sev-meter {
   display: inline-flex;
@@ -431,38 +461,7 @@ body {
   }
 }
 
-/* the sieve: glyphs fall through each stage as it builds */
-.sieve-rain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.sieve-rain > i {
-  position: absolute;
-  top: -14px;
-  font-style: normal;
-  font-family: var(--font-plex-mono), monospace;
-  font-size: 11px;
-  line-height: 1;
-  opacity: 0;
-  animation: sieve-fall 0.9s linear forwards;
-}
-@keyframes sieve-fall {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateY(110px);
-    opacity: 0;
-  }
-}
-
-/* a returning visitor's own stack: stack-dependent numbers wait for it instead of flashing the default */
+/* a returning visitor's own stack: stack-dependent numbers and marks wait for it instead of flashing the default */
 .stack-custom [data-stack]:not([data-stack="ready"]) {
   visibility: hidden;
 }

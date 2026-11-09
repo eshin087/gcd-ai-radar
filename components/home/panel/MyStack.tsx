@@ -20,6 +20,11 @@ import { STACK_DAYS, STACK_MAX, type StackCandidate, type StackFile, type StackI
  * anywhere.
  */
 
+/** The flag in fewer letters, for the four-across tiles of a phone. */
+function shortFlag(flag: string): string {
+  return flag.startsWith("due") ? flag : flag === "confirmed loss" ? "loss" : flag === "no patch yet" ? "no patch" : "partial";
+}
+
 function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
   return (
     <button
@@ -28,17 +33,18 @@ function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
       data-stack-tile={t.key}
       data-flag={t.flag ?? ""}
       data-n={t.n}
-      title={t.why.length ? t.why.join(" · ") : "nothing exploited and open"}
+      title={`${t.why.length ? t.why.join(" · ") : "nothing exploited and open"} · exploited in the last ${STACK_DAYS} days, red while still open`}
       aria-label={`${t.label}: ${t.n} exploited in ${STACK_DAYS} days${t.flag ? `, ${t.flag}` : ""}, open the list`}
-      className="group block w-full min-w-0 border-l border-line-soft pl-3 text-left hover:border-accent"
+      className="group block w-full min-w-0 border-l border-line-soft pl-2.5 text-left hover:border-accent sm:pl-3"
     >
       <span className={`block truncate text-[13px] font-semibold group-hover:text-accent ${t.flag ? "text-ink" : "text-soft"}`}>{t.label}</span>
-      <Num value={String(t.n)} className="mt-1 block font-mono text-[28px] font-medium leading-[1.15] text-ink" />
-      <span className="mt-0.5 flex min-h-[18px] items-center gap-1.5 overflow-hidden whitespace-nowrap font-mono text-[12px] text-live">
+      <Num value={String(t.n)} className="mt-1 block font-mono text-[24px] font-medium leading-[1.15] text-ink sm:text-[28px]" />
+      <span className="mt-0.5 flex min-h-[18px] items-center gap-1.5 overflow-hidden whitespace-nowrap font-mono text-[11px] text-live sm:text-[12px]">
         {t.flag && (
           <>
             <Pulse />
-            <span className="truncate">{t.flag}</span>
+            <span className="hidden truncate sm:inline">{t.flag}</span>
+            <span className="truncate sm:hidden">{shortFlag(t.flag)}</span>
           </>
         )}
       </span>
@@ -151,7 +157,7 @@ function StackDrawer({ cand, file, onClose }: { cand: StackCandidate | null; fil
 
 /* ---------- choosing products ---------- */
 
-function Chooser({ open, onClose, file, picks, onChange, onReset }: { open: boolean; onClose: () => void; file: StackFile | null; picks: string[]; onChange: (key: string, on: boolean) => void; onReset: () => void }) {
+function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: { open: boolean; onClose: () => void; file: StackFile | null; picks: string[]; isDefault: boolean; onChange: (key: string, on: boolean) => void; onReset: () => void }) {
   const titleId = useId();
   const [q, setQ] = useState("");
   const list = (file?.candidates ?? []).filter((c) => !q || c.label.toLowerCase().includes(q.toLowerCase()));
@@ -167,6 +173,9 @@ function Chooser({ open, onClose, file, picks, onChange, onReset }: { open: bool
         </h2>
         <p className="num text-[13px] text-dim">
           {file ? file.candidates.length : 0} products · {picks.length} of up to {STACK_MAX} chosen · the number is exploitation in the last 90 days
+        </p>
+        <p className="text-[12px] leading-relaxed text-faint">
+          {isDefault ? "Until you choose, the tiles are the most-exploited vendors and AI products." : "Your choice stays in this browser."} Red means exploited and still open: a CISA deadline ahead, no full patch, or confirmed loss. The share link carries the stack to any device or teammate.
         </p>
       </header>
       <div className="mt-3 flex items-center gap-3">
@@ -257,22 +266,16 @@ export function MyStack() {
           </button>
         </>
       }
-      caption={
-        <>
-          Red: exploited and still open, meaning a CISA deadline ahead, no full patch, or confirmed loss. A tile opens its list.{" "}
-          {isDefault ? "Until you choose, these are the most-exploited vendors and AI products." : "Your choice stays in this browser."} The share link carries it to any device or teammate.
-        </>
-      }
     >
       <div className="overflow-hidden">
-        <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="-ml-3 grid grid-cols-2 gap-y-4 sm:grid-cols-4 xl:grid-cols-8">
+        <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="-ml-2.5 grid grid-cols-4 gap-y-3 sm:-ml-3 sm:gap-y-4 xl:grid-cols-8">
           {tiles.map((t) => (
             <Tile key={t.key} t={t} onOpen={() => show(t)} />
           ))}
         </div>
       </div>
       <StackDrawer cand={shown} file={file} onClose={() => setShown(null)} />
-      <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} onChange={change} onReset={() => setPicks([])} />
+      <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} isDefault={isDefault} onChange={change} onReset={() => setPicks([])} />
     </Instrument>
   );
 }

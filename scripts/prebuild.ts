@@ -16,7 +16,7 @@
  *   public/feed.xml                   RSS of the 50 most recently reported incidents
  *   public/briefing.xml               RSS of the weekly briefings
  *   public/og/*.png                   chart images for sharing (satori + sharp)
- *   public/stats/*.json               the home page's statistics, instrument panel and My stack candidates (lib/home.ts, lib/panel)
+ *   public/stats/*.json               the home page's statistics, day sheet and My stack candidates (lib/home.ts, lib/panel)
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -258,7 +258,7 @@ async function main() {
   // one list file per charted month, so every column opens its month
   await Promise.all([
     fs.writeFile(path.join(statsDir, "home.json"), JSON.stringify(home.stats, null, 1) + "\n"),
-    // the instrument panel as the page shows it (lib/panel), and every My stack candidate for the browser's picks
+    // the day sheet and the /trends instruments as the pages show them (lib/panel), and every My stack candidate for the browser's picks
     fs.writeFile(path.join(statsDir, "panel.json"), JSON.stringify({ generated_at: home.now, ...home.panel }, null, 1) + "\n"),
     fs.writeFile(path.join(PUBLIC, STACK_FILE), JSON.stringify(home.stackFile) + "\n"),
     fs.writeFile(path.join(PUBLIC, SCOPE_FILE), JSON.stringify({ generated_at: home.now, ...home.live.scope }) + "\n"),

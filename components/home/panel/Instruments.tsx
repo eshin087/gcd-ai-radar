@@ -1,106 +1,19 @@
 import Link from "next/link";
 import { FlowRibbons } from "@/components/home/panel/FlowRibbons";
-import { Instrument, Pulse } from "@/components/home/panel/Instrument";
-import { Countdown, ShortAgo, TypeIn } from "@/components/home/panel/Live";
-import { Cells, ScoreOrDash, SevMeter, Units } from "@/components/home/panel/marks";
+import { Instrument } from "@/components/home/panel/Instrument";
+import { Cells, Units } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
-import { CvssChip } from "@/components/ui/Badge";
-import type { ActNow as ActNowData } from "@/lib/panel/act";
-import type { AiFlow as AiFlowData, AttackTypeRow, FlowRole, LatestRow, SurfaceRow } from "@/lib/panel";
-import { shortDate } from "@/lib/panel/util";
-import { LANE_COLORS } from "@/lib/palette";
+import type { AiFlow as AiFlowData, AttackTypeRow, FlowRole, SurfaceRow } from "@/lib/panel";
 import { SITE } from "@/lib/site";
 import type { Lane } from "@/lib/taxonomy";
 
 /**
- * The panel's server-rendered instruments (rules in lib/panel). Each is final
- * in the HTML; the client only builds the marks in, ticks the clocks and
- * draws the AI flow's ribbons.
+ * The server-rendered instruments in the panel's grammar (rules in
+ * lib/panel): the attack types and the attack surface, how AI shows up, and
+ * the home page's footer rows. The first three sit on /trends under the
+ * web's charts; each is final in the HTML, and the client only builds the
+ * marks in and draws the AI flow's ribbons.
  */
-
-/* ---------- Act now ---------- */
-
-export function ActNow({ act, today }: { act: ActNowData; today: string }) {
-  return (
-    <Instrument id="act" label="Act now" sub="exploited, deadline soon or no patch" source="CISA KEV · our records">
-      <ol data-act className="border-b border-line-soft">
-        {act.rows.map((r, i) => {
-          const fact = r.cves.length > 1 ? `${r.cves.length} CVEs` : (r.cves[0] ?? "");
-          return (
-            <li key={i} data-act-row={r.kind} className="grid min-h-[40px] grid-cols-[12px_minmax(0,1fr)_38px_112px] items-center gap-x-3 border-t border-line-soft py-1.5 sm:grid-cols-[12px_minmax(0,1fr)_38px_minmax(0,150px)_132px]">
-              <Pulse />
-              {r.kind === "kev" && r.external ? (
-                <a href={r.href} target="_blank" rel="noopener noreferrer" title={`${r.name}: ${r.cves.join(", ")}`} className="truncate text-[14px] font-semibold text-ink hover:text-accent">
-                  {r.name}
-                </a>
-              ) : (
-                <Link href={r.href} title={r.kind === "record" ? r.title : `${r.name}: ${r.cves.join(", ")}`} className="truncate text-[14px] font-semibold text-ink hover:text-accent">
-                  {r.name}
-                </Link>
-              )}
-              <ScoreOrDash score={r.cvss} />
-              <span className="hidden truncate font-mono text-[12px] text-dim sm:block">{fact}</span>
-              {r.kind === "kev" ? (
-                <span className="text-right font-mono text-[12px] leading-tight whitespace-nowrap text-accent">
-                  due {r.due === today ? "today" : shortDate(r.due)}
-                  <Countdown due={r.due} className="block text-[11px] text-faint" />
-                </span>
-              ) : (
-                <span className={`text-right font-mono text-[12px] leading-tight whitespace-nowrap ${r.patch === "partial" ? "text-partial" : "text-live"}`}>
-                  {r.patch === "partial" ? "partly patched" : "no patch yet"}
-                  <span className="block text-[11px] text-faint">since {shortDate(r.reported)}</span>
-                </span>
-              )}
-            </li>
-          );
-        })}
-      </ol>
-      {act.rows.length === 0 && <p className="py-4 text-[13px] text-dim">Nothing exploited is due or unpatched right now.</p>}
-      <Link href="/live" className="mt-3 inline-block font-mono text-[12px] uppercase tracking-[0.08em] text-accent hover:underline">
-        all {act.exploitedLive} exploited records →
-      </Link>
-    </Instrument>
-  );
-}
-
-/* ---------- Latest ---------- */
-
-const LANE_WORD: Record<Lane, string> = { patch: "patch", breach: "breach", supply_chain: "supply", research: "research" };
-
-export function Latest({ rows, built }: { rows: LatestRow[]; built: string }) {
-  return (
-    <Instrument
-      id="latest"
-      label="Latest"
-      sub="exploited or worse, every lane"
-      source={<Link href="/live">live board →</Link>}
-      caption="Bars: severity, three for exploited, four for confirmed loss. CVSS shows when the record has one."
-    >
-      <ol data-latest className="border-b border-line-soft">
-        {rows.map((l, i) => (
-          <li key={l.slug} data-row-lane={l.lane} className="grid min-h-[40px] grid-cols-[52px_22px_minmax(0,1fr)] items-center gap-x-2.5 border-t border-line-soft py-1.5 sm:grid-cols-[58px_22px_minmax(0,1fr)_auto]">
-            <span className="font-mono text-[12px]" style={{ color: LANE_COLORS[l.lane] }}>
-              {LANE_WORD[l.lane]}
-            </span>
-            <SevMeter severity={l.severity} />
-            <Link href={`/incidents/${l.slug}`} title={l.title} className="min-w-0 truncate text-[14px] text-ink hover:text-accent">
-              {l.cvss !== null && (
-                <span className="mr-2 align-[1px]">
-                  <CvssChip score={l.cvss} />
-                </span>
-              )}
-              {i === 0 ? <TypeIn text={l.title} /> : l.title}
-            </Link>
-            <span className="col-start-3 font-mono text-[12px] whitespace-nowrap text-faint sm:col-start-auto">
-              {l.type !== "not_ai" && <span className="mr-2.5 text-accent">{l.type === "attack_on_ai" ? "on AI" : "using AI"}</span>}
-              <ShortAgo iso={l.created} built={built} />
-            </span>
-          </li>
-        ))}
-      </ol>
-    </Instrument>
-  );
-}
 
 /* ---------- Attack types and Attack surface: two tables on one grid ---------- */
 

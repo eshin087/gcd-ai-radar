@@ -45,7 +45,7 @@ export interface StackCandidate {
   flag: string | null;
   /** Every reason it is red, for the tooltip. */
   why: string[];
-  /** KEV entries CISA added in the 7 days that belong to it: the sieve's last stage. */
+  /** KEV entries CISA added in the 7 days that belong to it: the hero's "hit your stack this week" number. */
   kev7: StackMatch[];
   /** Where the tile's drawer points on: the family's product page, or CISA's catalog searched for the vendor. */
   href: string;
@@ -64,6 +64,37 @@ export function stackMatches(file: Pick<StackFile, "candidates">, picks: readonl
   const out = new Map<string, StackMatch>();
   for (const k of picks) for (const m of file.candidates.find((c) => c.key === k)?.kev7 ?? []) if (!out.has(m.cve)) out.set(m.cve, m);
   return [...out.values()].sort((a, b) => (a.due ?? "9").localeCompare(b.due ?? "9") || a.cve.localeCompare(b.cve));
+}
+
+/** What the picks' items cover: every CVE id and record link, each with the labels of the picks that hold it, for marking the ledger's rows. */
+export interface StackHits {
+  cves: Map<string, string[]>;
+  hrefs: Map<string, string[]>;
+}
+
+export function stackHits(file: Pick<StackFile, "candidates">, picks: readonly string[]): StackHits {
+  const hits: StackHits = { cves: new Map(), hrefs: new Map() };
+  const add = (m: Map<string, string[]>, key: string, label: string) => {
+    const labels = m.get(key) ?? [];
+    if (!labels.includes(label)) labels.push(label);
+    m.set(key, labels);
+  };
+  for (const k of picks) {
+    const c = file.candidates.find((x) => x.key === k);
+    for (const it of c?.items ?? []) {
+      for (const cve of it.cves) add(hits.cves, cve, c!.label);
+      add(hits.hrefs, it.href, c!.label);
+    }
+  }
+  return hits;
+}
+
+/** The picks a row belongs to, by its CVE ids or its link, in pick order, each once. */
+export function rowStack(hits: StackHits, row: { cves?: readonly string[]; href?: string }): string[] {
+  const out: string[] = [];
+  for (const cve of row.cves ?? []) for (const l of hits.cves.get(cve) ?? []) if (!out.includes(l)) out.push(l);
+  if (row.href) for (const l of hits.hrefs.get(row.href) ?? []) if (!out.includes(l)) out.push(l);
+  return out;
 }
 
 /** Picks from a URL or storage: known keys only, in order, no repeats, at most STACK_MAX. */

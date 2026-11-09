@@ -12,7 +12,7 @@ import type { StatsModule } from "./types";
  *
  * Read again once the file is 0.9 hours old, so on about every hourly
  * collector run (every other run at a 30-minute cadence): the home page's
- * "Act now" list and its known-exploited-this-week count come from here, and
+ * deadline rows and its known-exploited-this-week count come from here, and
  * CISA adds entries at any hour. A read that changes nothing writes nothing.
  * The NVD join (about 19 MB) runs only when there is no previous file, when
  * the catalog lists a CVE the previous file lacks, or while an entry listed
