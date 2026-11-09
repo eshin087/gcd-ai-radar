@@ -1,5 +1,123 @@
 [
   {
+    "id": "AIR-2026-1839",
+    "slug": "cve-2026-116779-signalwire-freeswitch-code-injection-vulnera",
+    "title": "CVE-2026-116779: SignalWire FreeSwitch Code Injection Vulnerability",
+    "summary": "SignalWire FreeSwitch contains a code injection vulnerability allowing configuration disclosure and arbitrary command execution. The issue is actively exploited in the wild and has been added to CISA's KEV catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SignalWire FreeSwitch"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-116779",
+        "publisher": "CISA",
+        "title": "CVE-2026-116779: SignalWire FreeSwitch — SignalWire FreeSwitch Code Injection Vulnerability",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-116779",
+      "code-injection",
+      "command-execution"
+    ],
+    "created_at": "2026-11-09T17:11:31.516Z",
+    "updated_at": "2026-11-09T17:11:31.516Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-116779"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "CVE-2026-116779: SignalWire FreeSwitch — SignalWire FreeSwitch Code Injection Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-116779",
+        "added_at": "2026-11-09T17:11:31.516Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA BOD 26-04 guidance.",
+    "severity_note": "Exploitation in the wild is confirmed by CISA KEV entry.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1838",
+    "slug": "cve-2026-102895-gpustack-improper-authentication-vulnerabili",
+    "title": "CVE-2026-102895: GPUStack Improper Authentication Vulnerability",
+    "summary": "GPUStack contains an improper authentication vulnerability enabling unauthenticated administrative access and code execution. The flaw has been added to CISA's KEV catalog following confirmed exploitation in the wild.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "GPUStack"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-102895",
+        "publisher": "CISA",
+        "title": "CVE-2026-102895: GPUStack GPUStack — GPUStack Improper Authentication Vulnerability",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-102895",
+      "improper-authentication",
+      "code-execution"
+    ],
+    "created_at": "2026-11-09T17:11:31.516Z",
+    "updated_at": "2026-11-09T17:11:31.516Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-102895"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "CVE-2026-102895: GPUStack GPUStack — GPUStack Improper Authentication Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-102895",
+        "added_at": "2026-11-09T17:11:31.516Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA BOD 26-04 guidance.",
+    "severity_note": "Exploitation in the wild is confirmed by CISA KEV entry.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1837",
     "slug": "revolve-discloses-data-breach-affecting-1-5-million-individu",
     "title": "Revolve Discloses Data Breach Affecting 1.5 Million Individuals",
@@ -2821,7 +2939,7 @@
     "categories": [
       "general"
     ],
-    "severity": 2,
+    "severity": 3,
     "targets": [
       "n/a"
     ],
@@ -2874,9 +2992,15 @@
         "publisher": "BleepingComputer",
         "title": "Hackers exploit SSHole OpenSSH flaw to breach Linux systems",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158",
+        "publisher": "CISA",
+        "title": "CVE-2026-123158: OpenBSD OpenSSH — OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 7,
+    "source_count": 8,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2884,10 +3008,11 @@
       "cve",
       "openssh",
       "authentication-bypass",
-      "CVE-2026-123158"
+      "CVE-2026-123158",
+      "cisa-kev"
     ],
     "created_at": "2026-11-06T00:23:41.043Z",
-    "updated_at": "2026-11-09T16:10:45.048Z",
+    "updated_at": "2026-11-09T17:11:31.516Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -2923,6 +3048,12 @@
         "title": "Botnets and cryptominers are actively exploiting the authentication bypass vulnerability",
         "source_url": "https://securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh",
         "added_at": "2026-11-09T12:41:04.445Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158",
+        "added_at": "2026-11-09T17:11:31.516Z"
       }
     ],
     "action": "Update OpenSSH to version 10.6p2 and ensure Alpine packages are upgraded",
