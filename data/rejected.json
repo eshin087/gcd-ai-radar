@@ -1,5 +1,15 @@
 [
   {
+    "key": "2c42fb6170314159",
+    "title": "⚡ Weekly Recap: SSHole Exploited, APT Root RCE, Robot Takeovers, 15K Hacked Sites, and More",
+    "url": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Roundups, newsletters, podcasts, opinion and explainers without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T14:40:44.391Z"
+  },
+  {
     "key": "f915add60a39d246",
     "title": "AI doesn’t have to go rogue to break the world",
     "url": "https://cyberscoop.com/ai-hacking-risks-loopholes-bruce-schneier-defcon-keynote-op-ed",
