@@ -101,32 +101,39 @@ export type EntityIndex = Map<string, number>;
  * The CVE ids an incident is about, not every id its sources mention. An
  * advisory source (NVD, GHSA, KEV) counts only for its own id: a GHSA title
  * such as "CVE-2026-54008: … (incomplete-fix sibling of CVE-2026-45401)"
- * cites 45401 but is not about it. Other sources count for the ids in their
- * headlines. The title and tags come from the classifier, whose titles repeat
- * cited ids (AIR-2025-0393) and have carried a neighbouring item's id
- * (AIR-2025-0367), and merges add the merged record's ids to tags, so they
- * count only for records with no advisory source (news, where tags keep ids
- * read from the article text). A breach-lane record is about an event, not a
- * flaw: an id in its title or tags is the flaw the intruders used, which the
- * patch-lane record of that CVE is about, so tags and titles never count there.
+ * cites 45401 but is not about it. A record with an advisory source is about
+ * its advisories' ids and nothing else: a news headline merged into it names
+ * every CVE of an attack chain ("Remediate exploited Ivanti Connect Secure
+ * vulnerabilities (CVE-2026-111357, CVE-2026-118527)" on AIR-2026-1678, the
+ * record of 118527) and cites the others. A record with no advisory source
+ * (news) is about the ids in its headlines, title and tags, which the
+ * classifier wrote from the article text; on advisory records those are not
+ * trusted, because classifier titles repeat cited ids (AIR-2025-0393) and
+ * have carried a neighbouring item's id (AIR-2025-0367), and merges used to
+ * add the merged source's ids to tags. A breach-lane record is about an
+ * event, not a flaw: an id in its title or tags is the flaw the intruders
+ * used, which the patch-lane record of that CVE is about, so tags and titles
+ * never count there.
  */
 export function cvesOfIncident(inc: Incident): Set<string> {
-  const set = new Set<string>();
-  let advisory = false;
+  const advisory = new Set<string>();
+  const headlines = new Set<string>();
+  let hasAdvisory = false;
   for (const s of inc.sources) {
     const own = advisoryCves(s);
     if (own) {
-      advisory = true;
-      for (const c of own) set.add(c);
+      hasAdvisory = true;
+      for (const c of own) advisory.add(c);
     } else {
-      for (const c of extractCves(s.title)) set.add(c);
+      for (const c of extractCves(s.title)) headlines.add(c);
     }
   }
-  if (!advisory && laneOf(inc) !== "breach") {
-    for (const t of inc.tags) for (const c of extractCves(t)) set.add(c);
-    for (const c of extractCves(inc.title)) set.add(c);
+  if (hasAdvisory) return advisory;
+  if (laneOf(inc) !== "breach") {
+    for (const t of inc.tags) for (const c of extractCves(t)) headlines.add(c);
+    for (const c of extractCves(inc.title)) headlines.add(c);
   }
-  return set;
+  return headlines;
 }
 
 /** CVE ids that more than one record is about ("CVE-… on A and B"). Dedupe should never leave any. */

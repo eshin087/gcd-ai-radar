@@ -1,7 +1,7 @@
-import { closedAtOf, stateOf, timelineOf, type FullIncident } from "../../lib/lifecycle";
+import { closedAtOf, cveIdsOf, stateOf, timelineOf, type FullIncident } from "../../lib/lifecycle";
 import { SourceSchema, type Incident, type Source } from "../../lib/schema";
 import { isAiType, type Category, type Lane, type PatchStatus, type Status } from "../../lib/taxonomy";
-import { extractCves, truncate } from "../lib/text";
+import { advisoryCves, extractCves, truncate } from "../lib/text";
 import type { ClassificationItem } from "../llm/schemas";
 import type { Candidate } from "../sources/types";
 import type { Cluster } from "./dedupe";
@@ -36,16 +36,23 @@ export function fixLeadingCve(title: string, cves: string[]): string {
   return cves.length === 1 ? `${cves[0]}: ${rest}` : rest;
 }
 
-/** Adds a candidate as a source; returns false if the URL is already there. */
+/**
+ * Adds a candidate as a source; returns false if the URL is already there.
+ * A record that already carries CVE ids keeps exactly those: a source that
+ * names other ids cites them (a news story about an attack chain names every
+ * CVE in the chain; AIR-2026-1678 in docs/cve-dedup.md) and does not make the
+ * record about them. A record without ids learns them from the first source
+ * that carries any (an NVD record merged by title into a news record).
+ */
 export function mergeSource(target: Incident, c: Candidate, now: string): boolean {
   if (target.sources.some((s) => s.url === c.url)) return false;
   target.sources.push(sourceFromCandidate(c));
   target.sources.sort((a, b) => a.published_at.localeCompare(b.published_at));
   target.source_count = target.sources.length;
   if (c.published_at < target.first_reported) target.first_reported = c.published_at;
-  if (c.cve_ids.length) {
+  if (c.cve_ids.length && cveIdsOf(target).length === 0) {
     target.tags = normalizeTags([...target.tags, ...c.cve_ids]);
-    if (target.cve_ids) target.cve_ids = sortCves([...new Set([...target.cve_ids, ...c.cve_ids.map((x) => x.toUpperCase())])]);
+    if (target.cve_ids) target.cve_ids = sortCves([...new Set(c.cve_ids.map((x) => x.toUpperCase()))]);
   }
   target.updated_at = now;
   return true;
@@ -134,6 +141,26 @@ function advisoryVersions(cluster: Cluster): { affected: string[]; fixed_in: str
   return { affected: cleanVersionList(affected), fixed_in: cleanVersionList(fixed_in) };
 }
 
+/**
+ * The CVE ids a new record is about. A cluster with an advisory member (NVD,
+ * GHSA, KEV) is about that advisory's own id; a news member that names more
+ * ids cites them. A news-only cluster is about every id its members name.
+ */
+function clusterCves(cluster: Cluster): string[] {
+  const advisory = new Set<string>();
+  const named = new Set<string>();
+  let hasAdvisory = false;
+  for (const m of cluster.members) {
+    const own = advisoryCves(m);
+    if (own) {
+      hasAdvisory = true;
+      for (const c of own) advisory.add(c);
+    }
+    for (const c of m.cve_ids) named.add(c.toUpperCase());
+  }
+  return sortCves([...(hasAdvisory ? advisory : named)]);
+}
+
 /** The first CVSS score a structured member (NVD, GHSA) carries. */
 function memberCvss(cluster: Cluster): number | null {
   for (const m of cluster.members) {
@@ -177,7 +204,7 @@ export function buildIncident(
     precision = "day";
   }
 
-  const cves = sortCves([...new Set(cluster.members.flatMap((m) => m.cve_ids.map((c) => c.toUpperCase())))]);
+  const cves = clusterCves(cluster);
   const type = item.type;
   const categories = normalizeCategories(type, item.categories);
 

@@ -7104,68 +7104,6 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-1704",
-    "slug": "ivanti-patches-two-connect-secure-zero-days-exploited-in-att",
-    "title": "Ivanti patches two Connect Secure zero-days exploited in attacks",
-    "summary": "Ivanti has issued security updates to address two zero-day vulnerabilities in its Connect Secure gateways. The flaws have been actively chained in attacks since at least October.",
-    "type": "not_ai",
-    "categories": [
-      "general"
-    ],
-    "severity": 3,
-    "targets": [
-      "n/a"
-    ],
-    "products": [
-      "Ivanti Connect Secure"
-    ],
-    "incident_date": "2026-11-02",
-    "incident_date_precision": "day",
-    "first_reported": "2026-11-02",
-    "sources": [
-      {
-        "url": "https://bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks",
-        "publisher": "BleepingComputer",
-        "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
-        "published_at": "2026-11-02"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.95,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "ivanti",
-      "connect-secure",
-      "zero-day",
-      "exploitation-in-the-wild"
-    ],
-    "created_at": "2026-11-02T11:35:30.453Z",
-    "updated_at": "2026-11-02T11:35:30.453Z",
-    "lane": "patch",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "patched",
-    "cve_ids": [],
-    "affected": [
-      "Ivanti Connect Secure"
-    ],
-    "fixed_in": [
-      "Latest security updates"
-    ],
-    "timeline": [
-      {
-        "date": "2026-11-02",
-        "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
-        "source_url": "https://bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks",
-        "added_at": "2026-11-02T11:35:30.453Z"
-      }
-    ],
-    "action": "Apply the latest security updates from Ivanti immediately.",
-    "severity_note": "Confirmed zero-day exploitation in the wild",
-    "cvss": null
-  },
-  {
     "id": "AIR-2026-1703",
     "slug": "aur0ra-ransomware-operators-used-ai-coding-agents-for-intrus",
     "title": "Aur0ra ransomware operators used AI coding agents for intrusion workflows",
@@ -8712,9 +8650,15 @@
         "publisher": "Help Net Security",
         "title": "CISA to federal agencies: Remediate exploited Ivanti Connect Secure vulnerabilities (CVE-2026-111357, CVE-2026-118527)",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
+        "published_at": "2026-11-02"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -8722,32 +8666,40 @@
       "CVE-2026-118527",
       "kev",
       "file_upload",
-      "ivanti",
-      "CVE-2026-111357"
+      "ivanti"
     ],
     "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-11-07T02:05:34.301Z",
+    "updated_at": "2026-11-09T03:50:18.098Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "partial",
+    "patch_status": "patched",
     "cve_ids": [
-      "CVE-2026-118527",
-      "CVE-2026-111357"
+      "CVE-2026-118527"
     ],
     "affected": [
-      "Ivanti Connect Secure"
+      "Ivanti Connect Secure 25.1.1.2 and prior",
+      "Ivanti Connect Secure 22.8R2.5 and prior"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "Ivanti Connect Secure 25.1.1.3",
+      "Ivanti Connect Secure 22.8R2.6"
+    ],
     "timeline": [
       {
         "date": "2026-10-30",
         "title": "CVE-2026-118527: Ivanti Connect Secure — Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
         "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-118527",
         "added_at": "2026-10-30T23:21:39.510Z"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "Ivanti releases fixes in Connect Secure 25.1.1.3 and 22.8R2.6",
+        "source_url": "https://securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain",
+        "added_at": "2026-11-09T03:50:18.098Z"
       }
     ],
-    "action": "Apply mitigations in accordance with vendor instructions.",
+    "action": "Update Ivanti Connect Secure to 25.1.1.3 or 22.8R2.6.",
     "severity_note": "Confirmed exploitation in the wild via CISA KEV.",
     "cvss": 4.3
   },
@@ -8923,27 +8875,37 @@
       "ivanti"
     ],
     "created_at": "2026-10-30T23:21:39.510Z",
-    "updated_at": "2026-10-31T10:18:42.504Z",
+    "updated_at": "2026-11-09T03:50:18.098Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "partial",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-111357"
     ],
     "affected": [
-      "Ivanti Connect Secure"
+      "Ivanti Connect Secure 25.1.1.2 and prior",
+      "Ivanti Connect Secure 22.8R2.5 and prior"
     ],
-    "fixed_in": [],
+    "fixed_in": [
+      "Ivanti Connect Secure 25.1.1.3",
+      "Ivanti Connect Secure 22.8R2.6"
+    ],
     "timeline": [
       {
         "date": "2026-10-30",
         "title": "CVE-2026-111357: Ivanti Connect Secure — Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
         "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111357",
         "added_at": "2026-10-30T23:21:39.510Z"
+      },
+      {
+        "date": "2026-10-31",
+        "title": "Ivanti releases fixes in Connect Secure 25.1.1.3 and 22.8R2.6",
+        "source_url": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+        "added_at": "2026-11-09T03:50:18.098Z"
       }
     ],
-    "action": "Apply mitigations in accordance with vendor instructions.",
+    "action": "Update Ivanti Connect Secure to 25.1.1.3 or 22.8R2.6.",
     "severity_note": "Confirmed exploitation in the wild via CISA KEV.",
     "cvss": 7
   },
