@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  briefingStandfirst,
   briefingNumbers,
   busiestFamily,
   delta,
@@ -269,5 +270,25 @@ describe("narrative checks", () => {
     expect(narrativeProblems(`See https://example.org for more. ${filler}`, allowed, numbers).join()).toMatch(/link/);
     expect(narrativeProblems(`**Bold** text. ${filler}`, allowed, numbers).join()).toMatch(/markdown/);
     expect(narrativeProblems("Too short.", allowed, numbers).join()).toMatch(/at least/);
+  });
+});
+
+describe("briefingStandfirst", () => {
+  const narrative = (text: string) => ({ narrative: { headline: "h", text, provider: "p", model: "m", generated_at: "2026-11-09T00:00:00Z" } });
+  it("keeps a short first paragraph whole and drops the rest", () => {
+    expect(briefingStandfirst(narrative("One short lede.\n\nSecond paragraph."))).toBe("One short lede.");
+  });
+  it("cuts a long paragraph at the last sentence end, else at a word", () => {
+    const long = `${"Alpha beta gamma delta. ".repeat(20)}Tail`;
+    const cut = briefingStandfirst(narrative(long), 100)!;
+    expect(cut.length).toBeLessThanOrEqual(100);
+    expect(cut.endsWith(".")).toBe(true);
+    const words = "word ".repeat(60).trim();
+    const cutWords = briefingStandfirst(narrative(words), 50)!;
+    expect(cutWords.endsWith("…")).toBe(true);
+    expect(cutWords.length).toBeLessThanOrEqual(51);
+  });
+  it("is null without a narrative", () => {
+    expect(briefingStandfirst({ narrative: null })).toBeNull();
   });
 });

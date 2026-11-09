@@ -12,9 +12,9 @@ describe("the hero's exploited rows", () => {
   });
 
   it("reads CISA's deadline against the build day", () => {
-    expect(dueLabel("2026-11-01", "2026-11-01")).toBe("due today");
-    expect(dueLabel("2026-11-13", "2026-11-01")).toBe("due Nov 13");
-    expect(dueLabel("2026-10-30", "2026-11-01")).toBe("past due");
+    expect(dueLabel("2026-11-01", "2026-11-01")).toBe("patch today");
+    expect(dueLabel("2026-11-13", "2026-11-01")).toBe("patch by Nov 13");
+    expect(dueLabel("2026-10-30", "2026-11-01")).toBe("overdue");
     expect(dueLabel(null, "2026-11-01")).toBe("");
   });
 });

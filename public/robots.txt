@@ -1,0 +1,18 @@
+# GCD RADAR. The pages are open to crawlers. The data files, feeds and
+# exports under these paths are the site's own working files, not published
+# for indexing or harvesting (vercel.json marks them noindex as well).
+User-agent: *
+Disallow: /data/
+Disallow: /stats/
+Disallow: /lanes/
+Disallow: /feed.xml
+Disallow: /feed.json
+Disallow: /briefing.xml
+Disallow: /changes.json
+Disallow: /llms.txt
+Disallow: /live.json
+Disallow: /tags/*/feed.xml
+Disallow: /tags/*/feed.json
+Disallow: /tags/*/llms.txt
+Disallow: /tags/*.json
+Disallow: /lab

@@ -241,3 +241,18 @@ export function briefingSummaryLine(b: Pick<Briefing, "counts" | "deltas">): str
     `${plural(b.counts.disclosed_vulnerabilities, "disclosed CVE")} (${sign(b.deltas.disclosed_vulnerabilities.change)})`,
   ].join(" · ");
 }
+
+/**
+ * The narrative's first paragraph as a standfirst under a headline: whole
+ * when it fits `max` characters, else cut at the last sentence end past
+ * three tenths of the way, else at a word with an ellipsis. Null without a
+ * narrative.
+ */
+export function briefingStandfirst(b: Pick<Briefing, "narrative">, max = 260): string | null {
+  const first = b.narrative?.text.split(/\n{2,}/)[0]?.trim();
+  if (!first) return null;
+  if (first.length <= max) return first;
+  const cut = first.slice(0, max);
+  const end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("? "), cut.lastIndexOf("! "));
+  return end >= max * 0.3 ? cut.slice(0, end + 1) : `${cut.replace(/\s+\S*$/, "")}…`;
+}

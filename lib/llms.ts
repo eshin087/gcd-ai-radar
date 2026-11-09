@@ -61,7 +61,6 @@ export function buildLlmsTxt(input: LlmsInput): string {
     lines.push(`- ${site}/data/incidents/<slug>.json: one record, with a Markdown "brief" field`);
     lines.push(`- ${site}/data/incidents.json, ${site}/data/incidents.csv: the whole dataset (CC BY-SA 4.0)`);
     lines.push(`- ${site}/lanes/<lane>/llms.txt and ${site}/tags/<tag>/llms.txt: this file per lane and per tag`);
-    lines.push(`- ${site}/api: every file documented field by field`);
   }
   lines.push("");
   if (scope.kind !== "tag") {

@@ -5,7 +5,6 @@ import { Instrument } from "@/components/home/panel/Instrument";
 import { Cells, Units } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
 import type { AiFlow as AiFlowData, AttackTypeRow, FlowRole, SurfaceRow } from "@/lib/panel";
-import { SITE } from "@/lib/site";
 import type { Lane } from "@/lib/taxonomy";
 
 /**
@@ -164,8 +163,8 @@ export function AiFlow({ ai }: { ai: AiFlowData }) {
 
 /* ---------- the footer strip ---------- */
 
-/** One row of the strip: its key, the items with an interpunct between each pair, and an optional tail at the right. */
-function FootRow({ k, items, tail }: { k: string; items: ReactNode[]; tail?: ReactNode }) {
+/** One row of the strip: its key, then the items with an interpunct between each pair. */
+function FootRow({ k, items }: { k: string; items: ReactNode[] }) {
   return (
     <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 py-1.5">
       <span className="min-w-[104px] uppercase tracking-[0.1em] text-faint">{k}</span>
@@ -179,15 +178,14 @@ function FootRow({ k, items, tail }: { k: string; items: ReactNode[]; tail?: Rea
             ]
           : [item],
       )}
-      {tail && <span className="text-faint sm:ml-auto">{tail}</span>}
     </div>
   );
 }
 
 /**
- * The home page's footer strip under the two panels: what else is live, this
- * week's briefing and the machine-readable files, each one quiet mono line
- * without a hairline of its own.
+ * The home page's footer strip under the two panels: what else is live and
+ * this week's briefing, each one quiet mono line without a hairline of its
+ * own. The data files and feeds are not listed anywhere on the site.
  */
 export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing }: { lanes: Record<Lane, number>; live: number; breachesMonth: number | null; accountsMonth: number | null; briefing: { week: string; headline: string } | null }) {
   const n = (v: number) => <span className="num text-ink">{v.toLocaleString("en-US")}</span>;
@@ -217,19 +215,6 @@ export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing 
       all {live} on the live board →
     </Link>,
   );
-  const machines = [
-    ["/feed.xml", "RSS"],
-    ["/feed.json", "JSON Feed"],
-    ["/changes.json", "changes.json"],
-    ["/llms.txt", "llms.txt"],
-    ["/live.json", "live.json"],
-    ["/stats/home.json", "stats"],
-    ["/data", "every file"],
-  ].map(([href, label]) => (
-    <a key={href} href={href} className={link}>
-      {label}
-    </a>
-  ));
   return (
     <footer data-panel-foot className="mt-8 border-t border-line-soft pt-2.5 font-mono text-[12px] text-dim">
       <FootRow k="Also live" items={also} />
@@ -246,7 +231,6 @@ export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing 
           ]}
         />
       )}
-      <FootRow k="For machines" items={machines} tail={<>data {SITE.dataLicense.name} · NVD public domain · CISA KEV CC0 · HIBP CC BY 4.0 · EPSS by FIRST</>} />
     </footer>
   );
 }

@@ -51,9 +51,9 @@ export function Vs({ n, max, typical, band, p90 }: { n: number; max: number; typ
   );
 }
 
-/** Our severity as four bars: three lit for exploited, four in red for confirmed loss. */
+/** Our severity as four bars: three lit for exploited, four in red for harm confirmed. */
 export function SevMeter({ severity }: { severity: Severity }) {
-  const word = severity >= 4 ? "confirmed loss" : severity === 3 ? "exploited" : severity === 2 ? "disclosed" : "research";
+  const word = severity >= 4 ? "harm confirmed" : severity === 3 ? "exploited" : severity === 2 ? "disclosed" : "research";
   return (
     <span className={`sev-meter ${severity >= 4 ? "s4" : ""}`} title={`Severity ${severity}: ${word}`} role="img" aria-label={`severity ${severity}, ${word}`}>
       {[1, 2, 3, 4].map((k) => (

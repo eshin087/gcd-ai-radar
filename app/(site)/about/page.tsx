@@ -86,8 +86,11 @@ export default function AboutPage() {
           <a className="link" href={SITE.codeLicense.url}>
             {SITE.codeLicense.name}
           </a>
-          . Cite the site as &ldquo;{SITE.name}&rdquo; with a link and the date you accessed it; the <Link href="/data" className="link">data page</Link> has
-          downloads and the full attribution block for upstream sources.
+          . Cite the site as &ldquo;{SITE.name}&rdquo; with a link and the date you accessed it; the{" "}
+          <Link href="/sources#licences" className="link">
+            Sources page
+          </Link>{" "}
+          has the full attribution block for upstream sources.
         </p>
       </section>
 

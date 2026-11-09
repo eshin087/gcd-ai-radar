@@ -22,7 +22,7 @@ import { STACK_DAYS, STACK_MAX, type StackCandidate, type StackFile, type StackI
 
 /** The flag in fewer letters, for the four-across tiles of a phone. */
 function shortFlag(flag: string): string {
-  return flag.startsWith("due") ? flag : flag === "confirmed loss" ? "loss" : flag === "no patch yet" ? "no patch" : "partial";
+  return flag.startsWith("patch by") ? flag.slice("patch ".length) : flag === "harm confirmed" ? "harm" : flag === "no patch yet" ? "no patch" : "partial";
 }
 
 function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
@@ -57,7 +57,7 @@ function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
 const OPEN_WORDS: Record<Exclude<StackItem["open"], null | "due">, { word: string; cls: string }> = {
   unpatched: { word: "no patch yet", cls: "text-live" },
   partial: { word: "partly patched", cls: "text-partial" },
-  loss: { word: "confirmed loss", cls: "text-live" },
+  loss: { word: "harm confirmed", cls: "text-live" },
 };
 
 function ItemRow({ it }: { it: StackItem }) {
@@ -175,7 +175,7 @@ function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: {
           {file ? file.candidates.length : 0} products · {picks.length} of up to {STACK_MAX} chosen · the number is exploitation in the last 90 days
         </p>
         <p className="text-[12px] leading-relaxed text-faint">
-          {isDefault ? "Until you choose, the tiles are the most-exploited vendors and AI products." : "Your choice stays in this browser."} Red means exploited and still open: a CISA deadline ahead, no full patch, or confirmed loss. The share link carries the stack to any device or teammate.
+          {isDefault ? "Until you choose, the tiles are the most-exploited vendors and AI products." : "Your choice stays in this browser."} Red means exploited and still open: a CISA deadline ahead, no full patch, or harm confirmed (data, money or service lost). The share link carries the stack to any device or teammate.
         </p>
       </header>
       <div className="mt-3 flex items-center gap-3">

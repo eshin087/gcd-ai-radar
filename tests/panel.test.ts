@@ -163,7 +163,7 @@ describe("the ledger", () => {
         label: "Linux",
         kind: "vendor",
         n: 1,
-        flag: "due 31 Oct",
+        flag: "patch by 31 Oct",
         why: ["CISA deadline 2026-10-31"],
         kev7: [],
         href: kevCatalogHref("Linux"),
@@ -307,7 +307,7 @@ describe("my stack", () => {
   });
   it("is red only while exploited and open", () => {
     expect(tile("microsoft").flag).toBeNull();
-    expect(tile("linux")).toMatchObject({ flag: "due 31 Oct", why: ["CISA deadline 2026-10-31"] });
+    expect(tile("linux")).toMatchObject({ flag: "patch by 31 Oct", why: ["CISA deadline 2026-10-31"] });
     expect(tile("citrix")).toMatchObject({ flag: "no patch yet" });
     expect(tile("litellm").flag).toBeNull();
     expect(tile("cisco").flag).toBeNull();

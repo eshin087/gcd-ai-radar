@@ -386,25 +386,9 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
         </p>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="label">For machines</h2>
-        <p className="font-mono text-[12.5px] text-dim">
-          <a className="link" href={`/data/incidents/${incident.slug}.json`}>
-            this record as JSON
-          </a>
-          {" · "}
-          <a className="link" href="/changes.json">
-            changes.json
-          </a>
-          {tags[0] && (
-            <>
-              {" · "}
-              <a className="link" href={`/tags/${tags[0][1]}/feed.xml`}>
-                RSS for {tags[0][1]}
-              </a>
-            </>
-          )}
-        </p>
+      <section className="space-y-2">
+        <h2 className="label">Copy a brief</h2>
+        <p className="text-[13px] text-dim">This record as a short Markdown brief, for a ticket, a chat or a coding agent.</p>
         <CopyBrief brief={brief} />
       </section>
 

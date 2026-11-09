@@ -380,7 +380,7 @@ body {
   background: var(--color-faint);
 }
 
-/* the severity meter: three bars lit for exploited, four in red for confirmed loss */
+/* the severity meter: three bars lit for exploited, four in red for harm confirmed */
 .sev-meter {
   display: inline-flex;
   gap: 2px;

@@ -24,12 +24,18 @@ import type { IncidentType, Lane } from "@/lib/taxonomy";
  * product) and the status over a live sub-line (the time left to a deadline,
  * "since 6 Nov", the age). Rows in the visitor's stack carry a red mark, recomputed
  * in the browser for their own picks; AI records an amber one, and "AI only"
- * keeps only those rows, the group counts dissolving to match. "N later"
+ * keeps only those rows, the group counts dissolving to match. A CVE id
+ * links to its NVD page; the statuses read "patch by" (CISA's deadline) and
+ * "harm confirmed" (severity 4), explained once in the key line. "N later"
  * opens every deadline ahead, "all without a full patch" every record
  * waiting for one. The newest row types itself in once.
  */
 
 const KEV_CATALOG = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog";
+const nvdHref = (cve: string) => `https://nvd.nist.gov/vuln/detail/${cve}`;
+const DUE_NOTE = "CISA's deadline for US federal agencies to patch; a good yardstick for everyone";
+const LOSS_NOTE = "Harm confirmed: data, money or service was lost (severity 4)";
+const EXPLOITED_NOTE = "Exploited in the wild, no loss confirmed yet (severity 3)";
 const LANE_WORD: Record<Lane, string> = { patch: "patch", breach: "breach", supply_chain: "supply", research: "research" };
 const ROW = "grid min-h-[36px] grid-cols-[22px_minmax(0,1fr)_38px_108px] items-center gap-x-2.5 border-t border-line-soft py-1 sm:grid-cols-[22px_minmax(0,1fr)_38px_minmax(0,120px)_132px] sm:gap-x-3";
 const NAME = "min-w-0 truncate text-[14px] text-ink hover:text-accent";
@@ -37,24 +43,36 @@ const FACT = "hidden truncate font-mono text-[12px] text-dim sm:block";
 const STATUS = "text-right font-mono text-[12px] leading-tight whitespace-nowrap";
 const SUB = "block text-[11px] text-faint";
 
+/** The stack mark: a small red square, explained once in the panel's key line and in its own hover note. */
 function StackMark({ labels }: { labels: string[] }) {
   if (labels.length === 0) return null;
-  return (
-    <span data-stack-mark={labels.join(",")} title={`In your stack: ${labels.join(", ")}`} className="inline-flex shrink-0 items-center rounded-[2px] border border-live/45 bg-live/10 px-1.5 py-px font-mono text-[11px] uppercase tracking-[0.06em] text-live">
-      <span className="hidden sm:inline lg:hidden xl:inline">your stack · {labels[0]}</span>
-      <span className="sm:hidden lg:inline xl:hidden">stack</span>
-    </span>
-  );
+  const text = `In your stack: ${labels.join(", ")}`;
+  return <span data-stack-mark={labels.join(",")} role="img" aria-label={text} title={text} className="inline-block size-[7px] shrink-0 rounded-[1px] bg-live" />;
 }
 
+const AI_TAG = "inline-flex shrink-0 items-center rounded-[2px] border border-accent/40 px-[3px] font-mono text-[9.5px] leading-[13px] tracking-[0.06em] text-accent";
+
+/** The AI mark: a small "AI" tag; which role AI played is in the hover note, and the "AI only" filter keeps both. */
 function AiMark({ type }: { type: IncidentType }) {
   if (type === "not_ai") return null;
   const on = type === "attack_on_ai";
   return (
-    <span data-ai-mark={on ? "on" : "using"} title={on ? "Attack on AI: an AI model, agent or AI-powered product was the thing exploited" : "AI-enabled attack: attackers used AI as a meaningful part of the attack"} className="inline-flex shrink-0 items-center rounded-[2px] border border-accent/40 bg-accent-tint px-1.5 py-px font-mono text-[11px] uppercase tracking-[0.06em] text-accent">
-      <span className="hidden sm:inline lg:hidden xl:inline">{on ? "on AI" : "using AI"}</span>
-      <span className="sm:hidden lg:inline xl:hidden">AI</span>
+    <span data-ai-mark={on ? "on" : "using"} title={on ? "Attack on AI: an AI model, agent or AI-powered product was the thing exploited" : "AI-enabled attack: attackers used AI as a meaningful part of the attack"} className={AI_TAG}>
+      AI
     </span>
+  );
+}
+
+/** The CVE id as a link to its NVD page, "+N" for the siblings on the same row. */
+function CveLink({ cve, more }: { cve: string | undefined; more: number }) {
+  if (!cve) return null;
+  return (
+    <>
+      <a href={nvdHref(cve)} target="_blank" rel="noopener noreferrer" title={`${cve} at NVD`} className="hover:text-accent hover:underline">
+        {cve}
+      </a>
+      {more > 0 && ` +${more}`}
+    </>
   );
 }
 
@@ -92,12 +110,14 @@ function DueLi({ r, labels, ready, today }: { r: DueRow; labels: string[]; ready
       </NameCell>
       <ScoreOrDash score={r.cvss} />
       <span className={FACT}>
-        {r.cves.length > 1 ? `${r.cves.length} CVEs` : r.cves[0]}
+        <CveLink cve={r.cves[0]} more={r.cves.length - 1} />
         {r.ransomware && <span className="text-live"> · ransomware</span>}
       </span>
-      <span className={`${STATUS} text-accent`}>
-        due {r.due === today ? "today" : shortDate(r.due)}
-        <Countdown due={r.due} className={SUB} />
+      <span className={`${STATUS} text-accent`} title={DUE_NOTE}>
+        patch {r.due === today ? "today" : `by ${shortDate(r.due)}`}
+        <span className={SUB}>
+          CISA · <Countdown due={r.due} />
+        </span>
       </span>
     </li>
   );
@@ -122,7 +142,9 @@ function PatchLi({ r, labels, ready, hidden }: { r: PatchRow; labels: string[]; 
         </Link>
       </NameCell>
       <ScoreOrDash score={r.cvss} />
-      <span className={FACT}>{r.cves.length > 1 ? `${r.cves[0]} +${r.cves.length - 1}` : r.cves[0]}</span>
+      <span className={FACT}>
+        <CveLink cve={r.cves[0]} more={r.cves.length - 1} />
+      </span>
       <span className={`${STATUS} ${open ? "text-live" : "text-partial"}`}>
         {open ? "no patch yet" : "partly patched"}
         <span className={SUB}>since {shortDate(r.reported)}</span>
@@ -148,8 +170,8 @@ function NewLi({ r, labels, ready, built, first, hidden }: { r: NewRow; labels: 
         <span style={{ color: LANE_COLORS[r.lane] }}>{LANE_WORD[r.lane]}</span>
         {r.product && ` · ${r.product}`}
       </span>
-      <span className={`${STATUS} ${loss ? "text-live" : "text-accent"}`}>
-        {loss ? "confirmed loss" : "exploited"}
+      <span className={`${STATUS} ${loss ? "text-live" : "text-accent"}`} title={loss ? LOSS_NOTE : EXPLOITED_NOTE}>
+        {loss ? "harm confirmed" : "exploited"}
         <ShortAgo iso={r.created} built={built} className={SUB} />
       </span>
     </li>
@@ -248,6 +270,13 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
       card="lead"
       label="Needs action"
       sub="exploited and still open"
+      legend={
+        <>
+          <span aria-hidden className="mr-1.5 inline-block size-[7px] rounded-[1px] bg-live align-[-0.5px]" />
+          in your stack · <span className={AI_TAG}>AI</span> AI was the target or the weapon · <b>patch by</b> CISA&rsquo;s deadline for US agencies, a yardstick for everyone ·{" "}
+          <b>harm confirmed</b> data, money or service lost
+        </>
+      }
       source={
         <>
           <span role="group" aria-label="Filter the ledger" className="mr-3.5 inline-flex">
@@ -288,13 +317,13 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
         ))}
         {ai && patch.length > 0 && patchShown === 0 && <Note>No AI record is waiting for a patch.</Note>}
 
-        <Head group="new" label="New this week" sub="loss first">
+        <Head group="new" label="New this week" sub="harm first">
           <Num value={String(ai ? ledger.freshAi : ledger.freshTotal)} /> <span className="hidden sm:inline">exploited</span>
           {!ai && (
             <>
               {" · "}
-              <b>{ledger.freshLoss}</b> <span className="hidden sm:inline">with loss</span>
-              <span className="sm:hidden">loss</span>
+              <b>{ledger.freshLoss}</b> <span className="hidden sm:inline">with harm</span>
+              <span className="sm:hidden">harm</span>
             </>
           )}
           {" · "}
@@ -313,7 +342,7 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
       <LedgerDrawer open={open === "later"} onClose={() => setOpen(null)} kicker="CISA KEV · deadlines ahead" title="Every deadline still ahead" count={`${ledger.due.length + later} deadlines · ${ledger.due.length} this week`} footerLink={{ href: KEV_CATALOG, label: "CISA’s catalog →", external: true }}>
         {[...ledger.due, ...ledger.later].map((r) => (
           <DrawerRow key={r.cves[0]} score={r.cvss} href={r.href} external={r.external} name={r.name} cve={r.cves[0]} more={r.cves.length - 1}>
-            listed by CISA {dateLabel(r.added)} · <span className="text-accent">due {dateLabel(r.due)}</span>
+            listed by CISA {dateLabel(r.added)} · <span className="text-accent">patch by {dateLabel(r.due)}</span>
             {r.ransomware && <span className="ml-2 text-live">ransomware</span>}
           </DrawerRow>
         ))}

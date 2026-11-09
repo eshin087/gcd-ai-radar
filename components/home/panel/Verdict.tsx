@@ -18,7 +18,7 @@ const fmt = (n: number) => n.toLocaleString("en-US");
 
 function Stat({ href, n, label, aria, wait }: { href: string; n: number; label: string; aria: string; wait?: boolean }) {
   return (
-    <Link href={href} aria-label={aria} className="group grid grid-cols-[3.4ch_minmax(0,1fr)] items-baseline gap-x-3">
+    <Link href={href} aria-label={aria} className="group grid grid-cols-[5.25rem_minmax(0,1fr)] items-baseline gap-x-3">
       <span className="num text-right text-[28px] leading-none text-ink group-hover:text-accent" data-wait={wait ? "" : undefined}>
         <Num value={fmt(n)} />
       </span>
