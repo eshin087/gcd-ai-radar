@@ -1,5 +1,95 @@
 [
   {
+    "key": "4bb3ac67faaaef0d",
+    "title": "Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use",
+    "url": "https://arxiv.org/abs/2611.09113",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces a benchmark (ADB) and evaluates authorization drift, making it primarily a benchmark and evaluation study rather than demonstrating a novel exploit or active attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "a5c13e5ca67c8bb2",
+    "title": "I Don't Care How You Hide It, I Care What You Do: Runtime Detection of Malicious ML Models",
+    "url": "https://arxiv.org/abs/2611.08745",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes ModelShield, a runtime behavioral detection system to defend against malicious machine learning models, making it a defense-only proposal.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "bdf699d1fc8244de",
+    "title": "Conflux: Preventing Privilege Escalation with Principal Contexts and System-Level Evaluation",
+    "url": "https://arxiv.org/abs/2611.08768",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes Conflux, a kernel-based principal-context defense mechanism to prevent privilege escalation in LLM agents, making it a defense-only paper.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "8a670d383174a510",
+    "title": "MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory",
+    "url": "https://arxiv.org/abs/2611.09721",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces MemoryDojo, a benchmarking framework to quantify poisoning effects across LLM agent memory architectures, making it a benchmark study.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "215bd466445788fe",
+    "title": "Differentially Private GraphRAG: Protecting Relation Connectivity and Semantics",
+    "url": "https://arxiv.org/abs/2611.09658",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defense framework (RelGuard) for GraphRAG rather than demonstrating a novel attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "f9c1d3da71c2065a",
+    "title": "Safety Is $\\Pi_1$, Provability Is $\\Sigma_1$: One Framework for the Hugging Face Breach and OpenAI's Mathematical Proofs",
+    "url": "https://arxiv.org/abs/2611.09736",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is an opinion and theoretical framework paper discussing past events rather than reporting a new primary incident.",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "d328870dff9d4307",
+    "title": "AttentionSwitch: Jailbreak Defense for LLMs via Joint Learning of Sparse Attention-Head Selection and Scaling",
+    "url": "https://arxiv.org/abs/2611.08752",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "d5700cb1aa16c5ee",
+    "title": "Aegis OS: A Transactional Multi-Tenant Operating System Runtime for Eliminating Authorization Fatigue in Autonomous Coding Agents",
+    "url": "https://arxiv.org/abs/2611.08516",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
+    "key": "adebbff770131358",
+    "title": "GuardrailAgent: An Agentic Framework for Jailbreak Defense",
+    "url": "https://arxiv.org/abs/2611.09734",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: papers that only propose defences or benchmarks are out of scope",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T10:11:53.637Z"
+  },
+  {
     "key": "c42565964e45b2d8",
     "title": "Companies seeking an MSP doubt their ability to spot cyberattacks",
     "url": "https://helpnetsecurity.com/2026/11/09/barracuda-msp-cybersecurity-services-expectations-report",
