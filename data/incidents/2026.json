@@ -1,5 +1,121 @@
 [
   {
+    "id": "AIR-2026-1834",
+    "slug": "italian-foreign-minister-personal-data-leaked-on-the-dark-we",
+    "title": "Italian Foreign Minister personal data leaked on the dark web",
+    "summary": "Personal data belonging to Italian Foreign Minister Antonio Tajani was published on the dark web. Prime Minister Giorgia Meloni blamed pro-Russian hackers for the incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "dark web leak site"
+    ],
+    "incident_date": "2026-11-07",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://securityweek.com/italys-meloni-blames-pro-russian-hackers-for-leak-of-foreign-ministers-data-on-the-dark-web",
+        "publisher": "SecurityWeek",
+        "title": "Italy’s Meloni Blames Pro-Russian Hackers for Leak of Foreign Minister’s Data on the Dark Web",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "dark-web",
+      "italy",
+      "hackers"
+    ],
+    "created_at": "2026-11-09T12:41:04.445Z",
+    "updated_at": "2026-11-09T12:41:04.445Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Italy’s Meloni Blames Pro-Russian Hackers for Leak of Foreign Minister’s Data on the Dark Web",
+        "source_url": "https://securityweek.com/italys-meloni-blames-pro-russian-hackers-for-leak-of-foreign-ministers-data-on-the-dark-web",
+        "added_at": "2026-11-09T12:41:04.445Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed publication of a government official's personal data on the dark web.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1833",
+    "slug": "ukraine-dismantles-crypto-scam-network-that-stole-4-3-millio",
+    "title": "Ukraine dismantles crypto scam network that stole 4.3 million euros",
+    "summary": "Ukrainian law enforcement arrested four suspects involved in operating cryptocurrency investment scam call centers. The network stole more than 4.3 million euros from victims.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "crypto scam network"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
+        "publisher": "BleepingComputer",
+        "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "fraud",
+      "crypto",
+      "arrests",
+      "ukraine"
+    ],
+    "created_at": "2026-11-09T12:41:04.445Z",
+    "updated_at": "2026-11-09T12:41:04.445Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
+        "source_url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
+        "added_at": "2026-11-09T12:41:04.445Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss of over 4.3 million euros.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1832",
     "slug": "default-credentials-on-forgerock-servers-allow-vehicle-acces",
     "title": "Default Credentials on ForgeRock Servers Allow Vehicle Access",
@@ -2532,9 +2648,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Target OpenSSH SSHole Flaw Within Hours of Disclosure, Gain Root on Honeypot",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Exploiting ‘SSHole’ Authentication Bypass in OpenSSH",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2545,7 +2667,7 @@
       "CVE-2026-123158"
     ],
     "created_at": "2026-11-06T00:23:41.043Z",
-    "updated_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-09T12:41:04.445Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -2575,6 +2697,12 @@
         "title": "Threat intelligence confirms active exploitation of the OpenSSH authentication bypass flaw in the wild.",
         "source_url": "https://helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation",
         "added_at": "2026-11-06T16:25:59.244Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "Botnets and cryptominers are actively exploiting the authentication bypass vulnerability",
+        "source_url": "https://securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh",
+        "added_at": "2026-11-09T12:41:04.445Z"
       }
     ],
     "action": "Update OpenSSH to version 10.6p2 and ensure Alpine packages are upgraded",
