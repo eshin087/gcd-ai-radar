@@ -3,24 +3,29 @@
  * Checks the home page and the web half of /trends in a real browser against
  * the files they were built from.
  *
- * The home page (the instrument panel, lib/panel): the hero's three numbers
- * equal /stats/panel.json and /stats/home.json; My stack shows the
- * default tiles with red flags only where the rule put them, a tile opens
- * the list it counts, and a ?stack=
- * link applies, stores and recomputes the picks; Act now and Latest show
- * their rows and the deadlines tick; attack types and the attack surface
- * draw one cell or square per count; the AI flow draws ceil(n / 2) ribbons
- * per role inside its box, and the weak link one square per CVE with the
- * exploited ones red; the sieve's stages match and open their lists; the
- * hero's exploited-this-week numeral is the KEV counter, draws, lists the
- * week's newest entries and opens the week's list; motion
- * is off under reduced motion; the HTML stays under its budget; nothing
- * scrolls sideways on a phone. These loads block the Worker, so the page
- * reads as built; one more load lets it through and expects either the live
- * marker or the built numbers.
+ * The home page (the day sheet, lib/panel): the hero's three numbers equal
+ * /stats/panel.json and /stats/home.json; My stack shows the default tiles
+ * with red flags only where the rule put them, a tile opens the list it
+ * counts, and a ?stack= link applies, stores and recomputes the picks and
+ * the ledger's stack marks; the ledger shows this week's deadlines (ticking),
+ * the records without a full patch and the week's new records as
+ * panel.json has them, marks the rows in the stack and the AI records, keeps
+ * only the AI rows under "AI only", and its drawers list every deadline
+ * ahead and every record without a patch; the week's six lines equal the
+ * counters, draw as many cells as they say and open their lists; the hero's
+ * exploited-this-week numeral is the KEV counter, draws, lists the week's
+ * newest entries and opens the week's list; motion is off under reduced
+ * motion; the HTML stays under its budget; nothing scrolls sideways on a
+ * phone. These loads block the Worker, so the page reads as built; one more
+ * load lets it through and expects either the live marker or the built
+ * numbers.
  *
- * /trends#web: the counters, their drawers and the chart columns against
- * /stats/home.json, and the radar scope's blips.
+ * /trends: the counters, their drawers and the chart columns against
+ * /stats/home.json, the radar scope's blips, and the three instruments that
+ * moved there from the home page: attack types and the attack surface draw
+ * one cell or square per count, the AI flow draws ceil(n / 2) ribbons per
+ * role inside its box and the weak link one square per CVE with the
+ * exploited ones red.
  *
  * Zero dependencies (scripts/lib/browser.mjs).
  *
@@ -38,10 +43,14 @@ const args = parseArgs(process.argv.slice(2));
 const verbose = Boolean(args.verbose);
 const BUDGET_KB = Number(args.budget ?? 250);
 const WORKER = "gcd-ai-radar-internet.eshin087.workers.dev";
-const HOME_READY = `document.querySelector('[data-instrument="sieve"]') && document.querySelectorAll('[data-build][data-built]').length >= 8`;
+const HOME_READY = `document.querySelector('[data-instrument="week"]') && document.querySelectorAll('[data-build][data-built]').length >= 5`;
 /** The drawer lists' cap (lib/home.ts LIST_CAP). */
 const LIST_CAP = 200;
-const TRENDS_READY = `document.querySelectorAll('[data-counter]').length >= 6 && document.querySelector('[data-chart="kev-by-month"] rect')`;
+const TRENDS_READY = `document.querySelectorAll('[data-counter]').length >= 6 && document.querySelector('[data-chart="kev-by-month"] rect') && document.querySelector('[data-instrument="ai"][data-built]')`;
+/** The ledger's row caps (lib/panel/caps.ts). */
+const LEDGER_ROWS = { due: 4, patch: 3, fresh: 3 };
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const shortDate = (iso) => `${Number(iso.slice(8, 10))} ${MONTHS[Number(iso.slice(5, 7)) - 1]}`;
 
 const checks = [];
 function check(name, ok, detail) {
@@ -95,6 +104,46 @@ function stackMatches(file, picks) {
   return [...out.values()];
 }
 
+/** The picks' items by CVE id and link, and the picks a row belongs to (lib/panel/picks.ts stackHits, rowStack). */
+function stackHits(file, picks) {
+  const hits = { cves: new Map(), hrefs: new Map() };
+  const add = (m, key, label) => {
+    const labels = m.get(key) ?? [];
+    if (!labels.includes(label)) labels.push(label);
+    m.set(key, labels);
+  };
+  for (const k of picks) {
+    const c = file.candidates.find((x) => x.key === k);
+    for (const it of c?.items ?? []) {
+      for (const cve of it.cves) add(hits.cves, cve, c.label);
+      add(hits.hrefs, it.href, c.label);
+    }
+  }
+  return hits;
+}
+function rowStack(hits, row) {
+  const out = [];
+  for (const cve of row.cves ?? []) for (const l of hits.cves.get(cve) ?? []) if (!out.includes(l)) out.push(l);
+  if (row.href) for (const l of hits.hrefs.get(row.href) ?? []) if (!out.includes(l)) out.push(l);
+  return out;
+}
+
+/** The ledger rows the page shows, in order, with where each links (lib/panel/ledger.ts, lib/panel/caps.ts). */
+function ledgerRows(ledger) {
+  return [
+    ...ledger.due.slice(0, LEDGER_ROWS.due).map((r) => ({ ...r, href: r.href })),
+    ...ledger.patch.filter((r) => !r.onDeadlineRow).slice(0, LEDGER_ROWS.patch).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
+    ...ledger.fresh.slice(0, LEDGER_ROWS.fresh).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
+  ];
+}
+
+/** What the page shows of the ledger: every row of every group, in order, with its marks and clock. */
+const READ_LEDGER = `(() => [...document.querySelectorAll('[data-ledger] [data-row]')].map((el) => ({
+  kind: el.dataset.row, ai: el.dataset.ai, hidden: el.hidden, href: el.querySelector('a')?.getAttribute('href') ?? null,
+  clock: el.querySelector('[data-countdown]')?.textContent ?? null, stack: el.querySelector('[data-stack-mark]')?.dataset.stackMark ?? "",
+  aiMark: el.querySelector('[data-ai-mark]')?.dataset.aiMark ?? null, ready: el.querySelector('[data-stack]')?.dataset.stack ?? null,
+})))()`;
+
 async function checkHome(client, base, dir, home, panel, stackFile) {
   await blockHosts(client, [WORKER]);
   await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
@@ -128,57 +177,62 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
     check("a stack tile opens its list", r.count === t.n && r.rows === t.n && r.closed, `count line "${r.head?.slice(0, 48)}", ${r.rows} rows, tile n ${t.n}`);
   }
 
-  // Act now and Latest
-  const act = await evaluate(client, `[...document.querySelectorAll('[data-act-row]')].map((r) => ({ kind: r.dataset.actRow, name: r.querySelector('a')?.textContent, clock: r.querySelector('[data-countdown]')?.textContent ?? null }))`);
-  check("act now rows", act.length === panel.act.rows.length && act.length <= 6 && act.every((r, i) => r.name === panel.act.rows[i].name), act.map((r) => r.name).join(" | "));
-  if (act.some((r) => r.kind === "kev")) {
-    const first = act.find((r) => r.kind === "kev").clock;
+  // the ledger: this week's deadlines, the records without a full patch, the week's new records, as panel.json has them
+  const L = panel.ledger;
+  const want = ledgerRows(L);
+  const led = await evaluate(client, READ_LEDGER);
+  check("ledger rows are panel.json's, in order", led.length === want.length && led.every((r, i) => r.kind === want[i].kind && r.href === want[i].href), `${led.length} rows: ${led.map((r) => `${r.kind} ${r.href}`).join(" | ")}`);
+  check("ledger heads carry the counts", await evaluate(client, `(() => { const t = (g) => document.querySelector('[data-ledger] [data-group="' + g + '"]')?.textContent.replace(/\\s+/g, ' ') ?? ''; return t('due').includes(${JSON.stringify(String(L.due.length))}) && t('patch').includes(${JSON.stringify(String(L.noFullPatch))}) && t('new').includes(${JSON.stringify(String(L.freshTotal))}) && t('new').includes(${JSON.stringify(String(L.freshLoss))}); })()`));
+  if (led.some((r) => r.kind === "due")) {
+    const first = led.find((r) => r.kind === "due").clock;
     await sleep(1200);
-    const second = await evaluate(client, `document.querySelector('[data-countdown]')?.textContent`);
-    check("act now deadlines tick", /left$|^past due$/.test(first ?? "") && first !== second, `${first} → ${second}`);
+    const second = await evaluate(client, `document.querySelector('[data-ledger] [data-row="due"] [data-countdown]')?.textContent`);
+    check("ledger deadlines tick", /left$|^past due$/.test(first ?? "") && first !== second, `${first} → ${second}`);
   }
-  const latest = await evaluate(client, `[...document.querySelectorAll('[data-latest] > li')].map((l) => l.querySelector('a')?.getAttribute('href'))`);
-  check("latest rows", latest.length === panel.latest.length && latest.every((h, i) => h === `/incidents/${panel.latest[i].slug}`), `${latest.length} rows, panel.json ${panel.latest.length}`);
+  const marks = led.map((r, i) => ({ page: r.stack, want: (want[i]?.stack ?? []).join(","), ai: r.aiMark, type: want[i]?.type ?? "not_ai", kind: r.kind }));
+  check("ledger marks the rows in the default stack", marks.every((m) => m.page === m.want), marks.filter((m) => m.page !== m.want).map((m) => `page "${m.page}" vs panel.json "${m.want}"`).join("; ") || `${marks.filter((m) => m.want).length} marked`);
+  check("ledger marks the AI records", marks.every((m) => (m.kind === "due" ? m.ai === null : (m.ai !== null) === (m.type !== "not_ai"))), marks.map((m) => `${m.kind}:${m.ai ?? "-"}/${m.type}`).join(" "));
+  {
+    const r = await openAndRead(client, '[data-ledger] [data-group="patch"] button');
+    check("ledger: all without a full patch opens every record", r.count === L.noFullPatch && r.rows === L.patch.length && r.closed, `count line "${r.head?.slice(0, 48)}", ${r.rows} rows, panel.json ${L.patch.length}`);
+  }
+  if (L.later.length) {
+    const r = await openAndRead(client, '[data-ledger] [data-group="due"] button');
+    const all = L.due.length + L.later.length;
+    check("ledger: later deadlines open every deadline ahead", r.count === all && r.rows === all && r.closed, `count line "${r.head?.slice(0, 48)}", ${r.rows} rows, panel.json ${all}`);
+  }
+  await evaluate(client, `document.querySelector('[data-filter="ai"]').click()`);
+  await sleep(900);
+  const aiOnly = await evaluate(client, `({ shown: [...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).map((r) => r.dataset.ai), notes: document.querySelectorAll('[data-ledger] [data-note]').length, head: document.querySelector('[data-ledger] [data-group="new"]')?.textContent.replace(/\\s+/g, ' ') ?? '' })`);
+  check("AI only keeps the AI rows and counts them", aiOnly.shown.every((a) => a === "1") && aiOnly.head.includes(String(L.freshAi)) && aiOnly.notes >= 1, JSON.stringify(aiOnly));
+  await evaluate(client, `document.querySelector('[data-filter="all"]').click()`);
+  await sleep(900);
+  const back = await evaluate(client, `[...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).length`);
+  check("all brings every row back", back === want.length, `${back} rows`);
 
-  // attack types and the attack surface
-  const types = await evaluate(client, `[...document.querySelectorAll('[data-type]')].map((r) => ({ key: r.dataset.type, n: Number(r.dataset.n), ai: Number(r.dataset.ai), cells: r.querySelectorAll('.ascii-cells > i').length }))`);
-  check("attack types", types.length === panel.types.length && types.every((t, i) => t.key === panel.types[i].key && t.n === panel.types[i].n && t.ai === panel.types[i].ai && t.cells >= 1 && t.cells <= 26), types.map((t) => `${t.key} ${t.n}/${t.ai}`).join(", "));
-  const surface = await evaluate(client, `[...document.querySelectorAll('[data-tech]')].map((r) => ({ label: r.dataset.tech, n: Number(r.dataset.n), squares: r.querySelectorAll('.ascii-units > i').length, bright: r.querySelectorAll('.ascii-units > i:not(.old)').length }))`);
-  check(
-    "attack surface: one square per KEV entry, bright for the last 30 days",
-    surface.length === panel.surface.length && surface.every((s, i) => s.label === panel.surface[i].label && s.squares === panel.surface[i].n && s.bright === panel.surface[i].recent),
-    surface.map((s) => `${s.label} ${s.squares}/${s.bright}`).join(", "),
-  );
-
-  // the AI flow
-  const flow = await evaluate(client, `(() => {
-    const nodes = [...document.querySelectorAll('[data-node]')].map((n) => ({ cls: n.dataset.node, n: Number(n.dataset.n) }));
-    const svg = document.querySelector('.flow-ribbons');
-    const box = svg?.getBoundingClientRect();
-    const paths = [...(svg?.querySelectorAll('path') ?? [])].map((p) => ({ cls: p.getAttribute('class'), ys: (p.getAttribute('d').match(/-?\\d+(?:\\.\\d+)?/g) || []).map(Number).filter((_, i) => i % 2 === 1) }));
-    const vb = (svg?.getAttribute('viewBox') || '0 0 0 0').split(' ').map(Number);
-    return { nodes, paths: paths.map((p) => p.cls), inside: paths.every((p) => p.ys.every((y) => y >= 0 && y <= vb[3])), h: Math.round(box?.height ?? 0) };
-  })()`);
-  const want = { t: panel.ai.target.n, w: panel.ai.weapon.n, z: panel.ai.none };
-  check("AI flow nodes", flow.nodes.length === 3 && flow.nodes.every((n) => n.n === want[n.cls]), JSON.stringify(flow.nodes));
-  for (const k of ["t", "w", "z"]) check(`AI flow ribbons ${k}`, flow.paths.filter((c) => c === k).length === Math.max(1, Math.ceil(want[k] / 2)), `${flow.paths.filter((c) => c === k).length} paths for ${want[k]} incidents`);
-  check("AI flow ribbons stay in their box", flow.inside && flow.h > 100, `height ${flow.h}`);
-  const weak = await evaluate(client, `(() => { const u = document.querySelectorAll('[data-weak] .ascii-units > i'); return { n: u.length, red: [...u].filter((i) => i.classList.contains('red')).length }; })()`);
-  check("weak link: a square per CVE, the exploited ones red", weak.n === panel.ai.weak.cves && weak.red === panel.ai.weak.exploited, `${weak.n} squares, ${weak.red} red; panel.json ${panel.ai.weak.cves}/${panel.ai.weak.exploited}`);
-
-  // the sieve
-  const sieve = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-stage]')].map((s) => [s.dataset.stage, s.querySelector('[data-num]')?.textContent ?? '']))`);
-  check("sieve published", num(sieve.published) === home.counters.cves_7d, `${sieve.published} vs ${home.counters.cves_7d}`);
-  check("sieve critical", num(sieve.critical) === home.counters.critical_7d, `${sieve.critical} vs ${home.counters.critical_7d}`);
-  check("sieve known exploited", num(sieve["known-exploited"]) === home.counters.kev_7d, `${sieve["known-exploited"]} vs ${home.counters.kev_7d}`);
-  check("sieve in your stack is the verdict's", num(sieve["in-your-stack"]) === panel.verdict.inStack && v?.stack === panel.verdict.inStack, `${sieve["in-your-stack"]} vs ${panel.verdict.inStack}`);
+  // the week: six lines equal the counters, their bars draw as many cells as they say, their lists open
+  const W = panel.week;
+  const wk = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-week] [data-line]')].map((l) => [l.dataset.line, { value: l.querySelector('[data-num]')?.textContent ?? '', level: l.querySelector('[data-level]')?.dataset.level ?? null, cells: l.querySelectorAll('.ascii-cells > i').length, vs: l.querySelector('[data-vs]')?.dataset.vs ?? null, text: l.textContent.replace(/\\s+/g, ' ') }]))`);
+  check("week: six lines", Object.keys(wk).join(",") === "patch-tuesday,published,critical,exploited,breaches,ai", Object.keys(wk).join(","));
+  check("week published is the 7-day counter", num(wk.published?.value) === home.counters.cves_7d, `${wk.published?.value} vs ${home.counters.cves_7d}`);
+  check("week critical is the 7-day counter", num(wk.critical?.value) === home.counters.critical_7d, `${wk.critical?.value} vs ${home.counters.critical_7d}`);
+  check("week exploited is the 7-day KEV counter", num(wk.exploited?.value) === home.counters.kev_7d, `${wk.exploited?.value} vs ${home.counters.kev_7d}`);
+  check("week breaches is the month's counter", num(wk.breaches?.value) === home.counters.breaches_month, `${wk.breaches?.value} vs ${home.counters.breaches_month}`);
+  check("week AI is the roles' sum", num(wk.ai?.value) === W.ai.onAi + W.ai.usingAi && wk.ai?.text.includes(`of ${W.ai.total} incidents`), `${wk.ai?.value} vs ${W.ai.onAi + W.ai.usingAi}`);
+  check("week level words are panel.json's", wk.published?.level === String(W.published.level) && wk.exploited?.level === String(W.exploited.level), `published ${wk.published?.level}/${W.published.level}, exploited ${wk.exploited?.level}/${W.exploited.level}`);
+  check("week bars draw as many cells as they say", ["published", "critical", "exploited", "breaches"].every((k) => wk[k] && (wk[k].vs === null || Number(wk[k].vs) === wk[k].cells)), ["published", "critical", "exploited", "breaches"].map((k) => `${k} ${wk[k]?.vs}/${wk[k]?.cells}`).join(", "));
+  check("week patch tuesday is the next second Tuesday", wk["patch-tuesday"]?.text.includes(shortDate(W.patchTuesday)) && /to go|^.*\bnow\b/.test(wk["patch-tuesday"]?.text ?? ""), wk["patch-tuesday"]?.text.slice(0, 80));
   if (home.counters.cves_7d !== null) {
-    const r = await openAndRead(client, '[data-stage="published"] button');
-    check("sieve published opens its list", r.count === home.counters.cves_7d && r.rows > 0 && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows`);
+    const r = await openAndRead(client, '[data-week] [data-line="published"] button');
+    check("week published opens its list", r.count === home.counters.cves_7d && r.rows > 0 && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows`);
   }
   if (home.counters.kev_7d) {
-    const r = await openAndRead(client, '[data-stage="known-exploited"] button');
-    check("sieve known exploited opens its list", r.count === home.counters.kev_7d && r.rows === home.counters.kev_7d && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows`);
+    const r = await openAndRead(client, '[data-week] [data-line="exploited"] button');
+    check("week exploited opens its list", r.count === home.counters.kev_7d && r.rows === home.counters.kev_7d && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows`);
+  }
+  if (home.counters.breaches_month !== null) {
+    const r = await openAndRead(client, '[data-week] [data-line="breaches"] button');
+    check("week breaches opens the month's list", r.count === home.counters.breaches_month && r.listed && !r.error && r.rows === Math.min(home.counters.breaches_month, LIST_CAP) && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows${r.error ? `, error "${r.error}"` : ""}`);
   }
 
   // the footer
@@ -205,23 +259,33 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
     check("hero exploited opens the week's list", r.count === home.counters.kev_7d && r.listed && r.rows === Math.min(home.counters.kev_7d, LIST_CAP) && r.closed, `count line "${r.head?.slice(0, 50)}", ${r.rows} rows, expected ${home.counters.kev_7d}`);
   }
 
-  // a shared stack link applies, stores and recomputes
-  const picks = stackFile.candidates.filter((c) => c.kev7.length).slice(0, 1).concat(stackFile.candidates.filter((c) => !c.kev7.length).slice(0, 1)).map((c) => c.key);
+  // a shared stack link applies, stores and recomputes: the verdict and the ledger's marks
+  const rowKeys = new Set(want.flatMap((r) => [...r.cves, r.href]));
+  const covering = stackFile.candidates.find((c) => !panel.stack.default.includes(c.key) && (c.items ?? []).some((it) => rowKeys.has(it.href) || it.cves.some((cve) => rowKeys.has(cve))));
+  const picks = [...new Set([...(covering ? [covering.key] : []), ...stackFile.candidates.filter((c) => c.kev7.length).slice(0, 1).map((c) => c.key), ...stackFile.candidates.filter((c) => !c.kev7.length).slice(0, 1).map((c) => c.key)])];
   await navigate(client, `${base}/?final&stack=${picks.join(",")},not-a-product`, `${HOME_READY} && document.querySelector('[data-tiles][data-stack="ready"]')`);
-  const shared = await evaluate(client, `({ tiles: [...document.querySelectorAll('[data-stack-tile]')].map((t) => t.dataset.stackTile), stored: localStorage.getItem("gcd-radar:stack"), verdict: Number(document.querySelector('[data-verdict]').dataset.stackMatch), sieve: document.querySelector('[data-stage="in-your-stack"] [data-num]')?.textContent, hidden: document.documentElement.classList.contains("stack-custom") })`);
+  const shared = await evaluate(client, `({ tiles: [...document.querySelectorAll('[data-stack-tile]')].map((t) => t.dataset.stackTile), stored: localStorage.getItem("gcd-radar:stack"), verdict: Number(document.querySelector('[data-verdict]').dataset.stackMatch), hidden: document.documentElement.classList.contains("stack-custom"), ledger: ${READ_LEDGER} })`);
   const expectMatch = stackMatches(stackFile, picks).length;
   check("?stack= applies the picks", shared.tiles.join(",") === picks.join(","), `${shared.tiles.join(",")} for ${picks.join(",")}`);
   check("?stack= stores the picks", shared.stored === picks.join(","), String(shared.stored));
-  check("a shared stack recomputes the verdict and the sieve", shared.verdict === expectMatch && num(shared.sieve) === expectMatch && !shared.hidden, `verdict ${shared.verdict}, sieve ${shared.sieve}, expected ${expectMatch}`);
+  check("a shared stack recomputes the verdict", shared.verdict === expectMatch && !shared.hidden, `verdict ${shared.verdict}, expected ${expectMatch}`);
+  const hits = stackHits(stackFile, picks);
+  const wantMarks = want.map((r) => rowStack(hits, { cves: r.cves, href: r.href }).join(","));
+  check("a shared stack recomputes the ledger's marks", shared.ledger.length === want.length && shared.ledger.every((r, i) => r.stack === wantMarks[i] && r.ready === "ready"), `page ${shared.ledger.map((r) => r.stack || "-").join("|")}, expected ${wantMarks.map((m) => m || "-").join("|")}${covering ? ` (${covering.key} covers a row)` : " (no candidate covers a shown row)"}`);
   await navigate(client, `${base}/?final`, `${HOME_READY} && document.querySelector('[data-tiles][data-stack="ready"]')`);
   const kept = await evaluate(client, `[...document.querySelectorAll('[data-stack-tile]')].map((t) => t.dataset.stackTile).join(",")`);
   check("the stored stack comes back without the link", kept === picks.join(","), kept);
   await evaluate(client, `localStorage.removeItem("gcd-radar:stack")`);
 
-  // motion: on by default, off under reduced motion
+  // motion: on by default, each instrument building as it scrolls into view (a short viewport keeps the lower ones waiting), off under reduced motion
+  await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 520, deviceScaleFactor: 1, mobile: false });
   await navigate(client, `${base}/`, `document.querySelector('[data-verdict][data-built]')`);
   const on = await evaluate(client, `({ motion: document.documentElement.classList.contains("motion"), waiting: document.querySelectorAll('[data-build]:not([data-built])').length })`);
-  check("motion is on by default and builds on scroll", on.motion && on.waiting > 0, JSON.stringify(on));
+  await evaluate(client, `window.scrollTo(0, document.body.scrollHeight)`);
+  await sleep(600);
+  const scrolled = await evaluate(client, `document.querySelectorAll('[data-build]:not([data-built])').length`);
+  check("motion is on by default and builds on scroll", on.motion && on.waiting > 0 && scrolled === 0, `${JSON.stringify(on)}, after scrolling ${scrolled} waiting`);
+  await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await navigate(client, `${base}/`, HOME_READY);
   const off = await evaluate(client, `({ motion: document.documentElement.classList.contains("motion"), waiting: document.querySelectorAll('[data-build]:not([data-built])').length, building: document.querySelectorAll('.ascii-cells > i.b, .ascii-units > i.b').length, hidden: document.querySelectorAll('[data-num="wait"]').length })`);
@@ -240,14 +304,38 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   await navigate(client, `${base}/?final`, HOME_READY);
   await sleep(3500);
-  const live = await evaluate(client, `({ marker: document.querySelector('[data-stage="published"]')?.textContent.includes("NVD · live"), cves: Number(document.querySelector('[data-verdict]').dataset.cves) })`);
+  const live = await evaluate(client, `({ marker: document.querySelector('[data-week] [data-line="published"]')?.textContent.includes("NVD · live"), cves: Number(document.querySelector('[data-verdict]').dataset.cves) })`);
   check("live layer: the live marker or the built numbers", live.marker ? live.cves > 0 : live.cves === home.counters.cves_24h, JSON.stringify(live));
   await blockHosts(client, [WORKER]);
 }
 
-async function checkTrends(client, base, home) {
+async function checkTrends(client, base, home, panel) {
   await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
-  await navigate(client, `${base}/trends`, TRENDS_READY);
+  await navigate(client, `${base}/trends?final`, TRENDS_READY);
+
+  // the three instruments that moved from the home page: attack types, the attack surface, the AI flow
+  const types = await evaluate(client, `[...document.querySelectorAll('[data-type]')].map((r) => ({ key: r.dataset.type, n: Number(r.dataset.n), ai: Number(r.dataset.ai), cells: r.querySelectorAll('.ascii-cells > i').length }))`);
+  check("attack types", types.length === panel.types.length && types.every((t, i) => t.key === panel.types[i].key && t.n === panel.types[i].n && t.ai === panel.types[i].ai && t.cells >= 1 && t.cells <= 26), types.map((t) => `${t.key} ${t.n}/${t.ai}`).join(", "));
+  const surface = await evaluate(client, `[...document.querySelectorAll('[data-tech]')].map((r) => ({ label: r.dataset.tech, n: Number(r.dataset.n), squares: r.querySelectorAll('.ascii-units > i').length, bright: r.querySelectorAll('.ascii-units > i:not(.old)').length }))`);
+  check(
+    "attack surface: one square per KEV entry, bright for the last 30 days",
+    surface.length === panel.surface.length && surface.every((s, i) => s.label === panel.surface[i].label && s.squares === panel.surface[i].n && s.bright === panel.surface[i].recent),
+    surface.map((s) => `${s.label} ${s.squares}/${s.bright}`).join(", "),
+  );
+  const flow = await evaluate(client, `(() => {
+    const nodes = [...document.querySelectorAll('[data-node]')].map((n) => ({ cls: n.dataset.node, n: Number(n.dataset.n) }));
+    const svg = document.querySelector('.flow-ribbons');
+    const box = svg?.getBoundingClientRect();
+    const paths = [...(svg?.querySelectorAll('path') ?? [])].map((p) => ({ cls: p.getAttribute('class'), ys: (p.getAttribute('d').match(/-?\\d+(?:\\.\\d+)?/g) || []).map(Number).filter((_, i) => i % 2 === 1) }));
+    const vb = (svg?.getAttribute('viewBox') || '0 0 0 0').split(' ').map(Number);
+    return { nodes, paths: paths.map((p) => p.cls), inside: paths.every((p) => p.ys.every((y) => y >= 0 && y <= vb[3])), h: Math.round(box?.height ?? 0) };
+  })()`);
+  const roles = { t: panel.ai.target.n, w: panel.ai.weapon.n, z: panel.ai.none };
+  check("AI flow nodes", flow.nodes.length === 3 && flow.nodes.every((n) => n.n === roles[n.cls]), JSON.stringify(flow.nodes));
+  for (const k of ["t", "w", "z"]) check(`AI flow ribbons ${k}`, flow.paths.filter((c) => c === k).length === Math.max(1, Math.ceil(roles[k] / 2)), `${flow.paths.filter((c) => c === k).length} paths for ${roles[k]} incidents`);
+  check("AI flow ribbons stay in their box", flow.inside && flow.h > 100, `height ${flow.h}`);
+  const weak = await evaluate(client, `(() => { const u = document.querySelectorAll('[data-weak] .ascii-units > i'); return { n: u.length, red: [...u].filter((i) => i.classList.contains('red')).length }; })()`);
+  check("weak link: a square per CVE, the exploited ones red", weak.n === panel.ai.weak.cves && weak.red === panel.ai.weak.exploited, `${weak.n} squares, ${weak.red} red; panel.json ${panel.ai.weak.cves}/${panel.ai.weak.exploited}`);
 
   const counters = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-counter]')].map((e) => [e.dataset.counter, e.dataset.value === "" ? null : Number(e.dataset.value)]))`);
   for (const key of ["cves_24h", "cves_7d", "critical_7d", "kev_7d", "breached_accounts_month", "live"]) {
@@ -302,7 +390,7 @@ async function main() {
     await client.send("Runtime.enable");
     const [home, panel, stackFile] = await Promise.all(["/stats/home.json", "/stats/panel.json", "/stats/stack.json"].map((f) => fetch(`${site.base}${f}`).then((r) => r.json())));
     await checkHome(client, site.base, dir, home, panel, stackFile);
-    await checkTrends(client, site.base, home);
+    await checkTrends(client, site.base, home, panel);
     const failed = checks.filter((c) => !c.ok);
     console.log(`\n${checks.length - failed.length}/${checks.length} home-page checks pass in ${((Date.now() - t0) / 1000).toFixed(1)} s · ${exe.split(/[\\/]/).pop()} · ${site.base}`);
     // a blocked Worker request is the check's own doing, not a page error
