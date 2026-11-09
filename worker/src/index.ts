@@ -80,7 +80,7 @@ async function radar<T>(path: string, params: Record<string, string>, token: str
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
   url.searchParams.set("format", "JSON");
   const res = await fetch(url, {
-    headers: { Authorization: `Bearer ${token}`, Accept: "application/json", "User-Agent": "gcd-ai-radar-internet/0.1 (+https://gcd-ai-radar.vercel.app)" },
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/json", "User-Agent": "gcdradar-internet/0.1 (+https://gcdradar.vercel.app)" },
     signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
   });
   if (!res.ok) throw new RadarError(`Radar ${path} answered ${res.status}`, res.status);

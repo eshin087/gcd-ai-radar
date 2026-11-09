@@ -20,7 +20,7 @@ const TYPE = 24;
 const REAL_EVERY = 4;
 const SPIN = "|/-\\";
 const TONE: Record<Fate, string> = { blocked: "crt-stop", intercepted: "crt-stop", breach: "crt-red" };
-const BOOT = "GCD RADAR OS 2.6 · LINK TO SOURCE FEEDS";
+const BOOT = "gcdRadar OS 2.6 · LINK TO SOURCE FEEDS";
 /** ms per boot-line character */
 const BOOT_TYPE = 24;
 

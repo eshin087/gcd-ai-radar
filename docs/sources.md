@@ -101,7 +101,7 @@ Not fetched by the collector. Their ids and names are copied into `lib/taxonomy.
 
 ## Fetching rules
 
-- Descriptive User-Agent on every request (`gcd-ai-radar/…` with a link to the repository).
+- Descriptive User-Agent on every request (`gcdradar/…` with a link to the repository).
 - Timeouts, three retries with exponential backoff, gzip, a 3 MB body cap; one failing source never stops the run.
 - Page fetches for metadata (sitemap sources, link enrichment) check the host's robots.txt first and fetch each page at most once.
 - Rate limits documented by a source are honoured (arXiv 3 s, NVD 6.5 s without a key, GDELT 30 s between queries).

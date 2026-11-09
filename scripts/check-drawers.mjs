@@ -10,7 +10,7 @@
  *
  *   npm run build
  *   node scripts/check-drawers.mjs                 # serves ./out on a free port, runs the checks
- *   node scripts/check-drawers.mjs --url https://gcd-ai-radar.vercel.app
+ *   node scripts/check-drawers.mjs --url https://gcdradar.vercel.app
  *   node scripts/check-drawers.mjs --serve --port 4173   # only serve ./out (for a manual look)
  *
  * Options: --dir <out dir>  --browser <chrome or edge executable>  --port <n>  --verbose

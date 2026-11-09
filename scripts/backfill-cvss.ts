@@ -30,7 +30,7 @@ import { loadState, saveState } from "../collector/lib/state";
 import type { Advisory } from "../collector/sources/ghsa";
 import { IncidentSchema, type Incident } from "../lib/schema";
 
-const USER_AGENT = "gcd-ai-radar/0.1 (+https://github.com/eshin087/gcd-ai-radar; CVSS backfill)";
+const USER_AGENT = "gcdradar/0.1 (+https://github.com/eshin087/gcdRadar; CVSS backfill)";
 const GHSA_SPACING_MS = 150;
 const NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0";
 export const CACHE_FILE = path.join(process.cwd(), "collector", ".cache", "cvss-lookups.json");

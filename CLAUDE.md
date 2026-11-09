@@ -1,4 +1,4 @@
-# CLAUDE.md: GCD AI Radar
+# CLAUDE.md: gcdRadar
 
 Project instructions for Claude Code. How the site, collector and deploys work is in
 [docs/operations.md](docs/operations.md); read it before changing the collector, its workflows or `vercel.json`.

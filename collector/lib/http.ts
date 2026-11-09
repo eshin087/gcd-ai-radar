@@ -43,7 +43,7 @@ const DEFAULTS = {
   timeoutMs: 20000,
   retries: 3,
   maxBytes: 3_000_000,
-  userAgent: "gcd-ai-radar/0.1 (+https://github.com/eshin087/gcd-ai-radar)",
+  userAgent: "gcdradar/0.1 (+https://github.com/eshin087/gcdRadar)",
 };
 
 const MAX_REDIRECTS = 5;

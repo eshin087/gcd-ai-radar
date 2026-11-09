@@ -1,8 +1,8 @@
 {
-  "name": "gcd-ai-radar",
+  "name": "gcdradar",
   "version": "0.1.0",
   "private": true,
-  "description": "GCD RADAR: live security incidents across the web with an AI lens, counted honestly and linked to their reporting.",
+  "description": "gcdRadar: live security incidents across the web with an AI lens, counted honestly and linked to their reporting.",
   "license": "MIT",
   "type": "module",
   "engines": {

@@ -31,7 +31,7 @@
  *
  *   npm run build
  *   node scripts/check-home.mjs                 # serves ./out on a free port
- *   node scripts/check-home.mjs --url https://gcd-ai-radar.vercel.app
+ *   node scripts/check-home.mjs --url https://gcdradar.vercel.app
  *
  * Options: --dir <out dir>  --browser <chrome or edge>  --port <n>  --budget <KB, default 250>  --verbose
  */

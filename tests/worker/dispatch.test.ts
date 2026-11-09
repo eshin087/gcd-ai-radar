@@ -30,8 +30,8 @@ describe("dispatchCollector", () => {
     await expect(dispatchCollector("tok", gh.fetcher)).resolves.toBe("dispatched");
     expect(gh.calls).toHaveLength(2);
     const [list, post] = gh.calls;
-    expect(list?.url).toBe("https://api.github.com/repos/eshin087/gcd-ai-radar/actions/workflows/collect.yml/runs?per_page=5");
-    expect(post?.url).toBe("https://api.github.com/repos/eshin087/gcd-ai-radar/actions/workflows/collect.yml/dispatches");
+    expect(list?.url).toBe("https://api.github.com/repos/eshin087/gcdRadar/actions/workflows/collect.yml/runs?per_page=5");
+    expect(post?.url).toBe("https://api.github.com/repos/eshin087/gcdRadar/actions/workflows/collect.yml/dispatches");
     expect(post?.init?.method).toBe("POST");
     expect(JSON.parse(String(post?.init?.body))).toEqual({ ref: "main" });
     expect((post?.init?.headers as Record<string, string>).Authorization).toBe("Bearer tok");

@@ -174,13 +174,13 @@ describe("robots.txt", () => {
   const txt = `User-agent: *\nDisallow: /private/\nAllow: /private/ok\n\nUser-agent: ClaudeBot\nDisallow: /\n`;
   it("applies longest-match with allow winning ties and star fallback", () => {
     const g = parseRobots(txt);
-    expect(robotsAllows(g, "gcd-ai-radar", "/news/a")).toBe(true);
-    expect(robotsAllows(g, "gcd-ai-radar", "/private/x")).toBe(false);
-    expect(robotsAllows(g, "gcd-ai-radar", "/private/ok/y")).toBe(true);
+    expect(robotsAllows(g, "gcdradar", "/news/a")).toBe(true);
+    expect(robotsAllows(g, "gcdradar", "/private/x")).toBe(false);
+    expect(robotsAllows(g, "gcdradar", "/private/ok/y")).toBe(true);
     expect(robotsAllows(g, "ClaudeBot", "/news/a")).toBe(false);
   });
   it("treats a default-deny file as disallowed", () => {
     const g = parseRobots("User-agent: *\nDisallow: /\n");
-    expect(robotsAllows(g, "gcd-ai-radar", "/anything")).toBe(false);
+    expect(robotsAllows(g, "gcdradar", "/anything")).toBe(false);
   });
 });
