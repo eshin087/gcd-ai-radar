@@ -145,7 +145,7 @@ export default function MethodologyPage() {
       </ul>
       <p>
         Every record also carries an <strong className="text-ink">AI role</strong>, and the AI counts on the site (the Trends charts, the weekly briefing,
-        summary.json, the embed card and the chart images) cover the first two roles only:
+        summary.json and the chart images) cover the first two roles only:
       </p>
       <ul className="list-disc pl-5 space-y-1">
         {INCIDENT_TYPES.map((t) => (
@@ -416,7 +416,7 @@ export default function MethodologyPage() {
         </li>
         <li>
           <strong>My stack</strong> counts, per product, KEV entries and our exploited records of the last 90 days, once per CVE; a tile opens that
-          list. A tile turns red only while something is exploited and open: a KEV deadline ahead, no full patch, or confirmed loss. Your picks stay in
+          list. A tile turns red only while something is exploited and open: a CISA deadline ahead, no full patch, or harm confirmed (severity 4). Your picks stay in
           your browser.
         </li>
         <li>
@@ -426,7 +426,7 @@ export default function MethodologyPage() {
         <li>
           <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and deadline;
           our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the live
-          exploited records that entered the dataset in the last seven days, confirmed loss first. A row is marked as yours when one of your stack picks counts
+          exploited records that entered the dataset in the last seven days, harm confirmed first. A row is marked as yours when one of your stack picks counts
           its CVE or record.
         </li>
         <li>
@@ -541,6 +541,13 @@ export default function MethodologyPage() {
         <li>
           2026-11-09 · the day sheet&rsquo;s two instruments, Needs action and The week, become framed panels with titles, the ledger leading; the footer
           rows become one strip, and deadline countdowns read in days and hours instead of ticking. No counting rule changed.
+        </li>
+        <li>
+          2026-11-09 · Needs action gains a key line, NVD links on its CVE ids and small marks (a red square for your stack, an AI tag); each row becomes one line:
+          name, CVE, a plain score and one time (days left to CISA&rsquo;s deadline, how long without a patch, or the age), with harm confirmed (severity 4)
+          shown by the red severity bars. My stack reads &ldquo;patch by&rdquo; and &ldquo;harm confirmed&rdquo;. The week shows one comparison per
+          line. The briefing pages are laid out as a front page, the tag directory gets a finder. The Data &amp; API pages, the embed card and every link to
+          the machine-readable files are withdrawn; the files themselves stay, unlisted and marked noindex. No counting rule changed.
         </li>
       </ul>
     </div>

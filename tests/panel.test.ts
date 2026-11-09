@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
-import { timeLeft } from "@/lib/panel/dates";
+import { openFor, timeLeft } from "@/lib/panel/dates";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
 import { buildLedger } from "@/lib/panel/ledger";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
@@ -163,7 +163,7 @@ describe("the ledger", () => {
         label: "Linux",
         kind: "vendor",
         n: 1,
-        flag: "due 31 Oct",
+        flag: "patch by 31 Oct",
         why: ["CISA deadline 2026-10-31"],
         kev7: [],
         href: kevCatalogHref("Linux"),
@@ -307,7 +307,7 @@ describe("my stack", () => {
   });
   it("is red only while exploited and open", () => {
     expect(tile("microsoft").flag).toBeNull();
-    expect(tile("linux")).toMatchObject({ flag: "due 31 Oct", why: ["CISA deadline 2026-10-31"] });
+    expect(tile("linux")).toMatchObject({ flag: "patch by 31 Oct", why: ["CISA deadline 2026-10-31"] });
     expect(tile("citrix")).toMatchObject({ flag: "no patch yet" });
     expect(tile("litellm").flag).toBeNull();
     expect(tile("cisco").flag).toBeNull();
@@ -329,6 +329,16 @@ describe("my stack", () => {
     expect(parsePicks("Linux, microsoft,nope,linux", known)).toEqual(["linux", "microsoft"]);
     expect(parsePicks("", known)).toEqual([]);
     expect(parsePicks(null, known)).toEqual([]);
+  });
+});
+
+describe("open for", () => {
+  it("counts whole UTC days since the first report", () => {
+    const at = (iso: string) => Date.parse(iso);
+    expect(openFor("2026-11-06", at("2026-11-09T10:00:00Z"))).toBe("open 3 days");
+    expect(openFor("2026-11-08", at("2026-11-09T00:30:00Z"))).toBe("open 1 day");
+    expect(openFor("2026-11-09", at("2026-11-09T23:59:00Z"))).toBe("open today");
+    expect(openFor("2026-11-10", at("2026-11-09T12:00:00Z"))).toBe("open today");
   });
 });
 

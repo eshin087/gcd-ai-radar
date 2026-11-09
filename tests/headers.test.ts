@@ -7,8 +7,10 @@ import { INTERNET_API } from "../lib/site";
  * vercel.json, applied the way Vercel applies it: each rule's source compiled
  * with path-to-regexp v6 in strict, case-sensitive mode (as
  * @vercel/routing-utils does), every matching rule's headers added in order.
- * Only /embed may be framed by other sites; every other path refuses framing
- * twice over (CSP frame-ancestors 'none' and X-Frame-Options DENY).
+ * Every path refuses framing twice over (CSP frame-ancestors 'none' and
+ * X-Frame-Options DENY); the embed card that once allowed it is withdrawn.
+ * The data files and feeds carry no CORS and a noindex, since they are the
+ * site's own and not published for others.
  */
 
 const require = createRequire(import.meta.url);
@@ -37,43 +39,44 @@ const OTHER_PATHS = ["/", "/api", "/data", "/incidents", "/incidents/some-slug",
 const MACHINE_PATHS = ["/changes.json", "/llms.txt", "/feed.json", "/live.json", "/stats/home.json", "/stats/kev-2026-10.json", "/lanes/patch/feed.xml", "/lanes/breach/changes.json", "/lanes/research/llms.txt", "/tags/rce/feed.xml", "/tags/rce/llms.txt", "/tags/rce.json"];
 
 describe("vercel.json headers", () => {
-  it("refuses framing everywhere except /embed", () => {
-    for (const path of OTHER_PATHS) {
+  it("refuses framing everywhere, /embed included", () => {
+    for (const path of [...OTHER_PATHS, "/embed"]) {
       const { headers } = headersFor(path);
       expect(headers.get("Content-Security-Policy"), path).toContain("frame-ancestors 'none'");
       expect(headers.get("X-Frame-Options"), path).toBe("DENY");
     }
   });
 
-  it("lets any site frame /embed, with the rest of the policy unchanged", () => {
-    const { headers } = headersFor("/embed");
-    expect(headers.get("X-Frame-Options")).toBeUndefined();
-    const csp = headers.get("Content-Security-Policy")!;
-    expect(csp).toContain("frame-ancestors *");
-    expect(csp).toBe(GLOBAL_CSP.replace("frame-ancestors 'none'", "frame-ancestors *"));
-    expect(headers.get("X-Content-Type-Options")).toBe("nosniff");
-    expect(headers.get("Referrer-Policy")).toBe("strict-origin-when-cross-origin");
-    expect(headers.get("Permissions-Policy")).toBeTruthy();
+  it("gives every page the same policy, with the global CSP first in the file", () => {
+    for (const path of ["/", "/embed", "/live"]) {
+      const { headers } = headersFor(path);
+      expect(headers.get("Content-Security-Policy"), path).toBe(GLOBAL_CSP);
+      expect(headers.get("X-Content-Type-Options"), path).toBe("nosniff");
+      expect(headers.get("Referrer-Policy"), path).toBe("strict-origin-when-cross-origin");
+      expect(headers.get("Permissions-Policy"), path).toBeTruthy();
+    }
   });
 
-  it("keeps CORS and the hour's cache on the data files and the feed", () => {
-    for (const path of ["/data/summary.json", "/data/meta.json", "/data/incidents.csv", "/data/years/2026.json", "/feed.xml"]) {
+  it("keeps the hour's cache on the data files and the feeds, with no CORS and a noindex", () => {
+    for (const path of ["/data/summary.json", "/data/meta.json", "/data/incidents.csv", "/data/years/2026.json", "/feed.xml", "/briefing.xml"]) {
       const { headers } = headersFor(path);
-      expect(headers.get("Access-Control-Allow-Origin"), path).toBe("*");
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("X-Robots-Tag"), path).toBe("noindex");
       expect(headers.get("Cache-Control"), path).toBe("public, max-age=3600, stale-while-revalidate=86400");
     }
   });
 
-  it("serves the machine files with open CORS and a five-minute cache, and nothing else under /tags", () => {
+  it("serves the machine files with a five-minute cache and a noindex, no CORS, and nothing else under /tags", () => {
     for (const path of MACHINE_PATHS) {
       const { headers } = headersFor(path);
-      expect(headers.get("Access-Control-Allow-Origin"), path).toBe("*");
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("X-Robots-Tag"), path).toBe("noindex");
       expect(headers.get("Cache-Control"), path).toBe("public, max-age=300, stale-while-revalidate=3600");
     }
-    for (const path of ["/tags", "/tags/rce", "/trends", "/lanes"]) {
+    for (const path of ["/tags", "/tags/rce", "/trends", "/lanes", "/og/default.png"]) {
       const { headers } = headersFor(path);
       expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
-      expect(headers.get("Cache-Control"), path).toBeUndefined();
+      expect(headers.get("X-Robots-Tag"), path).toBeUndefined();
     }
   });
 

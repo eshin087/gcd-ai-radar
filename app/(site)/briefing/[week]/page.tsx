@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BriefingNumbers, signed } from "@/components/briefing/BriefingNumbers";
 import { CategoryBadge, SeverityBadge, TypeBadge } from "@/components/ui/Badge";
-import { isoWeekLabel } from "@/lib/briefing";
+import { briefingStandfirst, isoWeekLabel } from "@/lib/briefing";
 import { briefingByWeek, loadBriefings, siteUrl } from "@/lib/data";
 import { FAMILY_META } from "@/lib/families";
-import { dateLabel, formatPct, timestampLabel } from "@/lib/format";
+import { dateLabel, timestampLabel } from "@/lib/format";
 import type { Briefing } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 import { TARGET_META } from "@/lib/taxonomy";
@@ -34,36 +35,33 @@ export async function generateMetadata({ params }: { params: Promise<{ week: str
   };
 }
 
-function sign(n: number): string {
-  return n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : "±0";
+/**
+ * One briefing, laid out as an article: kicker, headline, the narrative's
+ * first paragraph as the standfirst, the week's four numbers with one line
+ * on where it hit, the rest of the narrative, the five incidents that
+ * mattered as cards, then the small print and the weeks either side.
+ */
+
+/**
+ * The standfirst and the body. Several paragraphs: the first leads, the rest
+ * follow. One paragraph (the usual case): its opening sentences lead, cut
+ * where briefingStandfirst cuts, and the remainder follows; when no clean
+ * sentence end exists the whole paragraph is the body and nothing leads.
+ */
+function splitNarrative(paragraphs: string[], standfirst: string | null): [string | null, string[]] {
+  if (paragraphs.length === 0) return [null, []];
+  if (paragraphs.length > 1) return [paragraphs[0]!, paragraphs.slice(1)];
+  const only = paragraphs[0]!;
+  if (!standfirst || standfirst.endsWith("…") || standfirst.length >= only.length) return [null, [only]];
+  return [standfirst, [only.slice(standfirst.length).trim()]];
 }
 
-function Readout({ b }: { b: Briefing }) {
-  const rows: [string, string, string][] = [
-    ["incidents", String(b.counts.incidents), `${sign(b.deltas.incidents.change)} (${formatPct(b.deltas.incidents.pct)}) vs ${b.previous.week}`],
-    ["real-world", String(b.counts.real_world), `${sign(b.deltas.real_world.change)} vs ${b.previous.week} · severity 3–4`],
-    ["attacks on AI", String(b.counts.by_type.attack_on_ai), ""],
-    ["AI-enabled attacks", String(b.counts.by_type.ai_enabled_attack), ""],
-    ["busiest family", b.busiest_family ? String(b.busiest_family.count) : "—", b.busiest_family ? FAMILY_META[b.busiest_family.family].label : "no incidents"],
-    ["top targets", "", b.top_targets.length ? b.top_targets.map((t) => `${TARGET_META[t.target].label} ${t.count}`).join(" · ") : "—"],
-    [
-      "disclosed CVEs",
-      String(b.counts.disclosed_vulnerabilities),
-      `${sign(b.deltas.disclosed_vulnerabilities.change)} vs ${b.previous.week} · not counted as incidents`,
-    ],
-  ];
+function WeekLink({ b, dir }: { b: Briefing; dir: "older" | "newer" }) {
   return (
-    <dl className="panel num text-[12.5px] px-4 py-3 grid grid-cols-[1fr_auto] sm:grid-cols-[9.5rem_3.5rem_1fr] gap-x-3 gap-y-1.5">
-      {rows.map(([label, value, note]) => (
-        <div key={label} className="contents">
-          <dt className="text-dim">{label}</dt>
-          <dd className="text-ink text-right">{value}</dd>
-          {/* on a phone the note drops under its row; from sm up it is the third column */}
-          {note && <dd className="col-span-2 sm:col-span-1 -mt-1 sm:mt-0 mb-1 sm:mb-0 text-[11.5px] sm:text-[12.5px] text-dim min-w-0 break-words">{note}</dd>}
-          {!note && <dd className="hidden sm:block" aria-hidden />}
-        </div>
-      ))}
-    </dl>
+    <Link href={`/briefing/${b.week}`} className={`panel group block min-w-0 p-4 hover:border-accent ${dir === "newer" ? "text-right" : ""}`}>
+      <span className="block font-mono text-[11.5px] uppercase tracking-[0.1em] text-dim">{dir === "older" ? `← Week before · ${b.week}` : `Week after · ${b.week} →`}</span>
+      <span className="mt-1.5 block text-[14.5px] font-semibold leading-snug tracking-tight text-soft group-hover:text-accent">{b.narrative?.headline ?? isoWeekLabel(b.week)}</span>
+    </Link>
   );
 }
 
@@ -76,73 +74,76 @@ export default async function BriefingPage({ params }: { params: Promise<{ week:
   const newer = briefings[idx - 1];
   const older = briefings[idx + 1];
   const url = `${siteUrl()}/briefing/${b.week}`;
+  const paragraphs = (b.narrative?.text ?? "")
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  const [lede, body] = splitNarrative(paragraphs, briefingStandfirst(b));
+  const where = [
+    b.busiest_family ? `Busiest family: ${FAMILY_META[b.busiest_family.family].label} (${b.busiest_family.count})` : null,
+    b.top_targets.length ? `Top targets: ${b.top_targets.map((t) => `${TARGET_META[t.target].label} ${t.count}`).join(", ")}` : null,
+    `${b.counts.disclosed_vulnerabilities} disclosed CVEs (${signed(b.deltas.disclosed_vulnerabilities.change)}), not counted as incidents`,
+  ].filter((s): s is string => s !== null);
 
   return (
-    <article className="max-w-3xl space-y-7">
-      <header className="space-y-3">
-        <div className="flex flex-wrap items-center gap-2 num text-[11px] text-dim">
-          <Link href="/briefing" className="hover:text-ink">
-            briefing
+    <article className="mx-auto max-w-4xl space-y-10">
+      <header className="space-y-4">
+        <p className="flex flex-wrap items-baseline gap-x-2 font-mono text-[12px] uppercase tracking-[0.1em] text-dim">
+          <Link href="/briefing" className="hover:text-accent">
+            Weekly briefing
           </Link>
-          <span className="text-faint">/</span>
-          <span>{b.week}</span>
-        </div>
-        <div className="label">{isoWeekLabel(b.week)} · {dateLabel(b.start)} to {dateLabel(b.end)}</div>
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight">{b.narrative?.headline ?? "This week in AI security"}</h1>
+          <span className="text-faint">·</span>
+          <span>{isoWeekLabel(b.week)}</span>
+          <span className="text-faint">·</span>
+          <span className="normal-case tracking-normal text-faint">
+            {dateLabel(b.start)} to {dateLabel(b.end)}
+          </span>
+        </p>
+        <h1 className="text-[30px] font-semibold leading-[1.12] tracking-tight text-balance sm:text-[38px]">{b.narrative?.headline ?? "This week in AI security"}</h1>
+        {lede && <p className="max-w-3xl text-[18px] leading-relaxed text-soft">{lede}</p>}
       </header>
 
-      <section>
-        <h2 className="label mb-2">The week in numbers</h2>
-        <Readout b={b} />
-        <p className="mt-2 text-[11.5px] text-faint">
-          Counted from records first reported this week, as of {timestampLabel(b.generated_at)}. Records found later are not added to a briefing; the
-          dashboard recounts from the data and may show more.
-        </p>
+      <section aria-label="The week in numbers" className="panel p-5 sm:p-6">
+        <BriefingNumbers b={b} className="sm:grid-cols-4" />
+        <p className="mt-5 border-t border-line-soft pt-3 font-mono text-[12px] leading-relaxed text-dim">{where.join(" · ")}</p>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="label">The week</h2>
-        {b.narrative ? (
-          <>
-            {b.narrative.text.split(/\n{2,}/).map((p, i) => (
-              <p key={i} className="text-[16px] text-soft leading-relaxed">
-                {p}
-              </p>
-            ))}
-            <p className="text-[11.5px] text-faint">
-              Written by a language model ({b.narrative.model}) from this week&rsquo;s records only, and checked against the numbers above. Read the incident
-              pages for the sources.
+      {body.length > 0 && (
+        <section className="max-w-3xl space-y-4">
+          {body.map((p, i) => (
+            <p key={i} className="text-[16.5px] leading-[1.7] text-soft">
+              {p}
             </p>
-          </>
-        ) : (
-          <p className="text-[13.5px] text-dim">No narrative this week.</p>
-        )}
-        {b.notes.map((n) => (
-          <p key={n} className="panel px-4 py-2.5 text-[12.5px] text-dim">
-            {n}
-          </p>
-        ))}
-      </section>
+          ))}
+        </section>
+      )}
+      {!b.narrative && <p className="text-[14px] text-dim">No narrative this week.</p>}
+      {b.notes.map((n) => (
+        <p key={n} className="panel px-4 py-2.5 text-[12.5px] text-dim">
+          {n}
+        </p>
+      ))}
 
       <section>
-        <h2 className="label mb-2">Most notable incidents</h2>
+        <h2 className="label border-t border-line pt-3">What mattered</h2>
+        <p className="mt-1 text-[13px] text-dim">The five most notable incidents of the week: highest severity first, then most sources. Disclosed CVEs are left out.</p>
         {b.notable.length === 0 ? (
-          <p className="text-[13px] text-dim">No incidents were first reported this week.</p>
+          <p className="mt-4 text-[13px] text-dim">No incidents were first reported this week.</p>
         ) : (
-          <ol className="divide-y divide-line-soft border-y border-line-soft">
+          <ol className="mt-4 grid gap-3 sm:grid-cols-2">
             {b.notable.map((i, n) => (
-              <li key={i.id} className="py-3 grid grid-cols-[1.5rem_1fr] gap-2">
-                <span className="num text-[12px] text-faint pt-0.5">{n + 1}</span>
+              <li key={i.id} className={`panel flex gap-3.5 p-4 ${n === 0 ? "sm:col-span-2 sm:p-5" : ""}`}>
+                <span className="num pt-0.5 text-[18px] leading-none text-faint">{n + 1}</span>
                 <div className="min-w-0">
-                  <Link href={`/incidents/${i.slug}`} className="text-[14.5px] leading-snug text-ink hover:text-accent">
+                  <Link href={`/incidents/${i.slug}`} className={`block font-semibold leading-snug tracking-tight text-ink hover:text-accent ${n === 0 ? "text-[19px]" : "text-[15px]"}`}>
                     {i.title}
                   </Link>
-                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                  <div className="mt-2 flex flex-wrap items-center gap-1.5">
                     <SeverityBadge severity={i.severity} />
                     <TypeBadge type={i.type} short />
                     <CategoryBadge category={i.category} />
-                    <span className="num text-[10.5px] text-faint">
-                      {i.first_reported} · {i.source_count} source{i.source_count === 1 ? "" : "s"}
+                    <span className="num text-[11px] text-faint">
+                      {dateLabel(i.first_reported)} · {i.source_count} source{i.source_count === 1 ? "" : "s"}
                     </span>
                   </div>
                 </div>
@@ -150,38 +151,22 @@ export default async function BriefingPage({ params }: { params: Promise<{ week:
             ))}
           </ol>
         )}
-        <p className="mt-2 text-[11.5px] text-faint">Highest severity first, then most sources. Disclosed CVEs are left out of this list.</p>
       </section>
 
-      <section className="space-y-1.5">
-        <h2 className="label">Cite this</h2>
-        <p className="num text-[12px] text-soft break-words">
-          {SITE.name}, &ldquo;{title(b)}&rdquo;, {url}, {b.generated_at.slice(0, 10)}.
+      <footer className="space-y-5 border-t border-line pt-4">
+        <p className="text-[12px] leading-relaxed text-faint">
+          Counted from records first reported this week, as of {timestampLabel(b.generated_at)}; records found later are not added, so the dashboard may show
+          more.{" "}
+          {b.narrative && <>The narrative was written by a language model ({b.narrative.model}) from this week&rsquo;s records only and checked against the numbers; the incident pages hold the sources. </>}
+          Cite as &ldquo;{SITE.name}, {title(b)}&rdquo;, {url}, {b.generated_at.slice(0, 10)}.
         </p>
-        <p className="num text-[11px] text-dim">
-          <a href={`/data/briefings/${b.week}.json`} className="hover:text-ink">json</a>
-          <span className="text-faint"> · </span>
-          <a href="/briefing.xml" className="hover:text-ink">rss</a>
-          <span className="text-faint"> · data {SITE.dataLicense.name}</span>
-        </p>
-      </section>
-
-      <nav aria-label="Other weeks" className="flex justify-between gap-4 num text-[12px] border-t border-line-soft pt-4">
-        {older ? (
-          <Link href={`/briefing/${older.week}`} className="text-dim hover:text-ink">
-            ← {older.week}
-          </Link>
-        ) : (
-          <span />
+        {(older || newer) && (
+          <nav aria-label="Other weeks" className="grid gap-3 sm:grid-cols-2">
+            {older ? <WeekLink b={older} dir="older" /> : <span />}
+            {newer ? <WeekLink b={newer} dir="newer" /> : <span />}
+          </nav>
         )}
-        {newer ? (
-          <Link href={`/briefing/${newer.week}`} className="text-dim hover:text-ink">
-            {newer.week} →
-          </Link>
-        ) : (
-          <span />
-        )}
-      </nav>
+      </footer>
     </article>
   );
 }

@@ -219,7 +219,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   check("week AI is the roles' sum", num(wk.ai?.value) === W.ai.onAi + W.ai.usingAi && wk.ai?.text.includes(`of ${W.ai.total} incidents`), `${wk.ai?.value} vs ${W.ai.onAi + W.ai.usingAi}`);
   check("week level words are panel.json's", wk.published?.level === String(W.published.level) && wk.exploited?.level === String(W.exploited.level), `published ${wk.published?.level}/${W.published.level}, exploited ${wk.exploited?.level}/${W.exploited.level}`);
   check("week bars draw as many cells as they say", ["published", "critical", "exploited", "breaches"].every((k) => wk[k] && (wk[k].vs === null || Number(wk[k].vs) === wk[k].cells)), ["published", "critical", "exploited", "breaches"].map((k) => `${k} ${wk[k]?.vs}/${wk[k]?.cells}`).join(", "));
-  check("week patch tuesday is the next second Tuesday", wk["patch-tuesday"]?.text.includes(shortDate(W.patchTuesday)) && /to go|^.*\bnow\b/.test(wk["patch-tuesday"]?.text ?? ""), wk["patch-tuesday"]?.text.slice(0, 80));
+  check("week patch tuesday is the next second Tuesday", wk["patch-tuesday"]?.text.includes(shortDate(W.patchTuesday)) && /today|tomorrow|in \d+ days/.test(wk["patch-tuesday"]?.text ?? ""), wk["patch-tuesday"]?.text.slice(0, 80));
   if (home.counters.cves_7d !== null) {
     const r = await openAndRead(client, '[data-week] [data-line="published"] button');
     check("week published opens its list", r.count === home.counters.cves_7d && r.rows > 0 && r.closed, `count line "${r.head?.slice(0, 40)}", ${r.rows} rows`);
@@ -235,7 +235,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
 
   // the footer
   const foot = await evaluate(client, `[...document.querySelectorAll('[data-panel-foot] a')].map((a) => a.getAttribute('href'))`);
-  check("footer links", ["/feed.xml", "/feed.json", "/changes.json", "/llms.txt", "/live.json", "/stats/home.json", "/data", "/live"].every((h) => foot.includes(h)), `${foot.length} links`);
+  check("footer links lead to the live board and the briefing, never to the data files", foot.includes("/live") && foot.some((h) => h.startsWith("/briefing/")) && !foot.some((h) => /^\/(data|api|embed|stats|feed|llms|live\.json|changes)/.test(h)), `${foot.length} links: ${foot.join(" ")}`);
 
   // the hero's middle: this week's KEV additions as a dot-matrix numeral, the newest three under it
   const ex = await evaluate(client, `(() => { const e = document.querySelector('[data-exploited]'); return e && { value: e.dataset.value === "" ? null : Number(e.dataset.value), rows: [...e.querySelectorAll('[data-kev-row]')].map((r) => r.dataset.kevRow), w: e.getBoundingClientRect().width }; })()`);
@@ -302,7 +302,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   await navigate(client, `${base}/?final`, HOME_READY);
   await sleep(3500);
-  const live = await evaluate(client, `({ marker: document.querySelector('[data-week] [data-line="published"]')?.textContent.includes("NVD · live"), cves: Number(document.querySelector('[data-verdict]').dataset.cves) })`);
+  const live = await evaluate(client, `({ marker: document.querySelector('[data-week] [data-line="published"]')?.textContent.includes("· live"), cves: Number(document.querySelector('[data-verdict]').dataset.cves) })`);
   check("live layer: the live marker or the built numbers", live.marker ? live.cves > 0 : live.cves === home.counters.cves_24h, JSON.stringify(live));
   await blockHosts(client, [WORKER]);
 }

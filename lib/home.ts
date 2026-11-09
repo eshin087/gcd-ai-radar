@@ -199,7 +199,7 @@ function column(live: LiveData, lane: "patch" | "breach"): HomeColumn {
   const note =
     lane === "patch"
       ? `${rows.filter((r) => r.patch_status === "unpatched" || r.patch_status === "partial").length} without a full fix`
-      : `${rows.filter((r) => r.severity === 4).length} with confirmed loss`;
+      : `${rows.filter((r) => r.severity === 4).length} with harm confirmed`;
   return { lane, label: board.label, live: board.count, note, rows: rows.slice(0, HOME_ROWS), href: `/live?lane=${lane}` };
 }
 

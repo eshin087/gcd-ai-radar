@@ -31,7 +31,7 @@ export { STACK_DAYS, STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stack
  * else NVD; a record whose CVEs are all on KEV is that entry's link, not a
  * row of its own. Open items come first, then newest first.
  *
- * Red: a KEV deadline on or after today ("due 31 Oct"), else a live patch-lane
+ * Red: a KEV deadline on or after today ("patch by 31 Oct"), else a live patch-lane
  * record of severity 3 or more with no patch yet or a partial one ("no patch
  * yet", "partly patched"), else a live record of severity 4 ("confirmed
  * loss"). Nothing else colours a tile.
@@ -175,11 +175,11 @@ export function buildStack(incidents: readonly FullIncident[], kev: readonly Kev
     let flag: string | null = null;
     const due = ahead.filter(member.kev).map((e) => e.due!).sort()[0];
     if (due) {
-      flag = `due ${shortDate(due)}`;
+      flag = `patch by ${shortDate(due)}`;
       why.push(`CISA deadline ${due}`);
     }
     const open = live.filter((i) => member.record(i) && ((i.lane === "patch" && (i.patch_status === "unpatched" || i.patch_status === "partial")) || i.severity >= 4));
-    const openWord = open.some((i) => i.severity >= 4) ? "confirmed loss" : open.some((i) => i.patch_status === "unpatched") ? "no patch yet" : open.length ? "partly patched" : null;
+    const openWord = open.some((i) => i.severity >= 4) ? "harm confirmed" : open.some((i) => i.patch_status === "unpatched") ? "no patch yet" : open.length ? "partly patched" : null;
     if (openWord) {
       flag ??= openWord;
       why.push(openWord);

@@ -24,9 +24,6 @@ export default async function ArchivePage() {
             view is a link.
           </p>
         </div>
-        <a className="label hover:text-ink" href="/data/incidents.csv">
-          download csv →
-        </a>
       </header>
       <IncidentExplorer facets={facets} />
     </div>

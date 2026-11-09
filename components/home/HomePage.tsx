@@ -27,7 +27,7 @@ export function HomePage({ data }: { data: HomePayload }) {
       <div className="mt-6 lg:mt-7">
         <MyStack />
       </div>
-      <div className="mt-7 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start">
+      <div className="mt-7 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-stretch">
         <Ledger ledger={p.ledger} today={data.today} built={data.now} />
         <Week week={p.week} entries={p.sieve.exploitedEntries} today={data.today} weekFile={data.stats.lists.cves_week.file} breachFile={data.stats.lists.breaches_month.file} />
       </div>

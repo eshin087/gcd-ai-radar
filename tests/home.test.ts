@@ -157,7 +157,7 @@ describe("buildHome", () => {
   it("fills the columns from the live boards", () => {
     expect(home.columns.patch.rows.length).toBeLessThanOrEqual(HOME_ROWS);
     expect(home.columns.patch).toMatchObject({ live: 1, note: "1 without a full fix", href: "/live?lane=patch" });
-    expect(home.columns.breach).toMatchObject({ live: 2, note: "1 with confirmed loss" });
+    expect(home.columns.breach).toMatchObject({ live: 2, note: "1 with harm confirmed" });
     expect(home.columns.supply_chain).toBe(0);
   });
 
