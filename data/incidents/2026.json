@@ -11140,9 +11140,15 @@
         "publisher": "Trail of Bits",
         "title": "After Binance, check what your signing systems can approve",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims",
+        "publisher": "BleepingComputer",
+        "title": "Binance denies data breach after alleged ShinyHunters claims",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 17,
+    "source_count": 18,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -11153,7 +11159,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-06T16:25:59.244Z",
+    "updated_at": "2026-11-09T16:40:56.342Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -11215,6 +11221,12 @@
         "title": "Binance incident report confirms the multi-stage attack compromised three engineers computers through fake recruitment interviews and malicious installers",
         "source_url": "https://helpnetsecurity.com/2026/11/04/binance-hack-north-korea-fake-job-interview",
         "added_at": "2026-11-04T15:36:32.106Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "Binance denies claims of a new security breach made by the ShinyHunters threat actor",
+        "source_url": "https://bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims",
+        "added_at": "2026-11-09T16:40:56.342Z"
       }
     ],
     "action": "",
