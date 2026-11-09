@@ -1,5 +1,15 @@
 [
   {
+    "key": "909ef5d9d0a7e7bf",
+    "title": "An average of 8 minutes is all hackers need to log in with stolen credentials",
+    "url": "https://helpnetsecurity.com/2026/11/09/elastic-businesses-remote-access-attacks-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: report finds and statistics piece from Elastic Security Threat Command",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T05:11:34.514Z"
+  },
+  {
     "key": "3a2862f6d8e44a4c",
     "title": "Open dataset of prompt-injection CVEs with a monthly threat index",
     "url": "https://promptinjections.de/threat-index/zahlen",
