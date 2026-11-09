@@ -1,4 +1,6 @@
 import { CvssChip } from "@/components/ui/Badge";
+import { CVSS_BAND_META, cvssBand, cvssLabel } from "@/lib/cvss";
+import { CVSS_COLORS } from "@/lib/palette";
 import type { Severity } from "@/lib/taxonomy";
 
 /**
@@ -59,6 +61,20 @@ export function SevMeter({ severity }: { severity: Severity }) {
       {[1, 2, 3, 4].map((k) => (
         <i key={k} className={k <= severity ? "on" : ""} />
       ))}
+    </span>
+  );
+}
+
+const SEV_OF_BAND = { critical: 4, high: 3, medium: 2, low: 1 } as const;
+
+/** A CVSS score as a plain number in its band's colour, no box; nothing when there is no score. */
+export function CvssNum({ score }: { score: number | null }) {
+  if (score === null || Number.isNaN(score)) return null;
+  const band = cvssBand(score);
+  const meta = CVSS_BAND_META[band];
+  return (
+    <span data-cvss-band={band} title={`CVSS base score ${cvssLabel(score)}: ${meta.label.toLowerCase()} (${meta.range})`} className="num text-[12.5px]" style={{ color: `var(--color-sev-${SEV_OF_BAND[band]}, ${CVSS_COLORS[band]})` }}>
+      {cvssLabel(score)}
     </span>
   );
 }

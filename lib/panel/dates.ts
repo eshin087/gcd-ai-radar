@@ -16,3 +16,9 @@ export function timeLeft(ms: number): string {
   if (hours >= 1) return `${hours} h`;
   return `${Math.max(1, Math.ceil(ms / 60_000))} min`;
 }
+
+/** How long a record has waited since its first report (a UTC date), in whole days: "open today", "open 1 day", "open 12 days". */
+export function openFor(since: string, now: number): string {
+  const days = Math.floor((now - Date.parse(`${since}T00:00:00Z`)) / DAY_MS);
+  return days < 1 ? "open today" : `open ${days} ${days === 1 ? "day" : "days"}`;
+}

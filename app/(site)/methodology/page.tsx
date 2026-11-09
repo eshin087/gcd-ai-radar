@@ -543,8 +543,9 @@ export default function MethodologyPage() {
           rows become one strip, and deadline countdowns read in days and hours instead of ticking. No counting rule changed.
         </li>
         <li>
-          2026-11-09 · Needs action gains a key line, NVD links on its CVE ids and small marks (a red square for your stack, an AI tag); its statuses read
-          &ldquo;patch by&rdquo; (CISA&rsquo;s deadline) and &ldquo;harm confirmed&rdquo; (severity 4), here and on My stack. The week shows one comparison per
+          2026-11-09 · Needs action gains a key line, NVD links on its CVE ids and small marks (a red square for your stack, an AI tag); each row becomes one line:
+          name, CVE, a plain score and one time (days left to CISA&rsquo;s deadline, how long without a patch, or the age), with harm confirmed (severity 4)
+          shown by the red severity bars. My stack reads &ldquo;patch by&rdquo; and &ldquo;harm confirmed&rdquo;. The week shows one comparison per
           line. The briefing pages are laid out as a front page, the tag directory gets a finder. The Data &amp; API pages, the embed card and every link to
           the machine-readable files are withdrawn; the files themselves stay, unlisted and marked noindex. No counting rule changed.
         </li>
