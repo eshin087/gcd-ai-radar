@@ -1,0 +1,162 @@
+{
+  "week": "2026-W45",
+  "start": "2026-11-02",
+  "end": "2026-11-08",
+  "counts": {
+    "records": 52,
+    "incidents": 46,
+    "real_world": 9,
+    "disclosed_vulnerabilities": 6,
+    "by_type": {
+      "attack_on_ai": 33,
+      "ai_enabled_attack": 13
+    },
+    "by_family": {
+      "injection": 4,
+      "infra": 4,
+      "exposure": 5,
+      "agent": 11,
+      "supply": 7,
+      "social": 4,
+      "offense": 9,
+      "other": 2
+    },
+    "by_severity": {
+      "1": 36,
+      "2": 1,
+      "3": 5,
+      "4": 4
+    }
+  },
+  "previous": {
+    "week": "2026-W44",
+    "incidents": 52,
+    "real_world": 10,
+    "disclosed_vulnerabilities": 42
+  },
+  "deltas": {
+    "incidents": {
+      "now": 46,
+      "before": 52,
+      "change": -6,
+      "pct": -11.538461538461538
+    },
+    "real_world": {
+      "now": 9,
+      "before": 10,
+      "change": -1,
+      "pct": -10
+    },
+    "disclosed_vulnerabilities": {
+      "now": 6,
+      "before": 42,
+      "change": -36,
+      "pct": -85.71428571428571
+    }
+  },
+  "busiest_family": {
+    "family": "agent",
+    "count": 11
+  },
+  "top_targets": [
+    {
+      "target": "framework_or_tooling",
+      "count": 19
+    },
+    {
+      "target": "open_weight_model",
+      "count": 15
+    },
+    {
+      "target": "enterprise_deployment",
+      "count": 12
+    }
+  ],
+  "notable": [
+    {
+      "id": "AIR-2026-1812",
+      "slug": "ceo-spoofing-scammers-used-ai-to-help-steal-more-than-100-mi",
+      "title": "CEO-spoofing scammers used AI to help steal more than $100 million",
+      "type": "ai_enabled_attack",
+      "category": "deepfake_fraud",
+      "family": "social",
+      "severity": 4,
+      "targets": [
+        "individual_victims"
+      ],
+      "first_reported": "2026-11-06",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1805",
+      "slug": "facebook-runs-ai-deepfake-scam-ads-generating-substantial-fr",
+      "title": "Facebook Runs AI Deepfake Scam Ads Generating Substantial Fraud Revenue",
+      "type": "ai_enabled_attack",
+      "category": "deepfake_fraud",
+      "family": "social",
+      "severity": 4,
+      "targets": [
+        "Meta"
+      ],
+      "first_reported": "2026-11-05",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1747",
+      "slug": "3am-affiliate-uses-ai-assisted-loops-in-european-school-atta",
+      "title": "3AM Affiliate Uses AI-Assisted Loops in European School Attack",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 4,
+      "targets": [
+        "individual_victims"
+      ],
+      "first_reported": "2026-11-03",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1703",
+      "slug": "aur0ra-ransomware-operators-used-ai-coding-agents-for-intrus",
+      "title": "Aur0ra ransomware operators used AI coding agents for intrusion workflows",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 4,
+      "targets": [
+        "individual_victims",
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-11-02",
+      "source_count": 1
+    },
+    {
+      "id": "AIR-2026-1748",
+      "slug": "workos-breached-via-artex-ai-compromise-of-internal-app",
+      "title": "WorkOS Breached via ARTEX AI Compromise of Internal App",
+      "type": "ai_enabled_attack",
+      "category": "ai_assisted_intrusion",
+      "family": "offense",
+      "severity": 3,
+      "targets": [
+        "enterprise_deployment"
+      ],
+      "first_reported": "2026-11-03",
+      "source_count": 4
+    }
+  ],
+  "generated_at": "2026-11-09T16:54:27.716Z",
+  "narrative": {
+    "headline": "AI-enabled scams and ransomware operations drive recent security incidents",
+    "text": "The week had 46 incidents, down 6 from 52, including 9 real-world incidents, down 1 from 10. Notable events featured federal authorities reporting that scammers used AI voice spoofing to impersonate executives and steal over $100 million. Mark Cuban reported that Facebook knowingly runs deepfake scam ads featuring his likeness for fake products. Ransomware affiliates and operators leveraged AI models to generate commands and used AI coding assistants for network reconnaissance and harvesting credentials. Developer platform WorkOS experienced a data breach after an ARTEX AI compromise of internal sales applications exposed contact records and communications. Mandiant responded to LLMJacking intrusions hijacking enterprise cloud and LLM resources. Threat actors used the ARTEX framework to scan GitHub for OAuth secrets, while others distributed fake webinar and event invitations featuring OpenAI, SpaceX, and Anthropic lures. China-linked groups used AI agents to scale espionage attacks. The week also had 6 disclosed vulnerabilities, down 36 from 42.",
+    "provider": "gemini-lite",
+    "model": "gemini-3.5-flash-lite",
+    "generated_at": "2026-11-09T16:54:27.716Z"
+  },
+  "notes": [],
+  "dataset": {
+    "records": 2189,
+    "incidents": 587,
+    "last_collector_run": "2026-11-09T16:40:57.145Z"
+  }
+}
