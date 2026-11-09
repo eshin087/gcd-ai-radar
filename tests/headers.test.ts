@@ -9,8 +9,11 @@ import { INTERNET_API } from "../lib/site";
  * @vercel/routing-utils does), every matching rule's headers added in order.
  * Every path refuses framing twice over (CSP frame-ancestors 'none' and
  * X-Frame-Options DENY); the embed card that once allowed it is withdrawn.
- * The data files and feeds carry no CORS and a noindex, since they are the
- * site's own and not published for others.
+ * The data files and feeds carry a noindex, since they are the site's own and
+ * not published for others. Vercel sends "Access-Control-Allow-Origin: *" on
+ * every static file unless told otherwise, so every path pins it to the
+ * site's own origin: the pages fetch same-origin and need no CORS, and other
+ * websites' scripts cannot read the files in a visitor's browser.
  */
 
 const require = createRequire(import.meta.url);
@@ -32,6 +35,8 @@ function headersFor(path: string): { headers: Map<string, string>; conflicts: st
   }
   return { headers, conflicts };
 }
+
+const OWN_ORIGIN = "https://gcdradar.vercel.app";
 
 const GLOBAL_CSP = vercel.headers[0]!.headers.find((h) => h.key === "Content-Security-Policy")!.value;
 
@@ -57,26 +62,34 @@ describe("vercel.json headers", () => {
     }
   });
 
-  it("keeps the hour's cache on the data files and the feeds, with no CORS and a noindex", () => {
+  it("keeps the hour's cache on the data files and the feeds, with CORS for the site alone and a noindex", () => {
     for (const path of ["/data/summary.json", "/data/meta.json", "/data/incidents.csv", "/data/years/2026.json", "/feed.xml", "/briefing.xml"]) {
       const { headers } = headersFor(path);
-      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBe(OWN_ORIGIN);
       expect(headers.get("X-Robots-Tag"), path).toBe("noindex");
       expect(headers.get("Cache-Control"), path).toBe("public, max-age=3600, stale-while-revalidate=86400");
     }
   });
 
-  it("serves the machine files with a five-minute cache and a noindex, no CORS, and nothing else under /tags", () => {
+  it("serves the machine files with a five-minute cache and a noindex, CORS for the site alone, and no noindex elsewhere under /tags", () => {
     for (const path of MACHINE_PATHS) {
       const { headers } = headersFor(path);
-      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBe(OWN_ORIGIN);
       expect(headers.get("X-Robots-Tag"), path).toBe("noindex");
       expect(headers.get("Cache-Control"), path).toBe("public, max-age=300, stale-while-revalidate=3600");
     }
     for (const path of ["/tags", "/tags/rce", "/trends", "/lanes", "/og/default.png"]) {
       const { headers } = headersFor(path);
-      expect(headers.get("Access-Control-Allow-Origin"), path).toBeUndefined();
+      expect(headers.get("Access-Control-Allow-Origin"), path).toBe(OWN_ORIGIN);
       expect(headers.get("X-Robots-Tag"), path).toBeUndefined();
+    }
+  });
+
+  it("pins CORS to the site's own origin on every path, never the wildcard Vercel would send", () => {
+    for (const path of [...OTHER_PATHS, "/embed", "/live", ...MACHINE_PATHS]) {
+      const value = headersFor(path).headers.get("Access-Control-Allow-Origin");
+      expect(value, path).toBe(OWN_ORIGIN);
+      expect(value, path).not.toBe("*");
     }
   });
 
