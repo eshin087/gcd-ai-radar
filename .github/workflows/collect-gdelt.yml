@@ -1,0 +1,72 @@
+name: collect-gdelt
+
+# The GDELT pass on its own. GDELT answers one query at a time with 30 s gaps
+# and frequent 429s, so inside the collector's runs a pass took 17 to 40
+# minutes on 2026-11-08 while everything else in a run takes 5 to 10. Once the
+# Cloudflare Worker dispatches collect.yml every 30 minutes, a pass that long
+# would hold up the ticks, so since 2026-11-08 the gdelt source is
+# "own_workflow" in collector/config/sources.json (the main sweep never finds
+# it due) and this workflow names it with --source=gdelt every six hours.
+#
+# Same concurrency group as collect.yml: the two workflows never run, and so
+# never commit, at the same time. A main run dispatched during a pass waits in
+# the group (the Worker sees it queued and skips its tick), and GitHub keeps
+# at most one waiting run per group. The deploy decision is the collector's
+# own (collector/cli.ts, windowOpenedSince): this run rebuilds the site only
+# when a deploy window has opened since the last commit that rebuilt it, like
+# any other scheduled run, and otherwise commits with "[no site change]".
+
+on:
+  schedule:
+    # six-hourly, off the hour and away from collect.yml's :17 fallback slot
+    - cron: "41 2,8,14,20 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run the GDELT pass without writing or committing"
+        type: boolean
+        default: false
+      verbose:
+        description: "Debug logging"
+        type: boolean
+        default: false
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  gdelt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Collect GDELT
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          COLLECTOR_GIT_NAME: ${{ vars.COLLECTOR_GIT_NAME }}
+          COLLECTOR_GIT_EMAIL: ${{ vars.COLLECTOR_GIT_EMAIL }}
+          COLLECTOR_DEPLOY_HOURS: ${{ vars.COLLECTOR_DEPLOY_HOURS }}
+          COLLECTOR_DEBUG: ${{ inputs.verbose && '1' || '' }}
+          # workflow inputs are passed as environment variables, never interpolated into the script
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS="--source=gdelt"
+          if [ "$INPUT_DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          npm run collect -- $ARGS

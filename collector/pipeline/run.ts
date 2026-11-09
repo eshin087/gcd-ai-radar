@@ -48,8 +48,8 @@ export interface RunSummary {
   pendingCount: number;
 }
 
-/** Hours since the last success before a scheduled source is read again (a little under the nominal period so an hourly cron hits it). */
-export const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, six_hourly: 5.5, daily: 20, weekly: 6 * 24, monthly: 27 * 24 };
+/** Hours since the last success before a scheduled source is read again (a little under the nominal period so an hourly cron hits it); Infinity for a source its own workflow reads. */
+export const DUE_HOURS: Record<SourceConfig["schedule"], number> = { every_run: 0, six_hourly: 5.5, daily: 20, weekly: 6 * 24, monthly: 27 * 24, own_workflow: Infinity };
 
 /**
  * When each source last succeeded: collector-state.json, which outlives the
@@ -68,6 +68,7 @@ export function lastSuccessBySource(state: Pick<State, "runs" | "collector">): M
 
 export function isDue(src: Pick<SourceConfig, "schedule">, last: string | undefined, now: Date): boolean {
   const hours = DUE_HOURS[src.schedule];
+  if (hours === Infinity) return false; // read only when named with --source, by its own workflow
   if (!hours || !last) return true;
   return now.getTime() - Date.parse(last) >= hours * 3600 * 1000;
 }
