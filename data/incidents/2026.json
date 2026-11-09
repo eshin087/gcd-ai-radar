@@ -8120,9 +8120,15 @@
         "publisher": "BleepingComputer",
         "title": "France blames Iranian hackers for supermarket attacks that sparked fires",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://therecord.media/france-blames-iran-for-fridge-cyberattacks",
+        "publisher": "The Record",
+        "title": "France blames Iran for fridge cyberattacks, says some caused fires",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 10,
+    "source_count": 11,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -8133,7 +8139,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-09T18:41:09.590Z",
+    "updated_at": "2026-11-09T19:24:50.413Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
