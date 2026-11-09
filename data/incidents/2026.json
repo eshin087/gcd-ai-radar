@@ -1,5 +1,178 @@
 [
   {
+    "id": "AIR-2026-1832",
+    "slug": "default-credentials-on-forgerock-servers-allow-vehicle-acces",
+    "title": "Default Credentials on ForgeRock Servers Allow Vehicle Access",
+    "summary": "Security researchers discovered that default admin credentials on ForgeRock identity servers used by two car brands allowed complete account takeovers. This flaw enabled them to access customer accounts, unlock vehicle doors, and start engines.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ForgeRock"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/default-adminadmin-server-password.html",
+        "publisher": "The Hacker News",
+        "title": "Default 'admin:admin' Server Password Helps Researchers Hack Two Automakers, Unlock and Start Cars",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "default-credentials",
+      "connected-cars",
+      "forgerock",
+      "account-takeover"
+    ],
+    "created_at": "2026-11-09T11:54:08.850Z",
+    "updated_at": "2026-11-09T11:54:08.850Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Default 'admin:admin' Server Password Helps Researchers Hack Two Automakers, Unlock and Start Cars",
+        "source_url": "https://thehackernews.com/2026/11/default-adminadmin-server-password.html",
+        "added_at": "2026-11-09T11:54:08.850Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation reported yet.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1831",
+    "slug": "web3auth-flaw-exploited-to-steal-keplr-crypto-wallets",
+    "title": "Web3Auth Flaw Exploited to Steal Keplr Crypto Wallets",
+    "summary": "Attackers exploited a security vulnerability in Web3Auth, which handles Google and Apple sign-ins for Keplr crypto wallets, to steal funds from users. In response, the provider preemptively emptied other at-risk wallets to protect them from further theft.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Web3Auth",
+      "Keplr"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/web3auth-flaw-exploited-to-steal-keplr.html",
+        "publisher": "The Hacker News",
+        "title": "Web3Auth Flaw Exploited to Steal Keplr Crypto, Provider Empties Other Wallets for Safety",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "crypto-theft",
+      "web3auth",
+      "keplr",
+      "authentication-bypass"
+    ],
+    "created_at": "2026-11-09T11:54:08.850Z",
+    "updated_at": "2026-11-09T11:54:08.850Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Web3Auth Flaw Exploited to Steal Keplr Crypto, Provider Empties Other Wallets for Safety",
+        "source_url": "https://thehackernews.com/2026/11/web3auth-flaw-exploited-to-steal-keplr.html",
+        "added_at": "2026-11-09T11:54:08.850Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation in the wild resulting in actual cryptocurrency theft.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1830",
+    "slug": "trio-accused-of-using-deepfake-ceos-and-bogus-lawyers-in-129",
+    "title": "Trio accused of using deepfake CEOs and bogus lawyers in $129M fraud",
+    "summary": "Three individuals were indicted by the Justice Department for running a multi-year fraud campaign using deepfake CEO and attorney personas to trick employees into wiring over $129 million. The scheme operated from 2024 to 2026 before law enforcement intervened.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "deepfake_fraud"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/09/deepfake-ceo-fraud-129-million-indictment",
+        "publisher": "Help Net Security",
+        "title": "Trio accused of using deepfake CEOs and bogus lawyers to scam businesses out of $129 million",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "deepfake",
+      "fraud",
+      "business-email-compromise",
+      "indictment"
+    ],
+    "created_at": "2026-11-09T11:54:08.850Z",
+    "updated_at": "2026-11-09T11:54:08.850Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Trio accused of using deepfake CEOs and bogus lawyers to scam businesses out of $129 million",
+        "source_url": "https://helpnetsecurity.com/2026/11/09/deepfake-ceo-fraud-129-million-indictment",
+        "added_at": "2026-11-09T11:54:08.850Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss exceeding $129 million.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1829",
     "slug": "amplifon-americas-data-breach-impacts-1-3-million-individual",
     "title": "Amplifon Americas Data Breach Impacts 1.3 Million Individuals",
