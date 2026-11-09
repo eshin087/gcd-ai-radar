@@ -1,5 +1,15 @@
 [
   {
+    "key": "f915add60a39d246",
+    "title": "AI doesn’t have to go rogue to break the world",
+    "url": "https://cyberscoop.com/ai-hacking-risks-loopholes-bruce-schneier-defcon-keynote-op-ed",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: opinion and analysis piece discussing systemic AI risks without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T11:10:39.277Z"
+  },
+  {
     "key": "4bb3ac67faaaef0d",
     "title": "Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use",
     "url": "https://arxiv.org/abs/2611.09113",
