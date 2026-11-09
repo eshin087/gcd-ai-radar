@@ -538,6 +538,10 @@ export default function MethodologyPage() {
           2026-11-09 · the home page becomes the day sheet: My stack, one ledger of what needs action (deadlines this week, no patch yet, new this week) and the
           week against a typical one. Attack types, the attack surface and how AI shows up move to Trends; the sieve goes. No counting rule changed.
         </li>
+        <li>
+          2026-11-09 · the day sheet&rsquo;s two instruments, Needs action and The week, become framed panels with titles, the ledger leading; the footer
+          rows become one strip, and deadline countdowns read in days and hours instead of ticking. No counting rule changed.
+        </li>
       </ul>
     </div>
   );

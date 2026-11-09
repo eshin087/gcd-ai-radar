@@ -7,7 +7,7 @@
  * /stats/panel.json and /stats/home.json; My stack shows the default tiles
  * with red flags only where the rule put them, a tile opens the list it
  * counts, and a ?stack= link applies, stores and recomputes the picks and
- * the ledger's stack marks; the ledger shows this week's deadlines (ticking),
+ * the ledger's stack marks; the ledger shows this week's deadlines (with the time left),
  * the records without a full patch and the week's new records as
  * panel.json has them, marks the rows in the stack and the AI records, keeps
  * only the AI rows under "AI only", and its drawers list every deadline
@@ -184,10 +184,8 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   check("ledger rows are panel.json's, in order", led.length === want.length && led.every((r, i) => r.kind === want[i].kind && r.href === want[i].href), `${led.length} rows: ${led.map((r) => `${r.kind} ${r.href}`).join(" | ")}`);
   check("ledger heads carry the counts", await evaluate(client, `(() => { const t = (g) => document.querySelector('[data-ledger] [data-group="' + g + '"]')?.textContent.replace(/\\s+/g, ' ') ?? ''; return t('due').includes(${JSON.stringify(String(L.due.length))}) && t('patch').includes(${JSON.stringify(String(L.noFullPatch))}) && t('new').includes(${JSON.stringify(String(L.freshTotal))}) && t('new').includes(${JSON.stringify(String(L.freshLoss))}); })()`));
   if (led.some((r) => r.kind === "due")) {
-    const first = led.find((r) => r.kind === "due").clock;
-    await sleep(1200);
-    const second = await evaluate(client, `document.querySelector('[data-ledger] [data-row="due"] [data-countdown]')?.textContent`);
-    check("ledger deadlines tick", /left$|^past due$/.test(first ?? "") && first !== second, `${first} → ${second}`);
+    const clock = led.find((r) => r.kind === "due").clock;
+    check("ledger deadlines say the time left, in days or hours", /^(\d+ (days?|h|min) left|past due)$/.test(clock ?? ""), clock);
   }
   const marks = led.map((r, i) => ({ page: r.stack, want: (want[i]?.stack ?? []).join(","), ai: r.aiMark, type: want[i]?.type ?? "not_ai", kind: r.kind }));
   check("ledger marks the rows in the default stack", marks.every((m) => m.page === m.want), marks.filter((m) => m.page !== m.want).map((m) => `page "${m.page}" vs panel.json "${m.want}"`).join("; ") || `${marks.filter((m) => m.want).length} marked`);

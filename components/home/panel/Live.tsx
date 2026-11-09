@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useBuild } from "@/components/home/panel/useBuild";
+import { timeLeft } from "@/lib/panel/dates";
 
 /**
  * The panel's small live pieces. Each writes its own text into an element
@@ -10,12 +11,12 @@ import { useBuild } from "@/components/home/panel/useBuild";
  */
 
 const DAY_MS = 86_400_000;
-const pad = (n: number) => String(n).padStart(2, "0");
 
 /**
- * Time left until the end of a UTC due day, ticking each second: "2d 00:29:59
- * left"; empty until the browser runs it. With `start`, until the day begins:
- * "2d 00:29:59 to go", then "now".
+ * Time left until the end of a UTC due day, in days, hours or minutes rather
+ * than a ticking clock: "1 day left", "16 h left"; empty until the browser
+ * runs it, rewritten every half minute. With `start`, until the day begins:
+ * "1 day to go", then "now".
  */
 export function Countdown({ due, start = false, className }: { due: string; start?: boolean; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -25,14 +26,10 @@ export function Countdown({ due, start = false, className }: { due: string; star
       const el = ref.current;
       if (!el) return;
       const left = Math.max(0, end - Date.now());
-      const d = Math.floor(left / DAY_MS);
-      const h = Math.floor(left / 3_600_000) % 24;
-      const m = Math.floor(left / 60_000) % 60;
-      const s = Math.floor(left / 1000) % 60;
-      el.textContent = left === 0 ? (start ? "now" : "past due") : `${d ? `${d}d ` : ""}${pad(h)}:${pad(m)}:${pad(s)} ${start ? "to go" : "left"}`;
+      el.textContent = left === 0 ? (start ? "now" : "past due") : `${timeLeft(left)} ${start ? "to go" : "left"}`;
     };
     tick();
-    const id = window.setInterval(tick, 1000);
+    const id = window.setInterval(tick, 30_000);
     return () => window.clearInterval(id);
   }, [due, start]);
   return <span ref={ref} data-countdown={due} className={className} />;
