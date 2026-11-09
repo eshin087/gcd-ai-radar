@@ -50,7 +50,7 @@ Not used after verification: Google News RSS search (robots.txt disallows `/rss`
 | Cisco Talos | `blog.talosintelligence.com/rss/` | — | in use |
 | OWASP GenAI Security Project | `genai.owasp.org/feed/` | specialist | in use |
 | Straiker | `straiker.ai/blog/rss.xml` | specialist; some marketing posts | in use |
-| Trend Micro Research | `feeds.trendmicro.com/TrendMicroResearch` (plain HTTP: the HTTPS endpoint fails the TLS handshake) | — | in use |
+| Trend Micro Research | `feeds.feedburner.com/TrendMicroResearch`: Trend Micro's own feed (its XML namespace, 100 items) served by FeedBurner; its branded alias `feeds.trendmicro.com` (plain HTTP, the HTTPS endpoint failed its TLS handshake) stopped resolving between 2026-10-28 and 2026-11-08 | Checked 2026-11-08: robots.txt disallows only PDFs, downloads and tools; the Terms of Use (last modified 2024-11-15) allow "personal, non-commercial use only", forbid access "via any automatic device, process or means of access such as a robot or spider" and, in their linking boilerplate, links to anything but the homepage. The feed is the publisher's own syndication channel and is read on the same footing as Dark Reading's; the research page no longer advertises it | in use, daily since 2026-11-08; the blog has published nothing since 2026-09-25 (feed and sitemap agree) |
 | Checkmarx Zero | `checkmarx.com/feed/?post_type=zero-post` | — | in use |
 | Lakera, huntr, Project Zero, Meta AI | not polled | no feed or no dated sitemap (Lakera, huntr, Meta AI); Project Zero's feed is 11 MB with no AI content | — |
 
