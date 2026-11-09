@@ -29,6 +29,28 @@ export function Units({ n, bright, red }: { n: number; bright?: number; red?: nu
   );
 }
 
+/** The track of a Vs bar, in cells of 7 px plus a 2 px gap. */
+export const VS_CELLS = 24;
+
+/**
+ * This week's count as cells on a fixed track that spans `max`, against the
+ * marks the week is judged by: a hairline where `typical` sits, a dim band
+ * over the usual range and a faint hairline where busy starts (`p90`).
+ * One cell at least for any count above zero, so a quiet week still shows.
+ */
+export function Vs({ n, max, typical, band, p90 }: { n: number; max: number; typical?: number | null; band?: [number, number] | null; p90?: number | null }) {
+  const px = (v: number) => Math.round((Math.min(v, max) / max) * VS_CELLS) * 9;
+  const lit = n > 0 ? Math.max(1, Math.round((Math.min(n, max) / max) * VS_CELLS)) : 0;
+  return (
+    <span aria-hidden className="vs" data-vs={lit} style={{ width: VS_CELLS * 9 - 2 }}>
+      {band && <span className="band" style={{ left: px(band[0]), width: Math.max(2, px(band[1]) - px(band[0])) }} />}
+      <Cells n={lit} />
+      {typical !== null && typical !== undefined && <span className="tick" style={{ left: px(typical) }} />}
+      {p90 !== null && p90 !== undefined && <span className="tick p90" style={{ left: px(p90) }} />}
+    </span>
+  );
+}
+
 /** Our severity as four bars: three lit for exploited, four in red for confirmed loss. */
 export function SevMeter({ severity }: { severity: Severity }) {
   const word = severity >= 4 ? "confirmed loss" : severity === 3 ? "exploited" : severity === 2 ? "disclosed" : "research";

@@ -420,8 +420,19 @@ export default function MethodologyPage() {
           your browser.
         </li>
         <li>
-          <strong>How AI shows up</strong> splits the week&rsquo;s incidents by AI role. It shows counts, never a share over time: until 19 October 2026 the
-          collector tracked AI incidents only, so an AI share trend would chart the collector, not the world.
+          <strong>How AI shows up</strong> (on Trends) splits the week&rsquo;s incidents by AI role. It shows counts, never a share over time: until 19 October 2026
+          the collector tracked AI incidents only, so an AI share trend would chart the collector, not the world.
+        </li>
+        <li>
+          <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and deadline;
+          our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the live
+          exploited records that entered the dataset in the last seven days, confirmed loss first. A row is marked as yours when one of your stack picks counts
+          its CVE or record.
+        </li>
+        <li>
+          <strong>The week</strong> judges each count against its own typical: CVEs published against this year&rsquo;s average week; critical ones against the
+          daily file&rsquo;s earlier days; KEV additions against every seven-day window of the last 36 months (the usual range is the middle half); breaches
+          against the median of the previous 36 months. Patch Tuesday is the second Tuesday of the month, from the calendar.
         </li>
       </ul>
 
@@ -522,6 +533,10 @@ export default function MethodologyPage() {
         <li>
           2026-10-30 · the home page becomes an instrument panel (My stack, Act now, Latest, attack types, attack surface, how AI shows up, the sieve); its
           charts move to Trends. The CVE counters now count back from when NVD was fetched rather than from the build, so a day&rsquo;s count is never partial.
+        </li>
+        <li>
+          2026-11-09 · the home page becomes the day sheet: My stack, one ledger of what needs action (deadlines this week, no patch yet, new this week) and the
+          week against a typical one. Attack types, the attack surface and how AI shows up move to Trends; the sieve goes. No counting rule changed.
         </li>
       </ul>
     </div>

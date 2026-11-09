@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { buildActNow, buildLatest, ACT_ROWS } from "@/lib/panel/act";
 import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
+import { buildLedger } from "@/lib/panel/ledger";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
-import { buildStack, kevCatalogHref, parsePicks, stackMatches, tileOf } from "@/lib/panel/stack";
+import { rowStack, stackHits } from "@/lib/panel/picks";
+import { buildStack, kevCatalogHref, parsePicks, stackMatches, tileOf, type StackFile } from "@/lib/panel/stack";
 import { buildSurface, techOf } from "@/lib/panel/technology";
 import { kevName, recordCves, shortDate, slugKey } from "@/lib/panel/util";
+import { patchTuesday, typicalBreachMonth, typicalCriticalWeek, typicalCveWeek } from "@/lib/panel/week";
 import type { KevStatEntry } from "@/lib/stats-schema";
 import { disclosedCve, incident } from "./fixtures";
 
@@ -133,37 +135,100 @@ describe("attack surface", () => {
   });
 });
 
-describe("act now and latest", () => {
-  it("puts KEV deadlines within a week first, then unpatched records not in KEV, then later deadlines", () => {
-    const entries = [
-      kev({ cve: "CVE-2026-0010", vendor: "PHP Group", product: "PHP", due: "2026-10-29", cvss: 9.2 }),
-      kev({ cve: "CVE-2026-0011", vendor: "PHP Group", product: "PHP", due: "2026-10-29", cvss: 8.1 }),
-      kev({ cve: "CVE-2026-0012", vendor: "Linux", product: "Kernel", due: "2026-10-31", cvss: 7.8 }),
-      kev({ cve: "CVE-2026-0013", vendor: "Adobe", product: "Commerce", due: "2026-11-10" }),
-      kev({ cve: "CVE-2026-0014", vendor: "Old", product: "Thing", due: "2026-10-01" }),
-    ];
-    const recs = [
-      incident({ slug: "linux-kernel-record", lane: "patch", severity: 3, patch_status: "unpatched", cve_ids: ["CVE-2026-0012"], first_reported: "2026-10-28" }),
-      incident({ slug: "netscaler", lane: "patch", severity: 3, patch_status: "unpatched", products: ["NetScaler ADC"], first_reported: "2026-10-27" }),
-      incident({ slug: "partial", lane: "patch", severity: 3, patch_status: "partial", first_reported: "2026-10-28" }),
-      incident({ slug: "closed", lane: "patch", severity: 3, patch_status: "unpatched", state: "closed", closed_at: "2026-10-20" }),
-    ];
-    const a = buildActNow(recs, entries, TODAY);
-    expect(a.rows.map((r) => r.name)).toEqual(["PHP", "Linux Kernel", "NetScaler ADC", "Adobe Commerce"]);
-    expect(a.rows[0]).toMatchObject({ kind: "kev", cves: ["CVE-2026-0010", "CVE-2026-0011"], cvss: 9.2, external: true });
-    expect(a.rows[1]).toMatchObject({ kind: "kev", href: "/incidents/linux-kernel-record", external: false });
-    expect(a.noFullPatch).toBe(3);
-    expect(a.rows.length).toBeLessThanOrEqual(ACT_ROWS);
+describe("the ledger", () => {
+  const entries = [
+    kev({ cve: "CVE-2026-0010", vendor: "PHP Group", product: "PHP", due: "2026-10-29", cvss: 9.2, added: "2026-10-26" }),
+    kev({ cve: "CVE-2026-0011", vendor: "PHP Group", product: "PHP", due: "2026-10-29", cvss: 8.1, added: "2026-10-27", ransomware: true }),
+    kev({ cve: "CVE-2026-0012", vendor: "Linux", product: "Kernel", due: "2026-10-31", cvss: 7.8 }),
+    kev({ cve: "CVE-2026-0013", vendor: "Adobe", product: "Commerce", due: "2026-11-10" }),
+    kev({ cve: "CVE-2026-0014", vendor: "Old", product: "Thing", due: "2026-10-01" }),
+  ];
+  const recs = [
+    incident({ slug: "linux-kernel-record", lane: "patch", severity: 3, patch_status: "unpatched", cve_ids: ["CVE-2026-0012"], first_reported: "2026-10-28", created_at: "2026-10-28T06:00:00.000Z" }),
+    incident({ slug: "netscaler", lane: "patch", severity: 3, patch_status: "unpatched", products: ["NetScaler ADC"], first_reported: "2026-10-27", created_at: "2026-10-27T06:00:00.000Z" }),
+    incident({ slug: "partial", lane: "patch", severity: 3, patch_status: "partial", first_reported: "2026-10-28", created_at: "2026-10-28T07:00:00.000Z" }),
+    incident({ slug: "closed", lane: "patch", severity: 3, patch_status: "unpatched", state: "closed", closed_at: "2026-10-20" }),
+    incident({ slug: "loss", lane: "breach", severity: 4, type: "not_ai", categories: ["general"], first_reported: "2026-10-29", created_at: "2026-10-29T01:00:00.000Z" }),
+    incident({ slug: "newest", lane: "supply_chain", severity: 3, first_reported: "2026-10-29", created_at: "2026-10-29T08:00:00.000Z" }),
+    incident({ slug: "old-news", lane: "breach", severity: 4, first_reported: "2026-10-10", created_at: "2026-10-10T08:00:00.000Z" }),
+    disclosedCve({ cve_ids: ["CVE-2026-0099"], state: "live", created_at: "2026-10-29T02:00:00.000Z" }),
+  ];
+  const stack: StackFile = {
+    generated_at: NOW,
+    default: ["linux"],
+    candidates: [
+      {
+        key: "linux",
+        label: "Linux",
+        kind: "vendor",
+        n: 1,
+        flag: "due 31 Oct",
+        why: ["CISA deadline 2026-10-31"],
+        kev7: [],
+        href: kevCatalogHref("Linux"),
+        items: [{ kind: "kev", name: "Linux Kernel", cves: ["CVE-2026-0012"], date: "2026-10-27", due: "2026-10-31", cvss: 7.8, open: "due", href: "/incidents/linux-kernel-record", external: false }],
+      },
+    ],
+  };
+  const l = buildLedger(recs, entries, stack, TODAY, NOW);
+
+  it("groups this week's deadlines by vendor, product and day, nearest first, later ones apart", () => {
+    expect(l.due.map((r) => r.name)).toEqual(["PHP", "Linux Kernel"]);
+    expect(l.due[0]).toMatchObject({ cves: ["CVE-2026-0010", "CVE-2026-0011"], cvss: 9.2, ransomware: true, added: "2026-10-27", external: true, stack: [] });
+    expect(l.due[1]).toMatchObject({ href: "/incidents/linux-kernel-record", external: false, stack: ["Linux"] });
+    expect(l.later.map((r) => r.name)).toEqual(["Adobe Commerce"]);
   });
-  it("lists the six newest live records of severity 3 or more, disclosed CVEs left out", () => {
-    const recs = [
-      ...Array.from({ length: 7 }, (_, n) => incident({ severity: 3, created_at: `2026-10-29T0${n}:00:00.000Z` })),
-      incident({ severity: 2, created_at: "2026-10-29T09:00:00.000Z" }),
-      incident({ severity: 4, state: "closed", closed_at: "2026-10-28", created_at: "2026-10-29T09:30:00.000Z" }),
-    ];
-    const rows = buildLatest(recs, NOW);
-    expect(rows).toHaveLength(6);
-    expect(rows[0]!.created).toBe("2026-10-29T06:00:00.000Z");
+  it("lists records without a full patch, unpatched first, and folds one whose CVEs are on a deadline row", () => {
+    expect(l.patch.map((r) => r.slug)).toEqual(["linux-kernel-record", "netscaler", "partial"]);
+    expect(l.patch[0]).toMatchObject({ onDeadlineRow: true, stack: ["Linux"] });
+    expect(l.patch[1]).toMatchObject({ name: "NetScaler ADC", patch: "unpatched", onDeadlineRow: false, stack: [] });
+    expect(l.noFullPatch).toBe(3);
+  });
+  it("lists new records loss first, then newest, without the rows already shown or disclosed CVEs", () => {
+    expect(l.fresh.map((r) => r.slug)).toEqual(["loss", "newest"]);
+    expect(l.fresh[0]).toMatchObject({ lane: "breach", severity: 4, type: "not_ai", stack: [] });
+    expect(l.freshTotal).toBe(5);
+    expect(l.freshLoss).toBe(1);
+    expect(l.freshAi).toBe(4);
+    expect(l.exploitedLive).toBe(6);
+  });
+  it("marks rows by the picks' items, for the browser's own picks too", () => {
+    const hits = stackHits(stack, ["linux"]);
+    expect(rowStack(hits, { cves: ["CVE-2026-0012"] })).toEqual(["Linux"]);
+    expect(rowStack(hits, { href: "/incidents/linux-kernel-record" })).toEqual(["Linux"]);
+    expect(rowStack(hits, { cves: ["CVE-2026-0010"], href: "/incidents/other" })).toEqual([]);
+    expect(rowStack(stackHits(stack, []), { cves: ["CVE-2026-0012"] })).toEqual([]);
+  });
+});
+
+describe("the week", () => {
+  it("finds the next Patch Tuesday, the second Tuesday of the month", () => {
+    expect(patchTuesday("2026-11-09")).toBe("2026-11-10");
+    expect(patchTuesday("2026-11-10")).toBe("2026-11-10");
+    expect(patchTuesday("2026-11-11")).toBe("2026-12-08");
+    expect(patchTuesday("2026-10-13")).toBe("2026-10-13");
+    expect(patchTuesday("2026-12-31")).toBe("2027-01-12");
+  });
+  it("takes a typical week from the year's total over the days elapsed", () => {
+    const source = { name: "NVD", url: "https://nvd.nist.gov/", license: "public domain" };
+    expect(typicalCveWeek({ fetched_at: "2026-01-14T12:00:00.000Z", source, years: [{ year: 2026, total: 1400 }] })).toBe(700);
+    expect(typicalCveWeek({ fetched_at: "2026-01-10T12:00:00.000Z", source, years: [{ year: 2026, total: 1000 }] })).toBeNull();
+    expect(typicalCveWeek(null)).toBeNull();
+  });
+  it("averages the daily file's days before this week for a typical critical week", () => {
+    const source = { name: "NVD", url: "https://nvd.nist.gov/", license: "public domain" };
+    const days: Record<string, { cves: number; critical: number }> = {};
+    for (let k = 0; k < 20; k++) days[`2026-10-${String(k + 1).padStart(2, "0")}`] = { cves: 500, critical: 40 + (k % 2) };
+    days["2026-10-27"] = { cves: 900, critical: 300 };
+    expect(typicalCriticalWeek({ fetched_at: NOW, source, days }, TODAY)).toBe(284);
+    expect(typicalCriticalWeek({ fetched_at: NOW, source, days: { "2026-10-01": { cves: 1, critical: 1 } } }, TODAY)).toBeNull();
+    expect(typicalCriticalWeek(null, TODAY)).toBeNull();
+  });
+  it("takes the median month of breaches over the months before", () => {
+    const list = [{ added: "2026-10-01" }, { added: "2026-10-12" }, { added: "2026-10-30" }, { added: "2026-09-03" }, { added: "2026-11-03" }];
+    expect(typicalBreachMonth(list, "2026-11", 3)).toBe(1);
+    expect(typicalBreachMonth(list, "2026-11", 2)).toBe(2);
+    expect(typicalBreachMonth([], "2026-11")).toBeNull();
   });
 });
 

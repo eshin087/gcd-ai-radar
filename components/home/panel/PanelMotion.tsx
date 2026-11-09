@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import { BAR_GAP_MS, BUILD_EVENT, BUILD_GLYPHS, CELL_GAP_MS, CELL_STEP_MS, UNIT_GAP_MS, UNIT_ROW_GAP_MS, UNIT_STEP_MS, motionOn, type BuildDetail } from "@/components/fx/ascii";
 
 /**
- * The panel's director, mounted once on the home page. Each instrument
- * (`[data-build]`) builds once, when its top passes 85% of the viewport: its
- * cells and unit squares assemble through · : + left to right, then it fires
- * BUILD_EVENT so its numbers (Num), the newest wire row (TypeIn), the AI flow's
- * ribbons and the sieve's rain start. Without html.motion every instrument
- * builds at once, final and still. It also runs the pulse: html.pulse-0..3
- * once a second, which the red items' ::before glyph follows (globals.css).
+ * The panel's director, mounted once on the home page and once on /trends.
+ * Each instrument (`[data-build]`) builds once, when its top passes 85% of
+ * the viewport: its cells and unit squares assemble through · : + left to
+ * right, then it fires BUILD_EVENT so its numbers (Num), the newest ledger
+ * row (TypeIn) and the AI flow's ribbons start. Without html.motion every
+ * instrument builds at once, final and still. It also runs the pulse:
+ * html.pulse-0..3 once a second, which the red items' ::before glyph follows
+ * (globals.css).
  */
 
 declare global {

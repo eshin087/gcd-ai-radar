@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { BUILD_GLYPHS } from "@/components/fx/ascii";
 import { useBuild } from "@/components/home/panel/useBuild";
 
 /**
@@ -13,11 +12,15 @@ import { useBuild } from "@/components/home/panel/useBuild";
 const DAY_MS = 86_400_000;
 const pad = (n: number) => String(n).padStart(2, "0");
 
-/** Time left until the end of a UTC due day, ticking each second: "2d 00:29:59 left"; empty until the browser runs it. */
-export function Countdown({ due, className }: { due: string; className?: string }) {
+/**
+ * Time left until the end of a UTC due day, ticking each second: "2d 00:29:59
+ * left"; empty until the browser runs it. With `start`, until the day begins:
+ * "2d 00:29:59 to go", then "now".
+ */
+export function Countdown({ due, start = false, className }: { due: string; start?: boolean; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   useEffect(() => {
-    const end = Date.parse(`${due}T00:00:00Z`) + DAY_MS;
+    const end = Date.parse(`${due}T00:00:00Z`) + (start ? 0 : DAY_MS);
     const tick = () => {
       const el = ref.current;
       if (!el) return;
@@ -26,12 +29,12 @@ export function Countdown({ due, className }: { due: string; className?: string 
       const h = Math.floor(left / 3_600_000) % 24;
       const m = Math.floor(left / 60_000) % 60;
       const s = Math.floor(left / 1000) % 60;
-      el.textContent = left === 0 ? "past due" : `${d ? `${d}d ` : ""}${pad(h)}:${pad(m)}:${pad(s)} left`;
+      el.textContent = left === 0 ? (start ? "now" : "past due") : `${d ? `${d}d ` : ""}${pad(h)}:${pad(m)}:${pad(s)} ${start ? "to go" : "left"}`;
     };
     tick();
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
-  }, [due]);
+  }, [due, start]);
   return <span ref={ref} data-countdown={due} className={className} />;
 }
 
@@ -79,35 +82,3 @@ export function TypeIn({ text }: { text: string }) {
   return <span ref={ref}>{text}</span>;
 }
 
-/** Glyphs falling through a sieve stage as it builds; `drops` more on each `again` change (a live update). */
-export function SieveRain({ drops, again = 0, color }: { drops: number; again?: number; color: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const rain = (n: number, spread: number) => {
-    const el = ref.current;
-    if (!el) return;
-    const w = el.clientWidth;
-    for (let k = 0; k < n; k++) {
-      window.setTimeout(
-        () => {
-          const d = document.createElement("i");
-          d.textContent = BUILD_GLYPHS[Math.floor(Math.random() * BUILD_GLYPHS.length)]!;
-          d.style.left = `${6 + Math.random() * Math.max(10, w - 30)}px`;
-          d.style.color = color;
-          d.style.animationDuration = `${0.7 + Math.random() * 0.5}s`;
-          el.appendChild(d);
-          window.setTimeout(() => d.remove(), 1400);
-        },
-        80 + Math.random() * spread,
-      );
-    }
-  };
-  useBuild(ref, (instant) => {
-    if (!instant) rain(drops, 1100);
-  });
-  const first = useRef(again);
-  useEffect(() => {
-    if (again !== first.current && document.documentElement.classList.contains("motion")) rain(7, 500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- a new `again` is the only trigger
-  }, [again]);
-  return <div ref={ref} aria-hidden className="sieve-rain" />;
-}
