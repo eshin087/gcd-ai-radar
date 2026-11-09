@@ -42,7 +42,7 @@ const DAY_MS = 86_400_000;
 
 export const NVD_BASE = "https://services.nvd.nist.gov/rest/json/cves/2.0";
 /** The Worker's User-Agent, the one index.ts sends to Radar. */
-export const USER_AGENT = "gcd-ai-radar-internet/0.1 (+https://gcd-ai-radar.vercel.app)";
+export const USER_AGENT = "gcdradar-internet/0.1 (+https://gcdradar.vercel.app)";
 /** As the collector's NVD_SOURCE: NVD's terms ask for the notice in `license` wherever the data is shown. */
 export const NVD_SOURCE = {
   name: "NVD",

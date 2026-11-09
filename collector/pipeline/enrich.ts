@@ -117,7 +117,7 @@ export async function fetchPageMeta(url: string, settings: Settings): Promise<Pa
   if (!host) return null;
   const groups = await robotsFor(host, settings);
   const path = new URL(url).pathname + new URL(url).search;
-  if (groups && !robotsAllows(groups, "gcd-ai-radar", path)) {
+  if (groups && !robotsAllows(groups, "gcdradar", path)) {
     log.debug("robots disallows page fetch", { host, path });
     return null;
   }

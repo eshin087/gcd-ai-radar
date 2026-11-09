@@ -9,7 +9,7 @@
  *
  *   npm run build
  *   node scripts/check-live.mjs                 # serves ./out on a free port
- *   node scripts/check-live.mjs --url https://gcd-ai-radar.vercel.app
+ *   node scripts/check-live.mjs --url https://gcdradar.vercel.app
  *
  * Options: --dir <out dir>  --browser <chrome or edge executable>  --port <n>  --verbose
  */

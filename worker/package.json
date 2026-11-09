@@ -2,7 +2,7 @@
   "name": "gcd-ai-radar-internet",
   "version": "0.1.0",
   "private": true,
-  "description": "Cloudflare Worker that serves the GCD RADAR home page's live internet band from Cloudflare Radar, cached for five minutes.",
+  "description": "Cloudflare Worker that serves the gcdRadar home page's live internet band from Cloudflare Radar, cached for five minutes.",
   "license": "MIT",
   "type": "module",
   "scripts": {

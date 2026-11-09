@@ -16,7 +16,7 @@ import { readAllStats, runStats } from "./stats/index";
 import { STATS_FILES } from "../lib/stats-schema";
 
 /**
- * GCD AI RADAR collector.
+ * gcdRadar collector.
  *
  *   npm run collect                     fetch, classify, publish, commit, push
  *   npm run collect -- --dry-run        everything except writing and committing

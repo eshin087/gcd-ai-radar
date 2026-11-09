@@ -11,7 +11,7 @@
  * this repository only, with Actions read and write and nothing else.
  */
 
-export const REPO = "eshin087/gcd-ai-radar";
+export const REPO = "eshin087/gcdRadar";
 export const WORKFLOW = "collect.yml";
 export const BRANCH = "main";
 const API = "https://api.github.com";
@@ -33,7 +33,7 @@ function headers(token: string): Record<string, string> {
     Authorization: `Bearer ${token}`,
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-    "User-Agent": "gcd-ai-radar-internet/0.1 (+https://gcd-ai-radar.vercel.app)",
+    "User-Agent": "gcdradar-internet/0.1 (+https://gcdradar.vercel.app)",
   };
 }
 

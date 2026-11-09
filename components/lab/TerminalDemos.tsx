@@ -183,7 +183,7 @@ export function MacTerminal({ d }: { d: TermData }) {
 /** B: a retro CRT, phosphor amber, with a boot sequence. */
 export function CrtTerminal({ d }: { d: TermData }) {
   const [ms, replay, ref] = useTimeline();
-  const boot = ["GCD RADAR OS 2.6  (C) GCD", "MEMORY TEST ........ 640K OK", "LINK TO SOURCE FEEDS  OK", `LOADING THREAT MODEL  [${"#".repeat(Math.min(16, Math.floor(ms / 90)))}${"-".repeat(Math.max(0, 16 - Math.floor(ms / 90)))}]`];
+  const boot = ["gcdRadar OS 2.6  (C) GCD", "MEMORY TEST ........ 640K OK", "LINK TO SOURCE FEEDS  OK", `LOADING THREAT MODEL  [${"#".repeat(Math.min(16, Math.floor(ms / 90)))}${"-".repeat(Math.max(0, 16 - Math.floor(ms / 90)))}]`];
   const bootDone = 1700;
   const line = (i: number) => ms > bootDone + 300 + i * 320;
   return (

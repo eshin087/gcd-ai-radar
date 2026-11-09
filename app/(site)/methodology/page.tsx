@@ -549,6 +549,7 @@ export default function MethodologyPage() {
           line. The briefing pages are laid out as a front page, the tag directory gets a finder. The Data &amp; API pages, the embed card and every link to
           the machine-readable files are withdrawn; the files themselves stay, unlisted and marked noindex. No counting rule changed.
         </li>
+        <li>2026-11-09 · site renamed gcdRadar, now at gcdradar.vercel.app; the old address redirects. No counting rule changed.</li>
       </ul>
     </div>
   );

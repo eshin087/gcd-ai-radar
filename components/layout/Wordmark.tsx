@@ -40,14 +40,15 @@ export function RadarGlyph({ size = 18, className }: { size?: number; className?
   return <RadarMark size={size} className={className} />;
 }
 
-/** The logo: the turning radar mark beside "GCD" in ink and "AI RADAR" in the accent, in the site sans. */
+/** The logo: the turning radar mark beside "gcd" in ink and "Radar" in the accent, in the site sans, as the gcd family writes its names. */
 export function Wordmark({ href = "/", className = "" }: { href?: string; className?: string }) {
-  const [lead, ...rest] = SITE.wordmark.split(" ");
+  const [, lead, rest] = SITE.wordmark.match(/^(gcd)(.*)$/) ?? ["", SITE.wordmark, ""];
   return (
     <Link href={href} className={`inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap ${className}`} aria-label={`${SITE.name} home`}>
       <RadarMark live />
       <span className="font-sans text-[17px] font-semibold tracking-[-0.01em] text-ink">
-        {lead} <span className="text-accent">{rest.join(" ")}</span>
+        {lead}
+        <span className="text-accent">{rest}</span>
       </span>
     </Link>
   );

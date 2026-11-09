@@ -187,7 +187,7 @@ export function Lab({ data }: { data: LabData }) {
         <h2 className="divider">
           <span className="text-accent">03</span> Logo
         </h2>
-        <Option id="logo-radar" letter="A" title="Radar mark + clean wordmark" note="A minimal radar icon with a slowly turning sweep and a blip, beside GCD AI RADAR in the site's sans.">
+        <Option id="logo-radar" letter="A" title="Radar mark + clean wordmark" note="A minimal radar icon with a slowly turning sweep and a blip, beside gcdRadar in the site's sans.">
           <HeaderMock logo={<LogoRadar />} small={<><span>icon sizes:</span><LogoRadar size={48} iconOnly /><LogoRadar size={32} iconOnly /><LogoRadar size={16} iconOnly /></>} />
         </Option>
         <Option id="logo-terminal" letter="B" title="Terminal wordmark" note="The name as a terminal line in the mono font, with a live pulse and a blinking cursor, matching the terminal panel.">

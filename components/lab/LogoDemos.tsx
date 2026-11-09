@@ -25,7 +25,7 @@ export function LogoRadar({ size = 26, iconOnly = false }: { size?: number; icon
       </svg>
       {!iconOnly && (
         <span className="font-sans text-[17px] font-semibold tracking-[-0.01em] text-ink">
-          GCD <span className="text-accent">AI RADAR</span>
+          gcd<span className="text-accent">Radar</span>
         </span>
       )}
     </span>
@@ -41,8 +41,8 @@ export function LogoTerminal() {
         <span className="relative h-2.5 w-2.5 rounded-full bg-[#5fd38d]" />
       </span>
       <span className="text-dim">~/</span>
-      <span className="text-ink">GCD</span>
-      <span className="text-accent">AI&nbsp;RADAR</span>
+      <span className="text-ink">gcd</span>
+      <span className="text-accent">Radar</span>
       <span className="cursor-block cursor-blink" />
     </span>
   );
@@ -66,7 +66,7 @@ export function LogoBadge({ size = 30, iconOnly = false }: { size?: number; icon
       </svg>
       {!iconOnly && (
         <span className="font-sans text-[13px] font-light tracking-[0.32em] text-soft">
-          GCD <span className="font-medium text-ink">AI RADAR</span>
+          gcd<span className="font-medium text-ink">Radar</span>
         </span>
       )}
     </span>

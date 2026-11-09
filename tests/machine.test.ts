@@ -74,7 +74,7 @@ describe("llms.txt", () => {
 
   it("describes the site, its endpoints, lanes, tags and every live record", () => {
     const txt = buildLlmsTxt({ site: BASE, incidents: records, tags, scope: { kind: "site" }, now: NOW });
-    expect(txt.startsWith("# GCD")).toBe(true);
+    expect(txt.startsWith("# gcdRadar")).toBe(true);
     expect(txt).toContain("## Endpoints");
     expect(txt).toContain(`${BASE}/changes.json`);
     expect(txt).toContain("## Lanes");

@@ -31,7 +31,7 @@
     "timeout_ms": 20000,
     "retries": 3,
     "max_body_bytes": 3000000,
-    "user_agent": "gcd-ai-radar/0.1 (+https://github.com/eshin087/gcd-ai-radar; incident observatory, feeds and official APIs only)",
+    "user_agent": "gcdradar/0.1 (+https://github.com/eshin087/gcdRadar; incident observatory, feeds and official APIs only)",
     "hint_max_chars": 600
   },
   "gdelt": {

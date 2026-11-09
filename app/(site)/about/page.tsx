@@ -49,7 +49,7 @@ export default function AboutPage() {
           what it finds, classifies it with a language model and commits the result to a public repository. The site is rebuilt from that data. There is no
           database, no server and no recurring cost; everything is open at{" "}
           <a className="link" href={SITE.github}>
-            github.com/eshin087/gcd-ai-radar
+            github.com/eshin087/gcdRadar
           </a>
           .
         </p>
