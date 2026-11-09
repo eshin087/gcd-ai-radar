@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { FlowRibbons } from "@/components/home/panel/FlowRibbons";
 import { Instrument } from "@/components/home/panel/Instrument";
 import { Cells, Units } from "@/components/home/panel/marks";
@@ -161,65 +162,91 @@ export function AiFlow({ ai }: { ai: AiFlowData }) {
   );
 }
 
-/* ---------- the footer rows ---------- */
+/* ---------- the footer strip ---------- */
 
-export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing }: { lanes: Record<Lane, number>; live: number; breachesMonth: number | null; accountsMonth: number | null; briefing: { week: string; headline: string } | null }) {
-  const row = "flex flex-wrap items-baseline gap-x-[18px] gap-y-1.5 border-b border-line-soft py-2.5";
-  const key = "min-w-[110px] uppercase tracking-[0.1em] text-faint";
-  const n = (v: number) => <span className="num text-ink">{v.toLocaleString("en-US")}</span>;
+/** One row of the strip: its key, the items with an interpunct between each pair, and an optional tail at the right. */
+function FootRow({ k, items, tail }: { k: string; items: ReactNode[]; tail?: ReactNode }) {
   return (
-    <footer data-panel-foot className="mt-12 border-t border-line font-mono text-[12px] text-dim">
-      <div className={row}>
-        <span className={key}>Also live</span>
-        <Link href="/live?lane=patch" className="hover:text-ink">
-          Patch {n(lanes.patch)}
-        </Link>
-        <Link href="/live?lane=breach" className="hover:text-ink">
-          Breaches {n(lanes.breach)}
-        </Link>
-        <Link href="/live?lane=supply_chain" className="hover:text-ink">
-          Supply chain {n(lanes.supply_chain)}
-        </Link>
-        <Link href="/live?lane=research" className="hover:text-ink">
-          Research {n(lanes.research)}
-        </Link>
-        {breachesMonth !== null && accountsMonth !== null && (
-          <Link href="/trends#web" className="hover:text-ink">
-            Breaches this month {n(breachesMonth)} · <span className="num text-ink">{(accountsMonth / 1e6).toFixed(1)} M</span> accounts
-          </Link>
-        )}
-        <Link href="/live" className="text-accent hover:underline">
-          all {live} on the live board →
-        </Link>
-      </div>
-      {briefing && (
-        <div className={row}>
-          <span className={key}>This week</span>
-          <Link href={`/briefing/${briefing.week}`} className="font-sans text-[14px] text-soft hover:text-accent">
-            {briefing.headline}
-          </Link>
-          <span className="text-faint">{briefing.week}</span>
-        </div>
+    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 py-1.5">
+      <span className="min-w-[104px] uppercase tracking-[0.1em] text-faint">{k}</span>
+      {items.flatMap((item, i) =>
+        i
+          ? [
+              <span key={`dot-${i}`} aria-hidden className="text-faint">
+                ·
+              </span>,
+              item,
+            ]
+          : [item],
       )}
-      <div className={row}>
-        <span className={key}>For machines</span>
-        {[
-          ["/feed.xml", "RSS"],
-          ["/feed.json", "JSON Feed"],
-          ["/changes.json", "changes.json"],
-          ["/llms.txt", "llms.txt"],
-          ["/live.json", "live.json"],
-          ["/stats/home.json", "stats"],
-          ["/data", "every file"],
-        ].map(([href, label]) => (
-          <a key={href} href={href} className="hover:text-ink">
-            {label}
-          </a>
-        ))}
-        <span className="text-faint sm:ml-auto">
-          data {SITE.dataLicense.name} · NVD public domain · CISA KEV CC0 · HIBP CC BY 4.0 · EPSS by FIRST
-        </span>
-      </div>
+      {tail && <span className="text-faint sm:ml-auto">{tail}</span>}
+    </div>
+  );
+}
+
+/**
+ * The home page's footer strip under the two panels: what else is live, this
+ * week's briefing and the machine-readable files, each one quiet mono line
+ * without a hairline of its own.
+ */
+export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing }: { lanes: Record<Lane, number>; live: number; breachesMonth: number | null; accountsMonth: number | null; briefing: { week: string; headline: string } | null }) {
+  const n = (v: number) => <span className="num text-ink">{v.toLocaleString("en-US")}</span>;
+  const link = "hover:text-ink";
+  const also: ReactNode[] = [
+    <Link key="patch" href="/live?lane=patch" className={link}>
+      Patch {n(lanes.patch)}
+    </Link>,
+    <Link key="breach" href="/live?lane=breach" className={link}>
+      Breaches {n(lanes.breach)}
+    </Link>,
+    <Link key="supply" href="/live?lane=supply_chain" className={link}>
+      Supply chain {n(lanes.supply_chain)}
+    </Link>,
+    <Link key="research" href="/live?lane=research" className={link}>
+      Research {n(lanes.research)}
+    </Link>,
+  ];
+  if (breachesMonth !== null && accountsMonth !== null)
+    also.push(
+      <Link key="month" href="/trends#web" className={link}>
+        Breaches this month {n(breachesMonth)}, <span className="num text-ink">{(accountsMonth / 1e6).toFixed(1)} M</span> accounts
+      </Link>,
+    );
+  also.push(
+    <Link key="live" href="/live" className="text-soft hover:text-accent">
+      all {live} on the live board →
+    </Link>,
+  );
+  const machines = [
+    ["/feed.xml", "RSS"],
+    ["/feed.json", "JSON Feed"],
+    ["/changes.json", "changes.json"],
+    ["/llms.txt", "llms.txt"],
+    ["/live.json", "live.json"],
+    ["/stats/home.json", "stats"],
+    ["/data", "every file"],
+  ].map(([href, label]) => (
+    <a key={href} href={href} className={link}>
+      {label}
+    </a>
+  ));
+  return (
+    <footer data-panel-foot className="mt-8 border-t border-line-soft pt-2.5 font-mono text-[12px] text-dim">
+      <FootRow k="Also live" items={also} />
+      {briefing && (
+        <FootRow
+          k="This week"
+          items={[
+            <Link key="headline" href={`/briefing/${briefing.week}`} className="font-sans text-[13px] text-soft hover:text-accent">
+              {briefing.headline}
+            </Link>,
+            <span key="week" className="text-faint">
+              {briefing.week}
+            </span>,
+          ]}
+        />
+      )}
+      <FootRow k="For machines" items={machines} tail={<>data {SITE.dataLicense.name} · NVD public domain · CISA KEV CC0 · HIBP CC BY 4.0 · EPSS by FIRST</>} />
     </footer>
   );
 }

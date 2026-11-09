@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
+import { timeLeft } from "@/lib/panel/dates";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
 import { buildLedger } from "@/lib/panel/ledger";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
@@ -328,5 +329,18 @@ describe("my stack", () => {
     expect(parsePicks("Linux, microsoft,nope,linux", known)).toEqual(["linux", "microsoft"]);
     expect(parsePicks("", known)).toEqual([]);
     expect(parsePicks(null, known)).toEqual([]);
+  });
+});
+
+describe("time left", () => {
+  it("reads in the coarsest unit that still says something, never a ticking clock", () => {
+    const H = 3_600_000;
+    expect(timeLeft(3 * 24 * H + 5 * H)).toBe("3 days");
+    expect(timeLeft(47 * H)).toBe("1 day"); // floored: at least a day
+    expect(timeLeft(24 * H)).toBe("1 day");
+    expect(timeLeft(16 * H + 59 * 60_000 + 59_000)).toBe("16 h");
+    expect(timeLeft(H)).toBe("1 h");
+    expect(timeLeft(32 * 60_000)).toBe("32 min");
+    expect(timeLeft(30_000)).toBe("1 min"); // the last minute rounds up, the countdown says "past due" at zero itself
   });
 });

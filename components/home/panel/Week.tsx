@@ -38,7 +38,7 @@ function Word({ level, children }: { level?: Level | null; children?: ReactNode 
 function Line({ k, label, onOpen, href, children }: { k: string; label: string; onOpen?: () => void; href?: string; children: ReactNode }) {
   const cls = "font-mono text-[12px] uppercase tracking-[0.1em] text-dim";
   return (
-    <li data-line={k} className="grid grid-cols-1 gap-y-0.5 border-t border-line-soft pt-[7px] pb-1.5 sm:grid-cols-[112px_minmax(0,1fr)] sm:items-baseline sm:gap-x-3.5">
+    <li data-line={k} className="grid grid-cols-1 gap-y-0.5 border-t border-line-soft py-2.5 first:border-t-0 first:pt-0 sm:grid-cols-[112px_minmax(0,1fr)] sm:items-baseline sm:gap-x-3.5">
       {onOpen ? (
         <button type="button" onClick={onOpen} aria-label={`${label}, open the list`} className={`${cls} text-left hover:text-accent`}>
           {label}
@@ -56,7 +56,7 @@ function Line({ k, label, onOpen, href, children }: { k: string; label: string; 
 }
 
 function Value({ value, tone = "" }: { value: string; tone?: string }) {
-  return <Num value={value} className={`font-mono text-[24px] font-medium leading-[1.1] text-ink ${tone}`} />;
+  return <Num value={value} className={`font-mono text-[22px] font-medium leading-[1.1] text-ink ${tone}`} />;
 }
 
 function Fact({ children }: { children: ReactNode }) {
@@ -79,25 +79,25 @@ export function Week({ week: w, entries, today, weekFile, breachFile }: { week: 
   const ai = w.ai;
 
   return (
-    <Instrument id="week" label="The week" sub="against a typical one" source="NVD · CISA KEV · HIBP">
-      <ol data-week className="border-b border-line-soft">
+    <Instrument id="week" card="side" label="The week" sub="against a typical one" source="NVD · CISA KEV · HIBP">
+      <ol data-week>
         <Line k="patch-tuesday" label="Patch Tuesday">
           <Value value={shortDate(w.patchTuesday)} />
           <Word>{ptDays === 0 ? "today" : ptDays === 1 ? "tomorrow" : `in ${ptDays} days`}</Word>
           <Fact>
-            Microsoft, Adobe, SAP release day · <Countdown due={w.patchTuesday} start />
+            Microsoft, Adobe, SAP release day · <Countdown due={w.patchTuesday} start className="whitespace-nowrap" />
           </Fact>
         </Line>
         <Line k="published" label="Published" onOpen={w.published.n === null ? undefined : () => setOpen("published")}>
-          {published === null ? <span className="font-mono text-[24px] text-dim">—</span> : <Value value={fmt(published)} />}
+          {published === null ? <span className="font-mono text-[22px] text-dim">—</span> : <Value value={fmt(published)} />}
           <Word level={publishedLevel} />
           {published !== null && w.published.typical !== null && <Vs n={published} max={w.published.typical * 2} typical={w.published.typical} />}
           <Fact>
-            CVEs in 7 days{w.published.typical !== null && <> · typical week <b>{fmt(w.published.typical)}</b></>} · {pulse ? <span className="text-accent">NVD · live</span> : "NVD"}
+            CVEs in 7 days{w.published.typical !== null && <> · typical week <b>{fmt(w.published.typical)}</b></>} · {pulse ? <span className="whitespace-nowrap text-accent">NVD · live</span> : "NVD"}
           </Fact>
         </Line>
         <Line k="critical" label="Critical" onOpen={w.critical.n === null ? undefined : () => setOpen("critical")}>
-          {w.critical.n === null ? <span className="font-mono text-[24px] text-dim">—</span> : <Value value={fmt(w.critical.n)} />}
+          {w.critical.n === null ? <span className="font-mono text-[22px] text-dim">—</span> : <Value value={fmt(w.critical.n)} />}
           {w.critical.typical !== null && <Word level={w.critical.level} />}
           {w.critical.n !== null && w.critical.typical !== null && <Vs n={w.critical.n} max={w.critical.typical * 2} typical={w.critical.typical} />}
           <Fact>
@@ -106,7 +106,7 @@ export function Week({ week: w, entries, today, weekFile, breachFile }: { week: 
           </Fact>
         </Line>
         <Line k="exploited" label="Exploited" onOpen={ex.n === null ? undefined : () => setOpen("exploited")}>
-          {ex.n === null ? <span className="font-mono text-[24px] text-dim">—</span> : <Value value={fmt(ex.n)} tone={ex.n ? "!text-accent" : "!text-dim"} />}
+          {ex.n === null ? <span className="font-mono text-[22px] text-dim">—</span> : <Value value={fmt(ex.n)} tone={ex.n ? "!text-accent" : "!text-dim"} />}
           {ex.n !== null && <Word level={ex.level} />}
           {ex.n !== null && ex.band && <Vs n={ex.n} max={Math.max(12, ex.band.p90 * 1.4)} band={[ex.band.p25, ex.band.p75]} p90={ex.band.p90} />}
           <Fact>
@@ -120,7 +120,7 @@ export function Week({ week: w, entries, today, weekFile, breachFile }: { week: 
           </Fact>
         </Line>
         <Line k="breaches" label="Breaches" onOpen={br.n === null ? undefined : () => setOpen("breaches")}>
-          {br.n === null ? <span className="font-mono text-[24px] text-dim">—</span> : <Value value={fmt(br.n)} tone={br.n ? "" : "!text-dim"} />}
+          {br.n === null ? <span className="font-mono text-[22px] text-dim">—</span> : <Value value={fmt(br.n)} tone={br.n ? "" : "!text-dim"} />}
           {br.n !== null && br.typicalMonth !== null && br.typicalMonth > 0 && <Vs n={br.n} max={br.typicalMonth * 2} typical={br.typicalMonth} />}
           <Fact>
             this month{br.accounts !== null && <> · <b>{(br.accounts / 1e6).toFixed(2)} M</b> accounts</>}

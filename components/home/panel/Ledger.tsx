@@ -21,8 +21,8 @@ import type { IncidentType, Lane } from "@/lib/taxonomy";
  * three groups of one-line rows on one grid: a glyph (the red pulse for open
  * items, a still amber dot for partly patched ones, the severity meter for
  * new records), the name, the CVSS chip, a fact (the CVE id, or the lane and
- * product) and the status over a live sub-line (a deadline countdown, "since
- * 6 Nov", the age). Rows in the visitor's stack carry a red mark, recomputed
+ * product) and the status over a live sub-line (the time left to a deadline,
+ * "since 6 Nov", the age). Rows in the visitor's stack carry a red mark, recomputed
  * in the browser for their own picks; AI records an amber one, and "AI only"
  * keeps only those rows, the group counts dissolving to match. "N later"
  * opens every deadline ahead, "all without a full patch" every record
@@ -31,7 +31,7 @@ import type { IncidentType, Lane } from "@/lib/taxonomy";
 
 const KEV_CATALOG = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog";
 const LANE_WORD: Record<Lane, string> = { patch: "patch", breach: "breach", supply_chain: "supply", research: "research" };
-const ROW = "grid min-h-[34px] grid-cols-[22px_minmax(0,1fr)_38px_132px] items-center gap-x-2.5 border-t border-line-soft py-[3px] sm:grid-cols-[22px_minmax(0,1fr)_38px_minmax(0,120px)_132px] sm:gap-x-3";
+const ROW = "grid min-h-[36px] grid-cols-[22px_minmax(0,1fr)_38px_108px] items-center gap-x-2.5 border-t border-line-soft py-1 sm:grid-cols-[22px_minmax(0,1fr)_38px_minmax(0,120px)_132px] sm:gap-x-3";
 const NAME = "min-w-0 truncate text-[14px] text-ink hover:text-accent";
 const FACT = "hidden truncate font-mono text-[12px] text-dim sm:block";
 const STATUS = "text-right font-mono text-[12px] leading-tight whitespace-nowrap";
@@ -41,8 +41,8 @@ function StackMark({ labels }: { labels: string[] }) {
   if (labels.length === 0) return null;
   return (
     <span data-stack-mark={labels.join(",")} title={`In your stack: ${labels.join(", ")}`} className="inline-flex shrink-0 items-center rounded-[2px] border border-live/45 bg-live/10 px-1.5 py-px font-mono text-[11px] uppercase tracking-[0.06em] text-live">
-      <span className="hidden sm:inline">your stack · {labels[0]}</span>
-      <span className="sm:hidden">stack</span>
+      <span className="hidden sm:inline lg:hidden xl:inline">your stack · {labels[0]}</span>
+      <span className="sm:hidden lg:inline xl:hidden">stack</span>
     </span>
   );
 }
@@ -52,8 +52,8 @@ function AiMark({ type }: { type: IncidentType }) {
   const on = type === "attack_on_ai";
   return (
     <span data-ai-mark={on ? "on" : "using"} title={on ? "Attack on AI: an AI model, agent or AI-powered product was the thing exploited" : "AI-enabled attack: attackers used AI as a meaningful part of the attack"} className="inline-flex shrink-0 items-center rounded-[2px] border border-accent/40 bg-accent-tint px-1.5 py-px font-mono text-[11px] uppercase tracking-[0.06em] text-accent">
-      <span className="hidden sm:inline">{on ? "on AI" : "using AI"}</span>
-      <span className="sm:hidden">AI</span>
+      <span className="hidden sm:inline lg:hidden xl:inline">{on ? "on AI" : "using AI"}</span>
+      <span className="sm:hidden lg:inline xl:hidden">AI</span>
     </span>
   );
 }
@@ -156,14 +156,15 @@ function NewLi({ r, labels, ready, built, first, hidden }: { r: NewRow; labels: 
   );
 }
 
+/** A group's head: its name in the panel titles' sans, smaller, and its counts and links in mono at the right. */
 function Head({ group, label, sub, children }: { group: string; label: string; sub?: string; children: ReactNode }) {
   return (
-    <li data-group={group} className="flex items-baseline justify-between gap-3 pt-[11px] pb-[5px] font-mono text-[12px] uppercase tracking-[0.1em] text-dim">
-      <span className="whitespace-nowrap">
+    <li data-group={group} className="flex items-baseline justify-between gap-3 pt-6 pb-2 first:pt-0">
+      <span className="whitespace-nowrap text-[13px] font-semibold text-soft">
         {label}
-        {sub && <span className="ml-2 hidden normal-case tracking-[0.02em] text-faint sm:inline">{sub}</span>}
+        {sub && <span className="ml-2 hidden font-normal text-faint sm:inline">{sub}</span>}
       </span>
-      <span className="whitespace-nowrap normal-case tracking-[0.02em] text-faint [&_a]:text-accent [&_a:hover]:underline [&_b]:font-medium [&_b]:text-soft [&_button]:text-accent [&_button:hover]:underline">{children}</span>
+      <span className="whitespace-nowrap font-mono text-[12px] text-faint [&_[data-num]]:text-soft [&_a]:text-dim [&_a:hover]:text-accent [&_b]:font-medium [&_b]:text-soft [&_button]:text-dim [&_button:hover]:text-accent">{children}</span>
     </li>
   );
 }
@@ -244,6 +245,7 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
   return (
     <Instrument
       id="ledger"
+      card="lead"
       label="Needs action"
       sub="exploited and still open"
       source={
@@ -259,7 +261,7 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
         </>
       }
     >
-      <ol data-ledger data-filter={filter} className="border-b border-line-soft">
+      <ol data-ledger data-filter={filter}>
         <Head group="due" label="Due this week">
           <Num value={String(ai ? 0 : ledger.due.length)} /> {ledger.due.length === 1 ? "deadline" : "deadlines"}
           {later > 0 && (
