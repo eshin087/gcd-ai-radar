@@ -1,5 +1,240 @@
 [
   {
+    "id": "AIR-2026-1843",
+    "slug": "russian-cloud-firm-beget-rebuilds-after-data-wiper-attack",
+    "title": "Russian Cloud Firm Beget Rebuilds After Data Wiper Attack",
+    "summary": "A data-wiping malware attack struck Russian cloud services provider Beget, forcing the company to rebuild its entire cloud infrastructure from scratch. Operations were severely impacted as the organization recovered from the wiper event.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Beget cloud infrastructure"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/russian-cloud-firm-beget-rebuilds-from-scratch-after-data-wiper-attack",
+        "publisher": "BleepingComputer",
+        "title": "Russian cloud firm Beget rebuilds from scratch after data wiper attack",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "wiper",
+      "ransomware",
+      "beget",
+      "cloud_infrastructure"
+    ],
+    "created_at": "2026-11-09T18:41:09.590Z",
+    "updated_at": "2026-11-09T18:41:09.590Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Russian cloud firm Beget rebuilds from scratch after data wiper attack",
+        "source_url": "https://bleepingcomputer.com/news/security/russian-cloud-firm-beget-rebuilds-from-scratch-after-data-wiper-attack",
+        "added_at": "2026-11-09T18:41:09.590Z"
+      }
+    ],
+    "action": "Isolate affected cloud infrastructure and verify backup integrity.",
+    "severity_note": "Confirmed real-world operational loss requiring a complete infrastructure rebuild.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1842",
+    "slug": "vulnerability-in-claude-document-processing-tool-allows-code",
+    "title": "Vulnerability in Claude Document-Processing Tool Allows Code Execution",
+    "summary": "Attackers can exploit a flaw in Claude's document-processing tool by supplying a crafted temporary file. This vulnerability enables the AI assistant to execute arbitrary code on the user's local machine.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 3,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux",
+        "publisher": "Dark Reading",
+        "title": "Attackers Crash Claude's 'Office Party' Flaw to Run Malicious Code on Linux",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "code_execution",
+      "claude",
+      "agent_hijack"
+    ],
+    "created_at": "2026-11-09T18:41:09.590Z",
+    "updated_at": "2026-11-09T18:41:09.590Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Attackers Crash Claude's 'Office Party' Flaw to Run Malicious Code on Linux",
+        "source_url": "https://darkreading.com/endpoint-security/attackers-claude-office-party-flaw-malicious-code-linux",
+        "added_at": "2026-11-09T18:41:09.590Z"
+      }
+    ],
+    "action": "Avoid opening untrusted documents or files with Claude tools until a patch or mitigation is provided.",
+    "severity_note": "Confirmed vulnerability allowing code execution on user machines via AI agent tool abuse.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1841",
+    "slug": "hackers-exploit-qubole-aws-access-to-breach-customer-account",
+    "title": "Hackers Exploit Qubole AWS Access to Breach Customer Accounts",
+    "summary": "Attackers used Qubole platform AWS access credentials to breach multiple customer accounts between October 14 and October 26. The intruders stole stored secrets and data from the affected environments.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "Amazon"
+    ],
+    "products": [
+      "Qubole"
+    ],
+    "incident_date": "2026-10-26",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-quboles-trusted-aws.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploit Qubole's Trusted AWS Access to Breach Customer Accounts and Steal Data",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "breach",
+      "aws",
+      "qubole",
+      "credential_theft"
+    ],
+    "created_at": "2026-11-09T18:41:09.590Z",
+    "updated_at": "2026-11-09T18:41:09.590Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Hackers Exploit Qubole's Trusted AWS Access to Breach Customer Accounts and Steal Data",
+        "source_url": "https://thehackernews.com/2026/11/hackers-exploit-quboles-trusted-aws.html",
+        "added_at": "2026-11-09T18:41:09.590Z"
+      }
+    ],
+    "action": "Audit AWS IAM roles and review logs for unauthorized access originating from Qubole integration credentials.",
+    "severity_note": "Confirmed real-world data and secret theft across multiple customer cloud accounts.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1840",
+    "slug": "hackers-compromise-ethersphere-s-bee-js-and-swarm-desktop-wi",
+    "title": "Hackers Compromise Ethersphere's bee-js and Swarm Desktop with Malware",
+    "summary": "Attackers compromised Ethersphere's release automation to publish malicious versions of bee-js and Swarm Desktop. The packages steal wallet keys, stored passwords, and install a backdoor.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "bee-js",
+      "Swarm Desktop"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-compromise-etherspheres-bee-js.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Compromise Ethersphere's bee-js and Swarm Desktop to Deliver Wallet-Stealing Malware",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply_chain",
+      "malware",
+      "ethersphere",
+      "swarm"
+    ],
+    "created_at": "2026-11-09T18:41:09.590Z",
+    "updated_at": "2026-11-09T18:41:09.590Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "bee-js 13.3.0",
+      "Swarm Desktop 0.56.2"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Hackers Compromise Ethersphere's bee-js and Swarm Desktop to Deliver Wallet-Stealing Malware",
+        "source_url": "https://thehackernews.com/2026/11/hackers-compromise-etherspheres-bee-js.html",
+        "added_at": "2026-11-09T18:41:09.590Z"
+      }
+    ],
+    "action": "Downgrade or remove affected versions of bee-js and Swarm Desktop immediately and check for compromised wallet keys.",
+    "severity_note": "Malicious package with confirmed reach and credential theft impact.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1839",
     "slug": "cve-2026-116779-signalwire-freeswitch-code-injection-vulnera",
     "title": "CVE-2026-116779: SignalWire FreeSwitch Code Injection Vulnerability",
@@ -7879,9 +8114,15 @@
         "publisher": "Unit 42",
         "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration System",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/france-blames-iranian-hackers-for-supermarket-attacks-that-sparked-fires",
+        "publisher": "BleepingComputer",
+        "title": "France blames Iranian hackers for supermarket attacks that sparked fires",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 9,
+    "source_count": 10,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -7892,7 +8133,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-09T18:41:09.590Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -7936,6 +8177,12 @@
         "title": "US agencies urge organizations to harden refrigeration controllers amid attacks on supermarkets and blood banks",
         "source_url": "https://securityweek.com/us-agencies-urge-organizations-to-harden-refrigeration-controllers",
         "added_at": "2026-11-06T16:25:59.244Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "France attributes the supermarket refrigeration cyberattacks to Iranian state-backed hackers and reports they caused at least 15 fires.",
+        "source_url": "https://bleepingcomputer.com/news/security/france-blames-iranian-hackers-for-supermarket-attacks-that-sparked-fires",
+        "added_at": "2026-11-09T18:41:09.590Z"
       }
     ],
     "action": "Review and harden industrial refrigeration controllers against remote tampering.",

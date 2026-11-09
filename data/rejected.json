@@ -1,5 +1,15 @@
 [
   {
+    "key": "2b085331b00a94a4",
+    "title": "Cisco Meraki Security Hardening Release: October 2026",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-meraki-os-drbEX9GH?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Meraki+Security+Hardening+Release%3A+October+2026%26vs_k%3D1",
+    "publisher": "Cisco",
+    "source_id": "cisco-psirt",
+    "reason": "out of scope: Vendor product launch or routine advisory roundup without specific named software vulnerabilities or exploitation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T18:41:09.590Z"
+  },
+  {
     "key": "2c42fb6170314159",
     "title": "⚡ Weekly Recap: SSHole Exploited, APT Root RCE, Robot Takeovers, 15K Hacked Sites, and More",
     "url": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html",
