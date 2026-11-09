@@ -20,6 +20,24 @@ export interface CommitResult {
 export const NO_SITE_CHANGE = "[no site change]";
 
 /**
+ * When the site was last rebuilt, as far as the branch knows: the committer
+ * date (ISO 8601) of the newest commit whose subject lacks the marker, which
+ * is the commit Vercel last built (a data run that was due a rebuild, a merge
+ * to main, a manual run). Null when git cannot say (no repository, a shallow
+ * clone holding only marked commits), so the caller falls back to the run's
+ * own start hour.
+ */
+export async function lastDeployingCommitAt(): Promise<string | null> {
+  try {
+    const out = await git(["log", "-1", "--format=%cI", "--fixed-strings", `--grep=${NO_SITE_CHANGE}`, "--invert-grep"]);
+    return out && Number.isFinite(Date.parse(out)) ? out : null;
+  } catch (err) {
+    log.warn("git: could not read the last deploying commit", { error: errorMessage(err).slice(0, 200) });
+    return null;
+  }
+}
+
+/**
  * Stages the data directory, commits as the configured identity (the repo
  * owner's, so Vercel's Hobby plan deploys the push) and pushes with a
  * rebase-and-retry loop. Never force-pushes. Pings the deploy hook if set,

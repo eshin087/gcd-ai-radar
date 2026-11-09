@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
 import { briefingCommitMessage, briefingMarkdown, readBriefings, runBriefing } from "./briefing";
-import { commitAndPush, NO_SITE_CHANGE } from "./git";
+import { commitAndPush, lastDeployingCommitAt, NO_SITE_CHANGE } from "./git";
 import { loadConfig } from "./lib/config";
 import { errorMessage, log, setVerbose } from "./lib/log";
 import { BOOKKEEPING_FILES, loadState } from "./lib/state";
@@ -63,17 +63,25 @@ function parseArgs(argv: string[]): Args {
 }
 
 /**
- * The UTC hours whose scheduled runs rebuild the site. Every run commits and
- * pushes its data, but only a run started in one of these hours leaves the
- * marker off its subject and pings the deploy hook; the others carry
- * "[no site change]" and Vercel skips their build. Until 2026-11-01 every
- * run with new data deployed (about 30 builds a day of a 3,400-page site),
- * which filled the Vercel account's deployment storage. Two windows a day
- * keep the site within half a day of the data; a merge to main still deploys
- * at once with everything collected so far. COLLECTOR_DEPLOY_HOURS (comma-
- * separated UTC hours, "*" for every run) overrides the default.
+ * The deploy windows: the UTC hours by which the site must have been rebuilt.
+ * Every run commits and pushes its data, but a scheduled run leaves the
+ * marker off its subject and pings the deploy hook only when a window has
+ * opened since the last commit that rebuilt the site (windowOpenedSince); the
+ * others carry "[no site change]" and Vercel skips their build. Until
+ * 2026-11-01 every run with new data deployed (about 30 builds a day of a
+ * 3,400-page site), which filled the Vercel account's deployment storage.
+ * Until 2026-11-09 a run had to start inside a window hour, and GitHub's thin
+ * schedule (three to five runs a day) skipped both windows on some days, so
+ * the site once went three days without a rebuild. Two windows a day keep the
+ * site within half a day of the data at no more than two builds a day from
+ * the collector; a merge to main still deploys at once with everything
+ * collected so far. COLLECTOR_DEPLOY_HOURS (comma-separated UTC hours, "*"
+ * for every run) overrides the default.
  */
 export const DEFAULT_DEPLOY_HOURS_UTC: readonly number[] = [6, 18];
+
+const HOUR_MS = 3_600_000;
+const DAY_MS = 24 * HOUR_MS;
 
 export function deployHours(env: Record<string, string | undefined> = process.env): readonly number[] | "*" {
   const raw = env.COLLECTOR_DEPLOY_HOURS?.trim();
@@ -83,7 +91,7 @@ export function deployHours(env: Record<string, string | undefined> = process.en
   return hours.length ? hours : DEFAULT_DEPLOY_HOURS_UTC;
 }
 
-/** True when a run started at `startedAt` (ISO, UTC) falls in a deploy window. */
+/** True when a run started at `startedAt` (ISO, UTC) falls in a deploy window: the fallback when git cannot say when the site was last rebuilt. */
 export function inDeployWindow(startedAt: string, hours: readonly number[] | "*" = deployHours()): boolean {
   if (hours === "*") return true;
   const h = new Date(startedAt).getUTCHours();
@@ -91,11 +99,35 @@ export function inDeployWindow(startedAt: string, hours: readonly number[] | "*"
 }
 
 /**
+ * True when a deploy window opened after `sinceAt` (the last commit that
+ * rebuilt the site) and no later than `startedAt` (this run's start). The
+ * windows are deadlines, not slots a run has to hit: a run deploys when the
+ * site has missed one, however thin the schedule, and a second run inside the
+ * same window does not deploy again.
+ */
+export function windowOpenedSince(sinceAt: string, startedAt: string, hours: readonly number[] | "*" = deployHours()): boolean {
+  if (hours === "*") return true;
+  const from = Date.parse(sinceAt);
+  const to = Date.parse(startedAt);
+  if (!hours.length || !Number.isFinite(from) || !Number.isFinite(to) || to <= from) return false;
+  if (to - from >= DAY_MS) return true; // a full day holds every window hour once
+  const d = new Date(from);
+  const midnight = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  for (const day of [midnight, midnight + DAY_MS]) {
+    for (const h of hours) {
+      const w = day + h * HOUR_MS;
+      if (w > from && w <= to) return true;
+    }
+  }
+  return false;
+}
+
+/**
  * The data commit's subject: what the run changed. The subject ends with the
  * marker vercel.json's ignoreCommand looks for, so no build is spent on it,
  * when only bookkeeping files changed (the run ledger, seen and pending lists,
- * collector state) or when the run is outside a deploy window (`deployNow`
- * false; see DEFAULT_DEPLOY_HOURS_UTC).
+ * collector state) or when no deploy window has opened since the site was
+ * last rebuilt (`deployNow` false; see windowOpenedSince).
  */
 export function runCommitMessage(record: RunRecord, changedFiles: string[] = [], radarChanged = false, deployNow = true): string {
   const c = record.counts;
@@ -168,10 +200,16 @@ async function main() {
       const sideChanged = radarChanged || statsChanged;
       let unpushed = false;
       if (commit && (summary.changedFiles.length || sideChanged)) {
-        // a scheduled run deploys only in a deploy window; a manual run (the owner at the keyboard) deploys as before
-        const deployNow = opts.mode !== "scheduled" || inDeployWindow(summary.record.started_at);
+        // a scheduled run rebuilds the site only when a deploy window has opened since the last commit that
+        // rebuilt it (the windows are deadlines, so a thin schedule cannot leave the site stale for days);
+        // a manual run (the owner at the keyboard) deploys as before
+        const lastRebuild = opts.mode === "scheduled" ? await lastDeployingCommitAt() : null;
+        const deployNow =
+          opts.mode !== "scheduled" ||
+          (lastRebuild ? windowOpenedSince(lastRebuild, summary.record.started_at) : inDeployWindow(summary.record.started_at));
         const quiet = !deployNow || siteUnchanged(summary.changedFiles, sideChanged);
-        if (!deployNow) log.info("outside a deploy window: the data is committed, the site is rebuilt at the next window", { hours: deployHours() });
+        if (!deployNow) log.info("no deploy window has opened since the site was last rebuilt: the data is committed, the site is rebuilt at the next window", { last_rebuild: lastRebuild, hours: deployHours() });
+        else if (opts.mode === "scheduled") log.info("a deploy window has opened since the site was last rebuilt: this run rebuilds it", { last_rebuild: lastRebuild, hours: deployHours() });
         const result = await commitAndPush(runCommitMessage(summary.record, summary.changedFiles, sideChanged, deployNow), { deploy: !quiet });
         unpushed = result.committed && !result.pushed;
       }

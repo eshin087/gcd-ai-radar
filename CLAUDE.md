@@ -9,8 +9,9 @@ The Vercel account is on the Hobby plan: **10 GB of deployment storage for every
 retained deployment counts in full. On 2026-11-01 it showed 347 GB. This site was one of the two causes: every
 collector run with new data rebuilt and redeployed all ~3,400 pages, about 30 deployments a day.
 
-1. **Data commits don't deploy on their own.** A scheduled collector run rebuilds the site only in a deploy window
-   (06 and 18 UTC, `DEFAULT_DEPLOY_HOURS_UTC` in `collector/cli.ts`); every other run commits with
+1. **Data commits don't deploy on their own.** A scheduled collector run rebuilds the site at most once per deploy
+   window (06 and 18 UTC, `DEFAULT_DEPLOY_HOURS_UTC` in `collector/cli.ts`): the windows are deadlines, and a run
+   rebuilds only when one has opened since the last commit that rebuilt the site; every other run commits with
    `[no site change]` and `vercel.json`'s `ignoreCommand` skips the build. Keep that marker on any new automated
    commit that does not need the site rebuilt (stats refreshes, backfills, bookkeeping), and never add a schedule,
    workflow or deploy hook that deploys more often without the user's yes.
