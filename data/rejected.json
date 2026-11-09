@@ -1,5 +1,25 @@
 [
   {
+    "key": "c42565964e45b2d8",
+    "title": "Companies seeking an MSP doubt their ability to spot cyberattacks",
+    "url": "https://helpnetsecurity.com/2026/11/09/barracuda-msp-cybersecurity-services-expectations-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Survey and report finding piece about MSP customers.",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-09T06:13:07.428Z"
+  },
+  {
+    "key": "61841355e22cb159",
+    "title": "Wirken: Open-source AI agent gateway",
+    "url": "https://helpnetsecurity.com/2026/11/09/wirken-open-source-ai-agent-gateway",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and security tool announcement for an open-source AI gateway.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-09T06:13:07.428Z"
+  },
+  {
     "key": "909ef5d9d0a7e7bf",
     "title": "An average of 8 minutes is all hackers need to log in with stolen credentials",
     "url": "https://helpnetsecurity.com/2026/11/09/elastic-businesses-remote-access-attacks-report",
