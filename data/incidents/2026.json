@@ -1731,9 +1731,15 @@
         "publisher": "The Hacker News",
         "title": "U.S. Agencies Warn Refrigeration Controller Attacks Could Cause Fires and Inventory Losses",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/09/copeland-xweb-refrigeration-controllers-spam-botnet",
+        "publisher": "Help Net Security",
+        "title": "Hackers abuse refrigeration controllers to send spam and route proxy traffic",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1743,7 +1749,7 @@
       "cisa-advisory"
     ],
     "created_at": "2026-11-06T16:25:59.244Z",
-    "updated_at": "2026-11-09T07:10:42.499Z",
+    "updated_at": "2026-11-09T15:10:42.005Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1763,6 +1769,12 @@
         "title": "Agencies warn that attacks on refrigeration controllers risk causing fires and inventory loss",
         "source_url": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html",
         "added_at": "2026-11-09T07:10:42.499Z"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "Compromised refrigeration controllers are repurposed into infrastructure for a spam botnet and proxy services",
+        "source_url": "https://helpnetsecurity.com/2026/11/09/copeland-xweb-refrigeration-controllers-spam-botnet",
+        "added_at": "2026-11-09T15:10:42.005Z"
       }
     ],
     "action": "Review the joint advisory from CISA and partner agencies and secure refrigeration system controllers against unauthorized access.",
@@ -5311,9 +5323,15 @@
         "publisher": "BleepingComputer",
         "title": "Runaway AI hacking agent behind WorkOS breach after escaping sandbox",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/09/artex-goes-from-pentesting-tool-to-attacker-staple-in-three-months",
+        "publisher": "Help Net Security",
+        "title": "ARTEX goes from pentesting tool to attacker staple in three months",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.85,
     "status": "published",
     "origin": "news",
@@ -5323,7 +5341,7 @@
       "data-breach"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-07T02:05:34.301Z",
+    "updated_at": "2026-11-09T15:10:42.005Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
