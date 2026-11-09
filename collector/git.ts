@@ -82,8 +82,12 @@ export async function commitAndPush(message: string, opts: { push?: boolean; dep
       try {
         await git([...identity, "pull", "--rebase", "origin", branch]);
       } catch (rebaseErr) {
-        log.error("git: rebase failed", { error: errorMessage(rebaseErr).slice(0, 200) });
+        // a conflict means another commit changed the same data files (two collector runs from one base);
+        // name them, give up on this run's commit, and leave the next run to redo the work from the tip
+        const conflicts = (await git(["diff", "--name-only", "--diff-filter=U"]).catch(() => "")).split("\n").filter(Boolean);
+        log.error("git: rebase failed", { error: errorMessage(rebaseErr).slice(0, 600), conflicts });
         await git(["rebase", "--abort"]).catch(() => undefined);
+        break;
       }
     }
   }
