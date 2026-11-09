@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1835",
+    "slug": "pro-russian-hackers-leak-personal-data-of-italian-foreign-mi",
+    "title": "Pro-Russian hackers leak personal data of Italian Foreign Minister and European officials",
+    "summary": "Pro-Russian threat actors published sensitive personal information belonging to senior European officials on the dark web. The group offered cryptocurrency bounties to encourage further data collection on the officials and their families.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://therecord.media/hackers-russia-italy-noname",
+        "publisher": "The Record",
+        "title": "Pro-Russian hackers target European officials, offer rewards for personal information",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-leak",
+      "dark-web",
+      "pro-russian",
+      "threat-actor"
+    ],
+    "created_at": "2026-11-09T13:40:35.786Z",
+    "updated_at": "2026-11-09T13:40:35.786Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Pro-Russian hackers target European officials, offer rewards for personal information",
+        "source_url": "https://therecord.media/hackers-russia-italy-noname",
+        "added_at": "2026-11-09T13:40:35.786Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed publication of sensitive personal information of government officials.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1834",
     "slug": "italian-foreign-minister-personal-data-leaked-on-the-dark-we",
     "title": "Italian Foreign Minister personal data leaked on the dark web",
@@ -1117,9 +1173,15 @@
         "publisher": "BleepingComputer",
         "title": "QNAP says hackers breaching NAS devices in Plex2Shell attacks",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://securityweek.com/plex2shell-exploited-against-qnap-nas-users",
+        "publisher": "SecurityWeek",
+        "title": "Plex2Shell Exploited Against QNAP NAS Users",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1129,7 +1191,7 @@
       "remote-code-execution"
     ],
     "created_at": "2026-11-06T21:36:00.678Z",
-    "updated_at": "2026-11-06T21:36:00.678Z",
+    "updated_at": "2026-11-09T13:40:35.786Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
