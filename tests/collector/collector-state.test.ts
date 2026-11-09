@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DEFAULT_DEPLOY_HOURS_UTC, deployHours, inDeployWindow, runCommitMessage, siteUnchanged, validateLifecycle } from "@/collector/cli";
+import { DEFAULT_DEPLOY_HOURS_UTC, deployHours, inDeployWindow, runCommitMessage, siteUnchanged, validateLifecycle, windowOpenedSince } from "@/collector/cli";
 import { NO_SITE_CHANGE } from "@/collector/git";
 import { CollectorStateSchema, emptyCollectorState, pruneCollectorState, serialize, type State } from "@/collector/lib/state";
 import { DUE_HOURS, isDue, lastSuccessBySource } from "@/collector/pipeline/run";
@@ -118,6 +118,32 @@ describe("deploy windows", () => {
     expect(inDeployWindow("2026-10-25T13:17:00.000Z", "*")).toBe(true);
     expect(deployHours({ COLLECTOR_DEPLOY_HOURS: "x,99" })).toEqual(DEFAULT_DEPLOY_HOURS_UTC);
     expect(inDeployWindow("not a date", [6])).toBe(false);
+  });
+
+  it("are deadlines: a run deploys when a window opened since the last rebuild, and only once per window", () => {
+    const H = DEFAULT_DEPLOY_HOURS_UTC;
+    // GitHub skipped the 06:17 and 18:17 slots for two days: the 08:49 run still deploys, the 06:00 deadline has passed
+    expect(windowOpenedSince("2026-11-05T19:01:00.000Z", "2026-11-07T08:49:00.000Z", H)).toBe(true);
+    // the same day's 15:41 run does not (no window between 08:49 and 15:41), the 20:14 run does (18:00)
+    expect(windowOpenedSince("2026-11-07T08:49:00.000Z", "2026-11-07T15:41:00.000Z", H)).toBe(false);
+    expect(windowOpenedSince("2026-11-07T08:49:00.000Z", "2026-11-07T20:14:00.000Z", H)).toBe(true);
+    // two runs inside one window hour: the first deploys, the second waits for the next window
+    expect(windowOpenedSince("2026-11-08T05:40:00.000Z", "2026-11-08T06:05:00.000Z", H)).toBe(true);
+    expect(windowOpenedSince("2026-11-08T06:05:00.000Z", "2026-11-08T06:40:00.000Z", H)).toBe(false);
+    // a merge to main at 18:10 already rebuilt the site, so the 18:50 run waits for 06:00
+    expect(windowOpenedSince("2026-11-08T18:10:00.000Z", "2026-11-08T18:50:00.000Z", H)).toBe(false);
+    // the window's first instant belongs to it; a day boundary in between is fine
+    expect(windowOpenedSince("2026-11-08T05:59:59.999Z", "2026-11-08T06:00:00.000Z", H)).toBe(true);
+    expect(windowOpenedSince("2026-11-08T20:00:00.000Z", "2026-11-09T06:30:00.000Z", H)).toBe(true);
+    expect(windowOpenedSince("2026-11-08T20:00:00.000Z", "2026-11-09T05:30:00.000Z", H)).toBe(false);
+    // a long gap always deploys; "*" deploys every run; junk, inverted times and no hours never do
+    expect(windowOpenedSince("2026-10-01T00:00:00.000Z", "2026-11-08T06:40:00.000Z", H)).toBe(true);
+    expect(windowOpenedSince("2026-11-08T06:05:00.000Z", "2026-11-08T06:40:00.000Z", "*")).toBe(true);
+    expect(windowOpenedSince("not a date", "2026-11-08T06:40:00.000Z", H)).toBe(false);
+    expect(windowOpenedSince("2026-11-08T06:40:00.000Z", "2026-11-08T06:05:00.000Z", H)).toBe(false);
+    expect(windowOpenedSince("2026-11-08T05:40:00.000Z", "2026-11-08T06:05:00.000Z", [])).toBe(false);
+    // git's own committer-date format is accepted
+    expect(windowOpenedSince("2026-11-05T19:01:12+00:00", "2026-11-07T08:49:00.000Z", H)).toBe(true);
   });
 });
 
