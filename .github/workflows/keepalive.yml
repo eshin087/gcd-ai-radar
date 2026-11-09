@@ -2,7 +2,8 @@ name: keepalive
 
 # GitHub disables scheduled workflows in repositories with no activity for
 # 60 days. The collector's own commits are the primary signal; this weekly job
-# re-enables the collect workflow through the API as a belt-and-braces measure.
+# re-enables the collect workflows (the main sweep and the GDELT pass) through
+# the API as a belt-and-braces measure.
 
 on:
   schedule:
@@ -18,9 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Re-enable the collect workflow
+      - name: Re-enable the collect workflows
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/collect.yml/enable"
-          echo "collect.yml enabled at $(date -u +%FT%TZ)"
+          gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/collect-gdelt.yml/enable"
+          echo "collect.yml and collect-gdelt.yml enabled at $(date -u +%FT%TZ)"

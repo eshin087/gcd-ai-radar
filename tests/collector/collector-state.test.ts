@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_DEPLOY_HOURS_UTC, deployHours, inDeployWindow, runCommitMessage, siteUnchanged, validateLifecycle, windowOpenedSince } from "@/collector/cli";
 import { NO_SITE_CHANGE } from "@/collector/git";
+import { loadConfig } from "@/collector/lib/config";
 import { CollectorStateSchema, emptyCollectorState, pruneCollectorState, serialize, type State } from "@/collector/lib/state";
 import { DUE_HOURS, isDue, lastSuccessBySource } from "@/collector/pipeline/run";
 import type { RunRecord } from "@/lib/schema";
@@ -70,6 +71,15 @@ describe("schedules", () => {
     expect(isDue({ schedule: "daily" }, "2026-10-24T14:00:00.000Z", now)).toBe(true);
     expect(isDue({ schedule: "every_run" }, "2026-10-25T11:59:00.000Z", now)).toBe(true);
     expect(isDue({ schedule: "monthly" }, undefined, now)).toBe(true);
+  });
+
+  it("never finds a source its own workflow reads due, not even one that has never run", () => {
+    const now = new Date("2026-11-08T12:00:00.000Z");
+    expect(DUE_HOURS.own_workflow).toBe(Infinity);
+    expect(isDue({ schedule: "own_workflow" }, undefined, now)).toBe(false);
+    expect(isDue({ schedule: "own_workflow" }, "2026-01-01T00:00:00.000Z", now)).toBe(false);
+    // the GDELT pass is the one such source (collect-gdelt.yml names it with --source=gdelt)
+    expect(loadConfig().sources.find((s) => s.id === "gdelt")).toMatchObject({ schedule: "own_workflow", enabled: true });
   });
 });
 

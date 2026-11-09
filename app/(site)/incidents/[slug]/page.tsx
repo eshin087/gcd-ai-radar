@@ -6,7 +6,8 @@ import { IncidentRow } from "@/components/incidents/IncidentRow";
 import { AiChip, CategoryBadge, CvssChip, LaneBadge, PatchBadge, SeverityBadge, StateDot } from "@/components/ui/Badge";
 import { buildBrief } from "@/lib/brief";
 import { ADVISORY_PUBLISHERS, VULN_DB_PUBLISHERS, isDisclosedIncident } from "@/lib/counting";
-import { incidentBySlug, loadIncidents, siteUrl } from "@/lib/data";
+import { incidentBySlug, loadIncidents, loadStats, siteUrl } from "@/lib/data";
+import { EPSS_TOOLTIP, EPSS_URL, epssFor, epssPercentileLabel, epssScoreLabel } from "@/lib/epss";
 import { approxDateLabel, dateLabel, timestampLabel } from "@/lib/format";
 import { lastActivity, timelineOf } from "@/lib/lifecycle";
 import { rowOf } from "@/lib/live";
@@ -94,6 +95,7 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
   const { incidents } = await loadIncidents();
   const incident = incidentBySlug(incidents, slug);
   if (!incident) notFound();
+  const stats = await loadStats();
   const related = relatedIncidents(incidents, incident);
   const owasp = owaspFor(incident);
   const atlas = atlasFor(incident);
@@ -111,6 +113,8 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
   const kev = isKevMarked(incident);
   const lastUpdate = lastActivity(incident);
   const scored = incident.cvss !== null || cves.length > 0;
+  // the highest EPSS score among the record's CVEs, from the stats stage's file; null when it knows none of them
+  const epss = epssFor(cves, stats.epss);
 
   return (
     <article className="max-w-4xl space-y-8">
@@ -169,12 +173,20 @@ export default async function IncidentPage({ params }: { params: Promise<{ slug:
               {incident.cvss !== null ? <CvssChip score={incident.cvss} /> : <span className="text-faint">not scored</span>}
             </Fact>
           )}
-          {/*
-            EPSS slot: a later step fills it from data/stats/epss.json with the
-            score, the percentile and the model date for the record's CVE ids
-            ("EPSS 0.94 · top 1% · 2026-10-26", "EPSS scores by FIRST"). Until
-            then nothing renders here, so no row shows a number it does not have.
-          */}
+          {/* EPSS: the score, the percentile and the model date ("0.94 · top 1% · 2026-10-26"); nothing when the file knows none of the record's CVEs, so no row shows a number it does not have */}
+          {epss && (
+            <Fact label="EPSS" title={EPSS_TOOLTIP}>
+              {/* each token stays whole, so a narrow cell wraps at the separators and never inside the date */}
+              <span className="num">{epssScoreLabel(epss.epss)}</span> · <span className="whitespace-nowrap">{epssPercentileLabel(epss.percentile)}</span> ·{" "}
+              <span className="num whitespace-nowrap">{epss.model_date}</span>
+              <div className="text-[12px] text-faint">
+                <a href={EPSS_URL} rel="noopener noreferrer" target="_blank" className="hover:text-ink">
+                  EPSS scores by FIRST
+                </a>
+                {cves.length > 1 && <span className="num"> · {epss.cve}</span>}
+              </div>
+            </Fact>
+          )}
           {kev && (
             <Fact label="KEV" title="Listed in CISA's Known Exploited Vulnerabilities catalog">
               <span className="text-live">listed</span>{" "}

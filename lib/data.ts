@@ -77,9 +77,14 @@ export const loadRadar = cache(async (): Promise<Radar | null> => {
 /**
  * The statistics files the collector's stats stage writes
  * (lib/stats-schema.ts): each one null when absent or invalid, so the home
- * page hides a panel instead of failing the build.
+ * page hides a panel instead of failing the build. Memoized like the dataset
+ * above: the incident pages read the EPSS file too, and 2 MB of JSON parsed
+ * and validated once per page would be felt across 3,400 of them.
  */
-export const loadStats = cache(async (): Promise<StatsFiles> => {
+let statsMemo: { signature: string; data: StatsFiles } | null = null;
+let statsInflight: Promise<StatsFiles> | null = null;
+
+async function loadStatsFresh(): Promise<StatsFiles> {
   const dir = path.join(DATA_DIR, "stats");
   const read = async <T>(file: string, schema: ZodType<T>): Promise<T | null> => {
     try {
@@ -88,6 +93,9 @@ export const loadStats = cache(async (): Promise<StatsFiles> => {
       return null;
     }
   };
+  // a missing file is part of the signature (its stat fails), so the memo also knows when one appears
+  const signature = await Promise.all(Object.values(STATS_FILES).map((f) => fs.stat(path.join(dir, f)).then((st) => `${f}:${st.mtimeMs}:${st.size}`, () => `${f}:absent`))).then((parts) => parts.join("|"));
+  if (statsMemo && statsMemo.signature === signature) return statsMemo.data;
   const [nvdCounts, cvesRecent, daily, kev, hibp, epss] = await Promise.all([
     read(STATS_FILES.nvdCounts, STATS_SCHEMAS.nvdCounts),
     read(STATS_FILES.cvesRecent, STATS_SCHEMAS.cvesRecent),
@@ -96,7 +104,18 @@ export const loadStats = cache(async (): Promise<StatsFiles> => {
     read(STATS_FILES.hibp, STATS_SCHEMAS.hibp),
     read(STATS_FILES.epss, STATS_SCHEMAS.epss),
   ]);
-  return { nvdCounts, cvesRecent, daily, kev, hibp, epss };
+  const data: StatsFiles = { nvdCounts, cvesRecent, daily, kev, hibp, epss };
+  statsMemo = { signature, data };
+  return data;
+}
+
+export const loadStats = cache(async (): Promise<StatsFiles> => {
+  if (!statsInflight) {
+    statsInflight = loadStatsFresh().finally(() => {
+      statsInflight = null;
+    });
+  }
+  return statsInflight;
 });
 
 /** Weekly briefings from data/briefings/<week>.json, newest week first; empty until the first Monday run. */
