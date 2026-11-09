@@ -7172,9 +7172,15 @@
         "publisher": "Dark Reading",
         "title": "PapRAT Cyber-Espionage Campaign Leaves a 'Bitter' Taste in South Asia",
         "published_at": "2026-11-02"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/bitter-hackers-deploy-new-paprat.html",
+        "publisher": "The Hacker News",
+        "title": "Bitter Hackers Deploy New PapRAT Backdoor in Cyberespionage Campaign Targeting South Asia",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -7185,7 +7191,7 @@
       "south-asia"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-02T20:57:03.700Z",
+    "updated_at": "2026-11-09T15:41:07.167Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
