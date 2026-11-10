@@ -1,5 +1,124 @@
 [
   {
+    "id": "AIR-2026-1859",
+    "slug": "blind-eagle-uses-fake-court-notices-to-deliver-remote-access",
+    "title": "Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan in Latin America",
+    "summary": "The threat actor Blind Eagle launched a phishing campaign using counterfeit court notices to distribute a RAT related to AsyncRAT/DCRat. The campaign targets organizations across Latin America and has successfully delivered the malware.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AsyncRAT",
+      "DCRat"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/blind-eagle-uses-fake-court-notices-to.html",
+        "publisher": "The Hacker News",
+        "title": "Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan Across Latin America",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "rat",
+      "blind_eagle"
+    ],
+    "created_at": "2026-11-10T17:00:12.508Z",
+    "updated_at": "2026-11-10T17:00:12.508Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan Across Latin America",
+        "source_url": "https://thehackernews.com/2026/11/blind-eagle-uses-fake-court-notices-to.html",
+        "added_at": "2026-11-10T17:00:12.508Z"
+      }
+    ],
+    "action": "Implement phishing awareness training and block suspicious email attachments",
+    "severity_note": "Confirmed delivery of a remote access trojan to victims",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1858",
+    "slug": "attackers-exploit-ahsaycbs-flaws-to-deploy-sandbox-evading-p",
+    "title": "Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor",
+    "summary": "Researchers observed attackers exploiting CVE-2026-105133 and CVE-2026-105134 in AhsayCBS to install a Python-based backdoor. The chain bypasses authentication and runs arbitrary commands on compromised systems.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AhsayCBS"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html",
+        "publisher": "The Hacker News",
+        "title": "Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-105133",
+      "CVE-2026-105134",
+      "backdoor",
+      "sandbox_evasion"
+    ],
+    "created_at": "2026-11-10T17:00:12.508Z",
+    "updated_at": "2026-11-10T17:00:12.508Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [
+      "CVE-2026-105134",
+      "CVE-2026-105133"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor",
+        "source_url": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html",
+        "added_at": "2026-11-10T17:00:12.508Z"
+      }
+    ],
+    "action": "Apply the released patches for CVE-2026-105133 and CVE-2026-105134 and monitor for the backdoor",
+    "severity_note": "Exploitation observed in the wild delivering a backdoor",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1857",
     "slug": "cve-2026-113663-sandboxshelltool-newline-injection-bypasses",
     "title": "CVE-2026-113663: SandboxShellTool newline injection bypasses allowlist, enabling arbitrary command execution",
@@ -273,9 +392,15 @@
         "publisher": "docs.vates.tech",
         "title": "Critical Xen Orchestra authentication bypass is being actively exploited",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers",
+        "publisher": "BleepingComputer",
+        "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -285,7 +410,7 @@
       "xen_orchestra"
     ],
     "created_at": "2026-11-10T11:47:02.508Z",
-    "updated_at": "2026-11-10T11:47:02.508Z",
+    "updated_at": "2026-11-10T17:00:12.508Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -491,9 +616,21 @@
         "publisher": "BleepingComputer",
         "title": "Fireworks AI discloses new breach after cloud provider hack",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+        "publisher": "The Hacker News",
+        "title": "Fireworks AI Breach Widens to Expose Customer Billing Data and Incomplete Model Weights",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://therecord.media/ai-company-fireworks-says-hackers-stole-data-in-oct-attacks",
+        "publisher": "The Record",
+        "title": "AI company Fireworks says hackers stole data, billing info during October breaches",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -503,7 +640,7 @@
       "supply-chain"
     ],
     "created_at": "2026-11-10T08:11:07.578Z",
-    "updated_at": "2026-11-10T08:11:07.578Z",
+    "updated_at": "2026-11-10T17:00:12.508Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -517,6 +654,12 @@
         "title": "Fireworks AI discloses new breach after cloud provider hack",
         "source_url": "https://bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack",
         "added_at": "2026-11-10T08:11:07.578Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Investigation reveals the breach exposed customer billing data, secrets, datasets, and incomplete models for a limited set of accounts",
+        "source_url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+        "added_at": "2026-11-10T17:00:12.508Z"
       }
     ],
     "action": "",

@@ -1,5 +1,15 @@
 [
   {
+    "key": "d734c809375a8723",
+    "title": "X.Org patches eight server vulnerabilities a month after fixing 12 others",
+    "url": "https://helpnetsecurity.com/2026/11/10/x-org-server-vulnerabilities-november-2026",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Vulnerability not reported as exploited nor rated critical, so does not meet incident test criteria",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-10T17:00:12.508Z"
+  },
+  {
     "key": "133989a571e52547",
     "title": "Ransomware recovery is now a client retention metric",
     "url": "https://bleepingcomputer.com/news/security/ransomware-recovery-is-now-a-client-retention-metric",
