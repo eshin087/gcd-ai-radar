@@ -1,5 +1,15 @@
 [
   {
+    "key": "e2069e4ceee4a414",
+    "title": "Over 575 malicious OpenClaw skills delivered malware to Windows and macOS",
+    "url": "https://helpnetsecurity.com/2026/11/10/acronis-ai-agent-cyberattacks-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Survey or general threat intelligence report rather than a specific incident",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-10T05:41:50.912Z"
+  },
+  {
     "key": "2f759eae153f467b",
     "title": "Cybersecurity jobs available right now: November 10, 2026",
     "url": "https://helpnetsecurity.com/2026/11/10/cybersecurity-jobs-available-right-now-november-10-2026",
