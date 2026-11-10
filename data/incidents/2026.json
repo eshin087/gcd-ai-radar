@@ -6678,9 +6678,15 @@
         "publisher": "The Hacker News",
         "title": "Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login",
         "published_at": "2026-11-06"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access",
+        "publisher": "BleepingComputer",
+        "title": "Hackers now exploit critical Barracuda ESG flaws to gain root access",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -6690,7 +6696,7 @@
       "auth-bypass"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-06T08:21:33.691Z",
+    "updated_at": "2026-11-10T10:42:17.220Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -6718,6 +6724,12 @@
         "title": "Researchers demonstrate the full exploit chain for the Barracuda vulnerabilities allowing unauthenticated root access",
         "source_url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
         "added_at": "2026-11-06T08:21:33.691Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Active exploitation in the wild confirmed for the critical ESG vulnerabilities",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access",
+        "added_at": "2026-11-10T10:42:17.220Z"
       }
     ],
     "action": "Apply the security updates released by Barracuda to patch the vulnerabilities.",
