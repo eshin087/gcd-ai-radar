@@ -1,5 +1,15 @@
 [
   {
+    "key": "6883aefb6d8fd05d",
+    "title": "Claude Mythos 5.2 arrives with stronger bug hunting and less sandbox-breaking behavior",
+    "url": "https://helpnetsecurity.com/2026/11/10/anthropic-claude-fable-and-mythos-5-2-safeguards",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and feature announcement for new AI models.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T12:12:39.203Z"
+  },
+  {
     "key": "ba7507c6f20e8122",
     "title": "Apple Patches iMessage Group Chat Privacy Flaws and Bluetooth Pairing Vulnerabilities",
     "url": "https://thehackernews.com/2026/11/apple-patches-imessage-group-chat.html",
