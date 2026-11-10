@@ -354,7 +354,7 @@ describe("my stack", () => {
   });
   it("turns every flag into a short badge with its tone", () => {
     expect(flagBadge("patch by 31 Oct")).toEqual({ word: "due 31 Oct", tone: "due" });
-    expect(flagBadge("harm confirmed")).toEqual({ word: "harm", tone: "harm" });
+    expect(flagBadge("confirmed impact")).toEqual({ word: "impact", tone: "harm" });
     expect(flagBadge("no patch yet")).toEqual({ word: "no patch", tone: "open" });
     expect(flagBadge("partly patched")).toEqual({ word: "partial", tone: "partial" });
     for (const c of file.candidates) if (c.flag) expect(["due", "harm", "open", "partial"]).toContain(flagBadge(c.flag).tone);

@@ -181,7 +181,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   // My stack: the default tiles, a badge only where the rule put a flag, in the flag's tone
   const tiles = await evaluate(client, `[...document.querySelectorAll('[data-stack-tile]')].map((t) => ({ key: t.dataset.stackTile, n: Number(t.dataset.n), flag: t.dataset.flag, shown: t.querySelector('[data-num]')?.textContent, badge: t.querySelector('[data-stack-badge]')?.dataset.stackBadge ?? null }))`);
   check("stack shows the default tiles", tiles.map((t) => t.key).join(",") === panel.stack.default.join(","), tiles.map((t) => t.key).join(","));
-  const toneOf = (flag) => (!flag ? null : flag.startsWith("patch by ") ? "due" : flag === "harm confirmed" ? "harm" : flag === "no patch yet" ? "open" : "partial");
+  const toneOf = (flag) => (!flag ? null : flag.startsWith("patch by ") ? "due" : flag === "confirmed impact" ? "harm" : flag === "no patch yet" ? "open" : "partial");
   for (const t of panel.stack.tiles) {
     const p = tiles.find((x) => x.key === t.key);
     check(`stack tile ${t.key}`, p && p.n === t.n && num(p.shown) === t.n && p.flag === (t.flag ?? "") && p.badge === toneOf(t.flag), `page n ${p?.n} shown ${p?.shown} flag "${p?.flag}" badge ${p?.badge}, panel.json n ${t.n} flag "${t.flag ?? ""}"`);
@@ -222,8 +222,8 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   const heads = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-ledger] [data-group]')].map((g) => [g.dataset.group, { count: g.querySelector('[data-head] [data-num]')?.textContent ?? '', note: g.querySelector('[data-head]')?.title ?? '' }]))`);
   check(
     "ledger columns carry the counts",
-    Object.keys(heads).join(",") === "due,patch,new" && num(heads.due.count) === dueAlive.length && num(heads.patch.count) === L.noFullPatch && num(heads.new.count) === L.freshTotal && heads.new.note.includes(`${L.freshLoss} with harm`),
-    Object.entries(heads).map(([k, h]) => `${k} ${h.count}`).join(", ") + `; panel.json ${dueAlive.length}, ${L.noFullPatch}, ${L.freshTotal} (${L.freshLoss} with harm)`,
+    Object.keys(heads).join(",") === "due,patch,new" && num(heads.due.count) === dueAlive.length && num(heads.patch.count) === L.noFullPatch && num(heads.new.count) === L.freshTotal && heads.new.note.includes(`${L.freshLoss} with confirmed impact`),
+    Object.entries(heads).map(([k, h]) => `${k} ${h.count}`).join(", ") + `; panel.json ${dueAlive.length}, ${L.noFullPatch}, ${L.freshTotal} (${L.freshLoss} with confirmed impact)`,
   );
   // the first deadline is the runway's lead with its large countdown; the list's rows say the time left in words
   if (led.some((r) => r.kind === "due" && r.clock !== null)) {

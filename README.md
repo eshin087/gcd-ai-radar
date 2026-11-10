@@ -8,7 +8,7 @@
 
 </div>
 
-<a href="https://gcdradar.vercel.app"><img src="docs/media/home.webp" alt="The gcdRadar home page: the headline 'What's being exploited now' with 0 hits on your stack this week, 13 exploited with no full patch and 569 new CVEs in 24 hours; this week's newly exploited vulnerabilities from CISA KEV with patch-by dates; a dotted globe of DDoS traffic from Cloudflare Radar; a My stack strip of product chips; and the runway card counting down 20 hours 34 minutes to the next patch deadline" width="100%"></a>
+<a href="https://gcdradar.vercel.app"><img src="docs/media/home.webp" alt="The gcdRadar home page: the headline 'What's being exploited now' with 0 hits on your stack this week, 13 exploited with no full patch and 569 new CVEs in 24 hours; this week's newly exploited vulnerabilities from CISA KEV with patch-by dates; a dotted globe of DDoS traffic from Cloudflare Radar; a My stack strip of product chips; and the runway card counting down to the next KEV due date" width="100%"></a>
 
 Security news is loud and spread across dozens of feeds. gcdRadar reads 45 of them, the advisories and the official databases (NVD, CISA KEV, GitHub Advisories, Have I Been Pwned) every 30 minutes and turns them into one calm page that answers three questions:
 
@@ -23,8 +23,8 @@ Every record is counted once, however many outlets cover it, and links back to t
 <a href="https://gcdradar.vercel.app"><img src="docs/media/day-sheet.webp" alt="The gcdRadar day sheet: a My stack strip of chips for Microsoft, Linux, Cisco, Citrix, Google, LiteLLM, Claude and ChatGPT; the runway card, a countdown to the Adobe Commerce and Magento patch deadline beside a timeline from seven days ago to seven days ahead with dots for new incidents, red bars for holes with no patch and markers for the deadlines; three short lists of patches due this week, vulnerabilities with no patch yet and new incidents; and a strip comparing published, critical and exploited CVEs, breaches and AI incidents with a typical week" width="100%"></a>
 
 - **My stack.** One chip per product you care about, with its exploitation over the last 90 days and a coloured word only while something is exploited and still open. Your picks stay in your browser; a share link puts them in the URL so a teammate opens the same view.
-- **The runway.** The nearest CISA patch deadline as a large countdown, beside one timeline of the two weeks around now: new incidents as dots, holes with no patch as bars that keep growing, deadlines as markers ahead.
-- **Needs action.** Three short lists under it: what else is due this week, exploited vulnerabilities with no full patch yet, and what's new this week with confirmed harm first. Plain scores, plain times ("1 day left", "open 3 days").
+- **The runway.** The nearest KEV due date (CISA's patch deadline) as a large countdown, beside one timeline of the two weeks around now: new incidents as dots, holes with no patch as bars that keep growing, deadlines as markers ahead.
+- **Needs action.** Three short lists under it: what else has a KEV due date this week, exploited vulnerabilities with no full patch yet, and what's new this week with confirmed impact first. CVE ids, plain scores, plain times ("1 day left", "open 3 days").
 - **The week.** Published, critical and exploited CVEs, breaches and AI incidents, each against a typical week, plus the next Patch Tuesday.
 - **Live board.** Everything open right now in four lanes: patch now, breaches and attacks, supply chain, research.
 

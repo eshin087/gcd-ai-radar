@@ -416,7 +416,8 @@ export default function MethodologyPage() {
         </li>
         <li>
           <strong>My stack</strong> counts, per product, KEV entries and our exploited records of the last 90 days, once per CVE; a tile opens that
-          list. A tile turns red only while something is exploited and open: a CISA deadline ahead, no full patch, or harm confirmed (severity 4). Your picks stay in
+          list. A chip carries a coloured word only while something is exploited and open: a KEV due date ahead (CISA&rsquo;s deadline), no full patch, or
+          confirmed impact (severity 4: data, money or service lost). Your picks stay in
           your browser.
         </li>
         <li>
@@ -426,7 +427,7 @@ export default function MethodologyPage() {
         <li>
           <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and
           deadline; our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the
-          live exploited records that entered the dataset in the last seven days, harm confirmed first. The runway card draws them on one time axis, a week
+          live exploited records that entered the dataset in the last seven days, confirmed impact first. The runway card draws them on one time axis, a week
           back and a week ahead (to the end of the seventh day, so every deadline it counts is on it): the nearest deadline leads as a countdown to the end of its UTC day, each deadline day is a marker, each of the first
           six records without a patch is a bar from its first report to now, and each new record is a dot in its 24-hour window (several to a dot in a very
           busy week, and the card says so). A deadline that has passed since the page was built drops off, and a record without a patch that was folded into it is listed on its own again. A row is tagged &ldquo;your stack&rdquo; when one
@@ -560,6 +561,11 @@ export default function MethodologyPage() {
           coloured word (&ldquo;harm&rdquo;, &ldquo;no patch&rdquo;, &ldquo;due 10 Nov&rdquo;); the three lists under the runway show three rows each; the
           week becomes one strip of six numbers. Nothing pulses; the key line and the source credits in the headers go (every source stays in the footer).
           &ldquo;AI only&rdquo; now refills the card and the lists with AI rows instead of hiding the others. No counting rule changed.
+        </li>
+        <li>
+          2026-11-10 · the day sheet&rsquo;s text grows a size and the runway card gets a line of its own for every label and bar. The words follow the
+          trade&rsquo;s: CISA&rsquo;s deadline is the &ldquo;KEV due date&rdquo;, and a record where data, money or service was lost reads &ldquo;confirmed
+          impact&rdquo; (it read &ldquo;harm&rdquo;). The three lists get a second line with the CVE id and the CVSS score. No counting rule changed.
         </li>
       </ul>
     </div>

@@ -10,16 +10,18 @@ import { dateLabel } from "@/lib/format";
 import { STACK_DAYS, STACK_MAX, flagBadge, type FlagTone, type StackCandidate, type StackFile, type StackItem } from "@/lib/panel/picks";
 
 /**
- * My stack (lib/panel/stack.ts) as one strip over the runway: a chip per
- * product with a status light, its name, its exploitation in the last 90
- * days and, only while something is exploited and still open, a word in the
- * light's colour: red "harm" or "no patch", amber "due 10 Nov"
+ * My stack (lib/panel/stack.ts) over the runway: a label line with the
+ * controls, then a row of chips, one per product, each with a status light,
+ * its name, its exploitation in the last 90 days and, only while something
+ * is exploited and still open, a word in the light's colour: red "impact"
+ * (confirmed impact: data, money or service lost) or "no patch", amber "due
+ * 10 Nov"
  * (lib/panel/picks.ts flagBadge). A calm chip has a grey light and no word,
  * so the flagged ones stand out. A chip opens the list behind its number
  * (the candidate's `items`, fetched with /stats/stack.json on first use).
  * "edit" opens every candidate in a drawer, where "copy share link" puts the
  * picks in ?stack= so a bookmark or a teammate's link opens the same stack.
- * The strip's right end holds the sheet's "AI only" lens.
+ * The label line's right end holds the sheet's "AI only" lens.
  */
 
 const TONE_INK: Record<FlagTone, string> = { harm: "text-live", open: "text-live", due: "text-accent", partial: "text-partial" };
@@ -50,13 +52,13 @@ function Chip({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
       data-n={t.n}
       title={`${t.why.length ? t.why.join(" · ") : "nothing exploited and open"} · exploited in the last ${STACK_DAYS} days, flagged while still open`}
       aria-label={`${t.label}: ${t.n} exploited in ${STACK_DAYS} days${t.flag ? `, ${t.flag}` : ""}, open the list`}
-      className="group inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.02] px-2 text-[12.5px] hover:border-white/25"
+      className="group inline-flex h-9 items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.02] px-2.5 text-[14px] hover:border-white/25"
     >
       <span aria-hidden className={`size-1.5 rounded-full ${b ? TONE_LIGHT[b.tone] : "bg-white/20"}`} />
       <span className={`font-medium group-hover:text-accent ${b ? "text-ink" : "text-soft"}`}>{t.label}</span>
       <Num value={String(t.n)} className="font-mono text-dim" />
       {b && (
-        <span data-stack-badge={b.tone} className={`font-mono text-[11px] font-medium uppercase tracking-[0.04em] ${TONE_INK[b.tone]}`}>
+        <span data-stack-badge={b.tone} className={`font-mono text-[12px] font-medium uppercase tracking-[0.04em] ${TONE_INK[b.tone]}`}>
           {b.word}
         </span>
       )}
@@ -69,7 +71,7 @@ function Chip({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
 const OPEN_WORDS: Record<Exclude<StackItem["open"], null | "due">, { word: string; cls: string }> = {
   unpatched: { word: "no patch yet", cls: "text-live" },
   partial: { word: "partly patched", cls: "text-partial" },
-  loss: { word: "harm confirmed", cls: "text-live" },
+  loss: { word: "confirmed impact", cls: "text-live" },
 };
 
 function ItemRow({ it }: { it: StackItem }) {
@@ -187,7 +189,7 @@ function Chooser({ open, onClose, file, picks, isDefault, copied, onShare, onCha
           {file ? file.candidates.length : 0} products · {picks.length} of up to {STACK_MAX} chosen · the number is exploitation in the last 90 days
         </p>
         <p className="text-[12px] leading-relaxed text-faint">
-          {isDefault ? "Until you choose, the strip shows the most-exploited vendors and AI products." : "Your choice stays in this browser."} A coloured word means exploited and still open: a CISA deadline ahead (due), no full patch, or harm confirmed (data, money or service lost). The share link carries the stack to any device or teammate.
+          {isDefault ? "Until you choose, the strip shows the most-exploited vendors and AI products." : "Your choice stays in this browser."} A coloured word means exploited and still open: a CISA deadline ahead (due), no full patch, or confirmed impact (data, money or service lost). The share link carries the stack to any device or teammate.
         </p>
         <button type="button" onClick={onShare} aria-live="polite" className="font-mono text-[12px] text-accent hover:underline">
           {copied ? `link ${copied}` : "copy share link"}
@@ -265,23 +267,26 @@ export function MyStack() {
   const change = (key: string, on: boolean) => setPicks(on ? [...picks, key] : picks.filter((k) => k !== key));
 
   return (
-    <section id="stack" data-build data-instrument="stack" aria-label="My stack" className="flex min-w-0 scroll-mt-6 flex-wrap items-center gap-1.5">
-      <h2 className="mr-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-dim">My stack</h2>
-      <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="contents">
+    <section id="stack" data-build data-instrument="stack" aria-label="My stack" className="min-w-0 scroll-mt-6">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-mono text-[13px]">
+        <h2 className="text-[12px] font-medium uppercase tracking-[0.1em] text-soft">My stack</h2>
+        <span className="text-dim">exploited in the last {STACK_DAYS} days</span>
+        <button type="button" onClick={choose} className="text-accent hover:underline">
+          edit
+        </button>
+        <span role="group" aria-label="Show every record or only those with an AI role" className="ml-auto inline-flex">
+          {([false, true] as const).map((on, i) => (
+            <button key={String(on)} type="button" data-filter={on ? "ai" : "all"} aria-pressed={aiOnly === on} onClick={() => setAiOnly(on)} className={`px-2.5 uppercase tracking-[0.08em] hover:text-accent ${i ? "border-l border-line" : ""} ${aiOnly === on ? "text-accent" : "text-dim"}`}>
+              {on ? "AI only" : "all"}
+            </button>
+          ))}
+        </span>
+      </div>
+      <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="mt-3 flex flex-wrap gap-2">
         {tiles.map((t) => (
           <Chip key={t.key} t={t} onOpen={() => show(t)} />
         ))}
       </div>
-      <button type="button" onClick={choose} className="h-8 px-1.5 font-mono text-[12px] text-dim hover:text-accent">
-        edit
-      </button>
-      <span role="group" aria-label="Show every record or only those with an AI role" className="ml-auto inline-flex font-mono text-[12px]">
-        {([false, true] as const).map((on, i) => (
-          <button key={String(on)} type="button" data-filter={on ? "ai" : "all"} aria-pressed={aiOnly === on} onClick={() => setAiOnly(on)} className={`h-8 px-2 uppercase tracking-[0.08em] hover:text-accent ${i ? "border-l border-line" : ""} ${aiOnly === on ? "text-accent" : "text-dim"}`}>
-            {on ? "AI only" : "all"}
-          </button>
-        ))}
-      </span>
       <StackDrawer cand={shown} file={file} onClose={() => setShown(null)} />
       <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} isDefault={isDefault} copied={copied} onShare={share} onChange={change} onReset={() => setPicks([])} />
     </section>
