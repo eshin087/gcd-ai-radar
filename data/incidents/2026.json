@@ -8602,9 +8602,15 @@
         "publisher": "SecurityWeek",
         "title": "France Blames Iran for a Cyberattack That Heated Supermarket Refrigerators",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/france-blames-iran-for-sabotage-attack.html",
+        "publisher": "The Hacker News",
+        "title": "France Blames Iran for Sabotage Attack on Refrigeration Controllers at About 700 Retail Sites",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 12,
+    "source_count": 13,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -8615,7 +8621,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-10T08:11:07.578Z",
+    "updated_at": "2026-11-10T09:41:07.249Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
