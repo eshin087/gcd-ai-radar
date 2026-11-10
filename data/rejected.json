@@ -1,5 +1,15 @@
 [
   {
+    "key": "23afc3bbfba04d1e",
+    "title": "What a security leader should tell the CEO about leaked credentials",
+    "url": "https://helpnetsecurity.com/2026/11/10/eric-fourrier-gitguardian-leaked-credentials",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion piece and interview about leaked credentials and security leadership, lacking a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T08:11:07.578Z"
+  },
+  {
     "key": "e2069e4ceee4a414",
     "title": "Over 575 malicious OpenClaw skills delivered malware to Windows and macOS",
     "url": "https://helpnetsecurity.com/2026/11/10/acronis-ai-agent-cyberattacks-report",

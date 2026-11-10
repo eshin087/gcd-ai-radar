@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1850",
+    "slug": "fireworks-ai-discloses-breach-following-cloud-provider-compr",
+    "title": "Fireworks AI discloses breach following cloud provider compromise",
+    "summary": "AI startup Fireworks AI disclosed a security breach where attackers accessed its development machines. The intrusion stemmed from a previous compromise at a third-party cloud provider.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Fireworks AI"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack",
+        "publisher": "BleepingComputer",
+        "title": "Fireworks AI discloses new breach after cloud provider hack",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "breach",
+      "cloud-security",
+      "supply-chain"
+    ],
+    "created_at": "2026-11-10T08:11:07.578Z",
+    "updated_at": "2026-11-10T08:11:07.578Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Fireworks AI discloses new breach after cloud provider hack",
+        "source_url": "https://bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack",
+        "added_at": "2026-11-10T08:11:07.578Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world breach impacting a named organisation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1849",
     "slug": "google-chrome-exploited-use-after-free-vulnerability-in-xml",
     "title": "Google Chrome Exploited Use-After-Free Vulnerability in XML",
@@ -8527,9 +8584,15 @@
         "publisher": "The Record",
         "title": "France blames Iran for fridge cyberattacks, says some caused fires",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://securityweek.com/france-blames-iran-for-a-cyberattack-that-heated-supermarket-refrigerators",
+        "publisher": "SecurityWeek",
+        "title": "France Blames Iran for a Cyberattack That Heated Supermarket Refrigerators",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 11,
+    "source_count": 12,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -8540,7 +8603,7 @@
       "refrigeration"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-09T19:24:50.413Z",
+    "updated_at": "2026-11-10T08:11:07.578Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -8590,6 +8653,12 @@
         "title": "France attributes the supermarket refrigeration cyberattacks to Iranian state-backed hackers and reports they caused at least 15 fires.",
         "source_url": "https://bleepingcomputer.com/news/security/france-blames-iranian-hackers-for-supermarket-attacks-that-sparked-fires",
         "added_at": "2026-11-09T18:41:09.590Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "France summoned the Iranian ambassador and announced plans to seek European sanctions over the attacks",
+        "source_url": "https://securityweek.com/france-blames-iran-for-a-cyberattack-that-heated-supermarket-refrigerators",
+        "added_at": "2026-11-10T08:11:07.578Z"
       }
     ],
     "action": "Review and harden industrial refrigeration controllers against remote tampering.",
