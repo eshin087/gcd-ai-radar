@@ -1,5 +1,65 @@
 [
   {
+    "id": "AIR-2026-1863",
+    "slug": "claude-code-inadvertently-leaks-credentials-to-public-reposi",
+    "title": "Claude Code Inadvertently Leaks Credentials to Public Repositories",
+    "summary": "Researchers demonstrated that an AI coding tool command accidentally saves files containing credentials to public repositories. Organizations utilizing the tool face potential exposure of sensitive internal data.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://darkreading.com/cyber-risk/ai-coding-agents-leak-secrets-github",
+        "publisher": "Dark Reading",
+        "title": "AI Coding Agents Leak Thousands of Secrets to GitHub",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "claude-code",
+      "data-leak",
+      "credentials",
+      "git"
+    ],
+    "created_at": "2026-11-10T19:11:52.162Z",
+    "updated_at": "2026-11-10T19:11:52.162Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Claude Code"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "AI Coding Agents Leak Thousands of Secrets to GitHub",
+        "source_url": "https://darkreading.com/cyber-risk/ai-coding-agents-leak-secrets-github",
+        "added_at": "2026-11-10T19:11:52.162Z"
+      }
+    ],
+    "action": "Review public repositories for accidentally committed credential files created by development tools.",
+    "severity_note": "Demonstrated research finding with no confirmed real-world exploitation metrics yet reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1862",
     "slug": "cve-2026-125321-pgedge-postgres-mcp-server-rate-limit-bypass",
     "title": "CVE-2026-125321: pgEdge Postgres MCP Server rate‑limit bypass via X‑Forwarded‑For",
