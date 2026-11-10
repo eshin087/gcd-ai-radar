@@ -25,8 +25,12 @@ import { DAY_MS, kevName, recordCves } from "./util";
  * New this week: live records of severity 3 or more that entered the
  * dataset in the last seven times 24 hours, every lane, with the rows the
  * two groups above already show left out; confirmed loss (severity 4)
- * first, then the newest. The file keeps the first LEDGER_NEW_KEPT; the
- * totals count them all.
+ * first, then the newest. The file keeps the first LEDGER_NEW_KEPT, and
+ * after them the next AI records until it holds LEDGER_NEW_AI_KEPT of them,
+ * so "AI only" has rows to show in a week whose first rows are all plain
+ * breaches; the totals count them all. `freshDays` counts every one of the
+ * week's new records per 24-hour window back from the build: the runway's
+ * dots.
  *
  * Every row names the stack picks it belongs to: the picks whose items
  * (lib/panel/stack.ts) hold the row's CVE id or record. The build computes
@@ -37,6 +41,7 @@ import { DAY_MS, kevName, recordCves } from "./util";
 export { LEDGER_DUE_ROWS, LEDGER_NEW_ROWS, LEDGER_PATCH_ROWS } from "./caps";
 export const LEDGER_SOON_DAYS = 7;
 export const LEDGER_NEW_KEPT = 12;
+export const LEDGER_NEW_AI_KEPT = 4;
 
 const ACTION_LANES: readonly Lane[] = ["patch", "breach", "supply_chain"];
 
@@ -85,6 +90,14 @@ export interface NewRow {
   stack: string[];
 }
 
+/** The new records of one 24-hour window: all of them, those with harm confirmed, those with an AI role, and those with both. */
+export interface FreshDay {
+  n: number;
+  harm: number;
+  ai: number;
+  aiHarm: number;
+}
+
 export interface Ledger {
   due: DueRow[];
   later: DueRow[];
@@ -94,6 +107,8 @@ export interface Ledger {
   freshTotal: number;
   freshLoss: number;
   freshAi: number;
+  /** The week's new records per 24-hour window back from the build, the oldest window first and the last 24 hours last. */
+  freshDays: FreshDay[];
   /** Live records of severity 3 or more in the three action lanes. */
   exploitedLive: number;
   /** Live patch-lane records of severity 3 or more without a full patch: the hero's number. */
@@ -170,10 +185,16 @@ export function buildLedger(incidents: readonly FullIncident[], kev: readonly Ke
   const freshAll = live
     .filter((i) => i.severity >= 3 && i.created_at <= nowIso && Date.parse(i.created_at) > weekFrom)
     .sort((a, b) => b.severity - a.severity || b.created_at.localeCompare(a.created_at) || a.slug.localeCompare(b.slug));
-  const fresh: NewRow[] = freshAll
-    .filter((i) => !shown.has(`/incidents/${i.slug}`))
-    .slice(0, LEDGER_NEW_KEPT)
-    .map((i) => {
+  const freshPool = freshAll.filter((i) => !shown.has(`/incidents/${i.slug}`));
+  const freshKept = freshPool.slice(0, LEDGER_NEW_KEPT);
+  const aiShort = Math.max(0, LEDGER_NEW_AI_KEPT - freshKept.filter((i) => i.type !== "not_ai").length);
+  const fresh: NewRow[] = [
+    ...freshKept,
+    ...freshPool
+      .slice(LEDGER_NEW_KEPT)
+      .filter((i) => i.type !== "not_ai")
+      .slice(0, aiShort),
+  ].map((i) => {
       const cves = recordCves(i).sort();
       return {
         kind: "new" as const,
@@ -190,6 +211,17 @@ export function buildLedger(incidents: readonly FullIncident[], kev: readonly Ke
       };
     });
 
+  const freshDays: FreshDay[] = Array.from({ length: LEDGER_SOON_DAYS }, () => ({ n: 0, harm: 0, ai: 0, aiHarm: 0 }));
+  for (const i of freshAll) {
+    const ago = Math.min(LEDGER_SOON_DAYS - 1, Math.floor((Date.parse(nowIso) - Date.parse(i.created_at)) / DAY_MS));
+    const day = freshDays[LEDGER_SOON_DAYS - 1 - ago]!;
+    const ai = i.type !== "not_ai";
+    day.n += 1;
+    if (i.severity >= 4) day.harm += 1;
+    if (ai) day.ai += 1;
+    if (ai && i.severity >= 4) day.aiHarm += 1;
+  }
+
   return {
     due,
     later,
@@ -198,6 +230,7 @@ export function buildLedger(incidents: readonly FullIncident[], kev: readonly Ke
     freshTotal: freshAll.length,
     freshLoss: freshAll.filter((i) => i.severity >= 4).length,
     freshAi: freshAll.filter((i) => i.type !== "not_ai").length,
+    freshDays,
     exploitedLive: live.filter((i) => i.severity >= 3 && ACTION_LANES.includes(i.lane)).length,
     noFullPatch: patch.length,
   };

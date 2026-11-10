@@ -41,7 +41,7 @@ export interface StackCandidate {
   kind: "vendor" | "ai";
   /** Exploited in the 90 days. */
   n: number;
-  /** The red flag's words, or null. */
+  /** The flag's words ("patch by 31 Oct", "harm confirmed", "no patch yet", "partly patched"), or null; flagBadge turns them into the tile's badge. */
   flag: string | null;
   /** Every reason it is red, for the tooltip. */
   why: string[];
@@ -57,6 +57,21 @@ export interface StackFile {
   generated_at: string;
   default: string[];
   candidates: StackCandidate[];
+}
+
+/** The tones a flag's badge comes in: harm confirmed, open with no patch, a partial patch, a deadline ahead. */
+export type FlagTone = "harm" | "open" | "partial" | "due";
+
+/**
+ * A product's flag as the word on its chip: the fewest words that still
+ * say why, and the tone that colours it. "patch by 10 Nov" reads "due 10
+ * Nov"; the full reasons stay in the chip's hover note and its list.
+ */
+export function flagBadge(flag: string): { word: string; tone: FlagTone } {
+  if (flag.startsWith("patch by ")) return { word: `due ${flag.slice("patch by ".length)}`, tone: "due" };
+  if (flag === "harm confirmed") return { word: "harm", tone: "harm" };
+  if (flag === "no patch yet") return { word: "no patch", tone: "open" };
+  return { word: "partial", tone: "partial" };
 }
 
 /** The KEV additions of the 7 days that belong to any of the picks, once each, nearest deadline first. */

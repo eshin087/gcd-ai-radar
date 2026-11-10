@@ -4,15 +4,18 @@
  * the files they were built from.
  *
  * The home page (the day sheet, lib/panel): the hero's three numbers equal
- * /stats/panel.json and /stats/home.json; My stack shows the default tiles
- * with red flags only where the rule put them, a tile opens the list it
- * counts, and a ?stack= link applies, stores and recomputes the picks and
- * the ledger's stack marks; the ledger shows this week's deadlines (with the time left),
- * the records without a full patch and the week's new records as
- * panel.json has them, marks the rows in the stack and the AI records, keeps
- * only the AI rows under "AI only", and its drawers list every deadline
- * ahead and every record without a patch; the week's six lines equal the
- * counters, draw as many cells as they say and open their lists; the hero's
+ * /stats/panel.json and /stats/home.json; My stack shows the default chips
+ * with a coloured word only where the rule put a flag, a chip opens the list
+ * it counts, and a ?stack= link applies, stores and recomputes the picks and
+ * the ledger's stack tags; the runway card leads with the nearest deadline
+ * as a countdown and draws a dot per new record, a bar per record without a
+ * patch and a marker per deadline day; the card's lead and the three lists
+ * under it show this week's deadlines (with the time left), the records
+ * without a full patch and the week's new records as panel.json has them,
+ * tag the rows in the stack and the AI records, show only AI rows under "AI
+ * only", and the drawers list every deadline ahead and every record without
+ * a patch; the week's six cells equal the counters and open their lists;
+ * nothing on the sheet pulses; the hero's
  * exploited-this-week numeral is the KEV counter, draws, lists the week's
  * newest entries and opens the week's list; motion is off under reduced
  * motion; the HTML stays under its budget; nothing scrolls sideways on a
@@ -47,8 +50,12 @@ const HOME_READY = `document.querySelector('[data-instrument="week"]') && docume
 /** The drawer lists' cap (lib/home.ts LIST_CAP). */
 const LIST_CAP = 200;
 const TRENDS_READY = `document.querySelectorAll('[data-counter]').length >= 6 && document.querySelector('[data-chart="kev-by-month"] rect') && document.querySelector('[data-instrument="ai"][data-built]')`;
-/** The ledger's row caps (lib/panel/caps.ts). */
+/** The ledger's row caps (lib/panel/caps.ts): the runway's lead and three list rows, then three rows a list; six bars on the runway. */
 const LEDGER_ROWS = { due: 4, patch: 3, fresh: 3 };
+const RUNWAY_OPEN_BARS = 6;
+const DAY_MS = 86_400_000;
+/** The end of a deadline's UTC day. */
+const dueEnd = (due) => Date.parse(`${due}T00:00:00Z`) + DAY_MS;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const shortDate = (iso) => `${Number(iso.slice(8, 10))} ${MONTHS[Number(iso.slice(5, 7)) - 1]}`;
 
@@ -131,7 +138,8 @@ function rowStack(hits, row) {
 /** The ledger rows the page shows, in order, with where each links (lib/panel/ledger.ts, lib/panel/caps.ts). */
 function ledgerRows(ledger) {
   return [
-    ...ledger.due.slice(0, LEDGER_ROWS.due).map((r) => ({ ...r, href: r.href })),
+    // the page drops a deadline that has passed since the build
+    ...ledger.due.filter((r) => dueEnd(r.due) > Date.now()).slice(0, LEDGER_ROWS.due).map((r) => ({ ...r, href: r.href })),
     ...ledger.patch.filter((r) => !r.onDeadlineRow).slice(0, LEDGER_ROWS.patch).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
     ...ledger.fresh.slice(0, LEDGER_ROWS.fresh).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
   ];
@@ -162,13 +170,16 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   check("verdict stack count", v?.stack === panel.verdict.inStack, `page ${v?.stack}, panel.json ${panel.verdict.inStack}`);
   check("verdict reads its numbers", v?.text.includes(`${home.counters.cves_24h?.toLocaleString("en-US")}new CVEs in 24 h`) && v?.text.includes(`${panel.verdict.noFullPatch.toLocaleString("en-US")}exploited, no full patch`) && v?.text.includes("hit your stack this week"), v?.text.slice(0, 160));
 
-  // My stack: the default tiles, red only where the rule says
-  const tiles = await evaluate(client, `[...document.querySelectorAll('[data-stack-tile]')].map((t) => ({ key: t.dataset.stackTile, n: Number(t.dataset.n), flag: t.dataset.flag, shown: t.querySelector('[data-num]')?.textContent, red: Boolean(t.querySelector('.ascii-pulse')) }))`);
+  // My stack: the default tiles, a badge only where the rule put a flag, in the flag's tone
+  const tiles = await evaluate(client, `[...document.querySelectorAll('[data-stack-tile]')].map((t) => ({ key: t.dataset.stackTile, n: Number(t.dataset.n), flag: t.dataset.flag, shown: t.querySelector('[data-num]')?.textContent, badge: t.querySelector('[data-stack-badge]')?.dataset.stackBadge ?? null }))`);
   check("stack shows the default tiles", tiles.map((t) => t.key).join(",") === panel.stack.default.join(","), tiles.map((t) => t.key).join(","));
+  const toneOf = (flag) => (!flag ? null : flag.startsWith("patch by ") ? "due" : flag === "harm confirmed" ? "harm" : flag === "no patch yet" ? "open" : "partial");
   for (const t of panel.stack.tiles) {
     const p = tiles.find((x) => x.key === t.key);
-    check(`stack tile ${t.key}`, p && p.n === t.n && num(p.shown) === t.n && p.flag === (t.flag ?? "") && p.red === Boolean(t.flag), `page n ${p?.n} shown ${p?.shown} flag "${p?.flag}", panel.json n ${t.n} flag "${t.flag ?? ""}"`);
+    check(`stack tile ${t.key}`, p && p.n === t.n && num(p.shown) === t.n && p.flag === (t.flag ?? "") && p.badge === toneOf(t.flag), `page n ${p?.n} shown ${p?.shown} flag "${p?.flag}" badge ${p?.badge}, panel.json n ${t.n} flag "${t.flag ?? ""}"`);
   }
+  const still = await evaluate(client, `({ dots: document.querySelectorAll(['#stack', '#runway', '#ledger', '#week'].flatMap((s) => [s + ' .ascii-pulse', s + ' .live-dot']).join(',')).length, ticking: [...document.documentElement.classList].filter((c) => c.startsWith('pulse-')), lights: document.querySelectorAll('#runway .rw-lights > i').length })`);
+  check("nothing on the sheet pulses; the runway has its approach lights", still.dots === 0 && still.ticking.length === 0 && still.lights === 13, JSON.stringify(still));
 
   // a tile opens the list it counts, with as many rows as its number
   {
@@ -180,16 +191,44 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   // the ledger: this week's deadlines, the records without a full patch, the week's new records, as panel.json has them
   const L = panel.ledger;
   const want = ledgerRows(L);
+  const dueAlive = L.due.filter((r) => dueEnd(r.due) > Date.now());
+
+  // the runway: the nearest deadline as a countdown, a dot per new record, a bar per record without a patch, a marker per deadline day
+  const rw = await evaluate(client, `(() => { const c = document.querySelector('#runway'); if (!c) return null; const big = c.querySelector('[data-big-countdown]'); return { lead: c.querySelector('[data-lead]')?.dataset.name ?? null, big: big?.textContent ?? null, due: big?.dataset.bigCountdown ?? null, dots: [...c.querySelectorAll('[data-runway-dots]')].reduce((n, e) => n + e.children.length, 0), bars: c.querySelectorAll('[data-runway-bar]').length, marks: [...c.querySelectorAll('[data-runway-due]')].map((e) => Number(e.dataset.runwayDue)), w: Math.round(c.querySelector('[data-runway]')?.getBoundingClientRect().width ?? 0) }; })()`);
+  check("runway shows", Boolean(rw) && rw.w >= 560, JSON.stringify(rw));
+  if (dueAlive.length) {
+    // days and hours from two days out, hours and minutes below that (lib/panel/dates.ts countdownParts)
+    const mins = Math.floor((dueEnd(dueAlive[0].due) - Date.now()) / 60_000);
+    const far = mins >= 2880;
+    const got = (rw?.big?.match(/\d+/g) ?? []).map(Number);
+    const gotMins = far ? got[0] * 1440 + got[1] * 60 : got[0] * 60 + got[1];
+    // the page's clock and this one read a moment apart, and the far form drops the minutes
+    check("runway leads with the nearest deadline and its countdown", rw?.lead === dueAlive[0].name && rw.due === dueAlive[0].due && got.length === 2 && gotMins <= mins + 2 && gotMins >= mins - (far ? 62 : 2), `page "${rw?.lead}" ${rw?.big}, panel.json "${dueAlive[0].name}" due ${dueAlive[0].due}, ${mins} min left`);
+  }
+  const perDot = Math.max(1, Math.ceil(Math.max(0, ...L.freshDays.map((d) => d.n)) / 27));
+  check("runway draws a dot per new record", rw?.dots === L.freshDays.reduce((n, d) => n + Math.ceil(d.n / perDot), 0) && L.freshDays.reduce((n, d) => n + d.n, 0) === L.freshTotal, `${rw?.dots} dots, panel.json ${L.freshTotal} in ${L.freshDays.map((d) => d.n).join("+")}`);
+  check("runway draws a bar per record without a patch", rw?.bars === Math.min(RUNWAY_OPEN_BARS, L.patch.filter((r) => !r.onDeadlineRow).length), `${rw?.bars} bars`);
+  check("runway marks each deadline day", rw?.marks.reduce((n, k) => n + k, 0) === dueAlive.length && rw.marks.length === new Set(dueAlive.map((r) => r.due)).size, `markers ${rw?.marks.join("+")}, ${dueAlive.length} deadlines`);
   const led = await evaluate(client, READ_LEDGER);
   check("ledger rows are panel.json's, in order", led.length === want.length && led.every((r, i) => r.kind === want[i].kind && r.href === want[i].href), `${led.length} rows: ${led.map((r) => `${r.kind} ${r.href}`).join(" | ")}`);
-  check("ledger heads carry the counts", await evaluate(client, `(() => { const t = (g) => document.querySelector('[data-ledger] [data-group="' + g + '"]')?.textContent.replace(/\\s+/g, ' ') ?? ''; return t('due').includes(${JSON.stringify(String(L.due.length))}) && t('patch').includes(${JSON.stringify(String(L.noFullPatch))}) && t('new').includes(${JSON.stringify(String(L.freshTotal))}) && t('new').includes(${JSON.stringify(String(L.freshLoss))}); })()`));
-  if (led.some((r) => r.kind === "due")) {
-    const clock = led.find((r) => r.kind === "due").clock;
+  const heads = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-ledger] [data-group]')].map((g) => [g.dataset.group, { count: g.querySelector('[data-head] [data-num]')?.textContent ?? '', note: g.querySelector('[data-head]')?.title ?? '' }]))`);
+  check(
+    "ledger columns carry the counts",
+    Object.keys(heads).join(",") === "due,patch,new" && num(heads.due.count) === dueAlive.length && num(heads.patch.count) === L.noFullPatch && num(heads.new.count) === L.freshTotal && heads.new.note.includes(`${L.freshLoss} with harm`),
+    Object.entries(heads).map(([k, h]) => `${k} ${h.count}`).join(", ") + `; panel.json ${dueAlive.length}, ${L.noFullPatch}, ${L.freshTotal} (${L.freshLoss} with harm)`,
+  );
+  // the first deadline is the runway's lead with its large countdown; the list's rows say the time left in words
+  if (led.some((r) => r.kind === "due" && r.clock !== null)) {
+    const clock = led.find((r) => r.kind === "due" && r.clock !== null).clock;
     check("ledger deadlines say the time left, in days or hours", /^(\d+ (days?|h|min) left|past due)$/.test(clock ?? ""), clock);
   }
-  const marks = led.map((r, i) => ({ page: r.stack, want: (want[i]?.stack ?? []).join(","), ai: r.aiMark, type: want[i]?.type ?? "not_ai", kind: r.kind }));
-  check("ledger marks the rows in the default stack", marks.every((m) => m.page === m.want), marks.filter((m) => m.page !== m.want).map((m) => `page "${m.page}" vs panel.json "${m.want}"`).join("; ") || `${marks.filter((m) => m.want).length} marked`);
-  check("ledger marks the AI records", marks.every((m) => (m.kind === "due" ? m.ai === null : (m.ai !== null) === (m.type !== "not_ai"))), marks.map((m) => `${m.kind}:${m.ai ?? "-"}/${m.type}`).join(" "));
+  // a deadline counts as AI when an AI record without a full patch names one of its CVEs
+  const isAi = (r) => r.type !== "not_ai";
+  const aiCves = new Set(L.patch.filter(isAi).flatMap((r) => r.cves));
+  const wantAi = (r) => (r.kind === "due" ? r.cves.some((c) => aiCves.has(c)) : isAi(r));
+  const marks = led.map((r, i) => ({ page: r.stack, want: (want[i]?.stack ?? []).join(","), ai: r.aiMark, wantAi: Boolean(want[i] && wantAi(want[i])), dataAi: r.ai, kind: r.kind }));
+  check("ledger tags the rows in the default stack", marks.every((m) => m.page === m.want), marks.filter((m) => m.page !== m.want).map((m) => `page "${m.page}" vs panel.json "${m.want}"`).join("; ") || `${marks.filter((m) => m.want).length} tagged`);
+  check("ledger tags the AI records", marks.every((m) => (m.ai !== null) === m.wantAi && m.dataAi === (m.wantAi ? "1" : "0")), marks.map((m) => `${m.kind}:${m.ai ?? "-"}/${m.wantAi ? "ai" : "-"}`).join(" "));
   {
     const r = await openAndRead(client, '[data-ledger] [data-group="patch"] button');
     check("ledger: all without a full patch opens every record", r.count === L.noFullPatch && r.rows === L.patch.length && r.closed, `count line "${r.head?.slice(0, 48)}", ${r.rows} rows, panel.json ${L.patch.length}`);
@@ -201,24 +240,28 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   }
   await evaluate(client, `document.querySelector('[data-filter="ai"]').click()`);
   await sleep(900);
-  const aiOnly = await evaluate(client, `({ shown: [...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).map((r) => r.dataset.ai), notes: document.querySelectorAll('[data-ledger] [data-note]').length, head: document.querySelector('[data-ledger] [data-group="new"]')?.textContent.replace(/\\s+/g, ' ') ?? '' })`);
-  check("AI only keeps the AI rows and counts them", aiOnly.shown.every((a) => a === "1") && aiOnly.head.includes(String(L.freshAi)) && aiOnly.notes >= 1, JSON.stringify(aiOnly));
+  const aiOnly = await evaluate(client, `({ shown: [...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).map((r) => r.dataset.row + r.dataset.ai), notes: document.querySelectorAll('[data-ledger] [data-note]').length, count: document.querySelector('[data-ledger] [data-group="new"] [data-head] [data-num]')?.textContent ?? '' })`);
+  const aiRows = [
+    ...dueAlive.filter(wantAi).slice(0, LEDGER_ROWS.due).map(() => "due1"),
+    ...L.patch.filter((r) => !r.onDeadlineRow && isAi(r)).slice(0, LEDGER_ROWS.patch).map(() => "patch1"),
+    ...L.fresh.filter(isAi).slice(0, LEDGER_ROWS.fresh).map(() => "new1"),
+  ];
+  check("AI only shows the first AI rows of each list and counts them", aiOnly.shown.join(",") === aiRows.join(",") && num(aiOnly.count) === L.freshAi && aiOnly.notes === 3 - new Set(aiRows).size, `${JSON.stringify(aiOnly)}, expected ${aiRows.join(",") || "no rows"} and ${L.freshAi}`);
   await evaluate(client, `document.querySelector('[data-filter="all"]').click()`);
   await sleep(900);
   const back = await evaluate(client, `[...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).length`);
   check("all brings every row back", back === want.length, `${back} rows`);
 
-  // the week: six lines equal the counters, their bars draw as many cells as they say, their lists open
+  // the week: six cells equal the counters, carry the site's levels, and their lists open
   const W = panel.week;
-  const wk = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-week] [data-line]')].map((l) => [l.dataset.line, { value: l.querySelector('[data-num]')?.textContent ?? '', level: l.querySelector('[data-level]')?.dataset.level ?? null, cells: l.querySelectorAll('.ascii-cells > i').length, vs: l.querySelector('[data-vs]')?.dataset.vs ?? null, text: l.textContent.replace(/\\s+/g, ' ') }]))`);
-  check("week: six lines", Object.keys(wk).join(",") === "patch-tuesday,published,critical,exploited,breaches,ai", Object.keys(wk).join(","));
+  const wk = await evaluate(client, `Object.fromEntries([...document.querySelectorAll('[data-week] [data-line]')].map((l) => [l.dataset.line, { value: l.querySelector('[data-num]')?.textContent ?? '', level: l.dataset.level || null, text: l.textContent.replace(/\\s+/g, ' ') }]))`);
+  check("week: six cells", Object.keys(wk).join(",") === "published,critical,exploited,breaches,ai,patch-tuesday", Object.keys(wk).join(","));
   check("week published is the 7-day counter", num(wk.published?.value) === home.counters.cves_7d, `${wk.published?.value} vs ${home.counters.cves_7d}`);
   check("week critical is the 7-day counter", num(wk.critical?.value) === home.counters.critical_7d, `${wk.critical?.value} vs ${home.counters.critical_7d}`);
   check("week exploited is the 7-day KEV counter", num(wk.exploited?.value) === home.counters.kev_7d, `${wk.exploited?.value} vs ${home.counters.kev_7d}`);
   check("week breaches is the month's counter", num(wk.breaches?.value) === home.counters.breaches_month, `${wk.breaches?.value} vs ${home.counters.breaches_month}`);
-  check("week AI is the roles' sum", num(wk.ai?.value) === W.ai.onAi + W.ai.usingAi && wk.ai?.text.includes(`of ${W.ai.total} incidents`), `${wk.ai?.value} vs ${W.ai.onAi + W.ai.usingAi}`);
-  check("week level words are panel.json's", wk.published?.level === String(W.published.level) && wk.exploited?.level === String(W.exploited.level), `published ${wk.published?.level}/${W.published.level}, exploited ${wk.exploited?.level}/${W.exploited.level}`);
-  check("week bars draw as many cells as they say", ["published", "critical", "exploited", "breaches"].every((k) => wk[k] && (wk[k].vs === null || Number(wk[k].vs) === wk[k].cells)), ["published", "critical", "exploited", "breaches"].map((k) => `${k} ${wk[k]?.vs}/${wk[k]?.cells}`).join(", "));
+  check("week AI is the roles' sum", num(wk.ai?.value) === W.ai.onAi + W.ai.usingAi && wk.ai?.text.includes(`of ${W.ai.total}`), `${wk.ai?.value} vs ${W.ai.onAi + W.ai.usingAi}`);
+  check("week levels are panel.json's", wk.published?.level === String(W.published.level) && wk.exploited?.level === String(W.exploited.level), `published ${wk.published?.level}/${W.published.level}, exploited ${wk.exploited?.level}/${W.exploited.level}`);
   check("week patch tuesday is the next second Tuesday", wk["patch-tuesday"]?.text.includes(shortDate(W.patchTuesday)) && /today|tomorrow|in \d+ days/.test(wk["patch-tuesday"]?.text ?? ""), wk["patch-tuesday"]?.text.slice(0, 80));
   if (home.counters.cves_7d !== null) {
     const r = await openAndRead(client, '[data-week] [data-line="published"] button');

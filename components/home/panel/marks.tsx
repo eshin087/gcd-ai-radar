@@ -1,7 +1,8 @@
+import type { ReactNode } from "react";
 import { CvssChip } from "@/components/ui/Badge";
 import { CVSS_BAND_META, cvssBand, cvssLabel } from "@/lib/cvss";
 import { CVSS_COLORS } from "@/lib/palette";
-import type { Severity } from "@/lib/taxonomy";
+import type { IncidentType } from "@/lib/taxonomy";
 
 /**
  * The panel's ASCII marks, drawn as CSS blocks (globals.css): server-rendered
@@ -31,37 +32,52 @@ export function Units({ n, bright, red }: { n: number; bright?: number; red?: nu
   );
 }
 
-/** The track of a Vs bar, in cells of 7 px plus a 2 px gap. */
-export const VS_CELLS = 24;
-
 /**
- * This week's count as cells on a fixed track that spans `max`, against the
- * marks the week is judged by: a hairline where `typical` sits, a dim band
- * over the usual range and a faint hairline where busy starts (`p90`).
- * One cell at least for any count above zero, so a quiet week still shows.
+ * The day sheet's small tag: a word in a thin box, still, never a dot.
+ * `stack` marks a row in the visitor's own stack and `ai` a record with an
+ * AI role, on the runway and in its lists; the status tones (solid red for
+ * harm confirmed, outlined red for no patch, amber for a deadline, `partial`
+ * for a fix that covers some) label a product in My stack's drawers.
  */
-export function Vs({ n, max, typical, band, p90 }: { n: number; max: number; typical?: number | null; band?: [number, number] | null; p90?: number | null }) {
-  const px = (v: number) => Math.round((Math.min(v, max) / max) * VS_CELLS) * 9;
-  const lit = n > 0 ? Math.max(1, Math.round((Math.min(n, max) / max) * VS_CELLS)) : 0;
+export type TagTone = "harm" | "open" | "due" | "partial" | "ai" | "stack";
+const TAG_TONE: Record<TagTone, string> = {
+  harm: "border-live bg-live font-semibold text-ground",
+  open: "border-live/55 font-medium text-live",
+  due: "border-accent/55 font-medium text-accent",
+  partial: "border-partial/55 font-medium text-partial",
+  ai: "border-accent/50 font-medium text-accent",
+  stack: "border-ink/35 font-medium text-ink",
+};
+
+export function Tag({ tone, title, children, ...rest }: { tone: TagTone; title?: string; children: ReactNode } & Record<`data-${string}`, string | undefined>) {
   return (
-    <span aria-hidden className="vs" data-vs={lit} style={{ width: VS_CELLS * 9 - 2 }}>
-      {band && <span className="band" style={{ left: px(band[0]), width: Math.max(2, px(band[1]) - px(band[0])) }} />}
-      <Cells n={lit} />
-      {typical !== null && typical !== undefined && <span className="tick" style={{ left: px(typical) }} />}
-      {p90 !== null && p90 !== undefined && <span className="tick p90" style={{ left: px(p90) }} />}
+    <span {...rest} data-tag={tone} title={title} className={`inline-flex shrink-0 items-center rounded-[4px] border px-[5px] font-mono text-[10.5px] uppercase leading-[15px] tracking-[0.05em] whitespace-nowrap ${TAG_TONE[tone]}`}>
+      {children}
     </span>
   );
 }
 
-/** Our severity as four bars: three lit for exploited, four in red for harm confirmed. */
-export function SevMeter({ severity }: { severity: Severity }) {
-  const word = severity >= 4 ? "harm confirmed" : severity === 3 ? "exploited" : severity === 2 ? "disclosed" : "research";
+/** The stack tag; which picks hold the row is in its hover note. It waits hidden while a visitor's own stack loads. */
+export function StackTag({ labels, ready }: { labels: string[]; ready: boolean }) {
   return (
-    <span className={`sev-meter ${severity >= 4 ? "s4" : ""}`} title={`Severity ${severity}: ${word}`} role="img" aria-label={`severity ${severity}, ${word}`}>
-      {[1, 2, 3, 4].map((k) => (
-        <i key={k} className={k <= severity ? "on" : ""} />
-      ))}
+    <span data-stack={ready ? "ready" : "wait"} className="contents">
+      {labels.length > 0 && (
+        <Tag tone="stack" data-stack-mark={labels.join(",")} title={`In your stack: ${labels.join(", ")}`}>
+          your stack
+        </Tag>
+      )}
     </span>
+  );
+}
+
+/** The AI tag; which role AI played is in its hover note, and the "AI only" lens keeps both. */
+export function AiTag({ type }: { type: IncidentType }) {
+  if (type === "not_ai") return null;
+  const on = type === "attack_on_ai";
+  return (
+    <Tag tone="ai" data-ai-mark={on ? "on" : "using"} title={on ? "Attack on AI: an AI model, agent or AI-powered product was the thing exploited" : "AI-enabled attack: attackers used AI as a meaningful part of the attack"}>
+      AI
+    </Tag>
   );
 }
 

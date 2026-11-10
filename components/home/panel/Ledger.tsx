@@ -1,133 +1,91 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useMemo, useState, type ReactNode } from "react";
-import { Instrument, Pulse } from "@/components/home/panel/Instrument";
+import { useEffect, useId, useMemo, useState, type ReactNode } from "react";
 import { Countdown, OpenFor, ShortAgo, TypeIn } from "@/components/home/panel/Live";
-import { CvssNum, ScoreOrDash, SevMeter } from "@/components/home/panel/marks";
+import { AiTag, CvssNum, ScoreOrDash, StackTag } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
 import { usePanelState } from "@/components/home/panel/PanelState";
+import { Runway, dueEnd, type DueOnRunway, type OpenOnRunway } from "@/components/home/panel/Runway";
 import { Drawer } from "@/components/ui/Drawer";
 import { dateLabel } from "@/lib/format";
 import { LEDGER_DUE_ROWS, LEDGER_NEW_ROWS, LEDGER_PATCH_ROWS } from "@/lib/panel/caps";
 import { shortDate } from "@/lib/panel/dates";
-import type { DueRow, Ledger as LedgerData, NewRow, PatchRow } from "@/lib/panel/ledger";
+import type { DueRow, Ledger as LedgerData, NewRow } from "@/lib/panel/ledger";
 import { rowStack, stackHits, type StackHits } from "@/lib/panel/picks";
 import type { IncidentType } from "@/lib/taxonomy";
 
 /**
- * The ledger (lib/panel/ledger.ts): what is exploited and still needs doing,
- * three groups of one-line rows on one grid of five columns: a glyph (the red
- * pulse for open items, a still amber dot for partly patched ones, the
- * severity meter for new records, red for harm confirmed), the name with its
- * marks, the CVE id (a link to NVD), the CVSS score as a plain tinted number,
- * and one time at the right: the days left to CISA's deadline, how long a
- * record has gone without a patch ("open 3 days"), or the age of a new one
- * ("22 h ago"). The group's name says what the time measures, so no row
- * repeats it; the key line explains the marks once. On a phone the CVE and
- * score columns give way to the name. Rows in the visitor's stack carry a
- * red mark, recomputed in the browser for their own picks; AI records an
- * amber tag, and "AI only" keeps only those rows, the group counts dissolving
- * to match. "N later" opens every deadline ahead, "all without a full patch"
- * every record waiting for one. The newest row types itself in once.
+ * Needs action (lib/panel/ledger.ts): what is exploited and still needs
+ * doing. The runway card leads (Runway.tsx): the nearest deadline as a large
+ * countdown beside the two weeks around now. Under it sit three short lists,
+ * one question each: what else is due this week, what has no patch yet, what
+ * is new. A list is its title and count over a hairline, the link to
+ * everything behind the count at the right, and three one-line rows: the
+ * name, at most two tags ("your stack", recomputed in the browser for a
+ * visitor's own picks, and "AI"), the CVSS score, and one time at the right
+ * (the time left to CISA's deadline, how long a record has gone without a
+ * patch, the age of a new one). CVE ids sit on the runway's lead, in each
+ * row's hover note and in the drawers.
+ *
+ * The card and the lists read the same rows, in one order: the first
+ * deadline is the card's lead and the next three are the list. "AI only"
+ * (the switch is on the stack strip) refills everything with AI rows, the
+ * counts dissolving to match; a deadline counts as AI when an AI record
+ * without a full patch names one of its CVEs. A deadline that has passed
+ * since the page was built drops off. The newest row types itself in once.
  */
 
 const KEV_CATALOG = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog";
-const nvdHref = (cve: string) => `https://nvd.nist.gov/vuln/detail/${cve}`;
 const DUE_NOTE = "CISA's deadline for US federal agencies to patch; a good yardstick for everyone";
-const ROW = "grid min-h-[38px] grid-cols-[22px_minmax(0,1fr)_96px] items-center gap-x-2.5 border-t border-line-soft py-1.5 sm:grid-cols-[22px_minmax(0,1fr)_128px_34px_104px] sm:gap-x-3";
-const NAME = "min-w-0 truncate text-[14px] text-ink hover:text-accent";
-const CVE = "hidden truncate font-mono text-[12px] text-dim sm:block";
-const TIME = "text-right font-mono text-[12px] whitespace-nowrap";
+const ROW = "flex h-[42px] items-center gap-2.5 border-b border-white/[0.05]";
+const NAME = "min-w-0 truncate text-[14px] font-medium text-ink hover:text-accent";
+const TIME = "w-[86px] flex-none text-right font-mono text-[12px] whitespace-nowrap";
 
-/** The stack mark: a small red square, explained once in the panel's key line and in its own hover note. */
-function StackMark({ labels }: { labels: string[] }) {
-  if (labels.length === 0) return null;
-  const text = `In your stack: ${labels.join(", ")}`;
-  return <span data-stack-mark={labels.join(",")} role="img" aria-label={text} title={text} className="inline-block size-[7px] shrink-0 rounded-[1px] bg-live" />;
+/** The visitor's clock, starting from the build's so the first paint matches the server's, then every half minute. */
+function useNow(built: number): number {
+  const [now, setNow] = useState(built);
+  useEffect(() => {
+    const tick = () => setNow(Date.now());
+    const first = window.setTimeout(tick, 0);
+    const every = window.setInterval(tick, 30_000);
+    return () => {
+      window.clearTimeout(first);
+      window.clearInterval(every);
+    };
+  }, []);
+  return now;
 }
 
-const TAG = "inline-flex shrink-0 items-center rounded-[2px] border px-[3px] font-mono text-[9.5px] leading-[13px] tracking-[0.06em]";
-const AI_TAG = `${TAG} border-accent/40 text-accent`;
-
-/** The AI mark: a small "AI" tag; which role AI played is in the hover note, and the "AI only" filter keeps both. */
-function AiMark({ type }: { type: IncidentType }) {
-  if (type === "not_ai") return null;
-  const on = type === "attack_on_ai";
-  return (
-    <span data-ai-mark={on ? "on" : "using"} title={on ? "Attack on AI: an AI model, agent or AI-powered product was the thing exploited" : "AI-enabled attack: attackers used AI as a meaningful part of the attack"} className={AI_TAG}>
-      AI
-    </span>
-  );
-}
-
-/** CISA's ransomware flag, as a tag that needs no key. */
-function RansomTag() {
-  return (
-    <span title="CISA lists known use in ransomware campaigns" className={`${TAG} border-live/40 text-live`}>
-      ransomware
-    </span>
-  );
-}
-
-/** The score column: a plain tinted number, or an empty cell; hidden on a phone. */
+/** The score at the right of a row, in its band's colour; an empty slot keeps the times aligned. */
 function Score({ score }: { score: number | null }) {
   return (
-    <span className="hidden text-right sm:block">
+    <span className="ml-auto flex-none">
       <CvssNum score={score} />
     </span>
   );
 }
 
-/** The CVE id as a link to its NVD page, "+N" for the siblings on the same row. */
-function CveLink({ cve, more }: { cve: string | undefined; more: number }) {
-  if (!cve) return null;
-  return (
-    <>
-      <a href={nvdHref(cve)} target="_blank" rel="noopener noreferrer" title={`${cve} at NVD`} className="hover:text-accent hover:underline">
-        {cve}
-      </a>
-      {more > 0 && ` +${more}`}
-    </>
-  );
-}
-
-/** The name cell: the link, then the marks, which wait hidden while a visitor's own stack loads. */
-function NameCell({ ready, labels, type, ransomware, children }: { ready: boolean; labels: string[]; type?: IncidentType; ransomware?: boolean; children: ReactNode }) {
-  return (
-    <span className="flex min-w-0 items-center gap-2">
-      {children}
-      <span data-stack={ready ? "ready" : "wait"} className="contents">
-        <StackMark labels={labels} />
-      </span>
-      {type && <AiMark type={type} />}
-      {ransomware && <RansomTag />}
-    </span>
-  );
-}
-
-function DueLi({ r, labels, ready, today }: { r: DueRow; labels: string[]; ready: boolean; today: string }) {
+function DueLi({ r, ready, today }: { r: DueOnRunway; ready: boolean; today: string }) {
   const title = `${r.name}: ${r.cves.join(", ")}${r.ransomware ? " · known ransomware use" : ""}`;
-  const cls = `${NAME} font-semibold`;
   return (
-    <li data-row="due" data-ai="0" data-name={r.name} className={ROW}>
-      <span className="flex justify-center">
-        <Pulse />
-      </span>
-      <NameCell ready={ready} labels={labels} ransomware={r.ransomware}>
-        {r.external ? (
-          <a href={r.href} target="_blank" rel="noopener noreferrer" title={title} className={cls}>
-            {r.name}
-          </a>
-        ) : (
-          <Link href={r.href} title={title} className={cls}>
-            {r.name}
-          </Link>
-        )}
-      </NameCell>
-      <span className={CVE}>
-        <CveLink cve={r.cves[0]} more={r.cves.length - 1} />
-      </span>
+    <li data-row="due" data-ai={r.type === "not_ai" ? "0" : "1"} data-name={r.name} className={ROW}>
+      {r.external ? (
+        <a href={r.href} target="_blank" rel="noopener noreferrer" title={title} className={NAME}>
+          {r.name}
+        </a>
+      ) : (
+        <Link href={r.href} title={title} className={NAME}>
+          {r.name}
+        </Link>
+      )}
+      <StackTag labels={r.labels} ready={ready} />
+      <AiTag type={r.type} />
+      {r.ransomware && (
+        <span className="flex-none font-mono text-[11.5px] text-live" title="CISA lists known use in ransomware campaigns">
+          ransomware
+        </span>
+      )}
       <Score score={r.cvss} />
       <span className={`${TIME} text-accent`} title={`Patch ${r.due === today ? "today" : `by ${dateLabel(r.due)}`}: ${DUE_NOTE}`}>
         <Countdown due={r.due} fallback={r.due === today ? "today" : `by ${shortDate(r.due)}`} />
@@ -136,30 +94,17 @@ function DueLi({ r, labels, ready, today }: { r: DueRow; labels: string[]; ready
   );
 }
 
-function PatchLi({ r, labels, ready, built, hidden }: { r: PatchRow; labels: string[]; ready: boolean; built: string; hidden: boolean }) {
-  const open = r.patch === "unpatched";
+function PatchLi({ r, ready, built }: { r: OpenOnRunway; ready: boolean; built: string }) {
   return (
-    <li data-row="patch" data-ai={r.type === "not_ai" ? "0" : "1"} data-name={r.name} hidden={hidden} className={ROW}>
-      <span className="flex justify-center">
-        {open ? (
-          <Pulse />
-        ) : (
-          <span aria-hidden title="Partly patched" className="w-[1ch] text-center font-mono text-[13px] leading-none text-partial">
-            •
-          </span>
-        )}
-      </span>
-      <NameCell ready={ready} labels={labels} type={r.type}>
-        <Link href={`/incidents/${r.slug}`} title={r.title} className={`${NAME} font-semibold`}>
-          {r.name}
-        </Link>
-      </NameCell>
-      <span className={CVE}>
-        <CveLink cve={r.cves[0]} more={r.cves.length - 1} />
-      </span>
+    <li data-row="patch" data-ai={r.type === "not_ai" ? "0" : "1"} data-name={r.name} className={ROW}>
+      <Link href={`/incidents/${r.slug}`} title={`${r.title}${r.cves.length ? ` · ${r.cves.join(", ")}` : " · no CVE id yet"}`} className={NAME}>
+        {r.name}
+      </Link>
+      <StackTag labels={r.labels} ready={ready} />
+      <AiTag type={r.type} />
       <Score score={r.cvss} />
-      {open ? (
-        <OpenFor since={r.reported} built={built} title={`No patch yet; first reported ${dateLabel(r.reported)}`} className={`${TIME} text-dim`} />
+      {r.patch === "unpatched" ? (
+        <OpenFor since={r.reported} built={built} title={`No patch yet; first reported ${dateLabel(r.reported)}`} className={`${TIME} text-soft`} />
       ) : (
         <span className={`${TIME} text-partial`} title={`Partly patched: a fix covers some versions or only a workaround exists; first reported ${dateLabel(r.reported)}`}>
           partly patched
@@ -169,42 +114,47 @@ function PatchLi({ r, labels, ready, built, hidden }: { r: PatchRow; labels: str
   );
 }
 
-function NewLi({ r, labels, ready, built, first, hidden }: { r: NewRow; labels: string[]; ready: boolean; built: string; first: boolean; hidden: boolean }) {
+function NewLi({ r, labels, ready, built, first }: { r: NewRow; labels: string[]; ready: boolean; built: string; first: boolean }) {
   return (
-    <li data-row="new" data-ai={r.type === "not_ai" ? "0" : "1"} data-slug={r.slug} hidden={hidden} className={ROW}>
-      <span className="flex justify-center">
-        <SevMeter severity={r.severity} />
-      </span>
-      <NameCell ready={ready} labels={labels} type={r.type}>
-        <Link href={`/incidents/${r.slug}`} title={r.title} className={NAME}>
-          {first ? <TypeIn text={r.title} /> : r.title}
-        </Link>
-      </NameCell>
-      <span className={CVE}>
-        <CveLink cve={r.cves[0]} more={r.cves.length - 1} />
-      </span>
+    <li data-row="new" data-ai={r.type === "not_ai" ? "0" : "1"} data-slug={r.slug} className={ROW}>
+      <Link href={`/incidents/${r.slug}`} title={`${r.title}${r.cves.length ? ` · ${r.cves.join(", ")}` : ""}`} className={NAME}>
+        {first ? <TypeIn text={r.title} /> : r.title}
+      </Link>
+      {r.severity >= 4 && (
+        <span className="flex-none font-mono text-[11.5px] text-live" title="Harm confirmed: data, money or service lost">
+          harm
+        </span>
+      )}
+      <StackTag labels={labels} ready={ready} />
+      <AiTag type={r.type} />
       <Score score={r.cvss} />
-      <ShortAgo iso={r.created} built={built} suffix=" ago" className={`${TIME} text-dim`} />
+      <ShortAgo iso={r.created} built={built} suffix=" ago" className={`${TIME} !w-[62px] text-dim`} />
     </li>
   );
 }
 
-/** A group's head: its name in the panel titles' sans, smaller, and its counts and links in mono at the right. */
-function Head({ group, label, sub, children }: { group: string; label: string; sub?: string; children: ReactNode }) {
+/**
+ * One list: its title and count over a hairline (`data-head`, which
+ * scripts/check-home.mjs reads; `hint` is its hover note), the link to
+ * everything behind the count at the right, then the rows.
+ */
+function List({ group, count, title, hint, more, children }: { group: "due" | "patch" | "new"; count: number; title: string; hint: string; more?: ReactNode; children: ReactNode }) {
   return (
-    <li data-group={group} className="flex items-baseline justify-between gap-3 pt-6 pb-2 first:pt-0">
-      <span className="whitespace-nowrap text-[13px] font-semibold text-soft">
-        {label}
-        {sub && <span className="ml-2 hidden font-normal text-faint sm:inline">{sub}</span>}
-      </span>
-      <span className="whitespace-nowrap font-mono text-[12px] text-faint [&_[data-num]]:text-soft [&_a]:text-dim [&_a:hover]:text-accent [&_b]:font-medium [&_b]:text-soft [&_button]:text-dim [&_button:hover]:text-accent">{children}</span>
-    </li>
+    <div data-group={group} className="min-w-0">
+      <header data-head title={hint} className="flex items-baseline gap-2 border-b border-white/10 pb-2.5">
+        <h3 className="text-[13px] font-semibold text-ink">{title}</h3>
+        <Num value={String(count)} className="font-mono text-[12px] text-dim" />
+        {more && <span className="ml-auto font-mono text-[12px] whitespace-nowrap text-dim [&_a:hover]:text-accent [&_button:hover]:text-accent">{more}</span>}
+      </header>
+      <ol>{children}</ol>
+    </div>
   );
 }
 
-function Note({ children }: { children: ReactNode }) {
+/** A line where a list has no rows. `quiet` is one that is no finding of its own: the card above already holds the list's only row. */
+function Note({ quiet, children }: { quiet?: boolean; children: ReactNode }) {
   return (
-    <li data-note className="border-t border-line-soft py-2 text-[13px] text-dim">
+    <li {...(quiet ? {} : { "data-note": "" })} className="flex h-[42px] items-center text-[13px] text-dim">
       {children}
     </li>
   );
@@ -256,106 +206,97 @@ function LedgerDrawer({ open, onClose, kicker, title, count, footerLink, childre
   );
 }
 
-/* ---------- the instrument ---------- */
+/* ---------- the card and its lists ---------- */
 
-export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: string; built: string }) {
-  const { picks, isDefault, file, ready } = usePanelState();
-  const [filter, setFilter] = useState<"all" | "ai">("all");
+export function Ledger({ ledger, built }: { ledger: LedgerData; built: string }) {
+  const { picks, isDefault, file, ready, aiOnly: ai } = usePanelState();
   const [open, setOpen] = useState<null | "later" | "patch">(null);
+  const builtMs = useMemo(() => Date.parse(built), [built]);
+  const now = useNow(builtMs);
+  const today = new Date(now).toISOString().slice(0, 10);
   const hits = useMemo<StackHits | null>(() => (isDefault || !file ? null : stackHits(file, picks)), [isDefault, file, picks]);
   const labelsOf = (row: { cves: string[]; stack: string[] }, href: string) => (hits ? rowStack(hits, { cves: row.cves, href }) : row.stack);
 
-  const ai = filter === "ai";
-  const due = ledger.due.slice(0, LEDGER_DUE_ROWS);
-  const patchRows = ledger.patch.filter((r) => !r.onDeadlineRow);
-  const patch = patchRows.slice(0, LEDGER_PATCH_ROWS);
-  const fresh = ledger.fresh.slice(0, LEDGER_NEW_ROWS);
-  const patchShown = ai ? patch.filter((r) => r.type !== "not_ai").length : patch.length;
-  const newShown = ai ? fresh.filter((r) => r.type !== "not_ai").length : fresh.length;
-  const later = ledger.later.length;
+  const isAi = (r: { type: IncidentType }) => r.type !== "not_ai";
+  // a deadline has no AI role of its own: it counts as AI when an AI record without a full patch names one of its CVEs
+  const aiCves = useMemo(() => new Map(ledger.patch.filter((r) => r.type !== "not_ai").flatMap((r) => r.cves.map((c) => [c, r.type] as const))), [ledger.patch]);
+  const dueType = (r: DueRow): IncidentType => r.cves.map((c) => aiCves.get(c)).find(Boolean) ?? "not_ai";
+
+  // deadlines still ahead by the visitor's clock, nearest first: the first is the card's lead, the next ones the list
+  const dueAll: DueOnRunway[] = ledger.due
+    .filter((r) => dueEnd(r.due) > now)
+    .map((r) => ({ ...r, type: dueType(r), labels: labelsOf(r, r.href) }))
+    .filter((r) => !ai || isAi(r));
+  const dueList = dueAll.slice(1, LEDGER_DUE_ROWS);
+  const openAll: OpenOnRunway[] = ledger.patch.filter((r) => !r.onDeadlineRow && (!ai || isAi(r))).map((r) => ({ ...r, labels: labelsOf(r, `/incidents/${r.slug}`) }));
+  const patch = openAll.slice(0, LEDGER_PATCH_ROWS);
+  const fresh = (ai ? ledger.fresh.filter(isAi) : ledger.fresh).slice(0, LEDGER_NEW_ROWS);
+  const patchAi = ledger.patch.filter(isAi).length;
+  const openCount = ai ? patchAi : ledger.noFullPatch;
+  const freshCount = ai ? ledger.freshAi : ledger.freshTotal;
+  const days = ledger.freshDays.map((d) => (ai ? { n: d.ai, harm: d.aiHarm } : { n: d.n, harm: d.harm }));
+  const harm = days.reduce((n, d) => n + d.harm, 0);
+  const ahead = ledger.due.length + ledger.later.length;
   const unpatched = ledger.patch.filter((r) => r.patch === "unpatched").length;
+  const partial = ledger.noFullPatch - unpatched;
 
   return (
-    <Instrument
-      id="ledger"
-      card="lead"
-      label="Needs action"
-      sub="exploited and still open"
-      legend={
-        <>
-          <span aria-hidden className="mr-1.5 inline-block size-[7px] rounded-[1px] bg-live align-[-0.5px]" />
-          in your stack · <span className={AI_TAG}>AI</span> AI was the target or the weapon ·{" "}
-          <span aria-hidden className="sev-meter s4 mr-1.5">
-            {[1, 2, 3, 4].map((k) => (
-              <i key={k} className="on" />
-            ))}
-          </span>
-          <b>harm confirmed</b>: data, money or service lost · <b>days left</b> until CISA&rsquo;s patch deadline for US agencies, a yardstick for everyone
-        </>
-      }
-      source={
-        <>
-          <span role="group" aria-label="Filter the ledger" className="mr-3.5 inline-flex">
-            {(["all", "ai"] as const).map((f, i) => (
-              <button key={f} type="button" data-filter={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`px-1.5 uppercase tracking-[0.08em] hover:underline ${i ? "border-l border-line-soft" : ""} ${filter === f ? "!text-accent" : "!text-faint"}`}>
-                {f === "all" ? "all" : "AI only"}
-              </button>
-            ))}
-          </span>
-          CISA KEV · our records
-        </>
-      }
-    >
-      <ol data-ledger data-filter={filter}>
-        <Head group="due" label="Patch due this week">
-          <Num value={String(ai ? 0 : ledger.due.length)} /> {ledger.due.length === 1 ? "deadline" : "deadlines"}
-          {later > 0 && (
-            <>
-              {" · "}
+    <div data-ledger data-filter={ai ? "ai" : "all"} className="flex min-w-0 flex-col gap-5">
+      <Runway now={now} built={builtMs} due={dueAll} later={ledger.later.length} onLater={() => setOpen("later")} open={openAll} openCount={openCount} days={days} fresh={freshCount} harm={harm} ai={ai} ready={ready} />
+
+      <section id="ledger" data-build data-instrument="ledger" aria-label="Needs action" className="grid min-w-0 scroll-mt-6 gap-x-10 gap-y-6 lg:grid-cols-3">
+        <List
+          group="due"
+          count={dueAll.length}
+          title="Patch due this week"
+          hint={DUE_NOTE}
+          more={
+            ahead > dueAll.length || dueAll.length > LEDGER_DUE_ROWS ? (
               <button type="button" onClick={() => setOpen("later")}>
-                {later} later →
+                all {ahead} →
               </button>
-            </>
-          )}
-        </Head>
-        {ai ? <Note>CISA&rsquo;s deadlines carry no AI role.</Note> : due.length === 0 ? <Note>No CISA deadline falls this week.</Note> : due.map((r) => <DueLi key={r.cves[0]} r={r} labels={labelsOf(r, r.href)} ready={ready} today={today} />)}
+            ) : null
+          }
+        >
+          {dueAll.length === 0 && <Note>{ai ? "No deadline this week is for an AI product." : "No CISA deadline falls this week."}</Note>}
+          {dueAll.length > 0 && dueList.length === 0 && <Note quiet>Nothing else is due this week.</Note>}
+          {dueList.map((r) => (
+            <DueLi key={r.cves[0]} r={r} ready={ready} today={today} />
+          ))}
+        </List>
 
-        <Head group="patch" label="No patch yet">
-          <Num value={String(patchShown)} /> of <b>{ledger.noFullPatch}</b> ·{" "}
-          <button type="button" onClick={() => setOpen("patch")}>
-            <span className="hidden sm:inline">all without a full patch →</span>
-            <span className="sm:hidden">all →</span>
-          </button>
-        </Head>
-        {patch.length === 0 && <Note>Every exploited record has a patch.</Note>}
-        {patch.map((r) => (
-          <PatchLi key={r.slug} r={r} labels={labelsOf(r, `/incidents/${r.slug}`)} ready={ready} built={built} hidden={ai && r.type === "not_ai"} />
-        ))}
-        {ai && patch.length > 0 && patchShown === 0 && <Note>No AI record is waiting for a patch.</Note>}
+        <List
+          group="patch"
+          count={openCount}
+          title="No patch yet"
+          hint={`Live exploited records without a full patch: ${unpatched} with no patch, ${partial} partly patched`}
+          more={
+            <button type="button" onClick={() => setOpen("patch")}>
+              all {ledger.noFullPatch} →
+            </button>
+          }
+        >
+          {patch.length === 0 && <Note>{!ai ? "Every exploited record has a patch." : patchAi ? "Listed under Patch due this week." : "No AI record is waiting for a patch."}</Note>}
+          {patch.map((r) => (
+            <PatchLi key={r.slug} r={r} ready={ready} built={built} />
+          ))}
+        </List>
 
-        <Head group="new" label="New this week" sub="harm first">
-          <Num value={String(ai ? ledger.freshAi : ledger.freshTotal)} /> <span className="hidden sm:inline">exploited</span>
-          {!ai && (
-            <>
-              {" · "}
-              <b>{ledger.freshLoss}</b> <span className="hidden sm:inline">with harm</span>
-              <span className="sm:hidden">harm</span>
-            </>
-          )}
-          {" · "}
-          <Link href="/live">
-            <span className="hidden sm:inline">all {ledger.exploitedLive} live →</span>
-            <span className="sm:hidden">live →</span>
-          </Link>
-        </Head>
-        {fresh.length === 0 && <Note>Nothing new this week.</Note>}
-        {fresh.map((r, i) => (
-          <NewLi key={r.slug} r={r} labels={labelsOf(r, `/incidents/${r.slug}`)} ready={ready} built={built} first={i === 0} hidden={ai && r.type === "not_ai"} />
-        ))}
-        {ai && fresh.length > 0 && newShown === 0 && <Note>No new AI record this week.</Note>}
-      </ol>
+        <List
+          group="new"
+          count={freshCount}
+          title="New this week"
+          hint={ai ? "Exploited records that entered the dataset in 7 days with AI as the target or the weapon" : `Exploited records that entered the dataset in 7 days, harm first: ${ledger.freshLoss} with harm confirmed (data, money or service lost)`}
+          more={<Link href="/live">live board →</Link>}
+        >
+          {fresh.length === 0 && <Note>{ai ? "No new AI record this week." : "Nothing new this week."}</Note>}
+          {fresh.map((r, i) => (
+            <NewLi key={r.slug} r={r} labels={labelsOf(r, `/incidents/${r.slug}`)} ready={ready} built={built} first={!ai && i === 0} />
+          ))}
+        </List>
+      </section>
 
-      <LedgerDrawer open={open === "later"} onClose={() => setOpen(null)} kicker="CISA KEV · deadlines ahead" title="Every deadline still ahead" count={`${ledger.due.length + later} deadlines · ${ledger.due.length} this week`} footerLink={{ href: KEV_CATALOG, label: "CISA’s catalog →", external: true }}>
+      <LedgerDrawer open={open === "later"} onClose={() => setOpen(null)} kicker="CISA KEV · deadlines ahead" title="Every deadline still ahead" count={`${ahead} deadlines · ${ledger.due.length} this week`} footerLink={{ href: KEV_CATALOG, label: "CISA’s catalog →", external: true }}>
         {[...ledger.due, ...ledger.later].map((r) => (
           <DrawerRow key={r.cves[0]} score={r.cvss} href={r.href} external={r.external} name={r.name} cve={r.cves[0]} more={r.cves.length - 1}>
             listed by CISA {dateLabel(r.added)} · <span className="text-accent">patch by {dateLabel(r.due)}</span>
@@ -371,6 +312,6 @@ export function Ledger({ ledger, today, built }: { ledger: LedgerData; today: st
           </DrawerRow>
         ))}
       </LedgerDrawer>
-    </Instrument>
+    </div>
   );
 }

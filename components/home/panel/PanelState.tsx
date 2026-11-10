@@ -5,8 +5,9 @@ import { STACK_FILE, STACK_STORAGE_KEY, parsePicks, stackMatches, type StackCand
 import { SITE } from "@/lib/site";
 
 /**
- * What the panel's instruments share in the browser: the visitor's stack and
- * the live NVD counts.
+ * What the panel's instruments share in the browser: the visitor's stack,
+ * the live NVD counts and the "AI only" lens (off on every load; the stack
+ * strip holds its switch, the runway and its lists follow it).
  *
  * The stack: the build's default until the visitor chooses. A ?stack=key,key
  * URL applies and stores its picks; otherwise localStorage holds them. Picks
@@ -37,6 +38,8 @@ interface PanelStateValue {
   loadFile: () => Promise<StackFile | null>;
   setPicks: (picks: string[]) => void;
   pulse: Pulse | null;
+  aiOnly: boolean;
+  setAiOnly: (on: boolean) => void;
 }
 
 const Ctx = createContext<PanelStateValue | null>(null);
@@ -80,6 +83,7 @@ export function PanelState({ defaults, defaultMatches, nvdFetched, children }: {
   const [file, setFile] = useState<StackFile | null>(null);
   const [ready, setReady] = useState(false);
   const [pulse, setPulse] = useState<Pulse | null>(null);
+  const [aiOnly, setAiOnly] = useState(false);
 
   // the visitor's own picks, from the URL or storage
   useEffect(() => {
@@ -158,8 +162,8 @@ export function PanelState({ defaults, defaultMatches, nvdFetched, children }: {
     const source = file?.candidates ?? defaults;
     const tiles = isDefault ? defaults : picks.map((k) => source.find((c) => c.key === k)).filter((c): c is StackCandidate => Boolean(c));
     const matches = isDefault || !file ? defaultMatches : stackMatches(file, picks);
-    return { picks, isDefault, tiles, matches, ready, file, loadFile, setPicks, pulse };
-  }, [picks, isDefault, file, defaults, defaultMatches, ready, loadFile, setPicks, pulse]);
+    return { picks, isDefault, tiles, matches, ready, file, loadFile, setPicks, pulse, aiOnly, setAiOnly };
+  }, [picks, isDefault, file, defaults, defaultMatches, ready, loadFile, setPicks, pulse, aiOnly]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

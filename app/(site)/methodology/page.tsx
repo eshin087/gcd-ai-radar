@@ -424,10 +424,14 @@ export default function MethodologyPage() {
           the collector tracked AI incidents only, so an AI share trend would chart the collector, not the world.
         </li>
         <li>
-          <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and deadline;
-          our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the live
-          exploited records that entered the dataset in the last seven days, harm confirmed first. A row is marked as yours when one of your stack picks counts
-          its CVE or record.
+          <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and
+          deadline; our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the
+          live exploited records that entered the dataset in the last seven days, harm confirmed first. The runway card draws them on one time axis, seven
+          days back and seven ahead: the nearest deadline leads as a countdown to the end of its UTC day, each deadline day is a marker, each of the first
+          six records without a patch is a bar from its first report to now, and each new record is a dot in its 24-hour window (several to a dot in a very
+          busy week, and the card says so). A deadline that has passed since the page was built drops off. A row is tagged &ldquo;your stack&rdquo; when one
+          of your stack picks counts its CVE or record. &ldquo;AI only&rdquo; shows the AI rows; a deadline counts as AI when an AI record without a full
+          patch names one of its CVEs.
         </li>
         <li>
           <strong>The week</strong> judges each count against its own typical: CVEs published against this year&rsquo;s average week; critical ones against the
@@ -550,6 +554,13 @@ export default function MethodologyPage() {
           the machine-readable files are withdrawn; the files themselves stay, unlisted and marked noindex. No counting rule changed.
         </li>
         <li>2026-11-09 · site renamed gcdRadar, now at gcdradar.vercel.app; the old address redirects. No counting rule changed.</li>
+        <li>
+          2026-11-10 · the day sheet is rebuilt around the runway: the nearest patch deadline as a large countdown beside one time axis of the two weeks
+          around now (new records as dots, records without a patch as growing bars, deadline days as markers). My stack becomes a strip of chips with a
+          coloured word (&ldquo;harm&rdquo;, &ldquo;no patch&rdquo;, &ldquo;due 10 Nov&rdquo;); the three lists under the runway show three rows each; the
+          week becomes one strip of six numbers. Nothing pulses; the key line and the source credits in the headers go (every source stays in the footer).
+          &ldquo;AI only&rdquo; now refills the card and the lists with AI rows instead of hiding the others. No counting rule changed.
+        </li>
       </ul>
     </div>
   );

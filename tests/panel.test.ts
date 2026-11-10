@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
-import { openFor, timeLeft } from "@/lib/panel/dates";
+import { countdownParts, openFor, timeLeft } from "@/lib/panel/dates";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
-import { buildLedger } from "@/lib/panel/ledger";
+import { LEDGER_NEW_AI_KEPT, LEDGER_NEW_KEPT, buildLedger } from "@/lib/panel/ledger";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
-import { rowStack, stackHits } from "@/lib/panel/picks";
+import { flagBadge, rowStack, stackHits } from "@/lib/panel/picks";
 import { buildStack, kevCatalogHref, parsePicks, stackMatches, tileOf, type StackFile } from "@/lib/panel/stack";
 import { buildSurface, techOf } from "@/lib/panel/technology";
 import { kevName, recordCves, shortDate, slugKey } from "@/lib/panel/util";
@@ -193,6 +193,27 @@ describe("the ledger", () => {
     expect(l.freshAi).toBe(4);
     expect(l.exploitedLive).toBe(6);
   });
+  it("keeps AI records past the kept rows, so AI only has rows in a week of plain breaches", () => {
+    const at = (h: number) => `2026-10-29T${String(h).padStart(2, "0")}:00:00.000Z`;
+    const week = [
+      ...Array.from({ length: LEDGER_NEW_KEPT + 2 }, (_, k) => incident({ slug: `breach-${k}`, lane: "breach", severity: 4, type: "not_ai", categories: ["general"], first_reported: "2026-10-29", created_at: at(k) })),
+      ...Array.from({ length: LEDGER_NEW_AI_KEPT + 2 }, (_, k) => incident({ slug: `ai-${k}`, lane: "supply_chain", severity: 3, first_reported: "2026-10-28", created_at: at(k) })),
+    ];
+    const rows = buildLedger(week, [], { default: [], candidates: [] }, TODAY, NOW).fresh;
+    expect(rows.slice(0, LEDGER_NEW_KEPT).every((r) => r.type === "not_ai" && r.severity === 4)).toBe(true);
+    expect(rows.slice(LEDGER_NEW_KEPT).map((r) => r.slug)).toEqual(["ai-5", "ai-4", "ai-3", "ai-2"]);
+  });
+  it("counts the week's new records per 24-hour window back from the build, the last 24 hours last", () => {
+    // NOW is 29 Oct 23:30: "newest" (08:00) and "loss" (01:00) fall in the last 24 hours, the three patch records in the two windows before
+    expect(l.freshDays).toHaveLength(7);
+    expect(l.freshDays.reduce((n, d) => n + d.n, 0)).toBe(l.freshTotal);
+    expect(l.freshDays.reduce((n, d) => n + d.harm, 0)).toBe(l.freshLoss);
+    expect(l.freshDays.reduce((n, d) => n + d.ai, 0)).toBe(l.freshAi);
+    expect(l.freshDays[6]).toEqual({ n: 2, harm: 1, ai: 1, aiHarm: 0 });
+    expect(l.freshDays[5]).toEqual({ n: 2, harm: 0, ai: 2, aiHarm: 0 });
+    expect(l.freshDays[4]).toEqual({ n: 1, harm: 0, ai: 1, aiHarm: 0 });
+    expect(l.freshDays.slice(0, 4).every((d) => d.n === 0)).toBe(true);
+  });
   it("marks rows by the picks' items, for the browser's own picks too", () => {
     const hits = stackHits(stack, ["linux"]);
     expect(rowStack(hits, { cves: ["CVE-2026-0012"] })).toEqual(["Linux"]);
@@ -330,6 +351,13 @@ describe("my stack", () => {
     expect(parsePicks("", known)).toEqual([]);
     expect(parsePicks(null, known)).toEqual([]);
   });
+  it("turns every flag into a short badge with its tone", () => {
+    expect(flagBadge("patch by 31 Oct")).toEqual({ word: "due 31 Oct", tone: "due" });
+    expect(flagBadge("harm confirmed")).toEqual({ word: "harm", tone: "harm" });
+    expect(flagBadge("no patch yet")).toEqual({ word: "no patch", tone: "open" });
+    expect(flagBadge("partly patched")).toEqual({ word: "partial", tone: "partial" });
+    for (const c of file.candidates) if (c.flag) expect(["due", "harm", "open", "partial"]).toContain(flagBadge(c.flag).tone);
+  });
 });
 
 describe("open for", () => {
@@ -352,5 +380,14 @@ describe("time left", () => {
     expect(timeLeft(H)).toBe("1 h");
     expect(timeLeft(32 * 60_000)).toBe("32 min");
     expect(timeLeft(30_000)).toBe("1 min"); // the last minute rounds up, the countdown says "past due" at zero itself
+  });
+  it("splits the runway's countdown into two figures: hours and minutes, days and hours from two days out", () => {
+    const H = 3_600_000;
+    expect(countdownParts(21 * H + 32 * 60_000 + 46_000)).toEqual({ a: "21", au: "h", b: "32", bu: "m" });
+    expect(countdownParts(47 * H + 59 * 60_000)).toEqual({ a: "47", au: "h", b: "59", bu: "m" });
+    expect(countdownParts(48 * H)).toEqual({ a: "2", au: "d", b: "0", bu: "h" });
+    expect(countdownParts(2 * 24 * H + 21 * H + 59 * 60_000)).toEqual({ a: "2", au: "d", b: "21", bu: "h" });
+    expect(countdownParts(5 * 60_000)).toEqual({ a: "0", au: "h", b: "05", bu: "m" });
+    expect(countdownParts(-1)).toEqual({ a: "0", au: "h", b: "00", bu: "m" });
   });
 });
