@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1853",
+    "slug": "critical-xen-orchestra-authentication-bypass-is-being-active",
+    "title": "Critical Xen Orchestra authentication bypass is being actively exploited",
+    "summary": "An authentication bypass flaw in Xen Orchestra and Xen Orchestra Appliance is actively exploited in the wild. Vates has issued an advisory urging immediate action.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Xen Orchestra",
+      "Xen Orchestra Appliance"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://docs.vates.tech/security-advisories/advisories/2026/vates-sa-2026-062",
+        "publisher": "docs.vates.tech",
+        "title": "Critical Xen Orchestra authentication bypass is being actively exploited",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "authentication_bypass",
+      "active_exploitation",
+      "xen_orchestra"
+    ],
+    "created_at": "2026-11-10T11:47:02.508Z",
+    "updated_at": "2026-11-10T11:47:02.508Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Critical Xen Orchestra authentication bypass is being actively exploited",
+        "source_url": "https://docs.vates.tech/security-advisories/advisories/2026/vates-sa-2026-062",
+        "added_at": "2026-11-10T11:47:02.508Z"
+      }
+    ],
+    "action": "Check the vendor advisory for available updates and apply patches immediately.",
+    "severity_note": "Active exploitation in the wild confirmed.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1852",
     "slug": "sap-patches-four-cvss-10-0-flaws-in-netweaver-and-web-dispat",
     "title": "SAP patches four CVSS 10.0 flaws in NetWeaver and Web Dispatcher",
