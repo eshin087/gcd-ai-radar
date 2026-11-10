@@ -1,5 +1,181 @@
 [
   {
+    "id": "AIR-2026-1880",
+    "slug": "cve-2026-111560-barracuda-networks-multiple-products-os-comm",
+    "title": "CVE-2026-111560: Barracuda Networks Multiple Products OS Command Injection",
+    "summary": "An OS command injection vulnerability in multiple Barracuda Networks products allows authenticated administrators to execute root commands via a crafted timezone value. CISA confirmed exploitation in the wild and added the flaw to its KEV catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Barracuda Networks Multiple Products"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111560",
+        "publisher": "CISA",
+        "title": "CVE-2026-111560: Barracuda Networks Multiple Products — Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-111560",
+      "cisa-kev",
+      "command-injection"
+    ],
+    "created_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-111560"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-111560: Barracuda Networks Multiple Products — Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111560",
+        "added_at": "2026-11-10T22:41:43.117Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA BOD 26-04 guidance.",
+    "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1879",
+    "slug": "cve-2026-20320-cisco-broadworks-xxe-vulnerability",
+    "title": "CVE-2026-20320: Cisco BroadWorks XXE Vulnerability",
+    "summary": "An improper restriction of XML external entity reference vulnerability in Cisco BroadWorks allows unauthenticated attackers to read sensitive configuration information. CISA confirmed exploitation in the wild and added the flaw to its KEV catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cisco BroadWorks"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-20320",
+        "publisher": "CISA",
+        "title": "CVE-2026-20320: Cisco BroadWorks — Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-20320",
+      "cisa-kev",
+      "xxe"
+    ],
+    "created_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-20320"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-20320: Cisco BroadWorks — Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-20320",
+        "added_at": "2026-11-10T22:41:43.117Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA BOD 26-04 guidance.",
+    "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
+    "cvss": 7.5
+  },
+  {
+    "id": "AIR-2026-1878",
+    "slug": "cve-2026-111793-openwave-messaging-limited-webtop-media-tran",
+    "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder Resource Transfer Flaw",
+    "summary": "An incorrect resource transfer between spheres vulnerability in Openwave Messaging Limited Webtop Media Transcoder allows authenticated users to process unintended document types. CISA confirmed exploitation in the wild and added the flaw to its KEV catalog.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Openwave Messaging Limited Webtop Media Transcoder"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111793",
+        "publisher": "CISA",
+        "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder — Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-111793",
+      "cisa-kev"
+    ],
+    "created_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-111793"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder — Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111793",
+        "added_at": "2026-11-10T22:41:43.117Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA BOD 26-04 guidance.",
+    "severity_note": "Exploited in the wild as confirmed by CISA KEV.",
+    "cvss": 4.3
+  },
+  {
     "id": "AIR-2026-1877",
     "slug": "nitori-data-breach-exposes-37-6-million-customer-records",
     "title": "Nitori data breach exposes 37.6 million customer records",
@@ -105,9 +281,15 @@
         "publisher": "Krebs on Security",
         "title": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-124194",
+        "publisher": "CISA",
+        "title": "CVE-2026-124194: Microsoft Office — Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -116,10 +298,11 @@
       "outlook",
       "patch-tuesday",
       "active-exploitation",
-      "CVE-2026-124194"
+      "CVE-2026-124194",
+      "cisa-kev"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-10T22:11:27.090Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -143,6 +326,12 @@
         "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
         "source_url": "https://securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft",
         "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-124194",
+        "added_at": "2026-11-10T22:41:43.117Z"
       }
     ],
     "action": "Apply the latest security updates provided by Microsoft for Outlook.",
@@ -1873,9 +2062,15 @@
         "publisher": "BleepingComputer",
         "title": "Google patches eighth Chrome zero-day exploited in attacks this year",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-125350",
+        "publisher": "CISA",
+        "title": "CVE-2026-125350: Google Chromium — Google Chromium Use-After-Free Vulnerability",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1884,14 +2079,15 @@
       "use-after-free",
       "zero-day",
       "browser",
-      "CVE-2026-125350"
+      "CVE-2026-125350",
+      "cisa-kev"
     ],
     "created_at": "2026-11-10T06:41:55.248Z",
-    "updated_at": "2026-11-10T09:11:47.893Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unknown",
+    "patch_status": "partial",
     "cve_ids": [
       "CVE-2026-125350"
     ],
@@ -1903,6 +2099,12 @@
         "title": "Chrome Update Patches Exploited XML Zero-Day, Eighth This Year",
         "source_url": "https://securityweek.com/chrome-update-patches-exploited-xml-zero-day-eighth-this-year",
         "added_at": "2026-11-10T06:41:55.248Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-125350",
+        "added_at": "2026-11-10T22:41:43.117Z"
       }
     ],
     "action": "Update Google Chrome to the latest version immediately.",
@@ -8305,7 +8507,7 @@
     "categories": [
       "general"
     ],
-    "severity": 2,
+    "severity": 3,
     "targets": [
       "n/a"
     ],
@@ -8345,19 +8547,26 @@
         "publisher": "BleepingComputer",
         "title": "Hackers now exploit critical Barracuda ESG flaws to gain root access",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-116606",
+        "publisher": "CISA",
+        "title": "CVE-2026-116606: Barracuda Networks Barracuda Email Security Gateway (ESG) — Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
     "tags": [
       "CVE-2026-116606",
       "command-injection",
-      "auth-bypass"
+      "auth-bypass",
+      "cisa-kev"
     ],
     "created_at": "2026-11-04T00:07:17.182Z",
-    "updated_at": "2026-11-10T10:42:17.220Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -8391,6 +8600,12 @@
         "title": "Active exploitation in the wild confirmed for the critical ESG vulnerabilities",
         "source_url": "https://bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access",
         "added_at": "2026-11-10T10:42:17.220Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-116606",
+        "added_at": "2026-11-10T22:41:43.117Z"
       }
     ],
     "action": "Apply the security updates released by Barracuda to patch the vulnerabilities.",
@@ -10792,9 +11007,15 @@
         "publisher": "BleepingComputer",
         "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
         "published_at": "2026-11-03"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges",
+        "publisher": "BleepingComputer",
+        "title": "Railway breach leads to $740,000 in fraudulent AI charges",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -10804,7 +11025,7 @@
       "ai-infrastructure"
     ],
     "created_at": "2026-11-02T20:57:03.700Z",
-    "updated_at": "2026-11-04T00:07:17.182Z",
+    "updated_at": "2026-11-10T22:41:43.117Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -10824,6 +11045,12 @@
         "title": "Attackers generated massive cloud bills up to one million dollars by hijacking corporate accounts for unauthorized AI model usage",
         "source_url": "https://helpnetsecurity.com/2026/11/03/llmjacking-stolen-ai-access-cloud-bills",
         "added_at": "2026-11-03T11:03:25.155Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Cloud hosting provider confirms hackers stole authentication secrets to generate $740,000 in fraudulent AI charges",
+        "source_url": "https://bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges",
+        "added_at": "2026-11-10T22:41:43.117Z"
       }
     ],
     "action": "Audit and secure cloud and LLM API keys and access controls.",
