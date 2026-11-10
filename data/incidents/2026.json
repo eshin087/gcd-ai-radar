@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1847",
+    "slug": "vanderbilt-university-targeted-in-ransomware-attack-by-byod",
+    "title": "Vanderbilt University targeted in ransomware attack by BYOD gang",
+    "summary": "Vanderbilt University is investigating a cyberattack orchestrated by the BYOD ransomware group. The attackers assert that they have encrypted university databases and exfiltrated sensitive data.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Vanderbilt University networks"
+    ],
+    "incident_date": "2026-11-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-09",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed",
+        "publisher": "BleepingComputer",
+        "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
+        "published_at": "2026-11-09"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "data-theft",
+      "byod-gang",
+      "vanderbilt-university"
+    ],
+    "created_at": "2026-11-10T00:11:57.255Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-09",
+        "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
+        "source_url": "https://bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed",
+        "added_at": "2026-11-10T00:11:57.255Z"
+      }
+    ],
+    "action": "Follow institutional incident response guidelines and monitor for compromised credentials.",
+    "severity_note": "Confirmed ransomware intrusion and data theft.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1846",
     "slug": "cve-2026-123218-ibm-aspera-faspex-incorrect-authorization-vu",
     "title": "CVE-2026-123218: IBM Aspera Faspex Incorrect Authorization Vulnerability",
@@ -18284,10 +18342,10 @@
       "security-testing"
     ],
     "created_at": "2026-11-05T18:55:00.365Z",
-    "updated_at": "2026-11-05T18:55:00.365Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18404,10 +18462,10 @@
       "ai_agents"
     ],
     "created_at": "2026-10-27T09:09:27.523Z",
-    "updated_at": "2026-10-27T09:09:27.523Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -18532,10 +18590,10 @@
       "unauthorized-access"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -18592,10 +18650,10 @@
       "vulnerability"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-26T19:34:40.193Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -18655,10 +18713,10 @@
       "compaction"
     ],
     "created_at": "2026-10-26T19:34:40.193Z",
-    "updated_at": "2026-10-27T15:31:15.081Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [
@@ -19503,10 +19561,10 @@
       "loader"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T20:02:47.996Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
@@ -19560,10 +19618,10 @@
       "malicious-code"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20062,10 +20120,10 @@
       "critical-flaw"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "patched",
     "cve_ids": [],
     "affected": [
@@ -20127,10 +20185,10 @@
       "ucreator"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [
@@ -20188,10 +20246,10 @@
       "credential-theft"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [
@@ -20250,10 +20308,10 @@
       "fortios"
     ],
     "created_at": "2026-10-26T14:52:59.139Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "patch",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "patched",
     "cve_ids": [],
     "affected": [
@@ -20312,10 +20370,10 @@
       "trust_issues"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20367,10 +20425,10 @@
       "model_inversion"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20425,10 +20483,10 @@
       "model-context-protocol"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -20482,10 +20540,10 @@
       "web-security"
     ],
     "created_at": "2026-10-26T05:15:00.657Z",
-    "updated_at": "2026-10-26T05:15:00.657Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "research",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -21439,10 +21497,10 @@
       "credential-leak"
     ],
     "created_at": "2026-10-24T16:11:16.609Z",
-    "updated_at": "2026-10-26T14:52:59.139Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "supply_chain",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "unknown",
     "cve_ids": [],
     "affected": [],
@@ -27928,10 +27986,10 @@
       "connectwise"
     ],
     "created_at": "2026-10-22T12:03:53.156Z",
-    "updated_at": "2026-10-30T13:27:13.057Z",
+    "updated_at": "2026-11-10T00:11:57.255Z",
     "lane": "breach",
-    "state": "live",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-11-09",
     "patch_status": "no_fix_needed",
     "cve_ids": [],
     "affected": [],
