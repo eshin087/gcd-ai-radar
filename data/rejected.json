@@ -1,5 +1,15 @@
 [
   {
+    "key": "f13a5d2e33a7dd94",
+    "title": "CISA director pick already drawing concern from Hill Dems over Palantir connection",
+    "url": "https://cyberscoop.com/michael-losapio-cisa-director-nomination-palantir-scrutiny",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Policy and personnel news without a specific security incident",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-10T23:11:48.092Z"
+  },
+  {
     "key": "6e631ad08738c599",
     "title": "F-Secure Identifies 26 Ways AI Can Harm Consumers, and Where to Stop Them",
     "url": "https://darkreading.com/application-security/f-secure-26-ways-ai-harm-consumers-where-to-stop-them",
