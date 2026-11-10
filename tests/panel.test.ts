@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildAiFlow, pickCase } from "@/lib/panel/ai-flow";
 import { attackType, buildAttackTypes, weekIncidents } from "@/lib/panel/attack-types";
 import { countdownParts, openFor, timeLeft } from "@/lib/panel/dates";
+import { dueEnd, foldedOnDeadline, runwaySpan } from "@/lib/panel/deadlines";
 import { cveWindows, kevWeekHistory } from "@/lib/panel";
 import { LEDGER_NEW_AI_KEPT, LEDGER_NEW_KEPT, buildLedger } from "@/lib/panel/ledger";
 import { bandOf, levelOf, quantile, ratioLevel } from "@/lib/panel/levels";
@@ -357,6 +358,35 @@ describe("my stack", () => {
     expect(flagBadge("no patch yet")).toEqual({ word: "no patch", tone: "open" });
     expect(flagBadge("partly patched")).toEqual({ word: "partial", tone: "partial" });
     for (const c of file.candidates) if (c.flag) expect(["due", "harm", "open", "partial"]).toContain(flagBadge(c.flag).tone);
+  });
+});
+
+describe("deadlines", () => {
+  const DAY = 86_400_000;
+  it("passes a deadline at the end of its UTC day", () => {
+    expect(dueEnd("2026-11-10")).toBe(Date.parse("2026-11-11T00:00:00Z"));
+  });
+  it("folds a record into a deadline row only while every one of its CVEs is on a row still ahead", () => {
+    const ahead = new Set(["CVE-2026-0010", "CVE-2026-0011"]);
+    expect(foldedOnDeadline(["CVE-2026-0010"], ahead)).toBe(true);
+    expect(foldedOnDeadline(["CVE-2026-0010", "CVE-2026-0011"], ahead)).toBe(true);
+    expect(foldedOnDeadline(["CVE-2026-0010", "CVE-2026-0099"], ahead)).toBe(false);
+    expect(foldedOnDeadline([], ahead)).toBe(false); // a record with no CVE id is never a deadline row
+    // its deadline has passed since the build: the record is listed on its own again
+    expect(foldedOnDeadline(["CVE-2026-0010"], new Set(["CVE-2026-0011"]))).toBe(false);
+  });
+  it("reaches the runway's axis to the end of the seventh calendar day ahead, whatever the time of day", () => {
+    for (const iso of ["2026-11-10T00:00:00Z", "2026-11-10T02:27:14Z", "2026-11-10T12:00:00Z", "2026-11-10T23:59:59Z"]) {
+      const now = Date.parse(iso);
+      const span = runwaySpan(now);
+      const at = (t: number) => 50 + ((t - now) / span) * 50;
+      // the ledger keeps deadlines through today + 7 days; the last of them ends at the following midnight
+      expect(at(dueEnd("2026-11-17"))).toBeLessThan(100);
+      expect(at(dueEnd("2026-11-17"))).toBeGreaterThan(98);
+      expect(at(dueEnd("2026-11-10"))).toBeGreaterThanOrEqual(50);
+      expect(span).toBeGreaterThan(7 * DAY);
+      expect(span).toBeLessThanOrEqual(8.125 * DAY);
+    }
   });
 });
 

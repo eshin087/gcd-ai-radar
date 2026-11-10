@@ -426,10 +426,10 @@ export default function MethodologyPage() {
         <li>
           <strong>Needs action</strong>, the home page&rsquo;s ledger, has three groups: CISA deadlines within seven days, folded per vendor, product and
           deadline; our live exploited records without a full patch (a record whose CVEs are all on one of the week&rsquo;s deadline rows is that row); and the
-          live exploited records that entered the dataset in the last seven days, harm confirmed first. The runway card draws them on one time axis, seven
-          days back and seven ahead: the nearest deadline leads as a countdown to the end of its UTC day, each deadline day is a marker, each of the first
+          live exploited records that entered the dataset in the last seven days, harm confirmed first. The runway card draws them on one time axis, a week
+          back and a week ahead (to the end of the seventh day, so every deadline it counts is on it): the nearest deadline leads as a countdown to the end of its UTC day, each deadline day is a marker, each of the first
           six records without a patch is a bar from its first report to now, and each new record is a dot in its 24-hour window (several to a dot in a very
-          busy week, and the card says so). A deadline that has passed since the page was built drops off. A row is tagged &ldquo;your stack&rdquo; when one
+          busy week, and the card says so). A deadline that has passed since the page was built drops off, and a record without a patch that was folded into it is listed on its own again. A row is tagged &ldquo;your stack&rdquo; when one
           of your stack picks counts its CVE or record. &ldquo;AI only&rdquo; shows the AI rows; a deadline counts as AI when an AI record without a full
           patch names one of its CVEs.
         </li>

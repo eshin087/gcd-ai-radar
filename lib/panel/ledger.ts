@@ -3,6 +3,7 @@ import { addDays, type FullIncident } from "../lifecycle";
 import { productFamily } from "../products";
 import type { KevStatEntry } from "../stats-schema";
 import type { IncidentType, Lane, Severity } from "../taxonomy";
+import { LEDGER_SOON_DAYS, foldedOnDeadline } from "./deadlines";
 import { rowStack, stackHits, type StackFile } from "./picks";
 import { DAY_MS, kevName, recordCves } from "./util";
 
@@ -20,7 +21,9 @@ import { DAY_MS, kevName, recordCves } from "./util";
  * patch or a partial one, unpatched first, then the newest report first.
  * A record whose CVEs are all on one of this week's deadline rows is that
  * row (`onDeadlineRow`): the drawer lists it, the page does not show it
- * twice.
+ * twice. The page judges that again by the visitor's clock
+ * (lib/panel/deadlines.ts foldedOnDeadline), so a record whose deadline has
+ * passed since the build is listed on its own again.
  *
  * New this week: live records of severity 3 or more that entered the
  * dataset in the last seven times 24 hours, every lane, with the rows the
@@ -39,7 +42,7 @@ import { DAY_MS, kevName, recordCves } from "./util";
  */
 
 export { LEDGER_DUE_ROWS, LEDGER_NEW_ROWS, LEDGER_PATCH_ROWS } from "./caps";
-export const LEDGER_SOON_DAYS = 7;
+export { LEDGER_SOON_DAYS } from "./deadlines";
 export const LEDGER_NEW_KEPT = 12;
 export const LEDGER_NEW_AI_KEPT = 4;
 
@@ -175,7 +178,7 @@ export function buildLedger(incidents: readonly FullIncident[], kev: readonly Ke
         patch: i.patch_status as "unpatched" | "partial",
         reported: i.first_reported,
         type: i.type,
-        onDeadlineRow: cves.length > 0 && cves.every((c) => dueCves.has(c)),
+        onDeadlineRow: foldedOnDeadline(cves, dueCves),
         stack: rowStack(hits, { cves, href }),
       };
     });

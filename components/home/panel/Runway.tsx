@@ -6,6 +6,7 @@ import { AiTag, CvssNum, StackTag, Tag } from "@/components/home/panel/marks";
 import { dateLabel } from "@/lib/format";
 import { RUNWAY_DUE_LABELS, RUNWAY_OPEN_BARS } from "@/lib/panel/caps";
 import { countdownParts, openFor, shortDate, timeLeft } from "@/lib/panel/dates";
+import { dueEnd, runwaySpan } from "@/lib/panel/deadlines";
 import type { DueRow, PatchRow } from "@/lib/panel/ledger";
 import type { IncidentType } from "@/lib/taxonomy";
 
@@ -17,8 +18,10 @@ import type { IncidentType } from "@/lib/taxonomy";
  * product, CVE and score, and how much of CISA's window is left. With no
  * deadline in the week it is the record that has waited longest for a patch.
  *
- * Right, a time axis from seven days ago to seven days ahead with NOW in
- * the middle. Past NOW: one dot per new exploited record in its 24-hour
+ * Right, a time axis a week back and a week ahead with NOW in the middle;
+ * it reaches the end of the seventh calendar day ahead, the last day whose
+ * deadlines the ledger keeps (lib/panel/deadlines.ts runwaySpan), so every
+ * deadline it counts has its marker on the axis. Past NOW: one dot per new exploited record in its 24-hour
  * window (red for harm confirmed), and a bar for each of the first records
  * without a patch, from its first report to NOW, where it is still growing.
  * Ahead of NOW: a marker where each deadline day ends, the nearest one
@@ -33,14 +36,10 @@ import type { IncidentType } from "@/lib/taxonomy";
  */
 
 const DAY = 86_400_000;
-const SPAN = 7 * DAY;
 const WEEKDAY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const DUE_NOTE = "CISA's deadline for US federal agencies to patch; a good yardstick for everyone";
 const LABEL = "font-mono text-[11px] font-medium uppercase tracking-[0.1em]";
 const nvdHref = (cve: string) => `https://nvd.nist.gov/vuln/detail/${cve}`;
-
-/** The end of a deadline's UTC day. */
-export const dueEnd = (due: string) => Date.parse(`${due}T00:00:00Z`) + DAY;
 
 export type DueOnRunway = DueRow & { type: IncidentType; labels: string[] };
 export type OpenOnRunway = PatchRow & { labels: string[] };
@@ -204,9 +203,10 @@ function Chart({ now, built, groups, later, onLater, open, openCount, days, fres
     if (el && el.scrollWidth > el.clientWidth) el.scrollLeft = el.scrollWidth / 2 - el.clientWidth * 0.4;
   }, []);
 
-  const x = (t: number) => 50 + ((t - now) / SPAN) * 50;
+  const span = runwaySpan(now);
+  const x = (t: number) => 50 + ((t - now) / span) * 50;
   const midnights: number[] = [];
-  for (let t = Math.ceil((now - SPAN) / DAY) * DAY; t <= now + SPAN; t += DAY) midnights.push(t);
+  for (let t = Math.ceil((now - span) / DAY) * DAY; t <= now + span; t += DAY) midnights.push(t);
   const dayNames = midnights.map((t) => ({ t, at: x(t + DAY / 2) })).filter((d) => d.at > 3 && d.at < 97 && Math.abs(d.at - 50) > 4.5);
 
   // one dot per record; a very busy week packs more than one into a dot so the tallest stack still fits
@@ -262,7 +262,7 @@ function Chart({ now, built, groups, later, onLater, open, openCount, days, fres
           ))}
         </span>
 
-        {groups.length === 0 && <p className="absolute left-[54%] top-10 max-w-[40%] text-[13px] text-dim">{ai ? "No deadline this week is for an AI product." : "No CISA deadline falls in the next seven days."}</p>}
+        {groups.length === 0 && <p className="absolute left-[54%] top-10 max-w-[40%] text-[13px] text-dim">{ai ? "No deadline this week is for an AI product." : "No CISA deadline falls this week."}</p>}
         {groups.map((g, i) => {
           const at = x(g.end);
           const first = i === 0;
@@ -291,7 +291,7 @@ function Chart({ now, built, groups, later, onLater, open, openCount, days, fres
         <p className={`${LABEL} absolute left-[52%] whitespace-nowrap text-dim`} style={{ top: TRACK + 10 }}>
           No patch yet <span className="text-ink">{openCount}</span>
         </p>
-        {bars.length === 0 && <p className="absolute left-[52%] top-[146px] text-[13px] text-dim">{!ai ? "Every exploited record has a patch." : openCount ? "Its deadline is on the track above." : "No AI record is waiting for a patch."}</p>}
+        {bars.length === 0 && <p className="absolute left-[52%] top-[146px] text-[13px] text-dim">{openCount ? "On the deadline track above." : ai ? "No AI record is waiting for a patch." : "Every exploited record has a patch."}</p>}
         {bars.map((p, i) => {
           const from = Math.max(0, x(Date.parse(`${p.reported}T00:00:00Z`)));
           const y = 146 + i * 15;

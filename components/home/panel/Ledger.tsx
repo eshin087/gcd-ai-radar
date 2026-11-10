@@ -6,11 +6,12 @@ import { Countdown, OpenFor, ShortAgo, TypeIn } from "@/components/home/panel/Li
 import { AiTag, CvssNum, ScoreOrDash, StackTag } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
 import { usePanelState } from "@/components/home/panel/PanelState";
-import { Runway, dueEnd, type DueOnRunway, type OpenOnRunway } from "@/components/home/panel/Runway";
+import { Runway, type DueOnRunway, type OpenOnRunway } from "@/components/home/panel/Runway";
 import { Drawer } from "@/components/ui/Drawer";
 import { dateLabel } from "@/lib/format";
 import { LEDGER_DUE_ROWS, LEDGER_NEW_ROWS, LEDGER_PATCH_ROWS } from "@/lib/panel/caps";
 import { shortDate } from "@/lib/panel/dates";
+import { dueEnd, foldedOnDeadline } from "@/lib/panel/deadlines";
 import type { DueRow, Ledger as LedgerData, NewRow } from "@/lib/panel/ledger";
 import { rowStack, stackHits, type StackHits } from "@/lib/panel/picks";
 import type { IncidentType } from "@/lib/taxonomy";
@@ -33,7 +34,9 @@ import type { IncidentType } from "@/lib/taxonomy";
  * (the switch is on the stack strip) refills everything with AI rows, the
  * counts dissolving to match; a deadline counts as AI when an AI record
  * without a full patch names one of its CVEs. A deadline that has passed
- * since the page was built drops off. The newest row types itself in once.
+ * since the page was built drops off, and a record without a patch that was
+ * folded into it is listed on its own again. The newest row types itself in
+ * once.
  */
 
 const KEV_CATALOG = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog";
@@ -223,12 +226,12 @@ export function Ledger({ ledger, built }: { ledger: LedgerData; built: string })
   const dueType = (r: DueRow): IncidentType => r.cves.map((c) => aiCves.get(c)).find(Boolean) ?? "not_ai";
 
   // deadlines still ahead by the visitor's clock, nearest first: the first is the card's lead, the next ones the list
-  const dueAll: DueOnRunway[] = ledger.due
-    .filter((r) => dueEnd(r.due) > now)
-    .map((r) => ({ ...r, type: dueType(r), labels: labelsOf(r, r.href) }))
-    .filter((r) => !ai || isAi(r));
+  const dueAhead = ledger.due.filter((r) => dueEnd(r.due) > now);
+  const dueAll: DueOnRunway[] = dueAhead.map((r) => ({ ...r, type: dueType(r), labels: labelsOf(r, r.href) })).filter((r) => !ai || isAi(r));
+  // a record without a patch is one of those deadline rows only while its deadline is still ahead
+  const aheadCves = new Set(dueAhead.flatMap((r) => r.cves));
   const dueList = dueAll.slice(1, LEDGER_DUE_ROWS);
-  const openAll: OpenOnRunway[] = ledger.patch.filter((r) => !r.onDeadlineRow && (!ai || isAi(r))).map((r) => ({ ...r, labels: labelsOf(r, `/incidents/${r.slug}`) }));
+  const openAll: OpenOnRunway[] = ledger.patch.filter((r) => !foldedOnDeadline(r.cves, aheadCves) && (!ai || isAi(r))).map((r) => ({ ...r, labels: labelsOf(r, `/incidents/${r.slug}`) }));
   const patch = openAll.slice(0, LEDGER_PATCH_ROWS);
   const fresh = (ai ? ledger.fresh.filter(isAi) : ledger.fresh).slice(0, LEDGER_NEW_ROWS);
   const patchAi = ledger.patch.filter(isAi).length;
@@ -276,7 +279,7 @@ export function Ledger({ ledger, built }: { ledger: LedgerData; built: string })
             </button>
           }
         >
-          {patch.length === 0 && <Note>{!ai ? "Every exploited record has a patch." : patchAi ? "Listed under Patch due this week." : "No AI record is waiting for a patch."}</Note>}
+          {patch.length === 0 && <Note>{openCount ? "Listed under Patch due this week." : ai ? "No AI record is waiting for a patch." : "Every exploited record has a patch."}</Note>}
           {patch.map((r) => (
             <PatchLi key={r.slug} r={r} ready={ready} built={built} />
           ))}

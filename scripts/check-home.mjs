@@ -135,12 +135,20 @@ function rowStack(hits, row) {
   return out;
 }
 
+/**
+ * The records without a patch the page lists on their own: all but those whose CVEs are all on a deadline row
+ * still ahead (lib/panel/deadlines.ts foldedOnDeadline). The page drops a deadline that has passed since the build.
+ */
+function openRows(ledger) {
+  const ahead = new Set(ledger.due.filter((r) => dueEnd(r.due) > Date.now()).flatMap((r) => r.cves));
+  return ledger.patch.filter((r) => !(r.cves.length > 0 && r.cves.every((c) => ahead.has(c))));
+}
+
 /** The ledger rows the page shows, in order, with where each links (lib/panel/ledger.ts, lib/panel/caps.ts). */
 function ledgerRows(ledger) {
   return [
-    // the page drops a deadline that has passed since the build
     ...ledger.due.filter((r) => dueEnd(r.due) > Date.now()).slice(0, LEDGER_ROWS.due).map((r) => ({ ...r, href: r.href })),
-    ...ledger.patch.filter((r) => !r.onDeadlineRow).slice(0, LEDGER_ROWS.patch).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
+    ...openRows(ledger).slice(0, LEDGER_ROWS.patch).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
     ...ledger.fresh.slice(0, LEDGER_ROWS.fresh).map((r) => ({ ...r, href: `/incidents/${r.slug}` })),
   ];
 }
@@ -194,8 +202,8 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   const dueAlive = L.due.filter((r) => dueEnd(r.due) > Date.now());
 
   // the runway: the nearest deadline as a countdown, a dot per new record, a bar per record without a patch, a marker per deadline day
-  const rw = await evaluate(client, `(() => { const c = document.querySelector('#runway'); if (!c) return null; const big = c.querySelector('[data-big-countdown]'); return { lead: c.querySelector('[data-lead]')?.dataset.name ?? null, big: big?.textContent ?? null, due: big?.dataset.bigCountdown ?? null, dots: [...c.querySelectorAll('[data-runway-dots]')].reduce((n, e) => n + e.children.length, 0), bars: c.querySelectorAll('[data-runway-bar]').length, marks: [...c.querySelectorAll('[data-runway-due]')].map((e) => Number(e.dataset.runwayDue)), w: Math.round(c.querySelector('[data-runway]')?.getBoundingClientRect().width ?? 0) }; })()`);
-  check("runway shows", Boolean(rw) && rw.w >= 560, JSON.stringify(rw));
+  const rw = await evaluate(client, `(() => { const c = document.querySelector('#runway'); if (!c) return null; const big = c.querySelector('[data-big-countdown]'); return { lead: c.querySelector('[data-lead]')?.dataset.name ?? null, big: big?.textContent ?? null, due: big?.dataset.bigCountdown ?? null, dots: [...c.querySelectorAll('[data-runway-dots]')].reduce((n, e) => n + e.children.length, 0), bars: c.querySelectorAll('[data-runway-bar]').length, marks: [...c.querySelectorAll('[data-runway-due]')].map((e) => Number(e.dataset.runwayDue)), w: Math.round(c.querySelector('[data-runway]')?.getBoundingClientRect().width ?? 0), outside: (() => { const box = c.querySelector('[data-runway]').getBoundingClientRect(); return [...c.querySelectorAll('[data-runway-due]')].filter((e) => { const r = e.getBoundingClientRect(); return r.left < box.left - 1 || r.right > box.right + 1; }).length; })(), scrolls: (() => { const s = c.querySelector('[data-runway]').parentElement; return s.scrollWidth > s.clientWidth + 1; })() }; })()`);
+  check("runway shows, every deadline marker on its axis, no sideways scroll at this width", Boolean(rw) && rw.w >= 560 && rw.outside === 0 && !rw.scrolls, JSON.stringify(rw));
   if (dueAlive.length) {
     // days and hours from two days out, hours and minutes below that (lib/panel/dates.ts countdownParts)
     const mins = Math.floor((dueEnd(dueAlive[0].due) - Date.now()) / 60_000);
@@ -207,7 +215,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   }
   const perDot = Math.max(1, Math.ceil(Math.max(0, ...L.freshDays.map((d) => d.n)) / 27));
   check("runway draws a dot per new record", rw?.dots === L.freshDays.reduce((n, d) => n + Math.ceil(d.n / perDot), 0) && L.freshDays.reduce((n, d) => n + d.n, 0) === L.freshTotal, `${rw?.dots} dots, panel.json ${L.freshTotal} in ${L.freshDays.map((d) => d.n).join("+")}`);
-  check("runway draws a bar per record without a patch", rw?.bars === Math.min(RUNWAY_OPEN_BARS, L.patch.filter((r) => !r.onDeadlineRow).length), `${rw?.bars} bars`);
+  check("runway draws a bar per record without a patch", rw?.bars === Math.min(RUNWAY_OPEN_BARS, openRows(L).length), `${rw?.bars} bars`);
   check("runway marks each deadline day", rw?.marks.reduce((n, k) => n + k, 0) === dueAlive.length && rw.marks.length === new Set(dueAlive.map((r) => r.due)).size, `markers ${rw?.marks.join("+")}, ${dueAlive.length} deadlines`);
   const led = await evaluate(client, READ_LEDGER);
   check("ledger rows are panel.json's, in order", led.length === want.length && led.every((r, i) => r.kind === want[i].kind && r.href === want[i].href), `${led.length} rows: ${led.map((r) => `${r.kind} ${r.href}`).join(" | ")}`);
@@ -243,7 +251,7 @@ async function checkHome(client, base, dir, home, panel, stackFile) {
   const aiOnly = await evaluate(client, `({ shown: [...document.querySelectorAll('[data-ledger] [data-row]')].filter((r) => !r.hidden).map((r) => r.dataset.row + r.dataset.ai), notes: document.querySelectorAll('[data-ledger] [data-note]').length, count: document.querySelector('[data-ledger] [data-group="new"] [data-head] [data-num]')?.textContent ?? '' })`);
   const aiRows = [
     ...dueAlive.filter(wantAi).slice(0, LEDGER_ROWS.due).map(() => "due1"),
-    ...L.patch.filter((r) => !r.onDeadlineRow && isAi(r)).slice(0, LEDGER_ROWS.patch).map(() => "patch1"),
+    ...openRows(L).filter(isAi).slice(0, LEDGER_ROWS.patch).map(() => "patch1"),
     ...L.fresh.filter(isAi).slice(0, LEDGER_ROWS.fresh).map(() => "new1"),
   ];
   check("AI only shows the first AI rows of each list and counts them", aiOnly.shown.join(",") === aiRows.join(",") && num(aiOnly.count) === L.freshAi && aiOnly.notes === 3 - new Set(aiRows).size, `${JSON.stringify(aiOnly)}, expected ${aiRows.join(",") || "no rows"} and ${L.freshAi}`);
