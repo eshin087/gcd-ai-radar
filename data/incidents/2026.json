@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1854",
+    "slug": "worse-query-ios-sandbox-escape-published-without-vendor-fix",
+    "title": "worse_query: iOS Sandbox Escape Published Without Vendor Fix",
+    "summary": "An iOS sandbox escape called worse_query was published on GitHub, allowing malicious apps to read other applications files on supported versions. Binance warned that this flaw exposes sensitive wallet keys and login credentials, and no vendor fix has been confirmed yet.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "iOS"
+    ],
+    "incident_date": "2026-11-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html",
+        "publisher": "The Hacker News",
+        "title": "Binance Warns of iOS Sandbox Escape That Could Expose Crypto Wallet Keys, No Fix Confirmed",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ios",
+      "sandbox-escape",
+      "mobile",
+      "cryptocurrency"
+    ],
+    "created_at": "2026-11-10T13:10:51.415Z",
+    "updated_at": "2026-11-10T13:10:51.415Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "iOS 26",
+      "iOS 27"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Binance Warns of iOS Sandbox Escape That Could Expose Crypto Wallet Keys, No Fix Confirmed",
+        "source_url": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html",
+        "added_at": "2026-11-10T13:10:51.415Z"
+      }
+    ],
+    "action": "Monitor for Apple security updates addressing the sandbox escape.",
+    "severity_note": "Researcher proof-of-concept published without a known vendor fix.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1853",
     "slug": "critical-xen-orchestra-authentication-bypass-is-being-active",
     "title": "Critical Xen Orchestra authentication bypass is being actively exploited",

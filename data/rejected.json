@@ -1,5 +1,25 @@
 [
   {
+    "key": "9c9deab2ac89c497",
+    "title": "How Effective Is Straiker's Runtime Security for AI Applications and Agents?",
+    "url": "https://straiker.ai/blog/ai-runtime-security-results",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Vendor product feature announcement and benchmark statistics.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T13:10:51.415Z"
+  },
+  {
+    "key": "e9162e0056f0e0d4",
+    "title": "AI Makes Reverse Engineering Mainstream Software & Malware Far Easier",
+    "url": "https://darkreading.com/application-security/ai-reverse-engineering-apps",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Survey and commentary piece discussing general trends in AI-assisted reverse engineering.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-10T13:10:51.415Z"
+  },
+  {
     "key": "81a905311cbf120a",
     "title": "Anthropic Rolls Out Mythos 5.2 With Improved Bug Hunting, Fewer Sandbox Escapes",
     "url": "https://securityweek.com/anthropic-rolls-out-mythos-5-2-with-improved-bug-hunting-fewer-sandbox-escapes",
