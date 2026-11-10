@@ -1,5 +1,122 @@
 [
   {
+    "id": "AIR-2026-1856",
+    "slug": "russian-hackers-compromise-government-email-servers-in-roman",
+    "title": "Russian hackers compromise government email servers in Romania and Kazakhstan",
+    "summary": "Russian state-linked hackers compromised government email servers in Romania and Kazakhstan to intercept correspondence with NATO and EU officials. Researchers revealed the covert espionage campaign affecting diplomatic communications.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "government email servers"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://therecord.media/russia-hackers-espionage-romania-kazakhstan",
+        "publisher": "The Record",
+        "title": "Russian hackers compromised government email servers to steal NATO, EU correspondence",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "breach",
+      "government",
+      "state-sponsored"
+    ],
+    "created_at": "2026-11-10T13:35:19.523Z",
+    "updated_at": "2026-11-10T13:35:19.523Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Russian hackers compromised government email servers to steal NATO, EU correspondence",
+        "source_url": "https://therecord.media/russia-hackers-espionage-romania-kazakhstan",
+        "added_at": "2026-11-10T13:35:19.523Z"
+      }
+    ],
+    "action": "Investigate server logs for unauthorized access and review government email security controls.",
+    "severity_note": "Confirmed real-world breach and espionage campaign against government targets.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1855",
+    "slug": "cve-2026-100962-nvidia-nemo-export-deploy-ssrf-vulnerability",
+    "title": "CVE-2026-100962: NVIDIA NeMo Export-Deploy SSRF Vulnerability",
+    "summary": "NVIDIA NeMo Export-Deploy contains a server-side request forgery vulnerability in multimodal deployment. Successful exploitation of this flaw may lead to information disclosure.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "NVIDIA NeMo Export-Deploy"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100962",
+        "publisher": "NVD",
+        "title": "CVE-2026-100962: NVIDIA NeMo Export-Deploy for all platforms contains a vulnerability in multimodal deployment where an attacker could cause a…",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-100962",
+      "ssrf",
+      "information-disclosure"
+    ],
+    "created_at": "2026-11-10T13:35:19.523Z",
+    "updated_at": "2026-11-10T13:35:19.523Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-100962"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-100962: NVIDIA NeMo Export-Deploy for all platforms contains a vulnerability in multimodal deployment where an attacker could cause a…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100962",
+        "added_at": "2026-11-10T13:35:19.523Z"
+      }
+    ],
+    "action": "Check vendor advisories for available updates and mitigations.",
+    "severity_note": "Disclosed vulnerability with a medium CVSS score of 5.3 and no confirmed exploitation.",
+    "cvss": 5.3
+  },
+  {
     "id": "AIR-2026-1854",
     "slug": "worse-query-ios-sandbox-escape-published-without-vendor-fix",
     "title": "worse_query: iOS Sandbox Escape Published Without Vendor Fix",
@@ -865,9 +982,15 @@
         "publisher": "sentra.io",
         "title": "Supply chain attack on Qubole customers",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://securityweek.com/over-a-dozen-organizations-hit-in-qubole-supply-chain-attack",
+        "publisher": "SecurityWeek",
+        "title": "Over a Dozen Organizations Hit in Qubole Supply Chain Attack",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -878,7 +1001,7 @@
       "credential_theft"
     ],
     "created_at": "2026-11-09T18:41:09.590Z",
-    "updated_at": "2026-11-09T21:41:00.011Z",
+    "updated_at": "2026-11-10T13:35:19.523Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,

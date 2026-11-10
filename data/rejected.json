@@ -1,5 +1,15 @@
 [
   {
+    "key": "4bafaf41ab54401c",
+    "title": "CISA tweaks cyber incident form to spot attacks that might be linked",
+    "url": "https://helpnetsecurity.com/2026/11/10/cisa-incident-reporting-form-update",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Policy and regulation news regarding agency reporting forms, not a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T13:35:19.523Z"
+  },
+  {
     "key": "9c9deab2ac89c497",
     "title": "How Effective Is Straiker's Runtime Security for AI Applications and Agents?",
     "url": "https://straiker.ai/blog/ai-runtime-security-results",
