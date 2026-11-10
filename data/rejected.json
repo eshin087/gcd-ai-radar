@@ -1,5 +1,15 @@
 [
   {
+    "key": "ba7507c6f20e8122",
+    "title": "Apple Patches iMessage Group Chat Privacy Flaws and Bluetooth Pairing Vulnerabilities",
+    "url": "https://thehackernews.com/2026/11/apple-patches-imessage-group-chat.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "below the curation bar: medium or high advisory with a fix and no exploitation does not clear the bar",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-10T11:10:59.264Z"
+  },
+  {
     "key": "23afc3bbfba04d1e",
     "title": "What a security leader should tell the CEO about leaked credentials",
     "url": "https://helpnetsecurity.com/2026/11/10/eric-fourrier-gitguardian-leaked-credentials",
