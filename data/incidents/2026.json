@@ -24,9 +24,15 @@
         "publisher": "SecurityWeek",
         "title": "Chrome Update Patches Exploited XML Zero-Day, Eighth This Year",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html",
+        "publisher": "The Hacker News",
+        "title": "Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -34,15 +40,18 @@
       "chrome",
       "use-after-free",
       "zero-day",
-      "browser"
+      "browser",
+      "CVE-2026-125350"
     ],
     "created_at": "2026-11-10T06:41:55.248Z",
-    "updated_at": "2026-11-10T06:41:55.248Z",
+    "updated_at": "2026-11-10T07:42:03.885Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "unknown",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-125350"
+    ],
     "affected": [],
     "fixed_in": [],
     "timeline": [
@@ -323,9 +332,15 @@
         "publisher": "BleepingComputer",
         "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+        "publisher": "The Hacker News",
+        "title": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -335,7 +350,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-09T21:41:00.011Z",
+    "updated_at": "2026-11-10T07:42:03.885Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
