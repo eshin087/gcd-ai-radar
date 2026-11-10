@@ -1,1 +1,103 @@
-[]
+[
+  {
+    "key": "b958c227209529b5",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+    "title": "SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users",
+    "published_at": "2026-11-10",
+    "publisher": "The Hacker News",
+    "hint": "An attacker exploited a remote code execution flaw in SGLang, an open-source inference engine, and ran code on one of NEAR AI's inference servers last Sunday. The attacker could also have seen requests being processed on that server that day, including requests sent in confidential mode, the company said earlier this week. That mode processes requests inside a trusted execution environment (TEE",
+    "cve_ids": [],
+    "discovered_at": "2026-11-10T19:36:51.168Z",
+    "extra": {
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "b86930e18372a4de",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html",
+    "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
+    "published_at": "2026-11-10",
+    "publisher": "The Hacker News",
+    "hint": "A flaw in Git can let a malicious repository run an attacker's code on a computer that clones it recursively, together with its submodules. The Git project fixed it this week in Git 2.56.1, with matching fixes for the 2.50 through 2.55 series in 2.50.2, 2.51.3, 2.52.1, 2.53.1, 2.54.1 and 2.55.1. The flaw, tracked as CVE-2026-111760, is an integer truncation in how Git handles its index. An",
+    "cve_ids": [
+      "CVE-2026-111760"
+    ],
+    "discovered_at": "2026-11-10T19:36:51.168Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "3ac35ff647369fb9",
+    "source_id": "thn",
+    "origin": "news",
+    "url": "https://thehackernews.com/2026/11/three-china-nexus-espionage-campaigns.html",
+    "title": "Three China-Nexus Espionage Campaigns Linked Through Sparrow Malware Ecosystem",
+    "published_at": "2026-11-10",
+    "publisher": "The Hacker News",
+    "hint": "Three distinct threat activity clusters with shared infrastructure and malware code similarities have been observed targeting telecommunications providers, government organizations, military entities, research institutions, and critical infrastructure across Latin America, Asia, and Europe over the past year. Check Point Research is tracking the clusters under the names SilentDelivery,",
+    "cve_ids": [],
+    "discovered_at": "2026-11-10T19:36:51.168Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "44e55023f8aa7901",
+    "source_id": "securityweek",
+    "origin": "news",
+    "url": "https://securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft",
+    "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
+    "published_at": "2026-11-10",
+    "publisher": "SecurityWeek",
+    "hint": "CVE-2026-124194 is the Outlook zero-day for which Microsoft says it’s aware of active exploitation.",
+    "cve_ids": [
+      "CVE-2026-124194"
+    ],
+    "discovered_at": "2026-11-10T19:36:51.179Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "41dbe99c28b24e96",
+    "source_id": "bleepingcomputer",
+    "origin": "news",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day",
+    "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+    "published_at": "2026-11-10",
+    "publisher": "BleepingComputer",
+    "hint": "Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability.…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-10T19:36:51.404Z",
+    "extra": {
+      "ai_hint": false
+    }
+  },
+  {
+    "key": "9e577ce64a204297",
+    "source_id": "nvd",
+    "origin": "seed_nvd",
+    "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83953",
+    "title": "CVE-2026-83953: Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized…",
+    "published_at": "2026-11-10",
+    "publisher": "NVD",
+    "hint": "Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized attacker to disclose information locally. CVSS 5.5 MEDIUM. Published 2026-11-10.",
+    "cve_ids": [
+      "CVE-2026-83953"
+    ],
+    "discovered_at": "2026-11-10T19:39:38.481Z",
+    "extra": {
+      "classifier_hint": "NVD CVE record matched by an allow-listed AI product keyword. In scope as attack_on_ai / infra_vuln when the affected software is an AI framework, model server, agent tool or AI product; out of scope if the keyword is a false positive. Severity 2 (disclosed vulnerability) unless exploitation is confirmed (CISA KEV or vendor statement → 3). incident_date is the published date.",
+      "cvss": 5.5,
+      "kev": false,
+      "matched_keyword": "GitHub Copilot",
+      "incident_date": "2026-11-10",
+      "ai_hint": true
+    }
+  }
+]

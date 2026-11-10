@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1864",
+    "slug": "cve-2026-119990-missing-authentication-in-azure-openai",
+    "title": "CVE-2026-119990: Missing authentication in Azure OpenAI",
+    "summary": "A missing authentication flaw in Azure OpenAI allows unauthorized attackers to elevate privileges over a network. No active exploitation has been reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure OpenAI"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119990",
+        "publisher": "NVD",
+        "title": "CVE-2026-119990: Missing authentication for critical function in Azure OpenAI allows an unauthorized attacker to elevate privileges over a network.",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-119990",
+      "azure-openai",
+      "privilege-escalation"
+    ],
+    "created_at": "2026-11-10T19:42:29.541Z",
+    "updated_at": "2026-11-10T19:42:29.541Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-119990"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-119990: Missing authentication for critical function in Azure OpenAI allows an unauthorized attacker to elevate privileges over a network.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119990",
+        "added_at": "2026-11-10T19:42:29.541Z"
+      }
+    ],
+    "action": "Check vendor advisories and apply available updates for Azure OpenAI.",
+    "severity_note": "Critical CVSS score of 9.8 with no confirmed exploitation in the wild.",
+    "cvss": 9.8
+  },
+  {
     "id": "AIR-2026-1863",
     "slug": "claude-code-inadvertently-leaks-credentials-to-public-reposi",
     "title": "Claude Code Inadvertently Leaks Credentials to Public Repositories",
@@ -650,9 +709,15 @@
         "publisher": "BleepingComputer",
         "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -662,7 +727,7 @@
       "xen_orchestra"
     ],
     "created_at": "2026-11-10T11:47:02.508Z",
-    "updated_at": "2026-11-10T17:00:12.508Z",
+    "updated_at": "2026-11-10T19:42:29.541Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -676,6 +741,12 @@
         "title": "Critical Xen Orchestra authentication bypass is being actively exploited",
         "source_url": "https://docs.vates.tech/security-advisories/advisories/2026/vates-sa-2026-062",
         "added_at": "2026-11-10T11:47:02.508Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Vendor details root cause involving REST cookie parsing vulnerability tracked as VSA-2026-062",
+        "source_url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+        "added_at": "2026-11-10T19:42:29.541Z"
       }
     ],
     "action": "Check the vendor advisory for available updates and apply patches immediately.",
@@ -1465,9 +1536,15 @@
         "publisher": "SecurityWeek",
         "title": "Over a Dozen Organizations Hit in Qubole Supply Chain Attack",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-exploit-trusted-aws-access-to-breach-multiple-cloud-environments",
+        "publisher": "BleepingComputer",
+        "title": "Hackers exploit trusted AWS access to breach multiple cloud environments",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1478,7 +1555,7 @@
       "credential_theft"
     ],
     "created_at": "2026-11-09T18:41:09.590Z",
-    "updated_at": "2026-11-10T13:35:19.523Z",
+    "updated_at": "2026-11-10T19:42:29.541Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
