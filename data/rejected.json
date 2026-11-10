@@ -1,5 +1,15 @@
 [
   {
+    "key": "81a905311cbf120a",
+    "title": "Anthropic Rolls Out Mythos 5.2 With Improved Bug Hunting, Fewer Sandbox Escapes",
+    "url": "https://securityweek.com/anthropic-rolls-out-mythos-5-2-with-improved-bug-hunting-fewer-sandbox-escapes",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product announcement without a specific incident or vulnerability disclosed",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-10T12:41:58.757Z"
+  },
+  {
     "key": "6883aefb6d8fd05d",
     "title": "Claude Mythos 5.2 arrives with stronger bug hunting and less sandbox-breaking behavior",
     "url": "https://helpnetsecurity.com/2026/11/10/anthropic-claude-fable-and-mythos-5-2-safeguards",

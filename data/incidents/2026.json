@@ -83,9 +83,15 @@
         "publisher": "The Hacker News",
         "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities",
+        "publisher": "BleepingComputer",
+        "title": "SAP patches ICM2SHELL and PROXYGATE maximum severity flaws",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -97,7 +103,7 @@
       "cvss-10"
     ],
     "created_at": "2026-11-10T10:11:16.823Z",
-    "updated_at": "2026-11-10T10:11:16.823Z",
+    "updated_at": "2026-11-10T12:41:58.757Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -111,9 +117,15 @@
         "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
         "source_url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
         "added_at": "2026-11-10T10:11:16.823Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "SAP's November 2026 update also patched a maximum‑severity flaw in the Gateway component, expanding the scope beyond NetWeaver and Web Dispatcher.",
+        "source_url": "https://bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities",
+        "added_at": "2026-11-10T12:41:58.757Z"
       }
     ],
-    "action": "Apply SAP's monthly security patches for NetWeaver and Web Dispatcher.",
+    "action": "Apply the November 2026 SAP security updates to the Gateway component.",
     "severity_note": "Critical rating of 10.0 with patches available.",
     "cvss": 10
   },
