@@ -1,5 +1,15 @@
 [
   {
+    "key": "133989a571e52547",
+    "title": "Ransomware recovery is now a client retention metric",
+    "url": "https://bleepingcomputer.com/news/security/ransomware-recovery-is-now-a-client-retention-metric",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: Survey, roundup or vendor commentary without a specific named incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T15:42:04.423Z"
+  },
+  {
     "key": "25277267dbafce5d",
     "title": "AI reverse engineering let researchers add a new feature to Slack",
     "url": "https://helpnetsecurity.com/2026/11/10/slack-ai-reverse-engineering",
