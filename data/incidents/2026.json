@@ -1,5 +1,777 @@
 [
   {
+    "id": "AIR-2026-1876",
+    "slug": "microsoft-outlook-zero-day-vulnerability-actively-exploited",
+    "title": "Microsoft Outlook zero-day vulnerability actively exploited in the wild",
+    "summary": "Microsoft addressed a heavily exploited zero-day vulnerability in Outlook during its November 2026 Patch Tuesday updates. The flaw is part of a broader batch of security fixes released by the vendor.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Microsoft Outlook"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day",
+        "publisher": "BleepingComputer",
+        "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft",
+        "publisher": "SecurityWeek",
+        "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "zero-day",
+      "outlook",
+      "patch-tuesday",
+      "active-exploitation",
+      "CVE-2026-124194"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-124194"
+    ],
+    "affected": [
+      "Microsoft Outlook"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+        "source_url": "https://bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
+        "source_url": "https://securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "Apply the latest security updates provided by Microsoft for Outlook.",
+    "severity_note": "Confirmed exploitation in the wild during Patch Tuesday.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1875",
+    "slug": "cve-2026-83953-command-injection-vulnerability-in-github-cop",
+    "title": "CVE-2026-83953: Command injection vulnerability in Github Copilot",
+    "summary": "Improper command neutralization in Github Copilot allows local information disclosure. The vulnerability is rated medium severity with an available advisory.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft"
+    ],
+    "products": [
+      "Github Copilot"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83953",
+        "publisher": "NVD",
+        "title": "CVE-2026-83953: Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized…",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-83953",
+      "command-injection"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-83953"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-83953: Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83953",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Disclosed vulnerability with medium CVSS score and no exploitation reported.",
+    "cvss": 5.5
+  },
+  {
+    "id": "AIR-2026-1874",
+    "slug": "fortimanager-fgfm-elevation-before-registration-password-ver",
+    "title": "FortiManager FGFM elevation before registration password verification",
+    "summary": "An improper authorization flaw in FortiManager's FGFM interface allows an unauthenticated attacker that can reach the FGFM port to execute code via crafted packets before password verification. The issue carries a CVSS v3 score of 9.0, marking it as critical.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiManager"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-275",
+        "publisher": "Fortinet",
+        "title": "FGFM elevation before registration password is verified",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "fgfm",
+      "elevation",
+      "cve",
+      "fortimanager",
+      "fortiguard"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "FGFM elevation before registration password is verified",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-275",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Critical CVSS 9.0 disclosed vulnerability, no confirmed exploitation",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1873",
+    "slug": "fortios-fortisase-ospf-daemon-authentication-bypass-via-craf",
+    "title": "FortiOS/FortiSASE OSPF daemon authentication bypass via crafted LSA",
+    "summary": "An authentication bypass (CWE‑305) in the OSPF daemon of FortiOS and FortiSASE permits an unauthenticated attacker to broadcast LSAs using specially crafted requests. The vulnerability is assigned a CVSS v3 score of 9.3, indicating critical severity.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiOS",
+      "FortiSASE"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-267",
+        "publisher": "Fortinet",
+        "title": "Authentication bypass by primary weakness",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ospf",
+      "authentication-bypass",
+      "cve",
+      "fortios",
+      "fortisase",
+      "fortiguard"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Authentication bypass by primary weakness",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-267",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Critical CVSS 9.3 disclosed vulnerability, no confirmed exploitation",
+    "cvss": 9.3
+  },
+  {
+    "id": "AIR-2026-1872",
+    "slug": "fortimail-path-traversal-enables-unauthorized-code-execution",
+    "title": "FortiMail path traversal enables unauthorized code execution",
+    "summary": "An improper limitation of a pathname (CWE‑22) in FortiMail allows an unauthenticated attacker to traverse directories and execute unauthorized code via crafted requests. The issue is rated CVSS v3 9.8, marking it as a critical vulnerability.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiMail"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-199",
+        "publisher": "Fortinet",
+        "title": "Improper limitation of a pathname to a restricted directory",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "path-traversal",
+      "cve",
+      "fortimail",
+      "fortiguard"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Improper limitation of a pathname to a restricted directory",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-199",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Critical CVSS 9.8 disclosed vulnerability, no confirmed exploitation",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1871",
+    "slug": "fortimail-command-injection-allows-unauthenticated-code-exec",
+    "title": "FortiMail command injection allows unauthenticated code execution",
+    "summary": "An improper neutralization of special elements in a command (CWE‑77) in FortiMail permits an unauthenticated attacker to execute unauthorized code via crafted HA join‑request packets. The vulnerability carries a CVSS v3 score of 9.8, indicating a critical risk.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiMail"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-200",
+        "publisher": "Fortinet",
+        "title": "Improper neutralization of special elements used in an os command",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-216",
+        "publisher": "Fortinet",
+        "title": "Improper neutralization of special elements used in an SQL command",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "command-injection",
+      "cve",
+      "fortimail",
+      "fortiguard"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Improper neutralization of special elements used in an os command",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-200",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Improper neutralization of special elements used in an SQL command",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-216",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Critical CVSS 9.8 disclosed vulnerability, no confirmed exploitation",
+    "cvss": 9.8
+  },
+  {
+    "id": "AIR-2026-1870",
+    "slug": "fortiauthenticator-hard-coded-password-enables-authenticatio",
+    "title": "FortiAuthenticator hard‑coded password enables authentication bypass",
+    "summary": "A hard‑coded password (CWE‑259) in FortiAuthenticator can be used by an unauthenticated attacker to bypass credential validation. The flaw has a CVSS v3 score of 9.0 and may lead to unauthorized access.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiAuthenticator"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-271",
+        "publisher": "Fortinet",
+        "title": "Authentication bypass",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "authentication-bypass",
+      "hard-coded-password",
+      "cve",
+      "fortiguard"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Authentication bypass",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-271",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Critical CVSS 9.0 disclosed vulnerability, no confirmed exploitation",
+    "cvss": 9
+  },
+  {
+    "id": "AIR-2026-1869",
+    "slug": "fortinet-fortimail-incorrect-authorization-vulnerability",
+    "title": "Fortinet FortiMail Incorrect Authorization Vulnerability",
+    "summary": "An incorrect authorization flaw in FortiMail allows unauthenticated remote attackers to hijack IBE webmail sessions and access encrypted emails. Fortinet disclosed the vulnerability with a CVSS score of 9.1.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiMail"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-207",
+        "publisher": "Fortinet",
+        "title": "Incorrect authorization",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-265",
+        "publisher": "Fortinet",
+        "title": "Incorrect authorization",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cwe-863",
+      "fortinet",
+      "fortimail",
+      "authorization"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Incorrect authorization",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-207",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Incorrect authorization",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-265",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "Check Fortinet advisory for patch availability and apply updates.",
+    "severity_note": "Rated critical with a CVSS score of 9.1.",
+    "cvss": 9.1
+  },
+  {
+    "id": "AIR-2026-1868",
+    "slug": "fortinet-authorization-bypass-flaw-in-dmserver",
+    "title": "Fortinet Authorization Bypass Flaw in dmserver",
+    "summary": "An authorization bypass vulnerability in FortiManager and FortiAnalyzer allows authenticated administrators to access other VDOMs via crafted HTTP requests. Fortinet has published advisories regarding this issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "FortiManager",
+      "FortiAnalyzer",
+      "FortiManager Cloud",
+      "FortiAnalyzer Cloud"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-244",
+        "publisher": "Fortinet",
+        "title": "Authorization bypass through user-controlled key in dmserver",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-208",
+        "publisher": "Fortinet",
+        "title": "Authorization bypass through user-controlled key",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cwe-639",
+      "fortinet",
+      "authorization-bypass",
+      "fortimanager"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Authorization bypass through user-controlled key in dmserver",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-244",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Authorization bypass through user-controlled key",
+        "source_url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-208",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "Check Fortinet advisory for patch availability and apply updates.",
+    "severity_note": "Rated critical with a CVSS score of 9.1.",
+    "cvss": 9.1
+  },
+  {
+    "id": "AIR-2026-1867",
+    "slug": "three-china-nexus-espionage-campaigns-linked-to-sparrow-malw",
+    "title": "Three China-Nexus Espionage Campaigns Linked to Sparrow Malware",
+    "summary": "Three threat clusters utilizing the Sparrow malware ecosystem have targeted telecommunications, government, and critical infrastructure across multiple regions. Researchers identified shared infrastructure and code similarities linking these campaigns.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Sparrow Malware"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/three-china-nexus-espionage-campaigns.html",
+        "publisher": "The Hacker News",
+        "title": "Three China-Nexus Espionage Campaigns Linked Through Sparrow Malware Ecosystem",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sparrow",
+      "espionage",
+      "silentdelivery",
+      "china-nexus"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Three China-Nexus Espionage Campaigns Linked Through Sparrow Malware Ecosystem",
+        "source_url": "https://thehackernews.com/2026/11/three-china-nexus-espionage-campaigns.html",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world espionage campaigns affecting multiple named sectors.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1866",
+    "slug": "cve-2026-111760-git-recursive-clone-rce-flaw",
+    "title": "CVE-2026-111760: Git Recursive Clone RCE Flaw",
+    "summary": "A flaw in Git allows malicious repositories to execute code during recursive submodule clones due to integer truncation. The Git project released patches across multiple versions to address the vulnerability.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Git"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html",
+        "publisher": "The Hacker News",
+        "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-111760",
+      "git",
+      "rce",
+      "integer-truncation"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-111760"
+    ],
+    "affected": [
+      "Git 2.50 to 2.55"
+    ],
+    "fixed_in": [
+      "Git 2.50.2",
+      "2.51.3",
+      "2.52.1",
+      "2.53.1",
+      "2.54.1",
+      "2.55.1",
+      "2.56.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
+        "source_url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "Update Git to version 2.56.1 or the corresponding patched version for your series.",
+    "severity_note": "Disclosed vulnerability with a vendor patch and no known exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1865",
+    "slug": "sglang-rce-exploit-breaches-near-ai-steals-data-from-18-agen",
+    "title": "SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents",
+    "summary": "An attacker exploited an RCE vulnerability in SGLang to breach NEAR AI inference servers and access active requests. The incident resulted in data leakage affecting multiple user agents and requests.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "SGLang",
+      "NEAR AI"
+    ],
+    "incident_date": "2026-11-08",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+        "publisher": "The Hacker News",
+        "title": "SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sglang",
+      "near-ai",
+      "rce",
+      "tee",
+      "data-leak"
+    ],
+    "created_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T20:42:12.887Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users",
+        "source_url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+        "added_at": "2026-11-10T20:42:12.887Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation against real targets with data exposure.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1864",
     "slug": "cve-2026-119990-missing-authentication-in-azure-openai",
     "title": "CVE-2026-119990: Missing authentication in Azure OpenAI",
