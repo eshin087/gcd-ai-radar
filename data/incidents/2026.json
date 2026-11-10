@@ -201,9 +201,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-123218: IBM Aspera Faspex — IBM Aspera Faspex Incorrect Authorization Vulnerability",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
+        "publisher": "The Hacker News",
+        "title": "CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -213,7 +219,7 @@
       "authorization-bypass"
     ],
     "created_at": "2026-11-09T23:14:23.233Z",
-    "updated_at": "2026-11-09T23:14:23.233Z",
+    "updated_at": "2026-11-10T07:11:08.156Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
