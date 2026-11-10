@@ -1,5 +1,15 @@
 [
   {
+    "key": "2f759eae153f467b",
+    "title": "Cybersecurity jobs available right now: November 10, 2026",
+    "url": "https://helpnetsecurity.com/2026/11/10/cybersecurity-jobs-available-right-now-november-10-2026",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Roundup or career listing piece without a specific security incident",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-10T05:13:22.029Z"
+  },
+  {
     "key": "2b085331b00a94a4",
     "title": "Cisco Meraki Security Hardening Release: October 2026",
     "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-meraki-os-drbEX9GH?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DCisco+Meraki+Security+Hardening+Release%3A+October+2026%26vs_k%3D1",
