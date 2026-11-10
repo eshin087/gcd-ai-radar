@@ -825,9 +825,15 @@
         "publisher": "BleepingComputer",
         "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://cyberscoop.com/vanderbilt-university-ransomware-attack-byod",
+        "publisher": "CyberScoop",
+        "title": "Vanderbilt University reels following ransomware attack claimed by BYOD group",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -838,7 +844,7 @@
       "vanderbilt-university"
     ],
     "created_at": "2026-11-10T00:11:57.255Z",
-    "updated_at": "2026-11-10T00:11:57.255Z",
+    "updated_at": "2026-11-10T18:11:56.608Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
