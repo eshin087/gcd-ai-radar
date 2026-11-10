@@ -1,5 +1,69 @@
 [
   {
+    "id": "AIR-2026-1857",
+    "slug": "cve-2026-113663-sandboxshelltool-newline-injection-bypasses",
+    "title": "CVE-2026-113663: SandboxShellTool newline injection bypasses allowlist, enabling arbitrary command execution",
+    "summary": "A newline injection flaw in SandboxShellTool's allowed and readonly modes lets an attacker embed a newline to break the command filter and execute arbitrary shell commands via sh -c. The vulnerability is tracked as CVE‑2026‑113663 and currently has no known exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "SandboxShellTool"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://github.com/advisories/GHSA-2h4w-29cv-2cmv",
+        "publisher": "GitHub Advisory Database",
+        "title": "CVE-2026-113663: AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_ghsa",
+    "tags": [
+      "CVE-2026-113663",
+      "newline_injection",
+      "command_execution"
+    ],
+    "created_at": "2026-11-10T16:11:17.600Z",
+    "updated_at": "2026-11-10T16:11:17.600Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-113663"
+    ],
+    "affected": [
+      "ag2 >= 0.13.2, < 1.1.1",
+      "autogen >= 0.13.2, <= 0.14.1"
+    ],
+    "fixed_in": [
+      "ag2 1.1.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-113663: AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution",
+        "source_url": "https://github.com/advisories/GHSA-2h4w-29cv-2cmv",
+        "added_at": "2026-11-10T16:11:17.600Z"
+      }
+    ],
+    "action": "Avoid using untrusted input with SandboxShellTool and monitor for a patched release.",
+    "severity_note": "Disclosed vulnerability with CVE, no confirmed exploitation.",
+    "cvss": 8.8
+  },
+  {
     "id": "AIR-2026-1856",
     "slug": "russian-hackers-compromise-government-email-servers-in-roman",
     "title": "Russian hackers compromise government email servers in Romania and Kazakhstan",
@@ -141,9 +205,15 @@
         "publisher": "The Hacker News",
         "title": "Binance Warns of iOS Sandbox Escape That Could Expose Crypto Wallet Keys, No Fix Confirmed",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets",
+        "publisher": "BleepingComputer",
+        "title": "Binance warns of iOS flaw that could leak crypto wallet secrets",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -154,7 +224,7 @@
       "cryptocurrency"
     ],
     "created_at": "2026-11-10T13:10:51.415Z",
-    "updated_at": "2026-11-10T13:10:51.415Z",
+    "updated_at": "2026-11-10T16:11:17.600Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
