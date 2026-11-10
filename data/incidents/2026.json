@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1877",
+    "slug": "nitori-data-breach-exposes-37-6-million-customer-records",
+    "title": "Nitori data breach exposes 37.6 million customer records",
+    "summary": "Japanese furniture retailer Nitori disclosed that attackers compromised a network system and potentially accessed tens of millions of customer records. The intrusion highlights a severe data security incident affecting a large consumer base.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Nitori network"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records",
+        "publisher": "BleepingComputer",
+        "title": "Japanese furniture giant Nitori says hackers stole 37.6M customer records",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "retail",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-11-10T21:11:20.212Z",
+    "updated_at": "2026-11-10T21:11:20.212Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Japanese furniture giant Nitori says hackers stole 37.6M customer records",
+        "source_url": "https://bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records",
+        "added_at": "2026-11-10T21:11:20.212Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach with millions of records exposed",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1876",
     "slug": "microsoft-outlook-zero-day-vulnerability-actively-exploited",
     "title": "Microsoft Outlook zero-day vulnerability actively exploited in the wild",
@@ -30,9 +87,15 @@
         "publisher": "SecurityWeek",
         "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://therecord.media/patch-tuesday-microsoft-1000-bugs-again",
+        "publisher": "The Record",
+        "title": "Microsoft’s Patch Tuesday surpasses 1,000 bugs for second month in a row",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -44,7 +107,7 @@
       "CVE-2026-124194"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-10T21:11:20.212Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
