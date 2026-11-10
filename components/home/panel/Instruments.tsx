@@ -166,8 +166,8 @@ export function AiFlow({ ai }: { ai: AiFlowData }) {
 /** One row of the strip: its key, then the items with an interpunct between each pair. */
 function FootRow({ k, items }: { k: string; items: ReactNode[] }) {
   return (
-    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 py-1.5">
-      <span className="min-w-[104px] uppercase tracking-[0.1em] text-faint">{k}</span>
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5 py-2">
+      <span className="min-w-[112px] uppercase tracking-[0.1em] text-dim">{k}</span>
       {items.flatMap((item, i) =>
         i
           ? [
@@ -216,13 +216,13 @@ export function PanelFoot({ lanes, live, breachesMonth, accountsMonth, briefing 
     </Link>,
   );
   return (
-    <footer data-panel-foot className="mt-8 border-t border-line-soft pt-2.5 font-mono text-[12px] text-dim">
+    <footer data-panel-foot className="mt-9 border-t border-line-soft pt-3.5 font-mono text-[13.5px] text-dim">
       <FootRow k="Also live" items={also} />
       {briefing && (
         <FootRow
           k="This week"
           items={[
-            <Link key="headline" href={`/briefing/${briefing.week}`} className="font-sans text-[13px] text-soft hover:text-accent">
+            <Link key="headline" href={`/briefing/${briefing.week}`} className="font-sans text-[15px] text-soft hover:text-accent">
               {briefing.headline}
             </Link>,
             <span key="week" className="text-faint">

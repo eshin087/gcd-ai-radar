@@ -36,7 +36,7 @@ export function Units({ n, bright, red }: { n: number; bright?: number; red?: nu
  * The day sheet's small tag: a word in a thin box, still, never a dot.
  * `stack` marks a row in the visitor's own stack and `ai` a record with an
  * AI role, on the runway and in its lists; the status tones (solid red for
- * harm confirmed, outlined red for no patch, amber for a deadline, `partial`
+ * confirmed impact, outlined red for no patch, amber for a due date, `partial`
  * for a fix that covers some) label a product in My stack's drawers.
  */
 export type TagTone = "harm" | "open" | "due" | "partial" | "ai" | "stack";
@@ -51,7 +51,7 @@ const TAG_TONE: Record<TagTone, string> = {
 
 export function Tag({ tone, title, children, ...rest }: { tone: TagTone; title?: string; children: ReactNode } & Record<`data-${string}`, string | undefined>) {
   return (
-    <span {...rest} data-tag={tone} title={title} className={`inline-flex shrink-0 items-center rounded-[4px] border px-[5px] font-mono text-[10.5px] uppercase leading-[15px] tracking-[0.05em] whitespace-nowrap ${TAG_TONE[tone]}`}>
+    <span {...rest} data-tag={tone} title={title} className={`inline-flex shrink-0 items-center rounded-[4px] border px-1.5 font-mono text-[11.5px] uppercase leading-[17px] tracking-[0.05em] whitespace-nowrap ${TAG_TONE[tone]}`}>
       {children}
     </span>
   );
@@ -89,7 +89,7 @@ export function CvssNum({ score }: { score: number | null }) {
   const band = cvssBand(score);
   const meta = CVSS_BAND_META[band];
   return (
-    <span data-cvss-band={band} title={`CVSS base score ${cvssLabel(score)}: ${meta.label.toLowerCase()} (${meta.range})`} className="num text-[12.5px]" style={{ color: `var(--color-sev-${SEV_OF_BAND[band]}, ${CVSS_COLORS[band]})` }}>
+    <span data-cvss-band={band} title={`CVSS base score ${cvssLabel(score)}: ${meta.label.toLowerCase()} (${meta.range})`} className="num" style={{ color: `var(--color-sev-${SEV_OF_BAND[band]}, ${CVSS_COLORS[band]})` }}>
       {cvssLabel(score)}
     </span>
   );

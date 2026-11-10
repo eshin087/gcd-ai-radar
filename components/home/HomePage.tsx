@@ -26,7 +26,7 @@ export function HomePage({ data }: { data: HomePayload }) {
   return (
     <PanelState defaults={p.stack.tiles} defaultMatches={p.sieve.inStack} nvdFetched={p.sieve.nvdFetched}>
       <HomeHero data={data} />
-      <div className="mt-6 flex flex-col gap-5">
+      <div className="mt-7 flex flex-col gap-8">
         <MyStack />
         <Ledger ledger={p.ledger} built={data.now} />
         <Week week={p.week} entries={p.sieve.exploitedEntries} today={data.today} weekFile={data.stats.lists.cves_week.file} breachFile={data.stats.lists.breaches_month.file} />

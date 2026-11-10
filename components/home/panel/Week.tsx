@@ -38,9 +38,9 @@ const DAY_MS = 86_400_000;
  * strip's grid; the strip clips the outer ones.
  */
 function Cell({ k, label, live, level, note, onOpen, href, value, fact, tone = "text-dim" }: { k: string; label: string; live?: boolean; level?: Level | null; note: string; onOpen?: () => void; href?: string; value: ReactNode; fact: ReactNode; tone?: string }) {
-  const cls = "text-[12px] text-dim";
+  const cls = "text-[13.5px] text-dim";
   return (
-    <li data-line={k} data-level={level ?? ""} title={note} className="min-w-0 border-t border-l border-white/[0.06] px-4 py-3.5 xl:px-[18px]">
+    <li data-line={k} data-level={level ?? ""} title={note} className="min-w-0 border-t border-l border-white/[0.06] px-4 py-[18px] xl:px-5">
       <span className="flex items-baseline gap-x-1.5 whitespace-nowrap">
         {onOpen ? (
           <button type="button" onClick={onOpen} aria-label={`${label}, open the list`} className={`${cls} text-left hover:text-accent`}>
@@ -53,22 +53,22 @@ function Cell({ k, label, live, level, note, onOpen, href, value, fact, tone = "
         ) : (
           <span className={cls}>{label}</span>
         )}
-        {live && <span className="font-mono text-[12px] text-accent"> · live</span>}
+        {live && <span className="font-mono text-[13px] text-accent"> · live</span>}
       </span>
-      <span className="mt-1 flex flex-wrap items-baseline gap-x-2 whitespace-nowrap">
+      <span className="mt-1.5 flex flex-wrap items-baseline gap-x-2.5 whitespace-nowrap">
         {value}
-        <span className={`font-mono text-[12px] ${tone}`}>{fact}</span>
+        <span className={`font-mono text-[13.5px] ${tone}`}>{fact}</span>
       </span>
     </li>
   );
 }
 
 function Value({ value }: { value: string }) {
-  return <Num value={value} className="font-mono text-[18px] font-medium text-ink" />;
+  return <Num value={value} className="font-mono text-[22px] font-medium text-ink" />;
 }
 
 function Dash() {
-  return <span className="font-mono text-[18px] text-dim">—</span>;
+  return <span className="font-mono text-[22px] text-dim">—</span>;
 }
 
 export function Week({ week: w, entries, today, weekFile, breachFile }: { week: WeekData; entries: KevStatEntry[]; today: string; weekFile: string; breachFile: string }) {

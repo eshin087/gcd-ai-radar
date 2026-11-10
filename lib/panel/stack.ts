@@ -180,7 +180,7 @@ export function buildStack(incidents: readonly FullIncident[], kev: readonly Kev
       why.push(`CISA deadline ${due}`);
     }
     const open = live.filter((i) => member.record(i) && ((i.lane === "patch" && (i.patch_status === "unpatched" || i.patch_status === "partial")) || i.severity >= 4));
-    const openWord = open.some((i) => i.severity >= 4) ? "harm confirmed" : open.some((i) => i.patch_status === "unpatched") ? "no patch yet" : open.length ? "partly patched" : null;
+    const openWord = open.some((i) => i.severity >= 4) ? "confirmed impact" : open.some((i) => i.patch_status === "unpatched") ? "no patch yet" : open.length ? "partly patched" : null;
     if (openWord) {
       flag ??= openWord;
       why.push(openWord);
