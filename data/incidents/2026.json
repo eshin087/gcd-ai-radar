@@ -1,5 +1,148 @@
 [
   {
+    "id": "AIR-2026-1852",
+    "slug": "sap-patches-four-cvss-10-0-flaws-in-netweaver-and-web-dispat",
+    "title": "SAP patches four CVSS 10.0 flaws in NetWeaver and Web Dispatcher",
+    "summary": "SAP fixed four critical unauthenticated remote code execution and related flaws in NetWeaver application servers and the Web Dispatcher. All four vulnerabilities carry the maximum CVSS score of 10.0 and were addressed in the monthly Security Patch Day.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SAP NetWeaver",
+      "SAP Web Dispatcher"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
+        "publisher": "The Hacker News",
+        "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sap",
+      "netweaver",
+      "web-dispatcher",
+      "rce",
+      "cvss-10"
+    ],
+    "created_at": "2026-11-10T10:11:16.823Z",
+    "updated_at": "2026-11-10T10:11:16.823Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
+        "source_url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
+        "added_at": "2026-11-10T10:11:16.823Z"
+      }
+    ],
+    "action": "Apply SAP's monthly security patches for NetWeaver and Web Dispatcher.",
+    "severity_note": "Critical rating of 10.0 with patches available.",
+    "cvss": 10
+  },
+  {
+    "id": "AIR-2026-1851",
+    "slug": "turla-cereal-malware-turns-exchange-servers-into-spy-hubs",
+    "title": "Turla Cereal malware turns Exchange servers into spy hubs",
+    "summary": "The Russia-aligned threat group Turla deployed a modular .NET toolset named Cereal on Microsoft Exchange servers at government organizations in Kazakhstan and Romania. The malware hijacks mail flow traffic to stealthily exfiltrate emails without requiring an external command-and-control server.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Microsoft Exchange"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/10/eset-turla-exchange-malware",
+        "publisher": "Help Net Security",
+        "title": "Turla’s Cereal malware turns victims’ Exchange servers into spy hubs",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers",
+        "publisher": "BleepingComputer",
+        "title": "Turla hackers use new Cereal malware to spy on govt Exchange servers",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://cyberscoop.com/russian-turla-group-used-new-toolset-to-silently-pilfer-emails-from-kazakhstan-romanian-governments",
+        "publisher": "CyberScoop",
+        "title": "Russian Turla group used new toolset to silently pilfer emails from Kazakhstan, Romanian governments",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "turla",
+      "cereal",
+      "exchange",
+      "espionage",
+      "malware"
+    ],
+    "created_at": "2026-11-10T10:11:16.823Z",
+    "updated_at": "2026-11-10T10:11:16.823Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Turla’s Cereal malware turns victims’ Exchange servers into spy hubs",
+        "source_url": "https://helpnetsecurity.com/2026/11/10/eset-turla-exchange-malware",
+        "added_at": "2026-11-10T10:11:16.823Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Turla hackers use new Cereal malware to spy on govt Exchange servers",
+        "source_url": "https://bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers",
+        "added_at": "2026-11-10T10:11:16.823Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "Russian Turla group used new toolset to silently pilfer emails from Kazakhstan, Romanian governments",
+        "source_url": "https://cyberscoop.com/russian-turla-group-used-new-toolset-to-silently-pilfer-emails-from-kazakhstan-romanian-governments",
+        "added_at": "2026-11-10T10:11:16.823Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world espionage campaign against named targets.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1850",
     "slug": "fireworks-ai-discloses-breach-following-cloud-provider-compr",
     "title": "Fireworks AI discloses breach following cloud provider compromise",
@@ -279,9 +422,15 @@
         "publisher": "The Hacker News",
         "title": "CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://securityweek.com/ibm-aspera-faspex-signalwire-freeswitch-vulnerabilities-exploited-in-attacks",
+        "publisher": "SecurityWeek",
+        "title": "IBM Aspera Faspex, SignalWire FreeSwitch Vulnerabilities Exploited in Attacks",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -291,7 +440,7 @@
       "authorization-bypass"
     ],
     "created_at": "2026-11-09T23:14:23.233Z",
-    "updated_at": "2026-11-10T07:11:08.156Z",
+    "updated_at": "2026-11-10T10:11:16.823Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -401,9 +550,15 @@
         "publisher": "The Hacker News",
         "title": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days",
+        "publisher": "SecurityWeek",
+        "title": "N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -413,7 +568,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-10T07:42:03.885Z",
+    "updated_at": "2026-11-10T10:11:16.823Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
