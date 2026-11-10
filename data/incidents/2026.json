@@ -93,9 +93,21 @@
         "publisher": "The Record",
         "title": "Microsoft’s Patch Tuesday surpasses 1,000 bugs for second month in a row",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://cyberscoop.com/microsoft-patch-tuesday-november-2026",
+        "publisher": "CyberScoop",
+        "title": "Microsoft fixes over 1,000 vulnerabilities in November Patch Tuesday",
+        "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities",
+        "publisher": "Krebs on Security",
+        "title": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 3,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -107,7 +119,7 @@
       "CVE-2026-124194"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-10T21:11:20.212Z",
+    "updated_at": "2026-11-10T22:11:27.090Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,

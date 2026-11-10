@@ -1,5 +1,15 @@
 [
   {
+    "key": "6e631ad08738c599",
+    "title": "F-Secure Identifies 26 Ways AI Can Harm Consumers, and Where to Stop Them",
+    "url": "https://darkreading.com/application-security/f-secure-26-ways-ai-harm-consumers-where-to-stop-them",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Taxonomy research report discussing consumer AI harms without a specific attack, breach, or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-10T22:11:27.090Z"
+  },
+  {
     "key": "c28874079aa8df51",
     "title": "Microsoft releases Windows 10 KB5131096 extended security update",
     "url": "https://bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5131096-extended-security-update",
