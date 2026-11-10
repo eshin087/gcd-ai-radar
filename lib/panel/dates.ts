@@ -22,3 +22,15 @@ export function openFor(since: string, now: number): string {
   const days = Math.floor((now - Date.parse(`${since}T00:00:00Z`)) / DAY_MS);
   return days < 1 ? "open today" : `open ${days} ${days === 1 ? "day" : "days"}`;
 }
+
+/**
+ * Time left as the two figures of the runway's large countdown: days and
+ * hours from two days out ("2 d 21 h"), hours and minutes below that
+ * ("21 h 32 m"). Whole minutes, so it changes once a minute, never by the
+ * second.
+ */
+export function countdownParts(ms: number): { a: string; au: "d" | "h"; b: string; bu: "h" | "m" } {
+  const mins = Math.max(0, Math.floor(ms / 60_000));
+  if (mins >= 48 * 60) return { a: String(Math.floor(mins / 1440)), au: "d", b: String(Math.floor((mins % 1440) / 60)), bu: "h" };
+  return { a: String(Math.floor(mins / 60)), au: "h", b: String(mins % 60).padStart(2, "0"), bu: "m" };
+}

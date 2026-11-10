@@ -2,30 +2,45 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
-import { Instrument, Pulse } from "@/components/home/panel/Instrument";
-import { ScoreOrDash } from "@/components/home/panel/marks";
+import { ScoreOrDash, Tag } from "@/components/home/panel/marks";
 import { Num } from "@/components/home/panel/Num";
 import { usePanelState } from "@/components/home/panel/PanelState";
 import { Drawer } from "@/components/ui/Drawer";
 import { dateLabel } from "@/lib/format";
-import { STACK_DAYS, STACK_MAX, type StackCandidate, type StackFile, type StackItem } from "@/lib/panel/picks";
+import { STACK_DAYS, STACK_MAX, flagBadge, type FlagTone, type StackCandidate, type StackFile, type StackItem } from "@/lib/panel/picks";
 
 /**
- * My stack (lib/panel/stack.ts): one tile per product, its exploitation in the
- * last 90 days, and a red flag only while something is exploited and still
- * open. A tile opens the list behind its number (the candidate's `items`,
- * fetched with /stats/stack.json on first use). "choose products" opens every
- * candidate in a drawer; "share link" copies the page's address with the
- * picks in ?stack=, so a bookmark or a teammate's link opens the same stack
- * anywhere.
+ * My stack (lib/panel/stack.ts) as one strip over the runway: a chip per
+ * product with a status light, its name, its exploitation in the last 90
+ * days and, only while something is exploited and still open, a word in the
+ * light's colour: red "harm" or "no patch", amber "due 10 Nov"
+ * (lib/panel/picks.ts flagBadge). A calm chip has a grey light and no word,
+ * so the flagged ones stand out. A chip opens the list behind its number
+ * (the candidate's `items`, fetched with /stats/stack.json on first use).
+ * "edit" opens every candidate in a drawer, where "copy share link" puts the
+ * picks in ?stack= so a bookmark or a teammate's link opens the same stack.
+ * The strip's right end holds the sheet's "AI only" lens.
  */
 
-/** The flag in fewer letters, for the four-across tiles of a phone. */
-function shortFlag(flag: string): string {
-  return flag.startsWith("patch by") ? flag.slice("patch ".length) : flag === "harm confirmed" ? "harm" : flag === "no patch yet" ? "no patch" : "partial";
+const TONE_INK: Record<FlagTone, string> = { harm: "text-live", open: "text-live", due: "text-accent", partial: "text-partial" };
+const TONE_LIGHT: Record<FlagTone, string> = {
+  harm: "bg-live shadow-[0_0_8px_var(--color-live)]",
+  open: "bg-live shadow-[0_0_8px_var(--color-live)]",
+  due: "bg-accent shadow-[0_0_8px_var(--color-accent)]",
+  partial: "bg-partial shadow-[0_0_8px_var(--color-partial)]",
+};
+
+function FlagBadge({ flag, title }: { flag: string; title?: string }) {
+  const b = flagBadge(flag);
+  return (
+    <Tag tone={b.tone} title={title}>
+      {b.word}
+    </Tag>
+  );
 }
 
-function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
+function Chip({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
+  const b = t.flag ? flagBadge(t.flag) : null;
   return (
     <button
       type="button"
@@ -33,21 +48,18 @@ function Tile({ t, onOpen }: { t: StackCandidate; onOpen: () => void }) {
       data-stack-tile={t.key}
       data-flag={t.flag ?? ""}
       data-n={t.n}
-      title={`${t.why.length ? t.why.join(" · ") : "nothing exploited and open"} · exploited in the last ${STACK_DAYS} days, red while still open`}
+      title={`${t.why.length ? t.why.join(" · ") : "nothing exploited and open"} · exploited in the last ${STACK_DAYS} days, flagged while still open`}
       aria-label={`${t.label}: ${t.n} exploited in ${STACK_DAYS} days${t.flag ? `, ${t.flag}` : ""}, open the list`}
-      className="group block w-full min-w-0 border-l border-line-soft pl-2.5 text-left hover:border-accent sm:pl-3"
+      className="group inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.02] px-2 text-[12.5px] hover:border-white/25"
     >
-      <span className={`block truncate text-[13px] font-semibold group-hover:text-accent ${t.flag ? "text-ink" : "text-soft"}`}>{t.label}</span>
-      <Num value={String(t.n)} className="mt-1 block font-mono text-[24px] font-medium leading-[1.15] text-ink sm:text-[28px]" />
-      <span className="mt-0.5 flex min-h-[18px] items-center gap-1.5 overflow-hidden whitespace-nowrap font-mono text-[11px] text-live sm:text-[12px]">
-        {t.flag && (
-          <>
-            <Pulse />
-            <span className="hidden truncate sm:inline">{t.flag}</span>
-            <span className="truncate sm:hidden">{shortFlag(t.flag)}</span>
-          </>
-        )}
-      </span>
+      <span aria-hidden className={`size-1.5 rounded-full ${b ? TONE_LIGHT[b.tone] : "bg-white/20"}`} />
+      <span className={`font-medium group-hover:text-accent ${b ? "text-ink" : "text-soft"}`}>{t.label}</span>
+      <Num value={String(t.n)} className="font-mono text-dim" />
+      {b && (
+        <span data-stack-badge={b.tone} className={`font-mono text-[11px] font-medium uppercase tracking-[0.04em] ${TONE_INK[b.tone]}`}>
+          {b.word}
+        </span>
+      )}
     </button>
   );
 }
@@ -98,8 +110,8 @@ function ItemRow({ it }: { it: StackItem }) {
  * What a tile counts, in the shared drawer shell: KEV entries CISA listed in
  * the 90 days and our exploited records no entry stands for, open ones first.
  * The count line starts with plain digits and the rows are `ol > li`, the
- * contract scripts/check-home.mjs reads; the red line and the rows appear
- * together once the file is in.
+ * contract scripts/check-home.mjs reads; the line saying why the tile is
+ * flagged and the rows appear together once the file is in.
  */
 function StackDrawer({ cand, file, onClose }: { cand: StackCandidate | null; file: StackFile | null; onClose: () => void }) {
   const titleId = useId();
@@ -134,10 +146,10 @@ function StackDrawer({ cand, file, onClose }: { cand: StackCandidate | null; fil
         <p className="text-[13px] text-dim">Loading…</p>
       ) : (
         <>
-          {cand.why.length > 0 && (
-            <p className="flex items-center gap-2 font-mono text-[12px] text-live">
-              <Pulse />
-              <span>red: {cand.why.join(" · ")}</span>
+          {cand.flag && (
+            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[12px] text-soft">
+              <FlagBadge flag={cand.flag} />
+              <span>{cand.why.join(" · ")}</span>
             </p>
           )}
           {items.length === 0 ? (
@@ -157,7 +169,7 @@ function StackDrawer({ cand, file, onClose }: { cand: StackCandidate | null; fil
 
 /* ---------- choosing products ---------- */
 
-function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: { open: boolean; onClose: () => void; file: StackFile | null; picks: string[]; isDefault: boolean; onChange: (key: string, on: boolean) => void; onReset: () => void }) {
+function Chooser({ open, onClose, file, picks, isDefault, copied, onShare, onChange, onReset }: { open: boolean; onClose: () => void; file: StackFile | null; picks: string[]; isDefault: boolean; copied: string; onShare: () => void; onChange: (key: string, on: boolean) => void; onReset: () => void }) {
   const titleId = useId();
   const [q, setQ] = useState("");
   const list = (file?.candidates ?? []).filter((c) => !q || c.label.toLowerCase().includes(q.toLowerCase()));
@@ -175,8 +187,11 @@ function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: {
           {file ? file.candidates.length : 0} products · {picks.length} of up to {STACK_MAX} chosen · the number is exploitation in the last 90 days
         </p>
         <p className="text-[12px] leading-relaxed text-faint">
-          {isDefault ? "Until you choose, the tiles are the most-exploited vendors and AI products." : "Your choice stays in this browser."} Red means exploited and still open: a CISA deadline ahead, no full patch, or harm confirmed (data, money or service lost). The share link carries the stack to any device or teammate.
+          {isDefault ? "Until you choose, the strip shows the most-exploited vendors and AI products." : "Your choice stays in this browser."} A coloured word means exploited and still open: a CISA deadline ahead (due), no full patch, or harm confirmed (data, money or service lost). The share link carries the stack to any device or teammate.
         </p>
+        <button type="button" onClick={onShare} aria-live="polite" className="font-mono text-[12px] text-accent hover:underline">
+          {copied ? `link ${copied}` : "copy share link"}
+        </button>
       </header>
       <div className="mt-3 flex items-center gap-3">
         <input
@@ -207,7 +222,7 @@ function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: {
                       <label className={`flex items-center gap-3 py-2 text-[14px] ${full ? "cursor-not-allowed text-faint" : "cursor-pointer text-soft hover:text-ink"}`}>
                         <input type="checkbox" checked={on} disabled={full} onChange={(e) => onChange(c.key, e.target.checked)} className="accent-[#ffb35c]" />
                         <span className="min-w-0 flex-1 truncate">{c.label}</span>
-                        {c.flag && <span className="font-mono text-[12px] text-live">{c.flag}</span>}
+                        {c.flag && <FlagBadge flag={c.flag} title={c.why.join(" · ")} />}
                         <span className="num w-8 text-right text-[13px] text-ink">{c.n}</span>
                       </label>
                     </li>
@@ -223,7 +238,7 @@ function Chooser({ open, onClose, file, picks, isDefault, onChange, onReset }: {
 }
 
 export function MyStack() {
-  const { tiles, picks, isDefault, ready, file, loadFile, setPicks } = usePanelState();
+  const { tiles, picks, isDefault, ready, file, loadFile, setPicks, aiOnly, setAiOnly } = usePanelState();
   const [open, setOpen] = useState(false);
   const [shown, setShown] = useState<StackCandidate | null>(null);
   const [copied, setCopied] = useState<"" | "copied" | "in the address bar">("");
@@ -250,32 +265,25 @@ export function MyStack() {
   const change = (key: string, on: boolean) => setPicks(on ? [...picks, key] : picks.filter((k) => k !== key));
 
   return (
-    <Instrument
-      id="stack"
-      full
-      label="My stack"
-      sub="exploited in the last 90 days"
-      source={
-        <>
-          <button type="button" onClick={choose} className="text-accent hover:underline">
-            choose products
-          </button>
-          {" · "}
-          <button type="button" onClick={share} className="text-accent hover:underline" aria-live="polite">
-            {copied ? `link ${copied}` : "share link"}
-          </button>
-        </>
-      }
-    >
-      <div className="overflow-hidden">
-        <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="-ml-2.5 grid grid-cols-4 gap-y-3 sm:-ml-3 sm:gap-y-4 xl:grid-cols-8">
-          {tiles.map((t) => (
-            <Tile key={t.key} t={t} onOpen={() => show(t)} />
-          ))}
-        </div>
+    <section id="stack" data-build data-instrument="stack" aria-label="My stack" className="flex min-w-0 scroll-mt-6 flex-wrap items-center gap-1.5">
+      <h2 className="mr-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-dim">My stack</h2>
+      <div data-stack={ready ? "ready" : "wait"} data-tiles={tiles.length} className="contents">
+        {tiles.map((t) => (
+          <Chip key={t.key} t={t} onOpen={() => show(t)} />
+        ))}
       </div>
+      <button type="button" onClick={choose} className="h-8 px-1.5 font-mono text-[12px] text-dim hover:text-accent">
+        edit
+      </button>
+      <span role="group" aria-label="Show every record or only those with an AI role" className="ml-auto inline-flex font-mono text-[12px]">
+        {([false, true] as const).map((on, i) => (
+          <button key={String(on)} type="button" data-filter={on ? "ai" : "all"} aria-pressed={aiOnly === on} onClick={() => setAiOnly(on)} className={`h-8 px-2 uppercase tracking-[0.08em] hover:text-accent ${i ? "border-l border-line" : ""} ${aiOnly === on ? "text-accent" : "text-dim"}`}>
+            {on ? "AI only" : "all"}
+          </button>
+        ))}
+      </span>
       <StackDrawer cand={shown} file={file} onClose={() => setShown(null)} />
-      <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} isDefault={isDefault} onChange={change} onReset={() => setPicks([])} />
-    </Instrument>
+      <Chooser open={open} onClose={() => setOpen(false)} file={file} picks={picks} isDefault={isDefault} copied={copied} onShare={share} onChange={change} onReset={() => setPicks([])} />
+    </section>
   );
 }

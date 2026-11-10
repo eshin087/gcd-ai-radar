@@ -10,8 +10,9 @@ export { STACK_DAYS, STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stack
 
 /**
  * My stack: products a visitor watches, each a tile with one number, the
- * exploitation in the last 90 days, and a red flag only while something is
- * exploited and still open.
+ * exploitation in the last 90 days, and a flag only while something is
+ * exploited and still open (the strip shows it as a coloured word, picks.ts
+ * flagBadge).
  *
  * Candidates: every vendor with an entry in CISA's Known Exploited
  * Vulnerabilities catalog in the 90 days, the vendors in VENDOR_ALIASES, and
@@ -31,7 +32,7 @@ export { STACK_DAYS, STACK_FILE, STACK_MAX, STACK_STORAGE_KEY, parsePicks, stack
  * else NVD; a record whose CVEs are all on KEV is that entry's link, not a
  * row of its own. Open items come first, then newest first.
  *
- * Red: a KEV deadline on or after today ("patch by 31 Oct"), else a live patch-lane
+ * The flag: a KEV deadline on or after today ("patch by 31 Oct"), else a live patch-lane
  * record of severity 3 or more with no patch yet or a partial one ("no patch
  * yet", "partly patched"), else a live record of severity 4 ("confirmed
  * loss"). Nothing else colours a tile.

@@ -183,7 +183,7 @@ function FootRow({ k, items }: { k: string; items: ReactNode[] }) {
 }
 
 /**
- * The home page's footer strip under the two panels: what else is live and
+ * The home page's footer strip under the day sheet's bands: what else is live and
  * this week's briefing, each one quiet mono line without a hairline of its
  * own. The data files and feeds are not listed anywhere on the site.
  */

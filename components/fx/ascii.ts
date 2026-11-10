@@ -1,8 +1,8 @@
 /**
  * The home page's ASCII motion vocabulary. Marks assemble through · : + before
  * they fill; numbers dissolve into place through % + : ·, settling left to
- * right; the pulse breathes · • ● •. Nothing here draws a glyph outside these
- * and digits, so a fallback font can never shift a row.
+ * right. Nothing here draws a glyph outside these and digits, so a fallback
+ * font can never shift a row.
  */
 
 export const BUILD_GLYPHS = ["·", ":", "+"] as const;

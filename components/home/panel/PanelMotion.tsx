@@ -9,9 +9,10 @@ import { BAR_GAP_MS, BUILD_EVENT, BUILD_GLYPHS, CELL_GAP_MS, CELL_STEP_MS, UNIT_
  * the viewport: its cells and unit squares assemble through · : + left to
  * right, then it fires BUILD_EVENT so its numbers (Num), the newest ledger
  * row (TypeIn) and the AI flow's ribbons start. Without html.motion every
- * instrument builds at once, final and still. It also runs the pulse:
- * html.pulse-0..3 once a second, which the red items' ::before glyph follows
- * (globals.css).
+ * instrument builds at once, final and still. Once built, nothing here
+ * moves again; the only loops on the sheet are the runway's approach lights
+ * and the light along its open bars, which are CSS alone (globals.css
+ * .rw-*), as are the marks that arrive when the runway card builds.
  */
 
 declare global {
@@ -23,7 +24,6 @@ declare global {
 export function PanelMotion() {
   useEffect(() => {
     window.__panelMotion = true;
-    const root = document.documentElement;
     const motion = motionOn();
     const timers = new Set<number>();
     const later = (fn: () => void, ms: number) => {
@@ -78,21 +78,9 @@ export function PanelMotion() {
       sections.forEach((s) => io!.observe(s));
     }
 
-    let pulse = 2;
-    root.classList.add(`pulse-${pulse}`);
-    const tick = motion
-      ? window.setInterval(() => {
-          root.classList.remove(`pulse-${pulse}`);
-          pulse = (pulse + 1) % 4;
-          root.classList.add(`pulse-${pulse}`);
-        }, 1000)
-      : 0;
-
     return () => {
       io?.disconnect();
-      window.clearInterval(tick);
       timers.forEach((id) => window.clearTimeout(id));
-      root.classList.remove("pulse-0", "pulse-1", "pulse-2", "pulse-3");
     };
   }, []);
   return null;

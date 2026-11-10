@@ -350,73 +350,76 @@ body {
   visibility: hidden;
 }
 
-/* the week's bar against typical (components/home/panel/marks.tsx Vs): cells on a fixed track, a hairline at typical, a dim band over the usual range, a faint hairline where busy starts */
-.vs {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  height: 14px;
-  flex: none;
-  vertical-align: middle;
+/*
+ * The runway (components/home/panel/Runway.tsx): the day sheet's one picture
+ * and its one thing in motion. Under html.motion its marks arrive once when
+ * the card builds (.rw-in fades in, .rw-grow draws a bar out from its first
+ * report, each after its own --d milliseconds), then two things keep moving,
+ * slowly: approach lights run along the deadline track toward NOW, one after
+ * the other, and a soft light travels along each open bar. Nothing blinks,
+ * and without html.motion everything is final and still.
+ */
+.rw-now {
+  box-shadow: 0 0 14px 1px color-mix(in oklab, var(--color-accent) 55%, transparent);
 }
-.vs .ascii-cells {
-  position: relative;
+.rw-in {
+  transition: opacity 0.5s ease calc(var(--d, 0) * 1ms);
 }
-.vs .band {
+.rw-grow {
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--d, 0) * 1ms);
+}
+.motion [data-build]:not([data-built]) .rw-in {
+  opacity: 0;
+}
+.motion [data-build]:not([data-built]) .rw-grow {
+  transform: scaleX(0);
+}
+.rw-flow {
   position: absolute;
-  top: 1px;
-  bottom: 1px;
-  background: rgba(160, 170, 195, 0.12);
-  border-radius: 1px;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0)) no-repeat -140px 0 / 140px 100%;
 }
-.vs .tick {
+.motion .rw-flow {
+  animation: rw-flow 6s linear infinite;
+  animation-delay: calc(var(--i, 0) * 1s);
+}
+@keyframes rw-flow {
+  0% {
+    background-position: -140px 0;
+  }
+  60%,
+  100% {
+    background-position: calc(100% + 140px) 0;
+  }
+}
+.rw-lights > i {
   position: absolute;
-  top: -3px;
-  bottom: -3px;
-  width: 1px;
-  background: var(--color-soft);
-}
-.vs .tick.p90 {
-  background: var(--color-faint);
-}
-
-/* the severity meter: three bars lit for exploited, four in red for harm confirmed */
-.sev-meter {
-  display: inline-flex;
-  gap: 2px;
-  vertical-align: middle;
-}
-.sev-meter > i {
-  display: inline-block;
-  width: 4px;
-  height: 11px;
-  background: rgba(160, 170, 195, 0.16);
-}
-.sev-meter > i.on {
+  top: -1.5px;
+  left: calc(3% + var(--i) * 7.5%);
+  width: 3px;
+  height: 3px;
+  margin-left: -1.5px;
+  border-radius: 9999px;
   background: var(--color-accent);
+  opacity: 0.14;
 }
-.sev-meter.s4 > i.on {
-  background: var(--color-live);
+.motion .rw-lights > i {
+  animation: rw-light 5.2s linear infinite;
+  animation-delay: calc((12 - var(--i)) * 0.3s);
 }
-
-/* the pulse on red items: · • ● • once a second, in a fixed one-character box */
-.ascii-pulse {
-  display: inline-block;
-  width: 1ch;
-  text-align: center;
-  font-family: var(--font-plex-mono), monospace;
-  line-height: 1;
-  color: var(--color-live);
-}
-.ascii-pulse::before {
-  content: "●";
-}
-.pulse-0 .ascii-pulse::before {
-  content: "·";
-}
-.pulse-1 .ascii-pulse::before,
-.pulse-3 .ascii-pulse::before {
-  content: "•";
+@keyframes rw-light {
+  0%,
+  18%,
+  100% {
+    opacity: 0.14;
+    box-shadow: none;
+  }
+  6% {
+    opacity: 1;
+    box-shadow: 0 0 8px 1px color-mix(in oklab, var(--color-accent) 70%, transparent);
+  }
 }
 
 /* the newest Latest row types itself in */
