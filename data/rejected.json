@@ -1,5 +1,25 @@
 [
   {
+    "key": "0a5e2fc808039394",
+    "title": "Windows 11 KB5132061 & KB5131087 cumulative updates released",
+    "url": "https://bleepingcomputer.com/news/microsoft/windows-11-kb5132061-and-kb5131087-cumulative-updates-released",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: General patch update lacking specific security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-10T18:43:20.177Z"
+  },
+  {
+    "key": "9a11f0ebae0ec874",
+    "title": "Adobe Patches 110 Vulnerabilities Across 9 Products",
+    "url": "https://securityweek.com/adobe-patches-110-vulnerabilities-across-9-products",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: General patch update lacking specific security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-10T18:43:20.177Z"
+  },
+  {
     "key": "d734c809375a8723",
     "title": "X.Org patches eight server vulnerabilities a month after fixing 12 others",
     "url": "https://helpnetsecurity.com/2026/11/10/x-org-server-vulnerabilities-november-2026",

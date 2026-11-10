@@ -1,5 +1,197 @@
 [
   {
+    "id": "AIR-2026-1862",
+    "slug": "cve-2026-125321-pgedge-postgres-mcp-server-rate-limit-bypass",
+    "title": "CVE-2026-125321: pgEdge Postgres MCP Server rate‑limit bypass via X‑Forwarded‑For",
+    "summary": "pgEdge Postgres MCP Server (pre‑1.1.0) uses the leftmost X‑Forwarded‑For header for login rate limiting, allowing attackers to spoof addresses and evade throttling or consume another user's quota. The issue is fixed in version 1.1.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125321",
+        "publisher": "NVD",
+        "title": "CVE-2026-125321: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-125321",
+      "pgedge",
+      "mcp",
+      "rate_limit"
+    ],
+    "created_at": "2026-11-10T18:43:20.177Z",
+    "updated_at": "2026-11-10T18:43:20.177Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-125321"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server >= 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-125321: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125321",
+        "added_at": "2026-11-10T18:43:20.177Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later.",
+    "severity_note": "Disclosed vulnerability with CVE, no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
+    "id": "AIR-2026-1861",
+    "slug": "cve-2026-125320-pgedge-postgres-mcp-server-vulnerable-to-dns",
+    "title": "CVE-2026-125320: pgEdge Postgres MCP Server vulnerable to DNS rebinding via Origin header",
+    "summary": "The HTTP transport of pgEdge Postgres MCP Server (pre‑1.1.0) fails to validate the Origin header, enabling DNS‑rebinding attacks that let a malicious web page read schemas and query results from local databases. The flaw is fixed in version 1.1.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125320",
+        "publisher": "NVD",
+        "title": "CVE-2026-125320: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-125320",
+      "pgedge",
+      "mcp",
+      "dns_rebinding"
+    ],
+    "created_at": "2026-11-10T18:43:20.177Z",
+    "updated_at": "2026-11-10T18:43:20.177Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-125320"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server >= 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-125320: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125320",
+        "added_at": "2026-11-10T18:43:20.177Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later.",
+    "severity_note": "Disclosed vulnerability with CVE, no confirmed exploitation.",
+    "cvss": 5.3
+  },
+  {
+    "id": "AIR-2026-1860",
+    "slug": "cve-2026-125322-pgedge-postgres-mcp-server-allows-subquery-i",
+    "title": "CVE-2026-125322: pgEdge Postgres MCP Server allows subquery inference via count_rows tool",
+    "summary": "A vulnerability in pgEdge Postgres MCP Server (pre‑1.1.0) lets a client use the count_rows tool to issue subqueries and infer data from any table the database role can read. The issue is fixed in version 1.1.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125322",
+        "publisher": "NVD",
+        "title": "CVE-2026-125322: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-125322",
+      "pgedge",
+      "mcp",
+      "infra_vuln"
+    ],
+    "created_at": "2026-11-10T18:43:20.177Z",
+    "updated_at": "2026-11-10T18:43:20.177Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-125322"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server >= 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-125322: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125322",
+        "added_at": "2026-11-10T18:43:20.177Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later.",
+    "severity_note": "Disclosed vulnerability with CVE, no confirmed exploitation.",
+    "cvss": 6.5
+  },
+  {
     "id": "AIR-2026-1859",
     "slug": "blind-eagle-uses-fake-court-notices-to-deliver-remote-access",
     "title": "Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan in Latin America",
