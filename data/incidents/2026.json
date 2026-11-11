@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1908",
+    "slug": "ghsa-v9h7-jj4g-f862-llm-api-key-leak-vulnerability",
+    "title": "GHSA-v9h7-jj4g-f862: llm API Key Leak Vulnerability",
+    "summary": "LLM version 0.37.2 fixes security advisories where API keys could be accidentally sent to alternative providers due to missing keys or specific model options. The maintainer released a patched version to resolve the issues.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "llm"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://simonwillison.net/2026/Nov/11/llm",
+        "publisher": "Simon Willison",
+        "title": "llm 0.37.2",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ghsa-v9h7-jj4g-f862",
+      "ghsa-r639-rr7r-x72w",
+      "api-key-leak"
+    ],
+    "created_at": "2026-11-11T18:41:27.165Z",
+    "updated_at": "2026-11-11T18:41:27.165Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "llm < 0.37.2"
+    ],
+    "fixed_in": [
+      "llm 0.37.2"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "llm 0.37.2",
+        "source_url": "https://simonwillison.net/2026/Nov/11/llm",
+        "added_at": "2026-11-11T18:41:27.165Z"
+      }
+    ],
+    "action": "Update to llm 0.37.2.",
+    "severity_note": "Disclosed vulnerability with a vendor fix and no active exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1907",
     "slug": "gmail-ai-summary-misinterprets-phishing-email-as-uspto-appoi",
     "title": "Gmail AI summary misinterprets phishing email as USPTO appointment",

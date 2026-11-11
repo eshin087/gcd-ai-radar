@@ -1,5 +1,15 @@
 [
   {
+    "key": "36fe20458ab3346e",
+    "title": "Who Runs the Ransomware Group Qilin?",
+    "url": "https://krebsonsecurity.com/2026/11/who-runs-the-ransomware-group-qilin",
+    "publisher": "Krebs on Security",
+    "source_id": "krebs",
+    "reason": "out of scope: Investigative profiling piece about ransomware group operators without a specific new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T18:41:27.165Z"
+  },
+  {
     "key": "bb1ee6e8dd4bdc31",
     "title": "Lessons from 59 Linux Kernel Bug Reports",
     "url": "https://microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports",
