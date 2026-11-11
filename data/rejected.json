@@ -1,5 +1,15 @@
 [
   {
+    "key": "5b16d08ca4a59643",
+    "title": "Kai extends Autonomous Defense Platform visibility to internet-facing assets",
+    "url": "https://helpnetsecurity.com/2026/11/11/kai-autonomous-defense-platform",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and vendor feature announcement.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T15:11:32.825Z"
+  },
+  {
     "key": "4c88bc1c66a89de7",
     "title": "Asus, Zoom Release Security Patches",
     "url": "https://securityweek.com/asus-zoom-release-security-patches",
