@@ -1,5 +1,15 @@
 [
   {
+    "key": "9d46c928803aa777",
+    "title": "Attackers Say 'Hello' to a Different Scale of Cloud Attack",
+    "url": "https://darkreading.com/cloud-security/attackers-hello-scale-cloud-attack",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: General threat intelligence report describing an attack campaign without named victims or specific affected software",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-11T22:11:12.669Z"
+  },
+  {
     "key": "4f91b2e7870d0b09",
     "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
     "url": "https://microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2",
