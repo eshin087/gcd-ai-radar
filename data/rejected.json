@@ -1,5 +1,15 @@
 [
   {
+    "key": "10d60a2c5b6fe27f",
+    "title": "Fingerprint trains specialized models to detect distinct fraud types",
+    "url": "https://helpnetsecurity.com/2026/11/11/fingerprint-fraud-score",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: product launch",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T09:41:54.388Z"
+  },
+  {
     "key": "bd18467a882ec0df",
     "title": "Chipmaker Patch Tuesday: Over 200 Vulnerabilities Addressed by Intel, AMD",
     "url": "https://securityweek.com/chipmaker-patch-tuesday-over-200-vulnerabilities-addressed-by-intel-amd",
