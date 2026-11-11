@@ -1,5 +1,15 @@
 [
   {
+    "key": "4f91b2e7870d0b09",
+    "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
+    "url": "https://microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2",
+    "publisher": "Microsoft Security",
+    "source_id": "ms-security",
+    "reason": "out of scope: Describes a threat actor technique and detection guide without a specific named intrusion campaign or targeted victim organisation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T21:11:22.437Z"
+  },
+  {
     "key": "8053842a1f4e6678",
     "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
     "url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",

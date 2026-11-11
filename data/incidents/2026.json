@@ -3444,9 +3444,15 @@
         "publisher": "The Record",
         "title": "AI company Fireworks says hackers stole data, billing info during October breaches",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/notion-says-fireworks-breach-exposed-customer-ai-chat-transcripts",
+        "publisher": "BleepingComputer",
+        "title": "Notion says Fireworks breach exposed customer AI chat transcripts",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3456,7 +3462,7 @@
       "supply-chain"
     ],
     "created_at": "2026-11-10T08:11:07.578Z",
-    "updated_at": "2026-11-10T17:00:12.508Z",
+    "updated_at": "2026-11-11T21:11:22.437Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -3476,6 +3482,12 @@
         "title": "Investigation reveals the breach exposed customer billing data, secrets, datasets, and incomplete models for a limited set of accounts",
         "source_url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
         "added_at": "2026-11-10T17:00:12.508Z"
+      },
+      {
+        "date": "2026-11-11",
+        "title": "Breach confirmed to have exposed Notion AI chat transcripts in a small number of workspaces",
+        "source_url": "https://bleepingcomputer.com/news/security/notion-says-fireworks-breach-exposed-customer-ai-chat-transcripts",
+        "added_at": "2026-11-11T21:11:22.437Z"
       }
     ],
     "action": "",
@@ -3870,9 +3882,15 @@
         "publisher": "BleepingComputer",
         "title": "N-able releases security hotfixes for zero-day vulnerabilities",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://darkreading.com/endpoint-security/n-able-n-central-offline-33-flaws",
+        "publisher": "Dark Reading",
+        "title": "N-able Takes N-central Platform Offline After Discovery of 33 Flaws",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3882,7 +3900,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-11T12:41:11.589Z",
+    "updated_at": "2026-11-11T21:11:22.437Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
