@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1903",
+    "slug": "hackers-use-antifox-ai-agents-in-aws-credential-theft-attack",
+    "title": "Hackers use AntiFox AI agents in AWS credential‑theft attacks",
+    "summary": "Attackers are deploying the open‑source AntiFox AI agent platform on Alibaba Cloud instances to infiltrate web services and Amazon Web Services environments. The campaign has been used to steal AWS credentials, enabling further unauthorized access.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AntiFox",
+      "AWS"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks",
+        "publisher": "BleepingComputer",
+        "title": "Hackers use AntiFox AI agents in AWS credential-theft attacks",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.93,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential_theft",
+      "aws",
+      "anti_fox",
+      "ai_enabled_attack"
+    ],
+    "created_at": "2026-11-11T15:41:13.361Z",
+    "updated_at": "2026-11-11T15:41:13.361Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Hackers use AntiFox AI agents in AWS credential-theft attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks",
+        "added_at": "2026-11-11T15:41:13.361Z"
+      }
+    ],
+    "action": "Detect and block unauthorized AntiFox agents, rotate compromised AWS credentials, and monitor for suspicious activity",
+    "severity_note": "Confirmed exploitation of AI agents to steal AWS credentials",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1902",
     "slug": "qlik-sense-servers-targeted-with-reverse-shells-staging-acti",
     "title": "Qlik Sense Servers Targeted with Reverse Shells Staging ActiveMQ and Veeam Exploits",
