@@ -1,5 +1,71 @@
 [
   {
+    "id": "AIR-2026-1895",
+    "slug": "apple-patches-bluetooth-airplay-and-exploited-brotli-vulnera",
+    "title": "Apple Patches Bluetooth, AirPlay and Exploited Brotli Vulnerabilities",
+    "summary": "Apple released patches addressing Bluetooth and AirPlay pairing flaws, iMessage vulnerabilities, and an actively exploited Brotli bug across its operating systems. Users should update their devices immediately to apply the fixes.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "Apple"
+    ],
+    "products": [
+      "iOS",
+      "macOS",
+      "Bluetooth",
+      "AirPlay"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://securityweek.com/bluetooth-airplay-pairing-vulnerabilities-patched-across-apple-platforms",
+        "publisher": "SecurityWeek",
+        "title": "Bluetooth, AirPlay Pairing Vulnerabilities Patched Across Apple Platforms",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "bluetooth",
+      "airplay",
+      "imessage",
+      "brotli",
+      "exploited_in_the_wild"
+    ],
+    "created_at": "2026-11-11T07:11:16.701Z",
+    "updated_at": "2026-11-11T07:11:16.701Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Apple platforms"
+    ],
+    "fixed_in": [
+      "Latest Apple updates"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Bluetooth, AirPlay Pairing Vulnerabilities Patched Across Apple Platforms",
+        "source_url": "https://securityweek.com/bluetooth-airplay-pairing-vulnerabilities-patched-across-apple-platforms",
+        "added_at": "2026-11-11T07:11:16.701Z"
+      }
+    ],
+    "action": "Update Apple platforms to the latest available software versions.",
+    "severity_note": "Confirmed exploitation in the wild.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1894",
     "slug": "data-breach-exposes-millions-of-user-accounts",
     "title": "СберСпасибо data breach exposes millions of user accounts",

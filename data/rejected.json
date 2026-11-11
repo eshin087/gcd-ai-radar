@@ -1,5 +1,15 @@
 [
   {
+    "key": "96784e9e02b57d57",
+    "title": "The Cyber Resilience Act clock doesn’t stop for weekends",
+    "url": "https://helpnetsecurity.com/2026/11/11/aurimas-bakas-copla-cra-vulnerability-reporting",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Policy, regulation and standards news; covers EU Cyber Resilience Act compliance.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T07:11:16.701Z"
+  },
+  {
     "key": "e4068e5f533600d4",
     "title": "A CISO’s guide to trimming waste from a flat security budget",
     "url": "https://helpnetsecurity.com/2026/11/11/flat-security-budget-video",
