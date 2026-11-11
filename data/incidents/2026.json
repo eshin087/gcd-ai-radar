@@ -3411,9 +3411,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-125350: Google Chromium — Google Chromium Use-After-Free Vulnerability",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://theregister.com/security/2026/11/10/chrome-zero-day-whack-a-mole-continues-as-2026-tally-hits-8/5308732",
+        "publisher": "The Register",
+        "title": "Chrome zero-day whack-a-mole continues as 2026 tally hits 8",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3426,7 +3432,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-11-10T06:41:55.248Z",
-    "updated_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-11T18:27:53.292Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
