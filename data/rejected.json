@@ -1,5 +1,15 @@
 [
   {
+    "key": "e4068e5f533600d4",
+    "title": "A CISO’s guide to trimming waste from a flat security budget",
+    "url": "https://helpnetsecurity.com/2026/11/11/flat-security-budget-video",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion and advice piece on security budgeting without a specific incident",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-11T06:42:06.777Z"
+  },
+  {
     "key": "1ff74ee2cb106637",
     "title": "Cogent and OpenAI build cyber defense factories for enterprises",
     "url": "https://openai.com/index/cogent-security",

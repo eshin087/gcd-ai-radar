@@ -557,9 +557,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-20320: Cisco BroadWorks — Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+        "publisher": "The Hacker News",
+        "title": "Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -569,7 +575,7 @@
       "xxe"
     ],
     "created_at": "2026-11-10T22:41:43.117Z",
-    "updated_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-11T06:42:06.777Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
