@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1894",
+    "slug": "data-breach-exposes-millions-of-user-accounts",
+    "title": "СберСпасибо data breach exposes millions of user accounts",
+    "summary": "An online data leak from Russian loyalty program СберСпасибо compromised millions of user accounts containing email addresses, phone numbers, and hashed bank card details. The exposed records date back to a 2023 security incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "СберСпасибо"
+    ],
+    "incident_date": "2023-03-09",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/SberSpasibo",
+        "publisher": "Have I Been Pwned",
+        "title": "СберСпасибо (SberSpasibo) data breach exposes 3,288,711 accounts",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "pii",
+      "credential-leak",
+      "loyalty-program"
+    ],
+    "created_at": "2026-11-11T04:41:19.550Z",
+    "updated_at": "2026-11-11T04:41:19.550Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "СберСпасибо (SberSpasibo) data breach exposes 3,288,711 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/SberSpasibo",
+        "added_at": "2026-11-11T04:41:19.550Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world data breach exposing personal identifiable information and card hashes.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1893",
     "slug": "cve-2026-109485-microsoft-365-agents-sdk-information-disclos",
     "title": "CVE-2026-109485 Microsoft 365 Agents SDK Information Disclosure Vulnerability",
