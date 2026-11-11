@@ -2842,9 +2842,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://securityweek.com/critical-xen-orchestra-flaws-exploited-in-attacks",
+        "publisher": "SecurityWeek",
+        "title": "Critical Xen Orchestra Flaws Exploited in Attacks",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2854,7 +2860,7 @@
       "xen_orchestra"
     ],
     "created_at": "2026-11-10T11:47:02.508Z",
-    "updated_at": "2026-11-10T19:42:29.541Z",
+    "updated_at": "2026-11-11T16:11:24.450Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
