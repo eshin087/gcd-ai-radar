@@ -1,5 +1,15 @@
 [
   {
+    "key": "4c88bc1c66a89de7",
+    "title": "Asus, Zoom Release Security Patches",
+    "url": "https://securityweek.com/asus-zoom-release-security-patches",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Multi-vendor patch roundup without a specific standalone vulnerability or incident focus.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T14:41:00.416Z"
+  },
+  {
     "key": "424f8e5ef5ac7fc4",
     "title": "Britain, France set out first guidelines for commercial hacking firms",
     "url": "https://therecord.media/britain-france-set-out-guidelines-for-commercial-hacking-firms",

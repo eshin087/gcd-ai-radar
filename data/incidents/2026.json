@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1902",
+    "slug": "qlik-sense-servers-targeted-with-reverse-shells-staging-acti",
+    "title": "Qlik Sense Servers Targeted with Reverse Shells Staging ActiveMQ and Veeam Exploits",
+    "summary": "Threat actors launched automated attacks against European organizations using Qlik Sense servers to execute PowerShell reverse shells. Researchers detected the intrusions, which also involved staging exploit payloads for Apache ActiveMQ and Veeam systems.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Qlik Sense",
+      "Apache ActiveMQ",
+      "Veeam"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-target-qlik-sense-servers-with.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Target Qlik Sense Servers With Reverse Shells, Stage ActiveMQ and Veeam Exploits",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "qlik-sense",
+      "activemq",
+      "veeam",
+      "reverse-shell",
+      "intrusion"
+    ],
+    "created_at": "2026-11-11T14:41:00.416Z",
+    "updated_at": "2026-11-11T14:41:00.416Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Hackers Target Qlik Sense Servers With Reverse Shells, Stage ActiveMQ and Veeam Exploits",
+        "source_url": "https://thehackernews.com/2026/11/hackers-target-qlik-sense-servers-with.html",
+        "added_at": "2026-11-11T14:41:00.416Z"
+      }
+    ],
+    "action": "Audit internet-facing Qlik Sense, ActiveMQ, and Veeam servers for unauthorized PowerShell activity and ensure all security updates are applied.",
+    "severity_note": "Exploitation confirmed in the wild against live customer environments.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1901",
     "slug": "citrix-and-ivanti-release-patches-for-critical-and-high-seve",
     "title": "Citrix and Ivanti release patches for critical and high‑severity vulnerabilities",
@@ -1881,9 +1942,15 @@
         "publisher": "The Hacker News",
         "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/11/git-project-security-updates",
+        "publisher": "Help Net Security",
+        "title": "Git fixes six vulnerabilities, including code execution during recursive clones",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1894,7 +1961,7 @@
       "integer-truncation"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-11T14:41:00.416Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
