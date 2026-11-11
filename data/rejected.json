@@ -1,5 +1,15 @@
 [
   {
+    "key": "bd18467a882ec0df",
+    "title": "Chipmaker Patch Tuesday: Over 200 Vulnerabilities Addressed by Intel, AMD",
+    "url": "https://securityweek.com/chipmaker-patch-tuesday-over-200-vulnerabilities-addressed-by-intel-amd",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Roundup or multiple vendor patch advisory without a specific exploited incident or single named critical bug record.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T09:18:46.244Z"
+  },
+  {
     "key": "96784e9e02b57d57",
     "title": "The Cyber Resilience Act clock doesn’t stop for weekends",
     "url": "https://helpnetsecurity.com/2026/11/11/aurimas-bakas-copla-cra-vulnerability-reporting",
