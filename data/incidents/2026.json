@@ -1,5 +1,123 @@
 [
   {
+    "id": "AIR-2026-1897",
+    "slug": "railway-breach-leads-to-stolen-ai-keys-and-740-000-in-unauth",
+    "title": "Railway Breach Leads to Stolen AI Keys and $740,000 in Unauthorized Usage",
+    "summary": "Customer AI provider keys stored on Railway were stolen during an October breach and exploited to rack up $740,000 in unauthorized usage charges. Railway has committed to covering these costs if providers decline to issue refunds.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak"
+    ],
+    "severity": 4,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Railway"
+    ],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html",
+        "publisher": "The Hacker News",
+        "title": "Railway Says Stolen Customer AI Keys Led to $740,000 in Estimated Unauthorized Usage Charges",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data_breach",
+      "api_keys",
+      "unauthorized_usage"
+    ],
+    "created_at": "2026-11-11T08:41:10.687Z",
+    "updated_at": "2026-11-11T08:41:10.687Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Railway"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Railway Says Stolen Customer AI Keys Led to $740,000 in Estimated Unauthorized Usage Charges",
+        "source_url": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html",
+        "added_at": "2026-11-11T08:41:10.687Z"
+      }
+    ],
+    "action": "Rotate any API keys that were stored on the affected platform.",
+    "severity_note": "Confirmed real-world financial loss exceeding $740,000 due to stolen customer credentials.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1896",
+    "slug": "microsoft-researchers-show-ai-agents-can-be-backdoored-via-n",
+    "title": "Microsoft Researchers Show AI Agents Can Be Backdoored via Neuron Edits",
+    "summary": "Microsoft researchers demonstrated that AI models can be backdoored by editing fewer than 10 rarely used neurons without retraining. This triggers malicious commands that connected AI agents can execute with their permissions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "open_weight_model"
+    ],
+    "products": [
+      "AI agents"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html",
+        "publisher": "The Hacker News",
+        "title": "Microsoft Researchers Show AI Agents Can Be Backdoored by Editing Fewer Than 10 Neurons",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "weight_manipulation",
+      "ai_agents"
+    ],
+    "created_at": "2026-11-11T08:41:10.687Z",
+    "updated_at": "2026-11-11T08:41:10.687Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Microsoft Researchers Show AI Agents Can Be Backdoored by Editing Fewer Than 10 Neurons",
+        "source_url": "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html",
+        "added_at": "2026-11-11T08:41:10.687Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research proof of concept demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1895",
     "slug": "apple-patches-bluetooth-airplay-and-exploited-brotli-vulnera",
     "title": "Apple Patches Bluetooth, AirPlay and Exploited Brotli Vulnerabilities",
@@ -851,9 +969,15 @@
         "publisher": "Cisco Talos",
         "title": "Microsoft Patch Tuesday for November 2026 — Snort rules and prominent vulnerabilities",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/microsoft-patches-1259-flaws-including.html",
+        "publisher": "The Hacker News",
+        "title": "Microsoft Patches 1,259 Flaws, Including Exploited Outlook Bug That May Expose NTLMv2 Hashes",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 8,
+    "source_count": 9,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -866,7 +990,7 @@
       "cisa-kev"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-11T02:12:02.871Z",
+    "updated_at": "2026-11-11T08:41:10.687Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
