@@ -564,9 +564,15 @@
         "publisher": "CISA",
         "title": "CVE-2026-111560: Barracuda Networks Multiple Products — Barracuda Networks Multiple Products OS Command Injection Vulnerability",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://securityweek.com/recently-patched-barracuda-vulnerabilities-exploited-in-attacks",
+        "publisher": "SecurityWeek",
+        "title": "Recently Patched Barracuda Vulnerabilities Exploited in Attacks",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -576,7 +582,7 @@
       "command-injection"
     ],
     "created_at": "2026-11-10T22:41:43.117Z",
-    "updated_at": "2026-11-10T22:41:43.117Z",
+    "updated_at": "2026-11-11T08:11:17.889Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
