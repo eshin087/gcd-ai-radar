@@ -1,5 +1,135 @@
 [
   {
+    "key": "dfed64ae7cc59d11",
+    "title": "Mirage: Provable Defense Against LLM KV Cache Timing Side Channels with Topology-Aware Isolation",
+    "url": "https://arxiv.org/abs/2611.10756",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defensive mechanism against known side-channel attacks rather than demonstrating a novel exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "fba50846e72696ac",
+    "title": "Least-Privilege Auditing of Agent Tool Calls with Intent Graphs and Reasoning-Guided Escalation",
+    "url": "https://arxiv.org/abs/2611.11305",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defensive runtime auditing framework rather than demonstrating a novel exploit or incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "e06f8a425c48946a",
+    "title": "ErosionBench: Probing Alignment Decay in Enterprise Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2611.11266",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark paper evaluating alignment decay rather than reporting a security exploit or breach.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "3437d51ca8a5c995",
+    "title": "On the Relative Security of Prompt Injection: Mechanised Definitions, Defences and Verdicts for LLM Agents",
+    "url": "https://arxiv.org/abs/2611.11506",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper focuses on formal security definitions, defences, and runtime monitors rather than demonstrating a working attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "3765a7dd278ed913",
+    "title": "Towards Lightweight IoT Intrusion Detection: Feature Optimization and Explainable Machine Learning for Resource-Constrained Environment",
+    "url": "https://arxiv.org/abs/2611.10707",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a defensive machine-learning-based intrusion detection framework for IoT environments.",
+    "confidence": 0.98,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "46451696342c37a8",
+    "title": "Beyond Prompt Attacks: Least-Action Auditing of Concept Erasure",
+    "url": "https://arxiv.org/abs/2611.10106",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper presents an auditing methodology and metric for measuring residual concept probabilities rather than demonstrating a practical attack.",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "2642e93afec95be0",
+    "title": "Governed Self-Improvement for a Local-First Security Analyzer: Baseline Measurements and a Preregistered Evaluation Protocol for Tantular Cyber",
+    "url": "https://arxiv.org/abs/2611.10425",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper introduces a defensive code analysis tool and evaluation protocol rather than documenting a vulnerability or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "7145c9a7767bc40b",
+    "title": "SIExBench: A Benchmark for Automated Repair of Sensitive Information Exposure",
+    "url": "https://arxiv.org/abs/2611.10776",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark paper without a specific vulnerability or attack",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "aeaad8b76972223f",
+    "title": "The Devil Wears Markdown: Detecting Malicious Intent Hidden in AI Agent Skill Instructions through Hybrid Static, Dynamic, and Agentic Analysis",
+    "url": "https://arxiv.org/abs/2611.10830",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defensive research paper evaluating detection of malicious intent in agent skills",
+    "confidence": 0.94,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "c52e78690cda8e02",
+    "title": "Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks",
+    "url": "https://arxiv.org/abs/2611.12386",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defensive fingerprinting research, no specific attack incident disclosed",
+    "confidence": 0.94,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "59e289e078483025",
+    "title": "Safety Direction Adapter: A Training-Free Post-Hoc Safety Patch for Fine-Tuned Open-Weight LLMs",
+    "url": "https://arxiv.org/abs/2611.10056",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a training-free defensive mitigation rather than demonstrating an attack or exploit",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "aa04c2f046d9dc25",
+    "title": "Shortcuts and Boundaries: Verifiable RL Misalignment and Contextual Safety Learning",
+    "url": "https://arxiv.org/abs/2611.12865",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Explores reinforcement learning reward hacking dynamics theoretically rather than demonstrating an attack",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
+    "key": "1338d5c096d1dff4",
+    "title": "Ultrasound-Assisted Biometric Watermarking Against Face Video Deepfakes",
+    "url": "https://arxiv.org/abs/2611.11800",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a biometric watermarking defence against deepfakes rather than demonstrating an attack",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:11:44.645Z"
+  },
+  {
     "key": "f13a5d2e33a7dd94",
     "title": "CISA director pick already drawing concern from Hill Dems over Palantir connection",
     "url": "https://cyberscoop.com/michael-losapio-cisa-director-nomination-palantir-scrutiny",

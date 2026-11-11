@@ -1,1 +1,241 @@
-[]
+[
+  {
+    "key": "5ace18af8ad5a0dd",
+    "source_id": "msrc-sug",
+    "origin": "news",
+    "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109485",
+    "title": "CVE-2026-109485 Microsoft 365 Agents SDK Information Disclosure Vulnerability",
+    "published_at": "2026-11-10",
+    "publisher": "MSRC",
+    "hint": "Server-side request forgery (ssrf) in Microsoft 365 Agents SDK allows an authorized attacker to disclose information over a network.",
+    "cve_ids": [
+      "CVE-2026-109485"
+    ],
+    "discovered_at": "2026-11-11T03:06:58.975Z",
+    "extra": {
+      "classifier_hint": "Microsoft Security Update Guide entry (vendor CVE advisory). If the product is an AI feature (Copilot, Azure AI, agents): infra_vuln or data_leak, severity 2 unless Microsoft states exploitation (then 3).",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "2a2b68a5bdbea5b6",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10037",
+    "title": "Toward Safety-Aware AI Agents in Realistic Social Engineering Attack Scenarios",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Personal AI agents are increasingly deployed on user devices to execute actions involving real money and sensitive data, but their security under social engineering attacks has not been systematically evaluated. We propose SEA (Social Engineering Attack Benchmark), the first interactive environment for evaluating the intrinsic security capability of AI agents in social engineering attack scenarios, covering 8 daily-life domains, 30+ simulated applications, a 4-level difficulty gradient, and a 5-dimensional evaluation framework, with 320…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.353Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "3eb7f20154dc74b3",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10026",
+    "title": "MetaPI: Constructing Prompt Injection Benchmarks from LLM Agent Benchmark",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Large language model (LLM) agents increasingly perform complex tasks using high-privilege tools, making indirect prompt injection (IPI) a critical security risk. However, IPI benchmarks lag behind their rapidly evolving utility counterparts, only offering limited task and environment coverage and relying on narrow, static attack scenarios. In this paper, we propose meta-benchmarking for IPI: transforming existing utility benchmarks into end-to-end IPI evaluation suites that reuse their realistic tasks, environments, and infrastructure. We…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.353Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "f6aca7500d8150fb",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10843",
+    "title": "Agents of Chaos: A Systematization of Knowledge (SoK) on Malicious Attacks on Agentic AI Systems",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Agentic AI systems extend large language models with tools, memory, retrieval, browser or computer-use interfaces, code execution, external services, and multi-agent coordination. Although these capabilities enable agents to act beyond text generation and perform tasks, they also create attack paths through which adversaries can exploit untrusted content, deceptive metadata, poisoned state, compromised skills, mutable dependencies, or malicious code. Such attacks can manipulate planning and tool use, corrupt memory, abuse code-execution…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "fc67fad1b9a1adfe",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11067",
+    "title": "Beyond AUROC: Deployment-Aware Evaluation of Model-Internal Jailbreak Detectors",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Large language models (LLMs) are increasingly deployed in user-facing systems, where jailbreak attacks can bypass safety controls and induce harmful and policy-violating outputs. Recent model-internal detectors use hidden representations, gradients, or internal signals to identify such prompts, but their practical security value depends critically on behavior at low false-positive operating points rather than on area under the receiver operating characteristic curve (AUROC) alone. We study two data dependencies that shape this behavior:…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "d59fcc5151d684e5",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10723",
+    "title": "CyberBinGym: Can AI Agents Turn Binary Patches into Real Exploits?",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Security fixes usually reach users as compiled updates, but deployment delays leave unpatched systems exposed. During this window, comparing patched and unpatched binaries can reveal how to exploit a vulnerability, turning a defensive update into actionable information for attackers. Existing benchmarks do not measure this capability: they expose source code, rely on human-crafted challenges, or evaluate binary comprehension without requiring exploitation. We introduce CyberBinGym, a benchmark containing 100 tasks derived from real…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "0af44d9f25e14459",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10612",
+    "title": "An Agentic Multi-Agent Framework for System Log Anomaly Detection",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "As enterprise systems grow in scale and complexity, manual log analysis and conventional SIEM tools struggle to keep pace with the volume and diversity of incidents. To address this challenge, this paper proposed a multi-agent AI framework supporting in analyzing the system log to trace the attack forensic in the system more effectively and efficiently. The framework is designed using n8n platform and Gemini large language model. The framework consists of 7 AI agent layers. Each agent work on a specific task. When the task is done, the agent…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "9198013ef9f1165c",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11104",
+    "title": "Tracing MCP Security Vulnerabilities: Constructing and Analyzing an MCP Security Vulnerability Dataset",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "As a core protocol for integrating large language models (LLMs) with external data sources and tools, the Model Context Protocol (MCP) has quickly become a key interface in emerging AI agent systems. As the MCP ecosystem expands, reported vulnerabilities have also increased, creating a growing software-security attack surface. However, MCP vulnerability information remains scattered, noisy, and difficult to study systematically. This paper addresses that gap by constructing a curated MCP vulnerability dataset from CVE disclosures. Starting from…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "1b34bb62096b9c94",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.10542",
+    "title": "When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Large language model (LLM) agents increasingly improve themselves through self-evolution, distilling execution experience into persistent, reusable skills. However, this persistence creates a new attack surface: malicious rules implanted into skills can compromise subsequent agent behavior. Existing skill backdoor attacks typically assume direct manipulation of the victim's skills, which is impractical when skills are constructed internally by a trusted evolver. In this paper, we study a novel problem of task-level backdoor attacks, where the…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.354Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "936402f52c4c5fc6",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11571",
+    "title": "Treating the Model as an Untrusted Component: Deterministic Policy Enforcement, Human Approval and Taint Tracking Against Prompt Injection in Tool-Using Agents, with Validation on Open-Weights Models",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Tool-using LLM agents act on instructions embedded in the data they read, so prompt injection is a structural rather than a prompt-wording problem. We compare in-prompt defences (hardened prompts, spotlighting, LLM detectors) with deterministic enforcement outside the model (four reference monitors of increasing strength), human approval and taint tracking, judged by one effect-based oracle independent of every defence in an executable environment of 13 tasks and 12 tools, with argument-fuzzing attackers and severity-weighted harm. In an…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.355Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "b3e6169998cdeb9c",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11399",
+    "title": "RoCoMark: Robust Code Watermarking Against LLM-Based Functionality-Preserving Rewriting Attacks",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "Large Language Models (LLMs) present significant challenges to source tracing of generated code, as LLM rewriting can substantially alter the syntactic and structural characteristics of watermarked code. However, existing watermarking methods often suffer severe performance degradation under LLM-based functionality-preserving rewriting attacks. We attribute this vulnerability not merely to the intensity of rewriting, but to a fundamental distribution mismatch between the perturbations encountered during watermark training and the global,…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.355Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "58e86083ba6d62bd",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11455",
+    "title": "Coding Agents Propagate Vulnerabilities in Code Bases",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "LLM-based coding agents are widely used to develop critical production software. Even though coding agents are known to occasionally write vulnerable code, there has not been any investigation into how code base vulnerabilities evolve over time under coding agent contributions. In this work, we close this gap by investigating whether and how vulnerabilities in existing code lead coding agents to introduce similar vulnerabilities in the code they write. We first evaluate coding agents on 96 tasks that require implementing a new backend…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.355Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "a513e295e5f72215",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.12155",
+    "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "LLM agents increasingly retrieve third-party skills from public registries and follow their procedures to complete user tasks. This reliance allows attackers to manipulate agent behavior by poisoning the skills. However, overtly malicious instructions can provide explicit signals for detection. We present StealthyPoison, a stealthy procedural poisoning attack that corrupts a skill's decision-critical rules to induce incorrect task outcomes while preserving its advertised functionality and normal execution. Unlike prior knowledge corruption…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.355Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  },
+  {
+    "key": "2e0e813e0834e018",
+    "source_id": "arxiv-cscr",
+    "origin": "news",
+    "url": "https://arxiv.org/abs/2611.11720",
+    "title": "ShadowBench-MCP: Measuring Shadow Invocations in MCP-Style Tool Routing",
+    "published_at": "2026-11-10",
+    "publisher": "arXiv",
+    "hint": "LLM agents increasingly act as routers for tools, APIs, and software-supply-chain workflows, making an execution path - rather than generated text alone - a security-relevant model output. We study shadow invocation: a task-preserving request variant that causes an LLM router to select a riskier execution path, potentially skipping validation, provenance, staging, redaction, or audit controls even though the request does not ask for a malicious action. We introduce ShadowBench-MCP, a benchmark and metric suite that separates task preservation…",
+    "cve_ids": [],
+    "discovered_at": "2026-11-11T03:07:01.355Z",
+    "extra": {
+      "classifier_hint": "arXiv preprint (research paper). Severity 1 unless the paper documents confirmed real-world exploitation. In scope only if it demonstrates an attack, vulnerability or abuse of AI systems, or AI used offensively; defence-only or benchmark papers are out of scope.",
+      "announce_type": "new",
+      "ai_hint": true
+    }
+  }
+]

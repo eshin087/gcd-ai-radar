@@ -1,5 +1,241 @@
 [
   {
+    "id": "AIR-2026-1886",
+    "slug": "validating-ai-discovered-cloud-threats-on-live-infrastructur",
+    "title": "Validating AI‑Discovered Cloud Threats on Live Infrastructure: A Multi‑Model, Multi‑Cloud Study",
+    "summary": "The study uses AI‑generated threat models to discover vulnerabilities in major cloud platforms and validates 103 of them on live AWS, GCP, and Azure environments. The validation demonstrates real‑world exploitation of AI‑identified flaws.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "AWS",
+      "Google Cloud",
+      "Azure"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.10947",
+        "publisher": "arXiv",
+        "title": "Validating AI-Discovered Cloud Threats on Live Infrastructure: A Multi-Model, Multi-Cloud Study",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.92,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cloud",
+      "ai_discovered_threat",
+      "live_validation"
+    ],
+    "created_at": "2026-11-11T03:11:44.645Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Validating AI-Discovered Cloud Threats on Live Infrastructure: A Multi-Model, Multi-Cloud Study",
+        "source_url": "https://arxiv.org/abs/2611.10947",
+        "added_at": "2026-11-11T03:11:44.645Z"
+      }
+    ],
+    "action": "Review and remediate the identified threats on affected cloud deployments",
+    "severity_note": "proof‑of‑concept exploitation confirmed on live systems",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1883",
+    "slug": "chatter-attack-resource-consumption-technique-for-large-lang",
+    "title": "Chatter Attack Resource Consumption Technique for Large Language Models",
+    "summary": "Researchers demonstrated Chatter Attack, an attack technique that induces large language models into generating excessively long outputs during inference. The approach significantly drives up computational latency and operational hosting costs.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.11261",
+        "publisher": "arXiv",
+        "title": "Chatter Attack: Resource Consumption Attack for Large Language Models",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.92,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sponge-attack",
+      "resource-exhaustion",
+      "dos",
+      "llm"
+    ],
+    "created_at": "2026-11-11T03:11:44.645Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Chatter Attack: Resource Consumption Attack for Large Language Models",
+        "source_url": "https://arxiv.org/abs/2611.11261",
+        "added_at": "2026-11-11T03:11:44.645Z"
+      }
+    ],
+    "action": "Implement strict inference timeout thresholds and maximum output token limits to limit exposure to resource consumption attacks.",
+    "severity_note": "Demonstrated proof-of-concept attack without observed real-world exploitation",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1882",
+    "slug": "snaprag-cost-efficient-knowledge-extraction-attack-on-rag-sy",
+    "title": "SNAPRAG: Cost-efficient knowledge extraction attack on RAG systems via adversarial perturbations",
+    "summary": "Researchers demonstrated SNAPRAG, an attack utilizing adversarial perturbations to extract private knowledge bases from retrieval-augmented generation deployments. The method reconstructs stored documents using significantly fewer queries and lower computational resources than existing extraction techniques.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_leak",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [
+      "RAG"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.12241",
+        "publisher": "arXiv",
+        "title": "SNAPRAG: Cost-Efficient Knowledge Extraction Attack on RAG Systems via Adversarial Perturbations",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "rag",
+      "data-leak",
+      "knowledge-extraction",
+      "adversarial-perturbation"
+    ],
+    "created_at": "2026-11-11T03:11:44.645Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "SNAPRAG: Cost-Efficient Knowledge Extraction Attack on RAG Systems via Adversarial Perturbations",
+        "source_url": "https://arxiv.org/abs/2611.12241",
+        "added_at": "2026-11-11T03:11:44.645Z"
+      }
+    ],
+    "action": "Deploy query rate limiting and monitor repeated semantic queries across external knowledge retrieval pipelines.",
+    "severity_note": "Proof-of-concept attack demonstrated in research without confirmed real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1881",
+    "slug": "adaptive-prompt-injection-attacks-scaled-using-agent-swarms",
+    "title": "Adaptive Prompt Injection Attacks Scaled Using Agent Swarms",
+    "summary": "Researchers demonstrated an automated technique using agent swarms to generate adaptive prompt injections against frontier models. The method successfully bypassed safety controls on systems including the Gemini model family.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google",
+      "open_weight_model"
+    ],
+    "products": [
+      "Gemini"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.11861",
+        "publisher": "arXiv",
+        "title": "Scaling Adaptive Prompt Injection Attacks with Agent Swarms",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "agent-swarm",
+      "red-teaming",
+      "gemini"
+    ],
+    "created_at": "2026-11-11T03:11:44.645Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Scaling Adaptive Prompt Injection Attacks with Agent Swarms",
+        "source_url": "https://arxiv.org/abs/2611.11861",
+        "added_at": "2026-11-11T03:11:44.645Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Offensive research demonstrating adaptive prompt injection without reported real-world exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1880",
     "slug": "cve-2026-111560-barracuda-networks-multiple-products-os-comm",
     "title": "CVE-2026-111560: Barracuda Networks Multiple Products OS Command Injection",
@@ -375,9 +611,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-83953: Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized…",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83953",
+        "publisher": "MSRC",
+        "title": "CVE-2026-83953 GitHub Copilot for Jetbrains Information Disclosure Vulnerability",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_nvd",
@@ -386,7 +628,7 @@
       "command-injection"
     ],
     "created_at": "2026-11-10T20:42:12.887Z",
-    "updated_at": "2026-11-10T20:42:12.887Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-11-10",
@@ -402,6 +644,12 @@
         "title": "CVE-2026-83953: Improper neutralization of special elements used in a command ('command injection') in Github Copilot allows an authorized…",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83953",
         "added_at": "2026-11-10T20:42:12.887Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-83953 GitHub Copilot for Jetbrains Information Disclosure Vulnerability",
+        "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83953",
+        "added_at": "2026-11-11T03:11:44.645Z"
       }
     ],
     "action": "",
@@ -1072,9 +1320,15 @@
         "publisher": "NVD",
         "title": "CVE-2026-119990: Missing authentication for critical function in Azure OpenAI allows an unauthorized attacker to elevate privileges over a network.",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119990",
+        "publisher": "MSRC",
+        "title": "CVE-2026-119990 Azure OpenAI Elevation of Privilege Vulnerability",
+        "published_at": "2026-11-10"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -1084,7 +1338,7 @@
       "privilege-escalation"
     ],
     "created_at": "2026-11-10T19:42:29.541Z",
-    "updated_at": "2026-11-10T19:42:29.541Z",
+    "updated_at": "2026-11-11T03:11:44.645Z",
     "lane": "patch",
     "state": "closed",
     "closed_at": "2026-11-10",
@@ -1100,6 +1354,12 @@
         "title": "CVE-2026-119990: Missing authentication for critical function in Azure OpenAI allows an unauthorized attacker to elevate privileges over a network.",
         "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119990",
         "added_at": "2026-11-10T19:42:29.541Z"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-119990 Azure OpenAI Elevation of Privilege Vulnerability",
+        "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119990",
+        "added_at": "2026-11-11T03:11:44.645Z"
       }
     ],
     "action": "Check vendor advisories and apply available updates for Azure OpenAI.",
