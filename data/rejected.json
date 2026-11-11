@@ -1,5 +1,15 @@
 [
   {
+    "key": "424f8e5ef5ac7fc4",
+    "title": "Britain, France set out first guidelines for commercial hacking firms",
+    "url": "https://therecord.media/britain-france-set-out-guidelines-for-commercial-hacking-firms",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Policy announcement, no specific security incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T13:41:14.838Z"
+  },
+  {
     "key": "23b1780cf039cc86",
     "title": "Fortinet Patches Nearly 100 Vulnerabilities",
     "url": "https://securityweek.com/fortinet-patches-nearly-100-vulnerabilities",
