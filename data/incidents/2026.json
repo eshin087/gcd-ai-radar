@@ -14,9 +14,7 @@
       "enterprise_deployment",
       "framework_or_tooling"
     ],
-    "products": [
-      "hiring bot"
-    ],
+    "products": [],
     "incident_date": "2026-11-11",
     "incident_date_precision": "day",
     "first_reported": "2026-11-11",
@@ -71,9 +69,7 @@
     "targets": [
       "framework_or_tooling"
     ],
-    "products": [
-      "llm"
-    ],
+    "products": [],
     "incident_date": "2026-11-11",
     "incident_date_precision": "day",
     "first_reported": "2026-11-11",
@@ -2999,9 +2995,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "government email servers"
-    ],
+    "products": [],
     "incident_date": "2026-11-10",
     "incident_date_precision": "day",
     "first_reported": "2026-11-10",
@@ -4357,9 +4351,7 @@
       "enterprise_deployment",
       "framework_or_tooling"
     ],
-    "products": [
-      "assistant interface"
-    ],
+    "products": [],
     "incident_date": "2026-11-09",
     "incident_date_precision": "day",
     "first_reported": "2026-11-09",
@@ -4402,10 +4394,10 @@
     "cvss": null
   },
   {
-    "id": "AIR-2026-1835",
-    "slug": "pro-russian-hackers-leak-personal-data-of-italian-foreign-mi",
+    "id": "AIR-2026-1834",
+    "slug": "italian-foreign-minister-personal-data-leaked-on-the-dark-we",
     "title": "Pro-Russian hackers leak personal data of Italian Foreign Minister and European officials",
-    "summary": "Pro-Russian threat actors published sensitive personal information belonging to senior European officials on the dark web. The group offered cryptocurrency bounties to encourage further data collection on the officials and their families.",
+    "summary": "Pro-Russian hackers published personal data of Italian Foreign Minister Antonio Tajani and other senior European officials on the dark web, and offered cryptocurrency bounties for more. Prime Minister Giorgia Meloni blamed pro-Russian hackers for the leak.",
     "type": "not_ai",
     "categories": [
       "general"
@@ -4415,64 +4407,6 @@
       "n/a"
     ],
     "products": [],
-    "incident_date": "2026-11-09",
-    "incident_date_precision": "day",
-    "first_reported": "2026-11-09",
-    "sources": [
-      {
-        "url": "https://therecord.media/hackers-russia-italy-noname",
-        "publisher": "The Record",
-        "title": "Pro-Russian hackers target European officials, offer rewards for personal information",
-        "published_at": "2026-11-09"
-      }
-    ],
-    "source_count": 1,
-    "confidence": 0.95,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "data-leak",
-      "dark-web",
-      "pro-russian",
-      "threat-actor"
-    ],
-    "created_at": "2026-11-09T13:40:35.786Z",
-    "updated_at": "2026-11-09T13:40:35.786Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-11-09",
-        "title": "Pro-Russian hackers target European officials, offer rewards for personal information",
-        "source_url": "https://therecord.media/hackers-russia-italy-noname",
-        "added_at": "2026-11-09T13:40:35.786Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "Confirmed publication of sensitive personal information of government officials.",
-    "cvss": null
-  },
-  {
-    "id": "AIR-2026-1834",
-    "slug": "italian-foreign-minister-personal-data-leaked-on-the-dark-we",
-    "title": "Italian Foreign Minister personal data leaked on the dark web",
-    "summary": "Personal data belonging to Italian Foreign Minister Antonio Tajani was published on the dark web. Prime Minister Giorgia Meloni blamed pro-Russian hackers for the incident.",
-    "type": "not_ai",
-    "categories": [
-      "general"
-    ],
-    "severity": 3,
-    "targets": [
-      "n/a"
-    ],
-    "products": [
-      "dark web leak site"
-    ],
     "incident_date": "2026-11-07",
     "incident_date_precision": "day",
     "first_reported": "2026-11-09",
@@ -4482,20 +4416,28 @@
         "publisher": "SecurityWeek",
         "title": "Italy’s Meloni Blames Pro-Russian Hackers for Leak of Foreign Minister’s Data on the Dark Web",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://therecord.media/hackers-russia-italy-noname",
+        "publisher": "The Record",
+        "title": "Pro-Russian hackers target European officials, offer rewards for personal information",
+        "published_at": "2026-11-09"
       }
     ],
-    "source_count": 1,
-    "confidence": 0.9,
+    "source_count": 2,
+    "confidence": 0.95,
     "status": "published",
     "origin": "news",
     "tags": [
       "data-leak",
       "dark-web",
       "italy",
-      "hackers"
+      "hackers",
+      "pro-russian",
+      "threat-actor"
     ],
     "created_at": "2026-11-09T12:41:04.445Z",
-    "updated_at": "2026-11-09T12:41:04.445Z",
+    "updated_at": "2026-11-11T19:38:55.426Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4509,80 +4451,16 @@
         "title": "Italy’s Meloni Blames Pro-Russian Hackers for Leak of Foreign Minister’s Data on the Dark Web",
         "source_url": "https://securityweek.com/italys-meloni-blames-pro-russian-hackers-for-leak-of-foreign-ministers-data-on-the-dark-web",
         "added_at": "2026-11-09T12:41:04.445Z"
-      }
-    ],
-    "action": "",
-    "severity_note": "Confirmed publication of a government official's personal data on the dark web.",
-    "cvss": null
-  },
-  {
-    "id": "AIR-2026-1833",
-    "slug": "ukraine-dismantles-crypto-scam-network-that-stole-4-3-millio",
-    "title": "Ukraine dismantles crypto scam network that stole 4.3 million euros",
-    "summary": "Ukrainian law enforcement arrested four suspects involved in operating cryptocurrency investment scam call centers. The network stole more than 4.3 million euros from victims.",
-    "type": "not_ai",
-    "categories": [
-      "general"
-    ],
-    "severity": 4,
-    "targets": [
-      "n/a"
-    ],
-    "products": [
-      "crypto scam network"
-    ],
-    "incident_date": "2026-11-09",
-    "incident_date_precision": "day",
-    "first_reported": "2026-11-09",
-    "sources": [
-      {
-        "url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
-        "publisher": "BleepingComputer",
-        "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
-        "published_at": "2026-11-09"
-      },
-      {
-        "url": "https://therecord.media/ukraine-arrests-scam-call-centers-germany",
-        "publisher": "The Record",
-        "title": "Ukraine arrests four in $5 million crypto scam targeting Germans",
-        "published_at": "2026-11-09"
-      }
-    ],
-    "source_count": 2,
-    "confidence": 0.9,
-    "status": "published",
-    "origin": "news",
-    "tags": [
-      "fraud",
-      "crypto",
-      "arrests",
-      "ukraine"
-    ],
-    "created_at": "2026-11-09T12:41:04.445Z",
-    "updated_at": "2026-11-09T16:10:45.048Z",
-    "lane": "breach",
-    "state": "live",
-    "closed_at": null,
-    "patch_status": "no_fix_needed",
-    "cve_ids": [],
-    "affected": [],
-    "fixed_in": [],
-    "timeline": [
-      {
-        "date": "2026-11-09",
-        "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
-        "source_url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
-        "added_at": "2026-11-09T12:41:04.445Z"
       },
       {
         "date": "2026-11-09",
-        "title": "Law enforcement identified the arrested individuals as including the alleged leader of the criminal call centers",
-        "source_url": "https://therecord.media/ukraine-arrests-scam-call-centers-germany",
-        "added_at": "2026-11-09T16:10:45.048Z"
+        "title": "The group is reported to target other senior European officials and to offer cryptocurrency rewards for personal information",
+        "source_url": "https://therecord.media/hackers-russia-italy-noname",
+        "added_at": "2026-11-11T19:38:55.426Z"
       }
     ],
     "action": "",
-    "severity_note": "Confirmed real-world financial loss of over 4.3 million euros.",
+    "severity_note": "Confirmed publication of sensitive personal information of government officials.",
     "cvss": null
   },
   {
@@ -6334,9 +6212,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "phishing websites"
-    ],
+    "products": [],
     "incident_date": "2026-11-05",
     "incident_date_precision": "day",
     "first_reported": "2026-11-05",
@@ -8308,9 +8184,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "university networks"
-    ],
+    "products": [],
     "incident_date": "2026-11-04",
     "incident_date_precision": "day",
     "first_reported": "2026-11-04",
@@ -9779,9 +9653,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "custom malware"
-    ],
+    "products": [],
     "incident_date": "2026-11-03",
     "incident_date_precision": "day",
     "first_reported": "2026-11-03",
@@ -10298,9 +10170,7 @@
     "targets": [
       "open_weight_model"
     ],
-    "products": [
-      "synthetic video generation models"
-    ],
+    "products": [],
     "incident_date": "2026-11-03",
     "incident_date_precision": "day",
     "first_reported": "2026-11-03",
@@ -10645,9 +10515,7 @@
       "framework_or_tooling",
       "open_weight_model"
     ],
-    "products": [
-      "coding agents"
-    ],
+    "products": [],
     "incident_date": "2026-11-03",
     "incident_date_precision": "day",
     "first_reported": "2026-11-03",
@@ -10705,9 +10573,7 @@
       "open_weight_model",
       "enterprise_deployment"
     ],
-    "products": [
-      "reasoning coding agents"
-    ],
+    "products": [],
     "incident_date": "2026-11-03",
     "incident_date_precision": "day",
     "first_reported": "2026-11-03",
@@ -10897,9 +10763,7 @@
     "targets": [
       "open_weight_model"
     ],
-    "products": [
-      "ballot classification models"
-    ],
+    "products": [],
     "incident_date": "2026-11-03",
     "incident_date_precision": "day",
     "first_reported": "2026-11-03",
@@ -12048,9 +11912,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "refrigeration units"
-    ],
+    "products": [],
     "incident_date": "2026-11-02",
     "incident_date_precision": "day",
     "first_reported": "2026-11-02",
@@ -13847,9 +13709,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "latent-based diffusion watermarking"
-    ],
+    "products": [],
     "incident_date": "2026-10-30",
     "incident_date_precision": "day",
     "first_reported": "2026-10-30",
@@ -13904,9 +13764,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "collaborative decoding web assistants"
-    ],
+    "products": [],
     "incident_date": "2026-10-30",
     "incident_date_precision": "day",
     "first_reported": "2026-10-30",
@@ -17480,9 +17338,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "school district staff accounts"
-    ],
+    "products": [],
     "incident_date": "2026-10-29",
     "incident_date_precision": "day",
     "first_reported": "2026-10-29",
@@ -18159,9 +18015,7 @@
     "targets": [
       "n/a"
     ],
-    "products": [
-      "firewalls"
-    ],
+    "products": [],
     "incident_date": "2026-10-28",
     "incident_date_precision": "day",
     "first_reported": "2026-10-28",
@@ -19558,9 +19412,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "infostealer apps"
-    ],
+    "products": [],
     "incident_date": "2026-10-27",
     "incident_date_precision": "day",
     "first_reported": "2026-10-27",
@@ -25539,9 +25391,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "open-weight models"
-    ],
+    "products": [],
     "incident_date": "2026-10-23",
     "incident_date_precision": "day",
     "first_reported": "2026-10-23",
@@ -26007,9 +25857,7 @@
     "targets": [
       "open_weight_model"
     ],
-    "products": [
-      "diffusion models"
-    ],
+    "products": [],
     "incident_date": "2026-10-23",
     "incident_date_precision": "day",
     "first_reported": "2026-10-23",
@@ -28395,9 +28243,7 @@
     "targets": [
       "open_weight_model"
     ],
-    "products": [
-      "speech models"
-    ],
+    "products": [],
     "incident_date": "2026-10-21",
     "incident_date_precision": "day",
     "first_reported": "2026-10-21",
@@ -31982,9 +31828,7 @@
       "individual_victims",
       "enterprise_deployment"
     ],
-    "products": [
-      "fake ai applications"
-    ],
+    "products": [],
     "incident_date": "2026-10-15",
     "incident_date_precision": "day",
     "first_reported": "2026-10-15",
@@ -87591,9 +87435,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake video generator"
-    ],
+    "products": [],
     "incident_date": "2026-05-01",
     "incident_date_precision": "day",
     "first_reported": "2026-05-01",

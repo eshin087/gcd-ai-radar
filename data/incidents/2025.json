@@ -7471,9 +7471,7 @@
     "targets": [
       "enterprise_deployment"
     ],
-    "products": [
-      "phishing website detection system"
-    ],
+    "products": [],
     "incident_date": "2022-12",
     "incident_date_precision": "month",
     "first_reported": "2025-09-29",
@@ -14188,9 +14186,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake generator"
-    ],
+    "products": [],
     "incident_date": "2025-06-29",
     "incident_date_precision": "day",
     "first_reported": "2025-06-29",
@@ -14304,9 +14300,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake generator"
-    ],
+    "products": [],
     "incident_date": "2025-06-28",
     "incident_date_precision": "day",
     "first_reported": "2025-06-28",
@@ -15499,9 +15493,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake generator"
-    ],
+    "products": [],
     "incident_date": "2025-06-13",
     "incident_date_precision": "day",
     "first_reported": "2025-06-13",
@@ -16962,9 +16954,7 @@
       "enterprise_deployment",
       "individual_victims"
     ],
-    "products": [
-      "voice cloning tools"
-    ],
+    "products": [],
     "incident_date": "2025-05-15",
     "incident_date_precision": "day",
     "first_reported": "2025-05-15",
@@ -17767,9 +17757,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake generator"
-    ],
+    "products": [],
     "incident_date": "2025-04-30",
     "incident_date_precision": "day",
     "first_reported": "2025-04-30",
@@ -18098,9 +18086,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "voice cloning tool"
-    ],
+    "products": [],
     "incident_date": "2025-04-29",
     "incident_date_precision": "day",
     "first_reported": "2025-04-29",
@@ -18272,9 +18258,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "generative ai websites"
-    ],
+    "products": [],
     "incident_date": "2025-04-27",
     "incident_date_precision": "day",
     "first_reported": "2025-04-27",
@@ -18994,9 +18978,7 @@
     "targets": [
       "open_weight_model"
     ],
-    "products": [
-      "private container registries"
-    ],
+    "products": [],
     "incident_date": "2023-09-26",
     "incident_date_precision": "day",
     "first_reported": "2025-04-22",
@@ -24618,9 +24600,7 @@
       "open_weight_model",
       "framework_or_tooling"
     ],
-    "products": [
-      "web-scale datasets"
-    ],
+    "products": [],
     "incident_date": "2024-06-06",
     "incident_date_precision": "day",
     "first_reported": "2025-03-14",
@@ -25398,9 +25378,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake video generation tools"
-    ],
+    "products": [],
     "incident_date": "2025-03-02",
     "incident_date_precision": "day",
     "first_reported": "2025-03-02",
@@ -25575,9 +25553,7 @@
     "targets": [
       "enterprise_deployment"
     ],
-    "products": [
-      "deepfake video generator"
-    ],
+    "products": [],
     "incident_date": "2025-02-24",
     "incident_date_precision": "day",
     "first_reported": "2025-02-24",
@@ -25808,9 +25784,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "synthetic voice generator"
-    ],
+    "products": [],
     "incident_date": "2025-02-17",
     "incident_date_precision": "day",
     "first_reported": "2025-02-17",
@@ -26511,9 +26485,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "dating app chatbots"
-    ],
+    "products": [],
     "incident_date": "2025-02-04",
     "incident_date_precision": "day",
     "first_reported": "2025-02-04",
@@ -26918,9 +26890,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake tools"
-    ],
+    "products": [],
     "incident_date": "2025-01-20",
     "incident_date_precision": "day",
     "first_reported": "2025-01-20",
@@ -27503,9 +27473,7 @@
     "targets": [
       "individual_victims"
     ],
-    "products": [
-      "deepfake tools"
-    ],
+    "products": [],
     "incident_date": "2025-01-05",
     "incident_date_precision": "day",
     "first_reported": "2025-01-05",

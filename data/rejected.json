@@ -1,5 +1,125 @@
 [
   {
+    "key": "8053842a1f4e6678",
+    "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
+    "url": "https://bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million",
+    "publisher": "BleepingComputer",
+    "source_id": "review",
+    "reason": "law-enforcement follow-up: arrests after a fraud, not a new incident (repair 2026-11-11)",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "b5262f310e47d542",
+    "title": "Ukraine arrests four in $5 million crypto scam targeting Germans",
+    "url": "https://therecord.media/ukraine-arrests-scam-call-centers-germany",
+    "publisher": "The Record",
+    "source_id": "review",
+    "reason": "law-enforcement follow-up: arrests after a fraud, not a new incident (repair 2026-11-11)",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "2a2b68a5bdbea5b6",
+    "title": "Toward Safety-Aware AI Agents in Realistic Social Engineering Attack Scenarios",
+    "url": "https://arxiv.org/abs/2611.10037",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Benchmark research, no real attack reported (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "f6aca7500d8150fb",
+    "title": "Agents of Chaos: A Systematization of Knowledge (SoK) on Malicious Attacks on Agentic AI Systems",
+    "url": "https://arxiv.org/abs/2611.10843",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Taxonomy paper, no specific incident (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "b3e6169998cdeb9c",
+    "title": "RoCoMark: Robust Code Watermarking Against LLM-Based Functionality-Preserving Rewriting Attacks",
+    "url": "https://arxiv.org/abs/2611.11399",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Research on defenses, no exploitation shown (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "3eb7f20154dc74b3",
+    "title": "MetaPI: Constructing Prompt Injection Benchmarks from LLM Agent Benchmark",
+    "url": "https://arxiv.org/abs/2611.10026",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Paper presents benchmarks, no real attack demonstrated (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "d80a2466ef659bfe",
+    "title": "SkillCODER: Towards Auditing and Attribution of Copyright Infringement in LLM Agent Skills",
+    "url": "https://arxiv.org/abs/2611.11308",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: research paper without attack component (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "5fcbe95ecd3c87f0",
+    "title": "Do Benign-Trained Hidden-State Probes Detect Tool Errors Under Adversarial Conditions?",
+    "url": "https://arxiv.org/abs/2611.11172",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: research paper without demonstrated exploitation (repair 2026-11-11)",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "4cbcfb9ddd3cfd0d",
+    "title": "Securing Web Agents with the Compile-Then-Execute Paradigm",
+    "url": "https://arxiv.org/abs/2611.06039",
+    "publisher": "arXiv",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: No confirmed exploitation; research only. (repair 2026-11-11)",
+    "confidence": 0.7,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "1981b067cd839e71",
+    "title": "5 Active Cyber Threats That Put US Enterprises at Risk in October 2026",
+    "url": "https://thehackernews.com/2026/11/5-active-cyber-threats-that-put-us.html",
+    "publisher": "The Hacker News",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Roundup article, no specific incident (repair 2026-11-11)",
+    "confidence": 0.5,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "c96a8513a70f8e80",
+    "title": "The Gacha game I play everyday, Nikke, was targeted by a supply chain attack",
+    "url": "https://twitter.com/lauriferrd/status/2117655602843533509",
+    "publisher": "twitter.com",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Unverified claim on social media. (repair 2026-11-11)",
+    "confidence": 0.7,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
+    "key": "b7494c226c5ffbc3",
+    "title": "NIKKE PC game launcher hacked to spread remote access, data-stealing malware",
+    "url": "https://bleepingcomputer.com/news/security/nikke-pc-game-launcher-hacked-to-spread-remote-access-data-stealing-malware",
+    "publisher": "BleepingComputer",
+    "source_id": "review",
+    "reason": "out of scope, no AI role: Unverified claim on social media. (repair 2026-11-11)",
+    "confidence": 0.7,
+    "rejected_at": "2026-11-11T19:38:55.426Z"
+  },
+  {
     "key": "36fe20458ab3346e",
     "title": "Who Runs the Ransomware Group Qilin?",
     "url": "https://krebsonsecurity.com/2026/11/who-runs-the-ransomware-group-qilin",
