@@ -4437,7 +4437,7 @@
       "threat-actor"
     ],
     "created_at": "2026-11-09T12:41:04.445Z",
-    "updated_at": "2026-11-11T19:38:55.426Z",
+    "updated_at": "2026-11-11T19:45:13.730Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4456,7 +4456,7 @@
         "date": "2026-11-09",
         "title": "The group is reported to target other senior European officials and to offer cryptocurrency rewards for personal information",
         "source_url": "https://therecord.media/hackers-russia-italy-noname",
-        "added_at": "2026-11-11T19:38:55.426Z"
+        "added_at": "2026-11-11T19:45:13.730Z"
       }
     ],
     "action": "",

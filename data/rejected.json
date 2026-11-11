@@ -7,7 +7,7 @@
     "source_id": "review",
     "reason": "law-enforcement follow-up: arrests after a fraud, not a new incident (repair 2026-11-11)",
     "confidence": 0.9,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "b5262f310e47d542",
@@ -17,7 +17,7 @@
     "source_id": "review",
     "reason": "law-enforcement follow-up: arrests after a fraud, not a new incident (repair 2026-11-11)",
     "confidence": 0.9,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "2a2b68a5bdbea5b6",
@@ -27,7 +27,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Benchmark research, no real attack reported (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "f6aca7500d8150fb",
@@ -37,7 +37,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Taxonomy paper, no specific incident (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "b3e6169998cdeb9c",
@@ -47,7 +47,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Research on defenses, no exploitation shown (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "3eb7f20154dc74b3",
@@ -57,7 +57,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Paper presents benchmarks, no real attack demonstrated (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "d80a2466ef659bfe",
@@ -67,7 +67,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: research paper without attack component (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "5fcbe95ecd3c87f0",
@@ -77,7 +77,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: research paper without demonstrated exploitation (repair 2026-11-11)",
     "confidence": 0.6,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "4cbcfb9ddd3cfd0d",
@@ -87,7 +87,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: No confirmed exploitation; research only. (repair 2026-11-11)",
     "confidence": 0.7,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "1981b067cd839e71",
@@ -97,7 +97,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Roundup article, no specific incident (repair 2026-11-11)",
     "confidence": 0.5,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "c96a8513a70f8e80",
@@ -107,7 +107,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Unverified claim on social media. (repair 2026-11-11)",
     "confidence": 0.7,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "b7494c226c5ffbc3",
@@ -117,7 +117,7 @@
     "source_id": "review",
     "reason": "out of scope, no AI role: Unverified claim on social media. (repair 2026-11-11)",
     "confidence": 0.7,
-    "rejected_at": "2026-11-11T19:38:55.426Z"
+    "rejected_at": "2026-11-11T19:45:13.730Z"
   },
   {
     "key": "36fe20458ab3346e",
