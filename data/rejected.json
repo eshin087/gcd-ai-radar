@@ -1,5 +1,75 @@
 [
   {
+    "key": "9198013ef9f1165c",
+    "title": "Tracing MCP Security Vulnerabilities: Constructing and Analyzing an MCP Security Vulnerability Dataset",
+    "url": "https://arxiv.org/abs/2611.11104",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper constructs a dataset from CVE disclosures without demonstrating a novel attack, vulnerability, or abuse of AI systems.",
+    "confidence": 0.85,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "2e0e813e0834e018",
+    "title": "ShadowBench-MCP: Measuring Shadow Invocations in MCP-Style Tool Routing",
+    "url": "https://arxiv.org/abs/2611.11720",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Introduces a benchmark and metric suite, which falls under benchmark/defence papers rather than a demonstrated attack or vulnerability.",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "0af44d9f25e14459",
+    "title": "An Agentic Multi-Agent Framework for System Log Anomaly Detection",
+    "url": "https://arxiv.org/abs/2611.10612",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Proposes a defensive or operational multi-agent framework for system log anomaly detection, which is out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "936402f52c4c5fc6",
+    "title": "Treating the Model as an Untrusted Component: Deterministic Policy Enforcement, Human Approval and Taint Tracking Against Prompt Injection in Tool-Using Agents, with Validation on Open-Weights Models",
+    "url": "https://arxiv.org/abs/2611.11571",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes and evaluates defenses against prompt injection rather than demonstrating a new attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "fc67fad1b9a1adfe",
+    "title": "Beyond AUROC: Deployment-Aware Evaluation of Model-Internal Jailbreak Detectors",
+    "url": "https://arxiv.org/abs/2611.11067",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Defence-only paper proposing a new evaluation metric for jailbreak detectors.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "58e86083ba6d62bd",
+    "title": "Coding Agents Propagate Vulnerabilities in Code Bases",
+    "url": "https://arxiv.org/abs/2611.11455",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: General study on how coding agents propagate vulnerabilities, lacking a specific attack demonstration or actionable vulnerability record.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
+    "key": "d59fcc5151d684e5",
+    "title": "CyberBinGym: Can AI Agents Turn Binary Patches into Real Exploits?",
+    "url": "https://arxiv.org/abs/2611.10723",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Benchmark introduction paper evaluating AI capabilities on binary diffing and exploitation.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T03:41:19.639Z"
+  },
+  {
     "key": "dfed64ae7cc59d11",
     "title": "Mirage: Provable Defense Against LLM KV Cache Timing Side Channels with Topology-Aware Isolation",
     "url": "https://arxiv.org/abs/2611.10756",

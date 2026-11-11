@@ -1,5 +1,230 @@
 [
   {
+    "id": "AIR-2026-1892",
+    "slug": "toward-safety-aware-ai-agents-in-realistic-social-engineerin",
+    "title": "Toward Safety-Aware AI Agents in Realistic Social Engineering Attack Scenarios",
+    "summary": "The authors present a benchmark environment to evaluate AI agents against simulated social‑engineering attacks. The work does not report an actual exploitation or vulnerability in deployed systems.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "AI personal agents"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.10037",
+        "publisher": "arXiv",
+        "title": "Toward Safety-Aware AI Agents in Realistic Social Engineering Attack Scenarios",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.6,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "ai_phishing_social_engineering",
+      "benchmark"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Toward Safety-Aware AI Agents in Realistic Social Engineering Attack Scenarios",
+        "source_url": "https://arxiv.org/abs/2611.10037",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Benchmark research, no real attack reported",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1891",
+    "slug": "agents-of-chaos-a-systematization-of-knowledge-sok-on-malici",
+    "title": "Agents of Chaos: A Systematization of Knowledge (SoK) on Malicious Attacks on Agentic AI Systems",
+    "summary": "The SoK surveys potential attack vectors against agentic AI systems but does not document a concrete breach or vulnerability. It serves as a taxonomy rather than reporting an incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Agentic AI systems"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.10843",
+        "publisher": "arXiv",
+        "title": "Agents of Chaos: A Systematization of Knowledge (SoK) on Malicious Attacks on Agentic AI Systems",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.6,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "agent_hijack",
+      "prompt_injection",
+      "survey"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "Agents of Chaos: A Systematization of Knowledge (SoK) on Malicious Attacks on Agentic AI Systems",
+        "source_url": "https://arxiv.org/abs/2611.10843",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Taxonomy paper, no specific incident",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1890",
+    "slug": "rocomark-robust-code-watermarking-against-llm-based-function",
+    "title": "RoCoMark: Robust Code Watermarking Against LLM-Based Functionality-Preserving Rewriting Attacks",
+    "summary": "The work introduces a watermarking scheme designed to survive LLM‑based rewriting attacks on generated code. It does not present a concrete exploit or real‑world attack scenario.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "LLM code generation"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.11399",
+        "publisher": "arXiv",
+        "title": "RoCoMark: Robust Code Watermarking Against LLM-Based Functionality-Preserving Rewriting Attacks",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.6,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "model_theft_extraction",
+      "watermarking"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "RoCoMark: Robust Code Watermarking Against LLM-Based Functionality-Preserving Rewriting Attacks",
+        "source_url": "https://arxiv.org/abs/2611.11399",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research on defenses, no exploitation shown",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1889",
+    "slug": "metapi-constructing-prompt-injection-benchmarks-from-llm-age",
+    "title": "MetaPI: Constructing Prompt Injection Benchmarks from LLM Agent Benchmark",
+    "summary": "The paper proposes a meta‑benchmarking method to evaluate indirect prompt injection on LLM agents by converting existing utility benchmarks. It does not report a real‑world attack or vulnerability.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "LLM agents"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.10026",
+        "publisher": "arXiv",
+        "title": "MetaPI: Constructing Prompt Injection Benchmarks from LLM Agent Benchmark",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.6,
+    "status": "review",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "benchmark"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "MetaPI: Constructing Prompt Injection Benchmarks from LLM Agent Benchmark",
+        "source_url": "https://arxiv.org/abs/2611.10026",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Paper presents benchmarks, no real attack demonstrated",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1885",
     "slug": "skillcoder-towards-auditing-and-attribution-of-copyright-inf",
     "title": "SkillCODER: Towards Auditing and Attribution of Copyright Infringement in LLM Agent Skills",

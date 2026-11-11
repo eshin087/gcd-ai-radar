@@ -1,5 +1,185 @@
 [
   {
+    "id": "AIR-2026-1893",
+    "slug": "cve-2026-109485-microsoft-365-agents-sdk-information-disclos",
+    "title": "CVE-2026-109485 Microsoft 365 Agents SDK Information Disclosure Vulnerability",
+    "summary": "A server-side request forgery vulnerability in the Microsoft 365 Agents SDK allows an authorized attacker to disclose information over a network. Microsoft has published an advisory for the affected software.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln",
+      "data_leak"
+    ],
+    "severity": 2,
+    "targets": [
+      "Microsoft",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Microsoft 365 Agents SDK"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109485",
+        "publisher": "MSRC",
+        "title": "CVE-2026-109485 Microsoft 365 Agents SDK Information Disclosure Vulnerability",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-109485",
+      "ssrf",
+      "information-disclosure"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-10",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-109485"
+    ],
+    "affected": [
+      "Microsoft 365 Agents SDK"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "CVE-2026-109485 Microsoft 365 Agents SDK Information Disclosure Vulnerability",
+        "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109485",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "Check Microsoft MSRC advisory for patch availability and update the Agents SDK.",
+    "severity_note": "Disclosed vendor advisory without reported exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1888",
+    "slug": "stealthypoison-manipulating-llm-agent-behavior-through-proce",
+    "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+    "summary": "Researchers presented StealthyPoison, a procedural poisoning technique that corrupts decision-critical rules in third-party skills. The attack induces incorrect task outcomes while preserving advertised functionality and normal execution behavior.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Agent"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.12155",
+        "publisher": "arXiv",
+        "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "skill_poisoning",
+      "llm_agents",
+      "supply_chain"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+        "source_url": "https://arxiv.org/abs/2611.12155",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1887",
+    "slug": "when-experience-becomes-a-backdoor-poisoning-self-evolving-l",
+    "title": "When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization",
+    "summary": "Researchers demonstrated a task-level backdoor attack against self-evolving LLM agents by implanting malicious rules through failure-aware task optimization. The attack compromises persistent skills without requiring direct manipulation of victim components.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "LLM Agent"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-10",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.10542",
+        "publisher": "arXiv",
+        "title": "When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization",
+        "published_at": "2026-11-10"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "llm_agents",
+      "data_poisoning"
+    ],
+    "created_at": "2026-11-11T03:41:19.639Z",
+    "updated_at": "2026-11-11T03:41:19.639Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-10",
+        "title": "When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization",
+        "source_url": "https://arxiv.org/abs/2611.10542",
+        "added_at": "2026-11-11T03:41:19.639Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1886",
     "slug": "validating-ai-discovered-cloud-threats-on-live-infrastructur",
     "title": "Validating AI‑Discovered Cloud Threats on Live Infrastructure: A Multi‑Model, Multi‑Cloud Study",
