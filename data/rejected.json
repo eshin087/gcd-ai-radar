@@ -1,5 +1,25 @@
 [
   {
+    "key": "16cd3ca2d475df74",
+    "title": "Rubrik enhances DevOps Protection to preserve legitimate work during recovery",
+    "url": "https://helpnetsecurity.com/2026/11/11/rubrik-devops-protection",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Vendor product launch and feature announcement with no specific security incident or flaw reported.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T12:11:22.433Z"
+  },
+  {
+    "key": "b80a24c89312068e",
+    "title": "eMudhra Revokes 8 More CAs It Previously Declared Unaffected by Key Compromise",
+    "url": "https://thehackernews.com/2026/11/emudhra-revokes-8-more-cas-it.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "below the curation bar: Follow-up to a previously disclosed key compromise incident.",
+    "confidence": 0.88,
+    "rejected_at": "2026-11-11T12:11:22.433Z"
+  },
+  {
     "key": "fac3eba829342d4f",
     "title": "ICS Patch Tuesday: Siemens Flags High-Severity Flaws, Node2Shell Exposure",
     "url": "https://securityweek.com/ics-patch-tuesday-siemens-flags-high-severity-flaws-node2shell-exposure",
