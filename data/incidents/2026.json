@@ -1,5 +1,229 @@
 [
   {
+    "id": "AIR-2026-1915",
+    "slug": "from-attack-surface-to-defense-architecture-for-agentic-codi",
+    "title": "From Attack Surface to Defense Architecture for Agentic Coding Harnesses",
+    "summary": "Researchers analyze the security implications of coupling language models with local system utilities in agentic coding harnesses. The study details how prompt injection can transform dual-use binaries into unintended payloads.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.13960",
+        "publisher": "arXiv",
+        "title": "From Attack Surface to Defense Architecture: Compositional Security for Agentic Coding Harnesses",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agentic-ai",
+      "prompt-injection",
+      "coding-harness"
+    ],
+    "created_at": "2026-11-11T23:41:06.748Z",
+    "updated_at": "2026-11-11T23:41:06.748Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "From Attack Surface to Defense Architecture: Compositional Security for Agentic Coding Harnesses",
+        "source_url": "https://arxiv.org/abs/2611.13960",
+        "added_at": "2026-11-11T23:41:06.748Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an attack vector with no known exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1914",
+    "slug": "domain-invariant-and-language-model-assisted-acoustic-side-c",
+    "title": "Domain-Invariant and Language-Model-Assisted Acoustic Side-Channel Attacks on Keyboards",
+    "summary": "Researchers demonstrate acoustic side-channel attacks that recover typed text from keyboard sounds in diverse, noisy environments. The approach utilizes language models to improve keystroke inference accuracy without device access.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.13922",
+        "publisher": "arXiv",
+        "title": "Domain-Invariant and Language-Model-Assisted Acoustic Side-Channel Attacks on Keyboards",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "acoustic-side-channel",
+      "keystroke-inference",
+      "machine-learning"
+    ],
+    "created_at": "2026-11-11T23:41:06.748Z",
+    "updated_at": "2026-11-11T23:41:06.748Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Domain-Invariant and Language-Model-Assisted Acoustic Side-Channel Attacks on Keyboards",
+        "source_url": "https://arxiv.org/abs/2611.13922",
+        "added_at": "2026-11-11T23:41:06.748Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an attack with no known exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1913",
+    "slug": "on-private-knowledge-retrieval-and-private-inference-for-mul",
+    "title": "On Private Knowledge Retrieval and Private Inference for Multi-Agent Systems",
+    "summary": "Researchers explore memory poisoning and security vulnerabilities within multi-agent systems built on large language models. The study details attack vectors targeting agent knowledge and retrieval components.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.13696",
+        "publisher": "arXiv",
+        "title": "On Private Knowledge Retrieval and Private Inference for secure multi-agent systems",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "multi-agent",
+      "memory-poisoning",
+      "llm"
+    ],
+    "created_at": "2026-11-11T23:41:06.748Z",
+    "updated_at": "2026-11-11T23:41:06.748Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "On Private Knowledge Retrieval and Private Inference for secure multi-agent systems",
+        "source_url": "https://arxiv.org/abs/2611.13696",
+        "added_at": "2026-11-11T23:41:06.748Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an attack with no known exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1912",
+    "slug": "stinging-the-swarm-extracting-attacker-intelligence-from-a-t",
+    "title": "Stinging the Swarm: Extracting Attacker Intelligence from a Twin-Controller OT Honeypot",
+    "summary": "Researchers present a defense pipeline using a twin-controller OT honeypot to intercept and analyze autonomous attacker agents. The system routes hostile requests to a decoy environment to gather intelligence without risking the real plant.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.13406",
+        "publisher": "arXiv",
+        "title": "Stinging the Swarm: Extracting Attacker Intelligence from a Twin-Controller OT Honeypot",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ot",
+      "honeypot",
+      "industrial-control",
+      "autonomous-agents"
+    ],
+    "created_at": "2026-11-11T23:41:06.748Z",
+    "updated_at": "2026-11-11T23:41:06.748Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Stinging the Swarm: Extracting Attacker Intelligence from a Twin-Controller OT Honeypot",
+        "source_url": "https://arxiv.org/abs/2611.13406",
+        "added_at": "2026-11-11T23:41:06.748Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an experimental defense system and agent interactions.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1911",
     "slug": "baker-tilly-notifies-clients-of-data-breach-via-third-party",
     "title": "Baker Tilly notifies clients of data breach via third-party provider",

@@ -1,5 +1,75 @@
 [
   {
+    "key": "0316ec651071c7e2",
+    "title": "MammothDP: Private Boosted Decision Trees Ready for Trusted Hardware and Leakage-free Hyperparameters",
+    "url": "https://arxiv.org/abs/2611.14317",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a research paper focused solely on data privacy mechanisms (differential privacy and TEEs) rather than a specific security incident, vulnerability, or attack.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "28d4e7097b45241c",
+    "title": "TERM: Target-Free Jailbreak Defense via Entropy-Guided Residual Modulation",
+    "url": "https://arxiv.org/abs/2611.13577",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a defense-only research paper proposing a target-free jailbreak defense mechanism rather than demonstrating an attack or vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "3e9a34849185cf00",
+    "title": "POEM: Output-Relative Block-Sparse Attention for Long-Context Prefilling",
+    "url": "https://arxiv.org/abs/2611.13578",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a performance optimization research paper (block-sparse attention for prefilling) with no security or incident angle.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "a2b937721d9a4b25",
+    "title": "BypassGym: A Benchmark for Evaluating AI Agents' Endpoint Defense Evasion Capabilities",
+    "url": "https://arxiv.org/abs/2611.13684",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a benchmark paper proposing an evaluation framework for AI agents rather than a demonstrated real-world attack or specific software vulnerability.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "53dc0d50c340e91e",
+    "title": "GARD: Gradient-Guided Adversarial Representation Defense against Backdoors in Multimodal Contrastive Learning Models",
+    "url": "https://arxiv.org/abs/2611.14143",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It is a defense-only paper proposing a new mitigation against backdoors, which is out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "a89560112655d3d9",
+    "title": "5G CATS: 5G-Based Cryptographic Authorization Against Trafficking of Semiconductor Devices",
+    "url": "https://arxiv.org/abs/2611.13437",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: It proposes a cryptographic location certification system to enforce hardware export controls, not an incident.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
+    "key": "061692826d491b37",
+    "title": "An Empirical Study on CVE-based Vulnerabilities Propagation from one System to another System (IntraProject vs InterProject)",
+    "url": "https://arxiv.org/abs/2611.14164",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper studies vulnerability propagation and code clones generally, without demonstrating a specific new exploit or attacking an AI system.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T23:41:06.748Z"
+  },
+  {
     "key": "0a0e78cecea37b89",
     "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
     "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools",
