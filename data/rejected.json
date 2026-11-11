@@ -1,5 +1,15 @@
 [
   {
+    "key": "23b1780cf039cc86",
+    "title": "Fortinet Patches Nearly 100 Vulnerabilities",
+    "url": "https://securityweek.com/fortinet-patches-nearly-100-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product update round-up and vendor feature announcement about using AI for security testing rather than a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T12:41:11.589Z"
+  },
+  {
     "key": "16cd3ca2d475df74",
     "title": "Rubrik enhances DevOps Protection to preserve legitimate work during recovery",
     "url": "https://helpnetsecurity.com/2026/11/11/rubrik-devops-protection",
