@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1904",
+    "slug": "maersk-confirms-data-breach-as-whitearmor-ransomware-demands",
+    "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
+    "summary": "Maersk confirmed that attackers gained unauthorized access to an acquired legacy system and extracted internal data. The WhiteArmor ransomware group subsequently issued a $5 million extortion demand.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "WhiteArmor ransomware"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million",
+        "publisher": "BleepingComputer",
+        "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ransomware",
+      "data-breach",
+      "whitearmor"
+    ],
+    "created_at": "2026-11-11T16:41:26.050Z",
+    "updated_at": "2026-11-11T16:41:26.050Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
+        "source_url": "https://bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million",
+        "added_at": "2026-11-11T16:41:26.050Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world intrusion and extortion demand against a named organisation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1903",
     "slug": "hackers-use-antifox-ai-agents-in-aws-credential-theft-attack",
     "title": "Hackers use AntiFox AI agents in AWS credential‑theft attacks",
