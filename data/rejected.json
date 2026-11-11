@@ -1,5 +1,25 @@
 [
   {
+    "key": "1ff74ee2cb106637",
+    "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+    "url": "https://openai.com/index/cogent-security",
+    "publisher": "OpenAI",
+    "source_id": "openai",
+    "reason": "out of scope: Product launch and vendor feature announcement without a specific security incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T06:11:48.973Z"
+  },
+  {
+    "key": "0f5dc71919ae0dd7",
+    "title": "EU cyber scores look healthy, but 45% of surveyed IT providers take months to patch",
+    "url": "https://helpnetsecurity.com/2026/11/11/eu-enisa-cybersecurity-report",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Survey and statistics report rather than a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T06:11:48.973Z"
+  },
+  {
     "key": "9b9197ecb0b7a617",
     "title": "Nearly half of big firms shelve or close vulnerability findings they haven’t confirmed",
     "url": "https://helpnetsecurity.com/2026/11/11/security-teams-vulnerability-backlog",
