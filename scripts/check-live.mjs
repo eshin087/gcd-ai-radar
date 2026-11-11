@@ -13,7 +13,7 @@
  *
  * Options: --dir <out dir>  --browser <chrome or edge executable>  --port <n>  --verbose
  */
-import { collectErrors, evaluate, launch, navigate, openSite, parseArgs, sleep } from "./lib/browser.mjs";
+import { call, collectErrors, evaluate, launch, navigate, openSite, parseArgs, sleep } from "./lib/browser.mjs";
 
 const args = parseArgs(process.argv.slice(2));
 const verbose = Boolean(args.verbose);
@@ -29,7 +29,7 @@ function check(name, ok, detail) {
 }
 
 async function toggleLane(client, key) {
-  const ok = await evaluate(client, `(() => { const g = document.querySelector('[role="radiogroup"][aria-label="Lane"]'); const b = g && [...g.querySelectorAll('[role="radio"]')].find((x) => x.textContent.trim().toLowerCase().startsWith(${JSON.stringify(key)})); if (!b) return false; b.click(); return true; })()`);
+  const ok = await call(client, `(key) => { const g = document.querySelector('[role="radiogroup"][aria-label="Lane"]'); const b = g && [...g.querySelectorAll('[role="radio"]')].find((x) => x.textContent.trim().toLowerCase().startsWith(key)); if (!b) return false; b.click(); return true; }`, key);
   if (!ok) throw new Error(`no lane tab ${key}`);
   await sleep(250);
   // open every "show N more" so the rows can be counted

@@ -153,6 +153,25 @@ export async function evaluate(client, expression) {
   return r.result.value;
 }
 
+/**
+ * Calls a page function with values passed as arguments, never spliced into
+ * the source: `call(client, "(key) => document.title.includes(key)", key)`.
+ * Use it instead of `evaluate` whenever a value from outside the page script
+ * (a label, a flag, a path) takes part.
+ */
+export async function call(client, functionDeclaration, ...args) {
+  const scope = await client.send("Runtime.evaluate", { expression: "globalThis" });
+  const r = await client.send("Runtime.callFunctionOn", {
+    objectId: scope.result.objectId,
+    functionDeclaration,
+    arguments: args.map((value) => ({ value })),
+    awaitPromise: true,
+    returnByValue: true,
+  });
+  if (r.exceptionDetails) throw new Error(`page script failed: ${r.exceptionDetails.text} ${r.exceptionDetails.exception?.description ?? ""}`.slice(0, 500));
+  return r.result.value;
+}
+
 /** Navigates and waits for the load event, then for `readyExpression` (a page expression) to be truthy, up to ten seconds. */
 export async function navigate(client, url, readyExpression = "true") {
   const loaded = new Promise((resolve) => client.on("Page.loadEventFired", resolve));
