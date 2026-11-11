@@ -1,5 +1,15 @@
 [
   {
+    "key": "fac3eba829342d4f",
+    "title": "ICS Patch Tuesday: Siemens Flags High-Severity Flaws, Node2Shell Exposure",
+    "url": "https://securityweek.com/ics-patch-tuesday-siemens-flags-high-severity-flaws-node2shell-exposure",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Roundup of multiple vendor advisories without specific vulnerability details or exploitation.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T11:11:49.790Z"
+  },
+  {
     "key": "10d60a2c5b6fe27f",
     "title": "Fingerprint trains specialized models to detect distinct fraud types",
     "url": "https://helpnetsecurity.com/2026/11/11/fingerprint-fraud-score",
