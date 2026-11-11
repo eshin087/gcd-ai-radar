@@ -48278,5 +48278,39 @@
       }
     },
     "errors": []
+  },
+  {
+    "id": "run-20261111T094836",
+    "started_at": "2026-11-11T09:48:36.312Z",
+    "finished_at": "2026-11-11T10:04:05.893Z",
+    "mode": "scheduled",
+    "sources": [
+      {
+        "id": "gdelt",
+        "ok": true,
+        "items": 2,
+        "duration_ms": 929324
+      }
+    ],
+    "counts": {
+      "fetched": 2,
+      "prefiltered": 0,
+      "merged": 0,
+      "classified": 0,
+      "published": 0,
+      "review": 0,
+      "rejected": 0,
+      "pending": 0,
+      "updated": 0,
+      "closed": 0,
+      "reopened": 0
+    },
+    "llm": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "by_model": {}
+    },
+    "errors": []
   }
 ]
