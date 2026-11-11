@@ -1,5 +1,65 @@
 [
   {
+    "id": "AIR-2026-1907",
+    "slug": "gmail-ai-summary-misinterprets-phishing-email-as-uspto-appoi",
+    "title": "Gmail AI summary misinterprets phishing email as USPTO appointment",
+    "summary": "An AI summarization feature in an email client misparsed a phishing message, presenting it as a legitimate official appointment. The incident highlights vulnerabilities in AI email parsing where untrusted input manipulates summary output.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "Google"
+    ],
+    "products": [
+      "Gmail AI summary"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://projectsapiens.ai/images/gmail-phishing/gmail-ai-phishing-redacted.png",
+        "publisher": "projectsapiens.ai",
+        "title": "Gmail's AI summary presented a phishing email as a USPTO appointment",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "phishing",
+      "gmail",
+      "ai-summary"
+    ],
+    "created_at": "2026-11-11T17:40:58.715Z",
+    "updated_at": "2026-11-11T17:40:58.715Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Gmail AI summary"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Gmail's AI summary presented a phishing email as a USPTO appointment",
+        "source_url": "https://projectsapiens.ai/images/gmail-phishing/gmail-ai-phishing-redacted.png",
+        "added_at": "2026-11-11T17:40:58.715Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated AI summary misinterpretation of phishing content.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1906",
     "slug": "iran-backed-network-directed-attacks-on-european-and-us-site",
     "title": "Iran-backed Network Directed Attacks on European and US Sites",
