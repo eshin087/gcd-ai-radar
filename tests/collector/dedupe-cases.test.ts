@@ -261,3 +261,39 @@ describe("thresholds", () => {
     expect(dd.llmChecks).toHaveLength(0);
   });
 });
+
+describe("Italian minister: two outlets, two angles, no product", () => {
+  const leak = record({
+    id: "AIR-2026-1834",
+    title: "Italian Foreign Minister personal data leaked on the dark web",
+    type: "not_ai",
+    categories: ["general"],
+    products: [],
+    sources: [src("SecurityWeek", "Italy’s Meloni Blames Pro-Russian Hackers for Leak of Foreign Minister’s Data on the Dark Web", "2026-11-09", "https://securityweek.com/italys-meloni-blames-pro-russian-hackers-for-leak-of-foreign-ministers-data-on-the-dark-web")],
+  });
+  const record2 = candidate({ title: "Pro-Russian hackers target European officials, offer rewards for personal information", url: "https://therecord.media/hackers-russia-italy-noname", publisher: "The Record", published_at: "2026-11-09", source_id: "therecord" });
+  const classifiedTitle = "Pro-Russian hackers leak personal data of Italian Foreign Minister and European officials";
+
+  it("asks the model through the classified title when no product is named", () => {
+    const s = state([...everything, leak]);
+    const subj: ProductSubject = { cluster: { primary: record2, members: [record2] }, title: classifiedTitle, summary: "s", products: [], lane: "breach", incident_date: "2026-11-09" };
+    const checks = productRecordChecks([subj], s, settings);
+    expect(checks).toHaveLength(1);
+    expect(checks[0]!.check.matches.map((m) => [m.ref.id, m.via])).toEqual([["AIR-2026-1834", "title"]]);
+  });
+
+  it("does the same for two clusters of one run", () => {
+    const first = candidate({ title: leak.sources[0]!.title, url: leak.sources[0]!.url, publisher: "SecurityWeek", published_at: "2026-11-09", source_id: "securityweek" });
+    const a: ProductSubject = { cluster: { primary: first, members: [first] }, title: leak.title, summary: "s", products: [], lane: "breach", incident_date: "2026-11-07" };
+    const b: ProductSubject = { cluster: { primary: record2, members: [record2] }, title: classifiedTitle, summary: "s", products: [], lane: "breach", incident_date: "2026-11-09" };
+    const checks = productPairChecks([a, b], settings);
+    expect([...checks.keys()]).toEqual([1]);
+    expect(checks.get(1)!.matches[0]).toMatchObject({ via: "title", clusterIndex: 0 });
+  });
+
+  it("leaves an unrelated classified title alone", () => {
+    const s = state([...everything, leak]);
+    const other = candidate({ title: "Revolve Discloses Data Breach Affecting 1.5 Million Individuals", url: "https://example.com/revolve", published_at: "2026-11-10" });
+    expect(productRecordChecks([subject(other, [], "breach", "2026-11-10")], s, settings)).toHaveLength(0);
+  });
+});

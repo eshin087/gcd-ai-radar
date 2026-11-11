@@ -427,23 +427,25 @@ function datesClose(a: string, b: string, days: number): boolean {
 }
 
 /**
- * Same-run clusters that name the same product, carry no conflicting CVE ids
- * and sit within product_window_days of each other: ask the LLM before two
- * records are created (Cairn's three outlets, LiteLLM's follow-ups).
+ * Same-run clusters that name the same product, or whose classified titles
+ * score llm_check_similarity or more, carry no conflicting CVE ids and sit
+ * within product_window_days of each other: ask the LLM before two records
+ * are created (Cairn's three outlets, LiteLLM's follow-ups). The classified
+ * title is the second chance for outlets whose headlines share no words.
  */
 export function productPairChecks(subjects: ProductSubject[], settings: Settings): Map<number, LlmCheck> {
-  const { product_window_days } = settings.dedupe;
+  const { product_window_days, llm_check_similarity } = settings.dedupe;
   const keys = subjects.map((s) => productKeys(s.products));
   const checks = new Map<number, LlmCheck>();
   subjects.forEach((s, i) => {
-    if (keys[i]!.size === 0) return;
     const matches: LlmMatch[] = [];
     for (let j = 0; j < i; j++) {
       const other = subjects[j]!;
-      if (!intersects(keys[i]!, keys[j]!)) continue;
+      const sameProduct = intersects(keys[i]!, keys[j]!);
+      if (!sameProduct && titleSimilarity(s.title, other.title) < llm_check_similarity) continue;
       if (cveConflict(subjectCves(s), subjectCves(other))) continue;
       if (!datesClose(s.incident_date, other.incident_date, product_window_days) && !datesClose(s.cluster.primary.published_at, other.cluster.primary.published_at, product_window_days)) continue;
-      matches.push({ ref: subjectRef(other, j), similarity: titleSimilarity(s.title, other.title), via: "product", clusterIndex: j });
+      matches.push({ ref: subjectRef(other, j), similarity: titleSimilarity(s.title, other.title), via: sameProduct ? "product" : "title", clusterIndex: j });
     }
     if (matches.length) {
       // lane equality ranks, it does not filter
@@ -455,29 +457,36 @@ export function productPairChecks(subjects: ProductSubject[], settings: Settings
 }
 
 /**
- * Classified clusters that name the same product as a recent record: ask the
- * LLM whether the new report is a follow-up (then it merges as an update) or a
- * new event. CVE-less records rank first for CVE-less candidates, so a
+ * Classified clusters that name the same product as a recent record, or whose
+ * classified title scores llm_check_similarity or more against a record first
+ * reported within CLASSIFIED_TITLE_DAYS: ask the LLM whether the new report is
+ * a follow-up (then it merges as an update) or a new event. CVE-less records rank first for CVE-less candidates, so a
  * product's CVE records cannot crowd out its supply-chain incident.
  */
+/** How far back a record's first report may lie for the classified-title trigger (the product trigger has its own windows). */
+export const CLASSIFIED_TITLE_DAYS = 7;
+
 export function productRecordChecks(subjects: ProductSubject[], state: State, settings: Settings): { subject: ProductSubject; check: LlmCheck }[] {
-  const { date_window_days, product_window_days } = settings.dedupe;
-  const index = indexState(state).filter((i) => i.productKeys.size > 0);
+  const { date_window_days, product_window_days, llm_check_similarity } = settings.dedupe;
+  const index = indexState(state);
   const out: { subject: ProductSubject; check: LlmCheck }[] = [];
   for (const s of subjects) {
     const keys = productKeys(s.products);
-    if (keys.size === 0) continue;
     const cves = subjectCves(s);
-    const scored: { idx: Indexed; sim: number }[] = [];
+    const scored: { idx: Indexed; sim: number; via: MatchVia }[] = [];
     for (const idx of index) {
       const inc = idx.incident;
-      if (!intersects(keys, idx.productKeys)) continue;
-      if (daysBetween(inc.first_reported, s.cluster.primary.published_at) > date_window_days) continue;
+      const reportGap = daysBetween(inc.first_reported, s.cluster.primary.published_at);
+      if (reportGap > date_window_days) continue;
       if (cveConflict(cves, idx.cves)) continue;
-      const incidentDatesClose = datesClose(s.incident_date, inc.incident_date, product_window_days);
-      const reportClose = daysBetween(inc.first_reported, s.cluster.primary.published_at) <= 3;
-      if (!incidentDatesClose && !reportClose) continue;
-      scored.push({ idx, sim: bestSimilarity(s.title, idx.titles) });
+      if (intersects(keys, idx.productKeys)) {
+        const incidentDatesClose = datesClose(s.incident_date, inc.incident_date, product_window_days);
+        if (!incidentDatesClose && reportGap > 3) continue;
+        scored.push({ idx, sim: bestSimilarity(s.title, idx.titles), via: "product" });
+      } else if (reportGap <= CLASSIFIED_TITLE_DAYS) {
+        const sim = bestSimilarity(s.title, idx.titles);
+        if (sim >= llm_check_similarity) scored.push({ idx, sim, via: "title" });
+      }
     }
     if (!scored.length) continue;
     const candidateHasCves = cves.length > 0;
@@ -486,6 +495,8 @@ export function productRecordChecks(subjects: ProductSubject[], state: State, se
         const cveLess = Number(b.idx.cves.size === 0) - Number(a.idx.cves.size === 0);
         if (cveLess) return cveLess;
       }
+      const product = Number(b.via === "product") - Number(a.via === "product");
+      if (product) return product;
       const lane = Number(laneOf(b.idx.incident) === s.lane) - Number(laneOf(a.idx.incident) === s.lane);
       return lane || b.sim - a.sim;
     });
@@ -493,7 +504,7 @@ export function productRecordChecks(subjects: ProductSubject[], state: State, se
       subject: s,
       check: {
         candidate: subjectCandidate(s),
-        matches: scored.slice(0, MAX_MATCHES).map((x) => ({ ref: refOf(x.idx.incident), similarity: x.sim, via: "product" as const, incident: x.idx.incident, pool: x.idx.pool })),
+        matches: scored.slice(0, MAX_MATCHES).map((x) => ({ ref: refOf(x.idx.incident), similarity: x.sim, via: x.via, incident: x.idx.incident, pool: x.idx.pool })),
       },
     });
   }

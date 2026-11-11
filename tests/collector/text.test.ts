@@ -66,3 +66,12 @@ describe("matchers and helpers", () => {
     expect(truncate("short", 10)).toBe("short");
   });
 });
+
+describe("cleanProducts", () => {
+  it("drops descriptions and keeps names", async () => {
+    const { cleanProducts, isGenericProduct } = await import("../../collector/lib/text");
+    expect(cleanProducts(["assistant interface", "dark web leak site", "crypto scam network", "deepfake generator", "deepfake", "firewalls"])).toEqual([]);
+    expect(cleanProducts([" LiteLLM ", "litellm", "fastmcp server", "mcp python sdk", "Copilot Studio", "n8n", "LiteLLM "])).toEqual(["LiteLLM", "litellm", "fastmcp server", "mcp python sdk", "Copilot Studio", "n8n"]);
+    expect(isGenericProduct("Dark Web Leak Site")).toBe(false); // a capital means the model meant a name
+  });
+});

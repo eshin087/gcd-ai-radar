@@ -567,6 +567,13 @@ export default function MethodologyPage() {
           trade&rsquo;s: CISA&rsquo;s deadline is the &ldquo;KEV due date&rdquo;, and a record where data, money or service was lost reads &ldquo;confirmed
           impact&rdquo; (it read &ldquo;harm&rdquo;). The three lists get a second line with the CVE id and the CVSS score. No counting rule changed.
         </li>
+        <li>
+          2026-11-11 · four collector rules. A new report is now compared with the week&rsquo;s records by the title the classifier writes for it, so
+          two outlets&rsquo; angles on one event meet even when their headlines share no words. A report with no AI role whose every headline leads
+          with arrests, sentences or a takedown is a follow-up and is not published as a new record. A doubtful out-of-scope item with no AI role is
+          rejected instead of waiting in the review queue. Product lists hold names only, never descriptions such as &ldquo;deepfake generator&rdquo;
+          (50 records cleaned). One duplicate pair merged, one police-action record and nine queued items removed.
+        </li>
       </ul>
     </div>
   );
