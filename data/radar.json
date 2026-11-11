@@ -1,50 +1,50 @@
 {
-  "fetched_at": "2026-11-05T18:57:23.478Z",
+  "fetched_at": "2026-11-11T19:11:29.546Z",
   "range": "7d",
   "bot_share": {
-    "value": 39.3,
-    "previous": 38.71
+    "value": 39.21,
+    "previous": 39.12
   },
-  "ai_crawler_share_of_bots": 15.78,
-  "derived_ai_share_of_requests": 6.2,
+  "ai_crawler_share_of_bots": 15.41,
+  "derived_ai_share_of_requests": 6.04,
   "top_ai_bots": [
     {
       "name": "Googlebot",
-      "share": 24.59
+      "share": 25.94
     },
     {
       "name": "ClaudeBot",
-      "share": 12.68
+      "share": 12.41
     },
     {
       "name": "Applebot",
-      "share": 8.42
+      "share": 9.05
     },
     {
       "name": "Meta-ExternalAgent",
-      "share": 7.79
+      "share": 7.78
     }
   ],
   "crawl_purpose": [
     {
-      "name": "Training",
-      "share": 40.76
+      "name": "Mixed Purpose",
+      "share": 41.97
     },
     {
-      "name": "Mixed Purpose",
-      "share": 40.53
+      "name": "Training",
+      "share": 41.74
     },
     {
       "name": "Search",
-      "share": 12.9
+      "share": 12.03
     },
     {
       "name": "User Action",
-      "share": 4.29
+      "share": 3.01
     },
     {
       "name": "Undeclared",
-      "share": 1.53
+      "share": 1.25
     }
   ],
   "attribution": {

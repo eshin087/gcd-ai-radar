@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1909",
+    "slug": "prompt-injection-esq-pwning-ai-agent-guardrails-with-lawyers",
+    "title": "Prompt Injection, Esq.: pwning AI agent guardrails with lawyerspeak",
+    "summary": "A researcher demonstrated that fake legal letters can trick read-only hiring bots into bypassing guardrails. The attack highlights vulnerabilities in AI agent instructions.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "hiring bot"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://mrnice.dev/posts/heavyweight-guardrails",
+        "publisher": "mrnice.dev",
+        "title": "Prompt Injection, Esq.: pwning AI agent guardrails with lawyerspeak",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt_injection",
+      "agent_hijack",
+      "guardrails"
+    ],
+    "created_at": "2026-11-11T19:11:25.967Z",
+    "updated_at": "2026-11-11T19:11:25.967Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Prompt Injection, Esq.: pwning AI agent guardrails with lawyerspeak",
+        "source_url": "https://mrnice.dev/posts/heavyweight-guardrails",
+        "added_at": "2026-11-11T19:11:25.967Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research with no real-world exploitation confirmed.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1908",
     "slug": "ghsa-v9h7-jj4g-f862-llm-api-key-leak-vulnerability",
     "title": "GHSA-v9h7-jj4g-f862: llm API Key Leak Vulnerability",
