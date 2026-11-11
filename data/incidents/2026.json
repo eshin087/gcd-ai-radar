@@ -1,5 +1,128 @@
 [
   {
+    "id": "AIR-2026-1906",
+    "slug": "iran-backed-network-directed-attacks-on-european-and-us-site",
+    "title": "Iran-backed Network Directed Attacks on European and US Sites",
+    "summary": "An unsealed US indictment revealed that an Iran-backed network directed attacks against synagogues and bank buildings across Europe. The conspirators coordinated the campaign using platforms like FaceTime.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "FaceTime"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://therecord.media/iran-backed-network-directed-london-attacks-over-facetime",
+        "publisher": "The Record",
+        "title": "Iran-backed network directed London attacks over FaceTime, US prosecutors say",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "indictment",
+      "iran",
+      "coordinated-attack"
+    ],
+    "created_at": "2026-11-11T17:12:23.174Z",
+    "updated_at": "2026-11-11T17:12:23.174Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [
+      "Synagogues in Belgium, Netherlands, and London",
+      "U.S. bank buildings"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Iran-backed network directed London attacks over FaceTime, US prosecutors say",
+        "source_url": "https://therecord.media/iran-backed-network-directed-london-attacks-over-facetime",
+        "added_at": "2026-11-11T17:12:23.174Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world impact and criminal charges resulting from an international attack campaign.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1905",
+    "slug": "cve-2026-108186-zoom-workplace-critical-privilege-escalation",
+    "title": "CVE-2026-108186: Zoom Workplace Critical Privilege Escalation Flaw",
+    "summary": "Zoom patched a critical improper input validation flaw in Zoom Workplace for Windows that allowed unauthenticated remote privilege escalation. The vendor released software updates to address the vulnerability.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Zoom Workplace"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-108186",
+      "privilege-escalation",
+      "zoom"
+    ],
+    "created_at": "2026-11-11T17:12:23.174Z",
+    "updated_at": "2026-11-11T17:12:23.174Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-108186"
+    ],
+    "affected": [
+      "Zoom Workplace for Windows"
+    ],
+    "fixed_in": [
+      "Latest version"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
+        "source_url": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+        "added_at": "2026-11-11T17:12:23.174Z"
+      }
+    ],
+    "action": "Update to the latest Zoom Workplace version.",
+    "severity_note": "Critical rating (CVSS 9.6) with a vendor fix available.",
+    "cvss": 9.6
+  },
+  {
     "id": "AIR-2026-1904",
     "slug": "maersk-confirms-data-breach-as-whitearmor-ransomware-demands",
     "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
