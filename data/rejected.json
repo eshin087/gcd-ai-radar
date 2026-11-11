@@ -1,5 +1,15 @@
 [
   {
+    "key": "0a0e78cecea37b89",
+    "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
+    "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools",
+    "publisher": "Unit 42",
+    "source_id": "unit42",
+    "reason": "out of scope: General discussion and analysis of AI-powered red teaming tools without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-11T23:11:05.000Z"
+  },
+  {
     "key": "9d46c928803aa777",
     "title": "Attackers Say 'Hello' to a Different Scale of Cloud Attack",
     "url": "https://darkreading.com/cloud-security/attackers-hello-scale-cloud-attack",

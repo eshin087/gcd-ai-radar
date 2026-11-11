@@ -1,5 +1,118 @@
 [
   {
+    "id": "AIR-2026-1911",
+    "slug": "baker-tilly-notifies-clients-of-data-breach-via-third-party",
+    "title": "Baker Tilly notifies clients of data breach via third-party provider",
+    "summary": "Baker Tilly Advisory Group has begun notifying clients that a third-party data breach has exposed personal information regarding clients and their dependents. The organization is responding to the security incident.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider",
+        "publisher": "BleepingComputer",
+        "title": "Baker Tilly notifies clients of data breach at third-party provider",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "third-party",
+      "pii"
+    ],
+    "created_at": "2026-11-11T23:11:05.000Z",
+    "updated_at": "2026-11-11T23:11:05.000Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Baker Tilly notifies clients of data breach at third-party provider",
+        "source_url": "https://bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider",
+        "added_at": "2026-11-11T23:11:05.000Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed PII data breach impacting clients.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1910",
+    "slug": "active-screenconnect-attacks-breach-msps-and-impact-dozens-o",
+    "title": "Active ScreenConnect attacks breach MSPs and impact dozens of organizations",
+    "summary": "Threat actors are actively exploiting ConnectWise ScreenConnect to deploy unauthorized remote-access software across managed service provider customer environments. ConnectWise is currently investigating the ongoing campaign.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "ScreenConnect"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations",
+        "publisher": "BleepingComputer",
+        "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "screenconnect",
+      "msp",
+      "remote-access",
+      "malware"
+    ],
+    "created_at": "2026-11-11T23:11:05.000Z",
+    "updated_at": "2026-11-11T23:11:05.000Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+        "source_url": "https://bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations",
+        "added_at": "2026-11-11T23:11:05.000Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world exploitation and attacks against multiple organizations.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1909",
     "slug": "prompt-injection-esq-pwning-ai-agent-guardrails-with-lawyers",
     "title": "Prompt Injection, Esq.: pwning AI agent guardrails with lawyerspeak",
