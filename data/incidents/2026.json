@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1898",
+    "slug": "youhack-data-breach-exposes-7-160-849-accounts",
+    "title": "YouHack data breach exposes 7,160,849 accounts",
+    "summary": "The Russian-language hacking forum YouHack suffered a data breach exposing over seven million accounts containing email addresses, usernames, IP addresses, and password hashes. The compromised data was later redistributed as part of a larger data corpus.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "YouHack"
+    ],
+    "incident_date": "2013-05-29",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-11",
+    "sources": [
+      {
+        "url": "https://haveibeenpwned.com/Breach/YouHack",
+        "publisher": "Have I Been Pwned",
+        "title": "YouHack data breach exposes 7,160,849 accounts",
+        "published_at": "2026-11-11"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "credential-leak",
+      "forum"
+    ],
+    "created_at": "2026-11-11T10:41:25.457Z",
+    "updated_at": "2026-11-11T10:41:25.457Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-11",
+        "title": "YouHack data breach exposes 7,160,849 accounts",
+        "source_url": "https://haveibeenpwned.com/Breach/YouHack",
+        "added_at": "2026-11-11T10:41:25.457Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world loss of personal data for millions of accounts.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1897",
     "slug": "railway-breach-leads-to-stolen-ai-keys-and-740-000-in-unauth",
     "title": "Railway Breach Leads to Stolen AI Keys and $740,000 in Unauthorized Usage",
@@ -759,9 +816,15 @@
         "publisher": "SecurityWeek",
         "title": "Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks",
+        "publisher": "BleepingComputer",
+        "title": "CISA flags Cisco BroadWorks flaw as actively exploited in attacks",
+        "published_at": "2026-11-11"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "seed_nvd",
@@ -771,7 +834,7 @@
       "xxe"
     ],
     "created_at": "2026-11-10T22:41:43.117Z",
-    "updated_at": "2026-11-11T09:18:46.244Z",
+    "updated_at": "2026-11-11T10:41:25.457Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
