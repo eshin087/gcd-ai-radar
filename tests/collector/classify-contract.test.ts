@@ -71,6 +71,8 @@ describe("decide with the curation bar", () => {
   it("keeps the out-of-scope branches first", () => {
     expect(decide(classification({ in_scope: false, confidence: 0.95 }), settings).status).toBe("rejected");
     expect(decide(classification({ in_scope: false, confidence: 0.5 }), settings).status).toBe("review");
+    // no AI role: the bar decides, so a doubtful out-of-scope item never waits for a reviewer
+    expect(decide(classification({ in_scope: false, type: "not_ai", categories: ["general"], confidence: 0.5 }), settings).status).toBe("rejected");
   });
 
   it("rejects a general item below the bar with the reason, whatever its confidence", () => {
@@ -83,6 +85,19 @@ describe("decide with the curation bar", () => {
   it("publishes a general item that clears the bar and treats the bar as advice for AI items", () => {
     expect(decide(classification({ type: "not_ai", categories: ["general"], newsworthy: true }), settings).status).toBe("published");
     expect(decide(classification({ newsworthy: false }), settings).status).toBe("published");
+  });
+
+  it("rejects a general item whose every headline leads with police or court action", () => {
+    const general = classification({ type: "not_ai", categories: ["general"], newsworthy: true, severity: 4 });
+    const arrests = ["Ukraine dismantles crypto scam network that stole €4.3 million", "Ukraine arrests four in $5 million crypto scam targeting Germans"];
+    const d = decide(general, settings, arrests);
+    expect(d.status).toBe("rejected");
+    expect(d.reason).toMatch(/law-enforcement follow-up/);
+    // one outlet reporting the attack itself keeps the record
+    expect(decide(general, settings, [arrests[0]!, "Crypto scam call centres stole €4.3 million from German investors"]).status).toBe("published");
+    // AI items are not touched: the AI role decides their inclusion
+    expect(decide(classification({ severity: 4 }), settings, ["Trio arrested over deepfake CEO fraud"]).status).toBe("published");
+    expect(decide(general, settings, ["Hackers seize control of city water system"]).status).toBe("published");
   });
 
   it("publishes general severity-4 claims unless the setting holds them, and leaves AI ones to the old one", () => {

@@ -264,3 +264,44 @@ export function truncate(s: string, max: number): string {
   const lastSpace = cut.lastIndexOf(" ");
   return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).trimEnd() + "…";
 }
+
+/* ---------- Product names ---------- */
+
+/** Last words that make a lower-case phrase a description of a kind of thing, not a product's name. */
+const GENERIC_PRODUCT_HEADS = new Set([
+  "generator", "generators", "technology", "tool", "tools", "system", "systems", "software", "website", "websites", "site", "sites",
+  "network", "networks", "servers", "registries", "datasets", "chatbots", "bot", "bots", "interface", "malware", "models", "agents",
+  "units", "accounts", "apps", "applications", "audio", "video", "assistants", "watermarking", "devices", "infrastructure", "platform", "platforms",
+]);
+
+/** Single lower-case words the classifier has returned as a product that name a kind of thing. */
+const GENERIC_PRODUCT_WORDS = new Set(["deepfake", "deepfakes", "firewalls", "llm", "llms", "chatbot", "chatbots", "malware", "ransomware", "website", "ai"]);
+
+/**
+ * Whether a classifier "product" is a description rather than a name
+ * ("assistant interface", "dark web leak site", "crypto scam network"). A
+ * name with a capital or a digit is always kept; an all-lower-case one is
+ * dropped when it is a listed generic word or a phrase that ends in one, so
+ * "litellm", "fastmcp server" and "mcp python sdk" stay.
+ */
+export function isGenericProduct(name: string): boolean {
+  const n = name.trim();
+  if (!n || /[A-Z0-9]/.test(n)) return false;
+  const words = n.split(/\s+/);
+  if (words.length === 1) return GENERIC_PRODUCT_WORDS.has(n);
+  return GENERIC_PRODUCT_HEADS.has(words[words.length - 1]!);
+}
+
+/** The product list as stored: trimmed, without duplicates or descriptions, at most ten. */
+export function cleanProducts(products: readonly string[]): string[] {
+  return [...new Set(products.map((p) => p.trim()).filter((p) => p && !isGenericProduct(p)))].slice(0, 10);
+}
+
+/* ---------- Law-enforcement follow-ups ---------- */
+
+const ENFORCEMENT_RE = /\b(arrest(s|ed)?|dismantl(e|es|ed)|extradit(e|es|ed|ion)|sentenced|indict(s|ed|ment)|pleads? guilty|convicted|jailed|takedown)\b/i;
+
+/** Whether a headline leads with police or court action ("Ukraine dismantles…", "Four arrested…") instead of the attack. */
+export function isEnforcementTitle(title: string): boolean {
+  return ENFORCEMENT_RE.test(title);
+}

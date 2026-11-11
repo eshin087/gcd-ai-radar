@@ -20,6 +20,7 @@ import {
   type Merge,
   type ProductSubject,
 } from "./dedupe";
+import { cleanProducts } from "../lib/text";
 import { decide } from "./decide";
 import { enrichHints } from "./enrich";
 import { enrichVersions } from "./ghsa-lookup";
@@ -85,7 +86,7 @@ function uniqueByKey(cands: Candidate[]): Candidate[] {
 
 function subjectOf(c: ClassifiedCluster): ProductSubject {
   const r = c.result;
-  return { cluster: c.cluster, title: r.title, summary: r.summary, products: r.products, lane: r.lane, incident_date: r.incident_date };
+  return { cluster: c.cluster, title: r.title, summary: r.summary, products: cleanProducts(r.products), lane: r.lane, incident_date: r.incident_date };
 }
 
 export async function runCollector(opts: RunOptions): Promise<RunSummary> {
@@ -256,8 +257,9 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
     log.debug("classified", { title: result.title, type: result.type, lane: result.lane, severity: result.severity, newsworthy: result.newsworthy, why: result.newsworthy_reason, conf: result.confidence, sources: cluster.members.length });
   }
 
-  // 8b. Product pass: now that the model has named products, clusters of this run that name the same product
-  // (Cairn's three outlets) are checked against each other, then every cluster against recent records (LiteLLM's follow-ups).
+  // 8b. Product pass: now that the model has named products and written a neutral title, clusters of this run that name the same
+  // product (Cairn's three outlets) or whose classified titles are alike are checked against each other, then every cluster
+  // against recent records (LiteLLM's follow-ups; two outlets' angles on the Italian minister's leaked data).
   const subjects = cls.classified.map(subjectOf);
   const productPairs = productPairChecks(subjects, settings);
   const productPairDecisions = await resolveSameIncident([...productPairs.values()], router);
@@ -335,7 +337,7 @@ export async function runCollector(opts: RunOptions): Promise<RunSummary> {
   const review: Incident[] = [];
   const rejected: RejectedRecord[] = [];
   for (const { cluster, result } of classified) {
-    const { status, reason } = decide(result, settings);
+    const { status, reason } = decide(result, settings, cluster.members.map((m) => m.title));
     if (status === "rejected") {
       for (const m of cluster.members) {
         rejected.push({

@@ -61,7 +61,7 @@ FIELD RULES:
 - title: neutral, specific, at most 110 characters, names the product, organisation or actor and what happened; no publisher name, no clickbait, no trailing punctuation. For vulnerability records start with the CVE id when one exists ("CVE-2026-1234: ..."); never start with a GHSA id or the words "Duplicate Advisory".
 - summary: exactly two sentences, at most 60 words, in your own words (never quote the source), stating what happened and the known impact or response. No speculation.
 - incident_date: when it happened or was disclosed, never later than the report date. Use YYYY-MM-DD with precision "day" when known, YYYY-MM with "month", or YYYY with "year".
-- products: specific product, service, model or library names (e.g. "ChatGPT", "vLLM", "FortiOS", "Oracle E-Business Suite").
+- products: proper names only, of the specific product, service, model or library involved (e.g. "ChatGPT", "vLLM", "FortiOS", "Oracle E-Business Suite"). Never a description of a kind of thing ("assistant interface", "dark web leak site", "deepfake generator", "phishing websites") and never the attacker's operation; [] when the sources name no product.
 - affected, fixed_in: version entries such as "vLLM < 0.9.1" or "FortiOS 7.4.0 to 7.4.3", only when a source states them; otherwise [].
 - action: one imperative sentence in your own words saying what an affected team should do ("Update to 1.107.1 and rotate any keys the proxy logged"), or "" when no source says.
 - severity_note: one short clause saying why this severity (what was confirmed: exploitation, loss, a fix), at most 200 characters.

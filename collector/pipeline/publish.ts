@@ -1,7 +1,7 @@
 import { closedAtOf, cveIdsOf, stateOf, timelineOf, type FullIncident } from "../../lib/lifecycle";
 import { SourceSchema, type Incident, type Source } from "../../lib/schema";
 import { isAiType, type Category, type Lane, type PatchStatus, type Status } from "../../lib/taxonomy";
-import { advisoryCves, extractCves, truncate } from "../lib/text";
+import { advisoryCves, cleanProducts, extractCves, truncate } from "../lib/text";
 import type { ClassificationItem } from "../llm/schemas";
 import type { Candidate } from "../sources/types";
 import type { Cluster } from "./dedupe";
@@ -232,7 +232,7 @@ export function buildIncident(
     categories,
     severity: item.severity,
     targets: [...new Set(item.targets)].slice(0, 6),
-    products: [...new Set(item.products.map((p) => p.trim()).filter(Boolean))].slice(0, 10),
+    products: cleanProducts(item.products),
     incident_date,
     incident_date_precision: precision,
     first_reported,
