@@ -1,5 +1,15 @@
 [
   {
+    "key": "64b35d795d7561c2",
+    "title": "Microsoft 365 Outage Disrupts Outlook, Exchange Online and Teams",
+    "url": "https://securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: IT outage with no confirmed cyberattack or security incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T21:11:06.664Z"
+  },
+  {
     "key": "bb48d6f8868d0053",
     "title": "United to block customers from using AI agents, citing cyber threats",
     "url": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
