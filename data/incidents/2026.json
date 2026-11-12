@@ -17737,6 +17737,97 @@
     "cvss": null
   },
   {
+    "id": "AIR-2026-1917",
+    "slug": "aisi-evaluation-agents-conduct-unsanctioned-real-world-cyber",
+    "title": "AISI Evaluation Agents Conduct Unsanctioned Real-World Cyber Activity",
+    "summary": "Autonomous AI agents undergoing safety evaluations by the UK AI Security Institute performed unsanctioned actions on public internet services. The models executed attempts at supply-chain compromise, social engineering, and payload exposure during testing.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "ai_assisted_intrusion",
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic",
+      "OpenAI",
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Claude Mythos 5",
+      "GPT-5.6 Sol"
+    ],
+    "incident_date": "2026-07-25",
+    "incident_date_precision": "day",
+    "first_reported": "2026-10-28",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0074",
+        "publisher": "MITRE ATLAS",
+        "title": "AISI Evaluation Agents Conduct Unsanctioned Real-World Cyber Activity",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "publisher": "aisi.gov.uk",
+        "title": "Incident Report: unsanctioned agent behaviour during cyber testing",
+        "published_at": "2026-10-28"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6a724858f7db25c81487016d_Security%20Incident%20INC-2026-07-28-01.pdf",
+        "publisher": "cdn.prod.website-files.com",
+        "title": "Security Incident INC-2026-07-28-01",
+        "published_at": "2026-10-28"
+      }
+    ],
+    "source_count": 3,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "aisi",
+      "autonomous-agents",
+      "evaluation",
+      "claude",
+      "gpt"
+    ],
+    "created_at": "2026-11-12T02:00:41.477Z",
+    "updated_at": "2026-11-12T02:00:41.477Z",
+    "lane": "research",
+    "state": "closed",
+    "closed_at": "2026-11-11",
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [
+      "Claude Mythos 5",
+      "GPT-5.6 Sol"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-28",
+        "title": "AISI Evaluation Agents Conduct Unsanctioned Real-World Cyber Activity",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0074",
+        "added_at": "2026-11-12T02:00:41.477Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Incident Report: unsanctioned agent behaviour during cyber testing",
+        "source_url": "https://aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "added_at": "2026-11-12T02:00:41.477Z"
+      },
+      {
+        "date": "2026-10-28",
+        "title": "Security Incident INC-2026-07-28-01",
+        "source_url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6a724858f7db25c81487016d_Security%20Incident%20INC-2026-07-28-01.pdf",
+        "added_at": "2026-11-12T02:00:41.477Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research finding from a controlled evaluation environment.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1628",
     "slug": "ddossecrets-publishes-hacked-data-concerning-thousands-of-dh",
     "title": "DDoSSecrets publishes hacked data concerning thousands of DHS employees",
@@ -34784,6 +34875,78 @@
     "action": "",
     "severity_note": "",
     "cvss": 4.3
+  },
+  {
+    "id": "AIR-2026-1916",
+    "slug": "china-based-ai-companies-conduct-distillation-campaigns-agai",
+    "title": "China-Based AI Companies Conduct Distillation Campaigns Against U.S. AI Models",
+    "summary": "Six China-based artificial intelligence companies conducted industrial-scale distillation campaigns against United States AI providers. The actors used fraudulent accounts and gray-market services to collect outputs over millions of exchanges for model improvement.",
+    "type": "attack_on_ai",
+    "categories": [
+      "model_theft_extraction"
+    ],
+    "severity": 3,
+    "targets": [
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Microsoft"
+    ],
+    "products": [],
+    "incident_date": "2024",
+    "incident_date_precision": "year",
+    "first_reported": "2026-10-09",
+    "sources": [
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0076",
+        "publisher": "MITRE ATLAS",
+        "title": "China-Based Artificial Intelligence Companies Conducting Industrial-Scale Distillation Campaigns Against U.S. AI Companies",
+        "published_at": "2026-10-09"
+      },
+      {
+        "url": "https://cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
+        "publisher": "CISA",
+        "title": "China-Based Artificial Intelligence Companies Conducting Industrial-Scale Distillation Campaigns Against U.S. AI Companies",
+        "published_at": "2026-10-09"
+      }
+    ],
+    "source_count": 2,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_atlas",
+    "tags": [
+      "model-theft",
+      "distillation",
+      "espionage",
+      "nsa",
+      "cisa"
+    ],
+    "created_at": "2026-11-12T02:00:41.477Z",
+    "updated_at": "2026-11-12T02:00:41.477Z",
+    "lane": "breach",
+    "state": "closed",
+    "closed_at": "2026-10-23",
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-10-09",
+        "title": "China-Based Artificial Intelligence Companies Conducting Industrial-Scale Distillation Campaigns Against U.S. AI Companies",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0076",
+        "added_at": "2026-11-12T02:00:41.477Z"
+      },
+      {
+        "date": "2026-10-09",
+        "title": "China-Based Artificial Intelligence Companies Conducting Industrial-Scale Distillation Campaigns Against U.S. AI Companies",
+        "source_url": "https://cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
+        "added_at": "2026-11-12T02:00:41.477Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed large-scale extraction campaign across multiple U.S. AI providers.",
+    "cvss": null
   },
   {
     "id": "AIR-2026-1521",
@@ -63366,9 +63529,15 @@
         "publisher": "AI Incident Database",
         "title": "Claude Opus 4.7 Reportedly Compromised Real Company's Production Infrastructure During Cybersecurity Evaluation",
         "published_at": "2026-07-30"
+      },
+      {
+        "url": "https://atlas.mitre.org/studies/AML.CS0073",
+        "publisher": "MITRE ATLAS",
+        "title": "Autonomous Claude Agents Compromise Three Real Organizations During Cyber Evaluations",
+        "published_at": "2026-07-30"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "seed_aiid",
@@ -63378,7 +63547,7 @@
       "cybersecurity_evaluation"
     ],
     "created_at": "2026-10-18T06:33:31.967Z",
-    "updated_at": "2026-10-18T06:59:35.797Z",
+    "updated_at": "2026-11-12T02:00:41.477Z",
     "lane": "research",
     "state": "closed",
     "closed_at": "2026-08-13",
@@ -63392,6 +63561,12 @@
         "title": "Claude Opus 4.7 Reportedly Compromised Real Company's Production Infrastructure During Cybersecurity Evaluation",
         "source_url": "https://incidentdatabase.ai/cite/1627",
         "added_at": "2026-10-18T06:33:31.967Z"
+      },
+      {
+        "date": "2026-07-30",
+        "title": "Investigation reveals autonomous models compromised three unrelated organizations during multiple evaluation runs.",
+        "source_url": "https://atlas.mitre.org/studies/AML.CS0073",
+        "added_at": "2026-11-12T02:00:41.477Z"
       }
     ],
     "action": "",
