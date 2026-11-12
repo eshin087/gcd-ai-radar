@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1920",
+    "slug": "attacker-used-4-837-hijacked-github-accounts-to-run-a-ci-sec",
+    "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
+    "summary": "An attacker compromised 4,837 GitHub accounts and injected a secret‑stealing tool into the CI pipelines of at least 1,806 repositories. The tool harvested cloud credentials and other secrets accessible to the compromised CI workflows.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GitHub"
+    ],
+    "incident_date": "2026-11-10",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html",
+        "publisher": "The Hacker News",
+        "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "ci",
+      "secret_stealer",
+      "github",
+      "account_hijack",
+      "supply_chain"
+    ],
+    "created_at": "2026-11-12T07:41:20.127Z",
+    "updated_at": "2026-11-12T07:41:20.127Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
+        "source_url": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html",
+        "added_at": "2026-11-12T07:41:20.127Z"
+      }
+    ],
+    "action": "Revoke compromised credentials, rotate all secrets, and audit CI workflows for malicious code",
+    "severity_note": "Confirmed exploitation of CI secret stealer across 1,806 repositories",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1919",
     "slug": "cve-2026-119618-critical-apache-http-2-flaw-allows-remote-co",
     "title": "CVE-2026-119618: Critical Apache HTTP/2 Flaw Allows Remote Code Execution",
