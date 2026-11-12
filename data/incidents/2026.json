@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1918",
+    "slug": "credential-stuffing-campaign-spoofs-consumer-ai-agent-traffi",
+    "title": "Credential stuffing campaign spoofs consumer AI agent traffic",
+    "summary": "Attackers launched a bulk credential stuffing operation disguised as a consumer AI agent, generating hundreds of thousands of sign-in page visits. The automated traffic attempted unauthorized logins using stolen credentials before failing.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion",
+      "other"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-10",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/12/bots-ai-agent-impersonation",
+        "publisher": "Help Net Security",
+        "title": "Bots pose as AI agents, AI agents pose as humans, and defenses believe both",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "credential-stuffing",
+      "botnet",
+      "spoofing"
+    ],
+    "created_at": "2026-11-12T05:11:41.558Z",
+    "updated_at": "2026-11-12T05:11:41.558Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Bots pose as AI agents, AI agents pose as humans, and defenses believe both",
+        "source_url": "https://helpnetsecurity.com/2026/11/12/bots-ai-agent-impersonation",
+        "added_at": "2026-11-12T05:11:41.558Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world credential stuffing attack campaign with significant volume.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1915",
     "slug": "from-attack-surface-to-defense-architecture-for-agentic-codi",
     "title": "From Attack Surface to Defense Architecture for Agentic Coding Harnesses",
@@ -303,9 +359,15 @@
         "publisher": "BleepingComputer",
         "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html",
+        "publisher": "The Hacker News",
+        "title": "ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -316,7 +378,7 @@
       "malware"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-11T23:11:05.000Z",
+    "updated_at": "2026-11-12T05:11:41.558Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -330,6 +392,12 @@
         "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
         "source_url": "https://bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations",
         "added_at": "2026-11-11T23:11:05.000Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Vendor disabled five third-party extensions and reported no evidence of software vulnerabilities.",
+        "source_url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html",
+        "added_at": "2026-11-12T05:11:41.558Z"
       }
     ],
     "action": "",
