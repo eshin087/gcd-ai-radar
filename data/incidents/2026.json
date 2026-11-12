@@ -740,9 +740,15 @@
         "publisher": "The Hacker News",
         "title": "ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Deploy Malware in Fresh ScreenConnect Campaign",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -753,7 +759,7 @@
       "malware"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-12T05:11:41.558Z",
+    "updated_at": "2026-11-12T10:59:27.860Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -773,6 +779,12 @@
         "title": "Vendor disabled five third-party extensions and reported no evidence of software vulnerabilities.",
         "source_url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html",
         "added_at": "2026-11-12T05:11:41.558Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Attackers exploited a vulnerability in a legitimate extension to bypass authentication.",
+        "source_url": "https://securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign",
+        "added_at": "2026-11-12T10:59:27.860Z"
       }
     ],
     "action": "",
