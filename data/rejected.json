@@ -1,5 +1,15 @@
 [
   {
+    "key": "b539286dd7e47901",
+    "title": "Operation Endgame malware takedown turns up over 6 million stolen logins",
+    "url": "https://helpnetsecurity.com/2026/11/12/europol-operation-endgame-malware-takedown",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "law-enforcement follow-up: every headline leads with police or court action",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T13:40:44.103Z"
+  },
+  {
     "key": "5af74d5ce665225d",
     "title": "Google Cloud Warns Three AMD Turin CPU Flaws Could Leak Data Across Processes in VMs",
     "url": "https://thehackernews.com/2026/11/google-cloud-warns-three-amd-turin-cpu.html",
