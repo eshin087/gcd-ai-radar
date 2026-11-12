@@ -1,5 +1,15 @@
 [
   {
+    "key": "78979f84b286999a",
+    "title": "Chinese AI Project Scouts Spies in Taiwan Chip Industry",
+    "url": "https://darkreading.com/threat-intelligence/chinese-ai-project-scouts-spies-taiwan-chip-industry",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Surveys, intelligence reports and threat actor profiling without a specific security incident or intrusion.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T01:10:48.671Z"
+  },
+  {
     "key": "0316ec651071c7e2",
     "title": "MammothDP: Private Boosted Decision Trees Ready for Trusted Hardware and Leakage-free Hyperparameters",
     "url": "https://arxiv.org/abs/2611.14317",
