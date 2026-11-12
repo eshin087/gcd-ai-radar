@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1927",
+    "slug": "kazakhstan-linked-hackers-used-ai-agent-to-spy-on-central-as",
+    "title": "Kazakhstan-linked hackers used AI agent to spy on Central Asian governments",
+    "summary": "State-sponsored threat actors linked to Kazakhstan utilized an autonomous AI agent to conduct espionage operations and infiltrate critical infrastructure across Central Asia. The campaign resulted in the theft of sensitive government documents.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://therecord.media/kazakhstan-hackers-central-asia",
+        "publisher": "The Record",
+        "title": "Kazakhstan-linked hackers used AI agent to spy on Central Asian governments",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "espionage",
+      "central-asia",
+      "ai-agent",
+      "critical-infrastructure"
+    ],
+    "created_at": "2026-11-12T13:11:09.154Z",
+    "updated_at": "2026-11-12T13:11:09.154Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Kazakhstan-linked hackers used AI agent to spy on Central Asian governments",
+        "source_url": "https://therecord.media/kazakhstan-hackers-central-asia",
+        "added_at": "2026-11-12T13:11:09.154Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed espionage campaign against government targets.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1926",
     "slug": "cve-2026-126325-ptc-patches-critical-windchill-and-flexplm-v",
     "title": "CVE-2026-126325: PTC patches critical Windchill and FlexPLM vulnerability",
