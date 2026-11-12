@@ -1,5 +1,177 @@
 [
   {
+    "id": "AIR-2026-1930",
+    "slug": "apify-rotates-api-tokens-and-forces-2fa-resets-after-breach",
+    "title": "Apify rotates API tokens and forces 2FA resets after breach",
+    "summary": "Apify detected unauthorized access to its internal systems and responded by rotating API tokens and forcing 2FA resets for affected accounts. The breach prompted immediate credential revocation and OAuth connection removal.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Apify"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach",
+        "publisher": "BleepingComputer",
+        "title": "Apify rotates API tokens, prompts 2FA resets after breach",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "apify",
+      "api-token",
+      "breach",
+      "2fa"
+    ],
+    "created_at": "2026-11-12T15:10:52.934Z",
+    "updated_at": "2026-11-12T15:10:52.934Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Apify rotates API tokens, prompts 2FA resets after breach",
+        "source_url": "https://bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach",
+        "added_at": "2026-11-12T15:10:52.934Z"
+      }
+    ],
+    "action": "Rotate all API tokens, enforce 2FA for all accounts, and audit for further compromise.",
+    "severity_note": "Severity 3 due to confirmed unauthorized access and credential compromise",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1929",
+    "slug": "hijacked-email-accounts-used-for-european-bomb-hoaxes",
+    "title": "Hijacked email accounts used for European bomb hoaxes",
+    "summary": "Compromised email accounts at a Taiwanese university were used to send bomb threats to thousands of European schools, airports and newsrooms. The hoaxes disrupted operations and complicated investigations.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://therecord.media/europe-hoax-email-threats",
+        "publisher": "The Record",
+        "title": "Hijacked email accounts complicate investigations into European bomb hoaxes",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "email-compromise",
+      "bomb-threat",
+      "hoax",
+      "europe"
+    ],
+    "created_at": "2026-11-12T15:10:52.934Z",
+    "updated_at": "2026-11-12T15:10:52.934Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Hijacked email accounts complicate investigations into European bomb hoaxes",
+        "source_url": "https://therecord.media/europe-hoax-email-threats",
+        "added_at": "2026-11-12T15:10:52.934Z"
+      }
+    ],
+    "action": "Reset compromised email accounts and notify affected institutions.",
+    "severity_note": "Severity 3 as confirmed exploitation of compromised accounts causing widespread threats",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1928",
+    "slug": "attackers-breached-10-organizations-using-the-open-source-ai",
+    "title": "Attackers breached 10 organizations using the open‑source AI pentest framework Cairn",
+    "summary": "Attackers used the open‑source AI pentest framework Cairn to breach ten organizations, gaining unauthorized access and exfiltrating data. The campaign spanned August and September 2026 and targeted semiconductor, advanced‑manufacturing, and defense sectors.",
+    "type": "ai_enabled_attack",
+    "categories": [
+      "ai_assisted_intrusion"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Cairn"
+    ],
+    "incident_date": "2026-08",
+    "incident_date_precision": "month",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/12/cairn-autonomous-ai-cyberattacks",
+        "publisher": "Help Net Security",
+        "title": "Attackers breached 10 organizations with an open-source AI pentest framework",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cairn",
+      "ai",
+      "breach",
+      "supply-chain"
+    ],
+    "created_at": "2026-11-12T15:10:52.934Z",
+    "updated_at": "2026-11-12T15:10:52.934Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Attackers breached 10 organizations with an open-source AI pentest framework",
+        "source_url": "https://helpnetsecurity.com/2026/11/12/cairn-autonomous-ai-cyberattacks",
+        "added_at": "2026-11-12T15:10:52.934Z"
+      }
+    ],
+    "action": "Investigate the breach, reset compromised accounts, and strengthen monitoring for AI‑driven intrusion attempts.",
+    "severity_note": "Severity 4 because confirmed data exfiltration affecting multiple organizations",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1927",
     "slug": "kazakhstan-linked-hackers-used-ai-agent-to-spy-on-central-as",
     "title": "Kazakhstan-linked hackers used AI agent to spy on Central Asian governments",
