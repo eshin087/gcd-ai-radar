@@ -1,5 +1,15 @@
 [
   {
+    "key": "ad19da92cd4c868d",
+    "title": "GitHub Agentic Autofix and the question of who owns a bad AI patch",
+    "url": "https://helpnetsecurity.com/2026/11/12/marcelo-oliveira-github-agentic-autofix",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Opinion/interview lacking a concrete flaw, breach, or attack",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T07:10:41.843Z"
+  },
+  {
     "key": "e481a8df318d3813",
     "title": "CISOs say OT will survive a cyberattack, but their engineers aren’t so sure",
     "url": "https://helpnetsecurity.com/2026/11/12/sans-industrial-cybersecurity-survey",
