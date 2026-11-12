@@ -1,5 +1,15 @@
 [
   {
+    "key": "d75dd9d3e893a357",
+    "title": "Self-hosted Claude Managed Agents keeps agent credentials in your environment",
+    "url": "https://helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Out of scope: product launch / feature announcement, no security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-12T18:26:12.148Z"
+  },
+  {
     "key": "b0670f6d0371d5d7",
     "title": "International operation dismantles malware networks, exposes 6.4 million stolen credentials",
     "url": "https://cyberscoop.com/operation-endgame-malware-takedown-gootloader-stealc-europol",
