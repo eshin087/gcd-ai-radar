@@ -1,5 +1,122 @@
 [
   {
+    "id": "AIR-2026-1924",
+    "slug": "threat-actors-abuse-gsocket-for-persistent-access-on-comprom",
+    "title": "Threat Actors Abuse GSocket for Persistent Access on Compromised Linux Servers",
+    "summary": "Multiple threat actors are actively abusing the legitimate GSocket tool to maintain persistent access on compromised Linux servers. The technique allows attackers to retain control even after underlying initial access vulnerabilities are patched.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "GSocket"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-plant-gsocket-on-linux-servers-for-persistent-access",
+        "publisher": "BleepingComputer",
+        "title": "Hackers plant GSocket on Linux servers for persistent access",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "gsocket",
+      "linux",
+      "persistence",
+      "backdoor"
+    ],
+    "created_at": "2026-11-12T09:57:23.993Z",
+    "updated_at": "2026-11-12T09:57:23.993Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Hackers plant GSocket on Linux servers for persistent access",
+        "source_url": "https://bleepingcomputer.com/news/security/hackers-plant-gsocket-on-linux-servers-for-persistent-access",
+        "added_at": "2026-11-12T09:57:23.993Z"
+      }
+    ],
+    "action": "Audit Linux servers for unauthorized GSocket installations and inspect network connections.",
+    "severity_note": "Confirmed real-world usage by threat actors for persistence.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1923",
+    "slug": "cve-2026-118383-critical-mongodb-server-pre-auth-crash-flaw",
+    "title": "CVE-2026-118383: Critical MongoDB Server Pre-Auth Crash Flaw",
+    "summary": "A critical pre-authentication vulnerability in MongoDB Server allows unauthenticated attackers to crash lagging replica servers during failover events. The vendor has released patches to address the issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "MongoDB Server"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-118383",
+      "mongodb",
+      "denial-of-service"
+    ],
+    "created_at": "2026-11-12T09:57:23.993Z",
+    "updated_at": "2026-11-12T09:57:23.993Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-118383"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+        "source_url": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
+        "added_at": "2026-11-12T09:57:23.993Z"
+      }
+    ],
+    "action": "Update MongoDB Server to the latest fixed version.",
+    "severity_note": "Critical rating with a fix provided and no exploitation reported.",
+    "cvss": 9
+  },
+  {
     "id": "AIR-2026-1922",
     "slug": "critical-red-hat-quay-vulnerability-exposes-private-containe",
     "title": "Critical Red Hat Quay vulnerability exposes private container images",
@@ -4557,9 +4674,15 @@
         "publisher": "Dark Reading",
         "title": "N-able Takes N-central Platform Offline After Discovery of 33 Flaws",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Target N-central Zero-Days as N-able Rushes Patches",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4569,7 +4692,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-11T21:11:22.437Z",
+    "updated_at": "2026-11-12T09:57:23.993Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -4589,6 +4712,12 @@
         "title": "Vendor releases security hotfixes addressing the publicly disclosed zero-day vulnerabilities",
         "source_url": "https://bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities",
         "added_at": "2026-11-11T12:41:11.589Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Exploitation of the disclosed zero-day vulnerabilities has been observed in the wild.",
+        "source_url": "https://securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches",
+        "added_at": "2026-11-12T09:57:23.993Z"
       }
     ],
     "action": "Apply the security hotfixes provided by the vendor to secure the N-central platform.",
