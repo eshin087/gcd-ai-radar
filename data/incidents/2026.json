@@ -1,5 +1,68 @@
 [
   {
+    "id": "AIR-2026-1919",
+    "slug": "cve-2026-119618-critical-apache-http-2-flaw-allows-remote-co",
+    "title": "CVE-2026-119618: Critical Apache HTTP/2 Flaw Allows Remote Code Execution",
+    "summary": "A critical remote code execution vulnerability affects the mod_http2 module in Apache HTTP Server versions 2.4.55 through 2.4.70. A patch has been released in version 2.4.71 to address the issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Apache HTTP Server"
+    ],
+    "incident_date": "2026-11-11",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-119618",
+      "rce",
+      "http2"
+    ],
+    "created_at": "2026-11-12T05:40:48.270Z",
+    "updated_at": "2026-11-12T05:40:48.270Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-119618"
+    ],
+    "affected": [
+      "Apache HTTP Server 2.4.55 to 2.4.70"
+    ],
+    "fixed_in": [
+      "Apache HTTP Server 2.4.71"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
+        "source_url": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+        "added_at": "2026-11-12T05:40:48.270Z"
+      }
+    ],
+    "action": "Update Apache HTTP Server to version 2.4.71.",
+    "severity_note": "Critical vulnerability with a vendor fix available.",
+    "cvss": 9.8
+  },
+  {
     "id": "AIR-2026-1918",
     "slug": "credential-stuffing-campaign-spoofs-consumer-ai-agent-traffi",
     "title": "Credential stuffing campaign spoofs consumer AI agent traffic",

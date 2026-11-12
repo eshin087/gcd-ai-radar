@@ -1,5 +1,15 @@
 [
   {
+    "key": "e481a8df318d3813",
+    "title": "CISOs say OT will survive a cyberattack, but their engineers aren’t so sure",
+    "url": "https://helpnetsecurity.com/2026/11/12/sans-industrial-cybersecurity-survey",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Survey and statistics piece without a specific incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T05:40:48.270Z"
+  },
+  {
     "key": "78979f84b286999a",
     "title": "Chinese AI Project Scouts Spies in Taiwan Chip Industry",
     "url": "https://darkreading.com/threat-intelligence/chinese-ai-project-scouts-spies-taiwan-chip-industry",
