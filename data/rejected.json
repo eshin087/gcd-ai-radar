@@ -1,5 +1,15 @@
 [
   {
+    "key": "ec31691c4e8607b6",
+    "title": ".NET 11 security changes target the software supply chain",
+    "url": "https://helpnetsecurity.com/2026/11/12/net-11-security-changes",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product release and feature announcement without a specific security incident or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T08:40:56.392Z"
+  },
+  {
     "key": "ad19da92cd4c868d",
     "title": "GitHub Agentic Autofix and the question of who owns a bad AI patch",
     "url": "https://helpnetsecurity.com/2026/11/12/marcelo-oliveira-github-agentic-autofix",
