@@ -1,5 +1,15 @@
 [
   {
+    "key": "c2553a6d0410f90c",
+    "title": "Inside an AI Attack Against a US Retailer",
+    "url": "https://darkreading.com/cyberattacks-data-breaches/inside-ai-attack-us-retailer",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: General discussion of an AI-assisted attack without sufficient specific incident details for a new record.",
+    "confidence": 0.8,
+    "rejected_at": "2026-11-12T11:11:06.562Z"
+  },
+  {
     "key": "22e372cadd21069b",
     "title": "Show HN: Taster – Plain-English rules your agent can't forget or ignore",
     "url": "https://github.com/rinkesh2010rpp/taster-ai",

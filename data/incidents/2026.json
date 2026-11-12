@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1925",
+    "slug": "stolen-claude-api-keys-turn-claude-code-into-a-remote-implan",
+    "title": "Stolen Claude API keys turn Claude Code into a remote implant",
+    "summary": "Darktrace researchers demonstrated how stolen API keys can turn Claude Code into a remote implant. The technique abuses the memory stores feature and Files API to exfiltrate data while disguising traffic as normal coding agent activity.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "data_leak"
+    ],
+    "severity": 1,
+    "targets": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code",
+      "Claude"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/12/stolen-claude-api-keys-remote-controlled-implant",
+        "publisher": "Help Net Security",
+        "title": "Stolen Claude API keys can turn Claude Code into a remote-controlled implant",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "claude-code",
+      "agent-hijack",
+      "exfiltration"
+    ],
+    "created_at": "2026-11-12T11:11:06.562Z",
+    "updated_at": "2026-11-12T11:11:06.562Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Stolen Claude API keys can turn Claude Code into a remote-controlled implant",
+        "source_url": "https://helpnetsecurity.com/2026/11/12/stolen-claude-api-keys-remote-controlled-implant",
+        "added_at": "2026-11-12T11:11:06.562Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers in a lab test with no real-world exploitation reported.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1924",
     "slug": "threat-actors-abuse-gsocket-for-persistent-access-on-comprom",
     "title": "Threat Actors Abuse GSocket for Persistent Access on Compromised Linux Servers",
