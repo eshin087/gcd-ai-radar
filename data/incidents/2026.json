@@ -17224,9 +17224,15 @@
         "publisher": "BleepingComputer",
         "title": "Binance denies data breach after alleged ShinyHunters claims",
         "published_at": "2026-11-09"
+      },
+      {
+        "url": "https://therecord.media/stolen-binance-crypto-recovered-doj-facestealer-disrupted",
+        "publisher": "The Record",
+        "title": "Feds announce seizure of $1.2 billion from Binance theft; also takedown of ‘FaceStealer’ tools",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 18,
+    "source_count": 19,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -17237,7 +17243,7 @@
       "breach"
     ],
     "created_at": "2026-10-29T23:23:38.250Z",
-    "updated_at": "2026-11-09T16:40:56.342Z",
+    "updated_at": "2026-11-12T22:11:50.656Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -17305,6 +17311,12 @@
         "title": "Binance denies claims of a new security breach made by the ShinyHunters threat actor",
         "source_url": "https://bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims",
         "added_at": "2026-11-09T16:40:56.342Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Law enforcement seized 1.2 billion in stolen assets linked to the North Korea operations.",
+        "source_url": "https://therecord.media/stolen-binance-crypto-recovered-doj-facestealer-disrupted",
+        "added_at": "2026-11-12T22:11:50.656Z"
       }
     ],
     "action": "",
