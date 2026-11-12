@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1932",
+    "slug": "new-windows-signdrop-zero-day-gives-hackers-system-privilege",
+    "title": "New Windows SignDrop zero‑day gives hackers SYSTEM privileges",
+    "summary": "A new Windows zero‑day, named SignDrop, was disclosed that allows attackers to obtain SYSTEM privileges through a signature‑validation flaw. The vulnerability is unpatched and rated critical.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Windows"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges",
+        "publisher": "BleepingComputer",
+        "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "privilege_escalation",
+      "zero_day",
+      "cve-2026-xxxx"
+    ],
+    "created_at": "2026-11-12T16:47:11.107Z",
+    "updated_at": "2026-11-12T16:47:11.107Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unpatched",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
+        "source_url": "https://bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges",
+        "added_at": "2026-11-12T16:47:11.107Z"
+      }
+    ],
+    "action": "Monitor for patches and apply mitigations to limit code execution",
+    "severity_note": "Critical zero‑day vulnerability allowing SYSTEM privilege escalation, no known exploitation",
+    "cvss": 9.8
+  },
+  {
     "id": "AIR-2026-1931",
     "slug": "cve-2026-123790-comfyui-easy-use-path-traversal-allows-code",
     "title": "CVE-2026-123790: ComfyUI‑Easy‑Use path traversal allows code execution",
@@ -558,9 +615,15 @@
         "publisher": "SecurityWeek",
         "title": "Critical Red Hat Quay Vulnerability Could Expose Private Container Images",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
+        "publisher": "The Hacker News",
+        "title": "Critical Red Hat Quay Flaw Lets Attackers Read and Overwrite All Private Container Images in a Registry",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -570,7 +633,7 @@
       "unauthorized-access"
     ],
     "created_at": "2026-11-12T09:41:22.423Z",
-    "updated_at": "2026-11-12T09:41:22.423Z",
+    "updated_at": "2026-11-12T16:47:11.107Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -586,9 +649,15 @@
         "title": "Critical Red Hat Quay Vulnerability Could Expose Private Container Images",
         "source_url": "https://securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images",
         "added_at": "2026-11-12T09:41:22.423Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Report notes default anonymous access in Quay and that Red Hat released fixed builds for eight Quay components.",
+        "source_url": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
+        "added_at": "2026-11-12T16:47:11.107Z"
       }
     ],
-    "action": "Apply the latest security updates provided by Red Hat for Quay.",
+    "action": "Disable anonymous access and deploy the released fixed Quay builds.",
     "severity_note": "Critical vulnerability rating declared by the vendor.",
     "cvss": null
   },
@@ -1175,9 +1244,15 @@
         "publisher": "SecurityWeek",
         "title": "Hackers Deploy Malware in Fresh ScreenConnect Campaign",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+        "publisher": "The Hacker News",
+        "title": "SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1185,15 +1260,18 @@
       "screenconnect",
       "msp",
       "remote-access",
-      "malware"
+      "malware",
+      "CVE-2026-84869"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-12T10:59:27.860Z",
+    "updated_at": "2026-11-12T16:47:11.107Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
     "patch_status": "no_fix_needed",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-84869"
+    ],
     "affected": [],
     "fixed_in": [],
     "timeline": [
@@ -1214,9 +1292,15 @@
         "title": "Attackers exploited a vulnerability in a legitimate extension to bypass authentication.",
         "source_url": "https://securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign",
         "added_at": "2026-11-12T10:59:27.860Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Report indicates the exploited CVE‑2026‑84869 flaw has been patched, providing a fix for the ScreenConnect campaign.",
+        "source_url": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+        "added_at": "2026-11-12T16:47:11.107Z"
       }
     ],
-    "action": "",
+    "action": "Apply the patch for CVE‑2026‑84869 to all ScreenConnect installations.",
     "severity_note": "Confirmed real-world exploitation and attacks against multiple organizations.",
     "cvss": null
   },
@@ -1734,9 +1818,15 @@
         "publisher": "SecurityWeek",
         "title": "Citrix, Ivanti Patch Critical and High-Severity Vulnerabilities",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+        "publisher": "The Hacker News",
+        "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.93,
     "status": "published",
     "origin": "news",
@@ -1745,15 +1835,18 @@
       "rce",
       "certificate",
       "critical",
-      "cve"
+      "cve",
+      "CVE-2026-120868"
     ],
     "created_at": "2026-11-11T14:11:54.792Z",
-    "updated_at": "2026-11-11T14:11:54.792Z",
+    "updated_at": "2026-11-12T16:47:11.107Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
     "patch_status": "patched",
-    "cve_ids": [],
+    "cve_ids": [
+      "CVE-2026-120868"
+    ],
     "affected": [],
     "fixed_in": [],
     "timeline": [
@@ -1762,9 +1855,15 @@
         "title": "Citrix, Ivanti Patch Critical and High-Severity Vulnerabilities",
         "source_url": "https://securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities",
         "added_at": "2026-11-11T14:11:54.792Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Report adds CVE‑2026‑120868 details and specifies patches for NetScaler ADC, Gateway, and Console addressing DoS and auth bypass.",
+        "source_url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+        "added_at": "2026-11-12T16:47:11.107Z"
       }
     ],
-    "action": "Apply the released patches from Citrix and Ivanti as soon as possible",
+    "action": "Deploy the NetScaler patches covering CVE‑2026‑120868.",
     "severity_note": "Critical rating with vendor patches, no confirmed exploitation",
     "cvss": null
   },

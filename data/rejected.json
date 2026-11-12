@@ -1,5 +1,25 @@
 [
   {
+    "key": "50b7d482cfd778ee",
+    "title": "186 Fake AI Domains Redirect Users to ClickFix Lures, Browser Malware, and Search Hijackers",
+    "url": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "below the curation bar: Fails to name a specific software, service or organisation affected",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-12T16:47:11.107Z"
+  },
+  {
+    "key": "023264eb01e1c2b6",
+    "title": "European authorities take down SteaIC malware servers for second time this year",
+    "url": "https://therecord.media/european-authorities-take-down-stealic-malware-second-time",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Law‑enforcement takedown announcement without a specific victim or product impact",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-12T16:47:11.107Z"
+  },
+  {
     "key": "9d35926622bda9de",
     "title": "Picus puts AI agents on the offensive with autonomous pentesting",
     "url": "https://helpnetsecurity.com/2026/11/12/picus-autonomous-penetration-testing",

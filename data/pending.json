@@ -1,17 +1,1 @@
-[
-  {
-    "key": "c270d121cad4ecc2",
-    "source_id": "bleepingcomputer",
-    "origin": "news",
-    "url": "https://bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges",
-    "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
-    "published_at": "2026-11-12",
-    "publisher": "BleepingComputer",
-    "hint": "Security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) has released a new Windows zero-day exploit that can let attackers gain SYSTEM privileges.…",
-    "cve_ids": [],
-    "discovered_at": "2026-11-12T16:06:22.650Z",
-    "extra": {
-      "ai_hint": false
-    }
-  }
-]
+[]

@@ -204,6 +204,10 @@
   "id": "AIR-2026-1051",
   "at": "2026-10-18T10:04:21.885Z"
  },
+ "023264eb01e1c2b6": {
+  "status": "rejected",
+  "at": "2026-11-12T16:47:11.107Z"
+ },
  "02459b3f5047ba20": {
   "status": "published",
   "id": "AIR-2026-0286",
@@ -849,6 +853,11 @@
  "092eeaff63af6f37": {
   "status": "rejected",
   "at": "2026-10-18T10:14:26.300Z"
+ },
+ "093b008afb96e695": {
+  "status": "merged",
+  "id": "AIR-2026-1922",
+  "at": "2026-11-12T16:47:11.107Z"
  },
  "094000b867f2a243": {
   "status": "published",
@@ -7343,6 +7352,10 @@
   "status": "published",
   "id": "AIR-2026-0229",
   "at": "2026-10-18T06:33:31.967Z"
+ },
+ "50b7d482cfd778ee": {
+  "status": "rejected",
+  "at": "2026-11-12T16:47:11.107Z"
  },
  "50cb3d9511f168ff": {
   "status": "published",
@@ -17493,6 +17506,11 @@
   "status": "rejected",
   "at": "2026-10-30T13:27:13.057Z"
  },
+ "c270d121cad4ecc2": {
+  "status": "published",
+  "id": "AIR-2026-1932",
+  "at": "2026-11-12T16:47:11.107Z"
+ },
  "c27cc79ce223e26a": {
   "status": "published",
   "id": "AIR-2026-1567",
@@ -17573,6 +17591,11 @@
   "status": "published",
   "id": "AIR-2026-1871",
   "at": "2026-11-10T20:42:12.887Z"
+ },
+ "c398aa3e92265ca6": {
+  "status": "merged",
+  "id": "AIR-2026-1901",
+  "at": "2026-11-12T16:47:11.107Z"
  },
  "c3a8c10db71da7da": {
   "status": "rejected",
@@ -19631,6 +19654,11 @@
  "daa01b6323a51d3e": {
   "status": "rejected",
   "at": "2026-10-18T10:14:26.300Z"
+ },
+ "daa356fef18a497b": {
+  "status": "merged",
+  "id": "AIR-2026-1910",
+  "at": "2026-11-12T16:47:11.107Z"
  },
  "dab428e0cbc8b05a": {
   "status": "published",
