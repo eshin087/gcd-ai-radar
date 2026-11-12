@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1938",
+    "slug": "extortion-group-luna-moth-targets-law-firms-with-microsoft-t",
+    "title": "Extortion Group Luna Moth Targets Law Firms With Microsoft Token Theft",
+    "summary": "The Luna Moth extortion group launched a renewed campaign targeting law firms that refused previous ransom demands. Attackers used social engineering tactics specifically designed to steal Microsoft access tokens.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://darkreading.com/data-privacy/extortion-luna-moth-law-firms-second-time",
+        "publisher": "Dark Reading",
+        "title": "Extortion Group Luna Moth Flits Into Law Firms a Second Time",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "luna-moth",
+      "extortion",
+      "social-engineering",
+      "token-theft"
+    ],
+    "created_at": "2026-11-12T20:40:39.417Z",
+    "updated_at": "2026-11-12T20:40:39.417Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Extortion Group Luna Moth Flits Into Law Firms a Second Time",
+        "source_url": "https://darkreading.com/data-privacy/extortion-luna-moth-law-firms-second-time",
+        "added_at": "2026-11-12T20:40:39.417Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world extortion campaign against named victims.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1937",
     "slug": "cve-2026-126198-pgedge-postgres-mcp-server-bypasses-write-co",
     "title": "CVE-2026-126198: pgEdge Postgres MCP Server bypasses write confirmation for custom tools",
