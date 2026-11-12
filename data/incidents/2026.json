@@ -1,5 +1,129 @@
 [
   {
+    "id": "AIR-2026-1922",
+    "slug": "critical-red-hat-quay-vulnerability-exposes-private-containe",
+    "title": "Critical Red Hat Quay vulnerability exposes private container images",
+    "summary": "A critical flaw in Red Hat Quay could allow attackers to steal private container images, overwrite repositories, and gain persistent access. Red Hat has released advisories and updates to address the issue.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Red Hat Quay"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images",
+        "publisher": "SecurityWeek",
+        "title": "Critical Red Hat Quay Vulnerability Could Expose Private Container Images",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "red hat quay",
+      "container-security",
+      "unauthorized-access"
+    ],
+    "created_at": "2026-11-12T09:41:22.423Z",
+    "updated_at": "2026-11-12T09:41:22.423Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Red Hat Quay"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Critical Red Hat Quay Vulnerability Could Expose Private Container Images",
+        "source_url": "https://securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images",
+        "added_at": "2026-11-12T09:41:22.423Z"
+      }
+    ],
+    "action": "Apply the latest security updates provided by Red Hat for Quay.",
+    "severity_note": "Critical vulnerability rating declared by the vendor.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1921",
+    "slug": "node-js-fixes-http-2-vulnerabilities-causing-server-crashes",
+    "title": "Node.js fixes HTTP/2 vulnerabilities causing server crashes and memory leaks",
+    "summary": "Node.js released updates addressing HTTP/2 flaws that allow unauthenticated clients to crash servers and leak memory contents from other connections. Fixed versions are available across the supported release lines.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Node.js"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html",
+        "publisher": "The Hacker News",
+        "title": "Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "node.js",
+      "http/2",
+      "memory-leak",
+      "denial-of-service"
+    ],
+    "created_at": "2026-11-12T09:41:22.423Z",
+    "updated_at": "2026-11-12T09:41:22.423Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [],
+    "affected": [
+      "Node.js 24.x",
+      "Node.js 26.x"
+    ],
+    "fixed_in": [
+      "Node.js 22.23.5",
+      "Node.js 24.22.3",
+      "Node.js 26.13.1"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data",
+        "source_url": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html",
+        "added_at": "2026-11-12T09:41:22.423Z"
+      }
+    ],
+    "action": "Update Node.js to version 22.23.5, 24.22.3, 26.13.1 or later.",
+    "severity_note": "Disclosed vulnerability with vendor patches available.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1920",
     "slug": "attacker-used-4-837-hijacked-github-accounts-to-run-a-ci-sec",
     "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
@@ -24,9 +148,15 @@
         "publisher": "The Hacker News",
         "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://helpnetsecurity.com/2026/11/12/wfx-loot-github-actions-secret-stealer",
+        "publisher": "Help Net Security",
+        "title": "Check your GitHub repos: A secret stealer hit tens of thousands of them",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -38,7 +168,7 @@
       "supply_chain"
     ],
     "created_at": "2026-11-12T07:41:20.127Z",
-    "updated_at": "2026-11-12T07:41:20.127Z",
+    "updated_at": "2026-11-12T09:41:22.423Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -52,6 +182,12 @@
         "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
         "source_url": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html",
         "added_at": "2026-11-12T07:41:20.127Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Researchers name the campaign wfx-loot and confirm the malware ran in over 1800 repositories.",
+        "source_url": "https://helpnetsecurity.com/2026/11/12/wfx-loot-github-actions-secret-stealer",
+        "added_at": "2026-11-12T09:41:22.423Z"
       }
     ],
     "action": "Revoke compromised credentials, rotate all secrets, and audit CI workflows for malicious code",
