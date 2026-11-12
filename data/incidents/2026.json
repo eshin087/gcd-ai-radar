@@ -4307,9 +4307,15 @@
         "publisher": "BleepingComputer",
         "title": "Notion says Fireworks breach exposed customer AI chat transcripts",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://securityweek.com/notion-customer-data-compromised-in-fireworks-ai-hack",
+        "publisher": "SecurityWeek",
+        "title": "Notion Customer Data Compromised in Fireworks AI Hack",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4319,7 +4325,7 @@
       "supply-chain"
     ],
     "created_at": "2026-11-10T08:11:07.578Z",
-    "updated_at": "2026-11-11T21:11:22.437Z",
+    "updated_at": "2026-11-12T11:41:18.318Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
