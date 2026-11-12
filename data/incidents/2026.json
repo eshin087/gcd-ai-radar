@@ -1704,9 +1704,15 @@
         "publisher": "The Hacker News",
         "title": "SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks",
+        "publisher": "BleepingComputer",
+        "title": "New worm-like 'SCKit' malware targets MSPs in ScreenConnect attacks",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1718,7 +1724,7 @@
       "CVE-2026-84869"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-12T16:47:11.107Z",
+    "updated_at": "2026-11-12T23:11:36.143Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1752,6 +1758,12 @@
         "title": "Report indicates the exploited CVE‑2026‑84869 flaw has been patched, providing a fix for the ScreenConnect campaign.",
         "source_url": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
         "added_at": "2026-11-12T16:47:11.107Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "New worm-like malware toolkit named SCKit identified spreading across MSP and customer environments in ongoing attacks",
+        "source_url": "https://bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks",
+        "added_at": "2026-11-12T23:11:36.143Z"
       }
     ],
     "action": "Apply the patch for CVE‑2026‑84869 to all ScreenConnect installations.",
