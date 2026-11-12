@@ -448,9 +448,15 @@
         "publisher": "Help Net Security",
         "title": "Check your GitHub repos: A secret stealer hit tens of thousands of them",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign",
+        "publisher": "SecurityWeek",
+        "title": "Attacker Targets 60,000 GitHub Repositories in Credential Theft Campaign",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -462,7 +468,7 @@
       "supply_chain"
     ],
     "created_at": "2026-11-12T07:41:20.127Z",
-    "updated_at": "2026-11-12T09:41:22.423Z",
+    "updated_at": "2026-11-12T14:11:30.249Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -3980,9 +3986,15 @@
         "publisher": "The Record",
         "title": "Russian hackers compromised government email servers to steal NATO, EU correspondence",
         "published_at": "2026-11-10"
+      },
+      {
+        "url": "https://therecord.media/romania-russia-cyberattack-emails",
+        "publisher": "The Record",
+        "title": "Romania says it stopped Russian cyberattack targeting government emails",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3993,7 +4005,7 @@
       "state-sponsored"
     ],
     "created_at": "2026-11-10T13:35:19.523Z",
-    "updated_at": "2026-11-10T13:35:19.523Z",
+    "updated_at": "2026-11-12T14:11:30.249Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -4007,6 +4019,12 @@
         "title": "Russian hackers compromised government email servers to steal NATO, EU correspondence",
         "source_url": "https://therecord.media/russia-hackers-espionage-romania-kazakhstan",
         "added_at": "2026-11-10T13:35:19.523Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Intelligence agency reports stopping the cyber-espionage campaign before data exfiltration occurred",
+        "source_url": "https://therecord.media/romania-russia-cyberattack-emails",
+        "added_at": "2026-11-12T14:11:30.249Z"
       }
     ],
     "action": "Investigate server logs for unauthorized access and review government email security controls.",

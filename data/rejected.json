@@ -1,5 +1,15 @@
 [
   {
+    "key": "31b5c219d6f7db13",
+    "title": "Chrome, Firefox Updates Patch Over 180 Vulnerabilities",
+    "url": "https://securityweek.com/chrome-firefox-updates-patch-180-vulnerabilities",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Multi-vendor routine patch roundup rather than a single specific incident or zero-day flaw",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T14:11:30.249Z"
+  },
+  {
     "key": "b539286dd7e47901",
     "title": "Operation Endgame malware takedown turns up over 6 million stolen logins",
     "url": "https://helpnetsecurity.com/2026/11/12/europol-operation-endgame-malware-takedown",
