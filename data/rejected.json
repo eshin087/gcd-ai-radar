@@ -1,5 +1,15 @@
 [
   {
+    "key": "b0670f6d0371d5d7",
+    "title": "International operation dismantles malware networks, exposes 6.4 million stolen credentials",
+    "url": "https://cyberscoop.com/operation-endgame-malware-takedown-gootloader-stealc-europol",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Law enforcement operation and infrastructure seizure is a follow-up, not a new incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T17:13:24.694Z"
+  },
+  {
     "key": "50b7d482cfd778ee",
     "title": "186 Fake AI Domains Redirect Users to ClickFix Lures, Browser Malware, and Search Hijackers",
     "url": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html",
