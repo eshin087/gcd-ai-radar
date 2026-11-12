@@ -759,9 +759,15 @@
         "publisher": "The Hacker News",
         "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://securityweek.com/apache-patches-critical-http-server-rce-found-by-anthropic-google",
+        "publisher": "SecurityWeek",
+        "title": "Apache Patches Critical HTTP Server RCE Found by Anthropic, Google",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -771,7 +777,7 @@
       "http2"
     ],
     "created_at": "2026-11-12T05:40:48.270Z",
-    "updated_at": "2026-11-12T05:40:48.270Z",
+    "updated_at": "2026-11-12T16:14:51.060Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
