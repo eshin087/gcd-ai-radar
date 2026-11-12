@@ -1,5 +1,257 @@
 [
   {
+    "id": "AIR-2026-1937",
+    "slug": "cve-2026-126198-pgedge-postgres-mcp-server-bypasses-write-co",
+    "title": "CVE-2026-126198: pgEdge Postgres MCP Server bypasses write confirmation for custom tools",
+    "summary": "Versions of pgEdge Postgres MCP Server before 1.1.0 incorrectly determine write confirmation based solely on tool name, allowing custom tools to execute writes without user approval. The flaw is recorded as CVE‑2026‑126198 and no exploitation has been reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126198",
+        "publisher": "NVD",
+        "title": "CVE-2026-126198: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126198",
+      "sql_injection",
+      "pgedge"
+    ],
+    "created_at": "2026-11-12T18:42:11.461Z",
+    "updated_at": "2026-11-12T18:42:11.461Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-12",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126198"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "CVE-2026-126198: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126198",
+        "added_at": "2026-11-12T18:42:11.461Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later",
+    "severity_note": "Disclosed vulnerability, no exploitation reported",
+    "cvss": 3.1
+  },
+  {
+    "id": "AIR-2026-1936",
+    "slug": "cve-2026-126196-pgedge-postgres-mcp-server-permits-multi-sta",
+    "title": "CVE-2026-126196: pgEdge Postgres MCP Server permits multi‑statement writes on read‑only connections",
+    "summary": "In pgEdge Postgres MCP Server prior to 1.1.0, read‑only connections can send unrecognized statements that trigger the simple query protocol, allowing multiple semicolon‑separated statements and potential writes. The issue is disclosed as CVE‑2026‑126196 with no known exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126196",
+        "publisher": "NVD",
+        "title": "CVE-2026-126196: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126196",
+      "sql_injection",
+      "pgedge"
+    ],
+    "created_at": "2026-11-12T18:42:11.461Z",
+    "updated_at": "2026-11-12T18:42:11.461Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-12",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126196"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "CVE-2026-126196: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126196",
+        "added_at": "2026-11-12T18:42:11.461Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later",
+    "severity_note": "Disclosed vulnerability, no exploitation reported",
+    "cvss": 8.1
+  },
+  {
+    "id": "AIR-2026-1935",
+    "slug": "cve-2026-126197-pgedge-postgres-mcp-server-vulnerable-to-jso",
+    "title": "CVE-2026-126197: pgEdge Postgres MCP Server vulnerable to JSON‑based SQL injection",
+    "summary": "pgEdge Postgres MCP Server versions before 1.1.0 allow custom pl‑do tools to inject arbitrary SQL via crafted JSON arguments, bypassing read‑only mode. The flaw is recorded as CVE‑2026‑126197 with no evidence of active exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126197",
+        "publisher": "NVD",
+        "title": "CVE-2026-126197: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126197",
+      "sql_injection",
+      "pgedge"
+    ],
+    "created_at": "2026-11-12T18:42:11.461Z",
+    "updated_at": "2026-11-12T18:42:11.461Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-12",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126197"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "CVE-2026-126197: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126197",
+        "added_at": "2026-11-12T18:42:11.461Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later",
+    "severity_note": "Disclosed vulnerability, no exploitation reported",
+    "cvss": 8.8
+  },
+  {
+    "id": "AIR-2026-1934",
+    "slug": "cve-2026-126199-pgedge-postgres-mcp-server-allows-sql-querie",
+    "title": "CVE-2026-126199: pgEdge Postgres MCP Server allows SQL queries without write confirmation",
+    "summary": "A vulnerability in pgEdge Postgres MCP Server versions prior to 1.1.0 lets Model Context Protocol clients execute write queries without confirmation, potentially bypassing read‑only restrictions. The issue is disclosed as CVE‑2026‑126199 with no known exploitation.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "pgEdge Postgres MCP Server"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126199",
+        "publisher": "NVD",
+        "title": "CVE-2026-126199: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126199",
+      "sql_injection",
+      "pgedge"
+    ],
+    "created_at": "2026-11-12T18:42:11.461Z",
+    "updated_at": "2026-11-12T18:42:11.461Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-12",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126199"
+    ],
+    "affected": [
+      "pgEdge Postgres MCP Server < 1.1.0"
+    ],
+    "fixed_in": [
+      "pgEdge Postgres MCP Server 1.1.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "CVE-2026-126199: pgEdge Postgres MCP Server enables SQL queries against PostgreSQL databases through Model Context Protocol compatible clients.",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126199",
+        "added_at": "2026-11-12T18:42:11.461Z"
+      }
+    ],
+    "action": "Upgrade pgEdge Postgres MCP Server to version 1.1.0 or later",
+    "severity_note": "Disclosed vulnerability, no exploitation reported",
+    "cvss": 6.8
+  },
+  {
     "id": "AIR-2026-1933",
     "slug": "trained-to-betray-how-post-training-supply-chain-attacks-hij",
     "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
@@ -1710,9 +1962,15 @@
         "publisher": "SecurityWeek",
         "title": "Maersk Confirms Data Theft Amid $5 Million Extortion Attempt",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://therecord.media/shipping-giant-maersk-says-recent-incident-affected-legacy-system",
+        "publisher": "The Record",
+        "title": "Shipping giant Maersk says recent cyber incident affected legacy system",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1722,7 +1980,7 @@
       "whitearmor"
     ],
     "created_at": "2026-11-11T16:41:26.050Z",
-    "updated_at": "2026-11-12T09:10:45.673Z",
+    "updated_at": "2026-11-12T18:42:11.461Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
