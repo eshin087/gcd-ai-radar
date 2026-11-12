@@ -2164,9 +2164,15 @@
         "publisher": "The Hacker News",
         "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-020",
+        "publisher": "CERT-EU",
+        "title": "2026-020: Critical Vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.93,
     "status": "published",
     "origin": "news",
@@ -2179,7 +2185,7 @@
       "CVE-2026-120868"
     ],
     "created_at": "2026-11-11T14:11:54.792Z",
-    "updated_at": "2026-11-12T16:47:11.107Z",
+    "updated_at": "2026-11-12T20:11:22.511Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -5584,9 +5590,15 @@
         "publisher": "The Hacker News",
         "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released",
+        "publisher": "BleepingComputer",
+        "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 7,
+    "source_count": 8,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5596,7 +5608,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-12T12:41:47.570Z",
+    "updated_at": "2026-11-12T20:11:22.511Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -5628,6 +5640,12 @@
         "title": "Vendor investigates reports of new flaws affecting patched on-premise servers when the Legacy API is exposed to the internet.",
         "source_url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
         "added_at": "2026-11-12T12:41:47.570Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Active exploitation is reported deploying cryptocurrency miners on multiple servers including latest updates",
+        "source_url": "https://bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released",
+        "added_at": "2026-11-12T20:11:22.511Z"
       }
     ],
     "action": "Disable the Legacy API or restrict its exposure to the public internet on on-premise N-central servers.",
