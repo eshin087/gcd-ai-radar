@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1939",
+    "slug": "sas-data-breach-exposes-booking-details-of-350-000-passenger",
+    "title": "SAS data breach exposes booking details of 350,000 passengers",
+    "summary": "A major data breach at Scandinavian Airlines potentially exposed booking details for approximately 350,000 passengers. The airline is investigating the incident to determine the full scope of compromised personal information.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "SAS"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thelocal.com/20261110/350000-sas-passengers-may-have-had-details-leaked-in-major-data-breach",
+        "publisher": "thelocal.com",
+        "title": "350k SAS passengers may have had details leaked in major data breach",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sas",
+      "data-breach",
+      "pii",
+      "airlines"
+    ],
+    "created_at": "2026-11-12T22:40:52.159Z",
+    "updated_at": "2026-11-12T22:40:52.159Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "350k SAS passengers may have had details leaked in major data breach",
+        "source_url": "https://thelocal.com/20261110/350000-sas-passengers-may-have-had-details-leaked-in-major-data-breach",
+        "added_at": "2026-11-12T22:40:52.159Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed large-scale PII breach affecting 350,000 victims.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1938",
     "slug": "extortion-group-luna-moth-targets-law-firms-with-microsoft-t",
     "title": "Extortion Group Luna Moth Targets Law Firms With Microsoft Token Theft",
@@ -1147,9 +1205,15 @@
         "publisher": "SecurityWeek",
         "title": "Attacker Targets 60,000 GitHub Repositories in Credential Theft Campaign",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials",
+        "publisher": "BleepingComputer",
+        "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1161,7 +1225,7 @@
       "supply_chain"
     ],
     "created_at": "2026-11-12T07:41:20.127Z",
-    "updated_at": "2026-11-12T14:11:30.249Z",
+    "updated_at": "2026-11-12T22:40:52.159Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
