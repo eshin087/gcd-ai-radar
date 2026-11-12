@@ -1,5 +1,25 @@
 [
   {
+    "key": "28876cddbb84aea4",
+    "title": "PostgreSQL security update fixes 52 vulnerabilities, ends support for PostgreSQL 14",
+    "url": "https://helpnetsecurity.com/2026/11/13/postgresql-security-update-november-2026",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Vendor routine vulnerability round-up bulletin with fixes for multiple bugs, lacking exploitation in the wild or a single critical rating clearing the bar for individual coverage.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T23:40:45.440Z"
+  },
+  {
+    "key": "e27486a6f98b9205",
+    "title": "Straiker EU & India Expansion | Regional AWS Hosting",
+    "url": "https://straiker.ai/blog/aws-expansion-europe-india",
+    "publisher": "Straiker",
+    "source_id": "straiker",
+    "reason": "out of scope: Product launch and vendor feature announcement regarding regional hosting expansion.",
+    "confidence": 0.98,
+    "rejected_at": "2026-11-12T23:40:45.440Z"
+  },
+  {
     "key": "64b35d795d7561c2",
     "title": "Microsoft 365 Outage Disrupts Outlook, Exchange Online and Teams",
     "url": "https://securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams",
