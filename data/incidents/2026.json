@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1933",
+    "slug": "trained-to-betray-how-post-training-supply-chain-attacks-hij",
+    "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+    "summary": "Researchers demonstrated that poisoned datasets and checkpoints can compromise AI coding agents and trigger remote code execution. No real-world exploitation is reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+        "publisher": "Microsoft Security",
+        "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "data-poisoning",
+      "coding-agents",
+      "remote-code-execution"
+    ],
+    "created_at": "2026-11-12T17:40:44.092Z",
+    "updated_at": "2026-11-12T17:40:44.092Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+        "source_url": "https://microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+        "added_at": "2026-11-12T17:40:44.092Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated by researchers with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1932",
     "slug": "new-windows-signdrop-zero-day-gives-hackers-system-privilege",
     "title": "New Windows SignDrop zero‑day gives hackers SYSTEM privileges",
