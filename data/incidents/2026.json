@@ -850,9 +850,15 @@
         "publisher": "BleepingComputer",
         "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://securityweek.com/maersk-confirms-data-theft-amid-5-million-extortion-attempt",
+        "publisher": "SecurityWeek",
+        "title": "Maersk Confirms Data Theft Amid $5 Million Extortion Attempt",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -862,7 +868,7 @@
       "whitearmor"
     ],
     "created_at": "2026-11-11T16:41:26.050Z",
-    "updated_at": "2026-11-11T16:41:26.050Z",
+    "updated_at": "2026-11-12T09:10:45.673Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,

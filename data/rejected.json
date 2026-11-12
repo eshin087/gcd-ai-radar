@@ -1,5 +1,15 @@
 [
   {
+    "key": "22e372cadd21069b",
+    "title": "Show HN: Taster – Plain-English rules your agent can't forget or ignore",
+    "url": "https://github.com/rinkesh2010rpp/taster-ai",
+    "publisher": "GitHub",
+    "source_id": "hn",
+    "reason": "out of scope: product launch or vendor feature announcement without a specific security incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-12T09:10:45.673Z"
+  },
+  {
     "key": "ec31691c4e8607b6",
     "title": ".NET 11 security changes target the software supply chain",
     "url": "https://helpnetsecurity.com/2026/11/12/net-11-security-changes",
