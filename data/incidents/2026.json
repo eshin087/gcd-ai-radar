@@ -1162,9 +1162,15 @@
         "publisher": "SecurityWeek",
         "title": "Apache Patches Critical HTTP Server RCE Found by Anthropic, Google",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw",
+        "publisher": "BleepingComputer",
+        "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -1174,7 +1180,7 @@
       "http2"
     ],
     "created_at": "2026-11-12T05:40:48.270Z",
-    "updated_at": "2026-11-12T16:14:51.060Z",
+    "updated_at": "2026-11-12T19:40:52.067Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
