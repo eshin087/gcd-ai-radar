@@ -1,5 +1,35 @@
 [
   {
+    "key": "9d35926622bda9de",
+    "title": "Picus puts AI agents on the offensive with autonomous pentesting",
+    "url": "https://helpnetsecurity.com/2026/11/12/picus-autonomous-penetration-testing",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope, no AI role (0.55): Product announcement without a specific incident",
+    "confidence": 0.55,
+    "rejected_at": "2026-11-12T15:47:02.678Z"
+  },
+  {
+    "key": "3eb3dda3413b5ddd",
+    "title": "Your Endpoint Management Platform Could Be Your Biggest Security Risk",
+    "url": "https://bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope, no AI role (0.55): General advisory article without a concrete breach or vulnerability",
+    "confidence": 0.55,
+    "rejected_at": "2026-11-12T15:47:02.678Z"
+  },
+  {
+    "key": "789c1a9d36e77599",
+    "title": "Police dismantle Gootloader, CastleRAT, StealC malware infrastructure",
+    "url": "https://bleepingcomputer.com/news/security/police-dismantles-gootloader-castlerat-stealc-malware-infrastructure",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope, no AI role (0.55): Law‑enforcement takedown report, not a new security incident",
+    "confidence": 0.55,
+    "rejected_at": "2026-11-12T15:47:02.678Z"
+  },
+  {
     "key": "31b5c219d6f7db13",
     "title": "Chrome, Firefox Updates Patch Over 180 Vulnerabilities",
     "url": "https://securityweek.com/chrome-firefox-updates-patch-180-vulnerabilities",
