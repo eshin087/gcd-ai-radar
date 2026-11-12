@@ -1,5 +1,25 @@
 [
   {
+    "key": "5af74d5ce665225d",
+    "title": "Google Cloud Warns Three AMD Turin CPU Flaws Could Leak Data Across Processes in VMs",
+    "url": "https://thehackernews.com/2026/11/google-cloud-warns-three-amd-turin-cpu.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope, no AI role (0.60): does not meet in_scope criteria: no critical rating or exploitation and not a software flaw",
+    "confidence": 0.6,
+    "rejected_at": "2026-11-12T12:41:47.570Z"
+  },
+  {
+    "key": "eae5749d1a1053bc",
+    "title": "Microsoft: Recent Windows updates cause SQL Server performance issues",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-recent-windows-updates-cause-sql-server-performance-issues",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: does not describe a security incident",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-12T12:41:47.570Z"
+  },
+  {
     "key": "c2553a6d0410f90c",
     "title": "Inside an AI Attack Against a US Retailer",
     "url": "https://darkreading.com/cyberattacks-data-breaches/inside-ai-attack-us-retailer",

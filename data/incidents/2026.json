@@ -1,5 +1,67 @@
 [
   {
+    "id": "AIR-2026-1926",
+    "slug": "cve-2026-126325-ptc-patches-critical-windchill-and-flexplm-v",
+    "title": "CVE-2026-126325: PTC patches critical Windchill and FlexPLM vulnerability",
+    "summary": "PTC released patches for a critical deserialization flaw in its Windchill and FlexPLM products (CVE-2026-126325) that could allow remote code execution. The vulnerability has a CVSS v4 score of 9.2 and is considered critical.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 2,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Windchill",
+      "FlexPLM"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-12",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
+        "publisher": "The Hacker News",
+        "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
+        "published_at": "2026-11-12"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-126325",
+      "windchill",
+      "flexplm",
+      "rce",
+      "critical"
+    ],
+    "created_at": "2026-11-12T12:41:47.570Z",
+    "updated_at": "2026-11-12T12:41:47.570Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126325"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-12",
+        "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
+        "source_url": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
+        "added_at": "2026-11-12T12:41:47.570Z"
+      }
+    ],
+    "action": "Apply the released patches for Windchill and FlexPLM immediately",
+    "severity_note": "Critical CVSS 9.2, disclosed but no exploitation reported",
+    "cvss": 9.2
+  },
+  {
     "id": "AIR-2026-1925",
     "slug": "stolen-claude-api-keys-turn-claude-code-into-a-remote-implan",
     "title": "Stolen Claude API keys turn Claude Code into a remote implant",
@@ -4757,9 +4819,15 @@
         "publisher": "SecurityWeek",
         "title": "Hackers Target N-central Zero-Days as N-able Rushes Patches",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
+        "publisher": "The Hacker News",
+        "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 6,
+    "source_count": 7,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -4769,7 +4837,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-12T09:57:23.993Z",
+    "updated_at": "2026-11-12T12:41:47.570Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -4795,9 +4863,15 @@
         "title": "Exploitation of the disclosed zero-day vulnerabilities has been observed in the wild.",
         "source_url": "https://securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches",
         "added_at": "2026-11-12T09:57:23.993Z"
+      },
+      {
+        "date": "2026-11-12",
+        "title": "Vendor investigates reports of new flaws affecting patched on-premise servers when the Legacy API is exposed to the internet.",
+        "source_url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
+        "added_at": "2026-11-12T12:41:47.570Z"
       }
     ],
-    "action": "Apply the security hotfixes provided by the vendor to secure the N-central platform.",
+    "action": "Disable the Legacy API or restrict its exposure to the public internet on on-premise N-central servers.",
     "severity_note": "Demonstrated by researchers with no known patch yet.",
     "cvss": null
   },
@@ -9144,9 +9218,15 @@
         "publisher": "BleepingComputer",
         "title": "Google Calendar phishing campaign hijacks sessions, bypasses MFA",
         "published_at": "2026-11-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/calendar-invites-and-live-proxies.html",
+        "publisher": "The Hacker News",
+        "title": "Calendar Invites and Live Proxies: Inside a Google Session Hijacking Campaign",
+        "published_at": "2026-11-12"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -9157,7 +9237,7 @@
       "google-calendar"
     ],
     "created_at": "2026-11-04T15:36:32.106Z",
-    "updated_at": "2026-11-04T15:36:32.106Z",
+    "updated_at": "2026-11-12T12:41:47.570Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
