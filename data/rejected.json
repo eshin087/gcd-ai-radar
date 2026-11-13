@@ -1,5 +1,15 @@
 [
   {
+    "key": "f0f23fdb08d7bf54",
+    "title": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’",
+    "url": "https://therecord.media/artex-ai-tool-fbi-flash-alert",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Advisory and threat intelligence warning about a hacking tool rather than a specific confirmed incident against a named victim or software flaw",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T22:18:03.339Z"
+  },
+  {
     "key": "29649ccd60b64ead",
     "title": "Industry guidelines for offensive cyber tools unveiled through international Pall Mall Process",
     "url": "https://cyberscoop.com/pall-mall-process-commercial-spyware-guidelines",

@@ -3770,9 +3770,15 @@
         "publisher": "BleepingComputer",
         "title": "New worm-like 'SCKit' malware targets MSPs in ScreenConnect attacks",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions",
+        "publisher": "Microsoft Security",
+        "title": "SCKit abuses ScreenConnect to deploy remote access and target technician sessions",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 5,
+    "source_count": 6,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3784,7 +3790,7 @@
       "CVE-2026-84869"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-12T23:11:36.143Z",
+    "updated_at": "2026-11-13T22:18:03.339Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
