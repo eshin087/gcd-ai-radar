@@ -1,5 +1,121 @@
 [
   {
+    "id": "AIR-2026-1973",
+    "slug": "multiple-vulnerabilities-discovered-in-dixell-refrigeration",
+    "title": "Multiple vulnerabilities discovered in Dixell refrigeration units",
+    "summary": "VulnCheck disclosed 14 vulnerabilities in Dixell refrigeration units providing attackers with root access. Online honeypots have observed active probing and exploitation attempts against these devices.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Dixell refrigeration units"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/copeland-dixell-refrigeration-vulnerabilities",
+        "publisher": "CyberScoop",
+        "title": "Researchers continue to find serious vulnerabilities in internet connected refrigerators",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "iot",
+      "root-access",
+      "honeypot"
+    ],
+    "created_at": "2026-11-13T21:48:33.676Z",
+    "updated_at": "2026-11-13T21:48:33.676Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Researchers continue to find serious vulnerabilities in internet connected refrigerators",
+        "source_url": "https://cyberscoop.com/copeland-dixell-refrigeration-vulnerabilities",
+        "added_at": "2026-11-13T21:48:33.676Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Active malicious probes and hacks observed in the wild against the disclosed vulnerabilities.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1972",
+    "slug": "cve-2026-114713-unrealircd-improper-neutralization-of-delimi",
+    "title": "CVE-2026-114713: UnrealIRCd improper neutralization of delimiters vulnerability",
+    "summary": "UnrealIRCd contains an improper neutralization of delimiters vulnerability allowing network users to inject server-to-server commands executed with server authority. CISA added the flaw to its Known Exploited Vulnerabilities catalog following confirmation of active attacks.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "UnrealIRCd"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-114713",
+        "publisher": "CISA",
+        "title": "CVE-2026-114713: UnrealIRCd UnrealIRCd — UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-114713",
+      "cisa-kev",
+      "command-injection"
+    ],
+    "created_at": "2026-11-13T21:48:33.676Z",
+    "updated_at": "2026-11-13T21:48:33.676Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "partial",
+    "cve_ids": [
+      "CVE-2026-114713"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-114713: UnrealIRCd UnrealIRCd — UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-114713",
+        "added_at": "2026-11-13T21:48:33.676Z"
+      }
+    ],
+    "action": "Apply mitigations in accordance with vendor instructions and CISA guidance.",
+    "severity_note": "Exploitation in the wild is confirmed by CISA KEV.",
+    "cvss": 8.6
+  },
+  {
     "id": "AIR-2026-1971",
     "slug": "cve-2026-127214-flowise-server-side-request-forgery-vulnerab",
     "title": "CVE-2026-127214: Flowise server-side request forgery vulnerability",
@@ -1679,19 +1795,26 @@
         "publisher": "BleepingComputer",
         "title": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123039",
+        "publisher": "CISA",
+        "title": "CVE-2026-123039: Check Point Multiple Products — Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 4,
+    "source_count": 5,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
     "tags": [
       "CVE-2026-123039",
       "php2shell",
-      "privilege-escalation"
+      "privilege-escalation",
+      "cisa-kev"
     ],
     "created_at": "2026-11-13T08:16:59.453Z",
-    "updated_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T21:48:33.676Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -1719,6 +1842,12 @@
         "title": "Vendor releases emergency hotfixes to address the flaw and prevent root access.",
         "source_url": "https://bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access",
         "added_at": "2026-11-13T11:16:03.347Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Added to the CISA KEV catalog (exploitation confirmed)",
+        "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123039",
+        "added_at": "2026-11-13T21:48:33.676Z"
       }
     ],
     "action": "Apply the emergency hotfixes provided by the vendor immediately.",
