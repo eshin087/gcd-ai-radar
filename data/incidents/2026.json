@@ -1,5 +1,62 @@
 [
   {
+    "id": "AIR-2026-1970",
+    "slug": "city-of-osaka-suffers-data-breach-impacting-one-million-resi",
+    "title": "City of Osaka suffers data breach impacting one million residents",
+    "summary": "The City of Osaka announced a data breach affecting one million people and warned residents about suspicious phishing emails. Officials are investigating the intrusion and urging vigilance against fraudulent messages.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "City of Osaka municipal systems"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://therecord.media/city-of-osaka-japan-email-data-breach",
+        "publisher": "The Record",
+        "title": "City of Osaka warns of data breach impacting 1 million as Japan reels from dozens of cyber incidents",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "phishing",
+      "osaka"
+    ],
+    "created_at": "2026-11-13T20:22:44.422Z",
+    "updated_at": "2026-11-13T20:22:44.422Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "City of Osaka warns of data breach impacting 1 million as Japan reels from dozens of cyber incidents",
+        "source_url": "https://therecord.media/city-of-osaka-japan-email-data-breach",
+        "added_at": "2026-11-13T20:22:44.422Z"
+      }
+    ],
+    "action": "Warn residents to ignore suspicious emails claiming to be from the local government.",
+    "severity_note": "Confirmed data breach impacting one million individuals.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1969",
     "slug": "university-of-texas-at-arlington-discloses-data-breach-from",
     "title": "University of Texas at Arlington discloses data breach from cyberattack",
@@ -18234,9 +18291,15 @@
         "publisher": "The Hacker News",
         "title": "Trezor Confirms Hidden Implants in CryptoBilis-Sold Wallets That Can Steal Recovery Phrases",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix",
+        "publisher": "BleepingComputer",
+        "title": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -18247,11 +18310,11 @@
       "crypto"
     ],
     "created_at": "2026-10-30T18:43:14.146Z",
-    "updated_at": "2026-11-13T15:46:38.510Z",
+    "updated_at": "2026-11-13T20:22:44.422Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
-    "patch_status": "no_fix_needed",
+    "patch_status": "patched",
     "cve_ids": [],
     "affected": [
       "Trezor Safe 5"
@@ -18269,6 +18332,12 @@
         "title": "Trezor confirms hidden implants found in wallets sold by CryptoBilis that can steal recovery phrases",
         "source_url": "https://thehackernews.com/2026/11/trezor-confirms-hidden-hardware.html",
         "added_at": "2026-11-13T15:46:38.510Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Vendor confirms three wallets contained malicious hardware implants and releases a fix.",
+        "source_url": "https://bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix",
+        "added_at": "2026-11-13T20:22:44.422Z"
       }
     ],
     "action": "Inspect hardware wallets purchased from third-party resellers for unauthorized extra circuit boards.",
