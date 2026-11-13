@@ -1,5 +1,25 @@
 [
   {
+    "key": "29649ccd60b64ead",
+    "title": "Industry guidelines for offensive cyber tools unveiled through international Pall Mall Process",
+    "url": "https://cyberscoop.com/pall-mall-process-commercial-spyware-guidelines",
+    "publisher": "CyberScoop",
+    "source_id": "cyberscoop",
+    "reason": "out of scope: Policy and regulation news regarding international guidelines for offensive cyber tools.",
+    "confidence": 0.99,
+    "rejected_at": "2026-11-13T21:19:43.142Z"
+  },
+  {
+    "key": "f0ecb1e0931aad91",
+    "title": "ARTEX and beyond: AI-enabled penetration testing platforms",
+    "url": "https://blog.talosintelligence.com/artex-and-beyond",
+    "publisher": "Cisco Talos",
+    "source_id": "talos",
+    "reason": "out of scope: General discussion and analysis of AI-enabled penetration testing tools without a specific incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T21:19:43.142Z"
+  },
+  {
     "key": "e4299bfe7d27574b",
     "title": "What CIAM Teams Can Learn from the DHS Data Breach",
     "url": "https://fusionauth.io/blog/dhs-data-breach",
