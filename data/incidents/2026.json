@@ -1,5 +1,122 @@
 [
   {
+    "id": "AIR-2026-1942",
+    "slug": "north-korean-hackers-steal-400m-via-fake-zoom-and-teams-vide",
+    "title": "North Korean hackers steal $400M via fake Zoom and Teams video calls",
+    "summary": "North Korean state hackers stole over $400 million in cryptocurrency using fake video conferencing calls featuring webcam footage of earlier victims. The FBI seized over 900 recordings and issued a warning to crypto and web3 workers.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Zoom",
+      "Microsoft Teams"
+    ],
+    "incident_date": "2026-11-12",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls",
+        "publisher": "Help Net Security",
+        "title": "Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "cryptocurrency-theft",
+      "social-engineering",
+      "fbi",
+      "north-korea"
+    ],
+    "created_at": "2026-11-13T06:51:57.720Z",
+    "updated_at": "2026-11-13T06:51:57.720Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme",
+        "source_url": "https://helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls",
+        "added_at": "2026-11-13T06:51:57.720Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss exceeding $400 million.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1941",
+    "slug": "microsoft-teams-meeting-booking-phishing-trap-compromises-en",
+    "title": "Microsoft Teams meeting booking phishing trap compromises enterprise session",
+    "summary": "Attackers used a fake Microsoft Teams meeting scheduler to trick an employee into approving a device code sign-in. The attackers obtained a valid session token before the incident was identified.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Microsoft Teams"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/13/microsoft-teams-device-code-phishing",
+        "publisher": "Help Net Security",
+        "title": "How attackers turned a Teams meeting booking into a device code phishing trap",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "phishing",
+      "device-code",
+      "session-hijacking",
+      "microsoft-teams"
+    ],
+    "created_at": "2026-11-13T06:51:57.720Z",
+    "updated_at": "2026-11-13T06:51:57.720Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "How attackers turned a Teams meeting booking into a device code phishing trap",
+        "source_url": "https://helpnetsecurity.com/2026/11/13/microsoft-teams-device-code-phishing",
+        "added_at": "2026-11-13T06:51:57.720Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed exploitation with unauthorized session access obtained.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1940",
     "slug": "us-seizes-north-korean-hacking-infrastructure-linked-to-bina",
     "title": "US seizes North Korean hacking infrastructure linked to Binance theft",
