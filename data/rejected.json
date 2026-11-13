@@ -1,5 +1,15 @@
 [
   {
+    "key": "3b15965f9aaf3dd9",
+    "title": "354 dark web vendors and buyers arrested in Operation TorNado",
+    "url": "https://helpnetsecurity.com/2026/11/13/europol-dark-web-arrests-cybercrime",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Police sweeps, arrests and law enforcement operations regarding past campaigns are follow-ups and out of scope as new incidents.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T11:48:28.565Z"
+  },
+  {
     "key": "bf5f0aba89d53099",
     "title": "Law Enforcement Disrupts Gootloader, CastleRAT, and StealC Infrastructure",
     "url": "https://securityweek.com/law-enforcement-disrupts-gootloader-castlerat-and-stealc-infrastructure",
