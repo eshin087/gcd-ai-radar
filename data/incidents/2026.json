@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1950",
+    "slug": "silentair-hijacks-asian-telecom-networks-to-intercept-sms-2f",
+    "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes",
+    "summary": "A state-sponsored threat group named SilentAir compromised equipment across Asian mobile operators to intercept calls and text messages. The campaign primarily targeted users in Taiwan across at least six countries.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
+        "publisher": "The Hacker News",
+        "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "silentair",
+      "telecom",
+      "espionage",
+      "2fa"
+    ],
+    "created_at": "2026-11-13T12:22:42.736Z",
+    "updated_at": "2026-11-13T12:22:42.736Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
+        "source_url": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
+        "added_at": "2026-11-13T12:22:42.736Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world espionage activity against telecom targets.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1949",
     "slug": "cve-2026-126395-vllm-information-disclosure-vulnerability-in",
     "title": "CVE-2026-126395: vLLM information disclosure vulnerability in sanitize_message()",

@@ -1,5 +1,15 @@
 [
   {
+    "key": "5df4bf07aed5b496",
+    "title": "Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins",
+    "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Police sweep and infrastructure seizure of older campaigns, not a new vulnerability or initial disclosure.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T12:22:42.736Z"
+  },
+  {
     "key": "3b15965f9aaf3dd9",
     "title": "354 dark web vendors and buyers arrested in Operation TorNado",
     "url": "https://helpnetsecurity.com/2026/11/13/europol-dark-web-arrests-cybercrime",
