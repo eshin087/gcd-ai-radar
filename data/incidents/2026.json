@@ -1,5 +1,60 @@
 [
   {
+    "id": "AIR-2026-1969",
+    "slug": "university-of-texas-at-arlington-discloses-data-breach-from",
+    "title": "University of Texas at Arlington discloses data breach from cyberattack",
+    "summary": "The University of Texas at Arlington confirmed that personal information was stolen during a recent cyberattack. An investigation verified the data theft, though specific details on the compromised records remain undisclosed.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://therecord.media/university-of-texas-arlington-warns-data-breach",
+        "publisher": "The Record",
+        "title": "University of Texas at Arlington warns personal information stolen during cyberattack",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "ransomware",
+      "university-of-texas-at-arlington"
+    ],
+    "created_at": "2026-11-13T18:18:44.823Z",
+    "updated_at": "2026-11-13T18:18:44.823Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "University of Texas at Arlington warns personal information stolen during cyberattack",
+        "source_url": "https://therecord.media/university-of-texas-arlington-warns-data-breach",
+        "added_at": "2026-11-13T18:18:44.823Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed cyberattack and data theft at a named university.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1968",
     "slug": "poison-then-hide-finetuning-activated-backdoor-attack-on-pre",
     "title": "Poison-then-Hide: Finetuning-Activated Backdoor Attack on Pretrained Vision Encoders",
