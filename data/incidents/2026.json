@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1971",
+    "slug": "cve-2026-127214-flowise-server-side-request-forgery-vulnerab",
+    "title": "CVE-2026-127214: Flowise server-side request forgery vulnerability",
+    "summary": "Flowise up to version 3.1.4 contains a server-side request forgery vulnerability that allows authenticated attackers to bypass the Custom Function sandbox restrictions. Attackers can execute arbitrary requests by evading sandbox validation checks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Flowise"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-127214",
+        "publisher": "NVD",
+        "title": "CVE-2026-127214: Flowise through 3.1.4 contains a server-side request forgery vulnerability that allows authenticated attackers with chatflows or…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-127214",
+      "ssrf",
+      "sandbox-escape"
+    ],
+    "created_at": "2026-11-13T20:52:28.387Z",
+    "updated_at": "2026-11-13T20:52:28.387Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-127214"
+    ],
+    "affected": [
+      "Flowise <= 3.1.4"
+    ],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-127214: Flowise through 3.1.4 contains a server-side request forgery vulnerability that allows authenticated attackers with chatflows or…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-127214",
+        "added_at": "2026-11-13T20:52:28.387Z"
+      }
+    ],
+    "action": "Check for updates or mitigations provided by Flowise.",
+    "severity_note": "Disclosed vulnerability with a CVE entry and no exploitation reported.",
+    "cvss": 6.3
+  },
+  {
     "id": "AIR-2026-1970",
     "slug": "city-of-osaka-suffers-data-breach-impacting-one-million-resi",
     "title": "City of Osaka suffers data breach impacting one million residents",
