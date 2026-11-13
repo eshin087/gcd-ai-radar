@@ -24,9 +24,15 @@
         "publisher": "SecurityWeek",
         "title": "PHP2Shell Exploited in Destructive Check Point Gateway Attacks",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+        "publisher": "The Hacker News",
+        "title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -36,7 +42,7 @@
       "privilege-escalation"
     ],
     "created_at": "2026-11-13T08:16:59.453Z",
-    "updated_at": "2026-11-13T08:16:59.453Z",
+    "updated_at": "2026-11-13T08:45:28.743Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -52,6 +58,12 @@
         "title": "PHP2Shell Exploited in Destructive Check Point Gateway Attacks",
         "source_url": "https://securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks",
         "added_at": "2026-11-13T08:16:59.453Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Attackers deploy the TSGA backdoor and wipe ESXi files following initial access.",
+        "source_url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+        "added_at": "2026-11-13T08:45:28.743Z"
       }
     ],
     "action": "Check vendor advisories and apply available patches or mitigations immediately.",
