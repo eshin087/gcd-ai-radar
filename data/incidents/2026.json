@@ -5915,9 +5915,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Exploit N-central Flaws to Infect 21 Servers, Including 19 Running Hotfix 2",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication",
+        "publisher": "SecurityWeek",
+        "title": "Hackers Exploit New N-central Zero-Day Hours After PoC Publication",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 9,
+    "source_count": 10,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -5927,7 +5933,7 @@
       "n-able"
     ],
     "created_at": "2026-11-09T21:41:00.011Z",
-    "updated_at": "2026-11-13T06:17:51.353Z",
+    "updated_at": "2026-11-13T07:51:18.072Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
@@ -5971,6 +5977,12 @@
         "title": "Vendor restricts certain features and integrations as exploitation affects at least 21 servers, including systems running Hotfix 2.",
         "source_url": "https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html",
         "added_at": "2026-11-13T06:17:51.353Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Researchers name the remote code execution flaw 4EverAble2Shell.",
+        "source_url": "https://securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication",
+        "added_at": "2026-11-13T07:51:18.072Z"
       }
     ],
     "action": "Disable the Legacy API or restrict its exposure to the public internet on on-premise N-central servers.",
