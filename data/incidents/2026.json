@@ -24,9 +24,15 @@
         "publisher": "CyberScoop",
         "title": "US seizes North Korean hacking infrastructure, $1.2 billion in cryptocurrency stolen from Binance",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://securityweek.com/fbi-says-us-seized-1-2-billion-worth-of-cryptocurrency-stolen-from-binance",
+        "publisher": "SecurityWeek",
+        "title": "FBI Says US Seized $1.2 Billion Worth of Cryptocurrency Stolen From Binance",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -37,7 +43,7 @@
       "law_enforcement"
     ],
     "created_at": "2026-11-13T00:40:44.069Z",
-    "updated_at": "2026-11-13T00:40:44.069Z",
+    "updated_at": "2026-11-13T02:41:17.828Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
