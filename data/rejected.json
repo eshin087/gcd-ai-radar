@@ -1,5 +1,15 @@
 [
   {
+    "key": "e05f7a78ce38d83c",
+    "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+    "url": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+    "publisher": "The Hacker News",
+    "source_id": "thn",
+    "reason": "out of scope: Vulnerability not critical (CVSS <9) and no exploitation reported, so does not meet newsworthy criteria",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T17:49:31.509Z"
+  },
+  {
     "key": "f6d06bee472cc946",
     "title": "German parliament passes law giving spy agencies hacking, sabotage powers",
     "url": "https://therecord.media/german-parliament-passes-law-giving-spy-agencies-hacking-power",
