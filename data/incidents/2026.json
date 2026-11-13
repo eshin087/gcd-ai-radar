@@ -1,5 +1,63 @@
 [
   {
+    "id": "AIR-2026-1940",
+    "slug": "us-seizes-north-korean-hacking-infrastructure-linked-to-bina",
+    "title": "US seizes North Korean hacking infrastructure linked to Binance theft",
+    "summary": "United States authorities seized hacking infrastructure belonging to APT38 used in cryptocurrency thefts totalling $1.2 billion from Binance. The operation also recovered footage used by attackers to impersonate victims during video calls.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 4,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [
+      "Binance"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://cyberscoop.com/us-seizes-north-korea-hacking-infrastructure-binance",
+        "publisher": "CyberScoop",
+        "title": "US seizes North Korean hacking infrastructure, $1.2 billion in cryptocurrency stolen from Binance",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "apt38",
+      "cryptocurrency",
+      "binance",
+      "law_enforcement"
+    ],
+    "created_at": "2026-11-13T00:40:44.069Z",
+    "updated_at": "2026-11-13T00:40:44.069Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "US seizes North Korean hacking infrastructure, $1.2 billion in cryptocurrency stolen from Binance",
+        "source_url": "https://cyberscoop.com/us-seizes-north-korea-hacking-infrastructure-binance",
+        "added_at": "2026-11-13T00:40:44.069Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed real-world financial loss of $1.2 billion.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1939",
     "slug": "sas-data-breach-exposes-booking-details-of-350-000-passenger",
     "title": "SAS data breach exposes booking details of 350,000 passengers",
