@@ -1,5 +1,64 @@
 [
   {
+    "id": "AIR-2026-1943",
+    "slug": "cve-2026-123039-check-point-gateway-exploited-in-destructive",
+    "title": "CVE-2026-123039: Check Point Gateway Exploited in Destructive Attacks",
+    "summary": "Attackers exploited PHP2Shell for initial compromise alongside CVE-2026-123039 to elevate privileges to root on Check Point Gateways. The targeted attacks resulted in destructive gateway impacts.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "Check Point Gateway"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks",
+        "publisher": "SecurityWeek",
+        "title": "PHP2Shell Exploited in Destructive Check Point Gateway Attacks",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "CVE-2026-123039",
+      "php2shell",
+      "privilege-escalation"
+    ],
+    "created_at": "2026-11-13T08:16:59.453Z",
+    "updated_at": "2026-11-13T08:16:59.453Z",
+    "lane": "patch",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [
+      "CVE-2026-123039"
+    ],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "PHP2Shell Exploited in Destructive Check Point Gateway Attacks",
+        "source_url": "https://securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks",
+        "added_at": "2026-11-13T08:16:59.453Z"
+      }
+    ],
+    "action": "Check vendor advisories and apply available patches or mitigations immediately.",
+    "severity_note": "Confirmed exploitation in the wild against real targets.",
+    "cvss": 7.8
+  },
+  {
     "id": "AIR-2026-1942",
     "slug": "north-korean-hackers-steal-400m-via-fake-zoom-and-teams-vide",
     "title": "North Korean hackers steal $400M via fake Zoom and Teams video calls",
