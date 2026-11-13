@@ -1,5 +1,75 @@
 [
   {
+    "key": "31e923d4d6025f16",
+    "title": "CrossPloit: A Benchmark for Cross-Version PoC Migration in Python Web Applications",
+    "url": "https://arxiv.org/abs/2611.16588",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Paper proposes a benchmark for cross-version PoC migration in web applications, not an incident.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "17680564150fd1c2",
+    "title": "Intent-Aware Protection for AI Agents",
+    "url": "https://arxiv.org/abs/2611.16122",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: The paper proposes a defense framework (Intent-Aware Security) rather than demonstrating a new attack or vulnerability.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "2fe8369e171f24f2",
+    "title": "Game-Theoretic Analysis of RIS-Assisted Challenge-Response PLA - Part I: Perfect Channel Knowledge",
+    "url": "https://arxiv.org/abs/2611.16557",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Out of scope: physical layer communication and authentication research without an AI system as target or tool.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "3ee0c9ab531fa535",
+    "title": "Preserve the Vulnerability, Break the Alert: Testing the Robustness of CodeQL Taint Tracking with Natural Rewrites",
+    "url": "https://arxiv.org/abs/2611.17123",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Out of scope: SAST robustness research using LLMs, not an AI security vulnerability or AI-enabled attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "367d33e15227f276",
+    "title": "Adversarial Risk in the Generative AI Era Necessitates Dropping the Small Epsilon Ball",
+    "url": "https://arxiv.org/abs/2611.14594",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: Out of scope: theoretical opinion paper on adversarial machine learning research paradigms and metrics.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "4400e6db46d92f48",
+    "title": "SideTaskBench: Measuring Unauthorized Side-Task Delivery in Coding Agents",
+    "url": "https://arxiv.org/abs/2611.14548",
+    "publisher": "arXiv",
+    "source_id": "arxiv-cscr",
+    "reason": "out of scope: benchmark and measurement paper proposing a new evaluation framework rather than a demonstrated attack or vulnerability",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
+    "key": "e4e9606f466dde4a",
+    "title": "DOJ: Gootloader used in at least 44 ransomware attacks costing $29 million since 2018",
+    "url": "https://therecord.media/gootloader-ransomware-doj-details",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: follow-up summary of historical campaign statistics rather than a new specific incident disclosure",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T16:43:05.170Z"
+  },
+  {
     "key": "f88082b89135d1a8",
     "title": "Record number of cyber incidents reported to UK privacy regulator",
     "url": "https://therecord.media/record-number-of-cyber-incidents-reported-to-uk-regulator",

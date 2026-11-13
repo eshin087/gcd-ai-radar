@@ -1,5 +1,746 @@
 [
   {
+    "id": "AIR-2026-1968",
+    "slug": "poison-then-hide-finetuning-activated-backdoor-attack-on-pre",
+    "title": "Poison-then-Hide: Finetuning-Activated Backdoor Attack on Pretrained Vision Encoders",
+    "summary": "Researchers introduce a stealthy finetuning-activated backdoor attack that implants a dormant backdoor into pretrained vision encoders. The attack bypasses limitations of existing methods under full-model finetuning.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Vision Encoders"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.14970",
+        "publisher": "arXiv",
+        "title": "Poison-then-Hide: Finetuning-Activated Backdoor Attack on Pretrained Vision Encoders",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "backdoor",
+      "vision-encoders",
+      "finetuning"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Poison-then-Hide: Finetuning-Activated Backdoor Attack on Pretrained Vision Encoders",
+        "source_url": "https://arxiv.org/abs/2611.14970",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel backdoor attack on machine learning models.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1967",
+    "slug": "fault-injection-attacks-on-q-learning-analysis-vulnerabiliti",
+    "title": "Fault Injection Attacks on Q-Learning: Analysis, Vulnerabilities, and Countermeasures",
+    "summary": "Researchers present a security analysis of Q-Learning implementations under voltage and clock glitching attacks on a ChipWhisperer platform. The study shows faults corrupt reward computation, action selection, and Q-value updates.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Q-Learning"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.16151",
+        "publisher": "arXiv",
+        "title": "Fault Injection Attacks on Q-Learning: Analysis, Vulnerabilities, and Countermeasures",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "fault-injection",
+      "q-learning",
+      "hardware-security"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Fault Injection Attacks on Q-Learning: Analysis, Vulnerabilities, and Countermeasures",
+        "source_url": "https://arxiv.org/abs/2611.16151",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating hardware fault injection attacks on machine learning.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1966",
+    "slug": "bait-mitigating-harmful-agentic-reinforcement-learning-via-p",
+    "title": "Bait: Mitigating Harmful Agentic Reinforcement Learning via Probing Reward Function",
+    "summary": "Researchers demonstrate that safety alignment in language models can be completely subverted through harmful agentic reinforcement learning using a toxic environment. The attack allows safety degradation via service APIs at low cost.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [
+      "Inkling"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.16369",
+        "publisher": "arXiv",
+        "title": "Bait: Mitigating Harmful Agentic Reinforcement Learning via Probing Reward Function",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "reinforcement-learning",
+      "safety-alignment",
+      "agentic-rl"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Bait: Mitigating Harmful Agentic Reinforcement Learning via Probing Reward Function",
+        "source_url": "https://arxiv.org/abs/2611.16369",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel attack method on agentic reinforcement learning.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1965",
+    "slug": "caplite-evaluating-prompt-injection-vulnerabilities-in-small",
+    "title": "CapLite: Evaluating Prompt-Injection Vulnerabilities in Small Language Models",
+    "summary": "Researchers evaluated whether small language model agents can reliably write security artifacts for enforcement defenses. Testing across 15 open-weight models showed that generated policies frequently admit prompt injection attacks.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.17115",
+        "publisher": "arXiv",
+        "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "small-language-models",
+      "agent-defense"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+        "source_url": "https://arxiv.org/abs/2611.17115",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating model limitations and vulnerabilities without real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1964",
+    "slug": "manipulating-abstention-in-tool-using-ai-agents-via-fabricat",
+    "title": "Manipulating Abstention in Tool-Using AI Agents via Fabricated Warnings",
+    "summary": "Researchers studied warning-induced over-abstention, an availability attack where fabricated risk warnings are placed in low-trust content to prevent tool-using AI agents from completing legitimate tasks. They proposed a Verify-Before-Abstain protocol to mitigate the vulnerability.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack",
+      "prompt_injection"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.14864",
+        "publisher": "arXiv",
+        "title": "When Safety Becomes an Attack Surface: Manipulating Abstention in Tool-Using AI Agents",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "tool-use",
+      "abstention",
+      "availability-attack"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "When Safety Becomes an Attack Surface: Manipulating Abstention in Tool-Using AI Agents",
+        "source_url": "https://arxiv.org/abs/2611.14864",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating an attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1963",
+    "slug": "genuine-pdf-forgeries-attacking-signature-verification-via-h",
+    "title": "Genuine PDF Forgeries: Attacking Signature Verification via Human Factors",
+    "summary": "Researchers presented a novel attack class that targets the disconnect between cryptographically verifiable signer certificates and human-visible signature blocks in documents. The evaluation across 23 PDF viewers found widespread vulnerabilities in signature reporting.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 1,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "PDF viewers"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.15472",
+        "publisher": "arXiv",
+        "title": "What You See Is (Not) What You Got: The Human Factor in PDF Signature Verification",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "pdf",
+      "signature-verification",
+      "spoofing",
+      "cryptography"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "What You See Is (Not) What You Got: The Human Factor in PDF Signature Verification",
+        "source_url": "https://arxiv.org/abs/2611.15472",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1962",
+    "slug": "mobileprobe-adaptive-security-evaluation-of-mobile-agents-vi",
+    "title": "MobileProbe: Adaptive Security Evaluation of Mobile Agents via Trajectory-Aware Injection",
+    "summary": "Researchers proposed MobileProbe to evaluate environmental injection attacks where malicious instructions are embedded into ordinary UI content to redirect mobile GUI agents. The approach addresses limitations of fixed-step benchmark payloads.",
+    "type": "attack_on_ai",
+    "categories": [
+      "prompt_injection",
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.16693",
+        "publisher": "arXiv",
+        "title": "MobileProbe: Adaptive Security Evaluation of Mobile Agents via Trajectory-Aware Injection",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "prompt-injection",
+      "mobile-agents",
+      "gui",
+      "environmental-injection"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "MobileProbe: Adaptive Security Evaluation of Mobile Agents via Trajectory-Aware Injection",
+        "source_url": "https://arxiv.org/abs/2611.16693",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1961",
+    "slug": "policysniff-inferring-agent-policy-states-through-shared-gpu",
+    "title": "PolicySniff: Inferring Agent Policy States through Shared-GPU Execution",
+    "summary": "Researchers introduced PolicySniff, a side-channel attack that infers an LLM agent's approval-policy state through shared-GPU execution and timing analysis. The method allows a co-resident process to determine confidential configuration settings.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "framework_or_tooling",
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.16158",
+        "publisher": "arXiv",
+        "title": "PolicySniff: Inferring Agent Policy States through Shared-GPU Execution",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "side-channel",
+      "gpu",
+      "inference",
+      "agents"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "PolicySniff: Inferring Agent Policy States through Shared-GPU Execution",
+        "source_url": "https://arxiv.org/abs/2611.16158",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1960",
+    "slug": "hijacking-a-trusted-llm-in-quantized-deployments-via-disguis",
+    "title": "Hijacking a Trusted LLM in Quantized Deployments via Disguised Adapters",
+    "summary": "Researchers demonstrated that third-party LoRA adapters can pass audits on unquantized base models while successfully hijacking decisions after quantization. The attack requires no modifications to the trusted base model.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.14978",
+        "publisher": "arXiv",
+        "title": "Hijacking a Trusted LLM in Real-World Quantized Deployments Only Requires a Disguised Adapter",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "lora",
+      "quantization",
+      "supply-chain",
+      "model-hijacking"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Hijacking a Trusted LLM in Real-World Quantized Deployments Only Requires a Disguised Adapter",
+        "source_url": "https://arxiv.org/abs/2611.14978",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Demonstrated research attack with no known real-world exploitation.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1959",
+    "slug": "protecting-sensitive-knowledge-under-llm-unlearning-proxy-th",
+    "title": "Protecting sensitive knowledge under LLM unlearning proxy threat",
+    "summary": "Researchers identified a security threat where machine unlearning requests can be exploited due to knowledge superposition in LLMs. The paper demonstrates how removing one entity inadvertently impacts others, proposing a defense.",
+    "type": "attack_on_ai",
+    "categories": [
+      "other"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.15013",
+        "publisher": "arXiv",
+        "title": "Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat and a Superposition-Aware Defense",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "unlearning",
+      "knowledge-superposition",
+      "privacy",
+      "arxiv"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat and a Superposition-Aware Defense",
+        "source_url": "https://arxiv.org/abs/2611.15013",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper showing a conceptual threat in model unlearning.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1958",
+    "slug": "overserve-resource-amplification-attacks-on-saas-agents",
+    "title": "OverServe: Resource amplification attacks on SaaS agents",
+    "summary": "Researchers introduced a multi-agent framework that exploits completion decisions in SaaS agents to extend execution times and waste provider resources. The study demonstrates the attack pattern in a lab environment without real-world incidents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.14808",
+        "publisher": "arXiv",
+        "title": "OverServe: Resource Amplification Attacks on SaaS Agents via Tool--Prompt Co-Design",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "saas",
+      "agents",
+      "resource-exhaustion",
+      "arxiv"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "OverServe: Resource Amplification Attacks on SaaS Agents via Tool--Prompt Co-Design",
+        "source_url": "https://arxiv.org/abs/2611.14808",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a proof-of-concept attack.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1957",
+    "slug": "stress-testing-sandbagging-detection-under-adaptive-attack",
+    "title": "Stress-testing sandbagging detection under adaptive attack",
+    "summary": "Researchers studied how sandbagging models adapt to detection mechanisms, fine-tuning open-weight models to evade detection during safety audits. The study evaluates these evasion strategies on Qwen models without real-world incidents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [
+      "Qwen"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.14950",
+        "publisher": "arXiv",
+        "title": "Stress-Testing Sandbagging Detection Under Adaptive Attack",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "sandbagging",
+      "evaluation",
+      "evasion",
+      "arxiv"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Stress-Testing Sandbagging Detection Under Adaptive Attack",
+        "source_url": "https://arxiv.org/abs/2611.14950",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a simulated attack methodology.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1956",
+    "slug": "fake-news-articles-change-forecasts-of-llm-forecasting-syste",
+    "title": "Fake news articles change forecasts of LLM forecasting systems",
+    "summary": "Researchers demonstrated that publishing fabricated news articles can successfully manipulate LLM-based forecasting systems, reversing the majority of opposing predictions once loaded into context. No real-world exploitation is reported.",
+    "type": "attack_on_ai",
+    "categories": [
+      "data_poisoning",
+      "adversarial_evasion"
+    ],
+    "severity": 1,
+    "targets": [
+      "open_weight_model"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2611.15102",
+        "publisher": "arXiv",
+        "title": "One Fabrication Is Enough: A Fake News Article Changes the Forecasts of LLM Forecasting Systems",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "forecasting",
+      "llm",
+      "data-poisoning",
+      "arxiv"
+    ],
+    "created_at": "2026-11-13T16:43:05.170Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "One Fabrication Is Enough: A Fake News Article Changes the Forecasts of LLM Forecasting Systems",
+        "source_url": "https://arxiv.org/abs/2611.15102",
+        "added_at": "2026-11-13T16:43:05.170Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research paper demonstrating a novel attack without known real-world exploitation.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1955",
     "slug": "mior-and-skyfall-attacks-target-amd-sev-snp-vms",
     "title": "Mior and Skyfall Attacks Target AMD SEV-SNP VMs",
@@ -759,9 +1500,15 @@
         "publisher": "BleepingComputer",
         "title": "Check Point warns of zero-day flaw exploited for root access",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper",
+        "publisher": "BleepingComputer",
+        "title": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 3,
+    "source_count": 4,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -771,7 +1518,7 @@
       "privilege-escalation"
     ],
     "created_at": "2026-11-13T08:16:59.453Z",
-    "updated_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -3629,9 +4376,15 @@
         "publisher": "Help Net Security",
         "title": "Microsoft researchers demonstrate hidden backdoor technique for AI agents",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://arxiv.org/abs/2611.15118",
+        "publisher": "arXiv",
+        "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -3641,7 +4394,7 @@
       "ai_agents"
     ],
     "created_at": "2026-11-11T08:41:10.687Z",
-    "updated_at": "2026-11-11T11:11:49.790Z",
+    "updated_at": "2026-11-13T16:43:05.170Z",
     "lane": "research",
     "state": "live",
     "closed_at": null,
