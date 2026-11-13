@@ -1,5 +1,15 @@
 [
   {
+    "key": "e4299bfe7d27574b",
+    "title": "What CIAM Teams Can Learn from the DHS Data Breach",
+    "url": "https://fusionauth.io/blog/dhs-data-breach",
+    "publisher": "fusionauth.io",
+    "source_id": "hn",
+    "reason": "out of scope: This is an informational blog post providing lessons and a checklist based on a previous breach, rather than a primary incident report.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T19:50:57.723Z"
+  },
+  {
     "key": "e05f7a78ce38d83c",
     "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
     "url": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
