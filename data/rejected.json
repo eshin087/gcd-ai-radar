@@ -1,5 +1,35 @@
 [
   {
+    "key": "f88082b89135d1a8",
+    "title": "Record number of cyber incidents reported to UK privacy regulator",
+    "url": "https://therecord.media/record-number-of-cyber-incidents-reported-to-uk-regulator",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Surveys, statistics and report finds pieces are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T13:19:31.571Z"
+  },
+  {
+    "key": "7733cfcac0170493",
+    "title": "Over-Scoped Tokens: Five Ways One Compromise Becomes Many",
+    "url": "https://checkmarx.com/zero-post/over-scoped-tokens-five-ways-one-compromise-becomes-many",
+    "publisher": "Checkmarx",
+    "source_id": "checkmarx-zero",
+    "reason": "out of scope: Roundups, newsletters, opinion and explainers without a specific incident are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T13:19:31.571Z"
+  },
+  {
+    "key": "8b30a7e0b2800bdd",
+    "title": "Attackers in Binance Breach Targeted Known Weakness, Missing Controls",
+    "url": "https://darkreading.com/cybersecurity-operations/attackers-binance-breach-targeted-weakness-missing-controls",
+    "publisher": "Dark Reading",
+    "source_id": "darkreading",
+    "reason": "out of scope: Surveys, statistics and report finds pieces or analysis articles without a newly disclosed specific incident are out of scope.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T13:19:31.571Z"
+  },
+  {
     "key": "5df4bf07aed5b496",
     "title": "Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins",
     "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html",
