@@ -1,5 +1,383 @@
 [
   {
+    "id": "AIR-2026-1949",
+    "slug": "cve-2026-126395-vllm-information-disclosure-vulnerability-in",
+    "title": "CVE-2026-126395: vLLM information disclosure vulnerability in sanitize_message()",
+    "summary": "An information disclosure flaw in vLLM allows unauthenticated attackers to leak server heap addresses via crafted PNG inputs. A fixed release is available in version 0.31.0.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126395",
+        "publisher": "NVD",
+        "title": "CVE-2026-126395: vLLM from 0.14.0rc1 before 0.31.0 contains an information disclosure vulnerability in sanitize_message() whose lowercase-only…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.9,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126395",
+      "information-disclosure",
+      "aslr-bypass"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126395"
+    ],
+    "affected": [
+      "vLLM 0.14.0rc1 to 0.30.9"
+    ],
+    "fixed_in": [
+      "vLLM 0.31.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126395: vLLM from 0.14.0rc1 before 0.31.0 contains an information disclosure vulnerability in sanitize_message() whose lowercase-only…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126395",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.31.0 or later.",
+    "severity_note": "Disclosed vulnerability with a patch and no confirmed exploitation.",
+    "cvss": 6.9
+  },
+  {
+    "id": "AIR-2026-1948",
+    "slug": "cve-2026-126399-vllm-resource-exhaustion-vulnerability-via-v",
+    "title": "CVE-2026-126399: vLLM resource exhaustion vulnerability via video frame limits bypass",
+    "summary": "vLLM contains a resource exhaustion vulnerability allowing inference clients to bypass server frame limits using crafted video parameters. Attackers can force excessive frame decoding and stacking, causing memory exhaustion.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126399",
+        "publisher": "NVD",
+        "title": "CVE-2026-126399: vLLM from 0.19.0 before 0.31.0 contains a resource exhaustion vulnerability that allows inference clients to bypass the server…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126399",
+      "denial-of-service",
+      "memory-exhaustion"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126399"
+    ],
+    "affected": [
+      "vLLM >= 0.19.0, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.31.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126399: vLLM from 0.19.0 before 0.31.0 contains a resource exhaustion vulnerability that allows inference clients to bypass the server…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126399",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.31.0 or later.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed exploitation.",
+    "cvss": 7.1
+  },
+  {
+    "id": "AIR-2026-1947",
+    "slug": "cve-2026-126398-vllm-reachable-assertion-vulnerability-in-gp",
+    "title": "CVE-2026-126398: vLLM reachable assertion vulnerability in GPUModelRunner._init_xdrope_positions",
+    "summary": "vLLM contains a reachable assertion vulnerability allowing remote attackers to crash the engine via specific embeddings-only requests. Attackers can terminate the EngineCore and API server for all connected clients.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126398",
+        "publisher": "NVD",
+        "title": "CVE-2026-126398: vLLM from 0.28.0 before 0.30.0 contains a reachable assertion vulnerability in GPUModelRunner._init_xdrope_positions that allows…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126398",
+      "denial-of-service",
+      "assertion-failure"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126398"
+    ],
+    "affected": [
+      "vLLM >= 0.28.0, < 0.30.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.30.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126398: vLLM from 0.28.0 before 0.30.0 contains a reachable assertion vulnerability in GPUModelRunner._init_xdrope_positions that allows…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126398",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.30.0 or later.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed exploitation.",
+    "cvss": 8.2
+  },
+  {
+    "id": "AIR-2026-1946",
+    "slug": "cve-2026-126394-vllm-resource-exhaustion-vulnerability-in-op",
+    "title": "CVE-2026-126394: vLLM resource exhaustion vulnerability in OpenCVDynamicOpenPanguVideoBackend",
+    "summary": "vLLM contains a resource exhaustion flaw in the openpangu video backend due to unconstrained num_frames input. Unauthenticated attackers can trigger large allocations that OOM-kill the API server.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126394",
+        "publisher": "NVD",
+        "title": "CVE-2026-126394: vLLM 0.30.0 before 0.31.0 contains a resource exhaustion vulnerability in OpenCVDynamicOpenPanguVideoBackend, which uses…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126394",
+      "denial-of-service",
+      "out-of-memory"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126394"
+    ],
+    "affected": [
+      "vLLM >= 0.30.0, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.31.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126394: vLLM 0.30.0 before 0.31.0 contains a resource exhaustion vulnerability in OpenCVDynamicOpenPanguVideoBackend, which uses…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126394",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.31.0 or later.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed exploitation.",
+    "cvss": 6.9
+  },
+  {
+    "id": "AIR-2026-1945",
+    "slug": "cve-2026-126397-vllm-quadratic-cpu-work-vulnerability-in-coh",
+    "title": "CVE-2026-126397: vLLM quadratic CPU work vulnerability in Cohere2 Vision multimodal preprocessing",
+    "summary": "vLLM forwards request-controlled max_patches values to the Hugging Face processor without an upper bound, causing quadratic CPU work. Remote clients can exhaust preprocessing workers and deny service to other users.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126397",
+        "publisher": "NVD",
+        "title": "CVE-2026-126397: vLLM from 0.10.1 before 0.31.0 forwards a request-controlled mm_processor_kwargs.max_patches value to the Hugging Face processor…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126397",
+      "denial-of-service",
+      "resource-exhaustion"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126397"
+    ],
+    "affected": [
+      "vLLM >= 0.10.1, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.31.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126397: vLLM from 0.10.1 before 0.31.0 forwards a request-controlled mm_processor_kwargs.max_patches value to the Hugging Face processor…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126397",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.31.0 or later.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed exploitation.",
+    "cvss": 8.7
+  },
+  {
+    "id": "AIR-2026-1944",
+    "slug": "cve-2026-126396-vllm-resource-exhaustion-vulnerability-in-mi",
+    "title": "CVE-2026-126396: vLLM resource exhaustion vulnerability in MiniMax M3 VL video processor",
+    "summary": "vLLM contains a resource exhaustion vulnerability in the MiniMax M3 VL video processor allowing remote clients to supply large min_pixels values. This causes excessive CPU and host-memory consumption that can disrupt workers and services.",
+    "type": "attack_on_ai",
+    "categories": [
+      "infra_vuln"
+    ],
+    "severity": 2,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "vLLM"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126396",
+        "publisher": "NVD",
+        "title": "CVE-2026-126396: vLLM from 0.24.0 before 0.31.0 contains a resource exhaustion vulnerability in the MiniMax M3 VL video processor, which accepts…",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "seed_nvd",
+    "tags": [
+      "CVE-2026-126396",
+      "denial-of-service",
+      "resource-exhaustion"
+    ],
+    "created_at": "2026-11-13T11:16:03.347Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
+    "lane": "patch",
+    "state": "closed",
+    "closed_at": "2026-11-13",
+    "patch_status": "patched",
+    "cve_ids": [
+      "CVE-2026-126396"
+    ],
+    "affected": [
+      "vLLM >= 0.24.0, < 0.31.0"
+    ],
+    "fixed_in": [
+      "vLLM 0.31.0"
+    ],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "CVE-2026-126396: vLLM from 0.24.0 before 0.31.0 contains a resource exhaustion vulnerability in the MiniMax M3 VL video processor, which accepts…",
+        "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126396",
+        "added_at": "2026-11-13T11:16:03.347Z"
+      }
+    ],
+    "action": "Update vLLM to version 0.31.0 or later.",
+    "severity_note": "Disclosed vulnerability with a fix and no confirmed exploitation.",
+    "cvss": 6.9
+  },
+  {
     "id": "AIR-2026-1943",
     "slug": "cve-2026-123039-check-point-gateway-exploited-in-destructive",
     "title": "CVE-2026-123039: Check Point Gateway Exploited in Destructive Attacks",
@@ -30,9 +408,15 @@
         "publisher": "The Hacker News",
         "title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access",
+        "publisher": "BleepingComputer",
+        "title": "Check Point warns of zero-day flaw exploited for root access",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -42,11 +426,11 @@
       "privilege-escalation"
     ],
     "created_at": "2026-11-13T08:16:59.453Z",
-    "updated_at": "2026-11-13T08:45:28.743Z",
+    "updated_at": "2026-11-13T11:16:03.347Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
-    "patch_status": "unknown",
+    "patch_status": "patched",
     "cve_ids": [
       "CVE-2026-123039"
     ],
@@ -64,9 +448,15 @@
         "title": "Attackers deploy the TSGA backdoor and wipe ESXi files following initial access.",
         "source_url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
         "added_at": "2026-11-13T08:45:28.743Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Vendor releases emergency hotfixes to address the flaw and prevent root access.",
+        "source_url": "https://bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access",
+        "added_at": "2026-11-13T11:16:03.347Z"
       }
     ],
-    "action": "Check vendor advisories and apply available patches or mitigations immediately.",
+    "action": "Apply the emergency hotfixes provided by the vendor immediately.",
     "severity_note": "Confirmed exploitation in the wild against real targets.",
     "cvss": 7.8
   },

@@ -1,5 +1,15 @@
 [
   {
+    "key": "bf5f0aba89d53099",
+    "title": "Law Enforcement Disrupts Gootloader, CastleRAT, and StealC Infrastructure",
+    "url": "https://securityweek.com/law-enforcement-disrupts-gootloader-castlerat-and-stealc-infrastructure",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Law enforcement infrastructure seizure and domain takedown is a follow-up or sweep event, not a new initial attack.",
+    "confidence": 0.9,
+    "rejected_at": "2026-11-13T11:16:03.347Z"
+  },
+  {
     "key": "ebeb3fd8a19531cd",
     "title": "Microsoft confirms Windows activation failures after November updates",
     "url": "https://bleepingcomputer.com/news/microsoft/microsoft-confirms-windows-activation-failures-after-november-updates",
