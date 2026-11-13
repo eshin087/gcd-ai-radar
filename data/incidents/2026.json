@@ -1,5 +1,61 @@
 [
   {
+    "id": "AIR-2026-1952",
+    "slug": "warden-stealer-distributed-via-fake-grand-theft-auto-vi-down",
+    "title": "WARDEN Stealer distributed via fake Grand Theft Auto VI download links",
+    "summary": "Threat actors are using a Google Colab notebook to promote a fake Grand Theft Auto VI download that installs WARDEN Stealer. The malware targets saved passwords, browser cookies, gaming credentials, and cryptocurrency wallets.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "individual_victims"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://helpnetsecurity.com/2026/11/13/fake-gta-6-download-scam",
+        "publisher": "Help Net Security",
+        "title": "Fake GTA 6 download goes after Steam logins and crypto wallet data",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "infostealer",
+      "warden",
+      "malware",
+      "credential-theft"
+    ],
+    "created_at": "2026-11-13T15:23:22.184Z",
+    "updated_at": "2026-11-13T15:23:22.184Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "Fake GTA 6 download goes after Steam logins and crypto wallet data",
+        "source_url": "https://helpnetsecurity.com/2026/11/13/fake-gta-6-download-scam",
+        "added_at": "2026-11-13T15:23:22.184Z"
+      }
+    ],
+    "action": "Do not download unauthorized game executables from untrusted sources or promotional links.",
+    "severity_note": "Confirmed active malware campaign targeting users",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1951",
     "slug": "ransomware-attack-on-activecloud-disrupts-belarusian-busines",
     "title": "Ransomware attack on ActiveCloud disrupts Belarusian businesses",
