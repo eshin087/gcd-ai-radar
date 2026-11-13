@@ -706,9 +706,15 @@
         "publisher": "The Hacker News",
         "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
         "published_at": "2026-11-12"
+      },
+      {
+        "url": "https://securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop",
+        "publisher": "SecurityWeek",
+        "title": "Nightmare Eclipse Drops Windows Zero-Day Exploit ‘SignDrop’",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -718,7 +724,7 @@
       "cve-2026-xxxx"
     ],
     "created_at": "2026-11-12T16:47:11.107Z",
-    "updated_at": "2026-11-12T18:26:12.148Z",
+    "updated_at": "2026-11-13T09:18:44.967Z",
     "lane": "patch",
     "state": "live",
     "closed_at": null,
@@ -738,6 +744,12 @@
         "title": "Public exploit code released for SignDrop zero‑day, confirming active exploitation.",
         "source_url": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
         "added_at": "2026-11-12T18:26:12.148Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Technical details reveal the exploit abuses CLFS and Windows Defender to trigger arbitrary file creation.",
+        "source_url": "https://securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop",
+        "added_at": "2026-11-13T09:18:44.967Z"
       }
     ],
     "action": "Monitor for signs of SignDrop exploitation and apply mitigations.",
