@@ -1,5 +1,15 @@
 [
   {
+    "key": "ebeb3fd8a19531cd",
+    "title": "Microsoft confirms Windows activation failures after November updates",
+    "url": "https://bleepingcomputer.com/news/microsoft/microsoft-confirms-windows-activation-failures-after-november-updates",
+    "publisher": "BleepingComputer",
+    "source_id": "bleepingcomputer",
+    "reason": "out of scope: It is a product bug or update issue rather than a security vulnerability or exploit.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T10:37:48.597Z"
+  },
+  {
     "key": "07408c9f4bb6ef4b",
     "title": "OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes",
     "url": "https://helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents",
