@@ -1,5 +1,25 @@
 [
   {
+    "key": "07408c9f4bb6ef4b",
+    "title": "OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes",
+    "url": "https://helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents",
+    "publisher": "Help Net Security",
+    "source_id": "helpnetsecurity",
+    "reason": "out of scope: Product launch and vendor announcement for new security tools.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T09:50:45.552Z"
+  },
+  {
+    "key": "7c4eef26d27b3ce9",
+    "title": "OpenAI Unveils Daybreak Red Team, Defense Factory Security Tools",
+    "url": "https://securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Product launch and vendor announcement for new security tools.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T09:50:45.552Z"
+  },
+  {
     "key": "28876cddbb84aea4",
     "title": "PostgreSQL security update fixes 52 vulnerabilities, ends support for PostgreSQL 14",
     "url": "https://helpnetsecurity.com/2026/11/13/postgresql-security-update-november-2026",
