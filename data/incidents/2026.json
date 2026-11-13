@@ -1,5 +1,117 @@
 [
   {
+    "id": "AIR-2026-1954",
+    "slug": "tsmc-confirms-employee-data-breach-tied-to-cloud-service-pro",
+    "title": "TSMC confirms employee data breach tied to cloud service provider",
+    "summary": "TSMC confirmed an employee data breach linked to a third-party cloud service provider. Investigators found the exposed data matched cloud system records, though internal TSMC systems remained uncompromised.",
+    "type": "not_ai",
+    "categories": [
+      "general"
+    ],
+    "severity": 3,
+    "targets": [
+      "n/a"
+    ],
+    "products": [
+      "TSMC cloud service"
+    ],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://therecord.media/tsmc-confirms-employee-data-breach-cloud-provider",
+        "publisher": "The Record",
+        "title": "TSMC confirms employee data breach tied to cloud service provider",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "data-breach",
+      "third-party",
+      "tsmc"
+    ],
+    "created_at": "2026-11-13T15:46:38.510Z",
+    "updated_at": "2026-11-13T15:46:38.510Z",
+    "lane": "breach",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "TSMC confirms employee data breach tied to cloud service provider",
+        "source_url": "https://therecord.media/tsmc-confirms-employee-data-breach-cloud-provider",
+        "added_at": "2026-11-13T15:46:38.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Confirmed data breach with limited impact on internal operations.",
+    "cvss": null
+  },
+  {
+    "id": "AIR-2026-1953",
+    "slug": "ai-invoice-processing-agent-manipulated-to-change-vendor-ban",
+    "title": "AI invoice processing agent manipulated to change vendor bank details",
+    "summary": "An automated invoice processing agent was tricked via an email into modifying vendor bank details. The attack bypassed traditional alerts, highlighting critical security gaps in enterprise AI agents.",
+    "type": "attack_on_ai",
+    "categories": [
+      "agent_hijack"
+    ],
+    "severity": 1,
+    "targets": [
+      "enterprise_deployment"
+    ],
+    "products": [],
+    "incident_date": "2026-11-13",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps",
+        "publisher": "BleepingComputer",
+        "title": "How one AI agent exposed five critical enterprise security gaps",
+        "published_at": "2026-11-13"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.85,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "agent-hijack",
+      "invoice-fraud",
+      "enterprise-ai"
+    ],
+    "created_at": "2026-11-13T15:46:38.510Z",
+    "updated_at": "2026-11-13T15:46:38.510Z",
+    "lane": "research",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "unknown",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-13",
+        "title": "How one AI agent exposed five critical enterprise security gaps",
+        "source_url": "https://bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps",
+        "added_at": "2026-11-13T15:46:38.510Z"
+      }
+    ],
+    "action": "",
+    "severity_note": "Research demonstration of agent manipulation without real-world loss.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1952",
     "slug": "warden-stealer-distributed-via-fake-grand-theft-auto-vi-down",
     "title": "WARDEN Stealer distributed via fake Grand Theft Auto VI download links",
@@ -661,9 +773,15 @@
         "publisher": "Help Net Security",
         "title": "Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html",
+        "publisher": "The Hacker News",
+        "title": "FBI Says North Korean Hackers Stole Over $400 Million in Crypto Using Deepfake Video Calls",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -674,7 +792,7 @@
       "north-korea"
     ],
     "created_at": "2026-11-13T06:51:57.720Z",
-    "updated_at": "2026-11-13T06:51:57.720Z",
+    "updated_at": "2026-11-13T15:46:38.510Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -2458,9 +2576,15 @@
         "publisher": "BleepingComputer",
         "title": "Baker Tilly notifies clients of data breach at third-party provider",
         "published_at": "2026-11-11"
+      },
+      {
+        "url": "https://securityweek.com/in-other-news-new-cisa-director-nominee-connected-car-hacking-baker-tilly-data-breach",
+        "publisher": "SecurityWeek",
+        "title": "In Other News: New CISA Director Nominee, Connected Car Hacking, Baker Tilly Data Breach",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.95,
     "status": "published",
     "origin": "news",
@@ -2470,7 +2594,7 @@
       "pii"
     ],
     "created_at": "2026-11-11T23:11:05.000Z",
-    "updated_at": "2026-11-11T23:11:05.000Z",
+    "updated_at": "2026-11-13T15:46:38.510Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -17238,9 +17362,15 @@
         "publisher": "BleepingComputer",
         "title": "Trezor warns of suspected crypto-theft implant in hardware wallet",
         "published_at": "2026-10-30"
+      },
+      {
+        "url": "https://thehackernews.com/2026/11/trezor-confirms-hidden-hardware.html",
+        "publisher": "The Hacker News",
+        "title": "Trezor Confirms Hidden Implants in CryptoBilis-Sold Wallets That Can Steal Recovery Phrases",
+        "published_at": "2026-11-13"
       }
     ],
-    "source_count": 1,
+    "source_count": 2,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -17251,7 +17381,7 @@
       "crypto"
     ],
     "created_at": "2026-10-30T18:43:14.146Z",
-    "updated_at": "2026-10-30T18:43:14.146Z",
+    "updated_at": "2026-11-13T15:46:38.510Z",
     "lane": "supply_chain",
     "state": "live",
     "closed_at": null,
@@ -17267,9 +17397,15 @@
         "title": "Trezor warns of suspected crypto-theft implant in hardware wallet",
         "source_url": "https://bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet",
         "added_at": "2026-10-30T18:43:14.146Z"
+      },
+      {
+        "date": "2026-11-13",
+        "title": "Trezor confirms hidden implants found in wallets sold by CryptoBilis that can steal recovery phrases",
+        "source_url": "https://thehackernews.com/2026/11/trezor-confirms-hidden-hardware.html",
+        "added_at": "2026-11-13T15:46:38.510Z"
       }
     ],
-    "action": "Inspect hardware devices and purchase directly from authorized distributors.",
+    "action": "Inspect hardware wallets purchased from third-party resellers for unauthorized extra circuit boards.",
     "severity_note": "Confirmed hardware implant report in the wild.",
     "cvss": null
   },
