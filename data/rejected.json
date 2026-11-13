@@ -1,5 +1,15 @@
 [
   {
+    "key": "f6d06bee472cc946",
+    "title": "German parliament passes law giving spy agencies hacking, sabotage powers",
+    "url": "https://therecord.media/german-parliament-passes-law-giving-spy-agencies-hacking-power",
+    "publisher": "The Record",
+    "source_id": "therecord",
+    "reason": "out of scope: Policy change, not a specific security incident",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-13T17:24:09.727Z"
+  },
+  {
     "key": "31e923d4d6025f16",
     "title": "CrossPloit: A Benchmark for Cross-Version PoC Migration in Python Web Applications",
     "url": "https://arxiv.org/abs/2611.16588",
