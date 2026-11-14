@@ -1,5 +1,15 @@
 [
   {
+    "key": "431b43f1dd9338f0",
+    "title": "No Signs of Hacking in FAA Ground Stop as FBI Reportedly Probes Software Update",
+    "url": "https://securityweek.com/no-signs-of-hacking-in-faa-ground-stop-as-fbi-reportedly-probes-software-update",
+    "publisher": "SecurityWeek",
+    "source_id": "securityweek",
+    "reason": "out of scope: Outage investigation without confirmed cyberattack or specific software flaw disclosed",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-14T09:17:50.196Z"
+  },
+  {
     "key": "f0f23fdb08d7bf54",
     "title": "FBI flash alert says Artex tool automating cyberattacks at ‘machine speed’",
     "url": "https://therecord.media/artex-ai-tool-fbi-flash-alert",
