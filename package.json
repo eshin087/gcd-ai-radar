@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "gcdRadar: live security incidents across the web with an AI lens, counted honestly and linked to their reporting.",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "type": "module",
   "engines": {
     "node": "22.x"

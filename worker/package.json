@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Cloudflare Worker that serves the gcdRadar home page's live internet band from Cloudflare Radar, cached for five minutes.",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",

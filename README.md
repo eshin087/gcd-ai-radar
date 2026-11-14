@@ -87,4 +87,4 @@ Collector commands, the GitHub Actions secrets, the deploy windows and what happ
 
 ## Licences
 
-Code: [MIT](LICENSE). Data: [CC BY-SA 4.0](LICENSE-DATA.md), with upstream attributions listed there. If you reuse the counts, credit gcdRadar with a link and the date you accessed it.
+Code: all rights reserved, see [LICENSE](LICENSE). Data: [CC BY-SA 4.0](LICENSE-DATA.md), with upstream attributions listed there. If you reuse the counts, credit gcdRadar with a link and the date you accessed it.
