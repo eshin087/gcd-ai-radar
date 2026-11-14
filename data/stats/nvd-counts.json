@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-13T16:43:27.444Z",
+ "fetched_at": "2026-11-14T12:47:36.906Z",
  "source": {"name":"NVD","url":"https://nvd.nist.gov/developers/vulnerabilities","license":"NIST data, public domain. This product uses data from the NVD API but is not endorsed or certified by the NVD."},
  "years": [
   {"year":1999,"total":894},
@@ -29,6 +29,6 @@
   {"year":2023,"total":28816},
   {"year":2024,"total":39953},
   {"year":2025,"total":48150},
-  {"year":2026,"total":97465}
+  {"year":2026,"total":97678}
  ]
 }
