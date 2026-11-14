@@ -1,5 +1,15 @@
 [
   {
+    "key": "a5090cfbce20a9b6",
+    "title": "Challenges in red teaming AI systems",
+    "url": "https://anthropic.com/news/challenges-in-red-teaming-ai-systems",
+    "publisher": "Anthropic",
+    "source_id": "anthropic",
+    "reason": "out of scope: Surveys, statistics, insights and vendor blog posts without a specific exploited flaw, breach or demonstrated attack are out of scope.",
+    "confidence": 0.95,
+    "rejected_at": "2026-11-14T13:19:46.872Z"
+  },
+  {
     "key": "431b43f1dd9338f0",
     "title": "No Signs of Hacking in FAA Ground Stop as FBI Reportedly Probes Software Update",
     "url": "https://securityweek.com/no-signs-of-hacking-in-faa-ground-stop-as-fbi-reportedly-probes-software-update",
