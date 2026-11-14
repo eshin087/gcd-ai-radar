@@ -1,5 +1,66 @@
 [
   {
+    "id": "AIR-2026-1975",
+    "slug": "cursor-confirms-security-breach-led-to-malicious-claude-code",
+    "title": "Cursor confirms security breach led to malicious Claude Code extension",
+    "summary": "Cursor suffered a security breach after credential theft at Fireworks AI, allowing attackers to distribute a malicious Claude Code extension. The marketplace release impacted users before the issue was identified and confirmed.",
+    "type": "attack_on_ai",
+    "categories": [
+      "supply_chain",
+      "infra_vuln"
+    ],
+    "severity": 3,
+    "targets": [
+      "framework_or_tooling"
+    ],
+    "products": [
+      "Cursor",
+      "Claude Code",
+      "Fireworks AI"
+    ],
+    "incident_date": "2026-11-14",
+    "incident_date_precision": "day",
+    "first_reported": "2026-11-14",
+    "sources": [
+      {
+        "url": "https://bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension",
+        "publisher": "BleepingComputer",
+        "title": "Cursor confirms security breach led to malicious Claude Code extension",
+        "published_at": "2026-11-14"
+      }
+    ],
+    "source_count": 1,
+    "confidence": 0.95,
+    "status": "published",
+    "origin": "news",
+    "tags": [
+      "supply-chain",
+      "breach",
+      "marketplace",
+      "credentials"
+    ],
+    "created_at": "2026-11-14T17:49:44.140Z",
+    "updated_at": "2026-11-14T17:49:44.140Z",
+    "lane": "supply_chain",
+    "state": "live",
+    "closed_at": null,
+    "patch_status": "no_fix_needed",
+    "cve_ids": [],
+    "affected": [],
+    "fixed_in": [],
+    "timeline": [
+      {
+        "date": "2026-11-14",
+        "title": "Cursor confirms security breach led to malicious Claude Code extension",
+        "source_url": "https://bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension",
+        "added_at": "2026-11-14T17:49:44.140Z"
+      }
+    ],
+    "action": "Remove the malicious extension and review AI infrastructure credentials.",
+    "severity_note": "Confirmed real-world supply chain distribution via a compromised marketplace.",
+    "cvss": null
+  },
+  {
     "id": "AIR-2026-1974",
     "slug": "arcticrat-cybercrime-gang-profiles-victim-finances-with-ai",
     "title": "ArcticRAT Cybercrime Gang Profiles Victim Finances With AI",
