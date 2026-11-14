@@ -1951,9 +1951,15 @@
         "publisher": "The Hacker News",
         "title": "FBI Says North Korean Hackers Stole Over $400 Million in Crypto Using Deepfake Video Calls",
         "published_at": "2026-11-13"
+      },
+      {
+        "url": "https://bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft",
+        "publisher": "BleepingComputer",
+        "title": "US disrupts North Korean campaign behind $400 million crypto theft",
+        "published_at": "2026-11-14"
       }
     ],
-    "source_count": 2,
+    "source_count": 3,
     "confidence": 0.9,
     "status": "published",
     "origin": "news",
@@ -1964,7 +1970,7 @@
       "north-korea"
     ],
     "created_at": "2026-11-13T06:51:57.720Z",
-    "updated_at": "2026-11-13T15:46:38.510Z",
+    "updated_at": "2026-11-14T15:48:04.450Z",
     "lane": "breach",
     "state": "live",
     "closed_at": null,
@@ -1978,6 +1984,12 @@
         "title": "Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme",
         "source_url": "https://helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls",
         "added_at": "2026-11-13T06:51:57.720Z"
+      },
+      {
+        "date": "2026-11-14",
+        "title": "US government disrupts the North Korean FaceStealer campaign responsible for cryptocurrency thefts",
+        "source_url": "https://bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft",
+        "added_at": "2026-11-14T15:48:04.450Z"
       }
     ],
     "action": "",
